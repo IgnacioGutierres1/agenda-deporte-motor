@@ -1,0 +1,496 @@
+{
+ "lap_number": 267,
+ "elapsed_time": 10798,
+ "flag_state": 9,
+ "race_id": 5601,
+ "laps_in_race": 267,
+ "laps_to_go": 0,
+ "vehicles": [
+  {
+   "average_restart_speed": 159.839,
+   "average_running_position": 6.769,
+   "average_speed": 133.493,
+   "best_lap": 261,
+   "best_lap_speed": 165.563,
+   "best_lap_time": 32.616,
+   "vehicle_manufacturer": "Frd",
+   "vehicle_number": "12",
+   "driver": {
+    "driver_id": 4023,
+    "full_name": "Ryan Blaney (C)",
+    "first_name": "Ryan",
+    "last_name": "Blaney (C)",
+    "is_in_chase": true
+   },
+   "vehicle_elapsed_time": 10800.533,
+   "fastest_laps_run": 41,
+   "laps_position_improved": 58,
+   "laps_completed": 267,
+   "last_lap_speed": 159.09,
+   "last_lap_time": 33.943,
+   "passes_made": 98,
+   "passing_differential": 35,
+   "position_differential_last_10_percent": 3,
+   "qualifying_status": 0,
+   "running_position": 1,
+   "status": 1,
+   "delta": 0,
+   "sponsor_name": "Menards/Dutch Boy",
+   "starting_position": 9,
+   "times_passed": 63,
+   "quality_passes": 69,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 215,
+     "end_lap": 215
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 0,
+     "pit_in_lap_count": 267,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 0,
+     "pit_stop_type": "",
+     "pit_stop_duration": 0
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 160.967,
+   "average_running_position": 2.369,
+   "average_speed": 133.49,
+   "best_lap": 261,
+   "best_lap_speed": 165.396,
+   "best_lap_time": 32.649,
+   "vehicle_manufacturer": "Tyt",
+   "vehicle_number": "45",
+   "driver": {
+    "driver_id": 4065,
+    "full_name": "Tyler Reddick (C)",
+    "first_name": "Tyler",
+    "last_name": "Reddick (C)",
+    "is_in_chase": true
+   },
+   "vehicle_elapsed_time": 10800.847,
+   "fastest_laps_run": 19,
+   "laps_position_improved": 21,
+   "laps_completed": 267,
+   "last_lap_speed": 158.852,
+   "last_lap_time": 33.994,
+   "passes_made": 37,
+   "passing_differential": 2,
+   "position_differential_last_10_percent": 0,
+   "qualifying_status": 0,
+   "running_position": 2,
+   "status": 1,
+   "delta": 0.314,
+   "sponsor_name": "Chumba Casino",
+   "starting_position": 3,
+   "times_passed": 35,
+   "quality_passes": 35,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 34,
+     "end_lap": 39
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 10847.484,
+     "pit_in_lap_count": 267,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 10880.496,
+     "pit_stop_type": "OTHER",
+     "pit_stop_duration": -1
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 160.108,
+   "average_running_position": 6.728,
+   "average_speed": 133.487,
+   "best_lap": 261,
+   "best_lap_speed": 163.78,
+   "best_lap_time": 32.971,
+   "vehicle_manufacturer": "Chv",
+   "vehicle_number": "24",
+   "driver": {
+    "driver_id": 4184,
+    "full_name": "William Byron (C)",
+    "first_name": "William",
+    "last_name": "Byron (C)",
+    "is_in_chase": true
+   },
+   "vehicle_elapsed_time": 10801.086,
+   "fastest_laps_run": 6,
+   "laps_position_improved": 29,
+   "laps_completed": 267,
+   "last_lap_speed": 159.137,
+   "last_lap_time": 33.933,
+   "passes_made": 86,
+   "passing_differential": -3,
+   "position_differential_last_10_percent": -2,
+   "qualifying_status": 0,
+   "running_position": 3,
+   "status": 1,
+   "delta": 0.553,
+   "sponsor_name": "Valvoline",
+   "starting_position": 8,
+   "times_passed": 89,
+   "quality_passes": 49,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 222,
+     "end_lap": 254
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 10848.691,
+     "pit_in_lap_count": 267,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 10883.03,
+     "pit_stop_type": "OTHER",
+     "pit_stop_duration": -1
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 160.88,
+   "average_running_position": 3.854,
+   "average_speed": 133.478,
+   "best_lap": 261,
+   "best_lap_speed": 165.138,
+   "best_lap_time": 32.7,
+   "vehicle_manufacturer": "Tyt",
+   "vehicle_number": "20",
+   "driver": {
+    "driver_id": 4153,
+    "full_name": "Christopher Bell (C)",
+    "first_name": "Christopher",
+    "last_name": "Bell (C)",
+    "is_in_chase": true
+   },
+   "vehicle_elapsed_time": 10801.779,
+   "fastest_laps_run": 21,
+   "laps_position_improved": 32,
+   "laps_completed": 267,
+   "last_lap_speed": 157.752,
+   "last_lap_time": 34.231,
+   "passes_made": 76,
+   "passing_differential": 2,
+   "position_differential_last_10_percent": 1,
+   "qualifying_status": 0,
+   "running_position": 4,
+   "status": 1,
+   "delta": 1.246,
+   "sponsor_name": "Interstate Batteries/DeWalt",
+   "starting_position": 6,
+   "times_passed": 74,
+   "quality_passes": 45,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 43,
+     "end_lap": 52
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 10851.695,
+     "pit_in_lap_count": 267,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 10882.134,
+     "pit_stop_type": "OTHER",
+     "pit_stop_duration": -1
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 159.611,
+   "average_running_position": 9.31,
+   "average_speed": 133.467,
+   "best_lap": 261,
+   "best_lap_speed": 164.459,
+   "best_lap_time": 32.835,
+   "vehicle_manufacturer": "Tyt",
+   "vehicle_number": "23",
+   "driver": {
+    "driver_id": 4025,
+    "full_name": "Bubba Wallace (C)",
+    "first_name": "Bubba",
+    "last_name": "Wallace (C)",
+    "is_in_chase": true
+   },
+   "vehicle_elapsed_time": 10802.677,
+   "fastest_laps_run": 14,
+   "laps_position_improved": 50,
+   "laps_completed": 267,
+   "last_lap_speed": 157.932,
+   "last_lap_time": 34.192,
+   "passes_made": 90,
+   "passing_differential": 8,
+   "position_differential_last_10_percent": 2,
+   "qualifying_status": 0,
+   "running_position": 5,
+   "status": 1,
+   "delta": 2.144,
+   "sponsor_name": "Columbia PFG",
+   "starting_position": 18,
+   "times_passed": 82,
+   "quality_passes": 72,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 40,
+     "end_lap": 40
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 10852.399,
+     "pit_in_lap_count": 267,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 10886.517,
+     "pit_stop_type": "OTHER",
+     "pit_stop_duration": -1
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 156.663,
+   "average_running_position": 19.881,
+   "average_speed": 132.831,
+   "best_lap": 2,
+   "best_lap_speed": 161.261,
+   "best_lap_time": 33.486,
+   "vehicle_manufacturer": "Chv",
+   "vehicle_number": "3",
+   "driver": {
+    "driver_id": 3873,
+    "full_name": "Austin Dillon",
+    "first_name": "Austin",
+    "last_name": "Dillon",
+    "is_in_chase": false
+   },
+   "vehicle_elapsed_time": 10813.766,
+   "fastest_laps_run": 12,
+   "laps_position_improved": 42,
+   "laps_completed": 266,
+   "last_lap_speed": 152.862,
+   "last_lap_time": 35.326,
+   "passes_made": 99,
+   "passing_differential": -9,
+   "position_differential_last_10_percent": 1,
+   "qualifying_status": 0,
+   "running_position": 26,
+   "status": 1,
+   "delta": -1,
+   "sponsor_name": "BREZTRI",
+   "starting_position": 21,
+   "times_passed": 108,
+   "quality_passes": 16,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 10863.617,
+     "pit_in_lap_count": 266,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 10889.427,
+     "pit_stop_type": "OTHER",
+     "pit_stop_duration": -1
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 153.693,
+   "average_running_position": 32.351,
+   "average_speed": 132.323,
+   "best_lap": 181,
+   "best_lap_speed": 160.371,
+   "best_lap_time": 33.672,
+   "vehicle_manufacturer": "Tyt",
+   "vehicle_number": "35",
+   "driver": {
+    "driver_id": 4269,
+    "full_name": "Riley Herbst",
+    "first_name": "Riley",
+    "last_name": "Herbst",
+    "is_in_chase": false
+   },
+   "vehicle_elapsed_time": 10814.468,
+   "fastest_laps_run": 5,
+   "laps_position_improved": 20,
+   "laps_completed": 265,
+   "last_lap_speed": 152.849,
+   "last_lap_time": 35.329,
+   "passes_made": 84,
+   "passing_differential": -6,
+   "position_differential_last_10_percent": 0,
+   "qualifying_status": 0,
+   "running_position": 33,
+   "status": 1,
+   "delta": -2,
+   "sponsor_name": "Basic Water",
+   "starting_position": 30,
+   "times_passed": 90,
+   "quality_passes": 0,
+   "is_on_track": true,
+   "is_on_dvp": false,
+   "laps_led": [],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 10871.982,
+     "pit_in_lap_count": 265,
+     "pit_in_leader_lap": 267,
+     "pit_out_elapsed_time": 10892.325,
+     "pit_stop_type": "",
+     "pit_stop_duration": 0
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 161.177,
+   "average_running_position": 29.216,
+   "average_speed": 151.91,
+   "best_lap": 2,
+   "best_lap_speed": 164.284,
+   "best_lap_time": 32.87,
+   "vehicle_manufacturer": "Tyt",
+   "vehicle_number": "19",
+   "driver": {
+    "driver_id": 4228,
+    "full_name": "Chase Briscoe (C)",
+    "first_name": "Chase",
+    "last_name": "Briscoe (C)",
+    "is_in_chase": true
+   },
+   "vehicle_elapsed_time": 2737.147,
+   "fastest_laps_run": 7,
+   "laps_position_improved": 7,
+   "laps_completed": 77,
+   "last_lap_speed": 148.986,
+   "last_lap_time": 36.245,
+   "passes_made": 40,
+   "passing_differential": -6,
+   "position_differential_last_10_percent": 0,
+   "qualifying_status": 0,
+   "running_position": 39,
+   "status": 3,
+   "delta": -190,
+   "sponsor_name": "Bass Pro Shops",
+   "starting_position": 1,
+   "times_passed": 46,
+   "quality_passes": 9,
+   "is_on_track": false,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 0,
+     "end_lap": 33
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 1185.269,
+     "pit_in_lap_count": 33,
+     "pit_in_leader_lap": 33,
+     "pit_out_elapsed_time": 1227.817,
+     "pit_stop_type": "FOUR_WHEEL_CHANGE",
+     "pit_stop_duration": 16.336
+    }
+   ]
+  },
+  {
+   "average_restart_speed": 158.852,
+   "average_running_position": 34.463,
+   "average_speed": 69.994,
+   "best_lap": 2,
+   "best_lap_speed": 161.454,
+   "best_lap_time": 33.446,
+   "vehicle_manufacturer": "Tyt",
+   "vehicle_number": "67",
+   "driver": {
+    "driver_id": 4387,
+    "full_name": "* Corey Heim(i)",
+    "first_name": "* Corey",
+    "last_name": "Heim(i)",
+    "is_in_chase": false
+   },
+   "vehicle_elapsed_time": 4397.524,
+   "fastest_laps_run": 5,
+   "laps_position_improved": 19,
+   "laps_completed": 57,
+   "last_lap_speed": 2.279,
+   "last_lap_time": 2369.127,
+   "passes_made": 44,
+   "passing_differential": -25,
+   "position_differential_last_10_percent": 0,
+   "qualifying_status": 0,
+   "running_position": 40,
+   "status": 3,
+   "delta": -210,
+   "sponsor_name": "Mobil 1",
+   "starting_position": 16,
+   "times_passed": 69,
+   "quality_passes": 31,
+   "is_on_track": false,
+   "is_on_dvp": false,
+   "laps_led": [
+    {
+     "start_lap": 41,
+     "end_lap": 42
+    }
+   ],
+   "pit_stops": [
+    {
+     "positions_gained_lossed": 0,
+     "pit_in_elapsed_time": 4455.867,
+     "pit_in_lap_count": 57,
+     "pit_in_leader_lap": 110,
+     "pit_out_elapsed_time": 4458.23,
+     "pit_stop_type": "OTHER",
+     "pit_stop_duration": -1
+    }
+   ]
+  }
+ ],
+ "run_id": 8,
+ "run_name": "NASCAR Cup Series Championship Race",
+ "series_id": 1,
+ "time_of_day": 59200,
+ "time_of_day_os": "0001-01-01T00:00:00+00:00",
+ "track_id": 40,
+ "track_length": 1.5,
+ "track_name": "Homestead Miami Speedway",
+ "run_type": 3,
+ "number_of_caution_segments": 3,
+ "number_of_caution_laps": 23,
+ "number_of_lead_changes": 18,
+ "number_of_leaders": 8,
+ "avg_diff_1to3": 2311,
+ "stage": {
+  "stage_num": 3,
+  "finish_at_lap": 267,
+  "laps_in_stage": 102
+ }
+}
