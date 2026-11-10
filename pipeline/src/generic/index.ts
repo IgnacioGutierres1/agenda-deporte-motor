@@ -1,9 +1,414 @@
-import type { Adapter } from '../core/types.ts';
+/**
+ * Flujo genérico (Nivel B): para cualquier serie con strategy "generic", usando solo sus officialUrls.
+ *
+ * 1. Calendario oficial (officialUrls[0]) -> eventos. Primero lectura determinista (receta del sitio,
+ *    JSON-LD); si no alcanza, Gemini sobre el texto compacto de la página.
+ * 2. Para los eventos dentro del horizonte, ubica el documento oficial del cronograma (API oficial,
+ *    JSON-LD de la página del evento, PDF enlazado, la propia página o una nota de prensa) y lo descarga.
+ * 3. Gemini transcribe las sesiones; las horas que no figuran literalmente en el documento se descartan.
+ * 4. Caché por serie + hash del documento: Gemini solo se llama cuando el documento cambió.
+ */
+import {
+  slugify,
+  type EventResultsFile,
+  type MotorEvent,
+  type Series,
+  type Session,
+  type SessionResult,
+  type Source,
+  type StandingsFile,
+} from '@dm/shared';
+import { classifySession } from '../core/builders.ts';
+import type { Adapter, AdapterContext, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
+import { fetchDocument, looksLikePdf, type FetchedDocument } from '../extract/document.ts';
+import { GeminiUnavailableError, getGemini, MISSING_KEY_MESSAGE, type Gemini } from '../extract/gemini.ts';
+import { normalizeForMatch } from '../validate.ts';
+import { aiCalendar, aiResults, aiStandings, aiTimetable, PROMPT_VERSION, validateResultRows, type AiDeps } from './ai.ts';
+import { createExtractionCache } from './cache.ts';
+import {
+  jsonLdCalendar,
+  jsonLdSessions,
+  looksLikeTimetable,
+  newsTimetableLink,
+  resultsLinks,
+  STANDINGS_RE,
+  RESULTS_RE,
+  timetableLinks,
+} from './locate.ts';
+import { championshipKey, shiftDate } from './places.ts';
+import { findRecipe } from './recipes.ts';
+import type { CalendarEntry, RecipeContext, SessionsFound } from './types.ts';
 
-// TODO(feat/generic-ai): flujo genérico (calendario oficial -> documento del cronograma -> Gemini -> validación)
-export const genericAdapter: Adapter = {
-  name: 'generic',
-  async schedule(series) {
-    throw new Error(`Flujo genérico no implementado todavía (${series.id})`);
-  },
-};
+export interface GenericDeps {
+  /** Cliente de Gemini (por defecto, el compartido de la corrida, configurado por variables de entorno). */
+  gemini?: () => Gemini;
+}
+
+/** Tope de documentos de resultados/campeonato por serie y corrida (cuida el cupo de Gemini). */
+const MAX_RESULT_DOCS = 3;
+
+export interface CalendarRead {
+  entries: CalendarEntry[];
+  doc: FetchedDocument;
+  source: Source;
+}
+
+const isoNow = (d: Date) => d.toISOString().replace(/\.\d{3}Z$/, 'Z');
+
+function aiDeps(ctx: AdapterContext, deps: GenericDeps): AiDeps {
+  return { gemini: (deps.gemini ?? getGemini)(), cache: createExtractionCache(ctx.cacheDir, PROMPT_VERSION) };
+}
+
+function recipeCtx(series: Series, ctx: AdapterContext): RecipeContext {
+  return { season: ctx.season, series, http: ctx.http, now: ctx.now };
+}
+
+/**
+ * Lee el calendario oficial de una serie (o un calendario multi-categoría, para el descubrimiento).
+ * Lanza un error claro si hace falta IA y no hay clave.
+ */
+export async function readCalendar(
+  series: Series,
+  url: string,
+  ctx: AdapterContext,
+  deps: GenericDeps = {},
+  opts: { multiSeries?: boolean } = {},
+): Promise<CalendarRead> {
+  const recipe = findRecipe(url);
+  const target = recipe?.calendarUrl?.(url, ctx.season) ?? url;
+  const doc = await fetchDocument(ctx.http, target);
+  let entries = recipe?.calendar?.(doc, recipeCtx(series, ctx)) ?? [];
+  let method: Source['method'] = 'directo';
+  // Calendario multi-categoría usado como sitio de una sola serie (p. ej. una categoría descubierta en el
+  // calendario de la FIA o de la CDA): se queda con las fechas de ese campeonato.
+  if (!opts.multiSeries && entries.some((e) => e.championship)) {
+    const key = championshipKey(series.name);
+    entries = entries.filter((e) => e.championship && championshipKey(e.championship) === key);
+  }
+  if (entries.length === 0) entries = jsonLdCalendar(doc, ctx.season);
+  if (entries.length === 0) {
+    method = 'ia';
+    try {
+      entries = await aiCalendar(aiDeps(ctx, deps), series, doc, ctx.season, opts);
+    } catch (err) {
+      if (err instanceof GeminiUnavailableError) {
+        throw new Error(`${err.message}: el calendario oficial (${target}) no se puede leer sin IA`);
+      }
+      throw err;
+    }
+  }
+  const source: Source = {
+    url: doc.url,
+    title: doc.title || `Calendario ${series.shortName} ${ctx.season}`,
+    kind: doc.kind,
+    method,
+    fetchedAt: isoNow(ctx.now),
+  };
+  return { entries, doc, source };
+}
+
+/** Claves estables de evento: número de fecha/ronda si existe, si no el nombre; desambigua repetidos. */
+export function eventKeys(entries: CalendarEntry[]): string[] {
+  const keys = entries.map((e) => (e.round !== undefined ? `r${e.round}` : slugify(e.name)));
+  return keys.map((k, i) => (keys.indexOf(k) !== i || keys.lastIndexOf(k) !== i ? `${k}|${entries[i]!.dateEnd}` : k));
+}
+
+export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
+  return {
+    name: 'generic',
+
+    async schedule(series, ctx): Promise<ScheduleChunk> {
+      const url = series.officialUrls[0];
+      if (!url) throw new Error('La serie no tiene URL oficial (officialUrls[0])');
+      const cal = await readCalendar(series, url, ctx, deps);
+      if (cal.entries.length === 0) {
+        throw new Error(`No se encontraron eventos ${ctx.season} en el calendario oficial (${cal.doc.url})`);
+      }
+      ctx.log.info(`Calendario: ${cal.entries.length} eventos (${cal.source.method === 'ia' ? 'IA' : 'lectura directa'})`);
+
+      const today = isoNow(ctx.now).slice(0, 10);
+      const from = shiftDate(today, -1);
+      const to = shiftDate(today, ctx.horizonDays);
+      const keys = eventKeys(cal.entries);
+      const prevSessions = ctx.previous?.sessions ?? [];
+      const events: MotorEvent[] = [];
+      const sessions: Session[] = [];
+      let needsKey = 0;
+
+      for (const [i, entry] of cal.entries.entries()) {
+        const draft = ctx.build.event({
+          series,
+          season: ctx.season,
+          key: keys[i]!,
+          name: entry.name,
+          ...(entry.round !== undefined ? { round: entry.round } : {}),
+          circuit: entry.circuit,
+          country: entry.country,
+          tz: entry.tz,
+          dateStart: entry.dateStart,
+          dateEnd: entry.dateEnd,
+          sessionsStatus: 'pending',
+          source: cal.source,
+        });
+        let found: SessionsFound | null = null;
+        const inHorizon = entry.dateEnd >= from && entry.dateStart <= to;
+        if (inHorizon) {
+          try {
+            found = await findSessions(series, entry, cal, ctx, deps);
+          } catch (err) {
+            if (err instanceof GeminiUnavailableError) needsKey++;
+            else ctx.log.warn(`${entry.name}: ${err instanceof Error ? err.message : String(err)}`);
+          }
+        }
+        if (found && found.sessions.length > 0) {
+          const event: MotorEvent = { ...draft, sessionsStatus: 'published' };
+          events.push(event);
+          const seen = new Map<string, number>();
+          for (const s of found.sessions) {
+            const n = (seen.get(s.name) ?? 0) + 1;
+            seen.set(s.name, n);
+            sessions.push(
+              ctx.build.session({
+                event,
+                type: classifySession(s.name),
+                name: s.name,
+                startUtc: s.startUtc,
+                ...(s.endUtc ? { endUtc: s.endUtc } : {}),
+                ...(s.localStartText ? { localStartText: s.localStartText } : {}),
+                source: found.source,
+                ...(n > 1 ? { key: n } : {}),
+              }),
+            );
+          }
+        } else {
+          // Fuera del horizonte (o sin cronograma nuevo): se conservan las sesiones ya leídas antes.
+          const kept = prevSessions.filter((s) => s.eventId === draft.id);
+          events.push(kept.length > 0 ? { ...draft, sessionsStatus: 'published' } : draft);
+          sessions.push(...kept);
+        }
+      }
+      if (needsKey > 0) {
+        ctx.log.warn(`${MISSING_KEY_MESSAGE}: ${needsKey} cronograma(s) dentro del horizonte quedan "a confirmar"`);
+      }
+      return { events, sessions };
+    },
+
+    async results(series, ctx, req): Promise<ResultsChunk> {
+      return genericResults(series, ctx, req, deps);
+    },
+  };
+}
+
+/** Busca las sesiones de un evento: lectura directa si se puede, si no Gemini sobre el documento oficial. */
+async function findSessions(
+  series: Series,
+  entry: CalendarEntry,
+  cal: CalendarRead,
+  ctx: AdapterContext,
+  deps: GenericDeps,
+): Promise<SessionsFound | null> {
+  if (entry.sessions?.length) return { sessions: entry.sessions, source: cal.source };
+
+  const recipe = findRecipe(series.officialUrls[0] ?? '');
+  if (recipe?.sessions) {
+    const direct = await recipe.sessions(entry, recipeCtx(series, ctx));
+    if (direct) return direct;
+    if (!entry.url || entry.url === cal.doc.url) {
+      // La API oficial es la única fuente del cronograma.
+      ctx.log.info(`${entry.name}: cronograma todavía no publicado`);
+      return null;
+    }
+  }
+
+  const doc = await locateTimetable(series, entry, cal, ctx);
+  if (!doc) {
+    ctx.log.info(`${entry.name}: cronograma todavía no publicado`);
+    return null;
+  }
+  if ('direct' in doc) return doc.direct;
+
+  const result = await aiTimetable(aiDeps(ctx, deps), series, entry, doc.doc);
+  for (const d of result.dropped) ctx.log.warn(`${entry.name}: sesión descartada "${d.name}": ${d.reason}`);
+  if (result.sessions.length === 0) return null;
+  return {
+    sessions: result.sessions,
+    source: {
+      url: doc.doc.url,
+      title: doc.doc.title || `Cronograma ${series.shortName} — ${entry.name}`,
+      kind: doc.doc.kind === 'api' ? 'html' : doc.doc.kind,
+      method: 'ia',
+      fetchedAt: isoNow(ctx.now),
+    },
+  };
+}
+
+type Located = { doc: FetchedDocument } | { direct: SessionsFound };
+
+async function tryFetch(ctx: AdapterContext, url: string): Promise<FetchedDocument | null> {
+  try {
+    return await fetchDocument(ctx.http, url);
+  } catch (err) {
+    ctx.log.warn(`No se pudo leer ${url}: ${err instanceof Error ? err.message : String(err)}`);
+    return null;
+  }
+}
+
+async function locateTimetable(
+  series: Series,
+  entry: CalendarEntry,
+  cal: CalendarRead,
+  ctx: AdapterContext,
+): Promise<Located | null> {
+  if (entry.timetableUrl) {
+    const doc = await tryFetch(ctx, entry.timetableUrl);
+    if (doc) return { doc };
+  }
+  if (entry.url && entry.url !== cal.doc.url) {
+    const page = await tryFetch(ctx, entry.url);
+    if (page) {
+      const ld = jsonLdSessions(page);
+      if (ld.sessions.length > 0) {
+        return {
+          direct: {
+            sessions: ld.sessions,
+            source: { url: page.url, title: page.title || entry.name, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
+          },
+        };
+      }
+      for (const link of timetableLinks(page).slice(0, 2)) {
+        const doc = await tryFetch(ctx, link.url);
+        if (doc && (doc.kind === 'pdf' || looksLikeTimetable(doc.text))) return { doc };
+      }
+      if (looksLikeTimetable(page.text)) return { doc: page };
+    }
+  }
+  // Sitios que publican el cronograma como nota (ACTC, APAT…): índices de noticias en officialUrls[1..].
+  for (const indexUrl of series.officialUrls.slice(1)) {
+    if (RESULTS_RE.test(indexUrl) || STANDINGS_RE.test(indexUrl)) continue;
+    const index = await tryFetch(ctx, indexUrl);
+    if (!index) continue;
+    const link = newsTimetableLink(index, entry);
+    if (!link) continue;
+    const doc = await tryFetch(ctx, link.url);
+    if (!doc) continue;
+    const pdf = doc.kind === 'html' ? timetableLinks(doc).find((l) => looksLikePdf(l.url)) : undefined;
+    if (pdf) {
+      const pdfDoc = await tryFetch(ctx, pdf.url);
+      if (pdfDoc) return { doc: pdfDoc };
+    }
+    return { doc };
+  }
+  return null;
+}
+
+// ─── Resultados y campeonato (Nivel B) ────────────────────────────────────────────────────────
+
+/** Une un nombre de sesión transcripto con la sesión del cronograma. */
+export function matchSession(name: string, candidates: Session[]): Session | undefined {
+  const n = normalizeForMatch(name);
+  const exact = candidates.find((c) => normalizeForMatch(c.name) === n);
+  if (exact) return exact;
+  const contains = candidates.filter((c) => {
+    const cn = normalizeForMatch(c.name);
+    return cn.includes(n) || n.includes(cn);
+  });
+  if (contains.length === 1) return contains[0];
+  const type = classifySession(name);
+  const sameType = candidates.filter((c) => c.type === type);
+  return sameType.length === 1 ? sameType[0] : undefined;
+}
+
+async function genericResults(
+  series: Series,
+  ctx: AdapterContext,
+  req: ResultsRequest,
+  deps: GenericDeps,
+): Promise<ResultsChunk> {
+  const out: ResultsChunk = { results: [] };
+  const ai = aiDeps(ctx, deps);
+  let docs = 0;
+  const nowIso = isoNow(ctx.now);
+
+  try {
+    if (req.pendingSessions.length > 0) {
+      const cal = await readCalendar(series, series.officialUrls[0]!, ctx, deps);
+      const keys = eventKeys(cal.entries);
+      const byEventId = new Map<string, CalendarEntry>();
+      cal.entries.forEach((e, i) => {
+        const ev = ctx.build.event({
+          series, season: ctx.season, key: keys[i]!, name: e.name, circuit: e.circuit, country: e.country, tz: e.tz,
+          dateStart: e.dateStart, dateEnd: e.dateEnd, sessionsStatus: 'pending', source: cal.source,
+        });
+        byEventId.set(ev.id, e);
+      });
+      const eventOrder = [...new Set(req.pendingSessions.map((s) => s.eventId))];
+      for (const eventId of eventOrder) {
+        if (docs >= MAX_RESULT_DOCS) break;
+        const entry = byEventId.get(eventId);
+        const event = req.events.find((e) => e.id === eventId);
+        if (!entry || !event) continue;
+        const doc = await locateResults(series, entry, ctx);
+        if (!doc) continue;
+        docs++;
+        const pending = req.pendingSessions.filter((s) => s.eventId === eventId);
+        const all = req.sessions.filter((s) => s.eventId === eventId);
+        const data = await aiResults(ai, series, event.name, all.map((s) => s.name), doc);
+        const source: Source = { url: doc.url, title: doc.title || `Resultados ${series.shortName}`, kind: doc.kind === 'api' ? 'html' : doc.kind, method: 'ia', fetchedAt: nowIso };
+        const sessionResults: SessionResult[] = [];
+        for (const s of data.sessions ?? []) {
+          const target = matchSession(s.sessionName, pending);
+          if (!target) continue;
+          const problem = validateResultRows(s.rows ?? [], doc.text);
+          if (problem) {
+            ctx.log.warn(`Resultado descartado (${s.sessionName}): ${problem}`);
+            continue;
+          }
+          sessionResults.push({ sessionId: target.id, rows: s.rows, source });
+        }
+        if (sessionResults.length > 0) {
+          const file: EventResultsFile = { seriesId: series.id, eventId, updatedAt: nowIso, sessions: sessionResults };
+          out.results.push(file);
+        }
+      }
+    }
+
+    if (req.standingsStale && docs < MAX_RESULT_DOCS) {
+      const url = series.officialUrls.slice(1).find((u) => STANDINGS_RE.test(u));
+      const doc = url ? await tryFetch(ctx, url) : null;
+      if (doc) {
+        const tables = await aiStandings(ai, series, ctx.season, doc);
+        if (tables.length > 0) {
+          const standings: StandingsFile = {
+            seriesId: series.id,
+            season: ctx.season,
+            updatedAt: nowIso,
+            tables,
+            source: { url: doc.url, title: doc.title || `Campeonato ${series.shortName}`, kind: doc.kind === 'api' ? 'html' : doc.kind, method: 'ia', fetchedAt: nowIso },
+          };
+          out.standings = standings;
+        }
+      }
+    }
+  } catch (err) {
+    if (err instanceof GeminiUnavailableError) {
+      ctx.log.warn(`${err.message}: resultados y campeonato sin leer`);
+      return out;
+    }
+    throw err;
+  }
+  return out;
+}
+
+async function locateResults(series: Series, entry: CalendarEntry, ctx: AdapterContext): Promise<FetchedDocument | null> {
+  if (entry.url) {
+    const page = await tryFetch(ctx, entry.url);
+    if (page) {
+      const link = resultsLinks(page)[0];
+      if (link) return tryFetch(ctx, link.url);
+    }
+  }
+  const seriesLevel = series.officialUrls.slice(1).find((u) => RESULTS_RE.test(u) && !STANDINGS_RE.test(u));
+  return seriesLevel ? tryFetch(ctx, seriesLevel) : null;
+}
+
+export const genericAdapter: Adapter = createGenericAdapter();
