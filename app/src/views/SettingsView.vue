@@ -23,6 +23,25 @@
       <p v-if="updateMsg" class="notice" :class="updateErr ? 'notice-error' : 'notice-ok'">{{ updateMsg }}</p>
     </section>
 
+    <!-- Tema -->
+    <section class="card">
+      <h2>Tema</h2>
+      <div class="row wrap theme-options" role="radiogroup" aria-label="Tema">
+        <button
+          v-for="t in themes"
+          :key="t.value"
+          type="button"
+          role="radio"
+          class="pill"
+          :class="{ active: theme === t.value }"
+          :aria-checked="theme === t.value"
+          @click="theme = t.value"
+        >
+          {{ t.label }}
+        </button>
+      </div>
+    </section>
+
     <!-- Zona horaria -->
     <section class="card">
       <h2>Zona horaria</h2>
@@ -283,6 +302,11 @@ export default defineComponent({
       newUrl: '',
       newGroup: 'otros' as SeriesGroup,
       groupLabels: GROUP_LABELS,
+      themes: [
+        { value: 'dark' as const, label: 'Oscuro' },
+        { value: 'light' as const, label: 'Claro' },
+        { value: 'system' as const, label: 'Según el sistema' },
+      ],
       envClientId: import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '',
       envRepo: import.meta.env.VITE_GITHUB_REPO ?? '',
     };
@@ -290,7 +314,7 @@ export default defineComponent({
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'generatedAt', 'fetchedAt', 'loading', 'now']),
     ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef']),
-    ...mapWritableState(useSettingsStore, ['timeZone', 'googleClientId', 'githubRepo', 'githubToken']),
+    ...mapWritableState(useSettingsStore, ['timeZone', 'theme', 'googleClientId', 'githubRepo', 'githubToken']),
     zoneOptions(): Array<{ value: string; label: string }> {
       const list = [...ZONE_OPTIONS];
       for (const z of [deviceZone(), this.timeZone]) {

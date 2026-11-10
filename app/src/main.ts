@@ -1,4 +1,4 @@
-import { createApp } from 'vue';
+import { createApp, watch } from 'vue';
 import { createPinia } from 'pinia';
 import App from './App.vue';
 import { createAppRouter } from './router.ts';
@@ -13,7 +13,15 @@ const app = createApp(App);
 app.use(pinia);
 app.use(createAppRouter());
 
-persistStore(useSettingsStore(pinia), ['timeZone', 'hiddenSeries', 'googleClientId', 'githubRepo', 'githubToken']);
+const settings = useSettingsStore(pinia);
+persistStore(settings, ['timeZone', 'hiddenSeries', 'followedSeries', 'theme', 'googleClientId', 'githubRepo', 'githubToken']);
+watch(
+  () => settings.theme,
+  (theme) => {
+    document.documentElement.dataset.theme = theme;
+  },
+  { immediate: true },
+);
 persistStore(useScheduleStore(pinia), ['preset', 'includeThursday', 'customFrom', 'customTo', 'excludedIds']);
 
 listenInstallPrompt();
