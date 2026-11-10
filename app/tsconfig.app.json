@@ -3,10 +3,11 @@
   "compilerOptions": {
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "jsx": "preserve",
-    "types": ["vite/client"],
+    "types": ["vite/client", "vite-plugin-pwa/client"],
     "paths": {
       "@/*": ["./src/*"]
     }
   },
-  "include": ["src/**/*.ts", "src/**/*.vue", "src/env.d.ts"]
+  "include": ["src/**/*.ts", "src/**/*.vue", "src/env.d.ts"],
+  "exclude": ["src/**/*.test.ts"]
 }
