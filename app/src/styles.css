@@ -711,3 +711,17 @@ a.driver-link:hover {
 .session-chips::-webkit-scrollbar {
   display: none;
 }
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-btn {
+  min-height: var(--tap);
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+}
