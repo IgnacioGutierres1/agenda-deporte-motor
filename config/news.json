@@ -1,0 +1,124 @@
+{
+  "maxAgeDays": 10,
+  "maxItems": 250,
+  "maxPerFeed": 40,
+  "summaryMaxChars": 240,
+  "feeds": [
+    {
+      "id": "formula1",
+      "name": "Formula 1",
+      "url": "https://www.formula1.com/en/latest/all.xml",
+      "kind": "oficial",
+      "lang": "en",
+      "seriesIds": ["f1"],
+      "homepage": "https://www.formula1.com/en/latest"
+    },
+    {
+      "id": "fia",
+      "name": "FIA",
+      "url": "https://www.fia.com/rss/news",
+      "kind": "oficial",
+      "lang": "en",
+      "homepage": "https://www.fia.com/news"
+    },
+    {
+      "id": "aptp",
+      "name": "Turismo Pista (APTP)",
+      "url": "https://aptpweb.com.ar/feed/",
+      "kind": "oficial",
+      "lang": "es",
+      "seriesIds": ["turismo-pista"],
+      "homepage": "https://aptpweb.com.ar/"
+    },
+    {
+      "id": "solotc",
+      "name": "SoloTC",
+      "url": "https://www.solotc.com.ar/feed/",
+      "kind": "medio",
+      "lang": "es",
+      "homepage": "https://www.solotc.com.ar/",
+      "headers": { "Accept-Encoding": "identity" }
+    },
+    {
+      "id": "campeones",
+      "name": "Campeones",
+      "url": "https://campeones.com.ar/feed/",
+      "kind": "medio",
+      "lang": "es",
+      "homepage": "https://campeones.com.ar/"
+    },
+    {
+      "id": "motorsport-lat",
+      "name": "Motorsport.com Latinoamérica",
+      "url": "https://lat.motorsport.com/rss/all/news/",
+      "kind": "medio",
+      "lang": "es",
+      "homepage": "https://lat.motorsport.com/"
+    },
+    {
+      "id": "lanacion",
+      "name": "La Nación",
+      "url": "https://www.lanacion.com.ar/arc/outboundfeeds/rss/category/deportes/automovilismo/?outputType=xml",
+      "kind": "medio",
+      "lang": "es",
+      "homepage": "https://www.lanacion.com.ar/deportes/automovilismo/"
+    },
+    {
+      "id": "ole",
+      "name": "Olé",
+      "url": "https://www.ole.com.ar/rss/autos/",
+      "kind": "medio",
+      "lang": "es",
+      "homepage": "https://www.ole.com.ar/autos"
+    },
+    {
+      "id": "infobae",
+      "name": "Infobae",
+      "url": "https://www.infobae.com/arc/outboundfeeds/rss/category/deportes/automovilismo/",
+      "kind": "medio",
+      "lang": "es",
+      "homepage": "https://www.infobae.com/deportes/"
+    },
+    {
+      "id": "motorsport-com",
+      "name": "Motorsport.com",
+      "url": "https://www.motorsport.com/rss/all/news/",
+      "kind": "medio",
+      "lang": "en",
+      "homepage": "https://www.motorsport.com/"
+    },
+    {
+      "id": "the-race",
+      "name": "The Race",
+      "url": "https://www.the-race.com/rss/",
+      "kind": "medio",
+      "lang": "en",
+      "homepage": "https://www.the-race.com/"
+    },
+    {
+      "id": "racer",
+      "name": "RACER",
+      "url": "https://racer.com/feed",
+      "kind": "medio",
+      "lang": "en",
+      "homepage": "https://racer.com/"
+    },
+    {
+      "id": "sportscar365",
+      "name": "Sportscar365",
+      "url": "https://sportscar365.com/feed/atom/",
+      "kind": "medio",
+      "lang": "en",
+      "homepage": "https://sportscar365.com/"
+    },
+    {
+      "id": "crash-motogp",
+      "name": "Crash.net MotoGP",
+      "url": "https://www.crash.net/rss/motogp",
+      "kind": "medio",
+      "lang": "en",
+      "seriesIds": ["motogp"],
+      "homepage": "https://www.crash.net/motogp"
+    }
+  ]
+}
