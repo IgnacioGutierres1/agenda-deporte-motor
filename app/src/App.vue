@@ -12,6 +12,17 @@
         </div>
         <RouterLink
           v-if="isHome"
+          to="/en-vivo"
+          class="icon-btn live-btn"
+          :class="{ on: liveCount > 0 }"
+          :aria-label="liveCount ? `En vivo: ${liveCount} sesiones` : 'En vivo'"
+          title="En vivo"
+        >
+          <AppIcon name="live" />
+          <span v-if="liveCount" class="live-dot-badge" />
+        </RouterLink>
+        <RouterLink
+          v-if="isHome"
           to="/exportar"
           class="icon-btn"
           aria-label="Exportar o cargar en el calendario"
@@ -107,7 +118,7 @@ export default defineComponent({
       pushTimer: 0 as number,
       menuOpen: false,
       nav: [
-        { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar'] },
+        { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar', '/en-vivo'] },
         { to: '/noticias', label: 'Noticias', icon: 'news', match: [] },
         { to: '/categorias', label: 'Categorías', icon: 'trophy', match: ['/categoria'] },
         { to: '/siguiendo', label: 'Siguiendo', icon: 'star', match: ['/piloto'] },
@@ -138,6 +149,12 @@ export default defineComponent({
     /** Lo que el Worker necesita saber de este dispositivo para avisar. */
     pushPrefsKey(): string {
       return this.notifyEnabled ? `${this.notifySeriesIds.join(',')}|${this.notifyLead}|${this.timeZone}` : '';
+    },
+    /** Sesiones en curso ahora (para marcar el ícono de En vivo). */
+    liveCount(): number {
+      const schedule = useScheduleStore().schedule;
+      if (!schedule) return 0;
+      return schedule.sessions.filter((s) => s.startUtc <= this.now && this.now < s.endUtc).length;
     },
     canInstall(): boolean {
       return installState.event !== null;
@@ -322,6 +339,25 @@ export default defineComponent({
 
 .nav-item.active {
   color: var(--accent);
+}
+
+.live-btn {
+  position: relative;
+}
+
+.live-btn.on {
+  color: var(--live);
+}
+
+.live-dot-badge {
+  position: absolute;
+  top: 9px;
+  right: 9px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--live);
+  box-shadow: 0 0 0 2px var(--bg-header);
 }
 
 .menu-list {

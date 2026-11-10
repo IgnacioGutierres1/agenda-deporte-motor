@@ -46,6 +46,12 @@ export const routes: RouteRecordRaw[] = [
     component: () => import('./views/SearchView.vue'),
     meta: { title: 'Buscar', root: true },
   },
+  {
+    path: '/en-vivo',
+    name: 'en-vivo',
+    component: () => import('./views/LiveView.vue'),
+    meta: { title: 'En vivo' },
+  },
   { path: '/exportar', name: 'exportar', component: () => import('./views/ExportView.vue'), meta: { title: 'Exportar' } },
   { path: '/auditoria', name: 'auditoria', component: () => import('./views/AuditView.vue'), meta: { title: 'Auditoría' } },
   { path: '/ajustes', name: 'ajustes', component: () => import('./views/SettingsView.vue'), meta: { title: 'Ajustes' } },
