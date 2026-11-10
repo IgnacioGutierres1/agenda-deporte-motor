@@ -1,0 +1,76 @@
+{
+ "classification": [
+  {
+   "position": 1,
+   "rider": {
+    "full_name": "Marc Marquez",
+    "number": 93
+   },
+   "team": {
+    "name": "Ducati Lenovo Team"
+   },
+   "constructor": {
+    "name": "Ducati"
+   },
+   "best_lap": {
+    "number": 15,
+    "time": "01:52.278"
+   },
+   "total_laps": 16,
+   "top_speed": 354,
+   "gap": {
+    "first": "0.000",
+    "prev": "0.000"
+   },
+   "status": "INSTND"
+  },
+  {
+   "position": 2,
+   "rider": {
+    "full_name": "Marco Bezzecchi",
+    "number": 72
+   },
+   "team": {
+    "name": "Aprilia Racing"
+   },
+   "constructor": {
+    "name": "Aprilia"
+   },
+   "best_lap": {
+    "number": 16,
+    "time": "01:52.388"
+   },
+   "total_laps": 16,
+   "top_speed": 352.9,
+   "gap": {
+    "first": "0.110",
+    "prev": "0.110"
+   },
+   "status": "INSTND"
+  },
+  {
+   "position": 18,
+   "rider": {
+    "full_name": "Jake Dixon",
+    "number": 96
+   },
+   "team": {
+    "name": "Honda HRC Castrol"
+   },
+   "constructor": {
+    "name": "Honda"
+   },
+   "best_lap": {
+    "number": 13,
+    "time": "01:55.426"
+   },
+   "total_laps": 13,
+   "top_speed": 345,
+   "gap": {
+    "first": "3.148",
+    "prev": "1.183"
+   },
+   "status": "INSTND"
+  }
+ ]
+}

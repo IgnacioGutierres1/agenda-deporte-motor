@@ -1,0 +1,70 @@
+{
+ "classification": [
+  {
+   "position": 1,
+   "rider": {
+    "full_name": "Marco Bezzecchi",
+    "number": 72
+   },
+   "team": {
+    "name": "Aprilia Racing"
+   },
+   "constructor": {
+    "name": "Aprilia"
+   },
+   "average_speed": 171.1,
+   "gap": {
+    "first": "0.000",
+    "lap": "0"
+   },
+   "total_laps": 22,
+   "time": "41:29.173",
+   "points": 25,
+   "status": "INSTND"
+  },
+  {
+   "position": 2,
+   "rider": {
+    "full_name": "Marc Marquez",
+    "number": 93
+   },
+   "team": {
+    "name": "Ducati Lenovo Team"
+   },
+   "constructor": {
+    "name": "Ducati"
+   },
+   "average_speed": 170.9,
+   "gap": {
+    "first": "3.083",
+    "lap": "0"
+   },
+   "total_laps": 22,
+   "time": "41:32.256",
+   "points": 20,
+   "status": "INSTND"
+  },
+  {
+   "position": null,
+   "rider": {
+    "full_name": "Diogo Moreira",
+    "number": 11
+   },
+   "team": {
+    "name": "Pro Honda LCR"
+   },
+   "constructor": {
+    "name": "Honda"
+   },
+   "average_speed": 167.2,
+   "gap": {
+    "first": "0.000",
+    "lap": "7"
+   },
+   "total_laps": 15,
+   "time": "28:56.916",
+   "points": 0,
+   "status": "OUTSTND"
+  }
+ ]
+}
