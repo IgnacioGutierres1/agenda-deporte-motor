@@ -115,28 +115,6 @@ export default defineComponent({
 </script>
 
 <style>
-.search-box {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  margin: 0.5rem 0 0.75rem;
-  padding: 0 0.85rem;
-  min-height: 42px;
-  border-radius: 12px;
-  background: var(--bg-elev);
-  color: var(--text-dim);
-}
-
-.search-input {
-  flex: 1;
-  min-height: 40px;
-  border: none;
-  background: transparent;
-  color: var(--text);
-  font: inherit;
-  outline: none;
-}
-
 .section-head {
   display: flex;
   align-items: center;

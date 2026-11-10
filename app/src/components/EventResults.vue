@@ -44,7 +44,8 @@
                   <div class="name-cell">
                     <span v-if="row.number" class="car-number">{{ row.number }}</span>
                     <span class="grow">
-                      {{ row.driver }}
+                      <RouterLink v-if="isSingle(row.driver)" :to="`/piloto/${idOf(row.driver)}`" class="driver-link">{{ row.driver }}</RouterLink>
+                      <template v-else>{{ row.driver }}</template>
                       <span v-if="row.team || row.vehicle" class="small dim team">{{ row.team ?? row.vehicle }}</span>
                     </span>
                   </div>
@@ -65,7 +66,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
 import { mapActions, mapState } from 'pinia';
-import type { EventResultsFile, MotorEvent, SessionResult } from '@dm/shared';
+import { driverId, isSingleDriverName, type EventResultsFile, type MotorEvent, type SessionResult } from '@dm/shared';
 import SourceLink from './SourceLink.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
@@ -121,6 +122,8 @@ export default defineComponent({
       if (!this.hasAnyResult) return;
       return this.loadResults(this.event.seriesId, this.event.id, force);
     },
+    isSingle: isSingleDriverName,
+    idOf: driverId,
     sessionName(sessionId: string): string {
       return this.eventSessions.find((s) => s.id === sessionId)?.name ?? 'Sesión';
     },

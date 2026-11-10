@@ -14,6 +14,13 @@ export function parseRepo(value: string | undefined | null): RepoRef | null {
 
 export type ThemeChoice = 'dark' | 'light' | 'system';
 
+/** Piloto seguido: se guarda con sus categorías para armar la agenda sin descargar el índice de pilotos. */
+export interface FollowedDriver {
+  id: string;
+  name: string;
+  seriesIds: string[];
+}
+
 /** Preferencias de este dispositivo (se guardan en localStorage desde main.ts). */
 export const useSettingsStore = defineStore('settings', {
   state: () => ({
@@ -23,6 +30,8 @@ export const useSettingsStore = defineStore('settings', {
     hiddenSeries: [] as string[],
     /** Categorías que sigue el usuario (aparecen primero en la agenda y en Siguiendo), en orden. */
     followedSeries: [] as string[],
+    /** Pilotos que sigue el usuario, en orden. */
+    followedDrivers: [] as FollowedDriver[],
     /** Tema visual: oscuro por defecto, como FotMob. */
     theme: 'dark' as ThemeChoice,
     /** Client ID OAuth de Google; vacío = el de VITE_GOOGLE_CLIENT_ID. */
@@ -54,6 +63,26 @@ export const useSettingsStore = defineStore('settings', {
       this.followedSeries = this.isFollowed(seriesId)
         ? this.followedSeries.filter((id) => id !== seriesId)
         : [...this.followedSeries, seriesId];
+    },
+    isDriverFollowed(driverId: string): boolean {
+      return this.followedDrivers.some((d) => d.id === driverId);
+    },
+    toggleFollowDriver(driver: FollowedDriver) {
+      this.followedDrivers = this.isDriverFollowed(driver.id)
+        ? this.followedDrivers.filter((d) => d.id !== driver.id)
+        : [...this.followedDrivers, { id: driver.id, name: driver.name, seriesIds: [...driver.seriesIds] }];
+    },
+    /** Actualiza nombre y categorías de los pilotos seguidos con el índice publicado. */
+    syncFollowedDrivers(lookup: (id: string) => FollowedDriver | undefined) {
+      let changed = false;
+      const next = this.followedDrivers.map((d) => {
+        const fresh = lookup(d.id);
+        if (!fresh) return d;
+        if (fresh.name === d.name && fresh.seriesIds.join() === d.seriesIds.join()) return d;
+        changed = true;
+        return { id: d.id, name: fresh.name, seriesIds: [...fresh.seriesIds] };
+      });
+      if (changed) this.followedDrivers = next;
     },
     isHidden(seriesId: string): boolean {
       return this.hiddenSeries.includes(seriesId);

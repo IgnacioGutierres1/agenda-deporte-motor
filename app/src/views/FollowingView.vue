@@ -52,24 +52,75 @@
         </div>
       </template>
 
-      <div v-else-if="tab === 'pilotos'" class="card empty center">
-        <p><strong>Seguimiento de pilotos</strong></p>
-        <p class="small dim">Próximamente: vas a poder seguir pilotos y ver sus resultados y su posición en el campeonato.</p>
-      </div>
+      <template v-else-if="tab === 'pilotos'">
+        <label class="search-box">
+          <AppIcon name="search" :size="18" />
+          <input v-model="driverQuery" type="search" class="search-input" placeholder="Buscar pilotos" aria-label="Buscar pilotos" />
+        </label>
+
+        <div v-if="driversStatus === 'error'" class="notice notice-error">
+          No se pudieron cargar los pilotos ({{ driversError }}).
+          <button type="button" class="btn btn-small" @click="loadDrivers(true)">Reintentar</button>
+        </div>
+
+        <template v-if="driverQuery.trim().length >= 2">
+          <p v-if="driversStatus === 'loading'" class="dim">Cargando pilotos…</p>
+          <ul v-else-if="driverMatches.length" class="list-card">
+            <li v-for="d in driverMatches" :key="d.id" class="series-row">
+              <RouterLink :to="`/piloto/${d.id}`" class="list-row grow">
+                <DriverAvatar :name="d.name" :color="driverColor(d)" :size="34" />
+                <span class="grow">
+                  {{ d.name }}
+                  <span class="block small dim">{{ entrySummary(d) }}</span>
+                </span>
+              </RouterLink>
+              <FollowButton :driver="refOf(d)" :name="d.name" compact />
+            </li>
+          </ul>
+          <p v-else class="card empty dim">No hay pilotos que coincidan con "{{ driverQuery }}".</p>
+        </template>
+
+        <template v-else>
+          <div v-if="!followedDrivers.length" class="card empty center">
+            <p>Todavía no seguís ningún piloto.</p>
+            <p class="small dim">Buscalo arriba o tocá su nombre en una tabla de campeonato o de resultados.</p>
+          </div>
+          <div v-else class="follow-grid">
+            <RouterLink
+              v-for="c in driverCards"
+              :key="c.id"
+              :to="`/piloto/${c.id}`"
+              class="follow-card"
+              :style="{ '--card-color': c.color }"
+            >
+              <DriverAvatar :name="c.name" color="rgba(255,255,255,0.18)" :size="38" />
+              <span class="follow-card-name">{{ c.name }}</span>
+              <span class="follow-card-next">
+                <span v-if="c.standing" class="follow-card-event">{{ c.standing }}</span>
+                <span>{{ c.next }}</span>
+              </span>
+            </RouterLink>
+          </div>
+        </template>
+      </template>
     </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState } from 'pinia';
+import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import type { Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import DriverAvatar from '../components/DriverAvatar.vue';
+import FollowButton from '../components/FollowButton.vue';
 import DataState from '../components/DataState.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
-import { useSettingsStore } from '../stores/settings.ts';
+import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
+import { useDriversStore } from '../stores/drivers.ts';
+import type { Driver } from '@dm/shared';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, type NextEvent } from '../lib/agenda.ts';
 
@@ -83,10 +134,11 @@ interface FollowCard {
 /** Lo que sigue el usuario (como "Siguiendo" en FotMob): tarjetas con la próxima fecha. */
 export default defineComponent({
   name: 'FollowingView',
-  components: { AppIcon, DataState, SeriesCrest },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, SeriesCrest },
   data() {
     return {
-      tab: 'categorias' as 'categorias' | 'pilotos',
+      tab: (this.$route.query.tab === 'pilotos' ? 'pilotos' : 'categorias') as 'categorias' | 'pilotos',
+      driverQuery: '',
       tabs: [
         { id: 'categorias' as const, label: 'Categorías' },
         { id: 'pilotos' as const, label: 'Pilotos' },
@@ -95,7 +147,26 @@ export default defineComponent({
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'hasData', 'now', 'seriesById']),
-    ...mapState(useSettingsStore, ['followedSeries', 'timeZone']),
+    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'timeZone']),
+    ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId' }),
+    driverMatches(): Driver[] {
+      return useDriversStore().search(this.driverQuery);
+    },
+    driverCards(): Array<{ id: string; name: string; color: string; standing: string; next: string }> {
+      return this.followedDrivers.map((f) => {
+        const d = this.driversById.get(f.id);
+        const main = d?.entries[0];
+        const series = this.seriesById.get(main?.seriesId ?? f.seriesIds[0] ?? '');
+        const standing = main ? `P${main.pos} · ${series?.shortName ?? main.seriesId}${main.table ? ' ' + main.table : ''} · ${main.points.toLocaleString('es-AR')} pts` : '';
+        // Próxima carrera entre todas sus categorías.
+        let next: NextEvent | null = null;
+        for (const id of f.seriesIds) {
+          const n = nextEventOf(this.schedule, id, this.now);
+          if (n && (!next || n.event.dateStart < next.event.dateStart)) next = n;
+        }
+        return { id: f.id, name: d?.name ?? f.name, color: seriesColor(series), standing, next: next ? `${next.event.name} · ${this.whenText(next)}` : 'Sin carreras próximas' };
+      });
+    },
     cards(): FollowCard[] {
       const out: FollowCard[] = [];
       for (const id of this.followedSeries) {
@@ -107,7 +178,28 @@ export default defineComponent({
       return out;
     },
   },
+  watch: {
+    tab: {
+      immediate: true,
+      handler(tab: string) {
+        if (tab === 'pilotos') void this.loadDrivers();
+        void this.$router.replace({ query: tab === 'pilotos' ? { tab } : {} });
+      },
+    },
+  },
   methods: {
+    ...mapActions(useDriversStore, { loadDrivers: 'load' }),
+    refOf(d: Driver): FollowedDriver {
+      return { id: d.id, name: d.name, seriesIds: [...new Set(d.entries.map((e) => e.seriesId))] };
+    },
+    driverColor(d: Driver): string {
+      return seriesColor(this.seriesById.get(d.entries[0]?.seriesId ?? ''));
+    },
+    entrySummary(d: Driver): string {
+      return d.entries
+        .map((e) => `${this.seriesById.get(e.seriesId)?.shortName ?? e.seriesId}${e.table ? ' ' + e.table : ''} P${e.pos}`)
+        .join(' · ');
+    },
     whenText(next: NextEvent | null): string {
       if (!next) return '';
       if (next.live) return 'En vivo';

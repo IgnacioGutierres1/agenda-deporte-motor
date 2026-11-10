@@ -23,6 +23,12 @@ export const routes: RouteRecordRaw[] = [
     meta: { title: 'Evento' },
   },
   {
+    path: '/piloto/:driverId',
+    name: 'piloto',
+    component: () => import('./views/DriverView.vue'),
+    meta: { title: 'Piloto' },
+  },
+  {
     path: '/siguiendo',
     name: 'siguiendo',
     component: () => import('./views/FollowingView.vue'),

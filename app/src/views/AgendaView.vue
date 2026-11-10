@@ -33,9 +33,9 @@
         <!-- Siguiendo -->
         <section class="following-block">
           <h2 class="block-title">Siguiendo</h2>
-          <template v-if="followedSeries.length === 0">
+          <template v-if="followedIds.length === 0">
             <p class="center small dim">
-              Tocá ★ en una categoría para verla primero acá.
+              Tocá ★ en una categoría o en un piloto para verlo primero acá.
               <RouterLink to="/categorias">Elegir categorías</RouterLink>
             </p>
           </template>
@@ -134,7 +134,11 @@ export default defineComponent({
   },
   computed: {
     ...mapState(useScheduleStore, ['hasData', 'strip', 'selectedDay', 'today', 'agendaCards', 'agendaPending', 'schedule', 'now', 'seriesById']),
-    ...mapState(useSettingsStore, ['followedSeries', 'timeZone']),
+    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'timeZone']),
+    /** Categorías seguidas + las de los pilotos seguidos. */
+    followedIds(): string[] {
+      return [...new Set([...this.followedSeries, ...this.followedDrivers.flatMap((d) => d.seriesIds)])];
+    },
     /** Días de la franja (el "Finde" va fijo a la izquierda). */
     days() {
       return this.strip.filter((d) => d.value !== WEEKEND);
@@ -146,10 +150,10 @@ export default defineComponent({
       return this.selectedDay === this.today;
     },
     cardsSplit(): { followed: AgendaCard[]; rest: AgendaCard[] } {
-      return splitFollowed(this.agendaCards, this.followedSeries);
+      return splitFollowed(this.agendaCards, this.followedIds);
     },
     pendingSplit(): { followed: PendingItem[]; rest: PendingItem[] } {
-      return splitFollowed(this.agendaPending, this.followedSeries);
+      return splitFollowed(this.agendaPending, this.followedIds);
     },
     followedCards(): AgendaCard[] {
       return this.cardsSplit.followed;
@@ -166,7 +170,7 @@ export default defineComponent({
     /** Próximo evento de las categorías seguidas (cuando hoy no corren). */
     nextFollowed(): { series: Series; event: MotorEvent; startUtc?: string } | null {
       let best: { series: Series; event: MotorEvent; startUtc?: string } | null = null;
-      for (const id of this.followedSeries) {
+      for (const id of this.followedIds) {
         const series = this.seriesById.get(id);
         const next = series ? nextEventOf(this.schedule, id, this.now) : null;
         if (!series || !next) continue;
