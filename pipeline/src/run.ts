@@ -11,6 +11,7 @@
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import {
+  driversFileSchema,
   scheduleFileSchema,
   statusFileSchema,
   type ScheduleFile,
@@ -23,6 +24,7 @@ import { genericAdapter } from './generic/index.ts';
 import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { buildFeed } from './core/feed.ts';
+import { buildDriversFromData } from './core/drivers.ts';
 import { createLogger } from './core/log.ts';
 import { mergeRun, type SeriesOutcome } from './core/merge.ts';
 import { CACHE_DIR, DATA_DIR } from './core/paths.ts';
@@ -152,9 +154,14 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   scheduleFileSchema.parse(schedule);
   statusFileSchema.parse(status);
 
+  // Índice de pilotos (tablas de pilotos + resultados de carreras ya publicados).
+  const drivers = await buildDriversFromData(dataDir, config.series, schedule.events, schedule.sessions, nowIso);
+  driversFileSchema.parse(drivers);
+
   if (!opts.dryRun) {
     await writeJson(path.join(dataDir, 'schedule.json'), schedule);
     await writeJson(path.join(dataDir, 'status.json'), status);
+    await writeJson(path.join(dataDir, 'drivers.json'), drivers);
     await writeJson(attemptsFile, attempts);
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
@@ -167,7 +174,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     return acc;
   }, {});
   log.info(
-    `Listo: ${schedule.events.length} eventos, ${schedule.sessions.length} sesiones. Estados: ${JSON.stringify(counts)}`,
+    `Listo: ${schedule.events.length} eventos, ${schedule.sessions.length} sesiones, ${drivers.drivers.length} pilotos. Estados: ${JSON.stringify(counts)}`,
   );
   return { schedule, status };
 }

@@ -36,7 +36,10 @@
                   <div class="name-cell">
                     <span v-if="row.number" class="car-number">{{ row.number }}</span>
                     <span class="grow">
-                      {{ row.name }}
+                      <RouterLink v-if="driverLink(table.title, row.name)" :to="driverLink(table.title, row.name)" class="driver-link">
+                        {{ row.name }}
+                      </RouterLink>
+                      <template v-else>{{ row.name }}</template>
                       <span v-if="row.team" class="small dim team">{{ row.team }}</span>
                     </span>
                   </div>
@@ -56,7 +59,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
 import { mapActions, mapState } from 'pinia';
-import type { Series, StandingsFile } from '@dm/shared';
+import { driverId, isDriverTable, isSingleDriverName, type Series, type StandingsFile } from '@dm/shared';
 import SourceLink from './SourceLink.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
@@ -98,6 +101,10 @@ export default defineComponent({
     },
     hasCol(rows: object[], key: string): boolean {
       return rows.some((r) => (r as Record<string, unknown>)[key] !== undefined && (r as Record<string, unknown>)[key] !== null);
+    },
+    /** Link a la ficha del piloto (solo en tablas de pilotos y nombres de un solo piloto). */
+    driverLink(title: string, name: string): string {
+      return isDriverTable(title) && isSingleDriverName(name) ? `/piloto/${driverId(name)}` : '';
     },
     isTeams(title: string): boolean {
       return /equipo|team|marca|constructor|manufacturer|fabricante/i.test(title);
