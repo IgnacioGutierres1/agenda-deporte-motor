@@ -1,7 +1,11 @@
 /**
  * Cliente HTTP del pipeline: timeout, reintentos con espera y memoización por URL
  * dentro de una misma corrida (varias series pueden compartir la misma fuente).
+ * Si una página responde 403 (sitios que bloquean a los servidores de GitHub), se reintenta
+ * a través del proxy de Google (ver proxy.ts) y se devuelve con su URL oficial.
  */
+import { googleProxyUrl, unproxyHtml } from './proxy.ts';
+
 export interface HttpResponse<T> {
   url: string;
   status: number;
@@ -92,8 +96,24 @@ export function createHttp(opts: HttpOptions = {}): Http {
     return p;
   }
 
+  async function textWithFallback(url: string, init: RequestInit | undefined): Promise<HttpResponse<string>> {
+    try {
+      return await memoized('text', url, init, (r) => r.text());
+    } catch (err) {
+      const isGet = !init?.method || init.method.toUpperCase() === 'GET';
+      const proxied = err instanceof HttpError && err.status === 403 && isGet && !init?.body ? googleProxyUrl(url) : null;
+      if (!proxied) throw err;
+      try {
+        const res = await memoized('text', proxied, init, (r) => r.text());
+        return { ...res, url, body: unproxyHtml(res.body) };
+      } catch {
+        throw err; // se informa el 403 original, que es el que explica el problema
+      }
+    }
+  }
+
   return {
-    text: (url, init) => memoized('text', url, init, (r) => r.text()),
+    text: textWithFallback,
     json: <T>(url: string, init?: RequestInit) =>
       memoized('json', url, init, async (r) => (await r.json()) as T),
     bytes: (url, init) => memoized('bytes', url, init, async (r) => new Uint8Array(await r.arrayBuffer())),
