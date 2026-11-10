@@ -135,18 +135,6 @@ export default defineComponent({
 </script>
 
 <style>
-.session-chips {
-  display: flex;
-  gap: 0.4rem;
-  overflow-x: auto;
-  padding: 0.25rem 0 0.75rem;
-  scrollbar-width: none;
-}
-
-.session-chips::-webkit-scrollbar {
-  display: none;
-}
-
 table.data.results tr.podium td.pos {
   color: var(--accent);
   font-weight: 800;

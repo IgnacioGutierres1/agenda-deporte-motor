@@ -105,6 +105,7 @@ export default defineComponent({
       menuOpen: false,
       nav: [
         { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar'] },
+        { to: '/noticias', label: 'Noticias', icon: 'news', match: [] },
         { to: '/categorias', label: 'Categorías', icon: 'trophy', match: ['/categoria'] },
         { to: '/siguiendo', label: 'Siguiendo', icon: 'star', match: ['/piloto'] },
       ] as NavItem[],

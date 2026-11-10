@@ -45,6 +45,7 @@ const ICONS: Record<string, string[]> = {
   search: ['M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z', 'M21 21l-4.3-4.3'],
   plus: ['M12 5v14', 'M5 12h14'],
   flag: ['M5 21V4', 'M5 4h11l-2 4 2 4H5'],
+  news: ['M4 5h13v14H6a2 2 0 0 1-2-2V5z', 'M17 9h3v8a2 2 0 0 1-2 2', 'M7 9h7', 'M7 13h7', 'M7 17h4'],
   grid: ['M4 4h7v7H4z', 'M13 4h7v7h-7z', 'M4 13h7v7H4z', 'M13 13h7v7h-7z'],
 };
 

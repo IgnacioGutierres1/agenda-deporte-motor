@@ -111,6 +111,13 @@
         <!-- Tabla -->
         <StandingsPanel v-else-if="tab === 'tabla'" :series="series" />
 
+        <!-- Noticias -->
+        <NewsList
+          v-else-if="tab === 'noticias'"
+          :items="seriesNews"
+          :empty-text="`No hay noticias recientes de ${series.name}.`"
+        />
+
         <!-- Resultados -->
         <template v-else>
           <p v-if="!withResults.length" class="card empty dim">Todavía no hay resultados de {{ series.name }}.</p>
@@ -141,21 +148,27 @@ import DataState from '../components/DataState.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
+import NewsList from '../components/NewsList.vue';
+import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { formatDateRange, timeAgo } from '../lib/format.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
 
-type Tab = 'resumen' | 'calendario' | 'tabla' | 'resultados';
+type Tab = 'resumen' | 'calendario' | 'tabla' | 'resultados' | 'noticias';
 
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, DataState, FollowButton, SeriesCrest, StandingsPanel },
+  components: { AppIcon, DataState, FollowButton, NewsList, SeriesCrest, StandingsPanel },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
+    ...mapState(useNewsStore, { newsItems: 'items' }),
+    seriesNews() {
+      return this.series ? newsForSeries(this.newsItems, [this.series.id]) : [];
+    },
     series(): Series | undefined {
       return this.seriesById.get(String(this.$route.params.seriesId));
     },
@@ -174,11 +187,12 @@ export default defineComponent({
         { id: 'calendario', label: 'Calendario' },
         { id: 'tabla', label: 'Tabla' },
         { id: 'resultados', label: 'Resultados' },
+        { id: 'noticias', label: 'Noticias' },
       ];
     },
     tab(): Tab {
       const q = this.$route.query.tab;
-      return q === 'calendario' || q === 'tabla' || q === 'resultados' ? q : 'resumen';
+      return q === 'calendario' || q === 'tabla' || q === 'resultados' || q === 'noticias' ? q : 'resumen';
     },
     events(): MotorEvent[] {
       return (this.schedule?.events ?? [])
