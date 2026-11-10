@@ -48,7 +48,7 @@ import {
 } from './locate.ts';
 import { championshipKey, shiftDate } from './places.ts';
 import { findRecipe } from './recipes.ts';
-import type { CalendarEntry, RecipeContext, SessionsFound } from './types.ts';
+import type { CalendarEntry, RecipeContext, SessionsFound, StandingsFound } from './types.ts';
 
 export interface GenericDeps {
   /** Cliente de Gemini (por defecto, el compartido de la corrida, configurado por variables de entorno). */
@@ -393,6 +393,19 @@ async function genericResults(
   const ai = aiDeps(ctx, deps);
   let docs = 0;
   const nowIso = isoNow(ctx.now);
+  const standingsUrl = series.officialUrls.slice(1).find((u) => STANDINGS_RE.test(u));
+
+  // Campeonato por lectura directa (receta del sitio): primero y fuera del flujo con IA, así no depende
+  // del cupo de Gemini ni de que los resultados se hayan podido leer.
+  let standingsRead = false;
+  if (req.standingsStale && standingsUrl) {
+    const direct = await directStandings(series, standingsUrl, ctx);
+    if (direct !== undefined) {
+      standingsRead = true;
+      if (direct) out.standings = { seriesId: series.id, season: ctx.season, updatedAt: nowIso, ...direct };
+      else ctx.log.info(`Campeonato ${ctx.season} todavía no publicado (${standingsUrl})`);
+    }
+  }
 
   try {
     if (req.pendingSessions.length > 0) {
@@ -437,9 +450,8 @@ async function genericResults(
       }
     }
 
-    if (req.standingsStale && docs < MAX_RESULT_DOCS) {
-      const url = series.officialUrls.slice(1).find((u) => STANDINGS_RE.test(u));
-      const doc = url ? await tryFetch(ctx, url) : null;
+    if (req.standingsStale && !standingsRead && docs < MAX_RESULT_DOCS) {
+      const doc = standingsUrl ? await tryFetch(ctx, standingsUrl) : null;
       if (doc) {
         const tables = await aiStandings(ai, series, ctx.season, doc);
         if (tables.length > 0) {
@@ -462,6 +474,23 @@ async function genericResults(
     throw err;
   }
   return out;
+}
+
+/**
+ * Campeonato con la receta del sitio. undefined si no hay receta o no pudo leer la página (se prueba con IA);
+ * null si el sitio todavía no publica la tabla de la temporada.
+ */
+async function directStandings(series: Series, url: string, ctx: AdapterContext): Promise<StandingsFound | null | undefined> {
+  const recipe = findRecipe(url);
+  if (!recipe?.standings) return undefined;
+  try {
+    const found = await recipe.standings(url, recipeCtx(series, ctx));
+    if (found) ctx.log.info(`Campeonato: ${found.tables.map((t) => `${t.title} (${t.rows.length})`).join(', ')} (lectura directa)`);
+    return found;
+  } catch (err) {
+    ctx.log.warn(`Campeonato: lectura directa fallida (${err instanceof Error ? err.message : String(err)}); se intenta con IA`);
+    return undefined;
+  }
 }
 
 async function locateResults(series: Series, entry: CalendarEntry, ctx: AdapterContext): Promise<FetchedDocument | null> {

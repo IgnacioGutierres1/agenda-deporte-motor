@@ -1,4 +1,4 @@
-import type { Series, Source } from '@dm/shared';
+import type { Series, Source, StandingsTable } from '@dm/shared';
 import type { Http } from '../core/http.ts';
 import type { FetchedDocument } from '../extract/document.ts';
 
@@ -41,6 +41,12 @@ export interface SessionsFound {
   source: Source;
 }
 
+/** Tablas de campeonato leídas sin IA. */
+export interface StandingsFound {
+  tables: StandingsTable[];
+  source: Source;
+}
+
 export interface RecipeContext {
   season: number;
   series: Series;
@@ -54,11 +60,17 @@ export interface RecipeContext {
  */
 export interface SiteRecipe {
   name: string;
-  /** true si la receta entiende esta URL de calendario. */
+  /** true si la receta entiende esta URL oficial (calendario o posiciones). */
   match(url: string): boolean;
   /** URL a descargar para la temporada pedida (p. ej. agregar ?year=2026). */
   calendarUrl?(url: string, season: number): string;
   calendar?(doc: FetchedDocument, ctx: RecipeContext): CalendarEntry[];
   /** Sesiones por lectura directa (API oficial). null si todavía no hay cronograma publicado. */
   sessions?(entry: CalendarEntry, ctx: RecipeContext): Promise<SessionsFound | null>;
+  /**
+   * Campeonato por lectura directa a partir de la URL de posiciones de la serie (officialUrls[1..]).
+   * null si el sitio todavía no publica la tabla de la temporada pedida; lanza un error si la página
+   * no tiene el formato esperado (entonces se intenta con Gemini).
+   */
+  standings?(url: string, ctx: RecipeContext): Promise<StandingsFound | null>;
 }

@@ -3,7 +3,8 @@
  * Cada receta solo interpreta el HTML/JSON que publica el sitio oficial; lo que no resuelve
  * (cronogramas en PDF, páginas sin estructura) queda para el flujo genérico con Gemini.
  */
-import { localToUtc, toUtcIso, type Source } from '@dm/shared';
+import { localToUtc, toUtcIso, type Source, type StandingsRow, type StandingsTable } from '@dm/shared';
+import { HttpError } from '../core/http.ts';
 import type { FetchedDocument } from '../extract/document.ts';
 import {
   absoluteUrl,
@@ -72,8 +73,72 @@ export function findArray(value: unknown, pred: (item: Record<string, unknown>) 
   return null;
 }
 
+/** Busca recursivamente en un JSON el primer objeto que cumpla el predicado. */
+export function findObject(value: unknown, pred: (item: Record<string, unknown>) => boolean, depth = 0): Record<string, unknown> | null {
+  if (depth > 25 || !value || typeof value !== 'object') return null;
+  if (!Array.isArray(value) && pred(value as Record<string, unknown>)) return value as Record<string, unknown>;
+  for (const v of Array.isArray(value) ? value : Object.values(value as Record<string, unknown>)) {
+    const r = findObject(v, pred, depth + 1);
+    if (r) return r;
+  }
+  return null;
+}
+
 const str = (v: unknown): string => (typeof v === 'string' ? v : typeof v === 'number' ? String(v) : '');
 const obj = (v: unknown): Record<string, unknown> => (v && typeof v === 'object' ? (v as Record<string, unknown>) : {});
+
+// ─── Campeonatos: utilidades comunes ──────────────────────────────────────────────────────────
+
+/** Número tal como lo publican los sitios ("258.5", "258,5", "1°", "x4"). null si no hay número. */
+export function parseNumber(text: string): number | null {
+  const m = text.replace(/\s+/g, '').match(/-?\d+(?:[.,]\d+)?/);
+  return m ? Number(m[0].replace(',', '.')) : null;
+}
+
+/** Tabla HTML: textos de los encabezados y celdas (HTML crudo) de cada fila del cuerpo. */
+export function parseHtmlTable(tableHtml: string): { headers: string[]; rows: string[][] } {
+  const headers = [...tableHtml.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((m) => textOf(m[1] ?? ''));
+  const rows: string[][] = [];
+  for (const tr of tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const cells = [...(tr[1] ?? '').matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1] ?? '');
+    if (cells.length > 0) rows.push(cells);
+  }
+  return { headers, rows };
+}
+
+/** Índice de la primera columna cuyo encabezado cumple el patrón (-1 si no hay). */
+const column = (headers: string[], re: RegExp) => headers.findIndex((h) => re.test(h.trim()));
+
+/** Primera tabla de la página (sin comentarios HTML). */
+const firstTable = (html: string) => stripComments(html).match(/<table\b[\s\S]*?<\/table>/i)?.[0] ?? '';
+
+/**
+ * Controla una tabla leída: no vacía, puntos numéricos y posiciones 1, 2, 3… (se admiten empates).
+ * Lanza un error si el formato no es el esperado (el flujo genérico prueba entonces con Gemini).
+ */
+export function checkStandingsTable(table: StandingsTable): StandingsTable {
+  if (table.rows.length === 0) throw new Error(`Tabla "${table.title}" vacía`);
+  table.rows.forEach((r, i) => {
+    const prev = table.rows[i - 1];
+    const ok = i === 0 ? r.pos === 1 : r.pos === i + 1 || r.pos === prev!.pos;
+    if (!ok || !r.name || !Number.isFinite(r.points)) throw new Error(`Fila inesperada en "${table.title}": ${JSON.stringify(r)}`);
+  });
+  return table;
+}
+
+function standingsSource(url: string, title: string, ctx: RecipeContext): Source {
+  return { url, title, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) };
+}
+
+/** HTML de una página; null si no existe (404), p. ej. la tabla de una temporada que todavía no empezó. */
+async function pageOrNull(ctx: RecipeContext, url: string): Promise<string | null> {
+  try {
+    return (await ctx.http.text(url)).body;
+  } catch (err) {
+    if (err instanceof HttpError && err.status === 404) return null;
+    throw err;
+  }
+}
 
 // ─── SRO Motorsports Group (GT World Challenge, IGTC, calendario general de SRO) ───────────────
 
@@ -325,6 +390,46 @@ const apat: SiteRecipe = {
     }
     return dedupe(out).sort((a, b) => a.dateStart.localeCompare(b.dateStart));
   },
+  /**
+   * Campeonato de cada clase (https://apat.org.ar/campeonato/ranking/c2, …/c3): tabla HTML con
+   * Pos | Nro | Piloto | Equipo | Marca | Puntos. Las clases se toman de los links de la propia página.
+   * (/campeonato/posiciones/cN es otro "ranking", con otro orden: no sirve como tabla del campeonato.)
+   */
+  async standings(url, ctx) {
+    const origin = new URL(url).origin;
+    const own = url.match(/\/campeonato\/(?:ranking|posiciones)\/(c\d+)/i)?.[1]?.toLowerCase() ?? 'c2';
+    const rankingUrl = (cls: string) => `${origin}/campeonato/ranking/${cls}`;
+    const first = (await ctx.http.text(rankingUrl(own))).body;
+    const linked = [...first.matchAll(/\/campeonato\/ranking\/(c\d+)/gi)].map((m) => m[1]!.toLowerCase());
+    const classes = [...new Set([own, ...linked])].sort();
+    const tables: StandingsTable[] = [];
+    for (const cls of classes) {
+      const html = cls === own ? first : (await ctx.http.text(rankingUrl(cls))).body;
+      const { headers, rows } = parseHtmlTable(firstTable(html));
+      const [cPos, cNum, cName, cTeam, cPts] = [/^pos/i, /^(nro|n°|num)/i, /^piloto/i, /^equipo/i, /^puntos/i].map((re) =>
+        column(headers, re),
+      );
+      if (cPos! < 0 || cName! < 0 || cPts! < 0) {
+        throw new Error(`APAT ${cls}: la tabla no tiene las columnas esperadas (${headers.join(', ')})`);
+      }
+      const parsed: StandingsRow[] = rows.map((cells) => {
+        const nameCell = cells[cName!] ?? '';
+        // La celda del piloto repite el equipo en un bloque solo visible en celulares.
+        const name = textOf(nameCell.match(/<strong\b[^>]*>([\s\S]*?)<\/strong>/i)?.[1] ?? nameCell);
+        const team = cTeam! >= 0 ? textOf(cells[cTeam!] ?? '') : '';
+        const number = cNum! >= 0 ? textOf(cells[cNum!] ?? '') : '';
+        return {
+          pos: parseNumber(textOf(cells[cPos!] ?? '')) ?? 0,
+          name,
+          ...(number ? { number } : {}),
+          ...(team ? { team } : {}),
+          points: parseNumber(textOf(cells[cPts!] ?? '')) ?? NaN,
+        };
+      });
+      tables.push(checkStandingsTable({ title: `Clase ${cls.slice(1)}`, rows: parsed }));
+    }
+    return { tables, source: standingsSource(rankingUrl(own), `Campeonato Turismo Nacional ${ctx.season}`, ctx) };
+  },
 };
 
 // ─── TC2000 ───────────────────────────────────────────────────────────────────────────────────
@@ -360,6 +465,35 @@ const tc2000: SiteRecipe = {
       });
     }
     return dedupe(out);
+  },
+  /**
+   * Posiciones (https://tc2000.com.ar/estadisticas.php?accion=posiciones): pestañas PILOTOS / EQUIPOS / MARCAS;
+   * cada fila es un <ul class="puntajes"> con posición, nombre y total.
+   */
+  async standings(url, ctx) {
+    const target = /accion=posiciones/.test(url) ? url : 'https://tc2000.com.ar/estadisticas.php?accion=posiciones';
+    const html = stripComments((await ctx.http.text(target)).body);
+    const year = Number(html.match(/POSICIONES\s*(\d{4})/i)?.[1] ?? 0);
+    if (year && year !== ctx.season) return null;
+    const tabs = [...html.matchAll(/<a\b[^>]*href="[^"#]*#(tabs-\d+)"[^>]*>([\s\S]*?)<\/a>/gi)].map((m) => ({ id: m[1]!, title: textOf(m[2] ?? '') }));
+    const tables: StandingsTable[] = [];
+    for (const tab of tabs) {
+      const start = html.indexOf(`id="${tab.id}"`);
+      if (start < 0) continue;
+      const rest = html.slice(start + tab.id.length + 5);
+      const next = rest.search(/id="tabs-\d+"/);
+      const section = next >= 0 ? rest.slice(0, next) : rest;
+      const rows: StandingsRow[] = [];
+      for (const ul of section.matchAll(/<ul\b[^>]*class="puntajes"[^>]*>([\s\S]*?)<\/ul>/gi)) {
+        const item = (cls: string) => textOf(ul[1]!.match(new RegExp(`<li\\b[^>]*class="[^"]*\\b${cls}\\b[^"]*"[^>]*>([\\s\\S]*?)</li>`, 'i'))?.[1] ?? '');
+        rows.push({ pos: parseNumber(item('posicion')) ?? 0, name: item('piloto'), points: parseNumber(item('total')) ?? NaN });
+      }
+      if (rows.length === 0) continue;
+      const title = tab.title.charAt(0).toUpperCase() + tab.title.slice(1).toLowerCase();
+      tables.push(checkStandingsTable({ title, rows }));
+    }
+    if (tables.length === 0) throw new Error('TC2000: la página de posiciones no tiene tablas');
+    return { tables, source: standingsSource(target, `Posiciones TC2000 ${ctx.season}`, ctx) };
   },
 };
 
@@ -416,6 +550,42 @@ const actc: SiteRecipe = {
     // Dos eventos con el mismo título y fecha son el mismo (el sitio a veces repite fechas).
     return out.filter((e, i) => out.findIndex((x) => x.name === e.name && x.dateEnd === e.dateEnd) === i);
   },
+  /**
+   * Campeonato (https://actc.org.ar/{categoría}/campeonato): la página de Next.js trae la tabla completa en el
+   * payload RSC (initialData.championship = { name, year, drivers: [{ position, points, fullName, carNumber }] }).
+   */
+  async standings(url, ctx) {
+    const code = actcCategory(url);
+    const target = `https://actc.org.ar/${code}/campeonato`;
+    const html = (await ctx.http.text(target)).body;
+    let champ: Record<string, unknown> | null = null;
+    for (const value of extractEmbeddedJson(html)) {
+      champ = findObject(value, (o) => Array.isArray(o.drivers) && 'year' in o);
+      if (champ) break;
+    }
+    if (!champ) throw new Error(`ACTC ${code}: la página no trae los datos del campeonato`);
+    if (Number(champ.year) !== ctx.season) return null;
+    // En el payload RSC los campos sin valor llegan como "$undefined".
+    const num = (v: unknown) => (typeof v === 'number' ? v : typeof v === 'string' && /^\s*-?\d/.test(v) ? Number(v) : NaN);
+    const rows: StandingsRow[] = (champ.drivers as unknown[])
+      .map(obj)
+      .map((d) => {
+        const wins = num(d.championshipEventWins);
+        const number = str(d.carNumber).trim();
+        const team = str(d.team).trim();
+        return {
+          pos: num(d.position),
+          name: (str(d.fullName) || `${str(d.givenName)} ${str(d.surname)}`).replace(/\s+/g, ' ').trim(),
+          ...(number ? { number } : {}),
+          ...(team && team !== '$undefined' ? { team } : {}),
+          points: num(d.points),
+          ...(Number.isInteger(wins) ? { wins } : {}),
+        };
+      })
+      .sort((a, b) => a.pos - b.pos);
+    const table = checkStandingsTable({ title: 'Pilotos', rows });
+    return { tables: [table], source: standingsSource(target, `Campeonato ${str(champ.name) || code.toUpperCase()} ${ctx.season}`, ctx) };
+  },
   async sessions(entry, ctx) {
     const code = entry.meta?.code ?? actcCategory(ctx.series.officialUrls[0] ?? '');
     const raceDate = entry.meta?.raceDate ?? entry.dateEnd;
@@ -467,6 +637,52 @@ const actc: SiteRecipe = {
       fetchedAt: isoNow(ctx.now),
     };
     return { sessions, source };
+  },
+};
+
+// ─── APTP (Turismo Pista) ─────────────────────────────────────────────────────────────────────
+
+/**
+ * Turismo Pista publica una página de campeonato por clase y temporada
+ * (https://aptpweb.com.ar/campeonato-clase-1-2026/): tabla P | N | PILOTO | AUTO | PTS | VICTORIAS.
+ * El calendario sale de imágenes (flujo genérico), así que esta receta solo lee el campeonato.
+ */
+const aptp: SiteRecipe = {
+  name: 'aptp',
+  match: (url) => host(url) === 'aptpweb.com.ar',
+  async standings(url, ctx) {
+    const origin = new URL(url).origin;
+    const own = url.match(/campeonato-clase-(\d+)/i)?.[1] ?? '1';
+    const pageUrl = (n: string) => `${origin}/campeonato-clase-${n}-${ctx.season}/`;
+    const first = await pageOrNull(ctx, pageUrl(own));
+    if (first === null) return null; // la temporada todavía no tiene tabla publicada
+    const linked = [...first.matchAll(new RegExp(`campeonato-clase-(\\d+)-${ctx.season}\\b`, 'gi'))].map((m) => m[1]!);
+    const classes = [...new Set([own, ...linked])].sort((a, b) => Number(a) - Number(b));
+    const tables: StandingsTable[] = [];
+    for (const n of classes) {
+      const html = n === own ? first : await pageOrNull(ctx, pageUrl(n));
+      if (html === null) continue;
+      const { headers, rows } = parseHtmlTable(firstTable(html));
+      const [cPos, cNum, cName, cPts, cWins] = [/^p$/i, /^n$/i, /^piloto/i, /^(pts|puntos)/i, /^victorias/i].map((re) =>
+        column(headers, re),
+      );
+      if (cPos! < 0 || cName! < 0 || cPts! < 0) {
+        throw new Error(`APTP clase ${n}: la tabla no tiene las columnas esperadas (${headers.join(', ')})`);
+      }
+      const parsed: StandingsRow[] = rows.map((cells) => {
+        const number = cNum! >= 0 ? textOf(cells[cNum!] ?? '') : '';
+        return {
+          pos: parseNumber(textOf(cells[cPos!] ?? '')) ?? 0,
+          name: textOf(cells[cName!] ?? ''),
+          ...(number ? { number } : {}),
+          points: parseNumber(textOf(cells[cPts!] ?? '')) ?? NaN,
+          // La columna muestra una copa con "x4"; vacía = sin victorias.
+          ...(cWins! >= 0 ? { wins: parseNumber(textOf(cells[cWins!] ?? '')) ?? 0 } : {}),
+        };
+      });
+      tables.push(checkStandingsTable({ title: `Clase ${n}`, rows: parsed }));
+    }
+    return { tables, source: standingsSource(pageUrl(own), `Campeonato Turismo Pista ${ctx.season}`, ctx) };
   },
 };
 
@@ -738,7 +954,7 @@ function isoNow(now: Date): string {
   return now.toISOString().replace(/\.\d{3}Z$/, 'Z');
 }
 
-export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, dtm, f1academy, gtopen, fia, cdaaca];
+export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca];
 
 export function findRecipe(url: string): SiteRecipe | undefined {
   return RECIPES.find((r) => r.match(url));
