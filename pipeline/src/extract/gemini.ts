@@ -230,8 +230,9 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
       try {
         return await call(m, body);
       } catch (err) {
-        // 404: modelo retirado o no disponible para esta clave; se prueba el siguiente.
-        const skip = err instanceof GeminiApiError && (err.dailyQuota || err.status === 404);
+        // Cupo diario agotado, modelo retirado (404) o saturado aun después de los reintentos (5xx):
+        // se prueba el siguiente modelo y este no se vuelve a usar en la corrida.
+        const skip = err instanceof GeminiApiError && (err.dailyQuota || err.status === 404 || err.status >= 500);
         if (!skip) throw err;
         exhausted.add(m);
         calls--; // el pedido no se hizo: no cuenta para el tope por corrida
