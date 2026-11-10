@@ -29,7 +29,8 @@
       </template>
 
       <p class="small dim center">
-        Tablas en vivo cuando el cronometraje oficial las publica abiertas (NASCAR y categorías con Speedhive); para el
+        Tabla en vivo cuando el cronometraje oficial la publica abierta (NASCAR); en TC2000, Top Race, TN y Turismo Pista,
+        la última sesión publicada por el cronometrador. Para el
         resto, el link al cronometraje oficial.
       </p>
     </template>

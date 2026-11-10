@@ -118,15 +118,3 @@ export function parseSubscribeBody(body: unknown, id: string, nowIso: string): S
     updatedAt: nowIso,
   };
 }
-
-/** Upstreams que el proxy de tiempos en vivo puede consultar (solo GET, solo estos prefijos). */
-export function isAllowedUpstream(url: string, allowlist: readonly string[]): boolean {
-  let u: URL;
-  try {
-    u = new URL(url);
-  } catch {
-    return false;
-  }
-  if (u.protocol !== 'https:') return false;
-  return allowlist.some((prefix) => url.startsWith(prefix));
-}

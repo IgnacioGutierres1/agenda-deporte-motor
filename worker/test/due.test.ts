@@ -1,6 +1,7 @@
 import { describe, expect, it } from 'vitest';
 import type { ScheduleFile, Source } from '@dm/shared';
-import { dueNotifications, isAllowedUpstream, parseSubscribeBody, windowStart, type SubscriberRecord } from '../src/due.ts';
+import { isProxyAllowed } from '@dm/shared/live-sources';
+import { dueNotifications, parseSubscribeBody, windowStart, type SubscriberRecord } from '../src/due.ts';
 
 const source: Source = { url: 'https://example.org', title: 'x', kind: 'html', method: 'directo', fetchedAt: '2026-11-10T00:00:00Z' };
 
@@ -68,11 +69,11 @@ describe('avisos', () => {
     expect(parseSubscribeBody({ subscription: { endpoint: 'https://x.org', keys: { p256dh: 'p', auth: 'a' } }, leadMinutes: 7 }, 'x', '')).toMatchObject({ leadMinutes: 30 });
   });
 
-  it('el proxy solo acepta fuentes de la lista', () => {
-    const list = ['https://api.motogp.pulselive.com/motogp/v1/timing-gateway/'];
-    expect(isAllowedUpstream('https://api.motogp.pulselive.com/motogp/v1/timing-gateway/livetiming-lite', list)).toBe(true);
-    expect(isAllowedUpstream('https://api.motogp.pulselive.com.evil.org/x', list)).toBe(false);
-    expect(isAllowedUpstream('https://example.org/', list)).toBe(false);
-    expect(isAllowedUpstream('no es url', list)).toBe(false);
+  it('el proxy solo acepta las direcciones exactas de las fuentes de tiempos en vivo', () => {
+    expect(isProxyAllowed('https://api.motogp.pulselive.com/motogp/v1/timing-gateway/livetiming-lite')).toBe(true);
+    expect(isProxyAllowed('https://eventresults-api.speedhive.com/api/v0.2.3/eventresults/sessions/123/classification')).toBe(true);
+    expect(isProxyAllowed('https://eventresults-api.speedhive.com/api/v0.2.3/eventresults/organizations/1/events?count=5')).toBe(false);
+    expect(isProxyAllowed('https://api.motogp.pulselive.com.evil.org/x')).toBe(false);
+    expect(isProxyAllowed('https://example.org/')).toBe(false);
   });
 });

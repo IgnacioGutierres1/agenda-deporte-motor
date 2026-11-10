@@ -10,8 +10,8 @@
  */
 import { buildPushHTTPRequest } from '@pushforge/builder';
 import type { ScheduleFile } from '@dm/shared';
-import { PROXY_ALLOWLIST } from './allowlist.ts';
-import { dueNotifications, isAllowedUpstream, parseSubscribeBody, windowStart, type Notification, type SubscriberRecord } from './due.ts';
+import { isProxyAllowed } from '@dm/shared/live-sources';
+import { dueNotifications, parseSubscribeBody, windowStart, type Notification, type SubscriberRecord } from './due.ts';
 
 export interface Env {
   SUBS: KVNamespace;
@@ -124,15 +124,17 @@ async function handleApi(request: Request, env: Env, url: URL): Promise<Response
 
   if (url.pathname === '/api/proxy' && request.method === 'GET') {
     const target = url.searchParams.get('url') ?? '';
-    if (!isAllowedUpstream(target, PROXY_ALLOWLIST)) return json({ error: 'Fuente no permitida' }, 403, cors);
+    if (!isProxyAllowed(target)) return json({ error: 'Fuente no permitida' }, 403, cors);
+    // Speedhive publica resultados al terminar cada sesión: alcanza con 60 s de caché.
+    const ttl = target.includes('speedhive.com') ? 60 : 5;
     // Caché corta en el borde de Cloudflare: muchos usuarios mirando la misma carrera = 1 pedido a la fuente.
     const upstream = await fetch(target, {
       headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; AgendaDeporteMotor/1.0; tiempos en vivo)' },
-      cf: { cacheTtl: 5, cacheEverything: true },
+      cf: { cacheTtl: ttl, cacheEverything: true },
     });
     const headers = new Headers(cors);
     headers.set('Content-Type', upstream.headers.get('Content-Type') ?? 'application/json');
-    headers.set('Cache-Control', 'public, max-age=5');
+    headers.set('Cache-Control', `public, max-age=${ttl}`);
     return new Response(upstream.body, { status: upstream.status, headers });
   }
 
