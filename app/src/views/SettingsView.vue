@@ -143,7 +143,7 @@
     <section class="card">
       <h2>Suscribirse al calendario</h2>
       <p class="small">
-        Con la suscripción, tu calendario se actualiza solo con la grilla (próximos 60 días, todas las categorías activas).
+        Con la suscripción, tu calendario se actualiza solo con la agenda (próximos 60 días, todas las categorías activas).
       </p>
       <div class="copy-row">
         <code>{{ webcal }}</code>
@@ -427,7 +427,7 @@ export default defineComponent({
       return this.repoChange((c) => pinDiscovered(c, s.id, s.name), `"${s.name}" quedó fijada como categoría permanente.`);
     },
     hide(s: Series) {
-      if (!window.confirm(`¿Ocultar "${s.name}"? No va a volver a aparecer en la grilla de nadie.`)) return;
+      if (!window.confirm(`¿Ocultar "${s.name}"? No va a volver a aparecer en la agenda de nadie.`)) return;
       return this.repoChange((c) => hideDiscovered(c, s.id, s.name), `"${s.name}" oculta.`);
     },
     unhide(id: string) {
