@@ -127,7 +127,7 @@ async function handleApi(request: Request, env: Env, url: URL): Promise<Response
     if (!isAllowedUpstream(target, PROXY_ALLOWLIST)) return json({ error: 'Fuente no permitida' }, 403, cors);
     // Caché corta en el borde de Cloudflare: muchos usuarios mirando la misma carrera = 1 pedido a la fuente.
     const upstream = await fetch(target, {
-      headers: { Accept: 'application/json', 'User-Agent': 'AgendaDeporteMotor/1.0 (+tiempos en vivo)' },
+      headers: { Accept: 'application/json', 'User-Agent': 'Mozilla/5.0 (compatible; AgendaDeporteMotor/1.0; tiempos en vivo)' },
       cf: { cacheTtl: 5, cacheEverything: true },
     });
     const headers = new Headers(cors);

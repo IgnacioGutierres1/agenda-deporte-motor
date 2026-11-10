@@ -3,13 +3,16 @@
   "name": "agenda-deporte-motor",
   "main": "src/index.ts",
   "compatibility_date": "2024-12-01",
+  "compatibility_flags": ["nodejs_compat"],
+  "workers_dev": true,
+  "preview_urls": false,
   "triggers": {
     // Cada 5 minutos: avisos de sesiones que empiezan pronto.
     "crons": ["*/5 * * * *"]
   },
   "kv_namespaces": [
-    // El id se completa al crear el namespace: npx wrangler kv namespace create SUBS
-    { "binding": "SUBS", "id": "REEMPLAZAR_CON_EL_ID_DEL_NAMESPACE" }
+    // Suscripciones de avisos (creado con: npx wrangler kv namespace create SUBS)
+    { "binding": "SUBS", "id": "f1367e809679461aa16408a434a00bec" }
   ],
   "vars": {
     // Datos publicados por el pipeline (GitHub Pages).
