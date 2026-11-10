@@ -1,0 +1,370 @@
+{
+ "weekend_race": [
+  {
+   "race_id": 5596,
+   "series_id": 1,
+   "race_season": 2026,
+   "race_name": "DAYTONA 500",
+   "race_type_id": 1,
+   "track_id": 105,
+   "track_name": "Daytona International Speedway",
+   "race_date": "2026-02-15T14:30:00",
+   "schedule": [
+    {
+     "event_name": "Random Drawing (Qualifying Lineup)",
+     "notes": "Virtual",
+     "start_time_utc": "2026-02-10T21:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Hauler Showcase",
+     "notes": "One Daytona",
+     "start_time_utc": "2026-02-10T21:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Driver / Crew Chief Meeting",
+     "notes": "Sent Electronically",
+     "start_time_utc": "2026-02-10T22:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Haulers Enter",
+     "notes": "Equipment Unloading",
+     "start_time_utc": "2026-02-10T23:15:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-02-11T11:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Practice 1",
+     "notes": " ",
+     "start_time_utc": "2026-02-11T15:00:00",
+     "run_type": 1
+    },
+    {
+     "event_name": "Media Day",
+     "notes": "DAYTONA 500 Club",
+     "start_time_utc": "2026-02-11T17:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Qualifying (Impound)",
+     "notes": " ",
+     "start_time_utc": "2026-02-12T01:15:00",
+     "run_type": 2
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-02-12T21:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-02-13T15:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Mandatory Spotters Meeting ",
+     "notes": "The Drivers Meeting Room",
+     "start_time_utc": "2026-02-13T15:30:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Practice 2",
+     "notes": " ",
+     "start_time_utc": "2026-02-13T22:35:00",
+     "run_type": 1
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-02-14T17:30:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Practice 3",
+     "notes": " ",
+     "start_time_utc": "2026-02-14T20:00:00",
+     "run_type": 1
+    },
+    {
+     "event_name": "Team Access To Haulers Permitted",
+     "notes": "",
+     "start_time_utc": "2026-02-15T11:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-02-15T11:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Garage & Pit Pass Holder - Garage Access Permitted",
+     "notes": "",
+     "start_time_utc": "2026-02-15T11:30:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Grid Access Open to Properly Credentialed Guests (Until End of Anthem)",
+     "notes": "Pit Road",
+     "start_time_utc": "2026-02-15T17:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "The Drivers Meeting",
+     "notes": "The Drivers Meeting Room",
+     "start_time_utc": "2026-02-15T17:40:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Driver Introductions",
+     "notes": " ",
+     "start_time_utc": "2026-02-15T18:15:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Race",
+     "notes": "Stages 65/130/200 Laps = 500 Miles",
+     "start_time_utc": "2026-02-15T18:30:00",
+     "run_type": 3
+    }
+   ],
+   "total_race_time": "3:23:56",
+   "results": [
+    {
+     "finishing_position": 0,
+     "car_number": "62",
+     "driver_fullname": "Anthony Alfredo",
+     "driver_id": 4301,
+     "team_name": "Beard Motorsports",
+     "car_make": "Chevrolet",
+     "laps_completed": 0,
+     "finishing_status": "",
+     "points_earned": 0,
+     "disqualified": false,
+     "diff_laps": 0,
+     "diff_time": 0
+    },
+    {
+     "finishing_position": 0,
+     "car_number": "36",
+     "driver_fullname": "Chandler Smith",
+     "driver_id": 4312,
+     "team_name": "Front Row Motorsports",
+     "car_make": "Ford",
+     "laps_completed": 0,
+     "finishing_status": "",
+     "points_earned": 0,
+     "disqualified": false,
+     "diff_laps": 0,
+     "diff_time": 0
+    }
+   ]
+  }
+ ],
+ "weekend_runs": [
+  {
+   "timing_run_id": 0,
+   "run_type": 1,
+   "run_name": "NCS Practice 1",
+   "run_date": "2026-02-11T10:00:00",
+   "run_date_utc": "2026-02-11T15:00:00",
+   "results": [
+    {
+     "car_number": "2",
+     "vehicle_number": "2",
+     "manufacturer": "Ford",
+     "driver_id": 4180,
+     "driver_name": "Austin Cindric",
+     "finishing_position": 1,
+     "best_lap_time": 48.025,
+     "best_lap_speed": 187.402,
+     "best_lap_number": 3,
+     "laps_completed": 13,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "1",
+     "vehicle_number": "1",
+     "manufacturer": "Chevrolet",
+     "driver_id": 4001,
+     "driver_name": "Ross Chastain",
+     "finishing_position": 2,
+     "best_lap_time": 48.146,
+     "best_lap_speed": 186.931,
+     "best_lap_number": 4,
+     "laps_completed": 6,
+     "comment": "",
+     "delta_leader": -0.121,
+     "disqualified": false
+    }
+   ]
+  },
+  {
+   "timing_run_id": 2,
+   "run_type": 2,
+   "run_name": "DAYTONA 500 Busch Pole Qualifying - Final Round",
+   "run_date": "2026-02-11T20:20:00",
+   "run_date_utc": "2026-02-12T01:20:00",
+   "results": [
+    {
+     "car_number": "8",
+     "vehicle_number": "8",
+     "manufacturer": "Chevrolet",
+     "driver_id": 454,
+     "driver_name": "Kyle Busch",
+     "finishing_position": 1,
+     "best_lap_time": 49.006,
+     "best_lap_speed": 183.651,
+     "best_lap_number": 1,
+     "laps_completed": 1,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "19",
+     "vehicle_number": "19",
+     "manufacturer": "Toyota",
+     "driver_id": 4228,
+     "driver_name": "Chase Briscoe",
+     "finishing_position": 2,
+     "best_lap_time": 49.023,
+     "best_lap_speed": 183.587,
+     "best_lap_number": 1,
+     "laps_completed": 1,
+     "comment": "",
+     "delta_leader": -0.017,
+     "disqualified": false
+    }
+   ]
+  },
+  {
+   "timing_run_id": 1,
+   "run_type": 2,
+   "run_name": "DAYTONA 500 Busch Pole Qualifying - Round 1",
+   "run_date": "2026-02-11T20:20:00",
+   "run_date_utc": "2026-02-12T01:20:00",
+   "results": [
+    {
+     "car_number": "8",
+     "vehicle_number": "8",
+     "manufacturer": "Chevrolet",
+     "driver_id": 454,
+     "driver_name": "Kyle Busch",
+     "finishing_position": 1,
+     "best_lap_time": 0,
+     "best_lap_speed": 0,
+     "best_lap_number": 0,
+     "laps_completed": 0,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "19",
+     "vehicle_number": "19",
+     "manufacturer": "Toyota",
+     "driver_id": 4228,
+     "driver_name": "Chase Briscoe",
+     "finishing_position": 2,
+     "best_lap_time": 0,
+     "best_lap_speed": 0,
+     "best_lap_number": 0,
+     "laps_completed": 0,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    }
+   ]
+  },
+  {
+   "timing_run_id": 5,
+   "run_type": 1,
+   "run_name": "NCS Practice 2",
+   "run_date": "2026-02-13T17:35:00",
+   "run_date_utc": "2026-02-13T22:35:00",
+   "results": [
+    {
+     "car_number": "3",
+     "vehicle_number": "3",
+     "manufacturer": "Chevrolet",
+     "driver_id": 3873,
+     "driver_name": "Austin Dillon",
+     "finishing_position": 1,
+     "best_lap_time": 46.006,
+     "best_lap_speed": 195.627,
+     "best_lap_number": 10,
+     "laps_completed": 11,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "48",
+     "vehicle_number": "48",
+     "manufacturer": "Chevrolet",
+     "driver_id": 4045,
+     "driver_name": "Alex Bowman",
+     "finishing_position": 2,
+     "best_lap_time": 46.047,
+     "best_lap_speed": 195.452,
+     "best_lap_number": 5,
+     "laps_completed": 28,
+     "comment": "",
+     "delta_leader": -0.041,
+     "disqualified": false
+    }
+   ]
+  },
+  {
+   "timing_run_id": 6,
+   "run_type": 1,
+   "run_name": "NCS Final Practice",
+   "run_date": "2026-02-14T15:00:00",
+   "run_date_utc": "2026-02-14T20:00:00",
+   "results": [
+    {
+     "car_number": "60",
+     "vehicle_number": "60",
+     "manufacturer": "Ford",
+     "driver_id": 4070,
+     "driver_name": "Ryan Preece",
+     "finishing_position": 1,
+     "best_lap_time": 46.676,
+     "best_lap_speed": 192.819,
+     "best_lap_number": 13,
+     "laps_completed": 27,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "17",
+     "vehicle_number": "17",
+     "manufacturer": "Ford",
+     "driver_id": 3989,
+     "driver_name": "Chris Buescher",
+     "finishing_position": 2,
+     "best_lap_time": 46.684,
+     "best_lap_speed": 192.786,
+     "best_lap_number": 13,
+     "laps_completed": 31,
+     "comment": "",
+     "delta_leader": -0.008,
+     "disqualified": false
+    }
+   ]
+  }
+ ]
+}
