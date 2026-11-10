@@ -22,7 +22,8 @@
         <div v-if="hasBadges" class="session-badges">
           <span v-if="item.live" class="badge badge-live">En vivo</span>
           <span v-if="item.series.origin === 'discovered'" class="badge badge-info">Descubierta</span>
-          <span v-if="item.session.source.method === 'ia'" class="badge badge-dim">IA</span>
+          <span v-if="item.session.source.kind === 'image'" class="badge badge-dim">Leído de imagen</span>
+          <span v-else-if="item.session.source.method === 'ia'" class="badge badge-dim">IA</span>
           <span v-if="previousStart" class="badge badge-warn" :title="`Antes: ${previousStart}`">
             Cambió · antes {{ previousStart }}
           </span>

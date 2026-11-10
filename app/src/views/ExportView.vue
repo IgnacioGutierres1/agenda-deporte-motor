@@ -202,6 +202,7 @@ export default defineComponent({
         sessionName: i.session.name,
         broadcast: i.session.broadcast,
         sourceUrl: i.session.source.url,
+        fromImage: i.session.source.kind === 'image',
       }));
       return buildIcs(events, { calendarName: 'Deporte Motor' });
     },

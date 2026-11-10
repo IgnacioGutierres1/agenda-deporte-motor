@@ -48,7 +48,11 @@
             <dt>Leído</dt>
             <dd>{{ fetchedText }}</dd>
           </dl>
-          <p v-if="item.session.source.method === 'ia'" class="small dim">
+          <p v-if="item.session.source.kind === 'image'" class="small dim">
+            Horario leído de una imagen oficial: la IA primero transcribió el texto de la imagen y la hora tiene que
+            figurar en esa transcripción. Conviene comprobarlo abriendo la imagen con el link de arriba.
+          </p>
+          <p v-else-if="item.session.source.method === 'ia'" class="small dim">
             La IA solo transcribe el documento oficial descargado; la hora local tiene que figurar textual en ese
             documento o la sesión se descarta.
           </p>

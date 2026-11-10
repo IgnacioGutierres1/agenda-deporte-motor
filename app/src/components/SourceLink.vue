@@ -10,7 +10,7 @@
 import { defineComponent, type PropType } from 'vue';
 import { mapState } from 'pinia';
 import type { Source } from '@dm/shared';
-import { METHOD_LABELS, hostOf } from '../lib/sources.ts';
+import { METHOD_LABELS, hostOf, shortMethodLabel } from '../lib/sources.ts';
 import { formatDateTime } from '../lib/format.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 
@@ -26,7 +26,7 @@ export default defineComponent({
       return hostOf(this.source.url);
     },
     methodLabel(): string {
-      return this.source.method === 'ia' ? 'extraído con IA' : 'lectura directa';
+      return shortMethodLabel(this.source);
     },
     fetchedText(): string {
       return formatDateTime(this.source.fetchedAt, this.timeZone);

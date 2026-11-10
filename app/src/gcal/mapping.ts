@@ -62,7 +62,8 @@ export function broadcastText(session: Session): string {
 
 export function buildDescription(session: Session): string {
   const habitual = session.broadcastIsDefault && session.broadcast.length ? ' (habitual)' : '';
-  return `Transmisión: ${broadcastText(session)}${habitual}\nFuente: ${session.source.url}`;
+  const fromImage = session.source.kind === 'image' ? ' (leído de imagen)' : '';
+  return `Transmisión: ${broadcastText(session)}${habitual}\nFuente: ${session.source.url}${fromImage}`;
 }
 
 export function toExpectedEvent({ session, event, series }: SessionInput): ExpectedEvent {
