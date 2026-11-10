@@ -1,0 +1,148 @@
+{
+  "key": "1ea8c75c74924fedda7b1dbb",
+  "url": "https://actc.org.ar/tcm/campeonato",
+  "model": "gemini-3.6-flash",
+  "createdAt": "2026-11-10T06:40:49.379Z",
+  "data": {
+    "tables": [
+      {
+        "title": "Pilotos",
+        "rows": [
+          {
+            "pos": 1,
+            "name": "JAIME, NICOLÁS",
+            "points": 446,
+            "number": "176",
+            "wins": 4
+          },
+          {
+            "pos": 2,
+            "name": "LUENGO, FRANCISCO",
+            "points": 416,
+            "number": "141",
+            "wins": 2
+          },
+          {
+            "pos": 3,
+            "name": "ALAUX, VALENTINO",
+            "points": 362,
+            "number": "26",
+            "wins": 1
+          },
+          {
+            "pos": 4,
+            "name": "ARRIGONI, SANTIAGO",
+            "points": 356.5,
+            "number": "139",
+            "wins": 1
+          },
+          {
+            "pos": 5,
+            "name": "MAGGINI, FABRIZIO",
+            "points": 325.5,
+            "number": "118",
+            "wins": 2
+          },
+          {
+            "pos": 6,
+            "name": "TARTAGLINO, JUAN",
+            "points": 306,
+            "number": "25",
+            "wins": null
+          },
+          {
+            "pos": 7,
+            "name": "MARTÍNEZ, ALEJANDRO",
+            "points": 285,
+            "number": "23",
+            "wins": null
+          },
+          {
+            "pos": 8,
+            "name": "MANCUSO, ESTEBAN",
+            "points": 269,
+            "number": "175",
+            "wins": null
+          },
+          {
+            "pos": 9,
+            "name": "LUNA, ESTEBAN",
+            "points": 263.5,
+            "number": "221",
+            "wins": null
+          },
+          {
+            "pos": 10,
+            "name": "BERALDI, MARCELO",
+            "points": 244.5,
+            "number": "222",
+            "wins": null
+          },
+          {
+            "pos": 11,
+            "name": "FALIVENE, THIAGO",
+            "points": 188.5,
+            "number": "46",
+            "wins": 1
+          },
+          {
+            "pos": 12,
+            "name": "ORTIZ, SANTINO",
+            "points": 180,
+            "number": "77",
+            "wins": null
+          },
+          {
+            "pos": 13,
+            "name": "ORTIZ, ALDO",
+            "points": 153.5,
+            "number": "58",
+            "wins": null
+          },
+          {
+            "pos": 14,
+            "name": "NONNENMACHER, FRANCISCO",
+            "points": 82,
+            "number": "121",
+            "wins": null
+          },
+          {
+            "pos": 15,
+            "name": "FRANO, MATÍAS",
+            "points": 81.5,
+            "number": "75",
+            "wins": null
+          },
+          {
+            "pos": 16,
+            "name": "CIFRE, ALAN DENIS",
+            "points": 59,
+            "number": "78",
+            "wins": null
+          },
+          {
+            "pos": 17,
+            "name": "DE BONIS, RAMIRO",
+            "points": 55,
+            "number": "178",
+            "wins": null
+          },
+          {
+            "pos": 18,
+            "name": "VILLAMAYOR, NICOLÁS",
+            "points": 52.5,
+            "number": "177",
+            "wins": null
+          },
+          {
+            "pos": 19,
+            "name": "VOLPI, SIMON",
+            "points": 51,
+            "number": "124",
+            "wins": null
+          }
+        ]
+      }
+    ]
+  }
+}

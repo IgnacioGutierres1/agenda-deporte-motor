@@ -1,0 +1,44 @@
+{
+  "seriesId": "gtwc-america",
+  "season": 2026,
+  "updatedAt": "2026-11-10T06:21:47Z",
+  "tables": [
+    {
+      "title": "GT World Challenge America powered by AWS Pro Teams",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Turner Motorsport",
+          "points": 154
+        },
+        {
+          "pos": 2,
+          "name": "JMF Motorsports",
+          "points": 144
+        },
+        {
+          "pos": 3,
+          "name": "AF Corse USA",
+          "points": 141
+        },
+        {
+          "pos": 4,
+          "name": "McCann Racing",
+          "points": 103
+        },
+        {
+          "pos": 5,
+          "name": "Dollahite Racing",
+          "points": 68
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://www.gt-world-challenge-america.com/standings",
+    "title": "Standings GT World Challenge America powered by AWS Pro Teams 2026 | GT World Challenge America Powered by AWS",
+    "kind": "html",
+    "method": "ia",
+    "fetchedAt": "2026-11-10T06:21:47Z"
+  }
+}

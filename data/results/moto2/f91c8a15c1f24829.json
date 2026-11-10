@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "f91c8a15c1f24829",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-10T06:21:47Z",
   "sessions": [
     {
       "sessionId": "225ae15ac0eb1adc",
@@ -1258,6 +1258,308 @@
         "kind": "api",
         "method": "directo",
         "fetchedAt": "2026-11-10T06:14:37Z"
+      }
+    },
+    {
+      "sessionId": "db59cd0ed0e3a944",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "18",
+          "driver": "Manuel Gonzalez",
+          "team": "LIQUI MOLY Dynavolt Intact GP",
+          "vehicle": "Kalex",
+          "laps": 15,
+          "time": "1:35.031",
+          "bestLap": "1:35.031"
+        },
+        {
+          "pos": 2,
+          "number": "81",
+          "driver": "Senna Agius",
+          "team": "LIQUI MOLY Dynavolt Intact GP",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+0.035",
+          "bestLap": "1:35.066"
+        },
+        {
+          "pos": 3,
+          "number": "28",
+          "driver": "Izan Guevara",
+          "team": "BLU CRU Pramac Yamaha Moto2",
+          "vehicle": "Boscoscuro",
+          "laps": 12,
+          "gap": "+0.090",
+          "bestLap": "1:35.121"
+        },
+        {
+          "pos": 4,
+          "number": "80",
+          "driver": "David Alonso",
+          "team": "CFMOTO Aspar European Privilege Team",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+0.180",
+          "bestLap": "1:35.211"
+        },
+        {
+          "pos": 5,
+          "number": "96",
+          "driver": "Daniel Holgado",
+          "team": "CFMOTO Aspar European Privilege Team",
+          "vehicle": "Kalex",
+          "laps": 17,
+          "gap": "+0.209",
+          "bestLap": "1:35.240"
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "Filip Salac",
+          "team": "OnlyFans American Racing Team",
+          "vehicle": "Kalex",
+          "laps": 18,
+          "gap": "+0.384",
+          "bestLap": "1:35.415"
+        },
+        {
+          "pos": 7,
+          "number": "14",
+          "driver": "Tony Arbolino",
+          "team": "REDS Fantic Racing",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+0.393",
+          "bestLap": "1:35.424"
+        },
+        {
+          "pos": 8,
+          "number": "7",
+          "driver": "Barry Baltus",
+          "team": "REDS Fantic Racing",
+          "vehicle": "Kalex",
+          "laps": 18,
+          "gap": "+0.612",
+          "bestLap": "1:35.643"
+        },
+        {
+          "pos": 9,
+          "number": "21",
+          "driver": "Alonso Lopez",
+          "team": "ITALJET Gresini Moto2",
+          "vehicle": "Kalex",
+          "laps": 20,
+          "gap": "+0.724",
+          "bestLap": "1:35.755"
+        },
+        {
+          "pos": 10,
+          "number": "54",
+          "driver": "Alberto Ferrandez",
+          "team": "BLU CRU Pramac Yamaha Moto2",
+          "vehicle": "Boscoscuro",
+          "laps": 14,
+          "gap": "+0.813",
+          "bestLap": "1:35.844"
+        },
+        {
+          "pos": 11,
+          "number": "95",
+          "driver": "Collin Veijer",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+0.848",
+          "bestLap": "1:35.879"
+        },
+        {
+          "pos": 12,
+          "number": "44",
+          "driver": "Aron Canet",
+          "team": "ELF Marc VDS Racing Team",
+          "vehicle": "Boscoscuro",
+          "laps": 17,
+          "gap": "+0.880",
+          "bestLap": "1:35.911"
+        },
+        {
+          "pos": 13,
+          "number": "4",
+          "driver": "Ivan Ortola",
+          "team": "QJMOTOR - Green Power - MSI",
+          "vehicle": "Kalex",
+          "laps": 19,
+          "gap": "+0.889",
+          "bestLap": "1:35.920"
+        },
+        {
+          "pos": 14,
+          "number": "36",
+          "driver": "Angel Piqueras",
+          "team": "QJMOTOR - Green Power - MSI",
+          "vehicle": "Kalex",
+          "laps": 15,
+          "gap": "+0.891",
+          "bestLap": "1:35.922"
+        },
+        {
+          "pos": 15,
+          "number": "3",
+          "driver": "Sergio Garcia",
+          "team": "ITALJET Gresini Moto2",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+0.947",
+          "bestLap": "1:35.978"
+        },
+        {
+          "pos": 16,
+          "number": "53",
+          "driver": "Deniz Öncü",
+          "team": "ELF Marc VDS Racing Team",
+          "vehicle": "Boscoscuro",
+          "laps": 18,
+          "gap": "+1.018",
+          "bestLap": "1:36.049"
+        },
+        {
+          "pos": 17,
+          "number": "99",
+          "driver": "Adrian Huertas",
+          "team": "Italtrans Racing Team",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+1.136",
+          "bestLap": "1:36.167"
+        },
+        {
+          "pos": 18,
+          "number": "17",
+          "driver": "Daniel Muñoz",
+          "team": "Italtrans Racing Team",
+          "vehicle": "Kalex",
+          "laps": 15,
+          "gap": "+1.276",
+          "bestLap": "1:36.307"
+        },
+        {
+          "pos": 19,
+          "number": "16",
+          "driver": "Joe Roberts",
+          "team": "OnlyFans American Racing Team",
+          "vehicle": "Kalex",
+          "laps": 18,
+          "gap": "+1.285",
+          "bestLap": "1:36.316"
+        },
+        {
+          "pos": 20,
+          "number": "24",
+          "driver": "Marcos Ramirez",
+          "team": "KLINT Racing Team",
+          "vehicle": "Forward",
+          "laps": 20,
+          "gap": "+1.301",
+          "bestLap": "1:36.332"
+        },
+        {
+          "pos": 21,
+          "number": "32",
+          "driver": "Luca Lunetta",
+          "team": "BETA Tools SpeedRS Team",
+          "vehicle": "Boscoscuro",
+          "laps": 14,
+          "gap": "+1.472",
+          "bestLap": "1:36.503"
+        },
+        {
+          "pos": 22,
+          "number": "71",
+          "driver": "Ayumu Sasaki",
+          "team": "Momoven Idrofoglia RW Racing Team",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+1.494",
+          "bestLap": "1:36.525"
+        },
+        {
+          "pos": 23,
+          "number": "84",
+          "driver": "Zonta Vd Goorbergh",
+          "team": "Momoven Idrofoglia RW Racing Team",
+          "vehicle": "Kalex",
+          "laps": 17,
+          "gap": "+1.531",
+          "bestLap": "1:36.562"
+        },
+        {
+          "pos": 24,
+          "number": "64",
+          "driver": "Mario Aji",
+          "team": "Idemitsu Honda Team Asia",
+          "vehicle": "Kalex",
+          "laps": 16,
+          "gap": "+1.550",
+          "bestLap": "1:36.581"
+        },
+        {
+          "pos": 25,
+          "number": "98",
+          "driver": "Jose Antonio Rueda",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "Kalex",
+          "laps": 20,
+          "gap": "+1.604",
+          "bestLap": "1:36.635"
+        },
+        {
+          "pos": 26,
+          "number": "85",
+          "driver": "Xabi Zurutuza",
+          "team": "KLINT Racing Team",
+          "vehicle": "Forward",
+          "laps": 16,
+          "gap": "+1.633",
+          "bestLap": "1:36.664"
+        },
+        {
+          "pos": 27,
+          "number": "11",
+          "driver": "Alex Escrig",
+          "team": "KLINT Racing Team",
+          "vehicle": "Forward",
+          "laps": 12,
+          "gap": "+1.779",
+          "bestLap": "1:36.810"
+        },
+        {
+          "pos": 28,
+          "number": "13",
+          "driver": "Celestino Vietti",
+          "team": "BETA Tools SpeedRS Team",
+          "vehicle": "Boscoscuro",
+          "laps": 10,
+          "gap": "+2.098",
+          "bestLap": "1:37.129"
+        },
+        {
+          "pos": 29,
+          "number": "72",
+          "driver": "Taiyo Furusato",
+          "team": "Idemitsu Honda Team Asia",
+          "vehicle": "Kalex",
+          "laps": 17,
+          "gap": "+2.419",
+          "bestLap": "1:37.450"
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/rsm/moto2/fp1/classification",
+        "title": "MotoGP.com – Resultados RSM Moto2 FP1",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
       }
     }
   ]

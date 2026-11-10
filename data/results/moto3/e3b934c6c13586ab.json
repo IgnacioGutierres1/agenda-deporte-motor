@@ -1,0 +1,1418 @@
+{
+  "seriesId": "moto3",
+  "eventId": "e3b934c6c13586ab",
+  "updatedAt": "2026-11-10T06:21:47Z",
+  "sessions": [
+    {
+      "sessionId": "bc3ae702eee3ae81",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "28",
+          "driver": "Maximo Quiles",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 17,
+          "time": "33:15.478",
+          "points": 25
+        },
+        {
+          "pos": 2,
+          "number": "22",
+          "driver": "David Almansa",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+0.264",
+          "points": 20
+        },
+        {
+          "pos": 3,
+          "number": "97",
+          "driver": "Marco Morelli",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+0.715",
+          "points": 16
+        },
+        {
+          "pos": 4,
+          "number": "83",
+          "driver": "Alvaro Carpe",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+2.900",
+          "points": 13
+        },
+        {
+          "pos": 5,
+          "number": "51",
+          "driver": "Brian Uriarte",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+6.040",
+          "points": 11
+        },
+        {
+          "pos": 6,
+          "number": "11",
+          "driver": "Adrian Cruces",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+11.373",
+          "points": 10
+        },
+        {
+          "pos": 7,
+          "number": "67",
+          "driver": "Casey O'gorman",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+11.509",
+          "points": 9
+        },
+        {
+          "pos": 8,
+          "number": "73",
+          "driver": "Valentin Perrone",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+11.841",
+          "points": 8
+        },
+        {
+          "pos": 9,
+          "number": "94",
+          "driver": "Guido Pini",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+11.963",
+          "points": 7
+        },
+        {
+          "pos": 10,
+          "number": "31",
+          "driver": "Adrian Fernandez",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+12.211",
+          "points": 6
+        },
+        {
+          "pos": 11,
+          "number": "18",
+          "driver": "Matteo Bertelle",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+12.322",
+          "points": 5
+        },
+        {
+          "pos": 12,
+          "number": "13",
+          "driver": "Hakim Danish",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+14.284",
+          "points": 4
+        },
+        {
+          "pos": 13,
+          "number": "66",
+          "driver": "Joel Kelso",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+16.121",
+          "points": 3
+        },
+        {
+          "pos": 14,
+          "number": "8",
+          "driver": "Eddie O'shea",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+22.903",
+          "points": 2
+        },
+        {
+          "pos": 15,
+          "number": "19",
+          "driver": "Scott Ogden",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+24.429",
+          "points": 1
+        },
+        {
+          "pos": 16,
+          "number": "78",
+          "driver": "Joel Esteban",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+24.366",
+          "points": 0
+        },
+        {
+          "pos": 17,
+          "number": "5",
+          "driver": "Leo Rammerstorfer",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+24.545",
+          "points": 0
+        },
+        {
+          "pos": 18,
+          "number": "71",
+          "driver": "David Gonzalez",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+24.802",
+          "points": 0
+        },
+        {
+          "pos": 19,
+          "number": "21",
+          "driver": "Ruche Moodley",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+24.977",
+          "points": 0
+        },
+        {
+          "pos": 20,
+          "number": "9",
+          "driver": "Veda Pratama",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+30.034",
+          "points": 0
+        },
+        {
+          "pos": 21,
+          "number": "6",
+          "driver": "Ryusei Yamanaka",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+30.076",
+          "points": 0
+        },
+        {
+          "pos": 22,
+          "number": "27",
+          "driver": "Rico Salmela",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 17,
+          "gap": "+40.965",
+          "points": 0
+        },
+        {
+          "pos": 23,
+          "number": "32",
+          "driver": "Zen Mitani",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 17,
+          "gap": "+46.057",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "54",
+          "driver": "Jesus Rios",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 4,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "14",
+          "driver": "Cormac Buchanan",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 2,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "10",
+          "driver": "Nicola Carraro",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 0,
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/ara/moto3/rac/classification",
+        "title": "MotoGP.com – Resultados ARA Moto3 RAC",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
+      }
+    },
+    {
+      "sessionId": "a74eb5be00208adb",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "22",
+          "driver": "David Almansa",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 6,
+          "time": "1:56.347",
+          "bestLap": "1:56.347"
+        },
+        {
+          "pos": 2,
+          "number": "97",
+          "driver": "Marco Morelli",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.033",
+          "bestLap": "1:56.380"
+        },
+        {
+          "pos": 3,
+          "number": "28",
+          "driver": "Maximo Quiles",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 7,
+          "gap": "+0.043",
+          "bestLap": "1:56.390"
+        },
+        {
+          "pos": 4,
+          "number": "18",
+          "driver": "Matteo Bertelle",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.259",
+          "bestLap": "1:56.606"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Adrian Cruces",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.266",
+          "bestLap": "1:56.613"
+        },
+        {
+          "pos": 6,
+          "number": "51",
+          "driver": "Brian Uriarte",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.297",
+          "bestLap": "1:56.644"
+        },
+        {
+          "pos": 7,
+          "number": "83",
+          "driver": "Alvaro Carpe",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.323",
+          "bestLap": "1:56.670"
+        },
+        {
+          "pos": 8,
+          "number": "31",
+          "driver": "Adrian Fernandez",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+0.380",
+          "bestLap": "1:56.727"
+        },
+        {
+          "pos": 9,
+          "number": "73",
+          "driver": "Valentin Perrone",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 5,
+          "gap": "+0.443",
+          "bestLap": "1:56.790"
+        },
+        {
+          "pos": 10,
+          "number": "54",
+          "driver": "Jesus Rios",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+0.491",
+          "bestLap": "1:56.838"
+        },
+        {
+          "pos": 11,
+          "number": "94",
+          "driver": "Guido Pini",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+0.557",
+          "bestLap": "1:56.904"
+        },
+        {
+          "pos": 12,
+          "number": "27",
+          "driver": "Rico Salmela",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 5,
+          "gap": "+0.622",
+          "bestLap": "1:56.969"
+        },
+        {
+          "pos": 13,
+          "number": "13",
+          "driver": "Hakim Danish",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.705",
+          "bestLap": "1:57.052"
+        },
+        {
+          "pos": 14,
+          "number": "67",
+          "driver": "Casey O'gorman",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+0.720",
+          "bestLap": "1:57.067"
+        },
+        {
+          "pos": 15,
+          "number": "66",
+          "driver": "Joel Kelso",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+0.783",
+          "bestLap": "1:57.130"
+        },
+        {
+          "pos": 16,
+          "number": "14",
+          "driver": "Cormac Buchanan",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 5,
+          "gap": "+0.942",
+          "bestLap": "1:57.289"
+        },
+        {
+          "pos": 17,
+          "number": "71",
+          "driver": "David Gonzalez",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+1.447",
+          "bestLap": "1:57.794"
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "78",
+          "driver": "Joel Esteban",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/ara/moto3/q2/classification",
+        "title": "MotoGP.com – Resultados ARA Moto3 Q2",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
+      }
+    },
+    {
+      "sessionId": "a744b3be001832f0",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "51",
+          "driver": "Brian Uriarte",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 7,
+          "time": "1:57.049",
+          "bestLap": "1:57.049"
+        },
+        {
+          "pos": 2,
+          "number": "71",
+          "driver": "David Gonzalez",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.407",
+          "bestLap": "1:57.456"
+        },
+        {
+          "pos": 3,
+          "number": "14",
+          "driver": "Cormac Buchanan",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.471",
+          "bestLap": "1:57.520"
+        },
+        {
+          "pos": 4,
+          "number": "78",
+          "driver": "Joel Esteban",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.557",
+          "bestLap": "1:57.606"
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Eddie O'shea",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+0.667",
+          "bestLap": "1:57.716"
+        },
+        {
+          "pos": 6,
+          "number": "6",
+          "driver": "Ryusei Yamanaka",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.898",
+          "bestLap": "1:57.947"
+        },
+        {
+          "pos": 7,
+          "number": "19",
+          "driver": "Scott Ogden",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+0.916",
+          "bestLap": "1:57.965"
+        },
+        {
+          "pos": 8,
+          "number": "9",
+          "driver": "Veda Pratama",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 7,
+          "gap": "+0.992",
+          "bestLap": "1:58.041"
+        },
+        {
+          "pos": 9,
+          "number": "21",
+          "driver": "Ruche Moodley",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+1.058",
+          "bestLap": "1:58.107"
+        },
+        {
+          "pos": 10,
+          "number": "5",
+          "driver": "Leo Rammerstorfer",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 7,
+          "gap": "+1.365",
+          "bestLap": "1:58.414"
+        },
+        {
+          "pos": 11,
+          "number": "32",
+          "driver": "Zen Mitani",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 7,
+          "gap": "+1.520",
+          "bestLap": "1:58.569"
+        },
+        {
+          "pos": 12,
+          "number": "10",
+          "driver": "Nicola Carraro",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 6,
+          "gap": "+1.742",
+          "bestLap": "1:58.791"
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/ara/moto3/q1/classification",
+        "title": "MotoGP.com – Resultados ARA Moto3 Q1",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
+      }
+    },
+    {
+      "sessionId": "56680467268711b0",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "22",
+          "driver": "David Almansa",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 15,
+          "time": "1:57.259",
+          "bestLap": "1:57.259"
+        },
+        {
+          "pos": 2,
+          "number": "94",
+          "driver": "Guido Pini",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+0.049",
+          "bestLap": "1:57.308"
+        },
+        {
+          "pos": 3,
+          "number": "97",
+          "driver": "Marco Morelli",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.140",
+          "bestLap": "1:57.399"
+        },
+        {
+          "pos": 4,
+          "number": "27",
+          "driver": "Rico Salmela",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.257",
+          "bestLap": "1:57.516"
+        },
+        {
+          "pos": 5,
+          "number": "28",
+          "driver": "Maximo Quiles",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+0.268",
+          "bestLap": "1:57.527"
+        },
+        {
+          "pos": 6,
+          "number": "51",
+          "driver": "Brian Uriarte",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.344",
+          "bestLap": "1:57.603"
+        },
+        {
+          "pos": 7,
+          "number": "83",
+          "driver": "Alvaro Carpe",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+0.614",
+          "bestLap": "1:57.873"
+        },
+        {
+          "pos": 8,
+          "number": "11",
+          "driver": "Adrian Cruces",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+0.676",
+          "bestLap": "1:57.935"
+        },
+        {
+          "pos": 9,
+          "number": "18",
+          "driver": "Matteo Bertelle",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.836",
+          "bestLap": "1:58.095"
+        },
+        {
+          "pos": 10,
+          "number": "21",
+          "driver": "Ruche Moodley",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.850",
+          "bestLap": "1:58.109"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Joel Kelso",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+0.928",
+          "bestLap": "1:58.187"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Cormac Buchanan",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.082",
+          "bestLap": "1:58.341"
+        },
+        {
+          "pos": 13,
+          "number": "54",
+          "driver": "Jesus Rios",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 11,
+          "gap": "+1.082",
+          "bestLap": "1:58.341"
+        },
+        {
+          "pos": 14,
+          "number": "19",
+          "driver": "Scott Ogden",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.131",
+          "bestLap": "1:58.390"
+        },
+        {
+          "pos": 15,
+          "number": "73",
+          "driver": "Valentin Perrone",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.286",
+          "bestLap": "1:58.545"
+        },
+        {
+          "pos": 16,
+          "number": "71",
+          "driver": "David Gonzalez",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+1.338",
+          "bestLap": "1:58.597"
+        },
+        {
+          "pos": 17,
+          "number": "67",
+          "driver": "Casey O'gorman",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+1.444",
+          "bestLap": "1:58.703"
+        },
+        {
+          "pos": 18,
+          "number": "8",
+          "driver": "Eddie O'shea",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.542",
+          "bestLap": "1:58.801"
+        },
+        {
+          "pos": 19,
+          "number": "5",
+          "driver": "Leo Rammerstorfer",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.638",
+          "bestLap": "1:58.897"
+        },
+        {
+          "pos": 20,
+          "number": "9",
+          "driver": "Veda Pratama",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 15,
+          "gap": "+1.657",
+          "bestLap": "1:58.916"
+        },
+        {
+          "pos": 21,
+          "number": "13",
+          "driver": "Hakim Danish",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.663",
+          "bestLap": "1:58.922"
+        },
+        {
+          "pos": 22,
+          "number": "78",
+          "driver": "Joel Esteban",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.667",
+          "bestLap": "1:58.926"
+        },
+        {
+          "pos": 23,
+          "number": "10",
+          "driver": "Nicola Carraro",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.963",
+          "bestLap": "1:59.222"
+        },
+        {
+          "pos": 24,
+          "number": "31",
+          "driver": "Adrian Fernandez",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 8,
+          "gap": "+2.051",
+          "bestLap": "1:59.310"
+        },
+        {
+          "pos": 25,
+          "number": "6",
+          "driver": "Ryusei Yamanaka",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+2.163",
+          "bestLap": "1:59.422"
+        },
+        {
+          "pos": 26,
+          "number": "32",
+          "driver": "Zen Mitani",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 15,
+          "gap": "+2.653",
+          "bestLap": "1:59.912"
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/ara/moto3/fp2/classification",
+        "title": "MotoGP.com – Resultados ARA Moto3 FP2",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
+      }
+    },
+    {
+      "sessionId": "cab99cb84ce89ac0",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "22",
+          "driver": "David Almansa",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 15,
+          "time": "1:57.473",
+          "bestLap": "1:57.473"
+        },
+        {
+          "pos": 2,
+          "number": "27",
+          "driver": "Rico Salmela",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.079",
+          "bestLap": "1:57.552"
+        },
+        {
+          "pos": 3,
+          "number": "73",
+          "driver": "Valentin Perrone",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 11,
+          "gap": "+0.454",
+          "bestLap": "1:57.927"
+        },
+        {
+          "pos": 4,
+          "number": "31",
+          "driver": "Adrian Fernandez",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+0.465",
+          "bestLap": "1:57.938"
+        },
+        {
+          "pos": 5,
+          "number": "83",
+          "driver": "Alvaro Carpe",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.472",
+          "bestLap": "1:57.945"
+        },
+        {
+          "pos": 6,
+          "number": "67",
+          "driver": "Casey O'gorman",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 10,
+          "gap": "+0.507",
+          "bestLap": "1:57.980"
+        },
+        {
+          "pos": 7,
+          "number": "54",
+          "driver": "Jesus Rios",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 11,
+          "gap": "+0.638",
+          "bestLap": "1:58.111"
+        },
+        {
+          "pos": 8,
+          "number": "28",
+          "driver": "Maximo Quiles",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.641",
+          "bestLap": "1:58.114"
+        },
+        {
+          "pos": 9,
+          "number": "18",
+          "driver": "Matteo Bertelle",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.729",
+          "bestLap": "1:58.202"
+        },
+        {
+          "pos": 10,
+          "number": "94",
+          "driver": "Guido Pini",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 12,
+          "gap": "+0.729",
+          "bestLap": "1:58.202"
+        },
+        {
+          "pos": 11,
+          "number": "97",
+          "driver": "Marco Morelli",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+0.820",
+          "bestLap": "1:58.293"
+        },
+        {
+          "pos": 12,
+          "number": "11",
+          "driver": "Adrian Cruces",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.860",
+          "bestLap": "1:58.333"
+        },
+        {
+          "pos": 13,
+          "number": "66",
+          "driver": "Joel Kelso",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 11,
+          "gap": "+0.878",
+          "bestLap": "1:58.351"
+        },
+        {
+          "pos": 14,
+          "number": "13",
+          "driver": "Hakim Danish",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 11,
+          "gap": "+0.889",
+          "bestLap": "1:58.362"
+        },
+        {
+          "pos": 15,
+          "number": "19",
+          "driver": "Scott Ogden",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+0.899",
+          "bestLap": "1:58.372"
+        },
+        {
+          "pos": 16,
+          "number": "71",
+          "driver": "David Gonzalez",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 11,
+          "gap": "+0.945",
+          "bestLap": "1:58.418"
+        },
+        {
+          "pos": 17,
+          "number": "51",
+          "driver": "Brian Uriarte",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.992",
+          "bestLap": "1:58.465"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "Ruche Moodley",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 11,
+          "gap": "+1.030",
+          "bestLap": "1:58.503"
+        },
+        {
+          "pos": 19,
+          "number": "8",
+          "driver": "Eddie O'shea",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 11,
+          "gap": "+1.152",
+          "bestLap": "1:58.625"
+        },
+        {
+          "pos": 20,
+          "number": "9",
+          "driver": "Veda Pratama",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.187",
+          "bestLap": "1:58.660"
+        },
+        {
+          "pos": 21,
+          "number": "6",
+          "driver": "Ryusei Yamanaka",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+1.266",
+          "bestLap": "1:58.739"
+        },
+        {
+          "pos": 22,
+          "number": "5",
+          "driver": "Leo Rammerstorfer",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.341",
+          "bestLap": "1:58.814"
+        },
+        {
+          "pos": 23,
+          "number": "10",
+          "driver": "Nicola Carraro",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.388",
+          "bestLap": "1:58.861"
+        },
+        {
+          "pos": 24,
+          "number": "78",
+          "driver": "Joel Esteban",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 10,
+          "gap": "+1.864",
+          "bestLap": "1:59.337"
+        },
+        {
+          "pos": 25,
+          "number": "32",
+          "driver": "Zen Mitani",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+3.390",
+          "bestLap": "2:00.863"
+        },
+        {
+          "pos": 26,
+          "number": "14",
+          "driver": "Cormac Buchanan",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 6,
+          "gap": "+3.444",
+          "bestLap": "2:00.917"
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/ara/moto3/pr/classification",
+        "title": "MotoGP.com – Resultados ARA Moto3 PR",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
+      }
+    },
+    {
+      "sessionId": "5673066726911c9b",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "22",
+          "driver": "David Almansa",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 15,
+          "time": "1:58.708",
+          "bestLap": "1:58.708"
+        },
+        {
+          "pos": 2,
+          "number": "51",
+          "driver": "Brian Uriarte",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 10,
+          "gap": "+0.122",
+          "bestLap": "1:58.830"
+        },
+        {
+          "pos": 3,
+          "number": "14",
+          "driver": "Cormac Buchanan",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.142",
+          "bestLap": "1:58.850"
+        },
+        {
+          "pos": 4,
+          "number": "83",
+          "driver": "Alvaro Carpe",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.302",
+          "bestLap": "1:59.010"
+        },
+        {
+          "pos": 5,
+          "number": "94",
+          "driver": "Guido Pini",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+0.331",
+          "bestLap": "1:59.039"
+        },
+        {
+          "pos": 6,
+          "number": "54",
+          "driver": "Jesus Rios",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 12,
+          "gap": "+0.410",
+          "bestLap": "1:59.118"
+        },
+        {
+          "pos": 7,
+          "number": "31",
+          "driver": "Adrian Fernandez",
+          "team": "Leopard Racing",
+          "vehicle": "Honda",
+          "laps": 15,
+          "gap": "+0.413",
+          "bestLap": "1:59.121"
+        },
+        {
+          "pos": 8,
+          "number": "67",
+          "driver": "Casey O'gorman",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+0.533",
+          "bestLap": "1:59.241"
+        },
+        {
+          "pos": 9,
+          "number": "6",
+          "driver": "Ryusei Yamanaka",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+0.560",
+          "bestLap": "1:59.268"
+        },
+        {
+          "pos": 10,
+          "number": "78",
+          "driver": "Joel Esteban",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.775",
+          "bestLap": "1:59.483"
+        },
+        {
+          "pos": 11,
+          "number": "13",
+          "driver": "Hakim Danish",
+          "team": "AEON Credit - MT Helmets - MSI",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.781",
+          "bestLap": "1:59.489"
+        },
+        {
+          "pos": 12,
+          "number": "97",
+          "driver": "Marco Morelli",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.790",
+          "bestLap": "1:59.498"
+        },
+        {
+          "pos": 13,
+          "number": "66",
+          "driver": "Joel Kelso",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+0.855",
+          "bestLap": "1:59.563"
+        },
+        {
+          "pos": 14,
+          "number": "28",
+          "driver": "Maximo Quiles",
+          "team": "CFMOTO Viel Aspar Team",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.883",
+          "bestLap": "1:59.591"
+        },
+        {
+          "pos": 15,
+          "number": "21",
+          "driver": "Ruche Moodley",
+          "team": "CODE Motorsports",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.926",
+          "bestLap": "1:59.634"
+        },
+        {
+          "pos": 16,
+          "number": "19",
+          "driver": "Scott Ogden",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+0.959",
+          "bestLap": "1:59.667"
+        },
+        {
+          "pos": 17,
+          "number": "27",
+          "driver": "Rico Salmela",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+1.234",
+          "bestLap": "1:59.942"
+        },
+        {
+          "pos": 18,
+          "number": "18",
+          "driver": "Matteo Bertelle",
+          "team": "LEVEL UP - MTA",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+1.272",
+          "bestLap": "1:59.980"
+        },
+        {
+          "pos": 19,
+          "number": "71",
+          "driver": "David Gonzalez",
+          "team": "Liqui Moly Dynavolt Intact GP",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.454",
+          "bestLap": "2:00.162"
+        },
+        {
+          "pos": 20,
+          "number": "9",
+          "driver": "Veda Pratama",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.522",
+          "bestLap": "2:00.230"
+        },
+        {
+          "pos": 21,
+          "number": "73",
+          "driver": "Valentin Perrone",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 14,
+          "gap": "+1.794",
+          "bestLap": "2:00.502"
+        },
+        {
+          "pos": 22,
+          "number": "5",
+          "driver": "Leo Rammerstorfer",
+          "team": "SIC58 Squadra Corse",
+          "vehicle": "Honda",
+          "laps": 14,
+          "gap": "+1.899",
+          "bestLap": "2:00.607"
+        },
+        {
+          "pos": 23,
+          "number": "10",
+          "driver": "Nicola Carraro",
+          "team": "Rivacold Snipers Team",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+1.925",
+          "bestLap": "2:00.633"
+        },
+        {
+          "pos": 24,
+          "number": "11",
+          "driver": "Adrian Cruces",
+          "team": "CIP Green Power",
+          "vehicle": "KTM",
+          "laps": 15,
+          "gap": "+1.962",
+          "bestLap": "2:00.670"
+        },
+        {
+          "pos": 25,
+          "number": "8",
+          "driver": "Eddie O'shea",
+          "team": "GRYD Racing",
+          "vehicle": "Honda",
+          "laps": 12,
+          "gap": "+2.565",
+          "bestLap": "2:01.273"
+        },
+        {
+          "pos": 26,
+          "number": "32",
+          "driver": "Zen Mitani",
+          "team": "Honda Team Asia",
+          "vehicle": "Honda",
+          "laps": 13,
+          "gap": "+3.284",
+          "bestLap": "2:01.992"
+        }
+      ],
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/ara/moto3/fp1/classification",
+        "title": "MotoGP.com – Resultados ARA Moto3 FP1",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:21:47Z"
+      }
+    }
+  ]
+}
