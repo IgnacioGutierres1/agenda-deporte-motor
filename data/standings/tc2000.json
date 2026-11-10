@@ -1,0 +1,259 @@
+{
+  "seriesId": "tc2000",
+  "season": 2026,
+  "updatedAt": "2026-11-10T19:13:39Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Matias Rossi",
+          "points": 180
+        },
+        {
+          "pos": 2,
+          "name": "Franco Vivian",
+          "points": 149
+        },
+        {
+          "pos": 3,
+          "name": "Emiliano Stang",
+          "points": 138
+        },
+        {
+          "pos": 4,
+          "name": "Lucas Carabajal",
+          "points": 105
+        },
+        {
+          "pos": 5,
+          "name": "Gabriel P. de Leon",
+          "points": 102
+        },
+        {
+          "pos": 6,
+          "name": "Franco Morillo",
+          "points": 80
+        },
+        {
+          "pos": 7,
+          "name": "Valentín Yankelevich",
+          "points": 78
+        },
+        {
+          "pos": 8,
+          "name": "Franco Riva",
+          "points": 51
+        },
+        {
+          "pos": 9,
+          "name": "Facundo Aldrighetti",
+          "points": 51
+        },
+        {
+          "pos": 10,
+          "name": "Marcelo Ciarrocchi",
+          "points": 44
+        },
+        {
+          "pos": 11,
+          "name": "Nicolás Traut",
+          "points": 28
+        },
+        {
+          "pos": 12,
+          "name": "Benjamín Squaglia",
+          "points": 28
+        },
+        {
+          "pos": 13,
+          "name": "Tomás Fernandez",
+          "points": 23
+        },
+        {
+          "pos": 14,
+          "name": "Nicolás Palau",
+          "points": 22
+        },
+        {
+          "pos": 15,
+          "name": "Francisco Monarca",
+          "points": 21
+        },
+        {
+          "pos": 16,
+          "name": "Diego Ciantini",
+          "points": 20
+        },
+        {
+          "pos": 17,
+          "name": "Lucas Vicino",
+          "points": 16
+        },
+        {
+          "pos": 18,
+          "name": "Figgo Bessone",
+          "points": 8
+        },
+        {
+          "pos": 19,
+          "name": "Matias Rodriguez",
+          "points": 7
+        },
+        {
+          "pos": 20,
+          "name": "Carlos Javier Merlo",
+          "points": 6
+        },
+        {
+          "pos": 21,
+          "name": "Matías Capurro",
+          "points": 6
+        },
+        {
+          "pos": 22,
+          "name": "Nicolás Gines",
+          "points": 1
+        },
+        {
+          "pos": 23,
+          "name": "Agustín Roberi",
+          "points": 0
+        },
+        {
+          "pos": 24,
+          "name": "Evgenii Leonov",
+          "points": 0
+        },
+        {
+          "pos": 25,
+          "name": "Federico Iribarne",
+          "points": 0
+        },
+        {
+          "pos": 26,
+          "name": "Henry Martin",
+          "points": 0
+        },
+        {
+          "pos": 27,
+          "name": "Juan Pablo Traverso",
+          "points": 0
+        },
+        {
+          "pos": 28,
+          "name": "Mateo Polakovich",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "title": "Equipos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "TOYOTA GAZOO Racing YPF Infinia",
+          "points": 318
+        },
+        {
+          "pos": 2,
+          "name": "YPF Elaion Auro Proracing",
+          "points": 235
+        },
+        {
+          "pos": 3,
+          "name": "Corsi Sport",
+          "points": 129
+        },
+        {
+          "pos": 4,
+          "name": "Halcón Motorsport",
+          "points": 128
+        },
+        {
+          "pos": 5,
+          "name": "Proracing",
+          "points": 97
+        },
+        {
+          "pos": 6,
+          "name": "HONDA YPF RACING",
+          "points": 83
+        },
+        {
+          "pos": 7,
+          "name": "TOYOTA GAZOO Racing YPF Infinia 2",
+          "points": 78
+        },
+        {
+          "pos": 8,
+          "name": "ATR Racing",
+          "points": 72
+        },
+        {
+          "pos": 9,
+          "name": "Pfening Competición",
+          "points": 20
+        },
+        {
+          "pos": 10,
+          "name": "Lincoln Motorsport",
+          "points": 3
+        },
+        {
+          "pos": 11,
+          "name": "ATR Racing 2",
+          "points": 1
+        },
+        {
+          "pos": 12,
+          "name": "Corsi Sport 2",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "title": "Marcas",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Toyota",
+          "points": 225
+        },
+        {
+          "pos": 2,
+          "name": "Chevrolet",
+          "points": 180
+        },
+        {
+          "pos": 3,
+          "name": "VW",
+          "points": 124
+        },
+        {
+          "pos": 4,
+          "name": "Honda",
+          "points": 66
+        },
+        {
+          "pos": 5,
+          "name": "Fiat",
+          "points": 44
+        },
+        {
+          "pos": 6,
+          "name": "Nissan",
+          "points": 20
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://tc2000.com.ar/estadisticas.php?accion=posiciones",
+    "title": "Posiciones TC2000 2026",
+    "kind": "html",
+    "method": "directo",
+    "fetchedAt": "2026-11-10T19:13:39Z"
+  }
+}

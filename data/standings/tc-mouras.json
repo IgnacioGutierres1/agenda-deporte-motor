@@ -1,0 +1,133 @@
+{
+  "seriesId": "tc-mouras",
+  "season": 2026,
+  "updatedAt": "2026-11-10T19:13:39Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "NICOLÁS JAIME",
+          "number": "176",
+          "points": 446
+        },
+        {
+          "pos": 2,
+          "name": "FRANCISCO LUENGO",
+          "number": "141",
+          "points": 416
+        },
+        {
+          "pos": 3,
+          "name": "VALENTINO ALAUX",
+          "number": "26",
+          "points": 362
+        },
+        {
+          "pos": 4,
+          "name": "SANTIAGO ARRIGONI",
+          "number": "139",
+          "points": 356.5
+        },
+        {
+          "pos": 5,
+          "name": "FABRIZIO MAGGINI",
+          "number": "118",
+          "points": 325.5
+        },
+        {
+          "pos": 6,
+          "name": "JUAN TARTAGLINO",
+          "number": "25",
+          "points": 306
+        },
+        {
+          "pos": 7,
+          "name": "ALEJANDRO MARTÍNEZ",
+          "number": "23",
+          "points": 285
+        },
+        {
+          "pos": 8,
+          "name": "ESTEBAN MANCUSO",
+          "number": "175",
+          "points": 269
+        },
+        {
+          "pos": 9,
+          "name": "ESTEBAN LUNA",
+          "number": "221",
+          "points": 263.5
+        },
+        {
+          "pos": 10,
+          "name": "MARCELO BERALDI",
+          "number": "222",
+          "points": 244.5
+        },
+        {
+          "pos": 11,
+          "name": "THIAGO FALIVENE",
+          "number": "46",
+          "points": 188.5
+        },
+        {
+          "pos": 12,
+          "name": "SANTINO ORTIZ",
+          "number": "77",
+          "points": 180
+        },
+        {
+          "pos": 13,
+          "name": "ALDO ORTIZ",
+          "number": "58",
+          "points": 153.5
+        },
+        {
+          "pos": 14,
+          "name": "FRANCISCO NONNENMACHER",
+          "number": "121",
+          "points": 82
+        },
+        {
+          "pos": 15,
+          "name": "MATÍAS FRANO",
+          "number": "75",
+          "points": 81.5
+        },
+        {
+          "pos": 16,
+          "name": "ALAN DENIS CIFRE",
+          "number": "78",
+          "points": 59
+        },
+        {
+          "pos": 17,
+          "name": "RAMIRO DE BONIS",
+          "number": "178",
+          "points": 55
+        },
+        {
+          "pos": 18,
+          "name": "NICOLÁS VILLAMAYOR",
+          "number": "177",
+          "points": 52.5
+        },
+        {
+          "pos": 19,
+          "name": "SIMON VOLPI",
+          "number": "124",
+          "points": 51
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://actc.org.ar/tcm/campeonato",
+    "title": "Campeonato TC MOURAS 2026",
+    "kind": "html",
+    "method": "directo",
+    "fetchedAt": "2026-11-10T19:13:39Z"
+  }
+}

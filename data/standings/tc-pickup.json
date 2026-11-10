@@ -1,0 +1,156 @@
+{
+  "seriesId": "tc-pickup",
+  "season": 2026,
+  "updatedAt": "2026-11-10T19:13:39Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Agustín Canapino",
+          "number": "1",
+          "points": 378.5
+        },
+        {
+          "pos": 2,
+          "name": "Otto Fritzler",
+          "number": "256",
+          "points": 375
+        },
+        {
+          "pos": 3,
+          "name": "Mariano Werner",
+          "number": "3",
+          "points": 346
+        },
+        {
+          "pos": 4,
+          "name": "Hernán Palazzo",
+          "number": "119",
+          "points": 345
+        },
+        {
+          "pos": 5,
+          "name": "Gastón Mazzacane",
+          "number": "11",
+          "points": 317.5
+        },
+        {
+          "pos": 6,
+          "name": "Diego Azar",
+          "number": "110",
+          "points": 314.5
+        },
+        {
+          "pos": 7,
+          "name": "Marco Dianda",
+          "number": "147",
+          "points": 310.5
+        },
+        {
+          "pos": 8,
+          "name": "Ignacio Faín",
+          "number": "86",
+          "points": 305.5
+        },
+        {
+          "pos": 9,
+          "name": "Diego De Carlo",
+          "number": "13",
+          "points": 279.5
+        },
+        {
+          "pos": 10,
+          "name": "Tomás Abdala",
+          "number": "12",
+          "points": 265
+        },
+        {
+          "pos": 11,
+          "name": "Tobias Martinez",
+          "number": "107",
+          "points": 254.5
+        },
+        {
+          "pos": 12,
+          "name": "Gustavo (h) Tadei",
+          "number": "66",
+          "points": 179
+        },
+        {
+          "pos": 13,
+          "name": "Facundo ARDUSSO",
+          "number": "83",
+          "points": 128.5
+        },
+        {
+          "pos": 14,
+          "name": "Juan José Ebarlín",
+          "number": "2",
+          "points": 115
+        },
+        {
+          "pos": 15,
+          "name": "Julian SANTERO",
+          "number": "68",
+          "points": 90
+        },
+        {
+          "pos": 16,
+          "name": "Andres JAKOS",
+          "number": "122",
+          "points": 89
+        },
+        {
+          "pos": 17,
+          "name": "Lucas Valle",
+          "number": "112",
+          "points": 83.5
+        },
+        {
+          "pos": 18,
+          "name": "Ian Reutemann",
+          "number": "100",
+          "points": 68
+        },
+        {
+          "pos": 19,
+          "name": "Joaquín Ochoa",
+          "number": "154",
+          "points": 58.5
+        },
+        {
+          "pos": 20,
+          "name": "Gaston Iansa",
+          "points": 57.5
+        },
+        {
+          "pos": 21,
+          "name": "THOMAS RICCIARDI",
+          "number": "126",
+          "points": 31.5
+        },
+        {
+          "pos": 22,
+          "name": "Gaspar Chansard",
+          "number": "140",
+          "points": 23.5
+        },
+        {
+          "pos": 23,
+          "name": "Matías Frano",
+          "number": "75",
+          "points": 23
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://actc.org.ar/tcpk/campeonato",
+    "title": "Campeonato TC PICK UP 2026",
+    "kind": "html",
+    "method": "directo",
+    "fetchedAt": "2026-11-10T19:13:39Z"
+  }
+}

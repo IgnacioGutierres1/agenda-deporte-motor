@@ -1,0 +1,169 @@
+{
+  "seriesId": "tc-pista",
+  "season": 2026,
+  "updatedAt": "2026-11-10T19:13:39Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Bautista DAMIANI",
+          "number": "99",
+          "points": 465.5
+        },
+        {
+          "pos": 2,
+          "name": "Gabriel GANDULIA",
+          "number": "10",
+          "points": 424.5
+        },
+        {
+          "pos": 3,
+          "name": "Benjamín ANTÓN",
+          "number": "43",
+          "points": 413.5
+        },
+        {
+          "pos": 4,
+          "name": "Nicanor SANTILLI PAZOS",
+          "number": "123",
+          "points": 413
+        },
+        {
+          "pos": 5,
+          "name": "Benjamin OCHOA",
+          "number": "111",
+          "points": 401.5
+        },
+        {
+          "pos": 6,
+          "name": "Santiago BIAGI",
+          "number": "67",
+          "points": 393
+        },
+        {
+          "pos": 7,
+          "name": "Felipe BERNASCONI",
+          "number": "133",
+          "points": 392.5
+        },
+        {
+          "pos": 8,
+          "name": "Thomas POZNER",
+          "number": "44",
+          "points": 387
+        },
+        {
+          "pos": 9,
+          "name": "Manuel BORGERT",
+          "number": "105",
+          "points": 383
+        },
+        {
+          "pos": 10,
+          "name": "Juan Sebastian GALLO",
+          "number": "168",
+          "points": 382.5
+        },
+        {
+          "pos": 11,
+          "name": "Faustino CIFRE",
+          "number": "144",
+          "points": 363
+        },
+        {
+          "pos": 12,
+          "name": "Eugenio PROVENS",
+          "number": "53",
+          "points": 336.5
+        },
+        {
+          "pos": 13,
+          "name": "Gustavo (H) TADEI",
+          "number": "66",
+          "points": 312
+        },
+        {
+          "pos": 14,
+          "name": "Juan Ignacio MACEIRA",
+          "number": "59",
+          "points": 298
+        },
+        {
+          "pos": 15,
+          "name": "Luciano COTIGNOLA",
+          "number": "19",
+          "points": 264.5
+        },
+        {
+          "pos": 16,
+          "name": "Lucas GUERRA",
+          "number": "31",
+          "points": 172.5
+        },
+        {
+          "pos": 17,
+          "name": "Juan Antonio SANDIN",
+          "number": "32",
+          "points": 126
+        },
+        {
+          "pos": 18,
+          "name": "Facundo LEDESMA",
+          "number": "119",
+          "points": 108
+        },
+        {
+          "pos": 19,
+          "name": "JAIME NICOLAS",
+          "number": "176",
+          "points": 98
+        },
+        {
+          "pos": 20,
+          "name": "MARTINEZ ALEJANDRO",
+          "number": "23",
+          "points": 93
+        },
+        {
+          "pos": 21,
+          "name": "IAN REUTEMANN",
+          "number": "100",
+          "points": 85
+        },
+        {
+          "pos": 22,
+          "name": "ARRIGONI SANTIAGO",
+          "number": "139",
+          "points": 82
+        },
+        {
+          "pos": 23,
+          "name": "Braian QUEVEDO",
+          "number": "169",
+          "points": 76
+        },
+        {
+          "pos": 24,
+          "name": "Luca DEMARCO",
+          "number": "177",
+          "points": 47.5
+        },
+        {
+          "pos": 25,
+          "name": "Eddy MIÓN",
+          "number": "69",
+          "points": 27
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://actc.org.ar/tcp/campeonato",
+    "title": "Campeonato TCP 2026",
+    "kind": "html",
+    "method": "directo",
+    "fetchedAt": "2026-11-10T19:13:39Z"
+  }
+}
