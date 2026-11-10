@@ -9,7 +9,7 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 | Carpeta | Contenido |
 |---|---|
 | `shared/` | Tipos, esquemas zod, horas/períodos y generador `.ics` (lo usan app y pipeline). |
-| `config/` | Categorías (`series.default.json` = las 22 del gem; `series.user.json` = altas/bajas desde la app), duraciones estimadas, transmisión habitual y fuentes de descubrimiento. |
+| `config/` | Categorías (`series.default.json` = las 22 del gem; `series.user.json` = altas/bajas desde la app), duraciones estimadas, transmisión habitual, fuentes de descubrimiento y feeds de noticias (`news.json`). |
 | `pipeline/` | Recolector Node + TypeScript: lectores directos (`src/adapters`), flujo genérico con IA (`src/generic`), resultados, descubrimiento. |
 | `app/` | PWA en Vue 3 (Options API) + Vite. |
 | `data/` | Archivos generados por el pipeline. **No editar a mano.** |
@@ -20,8 +20,9 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 npm install
 npm test              # Vitest en shared, pipeline y app
 npm run typecheck
-npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --dry-run)
+npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --skip-news --dry-run)
 npm run discovery     # descubrimiento de competencias nuevas
+npm run news          # solo noticias: lee los feeds RSS/Atom y escribe data/news.json (--dry-run)
 npm run dev           # app en modo desarrollo (sirve data/ en /data/)
 npm run build         # build de producción en app/dist (incluye data/)
 ```

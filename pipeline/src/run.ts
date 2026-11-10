@@ -5,8 +5,9 @@
  *   3. Valida, fusiona con la corrida anterior y detecta cambios de horario.
  *   4. Busca resultados de sesiones terminadas y actualiza campeonatos.
  *   5. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/** y data/feeds/*.ics.
+ *   6. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
- * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--dry-run]
+ * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-news] [--dry-run]
  */
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -30,12 +31,14 @@ import { mergeRun, type SeriesOutcome } from './core/merge.ts';
 import { CACHE_DIR, DATA_DIR } from './core/paths.ts';
 import { collectExistingResults, runResultsForSeries, type AttemptsLog } from './core/results.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
+import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
 import { validateSessions } from './validate.ts';
 
 export interface RunOptions {
   only?: string[];
   skipResults?: boolean;
+  skipNews?: boolean;
   dryRun?: boolean;
   now?: Date;
   dataDir?: string;
@@ -169,6 +172,18 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     );
   }
 
+  // Noticias: independiente del resto; ante cualquier error se conserva data/news.json.
+  if (!opts.skipNews) {
+    await runNews({
+      http: ctx.http,
+      log: log.child('noticias'),
+      now,
+      dataDir,
+      configDir: opts.configDir,
+      dryRun: opts.dryRun,
+    });
+  }
+
   const counts = status.series.reduce<Record<string, number>>((acc, s) => {
     acc[s.state] = (acc[s.state] ?? 0) + 1;
     return acc;
@@ -197,6 +212,7 @@ function parseArgs(argv: string[]): RunOptions {
   for (const arg of argv) {
     if (arg.startsWith('--only=')) opts.only = arg.slice(7).split(',').filter(Boolean);
     else if (arg === '--skip-results') opts.skipResults = true;
+    else if (arg === '--skip-news') opts.skipNews = true;
     else if (arg === '--dry-run') opts.dryRun = true;
   }
   return opts;
