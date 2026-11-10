@@ -1,0 +1,269 @@
+{
+ "weekend_race": [
+  {
+   "race_id": 5601,
+   "series_id": 1,
+   "race_season": 2026,
+   "race_name": "NASCAR Cup Series Championship Race",
+   "race_type_id": 1,
+   "track_id": 40,
+   "track_name": "Homestead-Miami Speedway",
+   "race_date": "2026-11-08T15:00:00",
+   "schedule": [
+    {
+     "event_name": "Driver / Crew Chief Meeting",
+     "notes": "Sent Electronically",
+     "start_time_utc": "2026-11-04T22:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Haulers Enter",
+     "notes": "Equipment Unloading",
+     "start_time_utc": "2026-11-06T16:30:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-11-06T18:30:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Practice",
+     "notes": " ",
+     "start_time_utc": "2026-11-06T22:30:00",
+     "run_type": 1
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-11-07T13:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Driver Competition Briefing (Full-Time Competitors)",
+     "notes": "Media Center Meeting Room",
+     "start_time_utc": "2026-11-07T17:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Qualifying (Impound)",
+     "notes": " ",
+     "start_time_utc": "2026-11-07T19:30:00",
+     "run_type": 2
+    },
+    {
+     "event_name": "Team Access / Garage and Pit Pass Pass Holder Access Permitted",
+     "notes": "",
+     "start_time_utc": "2026-11-08T15:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Garage Hours",
+     "notes": "",
+     "start_time_utc": "2026-11-08T16:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Grid Access Open to Properly Credentialed Guests (Until End of Anthem)",
+     "notes": "Pit Road",
+     "start_time_utc": "2026-11-08T18:30:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "The Drivers Meeting",
+     "notes": "The Drivers Meeting Room",
+     "start_time_utc": "2026-11-08T18:35:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Drivers Report For Pre-Race",
+     "notes": "NASCAR Cup Series Garage Area",
+     "start_time_utc": "2026-11-08T19:00:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Driver Introductions",
+     "notes": " ",
+     "start_time_utc": "2026-11-08T19:15:00",
+     "run_type": 0
+    },
+    {
+     "event_name": "Race",
+     "notes": "Stages 80/165/267 Laps = 400.5 Miles",
+     "start_time_utc": "2026-11-08T20:00:00",
+     "run_type": 3
+    }
+   ],
+   "total_race_time": "3:00:00",
+   "results": [
+    {
+     "finishing_position": 1,
+     "car_number": "12",
+     "driver_fullname": "Ryan Blaney",
+     "driver_id": 4023,
+     "team_name": "Team Penske",
+     "car_make": "Ford",
+     "laps_completed": 267,
+     "finishing_status": "Running",
+     "points_earned": 71,
+     "disqualified": false,
+     "diff_laps": 0,
+     "diff_time": 0
+    },
+    {
+     "finishing_position": 2,
+     "car_number": "45",
+     "driver_fullname": "Tyler Reddick",
+     "driver_id": 4065,
+     "team_name": "23XI Racing",
+     "car_make": "Toyota",
+     "laps_completed": 267,
+     "finishing_status": "Running",
+     "points_earned": 53,
+     "disqualified": false,
+     "diff_laps": 0,
+     "diff_time": 314
+    },
+    {
+     "finishing_position": 26,
+     "car_number": "3",
+     "driver_fullname": "Austin Dillon",
+     "driver_id": 3873,
+     "team_name": "Richard Childress Racing",
+     "car_make": "Chevrolet",
+     "laps_completed": 266,
+     "finishing_status": "Running",
+     "points_earned": 11,
+     "disqualified": false,
+     "diff_laps": 1,
+     "diff_time": 0
+    },
+    {
+     "finishing_position": 39,
+     "car_number": "19",
+     "driver_fullname": "Chase Briscoe",
+     "driver_id": 4228,
+     "team_name": "Joe Gibbs Racing",
+     "car_make": "Toyota",
+     "laps_completed": 77,
+     "finishing_status": "Engine",
+     "points_earned": 1,
+     "disqualified": false,
+     "diff_laps": 190,
+     "diff_time": 0
+    }
+   ]
+  }
+ ],
+ "weekend_runs": [
+  {
+   "timing_run_id": 6,
+   "run_type": 1,
+   "run_name": "NCS Final Practice",
+   "run_date": "2026-11-06T17:30:00",
+   "run_date_utc": "2026-11-06T22:30:00",
+   "results": [
+    {
+     "car_number": "19",
+     "vehicle_number": "19",
+     "manufacturer": "Toyota",
+     "driver_id": 4228,
+     "driver_name": "Chase Briscoe",
+     "finishing_position": 1,
+     "best_lap_time": 32.68,
+     "best_lap_speed": 165.239,
+     "best_lap_number": 14,
+     "laps_completed": 54,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "2",
+     "vehicle_number": "2",
+     "manufacturer": "Ford",
+     "driver_id": 4180,
+     "driver_name": "Austin Cindric",
+     "finishing_position": 2,
+     "best_lap_time": 32.753,
+     "best_lap_speed": 164.87,
+     "best_lap_number": 1,
+     "laps_completed": 46,
+     "comment": "",
+     "delta_leader": -0.073,
+     "disqualified": false
+    },
+    {
+     "car_number": "11",
+     "vehicle_number": "11",
+     "manufacturer": "Toyota",
+     "driver_id": 1361,
+     "driver_name": "Denny Hamlin",
+     "finishing_position": 3,
+     "best_lap_time": 32.79,
+     "best_lap_speed": 164.684,
+     "best_lap_number": 1,
+     "laps_completed": 55,
+     "comment": "",
+     "delta_leader": -0.11,
+     "disqualified": false
+    }
+   ]
+  },
+  {
+   "timing_run_id": 7,
+   "run_type": 2,
+   "run_name": "NCS Championship Race Busch Pole Qualifying",
+   "run_date": "2026-11-08T15:00:00",
+   "run_date_utc": "2026-11-08T20:00:00",
+   "results": [
+    {
+     "car_number": "19",
+     "vehicle_number": "19",
+     "manufacturer": "Toyota",
+     "driver_id": 4228,
+     "driver_name": "Chase Briscoe",
+     "finishing_position": 1,
+     "best_lap_time": 32.396,
+     "best_lap_speed": 166.687,
+     "best_lap_number": 1,
+     "laps_completed": 1,
+     "comment": "",
+     "delta_leader": 0,
+     "disqualified": false
+    },
+    {
+     "car_number": "11",
+     "vehicle_number": "11",
+     "manufacturer": "Toyota",
+     "driver_id": 1361,
+     "driver_name": "Denny Hamlin",
+     "finishing_position": 2,
+     "best_lap_time": 32.413,
+     "best_lap_speed": 166.6,
+     "best_lap_number": 1,
+     "laps_completed": 1,
+     "comment": "",
+     "delta_leader": -0.017,
+     "disqualified": false
+    },
+    {
+     "car_number": "45",
+     "vehicle_number": "45",
+     "manufacturer": "Toyota",
+     "driver_id": 4065,
+     "driver_name": "Tyler Reddick",
+     "finishing_position": 3,
+     "best_lap_time": 32.437,
+     "best_lap_speed": 166.477,
+     "best_lap_number": 1,
+     "laps_completed": 1,
+     "comment": "",
+     "delta_leader": -0.041,
+     "disqualified": false
+    }
+   ]
+  }
+ ]
+}
