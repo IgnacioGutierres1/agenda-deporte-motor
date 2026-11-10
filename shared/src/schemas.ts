@@ -194,3 +194,22 @@ export const driversFileSchema = z.object({
     }),
   ),
 });
+
+export const newsFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  items: z.array(
+    z.object({
+      id: z.string().min(1),
+      title: z.string().min(1),
+      url: z.string().url(),
+      source: z.string().min(1),
+      sourceKind: z.enum(['oficial', 'medio']),
+      publishedAt: isoUtc,
+      image: z.string().url().optional(),
+      summary: z.string().optional(),
+      seriesIds: z.array(z.string()),
+      lang: z.string().optional(),
+    }),
+  ),
+});

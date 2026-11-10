@@ -217,3 +217,31 @@ export interface UserSeriesConfig {
   /** Ids descubiertos ocultados (no vuelven a aparecer). */
   hidden: string[];
 }
+
+/** Nota de una fuente oficial o de un medio especializado (data/news.json). */
+export interface NewsItem {
+  /** Hash estable del link. */
+  id: string;
+  title: string;
+  /** Link a la nota original (siempre se lee en el sitio de la fuente). */
+  url: string;
+  /** Nombre de la fuente ("Formula 1", "ACTC", "Motorsport.com"). */
+  source: string;
+  sourceKind: 'oficial' | 'medio';
+  /** ISO UTC de publicación. */
+  publishedAt: string;
+  /** Imagen de portada publicada por la fuente (link, no se copia). */
+  image?: string;
+  /** Bajada corta en texto plano. */
+  summary?: string;
+  /** Categorías a las que se refiere (por la fuente o por palabras clave del título). */
+  seriesIds: string[];
+  lang?: string;
+}
+
+/** Contenido de data/news.json */
+export interface NewsFile {
+  version: 1;
+  generatedAt: string;
+  items: NewsItem[];
+}
