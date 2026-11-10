@@ -16,8 +16,41 @@ const FINISH_GRACE_MS = 30 * 60_000;
 /** Después de este número de intentos fallidos, una sesión de más de 5 días deja de buscarse. */
 const MAX_ATTEMPTS = 5;
 const RECENT_MS = 5 * 24 * 3600_000;
+/**
+ * Los sitios oficiales suelen actualizar el campeonato horas o días después de la carrera:
+ * durante este lapso tras la última carrera el campeonato se vuelve a leer en cada corrida.
+ */
+const STANDINGS_REFRESH_MS = 3 * 24 * 3600_000;
+/** Red de seguridad: un campeonato de más de una semana se relee siempre. */
+const STANDINGS_MAX_AGE_MS = 7 * 24 * 3600_000;
 
 export type AttemptsLog = Record<string, { count: number; last: string }>;
+
+/**
+ * true si hay que (re)leer el campeonato: no existe, tiene más de una semana, es anterior a la última
+ * carrera terminada o la última carrera terminó hace menos de STANDINGS_REFRESH_MS.
+ * La última carrera sale de las sesiones de carrera; si el cronograma no se conoce ("a confirmar",
+ * frecuente en las categorías nacionales), del último día de los eventos ya terminados.
+ * (Con IA no gasta cupo de más: la caché por hash del documento evita llamar a Gemini si la página no cambió.)
+ */
+export function standingsStale(
+  existing: Pick<StandingsFile, 'updatedAt'> | null,
+  sessions: Session[],
+  events: Pick<MotorEvent, 'dateEnd'>[],
+  now: Date,
+): boolean {
+  if (!existing) return true;
+  const nowMs = now.getTime();
+  const updated = Date.parse(existing.updatedAt);
+  if (nowMs - updated > STANDINGS_MAX_AGE_MS) return true;
+  const ends = [
+    ...sessions.filter((s) => s.type === 'carrera').map((s) => Date.parse(s.endUtc)),
+    ...events.map((e) => Date.parse(`${e.dateEnd}T23:59:59Z`)),
+  ].filter((t) => t < nowMs);
+  const lastRaceEnd = Math.max(...ends, -Infinity);
+  if (!Number.isFinite(lastRaceEnd)) return false;
+  return updated < lastRaceEnd || nowMs - lastRaceEnd < STANDINGS_REFRESH_MS;
+}
 
 export function pendingResultSessions(
   sessions: Session[],
@@ -67,16 +100,10 @@ export async function runResultsForSeries(
   if (!adapter.results) return out;
 
   const pending = pendingResultSessions(sessions, ctx.now, attempts);
-  const lastRaceEnd = sessions
-    .filter((s) => s.type === 'carrera' && Date.parse(s.endUtc) < ctx.now.getTime())
-    .map((s) => s.endUtc)
-    .sort()
-    .at(-1);
-  const standingsStale =
-    !existingStandings || (!!lastRaceEnd && lastRaceEnd > existingStandings.updatedAt);
-  if (pending.length === 0 && !standingsStale) return out;
+  const stale = standingsStale(existingStandings, sessions, events, ctx.now);
+  if (pending.length === 0 && !stale) return out;
 
-  const chunk = await adapter.results(series, ctx, { events, pendingSessions: pending, sessions, standingsStale });
+  const chunk = await adapter.results(series, ctx, { events, pendingSessions: pending, sessions, standingsStale: stale });
 
   for (const file of chunk.results) {
     const target = path.join(dataDir, 'results', series.id, `${file.eventId}.json`);

@@ -476,7 +476,28 @@ export async function aiStandings(deps: AiDeps, series: Series, season: number, 
         'Copiá nombres exactamente como figuran. Omití otras categorías.',
     }),
   );
-  return (data.tables ?? []).filter((t) => validateStandingsRows(t, doc.text) === null);
+  return (data.tables ?? []).map(cleanStandingsTable).filter((t) => validateStandingsRows(t, doc.text) === null);
+}
+
+/**
+ * Gemini devuelve null en los datos opcionales que no figuran (p. ej. victorias), pero data/standings
+ * no admite null: se quitan esos campos (antes, un solo null invalidaba todo el archivo del campeonato).
+ */
+export function cleanStandingsTable(table: StandingsTable): StandingsTable {
+  return {
+    title: table.title,
+    rows: (table.rows ?? []).map((r) => {
+      const { pos, name, points } = r;
+      return {
+        pos,
+        name,
+        points,
+        ...(r.team != null && r.team !== '' ? { team: r.team } : {}),
+        ...(r.number != null && r.number !== '' ? { number: String(r.number) } : {}),
+        ...(r.wins != null ? { wins: r.wins } : {}),
+      };
+    }),
+  };
 }
 
 export function validateStandingsRows(table: StandingsTable, documentText: string): string | null {
