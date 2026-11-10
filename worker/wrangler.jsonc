@@ -1,0 +1,24 @@
+{
+  // Worker de Agenda Deporte Motor (plan gratuito de Cloudflare).
+  "name": "agenda-deporte-motor",
+  "main": "src/index.ts",
+  "compatibility_date": "2024-12-01",
+  "triggers": {
+    // Cada 5 minutos: avisos de sesiones que empiezan pronto.
+    "crons": ["*/5 * * * *"]
+  },
+  "kv_namespaces": [
+    // El id se completa al crear el namespace: npx wrangler kv namespace create SUBS
+    { "binding": "SUBS", "id": "REEMPLAZAR_CON_EL_ID_DEL_NAMESPACE" }
+  ],
+  "vars": {
+    // Datos publicados por el pipeline (GitHub Pages).
+    "DATA_BASE": "https://ignaciogutierres1.github.io/agenda-deporte-motor/data",
+    // Dirección de la app (para abrirla al tocar el aviso).
+    "APP_URL": "https://ignaciogutierres1.github.io/agenda-deporte-motor/",
+    // Orígenes que pueden usar la API (la app publicada y el modo desarrollo).
+    "ALLOWED_ORIGINS": "https://ignaciogutierres1.github.io,http://localhost:5173,http://localhost:4173",
+    "ADMIN_CONTACT": "https://github.com/IgnacioGutierres1/agenda-deporte-motor"
+  }
+  // Secretos (npx wrangler secret put ...): VAPID_PRIVATE_KEY (JWK en JSON), VAPID_PUBLIC_KEY (base64url).
+}
