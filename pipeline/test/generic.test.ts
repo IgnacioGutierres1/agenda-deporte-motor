@@ -61,10 +61,10 @@ describe('fechas y husos (lectores deterministas)', () => {
 });
 
 describe('recetas de sitios oficiales', () => {
-  it('SRO: eventos futuros y pasados con fechas, ronda, zona y link', () => {
+  it('SRO: eventos futuros y pasados con fechas, ronda, zona y link', async () => {
     const url = 'https://www.gt-world-challenge-australia.com/calendar';
     const recipe = findRecipe(url)!;
-    const entries = recipe.calendar!(
+    const entries = await recipe.calendar!(
       { url, kind: 'html', raw: fixture('sro-calendar.html'), text: '', title: '', hash: '' },
       { season: 2026, series: exampleGt, http: gtHttp(), now: new Date(NOW) },
     );
