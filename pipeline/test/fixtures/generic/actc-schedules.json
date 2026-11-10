@@ -1,0 +1,152 @@
+{
+ "success": true,
+ "data": [
+  {
+   "id": "sch-rc",
+   "category": "tc",
+   "published": true,
+   "categories": [
+    "tc",
+    "tcp"
+   ],
+   "calendarEvent": {
+    "title": "Fecha 14 — RIO CUARTO",
+    "raceDate": "2026-11-15T12:00:00.000Z"
+   },
+   "days": [
+    {
+     "date": "2026-11-14T00:00:00.000Z",
+     "label": "sábado, 14 de noviembre de 2026",
+     "items": [
+      {
+       "startMin": 480,
+       "endMin": 540,
+       "title": "Verificación Técnica TC y TCP",
+       "subtitle": "OBLIGATORIA",
+       "trackType": "administrative",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TC",
+         "src": "/uploads/x.png"
+        }
+       ]
+      },
+      {
+       "startMin": 565,
+       "endMin": 595,
+       "title": "1er. Entrenamiento TCP",
+       "subtitle": "Grupo A 30 Min.",
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TCP",
+         "src": "/uploads/x.png"
+        }
+       ]
+      },
+      {
+       "startMin": 600,
+       "endMin": 630,
+       "title": "1er. Entrenamiento TCP",
+       "subtitle": "Grupo B 30 Min.",
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TCP",
+         "src": "/uploads/x.png"
+        }
+       ]
+      },
+      {
+       "startMin": 665,
+       "endMin": 685,
+       "title": "1er. Entrenamiento TC",
+       "subtitle": "Grupo A 20 Min.",
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TC",
+         "src": "/uploads/x.png"
+        }
+       ]
+      },
+      {
+       "startMin": 969,
+       "endMin": 977,
+       "title": "Clasificación TCP",
+       "subtitle": "2* Tercio 8 Min.",
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TCP",
+         "src": "/uploads/x.png"
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "date": "2026-11-15T00:00:00.000Z",
+     "label": "domingo, 15 de noviembre de 2026",
+     "items": [
+      {
+       "startMin": 595,
+       "endMin": 600,
+       "title": "Salida a pista TCP",
+       "subtitle": null,
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TCP",
+         "src": "/uploads/x.png"
+        }
+       ]
+      },
+      {
+       "startMin": 605,
+       "endMin": 615,
+       "title": "1ra. Serie TCP",
+       "subtitle": "5 vueltas",
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TCP",
+         "src": "/uploads/x.png"
+        }
+       ]
+      },
+      {
+       "startMin": 775,
+       "endMin": 815,
+       "title": "FINAL TCP",
+       "subtitle": "20 vueltas o 40 minutos máximo.",
+       "trackType": "activities_tv",
+       "logos": [
+        {
+         "id": "x",
+         "key": null,
+         "label": "TCP",
+         "src": "/uploads/x.png"
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}
