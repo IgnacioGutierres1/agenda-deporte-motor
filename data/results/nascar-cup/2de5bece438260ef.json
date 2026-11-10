@@ -1,7 +1,7 @@
 {
   "seriesId": "nascar-cup",
   "eventId": "2de5bece438260ef",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-10T16:52:55Z",
   "sessions": [
     {
       "sessionId": "2949af59b58cabd6",
@@ -1512,6 +1512,448 @@
         "kind": "api",
         "method": "directo",
         "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    },
+    {
+      "sessionId": "7e7d30e1432bf0a4",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "2",
+          "driver": "Austin Cindric",
+          "team": "Team Penske",
+          "vehicle": "Ford",
+          "laps": 13,
+          "time": "48.025",
+          "bestLap": "48.025"
+        },
+        {
+          "pos": 2,
+          "number": "1",
+          "driver": "Ross Chastain",
+          "team": "Trackhouse Racing",
+          "vehicle": "Chevrolet",
+          "laps": 6,
+          "gap": "+0.121",
+          "bestLap": "48.146"
+        },
+        {
+          "pos": 3,
+          "number": "*99",
+          "driver": "Corey LaJoie",
+          "team": "RFK Racing",
+          "vehicle": "Ford",
+          "laps": 11,
+          "gap": "+0.228",
+          "bestLap": "48.253"
+        },
+        {
+          "pos": 4,
+          "number": "23",
+          "driver": "Bubba Wallace",
+          "team": "23XI Racing",
+          "vehicle": "Toyota",
+          "laps": 8,
+          "gap": "+0.237",
+          "bestLap": "48.262"
+        },
+        {
+          "pos": 5,
+          "number": "7",
+          "driver": "Daniel Suárez",
+          "team": "Spire Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 8,
+          "gap": "+0.469",
+          "bestLap": "48.494"
+        },
+        {
+          "pos": 6,
+          "number": "48",
+          "driver": "Alex Bowman",
+          "team": "Hendrick Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 4,
+          "gap": "+0.497",
+          "bestLap": "48.522"
+        },
+        {
+          "pos": 7,
+          "number": "43",
+          "driver": "Erik Jones",
+          "team": "Legacy Motor Club",
+          "vehicle": "Toyota",
+          "laps": 14,
+          "gap": "+0.560",
+          "bestLap": "48.585"
+        },
+        {
+          "pos": 8,
+          "number": "*67",
+          "driver": "Corey Heim",
+          "team": "23XI Racing",
+          "vehicle": "Toyota",
+          "laps": 8,
+          "gap": "+0.574",
+          "bestLap": "48.599"
+        },
+        {
+          "pos": 9,
+          "number": "5",
+          "driver": "Kyle Larson",
+          "team": "Hendrick Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 7,
+          "gap": "+0.654",
+          "bestLap": "48.679"
+        },
+        {
+          "pos": 10,
+          "number": "*84",
+          "driver": "Jimmie Johnson",
+          "team": "Legacy Motor Club",
+          "vehicle": "Toyota",
+          "laps": 20,
+          "gap": "+0.663",
+          "bestLap": "48.688"
+        },
+        {
+          "pos": 11,
+          "number": "42",
+          "driver": "John H. Nemechek",
+          "team": "Legacy Motor Club",
+          "vehicle": "Toyota",
+          "laps": 16,
+          "gap": "+0.712",
+          "bestLap": "48.737"
+        },
+        {
+          "pos": 12,
+          "number": "8",
+          "driver": "Kyle Busch",
+          "team": "Richard Childress Racing",
+          "vehicle": "Chevrolet",
+          "laps": 5,
+          "gap": "+0.750",
+          "bestLap": "48.775"
+        },
+        {
+          "pos": 13,
+          "number": "19",
+          "driver": "Chase Briscoe",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 17,
+          "gap": "+0.790",
+          "bestLap": "48.815"
+        },
+        {
+          "pos": 14,
+          "number": "3",
+          "driver": "Austin Dillon",
+          "team": "Richard Childress Racing",
+          "vehicle": "Chevrolet",
+          "laps": 6,
+          "gap": "+0.845",
+          "bestLap": "48.870"
+        },
+        {
+          "pos": 15,
+          "number": "35",
+          "driver": "Riley Herbst",
+          "team": "23XI Racing",
+          "vehicle": "Toyota",
+          "laps": 9,
+          "gap": "+0.852",
+          "bestLap": "48.877"
+        },
+        {
+          "pos": 16,
+          "number": "10",
+          "driver": "Ty Dillon",
+          "team": "Kaulig Racing",
+          "vehicle": "Chevrolet",
+          "laps": 9,
+          "gap": "+0.865",
+          "bestLap": "48.890"
+        },
+        {
+          "pos": 17,
+          "number": "88",
+          "driver": "Connor Zilisch",
+          "team": "Trackhouse Racing",
+          "vehicle": "Chevrolet",
+          "laps": 10,
+          "gap": "+0.912",
+          "bestLap": "48.937"
+        },
+        {
+          "pos": 18,
+          "number": "17",
+          "driver": "Chris Buescher",
+          "team": "RFK Racing",
+          "vehicle": "Ford",
+          "laps": 7,
+          "gap": "+0.929",
+          "bestLap": "48.954"
+        },
+        {
+          "pos": 19,
+          "number": "*40",
+          "driver": "Justin Allgaier",
+          "team": "JR Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 7,
+          "gap": "+0.965",
+          "bestLap": "48.990"
+        },
+        {
+          "pos": 20,
+          "number": "9",
+          "driver": "Chase Elliott",
+          "team": "Hendrick Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 5,
+          "gap": "+0.969",
+          "bestLap": "48.994"
+        },
+        {
+          "pos": 21,
+          "number": "21",
+          "driver": "Josh Berry",
+          "team": "Wood Brothers Racing",
+          "vehicle": "Ford",
+          "laps": 5,
+          "gap": "+0.971",
+          "bestLap": "48.996"
+        },
+        {
+          "pos": 22,
+          "number": "47",
+          "driver": "Ricky Stenhouse Jr",
+          "team": "HYAK Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 5,
+          "gap": "+0.973",
+          "bestLap": "48.998"
+        },
+        {
+          "pos": 23,
+          "number": "11",
+          "driver": "Denny Hamlin",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 8,
+          "gap": "+0.980",
+          "bestLap": "49.005"
+        },
+        {
+          "pos": 24,
+          "number": "60",
+          "driver": "Ryan Preece",
+          "team": "RFK Racing",
+          "vehicle": "Ford",
+          "laps": 7,
+          "gap": "+0.982",
+          "bestLap": "49.007"
+        },
+        {
+          "pos": 25,
+          "number": "41",
+          "driver": "Cole Custer",
+          "team": "Haas Factory Team",
+          "vehicle": "Chevrolet",
+          "laps": 6,
+          "gap": "+1.010",
+          "bestLap": "49.035"
+        },
+        {
+          "pos": 26,
+          "number": "*62",
+          "driver": "Anthony Alfredo",
+          "team": "Beard Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 5,
+          "gap": "+1.016",
+          "bestLap": "49.041"
+        },
+        {
+          "pos": 27,
+          "number": "45",
+          "driver": "Tyler Reddick",
+          "team": "23XI Racing",
+          "vehicle": "Toyota",
+          "laps": 20,
+          "gap": "+1.018",
+          "bestLap": "49.043"
+        },
+        {
+          "pos": 28,
+          "number": "6",
+          "driver": "Brad Keselowski",
+          "team": "RFK Racing",
+          "vehicle": "Ford",
+          "laps": 10,
+          "gap": "+1.041",
+          "bestLap": "49.066"
+        },
+        {
+          "pos": 29,
+          "number": "77",
+          "driver": "Carson Hocevar",
+          "team": "Spire Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 2,
+          "gap": "+1.055",
+          "bestLap": "49.080"
+        },
+        {
+          "pos": 30,
+          "number": "20",
+          "driver": "Christopher Bell",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 7,
+          "gap": "+1.059",
+          "bestLap": "49.084"
+        },
+        {
+          "pos": 31,
+          "number": "12",
+          "driver": "Ryan Blaney",
+          "team": "Team Penske",
+          "vehicle": "Ford",
+          "laps": 9,
+          "gap": "+1.070",
+          "bestLap": "49.095"
+        },
+        {
+          "pos": 32,
+          "number": "22",
+          "driver": "Joey Logano",
+          "team": "Team Penske",
+          "vehicle": "Ford",
+          "laps": 12,
+          "gap": "+1.077",
+          "bestLap": "49.102"
+        },
+        {
+          "pos": 33,
+          "number": "51",
+          "driver": "Cody Ware",
+          "team": "Rick Ware Racing",
+          "vehicle": "Chevrolet",
+          "laps": 6,
+          "gap": "+1.088",
+          "bestLap": "49.113"
+        },
+        {
+          "pos": 34,
+          "number": "24",
+          "driver": "William Byron",
+          "team": "Hendrick Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 2,
+          "gap": "+1.164",
+          "bestLap": "49.189"
+        },
+        {
+          "pos": 35,
+          "number": "*36",
+          "driver": "Chandler Smith",
+          "team": "Front Row Motorsports",
+          "vehicle": "Ford",
+          "laps": 4,
+          "gap": "+1.177",
+          "bestLap": "49.202"
+        },
+        {
+          "pos": 36,
+          "number": "54",
+          "driver": "Ty Gibbs",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 3,
+          "gap": "+1.212",
+          "bestLap": "49.237"
+        },
+        {
+          "pos": 37,
+          "number": "16",
+          "driver": "AJ Allmendinger",
+          "team": "Kaulig Racing",
+          "vehicle": "Chevrolet",
+          "laps": 8,
+          "gap": "+1.219",
+          "bestLap": "49.244"
+        },
+        {
+          "pos": 38,
+          "number": "97",
+          "driver": "Shane Van Gisbergen",
+          "team": "Trackhouse Racing",
+          "vehicle": "Chevrolet",
+          "laps": 10,
+          "gap": "+1.296",
+          "bestLap": "49.321"
+        },
+        {
+          "pos": 39,
+          "number": "4",
+          "driver": "Noah Gragson",
+          "team": "Front Row Motorsports",
+          "vehicle": "Ford",
+          "laps": 1,
+          "gap": "+1.370",
+          "bestLap": "49.395"
+        },
+        {
+          "pos": 40,
+          "number": "38",
+          "driver": "Zane Smith",
+          "team": "Front Row Motorsports",
+          "vehicle": "Ford",
+          "laps": 1,
+          "gap": "+1.474",
+          "bestLap": "49.499"
+        },
+        {
+          "pos": 41,
+          "number": "*78",
+          "driver": "BJ McLeod",
+          "team": "Live Fast Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 9,
+          "gap": "+1.631",
+          "bestLap": "49.656"
+        },
+        {
+          "pos": 42,
+          "number": "*66",
+          "driver": "Casey Mears",
+          "team": "Garage 66",
+          "vehicle": "Ford",
+          "laps": 8,
+          "gap": "+1.785",
+          "bestLap": "49.810"
+        },
+        {
+          "pos": 43,
+          "number": "*44",
+          "driver": "JJ Yeley",
+          "team": "NY Racing Team",
+          "vehicle": "Chevrolet",
+          "laps": 4,
+          "gap": "+2.101",
+          "bestLap": "50.126"
+        }
+      ],
+      "source": {
+        "url": "https://cf.nascar.com/cacher/2026/1/5596/weekend-feed.json",
+        "title": "NASCAR – resultados DAYTONA 500 (Práctica 1)",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T16:52:55Z"
       }
     }
   ]
