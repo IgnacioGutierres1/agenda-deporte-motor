@@ -5,8 +5,8 @@
  */
 import { DateTime } from 'luxon';
 import { localToUtc, type ResultRow, type Series, type StandingsTable } from '@dm/shared';
-import type { FetchedDocument } from '../extract/document.ts';
-import { hasUsableText } from '../extract/document.ts';
+import type { DocImage, FetchedDocument } from '../extract/document.ts';
+import { hasUsableText, sha256 } from '../extract/document.ts';
 import { GeminiUnavailableError, type Gemini, type GeminiSchema } from '../extract/gemini.ts';
 import { appearsInDocument, normalizeForMatch } from '../validate.ts';
 import type { ExtractionCache } from './cache.ts';
@@ -48,6 +48,60 @@ function docPayload(doc: FetchedDocument): { text?: string; pdf?: Uint8Array } {
 
 const S = (description?: string): GeminiSchema => ({ type: 'STRING', ...(description ? { description } : {}) });
 const N = (description?: string): GeminiSchema => ({ type: 'INTEGER', nullable: true, ...(description ? { description } : {}) });
+
+// ─── Imágenes ─────────────────────────────────────────────────────────────────────────────────
+
+interface AiImageText {
+  images: Array<{ text: string }>;
+}
+
+const imageTextSchema: GeminiSchema = {
+  type: 'OBJECT',
+  properties: {
+    images: {
+      type: 'ARRAY',
+      description: 'Una entrada por imagen, en el mismo orden en que se enviaron',
+      items: { type: 'OBJECT', properties: { text: S('Todo el texto visible de la imagen') }, required: ['text'] },
+    },
+  },
+  required: ['images'],
+};
+
+/**
+ * Paso 1 de la lectura de imágenes oficiales (calendarios o cronogramas publicados como imagen):
+ * Gemini transcribe el texto visible, sin interpretarlo. El documento resultante (kind "image")
+ * sigue el mismo camino que un HTML o un PDF: la extracción de eventos/sesiones es un segundo pedido
+ * y cada hora extraída tiene que figurar literalmente en esta transcripción.
+ * Caché por hash de las imágenes: si no cambian, no se vuelve a llamar a Gemini.
+ */
+export async function imageDocument(
+  deps: AiDeps,
+  seriesId: string,
+  page: Pick<FetchedDocument, 'url' | 'title'>,
+  images: DocImage[],
+): Promise<FetchedDocument | null> {
+  if (images.length === 0) return null;
+  const hash = sha256(images.map((i) => sha256(i.data)).join('|'));
+  const url = images.length === 1 ? images[0]!.url : page.url;
+  const title = page.title ? `${page.title} (imagen)` : 'Imagen oficial';
+  const base: FetchedDocument = { url, kind: 'image', raw: '', text: '', title, hash, images };
+  const data = await cached<AiImageText>(deps, seriesId, 'image-text', base, '', () =>
+    deps.gemini.generateJson<AiImageText>({
+      system: SYSTEM,
+      label: `imagen ${seriesId}`,
+      images: images.map(({ mimeType, data }) => ({ mimeType, data })),
+      schema: imageTextSchema,
+      prompt:
+        `Transcribí todo el texto visible de cada una de las ${images.length} imagen(es), en orden de lectura. ` +
+        'En tablas, escribí una fila por línea con las celdas separadas por " | " y los encabezados (día, fecha, columnas) en su propia línea. ' +
+        'Copiá números, fechas y horas exactamente como figuran, sin corregir, completar ni traducir nada. ' +
+        'Si una parte no se puede leer, escribí [ilegible].',
+    }),
+  );
+  const parts = (data.images ?? []).map((im, i) => `=== Imagen ${i + 1} ===\n${(im.text ?? '').trim()}`);
+  const text = [page.title, ...parts].filter(Boolean).join('\n\n');
+  return { ...base, text };
+}
 
 // ─── Calendario ───────────────────────────────────────────────────────────────────────────────
 
@@ -109,7 +163,7 @@ export async function aiCalendar(
       prompt: opts.multiSeries
         ? `Listá todas las competencias de automovilismo de ${season} y comienzos de ${season + 1} que figuran en este calendario oficial con varias categorías. ` +
           'Para cada una indicá el campeonato/categoría al que pertenece, fechas, circuito y país.'
-        : `Listá los eventos (fechas/rondas) de la temporada ${season} de "${series.name}" que figuran en este calendario oficial. ` +
+        : `Listá TODOS los eventos (fechas/rondas) de la temporada ${season} de "${series.name}" que figuran en este calendario oficial, uno por cada fecha. ` +
           'Incluí fechas de inicio y fin (días del fin de semana del evento). Si solo figura el día de la carrera, usá ese día en ambas fechas. ' +
           'No incluyas eventos de otras categorías.',
     }),

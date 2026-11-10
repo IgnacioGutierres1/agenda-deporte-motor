@@ -17,7 +17,8 @@ export type Strategy = 'adapter' | 'generic';
 /** default: las 22 del gem. user: agregada desde la app. discovered: hallada por el descubrimiento. */
 export type Origin = 'default' | 'user' | 'discovered';
 
-export type SourceKind = 'api' | 'html' | 'pdf';
+/** image: el dato se leyó de una imagen oficial (Gemini transcribe el texto de la imagen). */
+export type SourceKind = 'api' | 'html' | 'pdf' | 'image';
 
 /** directo: leído sin IA. ia: transcripto por Gemini desde el documento oficial descargado. */
 export type SourceMethod = 'directo' | 'ia';

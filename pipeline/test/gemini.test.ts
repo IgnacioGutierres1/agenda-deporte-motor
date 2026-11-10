@@ -125,3 +125,69 @@ describe('cliente de Gemini', () => {
     expect(parseLooseJson(res.text)).toEqual([{ championship: 'Top Race' }]);
   });
 });
+
+describe('cupo diario gratuito por modelo', () => {
+  const schema: GeminiSchema = { type: 'OBJECT', properties: { ok: { type: 'BOOLEAN' } }, required: ['ok'] };
+  const dailyQuota = () =>
+    new Response(
+      JSON.stringify({
+        error: {
+          message: 'You exceeded your current quota',
+          details: [{ '@type': 'type.googleapis.com/google.rpc.QuotaFailure', violations: [{ quotaId: 'GenerateRequestsPerDayPerProjectPerModel-FreeTier', quotaValue: '20' }] }],
+        },
+      }),
+      { status: 429 },
+    );
+
+  it('si un modelo agotó su cupo diario pasa al siguiente sin esperar, y no lo vuelve a probar en la corrida', async () => {
+    const asked: string[] = [];
+    const waits: number[] = [];
+    const g = createGemini({
+      env: { GEMINI_API_KEY: 'k', GEMINI_DELAY_MS: '0', GEMINI_MODEL: 'm1', GEMINI_FALLBACK_MODELS: 'm2,m3' },
+      fetchImpl: async (url) => {
+        const model = String(url).match(/models\/([^:]+):/)![1]!;
+        asked.push(model);
+        if (model === 'm1') return dailyQuota();
+        if (model === 'm2') return new Response('{}', { status: asked.length === 2 ? 404 : 503 });
+        return okResponse({ ok: true });
+      },
+      sleep: async (ms) => {
+        waits.push(ms);
+      },
+    });
+    await expect(g.generateJson({ prompt: 'a', schema })).resolves.toEqual({ ok: true });
+    await expect(g.generateJson({ prompt: 'b', schema })).resolves.toEqual({ ok: true });
+    expect(asked).toEqual(['m1', 'm2', 'm3', 'm3']);
+    expect(waits.filter((w) => w >= 5000)).toEqual([]);
+    expect(g.callsMade()).toBe(2);
+  });
+
+  it('si todos agotaron el cupo, falla con un error de "no disponible" (los datos quedan a confirmar)', async () => {
+    const g = createGemini({
+      env: { GEMINI_API_KEY: 'k', GEMINI_DELAY_MS: '0', GEMINI_MODEL: 'm1', GEMINI_FALLBACK_MODELS: 'm2' },
+      fetchImpl: async () => dailyQuota(),
+      sleep: async () => {},
+    });
+    const err = await g.generateJson({ prompt: 'a', schema }).catch((e: Error) => e);
+    expect(err).toBeInstanceOf(GeminiUnavailableError);
+    expect((err as Error).message).toContain('cupo diario gratuito de Gemini (modelos: m1, m2)');
+  });
+});
+
+describe('modelo saturado', () => {
+  it('si un modelo sigue saturado (503) después de los reintentos, prueba el siguiente', async () => {
+    const schema: GeminiSchema = { type: 'OBJECT', properties: { ok: { type: 'BOOLEAN' } }, required: ['ok'] };
+    const asked: string[] = [];
+    const g = createGemini({
+      env: { GEMINI_API_KEY: 'k', GEMINI_DELAY_MS: '0', GEMINI_RETRIES: '1', GEMINI_MODEL: 'm1', GEMINI_FALLBACK_MODELS: 'm2' },
+      fetchImpl: async (url) => {
+        const model = String(url).match(/models\/([^:]+):/)![1]!;
+        asked.push(model);
+        return model === 'm1' ? new Response('{}', { status: 503 }) : okResponse({ ok: true });
+      },
+      sleep: async () => {},
+    });
+    await expect(g.generateJson({ prompt: 'a', schema })).resolves.toEqual({ ok: true });
+    expect(asked).toEqual(['m1', 'm1', 'm2']);
+  });
+});

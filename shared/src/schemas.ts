@@ -12,7 +12,7 @@ const isoDate = z.string().regex(/^\d{4}-\d{2}-\d{2}$/, 'Se espera YYYY-MM-DD');
 export const sourceSchema = z.object({
   url: z.string().url(),
   title: z.string(),
-  kind: z.enum(['api', 'html', 'pdf']),
+  kind: z.enum(['api', 'html', 'pdf', 'image']),
   method: z.enum(['directo', 'ia']),
   fetchedAt: isoUtc,
 });

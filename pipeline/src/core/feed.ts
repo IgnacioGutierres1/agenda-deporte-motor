@@ -36,6 +36,7 @@ export function buildFeed(
         sessionName: s.name,
         broadcast: s.broadcast,
         sourceUrl: s.source.url,
+        fromImage: s.source.kind === 'image',
       };
     }),
     { now, calendarName: 'Deporte Motor' },
