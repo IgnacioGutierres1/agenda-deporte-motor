@@ -115,20 +115,6 @@ export default defineComponent({
 </script>
 
 <style>
-.section-head {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.link-btn {
-  min-height: var(--tap);
-  border: none;
-  background: transparent;
-  color: var(--accent);
-  font-weight: 700;
-}
-
 .group-block {
   margin-bottom: 0.5rem;
 }

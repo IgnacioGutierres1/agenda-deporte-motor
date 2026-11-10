@@ -84,6 +84,11 @@
           </ul>
         </section>
 
+        <section v-if="driverNews.length" class="card">
+          <h3>Noticias</h3>
+          <NewsList :items="driverNews" :featured="false" />
+        </section>
+
         <p class="small dim center">
           Datos de las tablas de campeonato y resultados oficiales de cada categoría.
         </p>
@@ -102,6 +107,8 @@ import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
+import NewsList from '../components/NewsList.vue';
+import { newsForDriver, useNewsStore } from '../stores/news.ts';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
@@ -118,11 +125,16 @@ interface Upcoming {
 /** Ficha de un piloto (como la de un jugador en FotMob). */
 export default defineComponent({
   name: 'DriverView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, SeriesCrest },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, SeriesCrest },
   computed: {
     ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', driversFile: 'file' }),
     ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
+    ...mapState(useNewsStore, { newsItems: 'items' }),
+    driverNews() {
+      if (!this.driver) return [];
+      return newsForDriver(this.newsItems, this.driver.name, [...new Set(this.driver.entries.map((e) => e.seriesId))]).slice(0, 5);
+    },
     driver(): Driver | undefined {
       return this.driversById.get(String(this.$route.params.driverId));
     },
@@ -183,11 +195,13 @@ export default defineComponent({
       immediate: true,
       handler() {
         void this.loadDrivers();
+        void this.loadNews();
       },
     },
   },
   methods: {
     ...mapActions(useDriversStore, { loadDrivers: 'load' }),
+    ...mapActions(useNewsStore, { loadNews: 'load' }),
     fmt(n: number): string {
       return n.toLocaleString('es-AR');
     },

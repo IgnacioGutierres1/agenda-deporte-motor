@@ -1,0 +1,208 @@
+<template>
+  <div class="page search-view">
+    <label class="search-box">
+      <AppIcon name="search" :size="18" />
+      <input
+        ref="input"
+        v-model="query"
+        type="search"
+        class="search-input"
+        placeholder="Categorías, pilotos, circuitos, noticias…"
+        aria-label="Buscar"
+        enterkeyhint="search"
+      />
+    </label>
+
+    <template v-if="q.length < 2">
+      <p class="small dim">Escribí al menos 2 letras. Por ejemplo: «Canapino», «Rafaela», «MotoGP», «Le Mans».</p>
+      <template v-if="recent.length">
+        <div class="section-head">
+          <h2 class="section-title">Búsquedas recientes</h2>
+          <button type="button" class="link-btn" @click="clearRecent">Borrar</button>
+        </div>
+        <div class="session-chips wrap-chips">
+          <button v-for="r in recent" :key="r" type="button" class="pill" @click="query = r">{{ r }}</button>
+        </div>
+      </template>
+    </template>
+
+    <template v-else>
+      <p v-if="!total && driversStatus !== 'loading'" class="card empty dim">Sin resultados para «{{ query }}».</p>
+
+      <template v-if="seriesHits.length">
+        <h2 class="section-title">Categorías</h2>
+        <ul class="list-card">
+          <li v-for="s in seriesHits" :key="s.id"><SeriesRow :series="s" /></li>
+        </ul>
+      </template>
+
+      <template v-if="driverHits.length || driversStatus === 'loading'">
+        <h2 class="section-title">Pilotos</h2>
+        <p v-if="driversStatus === 'loading'" class="small dim">Cargando pilotos…</p>
+        <ul v-else class="list-card">
+          <li v-for="d in driverHits" :key="d.id">
+            <RouterLink :to="`/piloto/${d.id}`" class="list-row" @click="remember">
+              <DriverAvatar :name="d.name" :color="driverColor(d)" :size="34" />
+              <span class="grow">
+                {{ d.name }}
+                <span class="block small dim">{{ entrySummary(d) }}</span>
+              </span>
+              <AppIcon name="chevron" :size="16" class="dim" />
+            </RouterLink>
+          </li>
+        </ul>
+      </template>
+
+      <template v-if="eventHits.length">
+        <h2 class="section-title">Eventos</h2>
+        <ul class="list-card">
+          <li v-for="h in eventHits" :key="h.event.id">
+            <RouterLink :to="`/evento/${h.event.id}`" class="list-row" :class="{ past: h.past }" @click="remember">
+              <SeriesCrest :series="h.series" :size="30" />
+              <span class="grow">
+                {{ h.event.name }}
+                <span class="block small dim">{{ h.series.shortName }} · {{ dateRange(h.event.dateStart, h.event.dateEnd) }} · {{ h.event.circuit }}</span>
+              </span>
+              <AppIcon name="chevron" :size="16" class="dim" />
+            </RouterLink>
+          </li>
+        </ul>
+      </template>
+
+      <template v-if="newsHits.length">
+        <h2 class="section-title">Noticias</h2>
+        <NewsList :items="newsHits" :featured="false" />
+      </template>
+    </template>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent } from 'vue';
+import { mapActions, mapState } from 'pinia';
+import type { Driver, MotorEvent, NewsItem, Series } from '@dm/shared';
+import AppIcon from '../components/AppIcon.vue';
+import DriverAvatar from '../components/DriverAvatar.vue';
+import NewsList from '../components/NewsList.vue';
+import SeriesCrest from '../components/SeriesCrest.vue';
+import SeriesRow from '../components/SeriesRow.vue';
+import { useDriversStore } from '../stores/drivers.ts';
+import { useNewsStore } from '../stores/news.ts';
+import { useScheduleStore } from '../stores/schedule.ts';
+import { formatDateRange } from '../lib/format.ts';
+import { seriesColor, seriesSort } from '../lib/grid.ts';
+import { todayIn } from '../lib/agenda.ts';
+import { readJsonStorage, writeJsonStorage } from '../lib/storage.ts';
+
+const norm = (s: string) =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase();
+const matchesAll = (hay: string, words: string[]) => {
+  const h = norm(hay);
+  return words.every((w) => h.includes(w));
+};
+const RECENT_KEY = 'search-recent';
+
+/** Buscador general (como "Buscar" en FotMob): categorías, pilotos, eventos y noticias. */
+export default defineComponent({
+  name: 'SearchView',
+  components: { AppIcon, DriverAvatar, NewsList, SeriesCrest, SeriesRow },
+  data() {
+    return {
+      query: (this.$route.query.q as string | undefined) ?? '',
+      recent: readJsonStorage<string[]>(RECENT_KEY) ?? [],
+    };
+  },
+  computed: {
+    ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
+    ...mapState(useDriversStore, { driversStatus: 'status' }),
+    ...mapState(useNewsStore, { newsItems: 'items' }),
+    q(): string {
+      return norm(this.query.trim());
+    },
+    words(): string[] {
+      return this.q.split(/\s+/).filter(Boolean);
+    },
+    seriesHits(): Series[] {
+      return (this.schedule?.series ?? [])
+        .filter((s) => s.enabled && matchesAll(`${s.name} ${s.shortName}`, this.words))
+        .sort(seriesSort)
+        .slice(0, 8);
+    },
+    driverHits(): Driver[] {
+      return useDriversStore().search(this.query, 10);
+    },
+    eventHits(): Array<{ event: MotorEvent; series: Series; past: boolean }> {
+      const out: Array<{ event: MotorEvent; series: Series; past: boolean }> = [];
+      for (const e of this.schedule?.events ?? []) {
+        const series = this.seriesById.get(e.seriesId);
+        if (!series?.enabled || !matchesAll(`${e.name} ${e.circuit} ${e.country} ${series.shortName}`, this.words)) continue;
+        out.push({ event: e, series, past: e.dateEnd < todayIn(this.now, e.tz) });
+      }
+      // Primero los próximos (por fecha), después los pasados (más recientes primero).
+      return out
+        .sort((a, b) =>
+          a.past !== b.past ? Number(a.past) - Number(b.past) : a.past ? b.event.dateStart.localeCompare(a.event.dateStart) : a.event.dateStart.localeCompare(b.event.dateStart),
+        )
+        .slice(0, 12);
+    },
+    newsHits(): NewsItem[] {
+      return this.newsItems.filter((n) => matchesAll(n.title, this.words)).slice(0, 6);
+    },
+    total(): number {
+      return this.seriesHits.length + this.driverHits.length + this.eventHits.length + this.newsHits.length;
+    },
+  },
+  watch: {
+    '$route.query.q'(value: unknown) {
+      const next = typeof value === 'string' ? value : '';
+      if (next !== this.query.trim()) this.query = next;
+    },
+    q(value: string) {
+      if (value.length >= 2) {
+        void this.loadDrivers();
+        void this.loadNews();
+      }
+      void this.$router.replace({ query: this.query.trim() ? { q: this.query.trim() } : {} });
+    },
+  },
+  mounted() {
+    if (this.q.length >= 2) {
+      void this.loadDrivers();
+      void this.loadNews();
+    }
+    (this.$refs.input as HTMLInputElement | undefined)?.focus();
+  },
+  methods: {
+    ...mapActions(useDriversStore, { loadDrivers: 'load' }),
+    ...mapActions(useNewsStore, { loadNews: 'load' }),
+    remember() {
+      const term = this.query.trim();
+      if (term.length < 2) return;
+      this.recent = [term, ...this.recent.filter((r) => r.toLowerCase() !== term.toLowerCase())].slice(0, 8);
+      writeJsonStorage(RECENT_KEY, this.recent);
+    },
+    clearRecent() {
+      this.recent = [];
+      writeJsonStorage(RECENT_KEY, []);
+    },
+    driverColor(d: Driver): string {
+      return seriesColor(this.seriesById.get(d.entries[0]?.seriesId ?? ''));
+    },
+    entrySummary(d: Driver): string {
+      return d.entries
+        .map((e) => `${this.seriesById.get(e.seriesId)?.shortName ?? e.seriesId}${e.table ? ' ' + e.table : ''} P${e.pos}`)
+        .join(' · ');
+    },
+    dateRange: formatDateRange,
+  },
+});
+</script>
+
+<style>
+.wrap-chips {
+  flex-wrap: wrap;
+}
+</style>

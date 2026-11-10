@@ -5,6 +5,12 @@ import AgendaView from './views/AgendaView.vue';
 export const routes: RouteRecordRaw[] = [
   { path: '/', name: 'agenda', component: AgendaView, meta: { title: 'Agenda', root: true } },
   {
+    path: '/noticias',
+    name: 'noticias',
+    component: () => import('./views/NewsView.vue'),
+    meta: { title: 'Noticias', root: true },
+  },
+  {
     path: '/categorias',
     name: 'categorias',
     component: () => import('./views/CategoriesView.vue'),
@@ -33,6 +39,12 @@ export const routes: RouteRecordRaw[] = [
     name: 'siguiendo',
     component: () => import('./views/FollowingView.vue'),
     meta: { title: 'Siguiendo', root: true },
+  },
+  {
+    path: '/buscar',
+    name: 'buscar',
+    component: () => import('./views/SearchView.vue'),
+    meta: { title: 'Buscar', root: true },
   },
   { path: '/exportar', name: 'exportar', component: () => import('./views/ExportView.vue'), meta: { title: 'Exportar' } },
   { path: '/auditoria', name: 'auditoria', component: () => import('./views/AuditView.vue'), meta: { title: 'Auditoría' } },

@@ -105,8 +105,10 @@ export default defineComponent({
       menuOpen: false,
       nav: [
         { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar'] },
+        { to: '/noticias', label: 'Noticias', icon: 'news', match: [] },
         { to: '/categorias', label: 'Categorías', icon: 'trophy', match: ['/categoria'] },
         { to: '/siguiendo', label: 'Siguiendo', icon: 'star', match: ['/piloto'] },
+        { to: '/buscar', label: 'Buscar', icon: 'search', match: [] },
       ] as NavItem[],
       menu: [
         { to: '/exportar', label: 'Exportar y Google Calendar', icon: 'share', hint: '.ics, carga directa y suscripción' },

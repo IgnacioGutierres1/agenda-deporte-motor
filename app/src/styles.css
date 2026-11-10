@@ -698,3 +698,30 @@ a.driver-link:hover {
   font: inherit;
   outline: none;
 }
+
+/* Pastillas deslizables (sesiones, categorías) */
+.session-chips {
+  display: flex;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding: 0.25rem 0 0.75rem;
+  scrollbar-width: none;
+}
+
+.session-chips::-webkit-scrollbar {
+  display: none;
+}
+
+.section-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.link-btn {
+  min-height: var(--tap);
+  border: none;
+  background: transparent;
+  color: var(--accent);
+  font-weight: 700;
+}
