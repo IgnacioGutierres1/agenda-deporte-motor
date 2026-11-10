@@ -13,3 +13,6 @@ Thumbs.db
 # Caché local del pipeline (la que se versiona vive en data/_cache)
 pipeline/.cache/
 .claude/settings.local.json
+
+# Worktrees locales para trabajo en paralelo
+.worktrees/
