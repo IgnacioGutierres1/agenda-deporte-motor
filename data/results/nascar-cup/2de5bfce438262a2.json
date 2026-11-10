@@ -1,0 +1,240 @@
+{
+  "seriesId": "nascar-cup",
+  "eventId": "2de5bfce438262a2",
+  "updatedAt": "2026-11-10T08:11:28Z",
+  "sessions": [
+    {
+      "sessionId": "3db67de54fde4c6f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "9",
+          "driver": "Chase Elliott",
+          "team": "Hendrick Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "time": "0:49:07",
+          "points": 10
+        },
+        {
+          "pos": 2,
+          "number": "77",
+          "driver": "Carson Hocevar",
+          "team": "Spire Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+0.065",
+          "points": 9
+        },
+        {
+          "pos": 3,
+          "number": "5",
+          "driver": "Kyle Larson",
+          "team": "Hendrick Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+0.136",
+          "points": 8
+        },
+        {
+          "pos": 4,
+          "number": "71",
+          "driver": "Michael McDowell",
+          "team": "Spire Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+0.166",
+          "points": 7
+        },
+        {
+          "pos": 5,
+          "number": "20",
+          "driver": "Christopher Bell",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+0.201",
+          "points": 6
+        },
+        {
+          "pos": 6,
+          "number": "21",
+          "driver": "Josh Berry",
+          "team": "Wood Brothers Racing",
+          "vehicle": "Ford",
+          "laps": 60,
+          "gap": "+0.308",
+          "points": 5
+        },
+        {
+          "pos": 7,
+          "number": "47",
+          "driver": "Ricky Stenhouse Jr",
+          "team": "HYAK Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+0.313",
+          "points": 4
+        },
+        {
+          "pos": 8,
+          "number": "34",
+          "driver": "Todd Gilliland",
+          "team": "Front Row Motorsports",
+          "vehicle": "Ford",
+          "laps": 60,
+          "gap": "+0.529",
+          "points": 3
+        },
+        {
+          "pos": 9,
+          "number": "54",
+          "driver": "Ty Gibbs",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+0.530",
+          "points": 2
+        },
+        {
+          "pos": 10,
+          "number": "11",
+          "driver": "Denny Hamlin",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+0.669",
+          "points": 1
+        },
+        {
+          "pos": 11,
+          "number": "43",
+          "driver": "Erik Jones",
+          "team": "Legacy Motor Club",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+0.681",
+          "points": 0
+        },
+        {
+          "pos": 12,
+          "number": "45",
+          "driver": "Tyler Reddick",
+          "team": "23XI Racing",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+0.687",
+          "points": 0
+        },
+        {
+          "pos": 13,
+          "number": "35",
+          "driver": "Riley Herbst",
+          "team": "23XI Racing",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+0.846",
+          "points": 0
+        },
+        {
+          "pos": 14,
+          "number": "38",
+          "driver": "Zane Smith",
+          "team": "Front Row Motorsports",
+          "vehicle": "Ford",
+          "laps": 60,
+          "gap": "+1.005",
+          "points": 0
+        },
+        {
+          "pos": 15,
+          "number": "88",
+          "driver": "Connor Zilisch",
+          "team": "Trackhouse Racing",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+1.115",
+          "points": 0
+        },
+        {
+          "pos": 16,
+          "number": "10",
+          "driver": "Ty Dillon",
+          "team": "Kaulig Racing",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+1.198",
+          "points": 0
+        },
+        {
+          "pos": 17,
+          "number": "2",
+          "driver": "Austin Cindric",
+          "team": "Team Penske",
+          "vehicle": "Ford",
+          "laps": 60,
+          "gap": "+2.272",
+          "points": 0
+        },
+        {
+          "pos": 18,
+          "number": "78",
+          "driver": "BJ McLeod",
+          "team": "Live Fast Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+27.504",
+          "points": 0
+        },
+        {
+          "pos": 19,
+          "number": "19",
+          "driver": "Chase Briscoe",
+          "team": "Joe Gibbs Racing",
+          "vehicle": "Toyota",
+          "laps": 60,
+          "gap": "+29.289",
+          "points": 0
+        },
+        {
+          "pos": 20,
+          "number": "40",
+          "driver": "Justin Allgaier",
+          "team": "JR Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+29.412",
+          "points": 0
+        },
+        {
+          "pos": 21,
+          "number": "44",
+          "driver": "JJ Yeley",
+          "team": "NY Racing Team",
+          "vehicle": "Chevrolet",
+          "laps": 57,
+          "gap": "+3 vueltas",
+          "points": 0
+        },
+        {
+          "pos": 22,
+          "status": "DSQ",
+          "number": "62",
+          "driver": "Anthony Alfredo",
+          "team": "Beard Motorsports",
+          "vehicle": "Chevrolet",
+          "laps": 60,
+          "gap": "+4.028",
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://cf.nascar.com/cacher/2026/1/5595/weekend-feed.json",
+        "title": "NASCAR – resultados America 250 Florida Duel at DAYTONA (Carrera clasificatoria 2)",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    }
+  ]
+}

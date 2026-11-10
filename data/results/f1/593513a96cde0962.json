@@ -1,0 +1,962 @@
+{
+  "seriesId": "f1",
+  "eventId": "593513a96cde0962",
+  "updatedAt": "2026-11-10T08:11:28Z",
+  "sessions": [
+    {
+      "sessionId": "451a5288bf7ab427",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 66,
+          "time": "1:32:28.105",
+          "points": 25
+        },
+        {
+          "pos": 2,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 66,
+          "gap": "+19.561s",
+          "points": 18
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 66,
+          "gap": "+23.719s",
+          "points": 15
+        },
+        {
+          "pos": 4,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 66,
+          "gap": "+40.497s",
+          "points": 12
+        },
+        {
+          "pos": 5,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 66,
+          "gap": "+58.661s",
+          "points": 10
+        },
+        {
+          "pos": 6,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 65,
+          "gap": "+1 lap",
+          "points": 8
+        },
+        {
+          "pos": 7,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 65,
+          "gap": "+1 lap",
+          "points": 6
+        },
+        {
+          "pos": 8,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 65,
+          "gap": "+1 lap",
+          "points": 4
+        },
+        {
+          "pos": 9,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 65,
+          "gap": "+1 lap",
+          "points": 2
+        },
+        {
+          "pos": 10,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 65,
+          "gap": "+1 lap",
+          "points": 1
+        },
+        {
+          "pos": 11,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 64,
+          "gap": "+2 laps",
+          "points": 0
+        },
+        {
+          "pos": 12,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 64,
+          "gap": "+2 laps",
+          "points": 0
+        },
+        {
+          "pos": 13,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 64,
+          "gap": "+2 laps",
+          "points": 0
+        },
+        {
+          "pos": 14,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 63,
+          "gap": "+3 laps",
+          "points": 0
+        },
+        {
+          "pos": 15,
+          "status": "DNF",
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 62,
+          "points": 0
+        },
+        {
+          "pos": 16,
+          "status": "DNF",
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 61,
+          "points": 0
+        },
+        {
+          "pos": 17,
+          "status": "DNF",
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 60,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 55,
+          "gap": "+11 laps",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 37,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 29,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 15,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 5,
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/race-result",
+        "title": "Formula 1 — Barcelona Grand Prix: Race (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    },
+    {
+      "sessionId": "b22769cb6e87001f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 13,
+          "time": "1:14.679"
+        },
+        {
+          "pos": 2,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 14,
+          "time": "1:14.743"
+        },
+        {
+          "pos": 3,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 14,
+          "time": "1:14.998"
+        },
+        {
+          "pos": 4,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 14,
+          "time": "1:15.001"
+        },
+        {
+          "pos": 5,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 12,
+          "time": "1:15.021"
+        },
+        {
+          "pos": 6,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 14,
+          "time": "1:15.077"
+        },
+        {
+          "pos": 7,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 15,
+          "time": "1:15.090"
+        },
+        {
+          "pos": 8,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 14,
+          "time": "1:16.542"
+        },
+        {
+          "pos": 9,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 17,
+          "time": "1:16.657"
+        },
+        {
+          "pos": 10,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 8,
+          "time": "1:15.281"
+        },
+        {
+          "pos": 11,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 8,
+          "time": "1:15.840"
+        },
+        {
+          "pos": 12,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 9,
+          "time": "1:16.001"
+        },
+        {
+          "pos": 13,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 12,
+          "time": "1:16.191"
+        },
+        {
+          "pos": 14,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 12,
+          "time": "1:16.261"
+        },
+        {
+          "pos": 15,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 15,
+          "time": "1:16.389"
+        },
+        {
+          "pos": 16,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 15,
+          "time": "1:17.827"
+        },
+        {
+          "pos": 17,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 9,
+          "time": "1:17.073"
+        },
+        {
+          "pos": 18,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 9,
+          "time": "1:17.424"
+        },
+        {
+          "pos": 19,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 6,
+          "time": "1:17.545"
+        },
+        {
+          "pos": 20,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 9,
+          "time": "1:17.757"
+        },
+        {
+          "pos": 21,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 8,
+          "time": "1:18.758"
+        },
+        {
+          "pos": 22,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 8,
+          "time": "1:18.815"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/qualifying",
+        "title": "Formula 1 — Barcelona Grand Prix: Qualifying (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    },
+    {
+      "sessionId": "554a480623aac07b",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 11,
+          "time": "1:15.679"
+        },
+        {
+          "pos": 2,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 12,
+          "gap": "+0.214s"
+        },
+        {
+          "pos": 3,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 17,
+          "gap": "+0.243s"
+        },
+        {
+          "pos": 4,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 15,
+          "gap": "+0.246s"
+        },
+        {
+          "pos": 5,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 16,
+          "gap": "+0.702s"
+        },
+        {
+          "pos": 6,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 12,
+          "gap": "+0.755s"
+        },
+        {
+          "pos": 7,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 12,
+          "gap": "+0.821s"
+        },
+        {
+          "pos": 8,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 15,
+          "gap": "+1.005s"
+        },
+        {
+          "pos": 9,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 22,
+          "gap": "+1.282s"
+        },
+        {
+          "pos": 10,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 16,
+          "gap": "+1.341s"
+        },
+        {
+          "pos": 11,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 13,
+          "gap": "+1.348s"
+        },
+        {
+          "pos": 12,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 15,
+          "gap": "+1.645s"
+        },
+        {
+          "pos": 13,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 15,
+          "gap": "+1.904s"
+        },
+        {
+          "pos": 14,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 14,
+          "gap": "+1.946s"
+        },
+        {
+          "pos": 15,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 19,
+          "gap": "+2.051s"
+        },
+        {
+          "pos": 16,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 15,
+          "gap": "+2.361s"
+        },
+        {
+          "pos": 17,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 13,
+          "gap": "+2.712s"
+        },
+        {
+          "pos": 18,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 15,
+          "gap": "+2.733s"
+        },
+        {
+          "pos": 19,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 21,
+          "gap": "+3.012s"
+        },
+        {
+          "pos": 20,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 18,
+          "gap": "+3.817s"
+        },
+        {
+          "pos": 21,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 14,
+          "gap": "+4.283s"
+        },
+        {
+          "pos": 22,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 17,
+          "gap": "+4.424s"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/practice/3",
+        "title": "Formula 1 — Barcelona Grand Prix: Practice 3 (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    },
+    {
+      "sessionId": "55474a0623a88e0a",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 30,
+          "time": "1:15.426"
+        },
+        {
+          "pos": 2,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 28,
+          "gap": "+0.009s"
+        },
+        {
+          "pos": 3,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 24,
+          "gap": "+0.057s"
+        },
+        {
+          "pos": 4,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 29,
+          "gap": "+0.373s"
+        },
+        {
+          "pos": 5,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 31,
+          "gap": "+0.589s"
+        },
+        {
+          "pos": 6,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 33,
+          "gap": "+0.895s"
+        },
+        {
+          "pos": 7,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 29,
+          "gap": "+0.985s"
+        },
+        {
+          "pos": 8,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 27,
+          "gap": "+1.185s"
+        },
+        {
+          "pos": 9,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 28,
+          "gap": "+1.205s"
+        },
+        {
+          "pos": 10,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 30,
+          "gap": "+1.248s"
+        },
+        {
+          "pos": 11,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 31,
+          "gap": "+1.508s"
+        },
+        {
+          "pos": 12,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 31,
+          "gap": "+1.519s"
+        },
+        {
+          "pos": 13,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 8,
+          "gap": "+1.541s"
+        },
+        {
+          "pos": 14,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 29,
+          "gap": "+1.594s"
+        },
+        {
+          "pos": 15,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 30,
+          "gap": "+1.625s"
+        },
+        {
+          "pos": 16,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 29,
+          "gap": "+1.834s"
+        },
+        {
+          "pos": 17,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 29,
+          "gap": "+2.112s"
+        },
+        {
+          "pos": 18,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 6,
+          "gap": "+2.799s"
+        },
+        {
+          "pos": 19,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 29,
+          "gap": "+3.364s"
+        },
+        {
+          "pos": 20,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 34,
+          "gap": "+3.835s"
+        },
+        {
+          "pos": 21,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 21,
+          "gap": "+3.860s"
+        },
+        {
+          "pos": 22,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 20,
+          "gap": "+4.033s"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/practice/2",
+        "title": "Formula 1 — Barcelona Grand Prix: Practice 2 (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    },
+    {
+      "sessionId": "55434c0623a4a899",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 27,
+          "time": "1:16.363"
+        },
+        {
+          "pos": 2,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 29,
+          "gap": "+0.203s"
+        },
+        {
+          "pos": 3,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 29,
+          "gap": "+0.520s"
+        },
+        {
+          "pos": 4,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 29,
+          "gap": "+0.684s"
+        },
+        {
+          "pos": 5,
+          "number": "67",
+          "driver": "Leonardo Fornaroli",
+          "team": "McLaren",
+          "laps": 22,
+          "gap": "+0.853s"
+        },
+        {
+          "pos": 6,
+          "number": "97",
+          "driver": "Paul Aron",
+          "team": "Audi",
+          "laps": 24,
+          "gap": "+0.958s"
+        },
+        {
+          "pos": 7,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 24,
+          "gap": "+1.109s"
+        },
+        {
+          "pos": 8,
+          "number": "38",
+          "driver": "Dino Beganovic",
+          "team": "Ferrari",
+          "laps": 30,
+          "gap": "+1.415s"
+        },
+        {
+          "pos": 9,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 29,
+          "gap": "+1.441s"
+        },
+        {
+          "pos": 10,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 28,
+          "gap": "+1.530s"
+        },
+        {
+          "pos": 11,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 25,
+          "gap": "+1.809s"
+        },
+        {
+          "pos": 12,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 28,
+          "gap": "+1.846s"
+        },
+        {
+          "pos": 13,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 27,
+          "gap": "+1.930s"
+        },
+        {
+          "pos": 14,
+          "number": "36",
+          "driver": "Ayumu Iwasa",
+          "team": "Red Bull Racing",
+          "laps": 21,
+          "gap": "+1.935s"
+        },
+        {
+          "pos": 15,
+          "number": "72",
+          "driver": "Frederik Vesti",
+          "team": "Mercedes",
+          "laps": 28,
+          "gap": "+2.002s"
+        },
+        {
+          "pos": 16,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 27,
+          "gap": "+2.009s"
+        },
+        {
+          "pos": 17,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 23,
+          "gap": "+2.145s"
+        },
+        {
+          "pos": 18,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 23,
+          "gap": "+2.551s"
+        },
+        {
+          "pos": 19,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 23,
+          "gap": "+3.704s"
+        },
+        {
+          "pos": 20,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 21,
+          "gap": "+3.955s"
+        },
+        {
+          "pos": 21,
+          "number": "25",
+          "driver": "Colton Herta",
+          "team": "Cadillac",
+          "laps": 27,
+          "gap": "+4.334s"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/practice/1",
+        "title": "Formula 1 — Barcelona Grand Prix: Practice 1 (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T08:11:28Z"
+      }
+    }
+  ]
+}
