@@ -157,6 +157,7 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       const events: MotorEvent[] = [];
       const sessions: Session[] = [];
       let needsKey = 0;
+      let unavailable = MISSING_KEY_MESSAGE;
 
       for (const [i, entry] of cal.entries.entries()) {
         const draft = ctx.build.event({
@@ -179,7 +180,10 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
           try {
             found = await findSessions(series, entry, cal, ctx, deps);
           } catch (err) {
-            if (err instanceof GeminiUnavailableError) needsKey++;
+            if (err instanceof GeminiUnavailableError) {
+              needsKey++;
+              unavailable = err.message;
+            }
             else ctx.log.warn(`${entry.name}: ${err instanceof Error ? err.message : String(err)}`);
           }
         }
@@ -211,7 +215,7 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
         }
       }
       if (needsKey > 0) {
-        ctx.log.warn(`${MISSING_KEY_MESSAGE}: ${needsKey} cronograma(s) dentro del horizonte quedan "a confirmar"`);
+        ctx.log.warn(`${unavailable}: ${needsKey} cronograma(s) dentro del horizonte quedan "a confirmar"`);
       }
       return { events, sessions };
     },

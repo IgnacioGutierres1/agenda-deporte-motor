@@ -6,6 +6,8 @@
  * - Llamadas en serie con una pausa entre ellas, reintentos con espera ante 429/500/503
  *   y tope de llamadas por corrida (GEMINI_MAX_CALLS).
  * - Búsqueda de Google (grounding) solo para el descubrimiento.
+ * - Cupo diario: el plan gratuito da un cupo de pedidos por día POR MODELO (hoy 20). Cuando un modelo
+ *   lo agota (429 con cuota "PerDay") se pasa al siguiente de la lista sin esperar (GEMINI_FALLBACK_MODELS).
  * - Proveedor: AI Studio (clave de API, por defecto) o Vertex AI (proyecto + token de acceso),
  *   por si el crédito mensual de Google AI Pro solo se aplica vía Vertex.
  *
@@ -72,12 +74,26 @@ export const DEFAULT_EXTRACT_MODEL = 'gemini-3.6-flash';
  * Modelo por defecto para búsqueda con Google: 2.5 Flash-Lite comparte con 2.5 Flash
  * el cupo gratuito de búsqueda (500/día) y no figura como retirado. En Gemini 3+ la búsqueda es paga.
  */
+/**
+ * Modelos de respaldo para transcribir cuando el principal agota su cupo diario gratuito
+ * (cada modelo tiene su propio cupo). Se pueden cambiar con GEMINI_FALLBACK_MODELS (separados por coma).
+ */
+export const DEFAULT_FALLBACK_MODELS = ['gemini-3.5-flash', 'gemini-3.7-flash', 'gemini-3.8-flash', 'gemini-3.5-flash-lite'];
+
 export const DEFAULT_SEARCH_MODEL = 'gemini-2.5-flash-lite';
 
 export class GeminiUnavailableError extends Error {
   constructor(message: string) {
     super(message);
     this.name = 'GeminiUnavailableError';
+  }
+}
+
+/** Todos los modelos agotaron su cupo diario gratuito: los datos que dependen de IA quedan para la próxima corrida. */
+export class GeminiQuotaError extends GeminiUnavailableError {
+  constructor(models: string[]) {
+    super(`Se agotó el cupo diario gratuito de Gemini (modelos: ${models.join(', ')}); se reintenta en la próxima corrida`);
+    this.name = 'GeminiQuotaError';
   }
 }
 
@@ -92,6 +108,8 @@ export class GeminiApiError extends Error {
   constructor(
     public readonly status: number,
     message: string,
+    /** true si es un 429 por cupo diario agotado (no tiene sentido reintentar con ese modelo hoy). */
+    public readonly dailyQuota = false,
   ) {
     super(message);
     this.name = 'GeminiApiError';
@@ -111,6 +129,7 @@ interface GeminiConfig {
   location: string;
   accessToken?: string;
   extractModel: string;
+  fallbackModels: string[];
   searchModel: string;
   maxCalls: number;
   delayMs: number;
@@ -126,6 +145,9 @@ export function readGeminiConfig(env: Record<string, string | undefined> = proce
     location: env.GOOGLE_CLOUD_LOCATION?.trim() || 'global',
     accessToken: env.GOOGLE_ACCESS_TOKEN?.trim() || undefined,
     extractModel: env.GEMINI_MODEL?.trim() || DEFAULT_EXTRACT_MODEL,
+    fallbackModels: env.GEMINI_FALLBACK_MODELS !== undefined && env.GEMINI_FALLBACK_MODELS.trim() !== ''
+      ? env.GEMINI_FALLBACK_MODELS.split(',').map((m) => m.trim()).filter(Boolean)
+      : DEFAULT_FALLBACK_MODELS,
     searchModel: env.GEMINI_SEARCH_MODEL?.trim() || DEFAULT_SEARCH_MODEL,
     maxCalls: num(env.GEMINI_MAX_CALLS, 60),
     delayMs: num(env.GEMINI_DELAY_MS, 4000),
@@ -189,11 +211,33 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
       }
       if (res.ok) return (await res.json()) as GenerateResponse;
       const detail = await readError(res);
-      lastError = new GeminiApiError(res.status, `Gemini respondió HTTP ${res.status} (${model}): ${detail.message}`);
+      lastError = new GeminiApiError(res.status, `Gemini respondió HTTP ${res.status} (${model}): ${detail.message}`, detail.daily);
+      if (detail.daily) throw lastError; // el cupo diario no se recupera esperando
       if (![429, 500, 502, 503, 504].includes(res.status)) throw lastError;
       if (attempt < cfg.retries) await sleep(backoffMs(attempt, detail.retryAfterMs ?? retryAfterHeader(res)));
     }
     throw lastError ?? new GeminiApiError(0, 'Gemini falló');
+  }
+
+  /** Modelos que agotaron su cupo diario (o ya no existen) en esta corrida. */
+  const exhausted = new Set<string>();
+
+  /** Llama al modelo pedido y, si agotó su cupo diario, a los de respaldo (en orden). */
+  async function callWithFallback(model: string, body: unknown): Promise<GenerateResponse> {
+    const chain = [model, ...cfg.fallbackModels.filter((m) => m !== model)];
+    for (const m of chain) {
+      if (exhausted.has(m)) continue;
+      try {
+        return await call(m, body);
+      } catch (err) {
+        // 404: modelo retirado o no disponible para esta clave; se prueba el siguiente.
+        const skip = err instanceof GeminiApiError && (err.dailyQuota || err.status === 404);
+        if (!skip) throw err;
+        exhausted.add(m);
+        calls--; // el pedido no se hizo: no cuenta para el tope por corrida
+      }
+    }
+    throw new GeminiQuotaError(chain);
   }
 
   function enqueue<T>(fn: () => Promise<T>): Promise<T> {
@@ -230,7 +274,7 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
             ...(req.images?.length ? { mediaResolution: 'MEDIA_RESOLUTION_HIGH' } : {}),
           },
         };
-        const res = await call(req.model ?? cfg.extractModel, body);
+        const res = await callWithFallback(req.model ?? cfg.extractModel, body);
         const text = responseText(res);
         try {
           return JSON.parse(text) as T;
@@ -281,19 +325,28 @@ function responseText(res: GenerateResponse): string {
   return text;
 }
 
-async function readError(res: Response): Promise<{ message: string; retryAfterMs: number | null }> {
+async function readError(res: Response): Promise<{ message: string; retryAfterMs: number | null; daily: boolean }> {
   try {
     const body = (await res.json()) as {
-      error?: { message?: string; details?: Array<{ '@type'?: string; retryDelay?: string }> };
+      error?: {
+        message?: string;
+        details?: Array<{ '@type'?: string; retryDelay?: string; violations?: Array<{ quotaId?: string; quotaValue?: string }> }>;
+      };
     };
     const delay = body.error?.details?.find((d) => d.retryDelay)?.retryDelay;
     const secs = delay ? Number.parseFloat(delay) : NaN;
+    // Cuotas superadas (p. ej. "GenerateRequestsPerDayPerProjectPerModel-FreeTier=20"): explican un 429.
+    const quotas = (body.error?.details ?? [])
+      .flatMap((d) => d.violations ?? [])
+      .map((v) => `${v.quotaId ?? '?'}=${v.quotaValue ?? '?'}`);
+    const message = (body.error?.message ?? res.statusText).split('\n')[0]!.slice(0, 200);
     return {
-      message: (body.error?.message ?? res.statusText).slice(0, 300),
+      daily: res.status === 429 && quotas.some((q) => /PerDay/i.test(q)),
+      message: quotas.length ? `${message} [cuota: ${[...new Set(quotas)].join(', ')}]` : message,
       retryAfterMs: Number.isFinite(secs) ? secs * 1000 : null,
     };
   } catch {
-    return { message: res.statusText, retryAfterMs: null };
+    return { message: res.statusText, retryAfterMs: null, daily: false };
   }
 }
 
