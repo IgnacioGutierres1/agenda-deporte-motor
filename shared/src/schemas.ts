@@ -162,3 +162,35 @@ export const discoveredFileSchema = z.object({
     }),
   ),
 });
+
+export const driversFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  drivers: z.array(
+    z.object({
+      id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+      name: z.string().min(1),
+      entries: z.array(
+        z.object({
+          seriesId: z.string(),
+          table: z.string().optional(),
+          pos: z.number().int().positive(),
+          points: z.number(),
+          wins: z.number().int().nonnegative().optional(),
+          number: z.string().optional(),
+          team: z.string().optional(),
+        }),
+      ),
+      recent: z.array(
+        z.object({
+          seriesId: z.string(),
+          eventId: z.string(),
+          sessionId: z.string(),
+          startUtc: isoUtc,
+          pos: z.number().int().positive().nullable(),
+          status: z.string().optional(),
+        }),
+      ),
+    }),
+  ),
+});
