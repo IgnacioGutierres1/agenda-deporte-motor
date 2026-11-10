@@ -163,7 +163,7 @@ export async function aiCalendar(
       prompt: opts.multiSeries
         ? `Listá todas las competencias de automovilismo de ${season} y comienzos de ${season + 1} que figuran en este calendario oficial con varias categorías. ` +
           'Para cada una indicá el campeonato/categoría al que pertenece, fechas, circuito y país.'
-        : `Listá los eventos (fechas/rondas) de la temporada ${season} de "${series.name}" que figuran en este calendario oficial. ` +
+        : `Listá TODOS los eventos (fechas/rondas) de la temporada ${season} de "${series.name}" que figuran en este calendario oficial, uno por cada fecha. ` +
           'Incluí fechas de inicio y fin (días del fin de semana del evento). Si solo figura el día de la carrera, usá ese día en ambas fechas. ' +
           'No incluyas eventos de otras categorías.',
     }),

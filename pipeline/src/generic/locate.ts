@@ -6,7 +6,7 @@ import { toUtcIso } from '@dm/shared';
 import type { FetchedDocument } from '../extract/document.ts';
 import { extractLinks, parseJsonLd, type Link } from '../extract/html.ts';
 import { normalizeForMatch } from '../validate.ts';
-import { countryName, dateInZone, guessTimeZone } from './places.ts';
+import { countryName, dateInZone, guessTimeZone, monthNumber, parseDateRangeText } from './places.ts';
 import type { CalendarEntry, ExtractedSession } from './types.ts';
 
 const isEventType = (o: Record<string, unknown>) => {
@@ -142,4 +142,44 @@ export function resultsLinks(doc: FetchedDocument): Link[] {
   function score(l: Link): number {
     return Number(isPdf(l.url)) + Number(/race|carrera|final|rennen/i.test(`${l.text} ${l.url}`));
   }
+}
+
+/**
+ * Calendario publicado como una imagen por fecha ("FECHA 10 / NOVIEMBRE 20, 21 y 22 / Rafaela / Santa Fe"):
+ * lectura determinista de la transcripción (sin un segundo pedido a Gemini). Cada bloque necesita
+ * el número de fecha, una línea con días y mes, y el lugar en la línea siguiente.
+ * Solo para categorías de un país conocido (de ahí sale la zona horaria).
+ */
+export function imageCalendarEntries(
+  doc: FetchedDocument,
+  season: number,
+  opts: { country: string; defaultTz: string; seriesNames: string[] },
+): CalendarEntry[] {
+  if (doc.kind !== 'image') return [];
+  const skip = new Set(opts.seriesNames.map(normalizeForMatch));
+  const out: CalendarEntry[] = [];
+  for (const block of doc.text.split(/^=== Imagen \d+ ===$/m).slice(1)) {
+    const lines = block.split('\n').map((l) => l.trim()).filter(Boolean);
+    const roundIdx = lines.findIndex((l) => /^(fecha|ronda|round)\s*n?[º°.]?\s*\d{1,2}$/i.test(l));
+    if (roundIdx < 0) continue;
+    const round = Number(lines[roundIdx]!.match(/\d{1,2}/)![0]);
+    const dateIdx = lines.findIndex((l, i) => i > roundIdx && /\d/.test(l) && l.split(/[^A-Za-zÀ-ÿ]+/).some((w) => monthNumber(w) !== null));
+    if (dateIdx < 0) continue;
+    const dates = parseDateRangeText(lines[dateIdx]!, season);
+    if (!dates) continue;
+    const place = lines.slice(dateIdx + 1).filter((l) => !l.startsWith('#') && !skip.has(normalizeForMatch(l)));
+    const city = place[0];
+    if (!city) continue;
+    const region = place[1] ?? '';
+    out.push({
+      name: `Fecha ${round} ${city}`,
+      circuit: city,
+      country: opts.country,
+      tz: guessTimeZone(opts.country, `${city} ${region}`) ?? opts.defaultTz,
+      dateStart: dates.start,
+      dateEnd: dates.end,
+      round,
+    });
+  }
+  return out.sort((a, b) => a.dateStart.localeCompare(b.dateStart));
 }

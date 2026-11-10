@@ -36,6 +36,7 @@ import {
 } from './ai.ts';
 import { createExtractionCache } from './cache.ts';
 import {
+  imageCalendarEntries,
   jsonLdCalendar,
   jsonLdSessions,
   looksLikeTimetable,
@@ -109,7 +110,17 @@ export async function readCalendar(
       if (entries.length === 0 && doc.kind === 'html') {
         const img = await imageDocument(ai, series.id, doc, await fetchImages(ctx.http, contentImages(doc.raw, doc.url).slice(0, MAX_CALENDAR_IMAGES)));
         if (img) {
-          entries = await aiCalendar(ai, series, img, ctx.season, opts);
+          // Primero lectura determinista de la transcripción ("FECHA 10 / NOVIEMBRE 20, 21 y 22 / Rafaela");
+          // si no tiene ese formato, Gemini arma la lista a partir del texto transcripto.
+          entries =
+            series.group === 'argentina' && !opts.multiSeries
+              ? imageCalendarEntries(img, ctx.season, {
+                  country: 'Argentina',
+                  defaultTz: 'America/Argentina/Buenos_Aires',
+                  seriesNames: [series.name, series.shortName],
+                })
+              : [];
+          if (entries.length === 0) entries = await aiCalendar(ai, series, img, ctx.season, opts);
           if (entries.length > 0) read = { ...img, url: doc.url };
         }
       }

@@ -223,3 +223,60 @@ describe('flujo genérico con imágenes oficiales', () => {
     expect(ics.replace(/\r\n /g, '')).toContain('Fuente: https://x.org/c.jpg (leído de imagen)');
   });
 });
+
+describe('calendario en imágenes: lectura determinista de la transcripción', () => {
+  // Transcripción real que devolvió Gemini para https://aptpweb.com.ar/calendario-2026/ (10/11/2026).
+  const OCR = [
+    'FECHA 1\n30, 31 de ENERO y FEBRERO 01\nRoberto Mouras\nLa Plata\nTurismo Pista',
+    'FECHA 2\n27, 28 de FEBRERO y MARZO 01\nToay\nLa Pampa\nTurismo Pista',
+    'FECHA 7\nAGOSTO 07, 08 y 09\n#TP300Pilotos\nSan Nicolás\nBuenos Aires\nTurismo Pista',
+    'FECHA 10\nNOVIEMBRE 20, 21 y 22\nRafaela\nSanta Fe\nTurismo Pista',
+    'APTP\nAsociación Pilotos Turismo Pista\nTurismo Pista',
+  ];
+  const doc = {
+    url: 'https://aptpweb.com.ar/calendario-2026/',
+    kind: 'image' as const,
+    raw: '',
+    title: 'Calendario / 2026 - Turismo Pista | APTP (imagen)',
+    hash: 'h',
+    text: ['Calendario / 2026', ...OCR.map((t, i) => `=== Imagen ${i + 1} ===\n${t}`)].join('\n\n'),
+  };
+
+  it('arma cada fecha con número, días (incluso entre dos meses) y lugar', async () => {
+    const { imageCalendarEntries } = await import('../src/generic/locate.ts');
+    const entries = imageCalendarEntries(doc, 2026, {
+      country: 'Argentina',
+      defaultTz: 'America/Argentina/Buenos_Aires',
+      seriesNames: ['Turismo Pista (Clases 1, 2 y 3)', 'Turismo Pista'],
+    });
+    expect(entries.map((e) => [e.round, e.name, e.dateStart, e.dateEnd])).toEqual([
+      [1, 'Fecha 1 Roberto Mouras', '2026-01-30', '2026-02-01'],
+      [2, 'Fecha 2 Toay', '2026-02-27', '2026-03-01'],
+      [7, 'Fecha 7 San Nicolás', '2026-08-07', '2026-08-09'],
+      [10, 'Fecha 10 Rafaela', '2026-11-20', '2026-11-22'],
+    ]);
+    expect(entries.every((e) => e.tz.startsWith('America/Argentina/'))).toBe(true);
+  });
+
+  it('en el flujo, una categoría argentina no necesita el segundo pedido a Gemini', async () => {
+    const url = 'https://tp.example.org/calendario-2026/';
+    const page = `<html><head><title>Calendario / 2026</title></head><body><main><p>Noticias de la categoría y más texto de relleno para la página.</p>
+      ${OCR.map((_, i) => `<img width="330" height="400" src="/u/fecha_${i + 1}.png">`).join('')}</main></body></html>`;
+    const routes: Record<string, string | typeof PNG> = { [url]: page };
+    OCR.forEach((_, i) => (routes[`https://tp.example.org/u/fecha_${i + 1}.png`] = PNG));
+    const gemini = fakeGemini({
+      calendario: () => ({ events: [] }),
+      imagen: () => ({ images: OCR.map((text) => ({ text })) }),
+    });
+    const series = genericSeries('turismo-pista', 'Turismo Pista (Clases 1, 2 y 3)', [url], { shortName: 'Turismo Pista', group: 'argentina' });
+    const chunk = await createGenericAdapter({ gemini: () => gemini }).schedule(series, testContext(fakeHttp(routes), NOW));
+    expect(chunk.events.map((e) => [e.round, e.source.kind])).toEqual([
+      [1, 'image'],
+      [2, 'image'],
+      [7, 'image'],
+      [10, 'image'],
+    ]);
+    // Un pedido por el texto de la página y uno para transcribir las imágenes; ninguno más.
+    expect(gemini.requests.map((r) => r.label)).toEqual(['calendario turismo-pista', 'imagen turismo-pista']);
+  });
+});
