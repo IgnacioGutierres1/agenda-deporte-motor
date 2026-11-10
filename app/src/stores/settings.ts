@@ -32,6 +32,10 @@ export const useSettingsStore = defineStore('settings', {
     followedSeries: [] as string[],
     /** Pilotos que sigue el usuario, en orden. */
     followedDrivers: [] as FollowedDriver[],
+    /** Avisos push activados en este dispositivo. */
+    notifyEnabled: false,
+    /** Minutos de anticipación de los avisos. */
+    notifyLead: 30,
     /** Tema visual: oscuro por defecto, como FotMob. */
     theme: 'dark' as ThemeChoice,
     /** Client ID OAuth de Google; vacío = el de VITE_GOOGLE_CLIENT_ID. */
@@ -50,6 +54,10 @@ export const useSettingsStore = defineStore('settings', {
     },
     repoRef(): RepoRef | null {
       return parseRepo(this.effectiveRepo);
+    },
+    /** Categorías de las que se avisa: las seguidas y las de los pilotos seguidos. */
+    notifySeriesIds(state): string[] {
+      return [...new Set([...state.followedSeries, ...state.followedDrivers.flatMap((d) => d.seriesIds)])].sort();
     },
     canWriteRepo(state): boolean {
       return state.githubToken.trim() !== '' && parseRepo(this.effectiveRepo) !== null;

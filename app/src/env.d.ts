@@ -13,6 +13,8 @@ interface ImportMetaEnv {
   readonly VITE_GITHUB_REPO?: string;
   /** Client ID OAuth de Google (tipo "Aplicación web") por defecto. */
   readonly VITE_GOOGLE_CLIENT_ID?: string;
+  /** URL del Cloudflare Worker (avisos push y proxy de tiempos en vivo). */
+  readonly VITE_WORKER_URL?: string;
 }
 
 interface ImportMeta {

@@ -1,0 +1,314 @@
+{
+ "id": 3768894,
+ "name": "TC2000 - FECHA #10",
+ "organization": {
+  "id": 318672,
+  "name": "REALTIME GROUP SRL",
+  "logo": null,
+  "url": "",
+  "city": "Quilmes",
+  "country": {
+   "id": 32,
+   "name": "Argentina",
+   "alpha2": "AR"
+  },
+  "sport": "Car",
+  "ref": "/api/organizations/318672"
+ },
+ "sport": "Car",
+ "startDate": "2026-10-31",
+ "location": {
+  "id": 541206,
+  "name": "GRAL.ROCA",
+  "length": 3.625,
+  "lengthUnit": "km",
+  "country": {
+   "id": 32,
+   "name": "Argentina",
+   "alpha2": "AR"
+  },
+  "lengthLabel": "3.6250 km"
+ },
+ "uploadSoftware": {
+  "name": "Orbits",
+  "version": "5.15.1"
+ },
+ "updatedAt": "2026-11-01T17:56:14",
+ "sessions": {
+  "sessions": [],
+  "groups": [
+   {
+    "id": 3768897,
+    "name": "TEST",
+    "date": "2026-10-30",
+    "subGroups": [],
+    "sessions": [
+     {
+      "id": 13048269,
+      "name": "TEST 1",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-30T10:58:00",
+      "groupName": "TEST",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13044846,
+      "name": "TEST 2",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-31T07:04:00",
+      "groupName": "TEST",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13052283,
+      "name": "TEST 3",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-11-01T07:34:00",
+      "groupName": "TEST",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     }
+    ]
+   },
+   {
+    "id": 3768915,
+    "name": "TC2000",
+    "date": "2026-10-30",
+    "subGroups": [],
+    "sessions": [
+     {
+      "id": 13044891,
+      "name": "SHAKEDOWN",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-31T08:30:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13045593,
+      "name": "PRACTICA OFICIAL1",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-31T10:35:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13046520,
+      "name": "PRACTICA OFICIAL 2",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-31T13:15:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13046976,
+      "name": "CLASIFICACION",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "qualify",
+      "startTime": "2026-10-31T15:40:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13048281,
+      "name": "WARM UP",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-11-01T09:45:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13053618,
+      "name": "APERTURA DE BOXES TC 2000",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-11-01T12:45:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13048284,
+      "name": "FINAL TC2000",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "race",
+      "startTime": "2026-11-01T13:05:00",
+      "groupName": "TC2000",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13048287,
+      "name": "GENERAL ENTRENAMIENTO TC 2000",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "qualify",
+      "startTime": "1970-01-01T00:00:00",
+      "groupName": "TC2000",
+      "isMerge": true,
+      "resultStatus": null,
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     }
+    ]
+   },
+   {
+    "id": 3769008,
+    "name": "TOP RACE",
+    "date": "2026-10-30",
+    "subGroups": [],
+    "sessions": [
+     {
+      "id": 13045200,
+      "name": "PRACTICA OFICIAL 1",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-31T08:45:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13045794,
+      "name": "PRACTICA OFICIAL 2",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-10-31T11:25:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13046586,
+      "name": "CLASIFICACION",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "qualify",
+      "startTime": "2026-10-31T14:10:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13047201,
+      "name": "CARRERA SPRINT",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "race",
+      "startTime": "2026-10-31T16:35:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13048290,
+      "name": "WARM UP",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-11-01T08:30:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13053294,
+      "name": "APERTURA DE BOXES TR",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "practice",
+      "startTime": "2026-11-01T11:40:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13048293,
+      "name": "CARRERA FINAL TOP RACE",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "race",
+      "startTime": "2026-11-01T11:55:00",
+      "groupName": "TOP RACE",
+      "isMerge": false,
+      "resultStatus": "Provisional",
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     },
+     {
+      "id": 13048296,
+      "name": "GENERAL ENTRE TOP RACE",
+      "comment": null,
+      "eventId": 3768894,
+      "type": "qualify",
+      "startTime": "1970-01-01T00:00:00",
+      "groupName": "TOP RACE",
+      "isMerge": true,
+      "resultStatus": null,
+      "participated": 0,
+      "eventRef": "/api/events/3768894"
+     }
+    ]
+   }
+  ]
+ },
+ "cosmosId": null
+}

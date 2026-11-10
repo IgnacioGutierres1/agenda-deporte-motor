@@ -725,3 +725,24 @@ a.driver-link:hover {
   color: var(--accent);
   font-weight: 700;
 }
+
+/* Celdas de piloto (campeonatos, resultados, en vivo) */
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.name-cell .team {
+  display: block;
+}
+
+.car-number {
+  min-width: 2rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  background: var(--bg-elev-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}

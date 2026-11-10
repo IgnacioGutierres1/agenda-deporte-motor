@@ -96,6 +96,31 @@ En **Ajustes** está el link `webcal://…/data/feeds/deporte-motor.ics`. Agrega
 (*Otros calendarios → Desde URL*) o en el iPhone (*Ajustes → Calendario → Cuentas → Agregar calendario
 suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias horas.
 
+### 7. Avisos y tiempos en vivo (Cloudflare Worker, gratis)
+
+`worker/` es un Cloudflare Worker (plan gratuito) que:
+
+- guarda las suscripciones de avisos de cada dispositivo (KV) y, cada 5 minutos, avisa las sesiones de las
+  categorías seguidas (y las de los pilotos seguidos) con la anticipación elegida en *Ajustes → Avisos*;
+- hace de proxy, solo para una lista cerrada de fuentes oficiales, de tiempos en vivo que no se pueden leer
+  directo desde el navegador (CORS).
+
+Publicado en `https://agenda-deporte-motor.agendadeportemotor.workers.dev`. La app lo conoce por la variable
+del repo `WORKER_URL` (*Settings → Secrets and variables → Actions → Variables*).
+
+Para volver a publicarlo después de un cambio:
+
+```bash
+npx wrangler login            # una vez por compu
+npm run deploy -w worker
+```
+
+Secretos del Worker (ya cargados; solo si hay que regenerarlos): `VAPID_PRIVATE_KEY` (JWK) y `VAPID_PUBLIC_KEY`,
+generados con `npx @pushforge/builder generate-vapid-keys` y cargados con `npx wrangler secret put …`.
+Si se regeneran, cada dispositivo tiene que volver a activar los avisos.
+
+En iPhone los avisos web funcionan solo con la app instalada en la pantalla de inicio (iOS 16.4 o posterior).
+
 ## Convenciones
 
 - **Commits**: [Conventional Commits](https://www.conventionalcommits.org/es/) en español

@@ -1,1 +1,1 @@
-export default ['shared', 'pipeline', 'app'];
+export default ['shared', 'pipeline', 'app', 'worker'];

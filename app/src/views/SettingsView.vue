@@ -23,6 +23,9 @@
       <p v-if="updateMsg" class="notice" :class="updateErr ? 'notice-error' : 'notice-ok'">{{ updateMsg }}</p>
     </section>
 
+    <!-- Avisos -->
+    <NotificationsCard />
+
     <!-- Tema -->
     <section class="card">
       <h2>Tema</h2>
@@ -259,6 +262,7 @@ import { defineComponent } from 'vue';
 import { mapActions, mapState, mapWritableState } from 'pinia';
 import { GROUP_LABELS, type Series, type SeriesGroup, type UserSeriesConfig } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import NotificationsCard from '../components/NotificationsCard.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { useResultsStore } from '../stores/results.ts';
@@ -287,7 +291,7 @@ const FEED = 'feeds/deporte-motor.ics';
 
 export default defineComponent({
   name: 'SettingsView',
-  components: { AppIcon },
+  components: { AppIcon, NotificationsCard },
   data() {
     return {
       busy: false,
