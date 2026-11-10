@@ -1,0 +1,149 @@
+<template>
+  <div class="standings-panel">
+    <div v-if="!available" class="card empty">
+      <p>Todavía no hay tabla de campeonato de {{ series.name }}.</p>
+      <p v-if="officialUrl" class="small dim">
+        Se va a mostrar cuando el pipeline pueda leerla del sitio oficial. Mientras tanto:
+        <a :href="officialUrl" target="_blank" rel="noopener noreferrer">sitio oficial</a>.
+      </p>
+    </div>
+    <template v-else>
+      <p v-if="!state || state.status === 'loading'" class="dim">Cargando campeonato…</p>
+      <div v-else-if="state.status === 'missing'" class="card empty">
+        <p>Sin datos todavía para {{ series.name }}.</p>
+      </div>
+      <div v-else-if="state.status === 'error'" class="notice notice-error">
+        No se pudo cargar la tabla ({{ state.error }}).
+        <button type="button" class="btn btn-small" @click="load(true)">Reintentar</button>
+      </div>
+      <template v-else-if="state.data">
+        <p class="small dim">Temporada {{ state.data.season }} · actualizado {{ ago(state.data.updatedAt) }}</p>
+        <div v-for="table in state.data.tables" :key="table.title" class="standings-table card flush">
+          <h3 class="card-title">{{ table.title }}</h3>
+          <table class="data standings">
+            <thead>
+              <tr>
+                <th class="num">#</th>
+                <th class="name-col">{{ isTeams(table.title) ? 'Equipo' : 'Piloto' }}</th>
+                <th v-if="hasCol(table.rows, 'wins')" class="num">V</th>
+                <th class="num">Pts</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in table.rows" :key="`${row.pos}-${row.name}`" :class="{ leader: row.pos === 1 }">
+                <td class="num pos">{{ row.pos }}</td>
+                <td>
+                  <div class="name-cell">
+                    <span v-if="row.number" class="car-number">{{ row.number }}</span>
+                    <span class="grow">
+                      {{ row.name }}
+                      <span v-if="row.team" class="small dim team">{{ row.team }}</span>
+                    </span>
+                  </div>
+                </td>
+                <td v-if="hasCol(table.rows, 'wins')" class="num">{{ row.wins ?? '' }}</td>
+                <td class="num"><strong>{{ fmtNum(row.points) }}</strong></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <SourceLink :source="state.data.source" />
+      </template>
+    </template>
+  </div>
+</template>
+
+<script lang="ts">
+import { defineComponent, type PropType } from 'vue';
+import { mapActions, mapState } from 'pinia';
+import type { Series, StandingsFile } from '@dm/shared';
+import SourceLink from './SourceLink.vue';
+import { useScheduleStore } from '../stores/schedule.ts';
+import { useResultsStore, type Loaded } from '../stores/results.ts';
+import { timeAgo } from '../lib/format.ts';
+
+/** Tablas del campeonato de una categoría (pilotos, equipos, marcas…). */
+export default defineComponent({
+  name: 'StandingsPanel',
+  components: { SourceLink },
+  props: {
+    series: { type: Object as PropType<Series>, required: true },
+  },
+  computed: {
+    ...mapState(useScheduleStore, ['status', 'now']),
+    ...mapState(useResultsStore, { standingsMap: 'standings' }),
+    /** El pipeline informa si publicó la tabla; sin esa info (datos viejos) se intenta igual. */
+    available(): boolean {
+      const st = this.status?.series.find((s) => s.seriesId === this.series.id);
+      return st ? st.standingsAvailable : true;
+    },
+    state(): Loaded<StandingsFile> | undefined {
+      return this.standingsMap[this.series.id];
+    },
+    officialUrl(): string {
+      return this.series.officialUrls[0] ?? '';
+    },
+  },
+  watch: {
+    'series.id': { immediate: true, handler() { void this.load(); } },
+    available() {
+      void this.load();
+    },
+  },
+  methods: {
+    ...mapActions(useResultsStore, ['loadStandings']),
+    load(force = false) {
+      if (!this.available) return;
+      return this.loadStandings(this.series.id, force);
+    },
+    hasCol(rows: object[], key: string): boolean {
+      return rows.some((r) => (r as Record<string, unknown>)[key] !== undefined && (r as Record<string, unknown>)[key] !== null);
+    },
+    isTeams(title: string): boolean {
+      return /equipo|team|marca|constructor|manufacturer|fabricante/i.test(title);
+    },
+    fmtNum(n: number): string {
+      return n.toLocaleString('es-AR');
+    },
+    ago(iso: string): string {
+      return timeAgo(iso, this.now);
+    },
+  },
+});
+</script>
+
+<style>
+.standings-table {
+  margin: 0.75rem 0;
+}
+
+table.data.standings td,
+table.data.standings th {
+  padding: 0.55rem 0.6rem;
+}
+
+table.data.standings tr.leader td.pos {
+  color: var(--accent);
+  font-weight: 800;
+}
+
+.name-cell {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.name-cell .team {
+  display: block;
+}
+
+.car-number {
+  min-width: 2rem;
+  padding: 0.1rem 0.35rem;
+  border-radius: 6px;
+  background: var(--bg-elev-2);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-align: center;
+}
+</style>
