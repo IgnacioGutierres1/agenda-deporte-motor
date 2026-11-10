@@ -63,10 +63,10 @@ export default defineComponent({
   computed: {
     ...mapState(useNewsStore, ['status', 'error']),
     ...mapState(useScheduleStore, ['now', 'seriesById']),
-    /** Nota destacada: la primera con foto entre las 10 más recientes (como FotMob, siempre con imagen). */
+    /** Nota destacada: la primera con foto entre las 15 más recientes (como FotMob, siempre con imagen). */
     hero(): NewsItem | undefined {
       if (!this.featured) return undefined;
-      return this.items.slice(0, 10).find((n) => n.image && !this.broken.includes(n.id));
+      return this.items.slice(0, 15).find((n) => n.image && !this.broken.includes(n.id));
     },
     rest(): NewsItem[] {
       const hero = this.hero;
