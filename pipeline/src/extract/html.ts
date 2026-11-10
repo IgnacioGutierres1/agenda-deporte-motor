@@ -253,3 +253,34 @@ export function textByClass(fragment: string, className: string): string {
 export function escapeRe(s: string): string {
   return s.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+/** Nombres de archivo que no son contenido (logos, íconos, publicidad, miniaturas de WordPress). */
+const NOT_CONTENT_IMAGE =
+  /logo|icon|favicon|sponsor|banner|publicidad|avatar|emoji|gravatar|placeholder|spinner|loading|pixel|tracking|-\d{2,3}x\d{2,3}\.[a-z]+$/i;
+
+/**
+ * Imágenes de contenido de una página (sin navegación, encabezado ni pie): candidatas a ser
+ * el calendario o el cronograma publicado como imagen. Solo JPG/PNG/WebP, sin logos ni miniaturas.
+ */
+export function contentImages(html: string, baseUrl: string): string[] {
+  const body = html
+    .replace(/<!--[\s\S]*?-->/g, ' ')
+    .replace(/<(script|style|noscript|template|head|nav|header|footer)\b[\s\S]*?<\/\1>/gi, ' ');
+  const out: string[] = [];
+  for (const m of body.matchAll(/<img\b([^>]*)>/gi)) {
+    const attrs = m[1] ?? '';
+    const src = [attr(attrs, 'data-src'), attr(attrs, 'data-lazy-src'), attr(attrs, 'src')].find(
+      (s) => s && !s.startsWith('data:'),
+    );
+    if (!src) continue;
+    const url = absoluteUrl(src, baseUrl);
+    if (!url || out.includes(url)) continue;
+    const file = decodeURIComponent(new URL(url).pathname.split('/').pop() ?? '');
+    if (!/\.(jpe?g|png|webp)$/i.test(file) || NOT_CONTENT_IMAGE.test(file)) continue;
+    const w = Number(attr(attrs, 'width'));
+    const h = Number(attr(attrs, 'height'));
+    if ((w && w < 200) || (h && h < 150)) continue;
+    out.push(url);
+  }
+  return out;
+}

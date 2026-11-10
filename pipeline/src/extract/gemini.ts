@@ -2,7 +2,7 @@
  * Cliente mínimo de la API de Gemini (REST con fetch, sin SDK).
  *
  * - Salida JSON estructurada (responseMimeType + responseSchema), temperatura 0.
- * - Entrada: texto plano y/o PDF inline (base64).
+ * - Entrada: texto plano, PDF inline (base64) y/o imágenes inline (en alta resolución).
  * - Llamadas en serie con una pausa entre ellas, reintentos con espera ante 429/500/503
  *   y tope de llamadas por corrida (GEMINI_MAX_CALLS).
  * - Búsqueda de Google (grounding) solo para el descubrimiento.
@@ -33,6 +33,8 @@ export interface GeminiJsonRequest {
   text?: string;
   /** PDF del documento oficial (se envía inline). */
   pdf?: Uint8Array;
+  /** Imágenes oficiales (se envían inline, en alta resolución para leer tablas chicas). */
+  images?: Array<{ mimeType: string; data: Uint8Array }>;
   model?: string;
   /** Etiqueta para los logs (nunca incluye datos sensibles). */
   label?: string;
@@ -213,6 +215,9 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
         if (req.pdf) {
           parts.push({ inlineData: { mimeType: 'application/pdf', data: Buffer.from(req.pdf).toString('base64') } });
         }
+        for (const img of req.images ?? []) {
+          parts.push({ inlineData: { mimeType: img.mimeType, data: Buffer.from(img.data).toString('base64') } });
+        }
         if (req.text) parts.push({ text: `DOCUMENTO OFICIAL:\n"""\n${req.text}\n"""` });
         parts.push({ text: req.prompt });
         const body = {
@@ -222,6 +227,7 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
             temperature: 0,
             responseMimeType: 'application/json',
             responseSchema: req.schema,
+            ...(req.images?.length ? { mediaResolution: 'MEDIA_RESOLUTION_HIGH' } : {}),
           },
         };
         const res = await call(req.model ?? cfg.extractModel, body);

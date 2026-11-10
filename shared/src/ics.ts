@@ -20,6 +20,8 @@ export interface IcsEventInput {
   country: string;
   broadcast: string[];
   sourceUrl?: string;
+  /** true si el horario se leyó de una imagen oficial (se aclara en la descripción). */
+  fromImage?: boolean;
 }
 
 export interface IcsOptions {
@@ -89,7 +91,7 @@ export function buildIcs(events: IcsEventInput[], opts: IcsOptions = {}): string
   for (const e of sorted) {
     const broadcast = e.broadcast.length ? e.broadcast.join(', ') : 'A confirmar';
     let description = `Transmisión: ${broadcast}`;
-    if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}`;
+    if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}${e.fromImage ? ' (leído de imagen)' : ''}`;
     lines.push(
       'BEGIN:VEVENT',
       `UID:${e.id}@agendadeportemotor.local`,

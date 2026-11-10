@@ -20,10 +20,20 @@ import {
 } from '@dm/shared';
 import { classifySession } from '../core/builders.ts';
 import type { Adapter, AdapterContext, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
-import { fetchDocument, looksLikePdf, type FetchedDocument } from '../extract/document.ts';
+import { fetchDocument, fetchImages, looksLikePdf, type FetchedDocument } from '../extract/document.ts';
 import { GeminiUnavailableError, getGemini, MISSING_KEY_MESSAGE, type Gemini } from '../extract/gemini.ts';
+import { contentImages } from '../extract/html.ts';
 import { normalizeForMatch } from '../validate.ts';
-import { aiCalendar, aiResults, aiStandings, aiTimetable, PROMPT_VERSION, validateResultRows, type AiDeps } from './ai.ts';
+import {
+  aiCalendar,
+  aiResults,
+  aiStandings,
+  aiTimetable,
+  imageDocument,
+  PROMPT_VERSION,
+  validateResultRows,
+  type AiDeps,
+} from './ai.ts';
 import { createExtractionCache } from './cache.ts';
 import {
   jsonLdCalendar,
@@ -46,6 +56,9 @@ export interface GenericDeps {
 
 /** Tope de documentos de resultados/campeonato por serie y corrida (cuida el cupo de Gemini). */
 const MAX_RESULT_DOCS = 3;
+/** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
+const MAX_CALENDAR_IMAGES = 16;
+const MAX_TIMETABLE_IMAGES = 3;
 
 export interface CalendarRead {
   entries: CalendarEntry[];
@@ -86,10 +99,20 @@ export async function readCalendar(
     entries = entries.filter((e) => e.championship && championshipKey(e.championship) === key);
   }
   if (entries.length === 0) entries = jsonLdCalendar(doc, ctx.season);
+  let read: FetchedDocument = doc;
   if (entries.length === 0) {
     method = 'ia';
     try {
-      entries = await aiCalendar(aiDeps(ctx, deps), series, doc, ctx.season, opts);
+      const ai = aiDeps(ctx, deps);
+      entries = await aiCalendar(ai, series, doc, ctx.season, opts);
+      // Calendario publicado como imágenes (una por fecha, p. ej. Turismo Pista): se leen las imágenes.
+      if (entries.length === 0 && doc.kind === 'html') {
+        const img = await imageDocument(ai, series.id, doc, await fetchImages(ctx.http, contentImages(doc.raw, doc.url).slice(0, MAX_CALENDAR_IMAGES)));
+        if (img) {
+          entries = await aiCalendar(ai, series, img, ctx.season, opts);
+          if (entries.length > 0) read = { ...img, url: doc.url };
+        }
+      }
     } catch (err) {
       if (err instanceof GeminiUnavailableError) {
         throw new Error(`${err.message}: el calendario oficial (${target}) no se puede leer sin IA`);
@@ -98,9 +121,9 @@ export async function readCalendar(
     }
   }
   const source: Source = {
-    url: doc.url,
+    url: read.url,
     title: doc.title || `Calendario ${series.shortName} ${ctx.season}`,
-    kind: doc.kind,
+    kind: read.kind,
     method,
     fetchedAt: isoNow(ctx.now),
   };
@@ -220,7 +243,7 @@ async function findSessions(
     }
   }
 
-  const doc = await locateTimetable(series, entry, cal, ctx);
+  const doc = await locateTimetable(series, entry, cal, ctx, deps);
   if (!doc) {
     ctx.log.info(`${entry.name}: cronograma todavía no publicado`);
     return null;
@@ -234,7 +257,10 @@ async function findSessions(
     sessions: result.sessions,
     source: {
       url: doc.doc.url,
-      title: doc.doc.title || `Cronograma ${series.shortName} — ${entry.name}`,
+      title:
+        doc.doc.kind === 'image'
+          ? `Cronograma ${series.shortName} — ${entry.name} (imagen oficial)`
+          : doc.doc.title || `Cronograma ${series.shortName} — ${entry.name}`,
       kind: doc.doc.kind === 'api' ? 'html' : doc.doc.kind,
       method: 'ia',
       fetchedAt: isoNow(ctx.now),
@@ -253,11 +279,28 @@ async function tryFetch(ctx: AdapterContext, url: string): Promise<FetchedDocume
   }
 }
 
+/**
+ * Cronograma publicado como imagen dentro de una página o nota de cronograma (TC2000, notas de prensa):
+ * se transcriben sus imágenes de contenido. null si la página no tiene imágenes.
+ */
+async function timetableFromImages(
+  series: Series,
+  page: FetchedDocument,
+  ctx: AdapterContext,
+  deps: GenericDeps,
+): Promise<FetchedDocument | null> {
+  if (page.kind !== 'html') return null;
+  const urls = contentImages(page.raw, page.url).slice(0, MAX_TIMETABLE_IMAGES);
+  if (urls.length === 0) return null;
+  return imageDocument(aiDeps(ctx, deps), series.id, page, await fetchImages(ctx.http, urls));
+}
+
 async function locateTimetable(
   series: Series,
   entry: CalendarEntry,
   cal: CalendarRead,
   ctx: AdapterContext,
+  deps: GenericDeps,
 ): Promise<Located | null> {
   if (entry.timetableUrl) {
     const doc = await tryFetch(ctx, entry.timetableUrl);
@@ -277,7 +320,10 @@ async function locateTimetable(
       }
       for (const link of timetableLinks(page).slice(0, 2)) {
         const doc = await tryFetch(ctx, link.url);
-        if (doc && (doc.kind === 'pdf' || looksLikeTimetable(doc.text))) return { doc };
+        if (!doc) continue;
+        if (doc.kind === 'pdf' || looksLikeTimetable(doc.text)) return { doc };
+        const img = await timetableFromImages(series, doc, ctx, deps);
+        if (img) return { doc: img };
       }
       if (looksLikeTimetable(page.text)) return { doc: page };
     }
@@ -295,6 +341,10 @@ async function locateTimetable(
     if (pdf) {
       const pdfDoc = await tryFetch(ctx, pdf.url);
       if (pdfDoc) return { doc: pdfDoc };
+    }
+    if (!looksLikeTimetable(doc.text)) {
+      const img = await timetableFromImages(series, doc, ctx, deps);
+      if (img) return { doc: img };
     }
     return { doc };
   }

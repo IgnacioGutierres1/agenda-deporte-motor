@@ -3,16 +3,25 @@ import type { SourceKind } from '@dm/shared';
 import type { Http } from '../core/http.ts';
 import { htmlToText } from './html.ts';
 
+/** Imagen oficial descargada (calendario o cronograma publicado como imagen). */
+export interface DocImage {
+  url: string;
+  mimeType: string;
+  data: Uint8Array;
+}
+
 /** Documento oficial descargado, listo para extraer datos (con o sin IA). */
 export interface FetchedDocument {
   url: string;
   kind: SourceKind;
-  /** HTML crudo (kind html), JSON crudo (kind api) o '' (pdf). */
+  /** HTML crudo (kind html), JSON crudo (kind api) o '' (pdf, image). */
   raw: string;
-  /** Texto legible: texto compacto del HTML, texto del PDF o JSON crudo. Es contra lo que se valida la IA. */
+  /** Texto legible: texto compacto del HTML, texto del PDF, JSON crudo o texto transcripto de las imágenes. Es contra lo que se valida la IA. */
   text: string;
   /** Bytes del PDF (para pasárselo a Gemini como inlineData). */
   pdf?: Uint8Array;
+  /** Imágenes de las que se transcribió el texto (kind image). */
+  images?: DocImage[];
   title: string;
   /** sha256 del contenido relevante (para la caché de extracción). */
   hash: string;
@@ -78,4 +87,32 @@ async function fetchPdf(http: Http, url: string): Promise<FetchedDocument> {
 /** Texto mínimo que tiene que tener un documento para que valga la pena pasárselo a Gemini. */
 export function hasUsableText(doc: FetchedDocument): boolean {
   return doc.text.replace(/\s+/g, '').length >= 40;
+}
+
+/** Tope por imagen (Gemini acepta hasta 20 MB por pedido, en base64). */
+const MAX_IMAGE_BYTES = 7_000_000;
+
+function imageMime(url: string, contentType: string): string | null {
+  const ct = contentType.split(';')[0]!.trim().toLowerCase();
+  if (/^image\/(jpeg|png|webp)$/.test(ct)) return ct;
+  const ext = url.split(/[?#]/)[0]!.split('.').pop()?.toLowerCase();
+  if (ext === 'jpg' || ext === 'jpeg') return 'image/jpeg';
+  if (ext === 'png' || ext === 'webp') return `image/${ext}`;
+  return null;
+}
+
+/** Descarga imágenes oficiales (las que fallan, no son imagen o pesan demasiado se omiten). */
+export async function fetchImages(http: Http, urls: string[]): Promise<DocImage[]> {
+  const out: DocImage[] = [];
+  for (const url of urls) {
+    try {
+      const res = await http.bytes(safeUrl(url));
+      const mimeType = imageMime(url, res.contentType);
+      if (!mimeType || res.body.length === 0 || res.body.length > MAX_IMAGE_BYTES) continue;
+      out.push({ url, mimeType, data: res.body });
+    } catch {
+      /* imagen no disponible: se sigue con las demás */
+    }
+  }
+  return out;
 }
