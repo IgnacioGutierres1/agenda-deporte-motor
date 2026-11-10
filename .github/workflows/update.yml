@@ -50,6 +50,10 @@ jobs:
     timeout-minutes: 45
     steps:
       - uses: actions/checkout@v4
+        with:
+          # Siempre la última versión de main (no el commit que disparó la corrida): si otra corrida
+          # guardó datos mientras esta esperaba en la cola, se parte de esos datos.
+          ref: main
 
       - uses: actions/setup-node@v4
         with:
@@ -87,7 +91,8 @@ jobs:
           else
             git commit -m "chore(data): actualización automática $(date -u +%Y-%m-%dT%H:%MZ)"
             # Por si la app commiteó config/series.user.json mientras corría el pipeline.
-            git pull --rebase --autostash origin main
+            # Si igual chocan archivos de data/, gana lo recién generado (-X theirs en un rebase = este commit).
+            git pull --rebase --autostash -X theirs origin main
             git push origin HEAD:main
           fi
 
