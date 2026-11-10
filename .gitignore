@@ -16,3 +16,5 @@ pipeline/.cache/
 
 # Worktrees locales para trabajo en paralelo
 .worktrees/
+# Temporales de Vite/Vitest
+*.timestamp-*.mjs
