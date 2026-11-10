@@ -3,6 +3,7 @@ import GridView from './views/GridView.vue';
 
 export const routes: RouteRecordRaw[] = [
   { path: '/', name: 'grilla', component: GridView, meta: { title: 'Grilla' } },
+  { path: '/exportar', name: 'exportar', component: () => import('./views/ExportView.vue'), meta: { title: 'Exportar' } },
   {
     path: '/campeonatos/:seriesId?',
     name: 'campeonatos',
