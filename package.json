@@ -1,0 +1,29 @@
+{
+  "name": "agenda-deporte-motor",
+  "private": true,
+  "version": "0.1.0",
+  "description": "Grilla de horarios de deporte motor con fuentes oficiales, resultados y exportación a calendario.",
+  "type": "module",
+  "workspaces": [
+    "shared",
+    "pipeline",
+    "app"
+  ],
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "dev": "npm run dev -w app",
+    "build": "npm run build -w app",
+    "preview": "npm run preview -w app",
+    "pipeline": "tsx pipeline/src/run.ts",
+    "discovery": "tsx pipeline/src/discovery/cli.ts",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "devDependencies": {
+    "typescript": "~5.6.3",
+    "vitest": "^2.1.8"
+  }
+}

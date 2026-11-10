@@ -1,0 +1,6 @@
+* text=auto eol=lf
+# Los .ics deben conservar CRLF (RFC 5545): git no debe tocarlos.
+*.ics -text
+*.png binary
+*.ico binary
+*.pdf binary
