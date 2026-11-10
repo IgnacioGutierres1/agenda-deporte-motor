@@ -1,0 +1,969 @@
+{
+  "seriesId": "f1",
+  "eventId": "c7ca027957191c06",
+  "updatedAt": "2026-11-10T06:14:37Z",
+  "sessions": [
+    {
+      "sessionId": "d0a43c010d38ba7c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 56,
+          "time": "1:35:16.650",
+          "points": 25
+        },
+        {
+          "pos": 2,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 56,
+          "gap": "+13.078s",
+          "points": 18
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 56,
+          "gap": "+17.485s",
+          "points": 15
+        },
+        {
+          "pos": 4,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 56,
+          "gap": "+18.515s",
+          "points": 12
+        },
+        {
+          "pos": 5,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 56,
+          "gap": "+30.521s",
+          "points": 10
+        },
+        {
+          "pos": 6,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 56,
+          "gap": "+34.373s",
+          "points": 8
+        },
+        {
+          "pos": 7,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 56,
+          "gap": "+52.674s",
+          "points": 6
+        },
+        {
+          "pos": 8,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 56,
+          "gap": "+54.303s",
+          "points": 4
+        },
+        {
+          "pos": 9,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 56,
+          "gap": "+79.183s",
+          "points": 2
+        },
+        {
+          "pos": 10,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 56,
+          "gap": "+87.516s",
+          "points": 1
+        },
+        {
+          "pos": 11,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 56,
+          "gap": "+94.945s",
+          "points": 0
+        },
+        {
+          "pos": 12,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 13,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 14,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 15,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 16,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 17,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 18,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": 19,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 55,
+          "gap": "+1 lap",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 48,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 35,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 24,
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/race-result",
+        "title": "Formula 1 — United States Grand Prix: Race (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:14:37Z"
+      }
+    },
+    {
+      "sessionId": "35ddf3bf39ce61c0",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 18,
+          "time": "1:34.035"
+        },
+        {
+          "pos": 2,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 12,
+          "time": "1:34.214"
+        },
+        {
+          "pos": 3,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 12,
+          "time": "1:34.250"
+        },
+        {
+          "pos": 4,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 15,
+          "time": "1:34.267"
+        },
+        {
+          "pos": 5,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 14,
+          "time": "1:34.311"
+        },
+        {
+          "pos": 6,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 18,
+          "time": "1:34.476"
+        },
+        {
+          "pos": 7,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 20,
+          "time": "1:34.803"
+        },
+        {
+          "pos": 8,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 15,
+          "time": "1:35.049"
+        },
+        {
+          "pos": 9,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 15,
+          "time": "1:36.049"
+        },
+        {
+          "pos": 10,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 9,
+          "time": "1:35.058"
+        },
+        {
+          "pos": 11,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 12,
+          "time": "1:35.080"
+        },
+        {
+          "pos": 12,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 12,
+          "time": "1:35.158"
+        },
+        {
+          "pos": 13,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 12,
+          "time": "1:35.691"
+        },
+        {
+          "pos": 14,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 12,
+          "time": "1:35.722"
+        },
+        {
+          "pos": 15,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 15,
+          "time": "1:35.818"
+        },
+        {
+          "pos": 16,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 15,
+          "time": "1:36.031"
+        },
+        {
+          "pos": 17,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 9,
+          "time": "1:36.531"
+        },
+        {
+          "pos": 18,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 9,
+          "time": "1:36.677"
+        },
+        {
+          "pos": 19,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 9,
+          "time": "1:36.770"
+        },
+        {
+          "pos": 20,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 9,
+          "time": "1:36.967"
+        },
+        {
+          "pos": 21,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 9,
+          "time": "1:37.433"
+        },
+        {
+          "pos": 22,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 9,
+          "time": "1:37.523"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/qualifying",
+        "title": "Formula 1 — United States Grand Prix: Qualifying (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:14:37Z"
+      }
+    },
+    {
+      "sessionId": "9ab15b7613bb60be",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 21,
+          "time": "1:34.893"
+        },
+        {
+          "pos": 2,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 16,
+          "gap": "+0.168s"
+        },
+        {
+          "pos": 3,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 20,
+          "gap": "+0.234s"
+        },
+        {
+          "pos": 4,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 16,
+          "gap": "+0.303s"
+        },
+        {
+          "pos": 5,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 18,
+          "gap": "+0.488s"
+        },
+        {
+          "pos": 6,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 16,
+          "gap": "+0.638s"
+        },
+        {
+          "pos": 7,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 19,
+          "gap": "+0.698s"
+        },
+        {
+          "pos": 8,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 17,
+          "gap": "+0.813s"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 24,
+          "gap": "+1.011s"
+        },
+        {
+          "pos": 10,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 20,
+          "gap": "+1.037s"
+        },
+        {
+          "pos": 11,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 17,
+          "gap": "+1.038s"
+        },
+        {
+          "pos": 12,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 18,
+          "gap": "+1.188s"
+        },
+        {
+          "pos": 13,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 23,
+          "gap": "+1.283s"
+        },
+        {
+          "pos": 14,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 17,
+          "gap": "+1.342s"
+        },
+        {
+          "pos": 15,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 22,
+          "gap": "+1.358s"
+        },
+        {
+          "pos": 16,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 19,
+          "gap": "+1.562s"
+        },
+        {
+          "pos": 17,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 18,
+          "gap": "+1.849s"
+        },
+        {
+          "pos": 18,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 12,
+          "gap": "+2.238s"
+        },
+        {
+          "pos": 19,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 22,
+          "gap": "+2.775s"
+        },
+        {
+          "pos": 20,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 21,
+          "gap": "+2.818s"
+        },
+        {
+          "pos": 21,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 25,
+          "gap": "+2.991s"
+        },
+        {
+          "pos": 22,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 22,
+          "gap": "+3.872s"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/3",
+        "title": "Formula 1 — United States Grand Prix: Practice 3 (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:14:37Z"
+      }
+    },
+    {
+      "sessionId": "9ab4597613bd932f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 30,
+          "time": "1:35.291"
+        },
+        {
+          "pos": 2,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 25,
+          "gap": "+0.042s"
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 24,
+          "gap": "+0.189s"
+        },
+        {
+          "pos": 4,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 26,
+          "gap": "+0.615s"
+        },
+        {
+          "pos": 5,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 27,
+          "gap": "+0.744s"
+        },
+        {
+          "pos": 6,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 27,
+          "gap": "+1.040s"
+        },
+        {
+          "pos": 7,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 27,
+          "gap": "+1.082s"
+        },
+        {
+          "pos": 8,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 27,
+          "gap": "+1.096s"
+        },
+        {
+          "pos": 9,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 24,
+          "gap": "+1.120s"
+        },
+        {
+          "pos": 10,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 28,
+          "gap": "+1.245s"
+        },
+        {
+          "pos": 11,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 27,
+          "gap": "+1.541s"
+        },
+        {
+          "pos": 12,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 27,
+          "gap": "+1.549s"
+        },
+        {
+          "pos": 13,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 29,
+          "gap": "+1.668s"
+        },
+        {
+          "pos": 14,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 26,
+          "gap": "+1.820s"
+        },
+        {
+          "pos": 15,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 32,
+          "gap": "+1.910s"
+        },
+        {
+          "pos": 16,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 26,
+          "gap": "+1.944s"
+        },
+        {
+          "pos": 17,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 28,
+          "gap": "+1.978s"
+        },
+        {
+          "pos": 18,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 26,
+          "gap": "+2.139s"
+        },
+        {
+          "pos": 19,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 24,
+          "gap": "+3.131s"
+        },
+        {
+          "pos": 20,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 28,
+          "gap": "+3.155s"
+        },
+        {
+          "pos": 21,
+          "number": "11",
+          "driver": "Sergio Perez",
+          "team": "Cadillac",
+          "laps": 24,
+          "gap": "+3.745s"
+        },
+        {
+          "pos": 22,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 27,
+          "gap": "+8.135s"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/2",
+        "title": "Formula 1 — United States Grand Prix: Practice 2 (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:14:37Z"
+      }
+    },
+    {
+      "sessionId": "9aaa577613b53b44",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "16",
+          "driver": "Charles Leclerc",
+          "team": "Ferrari",
+          "laps": 26,
+          "time": "1:36.052"
+        },
+        {
+          "pos": 2,
+          "number": "3",
+          "driver": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "laps": 25,
+          "gap": "+0.084s"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Lando Norris",
+          "team": "McLaren",
+          "laps": 22,
+          "gap": "+0.245s"
+        },
+        {
+          "pos": 4,
+          "number": "63",
+          "driver": "George Russell",
+          "team": "Mercedes",
+          "laps": 26,
+          "gap": "+0.326s"
+        },
+        {
+          "pos": 5,
+          "number": "12",
+          "driver": "Kimi Antonelli",
+          "team": "Mercedes",
+          "laps": 25,
+          "gap": "+0.481s"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "Lewis Hamilton",
+          "team": "Ferrari",
+          "laps": 23,
+          "gap": "+0.503s"
+        },
+        {
+          "pos": 7,
+          "number": "81",
+          "driver": "Oscar Piastri",
+          "team": "McLaren",
+          "laps": 23,
+          "gap": "+0.734s"
+        },
+        {
+          "pos": 8,
+          "number": "5",
+          "driver": "Gabriel Bortoleto",
+          "team": "Audi",
+          "laps": 23,
+          "gap": "+0.943s"
+        },
+        {
+          "pos": 9,
+          "number": "41",
+          "driver": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "laps": 26,
+          "gap": "+1.011s"
+        },
+        {
+          "pos": 10,
+          "number": "30",
+          "driver": "Liam Lawson",
+          "team": "Racing Bulls",
+          "laps": 22,
+          "gap": "+1.257s"
+        },
+        {
+          "pos": 11,
+          "number": "87",
+          "driver": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "laps": 23,
+          "gap": "+1.613s"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Fernando Alonso",
+          "team": "Aston Martin",
+          "laps": 22,
+          "gap": "+1.636s"
+        },
+        {
+          "pos": 13,
+          "number": "18",
+          "driver": "Lance Stroll",
+          "team": "Aston Martin",
+          "laps": 25,
+          "gap": "+1.731s"
+        },
+        {
+          "pos": 14,
+          "number": "6",
+          "driver": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "laps": 23,
+          "gap": "+1.738s"
+        },
+        {
+          "pos": 15,
+          "number": "10",
+          "driver": "Pierre Gasly",
+          "team": "Alpine",
+          "laps": 23,
+          "gap": "+1.749s"
+        },
+        {
+          "pos": 16,
+          "number": "31",
+          "driver": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "laps": 26,
+          "gap": "+1.844s"
+        },
+        {
+          "pos": 17,
+          "number": "43",
+          "driver": "Franco Colapinto",
+          "team": "Alpine",
+          "laps": 23,
+          "gap": "+2.069s"
+        },
+        {
+          "pos": 18,
+          "number": "27",
+          "driver": "Nico Hulkenberg",
+          "team": "Audi",
+          "laps": 21,
+          "gap": "+2.070s"
+        },
+        {
+          "pos": 19,
+          "number": "55",
+          "driver": "Carlos Sainz",
+          "team": "Williams",
+          "laps": 19,
+          "gap": "+2.794s"
+        },
+        {
+          "pos": 20,
+          "number": "77",
+          "driver": "Valtteri Bottas",
+          "team": "Cadillac",
+          "laps": 21,
+          "gap": "+3.001s"
+        },
+        {
+          "pos": 21,
+          "number": "25",
+          "driver": "Colton Herta",
+          "team": "Cadillac",
+          "laps": 21,
+          "gap": "+3.927s"
+        },
+        {
+          "pos": 22,
+          "number": "23",
+          "driver": "Alexander Albon",
+          "team": "Williams",
+          "laps": 19,
+          "gap": "+40.416s"
+        }
+      ],
+      "source": {
+        "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/1",
+        "title": "Formula 1 — United States Grand Prix: Practice 1 (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-10T06:14:37Z"
+      }
+    }
+  ]
+}

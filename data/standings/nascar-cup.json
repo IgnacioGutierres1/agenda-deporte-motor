@@ -1,0 +1,768 @@
+{
+  "seriesId": "nascar-cup",
+  "season": 2026,
+  "updatedAt": "2026-11-10T06:14:37Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Kyle Larson",
+          "number": "5",
+          "points": 2501,
+          "wins": 3
+        },
+        {
+          "pos": 2,
+          "name": "Christopher Bell",
+          "number": "20",
+          "points": 2452,
+          "wins": 1
+        },
+        {
+          "pos": 3,
+          "name": "Denny Hamlin",
+          "number": "11",
+          "points": 2445,
+          "wins": 4
+        },
+        {
+          "pos": 4,
+          "name": "Ryan Blaney",
+          "number": "12",
+          "points": 2407,
+          "wins": 4
+        },
+        {
+          "pos": 5,
+          "name": "Tyler Reddick",
+          "number": "45",
+          "points": 2397,
+          "wins": 6
+        },
+        {
+          "pos": 6,
+          "name": "Chase Briscoe",
+          "number": "19",
+          "points": 2386,
+          "wins": 3
+        },
+        {
+          "pos": 7,
+          "name": "Joey Logano",
+          "number": "22",
+          "points": 2386,
+          "wins": 3
+        },
+        {
+          "pos": 8,
+          "name": "William Byron",
+          "number": "24",
+          "points": 2344,
+          "wins": 1
+        },
+        {
+          "pos": 9,
+          "name": "Ty Gibbs",
+          "number": "54",
+          "points": 2335,
+          "wins": 2
+        },
+        {
+          "pos": 10,
+          "name": "Austin Cindric",
+          "number": "2",
+          "points": 2306,
+          "wins": 0
+        },
+        {
+          "pos": 11,
+          "name": "Bubba Wallace",
+          "number": "23",
+          "points": 2293,
+          "wins": 0
+        },
+        {
+          "pos": 12,
+          "name": "Chase Elliott",
+          "number": "9",
+          "points": 2287,
+          "wins": 2
+        },
+        {
+          "pos": 13,
+          "name": "Daniel Suárez",
+          "number": "7",
+          "points": 2243,
+          "wins": 1
+        },
+        {
+          "pos": 14,
+          "name": "Carson Hocevar",
+          "number": "77",
+          "points": 2234,
+          "wins": 1
+        },
+        {
+          "pos": 15,
+          "name": "Ryan Preece",
+          "number": "60",
+          "points": 2226,
+          "wins": 1
+        },
+        {
+          "pos": 16,
+          "name": "Chris Buescher",
+          "number": "17",
+          "points": 2212,
+          "wins": 0
+        },
+        {
+          "pos": 17,
+          "name": "Shane Van Gisbergen",
+          "number": "97",
+          "points": 774,
+          "wins": 2
+        },
+        {
+          "pos": 18,
+          "name": "Ross Chastain",
+          "number": "1",
+          "points": 752,
+          "wins": 0
+        },
+        {
+          "pos": 19,
+          "name": "Brad Keselowski",
+          "number": "6",
+          "points": 723,
+          "wins": 0
+        },
+        {
+          "pos": 20,
+          "name": "Michael McDowell",
+          "number": "71",
+          "points": 691,
+          "wins": 0
+        },
+        {
+          "pos": 21,
+          "name": "Todd Gilliland",
+          "number": "34",
+          "points": 656,
+          "wins": 0
+        },
+        {
+          "pos": 22,
+          "name": "Josh Berry",
+          "number": "21",
+          "points": 651,
+          "wins": 0
+        },
+        {
+          "pos": 23,
+          "name": "Erik Jones",
+          "number": "43",
+          "points": 643,
+          "wins": 0
+        },
+        {
+          "pos": 24,
+          "name": "Austin Dillon",
+          "number": "3",
+          "points": 607,
+          "wins": 0
+        },
+        {
+          "pos": 25,
+          "name": "AJ Allmendinger",
+          "number": "16",
+          "points": 606,
+          "wins": 0
+        },
+        {
+          "pos": 26,
+          "name": "Alex Bowman",
+          "number": "48",
+          "points": 594,
+          "wins": 0
+        },
+        {
+          "pos": 27,
+          "name": "Zane Smith",
+          "number": "38",
+          "points": 584,
+          "wins": 0
+        },
+        {
+          "pos": 28,
+          "name": "Ricky Stenhouse Jr.",
+          "number": "47",
+          "points": 527,
+          "wins": 0
+        },
+        {
+          "pos": 29,
+          "name": "John H. Nemechek",
+          "number": "42",
+          "points": 517,
+          "wins": 0
+        },
+        {
+          "pos": 30,
+          "name": "Riley Herbst",
+          "number": "35",
+          "points": 495,
+          "wins": 0
+        },
+        {
+          "pos": 31,
+          "name": "Noah Gragson",
+          "number": "4",
+          "points": 486,
+          "wins": 0
+        },
+        {
+          "pos": 32,
+          "name": "Cole Custer",
+          "number": "41",
+          "points": 450,
+          "wins": 0
+        },
+        {
+          "pos": 33,
+          "name": "Connor Zilisch",
+          "number": "88",
+          "points": 410,
+          "wins": 0
+        },
+        {
+          "pos": 34,
+          "name": "Ty Dillon",
+          "number": "10",
+          "points": 395,
+          "wins": 0
+        },
+        {
+          "pos": 35,
+          "name": "Cody Ware",
+          "number": "51",
+          "points": 264,
+          "wins": 0
+        },
+        {
+          "pos": 36,
+          "name": "Kyle Busch",
+          "number": "8",
+          "points": 217,
+          "wins": 0
+        },
+        {
+          "pos": 37,
+          "name": "Casey Mears",
+          "number": "62",
+          "points": 15,
+          "wins": 0
+        },
+        {
+          "pos": 38,
+          "name": "Kevin Magnussen",
+          "number": "91",
+          "points": 11,
+          "wins": 0
+        },
+        {
+          "pos": 39,
+          "name": "Jimmie Johnson",
+          "number": "84",
+          "points": 9,
+          "wins": 0
+        },
+        {
+          "pos": 40,
+          "name": "Katherine Legge",
+          "number": "78",
+          "points": 8,
+          "wins": 0
+        },
+        {
+          "pos": 41,
+          "name": "BJ McLeod",
+          "number": "44",
+          "points": 8,
+          "wins": 0
+        },
+        {
+          "pos": 42,
+          "name": "Corey Heim",
+          "number": "67",
+          "points": 0,
+          "wins": 2
+        },
+        {
+          "pos": 43,
+          "name": "Harrison Burton",
+          "number": "35",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 44,
+          "name": "Austin Hill",
+          "number": "33",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 45,
+          "name": "J.J. Yeley",
+          "number": "44",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 46,
+          "name": "Joey Gase",
+          "number": "44",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 47,
+          "name": "Justin Haley",
+          "number": "77",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 48,
+          "name": "Justin Allgaier",
+          "number": "48",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 49,
+          "name": "Gray Gaulding",
+          "number": "66",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 50,
+          "name": "Daniel Dye",
+          "number": "78",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 51,
+          "name": "Jesse Love",
+          "number": "33",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 52,
+          "name": "Chad Finchum",
+          "number": "66",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 53,
+          "name": "Anthony Alfredo",
+          "number": "48",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 54,
+          "name": "Josh Bilicki",
+          "number": "66",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 55,
+          "name": "Timmy Hill",
+          "number": "66",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 56,
+          "name": "Corey LaJoie",
+          "number": "99",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 57,
+          "name": "Chandler Smith",
+          "number": "36",
+          "points": 0,
+          "wins": 0
+        }
+      ]
+    },
+    {
+      "title": "Propietarios",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Hendrick Motorsports #5",
+          "number": "5",
+          "points": 2501,
+          "wins": 3
+        },
+        {
+          "pos": 2,
+          "name": "Joe Gibbs Racing #20",
+          "number": "20",
+          "points": 2452,
+          "wins": 1
+        },
+        {
+          "pos": 3,
+          "name": "Joe Gibbs Racing #11",
+          "number": "11",
+          "points": 2445,
+          "wins": 4
+        },
+        {
+          "pos": 4,
+          "name": "Team Penske #12",
+          "number": "12",
+          "points": 2407,
+          "wins": 4
+        },
+        {
+          "pos": 5,
+          "name": "23XI Racing #45",
+          "number": "45",
+          "points": 2397,
+          "wins": 6
+        },
+        {
+          "pos": 6,
+          "name": "Joe Gibbs Racing #19",
+          "number": "19",
+          "points": 2386,
+          "wins": 3
+        },
+        {
+          "pos": 7,
+          "name": "Team Penske #22",
+          "number": "22",
+          "points": 2386,
+          "wins": 3
+        },
+        {
+          "pos": 8,
+          "name": "Hendrick Motorsports #24",
+          "number": "24",
+          "points": 2344,
+          "wins": 1
+        },
+        {
+          "pos": 9,
+          "name": "Joe Gibbs Racing #54",
+          "number": "54",
+          "points": 2335,
+          "wins": 2
+        },
+        {
+          "pos": 10,
+          "name": "Team Penske #2",
+          "number": "2",
+          "points": 2301,
+          "wins": 0
+        },
+        {
+          "pos": 11,
+          "name": "23XI Racing #23",
+          "number": "23",
+          "points": 2293,
+          "wins": 0
+        },
+        {
+          "pos": 12,
+          "name": "Hendrick Motorsports #9",
+          "number": "9",
+          "points": 2287,
+          "wins": 2
+        },
+        {
+          "pos": 13,
+          "name": "Spire Motorsports #77",
+          "number": "77",
+          "points": 2275,
+          "wins": 1
+        },
+        {
+          "pos": 14,
+          "name": "Spire Motorsports #7",
+          "number": "7",
+          "points": 2243,
+          "wins": 1
+        },
+        {
+          "pos": 15,
+          "name": "RFK Racing #60",
+          "number": "60",
+          "points": 2231,
+          "wins": 1
+        },
+        {
+          "pos": 16,
+          "name": "RFK Racing #17",
+          "number": "17",
+          "points": 2212,
+          "wins": 0
+        },
+        {
+          "pos": 17,
+          "name": "Trackhouse Racing #97",
+          "number": "97",
+          "points": 774,
+          "wins": 2
+        },
+        {
+          "pos": 18,
+          "name": "Trackhouse Racing #1",
+          "number": "1",
+          "points": 752,
+          "wins": 0
+        },
+        {
+          "pos": 19,
+          "name": "RFK Racing #6",
+          "number": "6",
+          "points": 723,
+          "wins": 0
+        },
+        {
+          "pos": 20,
+          "name": "Spire Motorsports #71",
+          "number": "71",
+          "points": 691,
+          "wins": 0
+        },
+        {
+          "pos": 21,
+          "name": "Wood Brothers Racing #21",
+          "number": "21",
+          "points": 676,
+          "wins": 0
+        },
+        {
+          "pos": 22,
+          "name": "Front Row Motorsports #34",
+          "number": "34",
+          "points": 656,
+          "wins": 0
+        },
+        {
+          "pos": 23,
+          "name": "Legacy Motor Club #43",
+          "number": "43",
+          "points": 643,
+          "wins": 0
+        },
+        {
+          "pos": 24,
+          "name": "Hendrick Motorsports #48",
+          "number": "48",
+          "points": 638,
+          "wins": 0
+        },
+        {
+          "pos": 25,
+          "name": "Richard Childress Racing #3",
+          "number": "3",
+          "points": 607,
+          "wins": 0
+        },
+        {
+          "pos": 26,
+          "name": "Kaulig Racing #16",
+          "number": "16",
+          "points": 606,
+          "wins": 0
+        },
+        {
+          "pos": 27,
+          "name": "Front Row Motorsports #38",
+          "number": "38",
+          "points": 584,
+          "wins": 0
+        },
+        {
+          "pos": 28,
+          "name": "HYAK Motorsports #47",
+          "number": "47",
+          "points": 527,
+          "wins": 0
+        },
+        {
+          "pos": 29,
+          "name": "23XI Racing #35",
+          "number": "35",
+          "points": 520,
+          "wins": 0
+        },
+        {
+          "pos": 30,
+          "name": "Legacy Motor Club #42",
+          "number": "42",
+          "points": 517,
+          "wins": 0
+        },
+        {
+          "pos": 31,
+          "name": "Front Row Motorsports #4",
+          "number": "4",
+          "points": 486,
+          "wins": 0
+        },
+        {
+          "pos": 32,
+          "name": "Richard Childress Racing #133",
+          "number": "133",
+          "points": 482,
+          "wins": 0
+        },
+        {
+          "pos": 33,
+          "name": "Haas Factory Team #41",
+          "number": "41",
+          "points": 450,
+          "wins": 0
+        },
+        {
+          "pos": 34,
+          "name": "Trackhouse Racing #88",
+          "number": "88",
+          "points": 410,
+          "wins": 0
+        },
+        {
+          "pos": 35,
+          "name": "Kaulig Racing #10",
+          "number": "10",
+          "points": 395,
+          "wins": 0
+        },
+        {
+          "pos": 36,
+          "name": "23XI Racing #67",
+          "number": "67",
+          "points": 330,
+          "wins": 2
+        },
+        {
+          "pos": 37,
+          "name": "Rick Ware Racing #51",
+          "number": "51",
+          "points": 264,
+          "wins": 0
+        },
+        {
+          "pos": 38,
+          "name": "Garage 66 #66",
+          "number": "66",
+          "points": 64,
+          "wins": 0
+        },
+        {
+          "pos": 39,
+          "name": "Live Fast Motorsports #78",
+          "number": "78",
+          "points": 54,
+          "wins": 0
+        },
+        {
+          "pos": 40,
+          "name": "NY Racing Team #44",
+          "number": "44",
+          "points": 53,
+          "wins": 0
+        },
+        {
+          "pos": 42,
+          "name": "Trackhouse Racing #91",
+          "number": "91",
+          "points": 11,
+          "wins": 0
+        },
+        {
+          "pos": 43,
+          "name": "Legacy Motor Club #84",
+          "number": "84",
+          "points": 9,
+          "wins": 0
+        },
+        {
+          "pos": 44,
+          "name": "Beard Motorsports #62",
+          "number": "62",
+          "points": 6,
+          "wins": 0
+        },
+        {
+          "pos": 45,
+          "name": "JR Motorsports #40",
+          "number": "40",
+          "points": 1,
+          "wins": 0
+        },
+        {
+          "pos": 46,
+          "name": "RFK Racing #199",
+          "number": "199",
+          "points": 0,
+          "wins": 0
+        },
+        {
+          "pos": 47,
+          "name": "Front Row Motorsports #36",
+          "number": "36",
+          "points": 0,
+          "wins": 0
+        }
+      ]
+    },
+    {
+      "title": "Marcas",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Toyota",
+          "points": 1589,
+          "wins": 18
+        },
+        {
+          "pos": 2,
+          "name": "Chevrolet",
+          "points": 1416,
+          "wins": 10
+        },
+        {
+          "pos": 3,
+          "name": "Ford",
+          "points": 1342,
+          "wins": 8
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://cf.nascar.com/cacher/2026/1/final/1-drivers-points.json",
+    "title": "NASCAR – puntos 2026 (NASCAR Cup)",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-10T06:14:37Z"
+  }
+}

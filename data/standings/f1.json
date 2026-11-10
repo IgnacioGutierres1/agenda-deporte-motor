@@ -1,0 +1,229 @@
+{
+  "seriesId": "f1",
+  "season": 2026,
+  "updatedAt": "2026-11-10T06:14:37Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Kimi Antonelli",
+          "team": "Mercedes",
+          "points": 390
+        },
+        {
+          "pos": 2,
+          "name": "Max Verstappen",
+          "team": "Red Bull Racing",
+          "points": 279
+        },
+        {
+          "pos": 3,
+          "name": "George Russell",
+          "team": "Mercedes",
+          "points": 262
+        },
+        {
+          "pos": 4,
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "points": 261
+        },
+        {
+          "pos": 5,
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "points": 249
+        },
+        {
+          "pos": 6,
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "points": 246
+        },
+        {
+          "pos": 7,
+          "name": "Oscar Piastri",
+          "team": "McLaren",
+          "points": 152
+        },
+        {
+          "pos": 8,
+          "name": "Isack Hadjar",
+          "team": "Red Bull Racing",
+          "points": 122
+        },
+        {
+          "pos": 9,
+          "name": "Liam Lawson",
+          "team": "Racing Bulls",
+          "points": 89
+        },
+        {
+          "pos": 10,
+          "name": "Pierre Gasly",
+          "team": "Alpine",
+          "points": 42
+        },
+        {
+          "pos": 11,
+          "name": "Arvid Lindblad",
+          "team": "Racing Bulls",
+          "points": 38
+        },
+        {
+          "pos": 12,
+          "name": "Franco Colapinto",
+          "team": "Alpine",
+          "points": 27
+        },
+        {
+          "pos": 13,
+          "name": "Oliver Bearman",
+          "team": "Haas F1 Team",
+          "points": 23
+        },
+        {
+          "pos": 14,
+          "name": "Gabriel Bortoleto",
+          "team": "Audi",
+          "points": 14
+        },
+        {
+          "pos": 15,
+          "name": "Nico Hulkenberg",
+          "team": "Audi",
+          "points": 14
+        },
+        {
+          "pos": 16,
+          "name": "Esteban Ocon",
+          "team": "Haas F1 Team",
+          "points": 7
+        },
+        {
+          "pos": 17,
+          "name": "Fernando Alonso",
+          "team": "Aston Martin",
+          "points": 7
+        },
+        {
+          "pos": 18,
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "points": 7
+        },
+        {
+          "pos": 19,
+          "name": "Alexander Albon",
+          "team": "Williams",
+          "points": 5
+        },
+        {
+          "pos": 20,
+          "name": "Yuki Tsunoda",
+          "team": "Racing Bulls",
+          "points": 1
+        },
+        {
+          "pos": 21,
+          "name": "Ryo Hirakawa",
+          "team": "Haas F1 Team",
+          "points": 1
+        },
+        {
+          "pos": 22,
+          "name": "Lance Stroll",
+          "team": "Aston Martin",
+          "points": 0
+        },
+        {
+          "pos": 23,
+          "name": "Valtteri Bottas",
+          "team": "Cadillac",
+          "points": 0
+        },
+        {
+          "pos": 24,
+          "name": "Sergio Perez",
+          "team": "Cadillac",
+          "points": 0
+        },
+        {
+          "pos": 25,
+          "name": "Rafael Câmara",
+          "team": "Haas F1 Team",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "title": "Constructores",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Mercedes",
+          "points": 652
+        },
+        {
+          "pos": 2,
+          "name": "Ferrari",
+          "points": 510
+        },
+        {
+          "pos": 3,
+          "name": "Red Bull Racing",
+          "points": 415
+        },
+        {
+          "pos": 4,
+          "name": "McLaren",
+          "points": 398
+        },
+        {
+          "pos": 5,
+          "name": "Racing Bulls",
+          "points": 114
+        },
+        {
+          "pos": 6,
+          "name": "Alpine",
+          "points": 69
+        },
+        {
+          "pos": 7,
+          "name": "Haas F1 Team",
+          "points": 31
+        },
+        {
+          "pos": 8,
+          "name": "Audi",
+          "points": 28
+        },
+        {
+          "pos": 9,
+          "name": "Williams",
+          "points": 12
+        },
+        {
+          "pos": 10,
+          "name": "Aston Martin",
+          "points": 7
+        },
+        {
+          "pos": 11,
+          "name": "Cadillac",
+          "points": 0
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://www.formula1.com/en/results/2026/drivers",
+    "title": "Formula 1 — Campeonato 2026",
+    "kind": "html",
+    "method": "directo",
+    "fetchedAt": "2026-11-10T06:14:37Z"
+  }
+}
