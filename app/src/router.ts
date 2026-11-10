@@ -11,6 +11,7 @@ export const routes: RouteRecordRaw[] = [
     meta: { title: 'Campeonatos' },
   },
   { path: '/auditoria', name: 'auditoria', component: () => import('./views/AuditView.vue'), meta: { title: 'Auditoría' } },
+  { path: '/ajustes', name: 'ajustes', component: () => import('./views/SettingsView.vue'), meta: { title: 'Ajustes' } },
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
