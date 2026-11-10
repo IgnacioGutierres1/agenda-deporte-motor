@@ -102,6 +102,7 @@ jobs:
           VITE_BASE: /${{ github.event.repository.name }}/
           VITE_GITHUB_REPO: ${{ github.repository }}
           VITE_GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+          VITE_WORKER_URL: ${{ vars.WORKER_URL }}
 
       - uses: actions/configure-pages@v5
 

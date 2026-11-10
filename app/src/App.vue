@@ -87,6 +87,8 @@ import { useScheduleStore } from './stores/schedule.ts';
 import { useResultsStore } from './stores/results.ts';
 import { timeAgo } from './lib/format.ts';
 import { installState, promptInstall } from './lib/install.ts';
+import { syncPush } from './lib/push.ts';
+import { useSettingsStore } from './stores/settings.ts';
 
 interface NavItem {
   to: string;
@@ -102,6 +104,7 @@ export default defineComponent({
   data() {
     return {
       timer: 0 as number,
+      pushTimer: 0 as number,
       menuOpen: false,
       nav: [
         { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar'] },
@@ -131,6 +134,11 @@ export default defineComponent({
     dataAge(): string {
       return timeAgo(this.generatedAt, this.now);
     },
+    ...mapState(useSettingsStore, ['notifyEnabled', 'notifyLead', 'notifySeriesIds', 'timeZone']),
+    /** Lo que el Worker necesita saber de este dispositivo para avisar. */
+    pushPrefsKey(): string {
+      return this.notifyEnabled ? `${this.notifySeriesIds.join(',')}|${this.notifyLead}|${this.timeZone}` : '';
+    },
     canInstall(): boolean {
       return installState.event !== null;
     },
@@ -144,6 +152,14 @@ export default defineComponent({
     },
     $route() {
       this.menuOpen = false;
+    },
+    // Si cambian las categorías/pilotos seguidos o la anticipación, se actualiza la suscripción.
+    pushPrefsKey(key: string, old: string) {
+      if (!key || key === old) return;
+      window.clearTimeout(this.pushTimer);
+      this.pushTimer = window.setTimeout(() => {
+        void syncPush({ seriesIds: this.notifySeriesIds, leadMinutes: this.notifyLead, timeZone: this.timeZone }).catch(() => undefined);
+      }, 1500);
     },
   },
   mounted() {

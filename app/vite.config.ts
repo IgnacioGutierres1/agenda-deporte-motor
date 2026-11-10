@@ -51,6 +51,8 @@ export default defineConfig(({ command, mode }) => {
           globIgnores: ['data/**'],
           navigateFallback: 'index.html',
           navigateFallbackDenylist: [/\/data\//],
+          // Manejo de avisos push (public/push-handler.js).
+          importScripts: ['push-handler.js'],
           runtimeCaching: [
             {
               // Datos del pipeline: siempre intenta la red y, sin conexión, usa la última copia.
