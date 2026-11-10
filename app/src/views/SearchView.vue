@@ -156,6 +156,10 @@ export default defineComponent({
     },
   },
   watch: {
+    '$route.query.q'(value: unknown) {
+      const next = typeof value === 'string' ? value : '';
+      if (next !== this.query.trim()) this.query = next;
+    },
     q(value: string) {
       if (value.length >= 2) {
         void this.loadDrivers();

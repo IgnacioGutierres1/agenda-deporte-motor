@@ -104,13 +104,26 @@ export default defineComponent({
       return this.currentSeries ? newsForSeries(this.items, [this.currentSeries]) : [];
     },
   },
+  watch: {
+    currentSeries() {
+      this.scrollChip();
+    },
+  },
   mounted() {
     void this.load();
+    this.scrollChip();
   },
   methods: {
     ...mapActions(useNewsStore, ['load']),
     setTab(tab: Tab) {
       void this.$router.replace({ query: tab === 'para-ti' ? {} : { tab } });
+    },
+    /** Lleva a la vista la pastilla de la categoría elegida. */
+    scrollChip() {
+      this.$nextTick(() => {
+        const el = this.$el?.querySelector?.('.session-chips .pill.active') as HTMLElement | null;
+        el?.scrollIntoView?.({ block: 'nearest', inline: 'center' });
+      });
     },
     pickSeries(id: string) {
       void this.$router.replace({ query: { tab: 'categorias', serie: id } });

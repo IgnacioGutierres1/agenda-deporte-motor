@@ -63,11 +63,14 @@ export default defineComponent({
   computed: {
     ...mapState(useNewsStore, ['status', 'error']),
     ...mapState(useScheduleStore, ['now', 'seriesById']),
+    /** Nota destacada: la primera con foto entre las 10 más recientes (como FotMob, siempre con imagen). */
     hero(): NewsItem | undefined {
-      return this.items[0];
+      if (!this.featured) return undefined;
+      return this.items.slice(0, 10).find((n) => n.image && !this.broken.includes(n.id));
     },
     rest(): NewsItem[] {
-      return this.featured ? this.items.slice(1) : this.items;
+      const hero = this.hero;
+      return hero ? this.items.filter((n) => n.id !== hero.id) : this.items;
     },
   },
   mounted() {
