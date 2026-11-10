@@ -4,6 +4,20 @@ Grilla de horarios de deporte motor (internacional y argentino) con **la fuente 
 resultados y campeonatos, y exportación a calendario (`.ics`, Google Calendar y suscripción).
 App web instalable (PWA) en Android e iOS, con costo $0.
 
+## Secciones de la app (diseño inspirado en FotMob)
+
+| Sección | Qué muestra |
+|---|---|
+| **Agenda** | Franja de días (y "Finde"): sesiones del día agrupadas por evento; primero lo que seguís. Ícono de calendario → exportar (`.ics`, Google Calendar, suscripción). |
+| **Noticias** | Notas de sitios oficiales y medios especializados (RSS): Para ti / Últimas / Por categoría. Siempre se leen en el sitio original. |
+| **Categorías** | Todas las categorías; cada una con Resumen, Calendario, Tabla de campeonato, Resultados y Noticias. |
+| **Siguiendo** | Categorías y pilotos seguidos (se guardan en el dispositivo). Ficha de piloto con campeonatos, próximas y últimas carreras. |
+| **Buscar** | Categorías, pilotos, eventos/circuitos y noticias. |
+| Menú ☰ | Actualizar datos, Exportar, Auditoría de fuentes y Ajustes (tema oscuro/claro, zona horaria, cuentas). |
+
+Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `standings/*.json`, `results/**`,
+`drivers.json` (índice de pilotos armado desde tablas y resultados), `news.json` y `feeds/deporte-motor.ics`.
+
 ## Estructura
 
 | Carpeta | Contenido |
