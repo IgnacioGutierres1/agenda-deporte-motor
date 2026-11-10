@@ -45,7 +45,7 @@ async function mountCard(item: GridItem) {
 
 describe('en vivo', () => {
   it('NASCAR: tabla en vivo desde el feed oficial (sin proxy)', async () => {
-    const fetchMock = vi.fn(async () => new Response(JSON.stringify(nascarFeed), { status: 200 }));
+    const fetchMock = vi.fn(async (_url: string) => new Response(JSON.stringify(nascarFeed), { status: 200 }));
     vi.stubGlobal('fetch', fetchMock);
     const wrapper = await mountCard(itemFor('nascar-cup'));
     expect(String(fetchMock.mock.calls[0]![0])).toBe('https://cf.nascar.com/live/feeds/live-feed.json');
