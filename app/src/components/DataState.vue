@@ -6,7 +6,7 @@
     <template v-else-if="missing">
       <p><strong>Todavía no hay datos publicados.</strong></p>
       <p class="small dim">
-        La primera actualización automática genera la grilla. Si sos el dueño del repo, podés lanzarla desde
+        La primera actualización automática genera la agenda. Si sos el dueño del repo, podés lanzarla desde
         Ajustes → "Forzar actualización".
       </p>
     </template>

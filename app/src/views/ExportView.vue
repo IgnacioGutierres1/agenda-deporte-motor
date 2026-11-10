@@ -1,6 +1,5 @@
 <template>
   <div class="page export-view">
-    <RouterLink to="/" class="small">‹ Volver a la grilla</RouterLink>
     <PeriodPicker />
 
     <DataState />
@@ -95,10 +94,10 @@
             <button v-if="fixCount" type="button" class="btn btn-primary btn-block" :disabled="busy" @click="fixAll">
               Corregir automáticamente ({{ fixCount }})
             </button>
-            <p v-else class="notice notice-ok">Todo coincide con la grilla.</p>
+            <p v-else class="notice notice-ok">Todo coincide con la agenda.</p>
             <div v-if="audit.extras.length" class="card">
               <strong>Eventos sobrantes creados por la app ({{ audit.extras.length }})</strong>
-              <p class="small dim">Están en el calendario pero ya no figuran en la grilla para esta selección.</p>
+              <p class="small dim">Están en el calendario pero ya no figuran en la agenda para esta selección.</p>
               <ul class="small extras">
                 <li v-for="e in audit.extras" :key="e.id">{{ e.summary || e.id }} — {{ extraTime(e) }}</li>
               </ul>
@@ -283,7 +282,7 @@ export default defineComponent({
       const extras = this.audit?.extras ?? [];
       if (!extras.length) return;
       const ok = window.confirm(
-        `¿Borrar ${extras.length} evento(s) del calendario "Deporte Motor"? Fueron creados por la app y ya no están en la grilla. No se puede deshacer.`,
+        `¿Borrar ${extras.length} evento(s) del calendario "Deporte Motor"? Fueron creados por la app y ya no están en la agenda. No se puede deshacer.`,
       );
       if (!ok) return;
       return this.run(async (api) => {

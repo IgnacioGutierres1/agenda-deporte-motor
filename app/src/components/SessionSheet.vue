@@ -66,9 +66,10 @@
         </div>
       </div>
 
-      <RouterLink v-if="item.finished && item.session.hasResults" :to="resultsLink" class="btn btn-block">
+      <RouterLink v-if="item.finished && item.session.hasResults" :to="resultsLink" class="btn btn-primary btn-block">
         Ver resultado
       </RouterLink>
+      <RouterLink :to="`/evento/${item.session.eventId}`" class="btn btn-block">Ver evento completo</RouterLink>
     </div>
   </BottomSheet>
 </template>
@@ -163,9 +164,9 @@ export default defineComponent({
     resultsLink() {
       if (!this.item) return '/';
       return {
-        name: 'campeonatos',
-        params: { seriesId: this.item.series.id },
-        query: { tab: 'resultados', event: this.item.session.eventId, session: this.item.session.id },
+        name: 'evento',
+        params: { eventId: this.item.session.eventId },
+        query: { tab: 'resultados', session: this.item.session.id },
       };
     },
   },

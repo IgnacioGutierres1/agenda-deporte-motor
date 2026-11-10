@@ -21,6 +21,7 @@ import {
   type PendingItem,
 } from '../lib/grid.ts';
 import { useSettingsStore } from './settings.ts';
+import { agendaPeriod, dayStrip, groupByEvent, todayIn, type AgendaCard, type AgendaDay, type StripDay } from '../lib/agenda.ts';
 
 function nowIso(): string {
   return new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
@@ -56,6 +57,9 @@ export const useScheduleStore = defineStore('schedule', {
     customTo: '',
     /** Sesiones que el usuario sacó de la exportación. */
     excludedIds: [] as string[],
+
+    /** Día elegido en la franja de la Agenda (YYYY-MM-DD o "finde"); vacío = hoy. */
+    agendaDay: '' as AgendaDay,
   }),
 
   getters: {
@@ -126,6 +130,29 @@ export const useScheduleStore = defineStore('schedule', {
     },
 
     hasData: (state): boolean => state.schedule !== null,
+
+    // ── Agenda (franja de días) ──
+    today(state): string {
+      return todayIn(state.now, useSettingsStore().timeZone);
+    },
+    selectedDay(state): AgendaDay {
+      return state.agendaDay || this.today;
+    },
+    strip(state): StripDay[] {
+      return dayStrip(state.now, useSettingsStore().timeZone);
+    },
+    agendaPeriod(state): Period {
+      return agendaPeriod(this.selectedDay, state.now, useSettingsStore().timeZone);
+    },
+    agendaItems(state): GridItem[] {
+      return sessionsInPeriod(state.schedule, this.agendaPeriod, this.visibleSeriesPredicate, state.now);
+    },
+    agendaCards(): AgendaCard[] {
+      return groupByEvent(this.agendaItems);
+    },
+    agendaPending(state): PendingItem[] {
+      return pendingEventsInPeriod(state.schedule, this.agendaPeriod, this.visibleSeriesPredicate);
+    },
   },
 
   actions: {
@@ -153,6 +180,10 @@ export const useScheduleStore = defineStore('schedule', {
         this.loading = false;
         this.now = nowIso();
       }
+    },
+
+    setAgendaDay(day: AgendaDay) {
+      this.agendaDay = day === this.today ? '' : day;
     },
 
     tick() {

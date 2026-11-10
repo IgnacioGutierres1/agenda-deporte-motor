@@ -12,6 +12,8 @@ export function parseRepo(value: string | undefined | null): RepoRef | null {
   return m ? { owner: m[1]!, repo: m[2]! } : null;
 }
 
+export type ThemeChoice = 'dark' | 'light' | 'system';
+
 /** Preferencias de este dispositivo (se guardan en localStorage desde main.ts). */
 export const useSettingsStore = defineStore('settings', {
   state: () => ({
@@ -19,6 +21,10 @@ export const useSettingsStore = defineStore('settings', {
     timeZone: AR_TZ as string,
     /** Series ocultas en este dispositivo (filtro de la grilla). */
     hiddenSeries: [] as string[],
+    /** Categorías que sigue el usuario (aparecen primero en la agenda y en Siguiendo), en orden. */
+    followedSeries: [] as string[],
+    /** Tema visual: oscuro por defecto, como FotMob. */
+    theme: 'dark' as ThemeChoice,
     /** Client ID OAuth de Google; vacío = el de VITE_GOOGLE_CLIENT_ID. */
     googleClientId: '',
     /** "owner/repo"; vacío = VITE_GITHUB_REPO. */
@@ -41,6 +47,14 @@ export const useSettingsStore = defineStore('settings', {
     },
   },
   actions: {
+    isFollowed(seriesId: string): boolean {
+      return this.followedSeries.includes(seriesId);
+    },
+    toggleFollow(seriesId: string) {
+      this.followedSeries = this.isFollowed(seriesId)
+        ? this.followedSeries.filter((id) => id !== seriesId)
+        : [...this.followedSeries, seriesId];
+    },
     isHidden(seriesId: string): boolean {
       return this.hiddenSeries.includes(seriesId);
     },

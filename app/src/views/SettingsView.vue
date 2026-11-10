@@ -23,6 +23,25 @@
       <p v-if="updateMsg" class="notice" :class="updateErr ? 'notice-error' : 'notice-ok'">{{ updateMsg }}</p>
     </section>
 
+    <!-- Tema -->
+    <section class="card">
+      <h2>Tema</h2>
+      <div class="row wrap theme-options" role="radiogroup" aria-label="Tema">
+        <button
+          v-for="t in themes"
+          :key="t.value"
+          type="button"
+          role="radio"
+          class="pill"
+          :class="{ active: theme === t.value }"
+          :aria-checked="theme === t.value"
+          @click="theme = t.value"
+        >
+          {{ t.label }}
+        </button>
+      </div>
+    </section>
+
     <!-- Zona horaria -->
     <section class="card">
       <h2>Zona horaria</h2>
@@ -124,7 +143,7 @@
     <section class="card">
       <h2>Suscribirse al calendario</h2>
       <p class="small">
-        Con la suscripción, tu calendario se actualiza solo con la grilla (próximos 60 días, todas las categorías activas).
+        Con la suscripción, tu calendario se actualiza solo con la agenda (próximos 60 días, todas las categorías activas).
       </p>
       <div class="copy-row">
         <code>{{ webcal }}</code>
@@ -283,6 +302,11 @@ export default defineComponent({
       newUrl: '',
       newGroup: 'otros' as SeriesGroup,
       groupLabels: GROUP_LABELS,
+      themes: [
+        { value: 'dark' as const, label: 'Oscuro' },
+        { value: 'light' as const, label: 'Claro' },
+        { value: 'system' as const, label: 'Según el sistema' },
+      ],
       envClientId: import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '',
       envRepo: import.meta.env.VITE_GITHUB_REPO ?? '',
     };
@@ -290,7 +314,7 @@ export default defineComponent({
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'generatedAt', 'fetchedAt', 'loading', 'now']),
     ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef']),
-    ...mapWritableState(useSettingsStore, ['timeZone', 'googleClientId', 'githubRepo', 'githubToken']),
+    ...mapWritableState(useSettingsStore, ['timeZone', 'theme', 'googleClientId', 'githubRepo', 'githubToken']),
     zoneOptions(): Array<{ value: string; label: string }> {
       const list = [...ZONE_OPTIONS];
       for (const z of [deviceZone(), this.timeZone]) {
@@ -403,7 +427,7 @@ export default defineComponent({
       return this.repoChange((c) => pinDiscovered(c, s.id, s.name), `"${s.name}" quedó fijada como categoría permanente.`);
     },
     hide(s: Series) {
-      if (!window.confirm(`¿Ocultar "${s.name}"? No va a volver a aparecer en la grilla de nadie.`)) return;
+      if (!window.confirm(`¿Ocultar "${s.name}"? No va a volver a aparecer en la agenda de nadie.`)) return;
       return this.repoChange((c) => hideDiscovered(c, s.id, s.name), `"${s.name}" oculta.`);
     },
     unhide(id: string) {

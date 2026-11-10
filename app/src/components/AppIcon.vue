@@ -3,7 +3,7 @@
     :width="size"
     :height="size"
     viewBox="0 0 24 24"
-    fill="none"
+    :fill="filled ? 'currentColor' : 'none'"
     stroke="currentColor"
     stroke-width="2"
     stroke-linecap="round"
@@ -38,6 +38,14 @@ const ICONS: Record<string, string[]> = {
   external: ['M14 4h6v6', 'M20 4l-9 9', 'M18 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h5'],
   chevron: ['M9 6l6 6-6 6'],
   download: ['M12 3v12', 'M7 10l5 5 5-5', 'M5 21h14'],
+  star: ['M12 3l2.8 5.7 6.2.9-4.5 4.4 1.1 6.2L12 17.3 6.4 20.2l1.1-6.2L3 9.6l6.2-.9L12 3z'],
+  live: ['M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z', 'M8.5 8.5a5 5 0 0 0 0 7', 'M15.5 8.5a5 5 0 0 1 0 7', 'M5.6 5.6a9 9 0 0 0 0 12.8', 'M18.4 5.6a9 9 0 0 1 0 12.8'],
+  menu: ['M4 6h16', 'M4 12h16', 'M4 18h16'],
+  back: ['M15 6l-6 6 6 6'],
+  search: ['M11 18a7 7 0 1 0 0-14 7 7 0 0 0 0 14z', 'M21 21l-4.3-4.3'],
+  plus: ['M12 5v14', 'M5 12h14'],
+  flag: ['M5 21V4', 'M5 4h11l-2 4 2 4H5'],
+  grid: ['M4 4h7v7H4z', 'M13 4h7v7h-7z', 'M4 13h7v7H4z', 'M13 13h7v7h-7z'],
 };
 
 export default defineComponent({
@@ -45,6 +53,8 @@ export default defineComponent({
   props: {
     name: { type: String, required: true },
     size: { type: [Number, String], default: 22 },
+    /** Relleno sólido (estrella de "siguiendo"). */
+    filled: { type: Boolean, default: false },
   },
   computed: {
     paths(): string[] {
