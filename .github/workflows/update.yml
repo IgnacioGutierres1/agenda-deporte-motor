@@ -1,0 +1,115 @@
+# Actualiza los horarios, resultados y campeonatos y publica la app en GitHub Pages.
+#  - Todos los días a las 06:00 ARG.
+#  - Cada 3 horas de jueves a lunes (horarios de último momento y resultados).
+#  - Descubrimiento de competencias nuevas: los lunes.
+#  - A mano (botón "Forzar actualización" de la app o pestaña Actions) y en cada push a main.
+name: Actualizar y publicar
+
+on:
+  schedule:
+    - cron: '0 9 * * *'
+    - cron: '0 */3 * * 0,1,4,5,6'
+    - cron: '30 8 * * 1'
+  workflow_dispatch:
+    inputs:
+      only:
+        description: 'Ids de categorías separados por coma (vacío = todas)'
+        required: false
+        default: ''
+      discovery:
+        description: 'Correr también el descubrimiento de competencias'
+        type: boolean
+        required: false
+        default: false
+  push:
+    branches: [main]
+
+permissions:
+  contents: write
+  pages: write
+  id-token: write
+
+# Una sola corrida a la vez; si llegan varias, se encola la más reciente.
+concurrency:
+  group: update-and-deploy
+  cancel-in-progress: false
+
+env:
+  GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+  GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+  GEMINI_SEARCH_MODEL: ${{ vars.GEMINI_SEARCH_MODEL }}
+  GEMINI_PROVIDER: ${{ vars.GEMINI_PROVIDER }}
+  GEMINI_MAX_CALLS: ${{ vars.GEMINI_MAX_CALLS }}
+  GOOGLE_CLOUD_PROJECT: ${{ vars.GOOGLE_CLOUD_PROJECT }}
+  GOOGLE_CLOUD_LOCATION: ${{ vars.GOOGLE_CLOUD_LOCATION }}
+  DISCOVERY_SEARCH: ${{ vars.DISCOVERY_SEARCH }}
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+
+      - run: npm ci
+
+      - name: Descubrimiento de competencias
+        if: github.event.schedule == '30 8 * * 1' || inputs.discovery
+        run: npm run discovery
+        continue-on-error: true
+
+      - name: Pipeline de horarios, resultados y campeonatos
+        env:
+          ONLY: ${{ inputs.only }}
+        run: |
+          if [ -n "$ONLY" ]; then
+            if ! [[ "$ONLY" =~ ^[a-z0-9,-]+$ ]]; then
+              echo "Valor inválido para 'only': $ONLY" >&2
+              exit 1
+            fi
+            npm run pipeline -- "--only=$ONLY"
+          else
+            npm run pipeline
+          fi
+
+      - name: Guardar datos
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data
+          if git diff --cached --quiet; then
+            echo "Sin cambios en data/."
+          else
+            git commit -m "chore(data): actualización automática $(date -u +%Y-%m-%dT%H:%MZ)"
+            # Por si la app commiteó config/series.user.json mientras corría el pipeline.
+            git pull --rebase --autostash origin main
+            git push origin HEAD:main
+          fi
+
+      - name: Build de la app
+        run: npm run build
+        env:
+          VITE_BASE: /${{ github.event.repository.name }}/
+          VITE_GITHUB_REPO: ${{ github.repository }}
+          VITE_GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: app/dist
+
+  deploy:
+    needs: update
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
