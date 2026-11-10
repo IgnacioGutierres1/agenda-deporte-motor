@@ -1,0 +1,15 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-14T12:00:00Z",
+  "series": [
+    { "seriesId": "f1", "state": "ok", "lastAttempt": "2026-11-14T11:58:00Z", "lastSuccess": "2026-11-14T11:58:00Z", "sourceUrl": "https://www.formula1.com/en/racing/2026", "standingsAvailable": true },
+    { "seriesId": "f2", "state": "stale", "lastAttempt": "2026-11-14T11:58:00Z", "lastSuccess": "2026-11-12T11:58:00Z", "message": "Tiempo de espera agotado al leer el cronograma.", "sourceUrl": "https://www.fiaformula2.com/Calendar", "standingsAvailable": false },
+    { "seriesId": "motogp", "state": "ok", "lastAttempt": "2026-11-14T11:57:00Z", "lastSuccess": "2026-11-14T11:57:00Z", "standingsAvailable": true },
+    { "seriesId": "nascar-cup", "state": "ok", "lastAttempt": "2026-11-14T11:57:00Z", "lastSuccess": "2026-11-14T11:57:00Z", "standingsAvailable": true },
+    { "seriesId": "tc", "state": "ok", "lastAttempt": "2026-11-14T11:59:00Z", "lastSuccess": "2026-11-14T11:59:00Z", "standingsAvailable": true },
+    { "seriesId": "tc-pista", "state": "ok", "lastAttempt": "2026-11-14T11:59:00Z", "lastSuccess": "2026-11-14T11:59:00Z", "standingsAvailable": false },
+    { "seriesId": "turismo-nacional", "state": "error", "lastAttempt": "2026-11-14T11:59:00Z", "lastSuccess": "2026-11-01T10:00:00Z", "message": "La página del calendario respondió 503.", "sourceUrl": "https://www.apat.org.ar/calendario", "standingsAvailable": false },
+    { "seriesId": "top-race", "state": "disabled", "lastAttempt": "2026-11-14T11:59:00Z", "standingsAvailable": false },
+    { "seriesId": "copa-truck", "state": "ok", "lastAttempt": "2026-11-14T11:59:00Z", "lastSuccess": "2026-11-14T11:59:00Z", "standingsAvailable": false }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "seriesId": "tc",
+  "season": 2026,
+  "updatedAt": "2026-11-10T22:00:00Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        { "pos": 1, "name": "Julián Santero", "team": "Ford", "number": "1", "points": 512.5, "wins": 3 },
+        { "pos": 2, "name": "Mariano Werner", "team": "Ford", "number": "3", "points": 498, "wins": 2 },
+        { "pos": 3, "name": "Agustín Canapino", "team": "Chevrolet", "number": "8", "points": 471, "wins": 2 }
+      ]
+    },
+    {
+      "title": "Marcas",
+      "rows": [
+        { "pos": 1, "name": "Ford", "points": 1820 },
+        { "pos": 2, "name": "Chevrolet", "points": 1702 }
+      ]
+    }
+  ],
+  "source": { "url": "https://www.actc.org.ar/tc/campeonato.html", "title": "ACTC – Campeonato TC", "kind": "html", "method": "ia", "fetchedAt": "2026-11-10T22:00:00Z" }
+}
