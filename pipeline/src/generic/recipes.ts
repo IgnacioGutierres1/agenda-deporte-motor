@@ -11,9 +11,11 @@ import {
   attr,
   blocksByClass,
   extractEmbeddedJson,
+  parseJsonLd,
   textByClass,
   textOf,
 } from '../extract/html.ts';
+import { jsonLdSessions } from './locate.ts';
 import {
   countryName,
   dateInZone,
@@ -248,6 +250,90 @@ const indycar: SiteRecipe = {
 
 // ─── FIA WEC / ELMS (misma plataforma del ACO) ────────────────────────────────────────────────
 
+/** Carrera listada en la página /season/{año} del ACO, con lo que esa página dice de ella. */
+export interface AcoRace {
+  url: string;
+  name?: string;
+  flag?: string;
+  venue?: string;
+  /** Día de la carrera (YYYY-MM-DD), si la página lo muestra (tira de fechas o tarjeta); a veces solo figura el mes. */
+  raceDay?: string;
+}
+
+const ACO_TEST = /prologue|test/i;
+
+/**
+ * Carreras de la temporada en la página /season/{año} de fiawec.com / europeanlemansseries.com. Según el momento
+ * del año la página muestra una tira con el día de cada carrera, tarjetas con "5 July" (ELMS) o solo una lista
+ * por mes (div.race-item: bandera, nombre y mes, sin día; así está WEC al terminar la temporada).
+ */
+export function acoSeasonRaces(doc: FetchedDocument, season: number): AcoRace[] {
+  const html = stripComments(doc.raw);
+  const byUrl = new Map<string, AcoRace>();
+  const add = (href: string, info: Omit<AcoRace, 'url'>) => {
+    const url = absoluteUrl(href.trim(), doc.url);
+    if (!url) return;
+    const race = byUrl.get(url) ?? { url };
+    for (const [k, v] of Object.entries(info) as [keyof Omit<AcoRace, 'url'>, string | undefined][]) {
+      if (v && !race[k]) race[k] = v;
+    }
+    byUrl.set(url, race);
+  };
+  const raceHref = new RegExp(`href="(/en/race/[^"]*-${season})\\s*"`);
+
+  // Lista por mes: cada div.race-item trae su propia bandera y nombre.
+  for (const b of blocksByClass(html, 'race-item', 2500)) {
+    const href = b.match(raceHref)?.[1];
+    if (!href) continue;
+    add(href, { name: textByClass(b, 'name') || undefined, flag: b.match(/flag:([A-Z]{2})/)?.[1] });
+  }
+
+  // Tira de fechas (<strong>11</strong><small>Apr</small>) y tarjetas ("5 July" debajo del link).
+  const re = new RegExp(`<a\\b[^>]*href="(/en/race/[^"]*-${season})\\s*"[^>]*>([\\s\\S]*?)</a>`, 'g');
+  for (const m of html.matchAll(re)) {
+    const inner = m[2] ?? '';
+    const after = html.slice(m.index! + m[0].length, m.index! + m[0].length + 1500);
+    const strip = inner.match(/<strong[^>]*>\s*(\d{1,2})\s*<\/strong>\s*<small[^>]*>\s*([A-Za-z]+)\s*<\/small>/);
+    const card = /^\s*<div class="thumb/.test(inner)
+      ? after.match(/class="text-primary text-uppercase[^"]*"[^>]*>\s*(\d{1,2}\s+[A-Za-z]+)\s*</)
+      : null;
+    const dayText = strip ? `${strip[1]} ${strip[2]}` : card?.[1];
+    const alt = attr(inner.match(/<img\b[^>]*>/)?.[0] ?? '', 'alt');
+    add(m[1]!, {
+      name: alt ? textOf(alt) : undefined,
+      flag: (strip || card ? inner + after.slice(0, 600) : inner).match(/flag:([A-Z]{2})/)?.[1],
+      venue: card ? textOf(after.match(/class="fs-7 fw-bold[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? '') || undefined : undefined,
+      raceDay: dayText ? parseDateRangeText(dayText, season)?.start : undefined,
+    });
+  }
+  return [...byUrl.values()];
+}
+
+/**
+ * Fechas exactas de una carrera desde el JSON-LD (SportsEvent) de su página: startDate/endDate. El sitio escribe
+ * la hora local del circuito (con el offset de París), así que la fecha local es la parte YYYY-MM-DD tal cual.
+ */
+export function acoRaceDates(html: string): { start: string; end: string; name: string; place: string; city: string; country: string } | null {
+  for (const o of parseJsonLd(html)) {
+    if (!/Event$/.test(str(o['@type'])) || !/^\d{4}-\d{2}-\d{2}/.test(str(o.startDate))) continue;
+    const start = str(o.startDate).slice(0, 10);
+    const endRaw = str(o.endDate).slice(0, 10);
+    const end = /^\d{4}-\d{2}-\d{2}$/.test(endRaw) && endRaw >= start ? endRaw : start;
+    const loc = obj(o.location);
+    const address = str(loc.address).split(',').map((p) => p.trim());
+    return {
+      start,
+      end,
+      // "WEC 6 Hours of Monza 2026" -> "6 Hours of Monza"
+      name: str(o.name).replace(/^(WEC|ELMS|AsLMS)\s+/i, '').replace(/\s+\d{4}$/, '').trim(),
+      place: str(loc.name),
+      city: address.length > 1 ? address[0]! : '',
+      country: address.at(-1) ?? '',
+    };
+  }
+  return null;
+}
+
 const aco: SiteRecipe = {
   name: 'aco',
   match: (url) => /^(fiawec\.com|europeanlemansseries\.com|asianlemansseries\.com)$/.test(host(url)),
@@ -255,42 +341,49 @@ const aco: SiteRecipe = {
     const u = new URL(url);
     return /\/season\/\d{4}/.test(u.pathname) ? url.replace(/\/season\/\d{4}/, `/season/${season}`) : `${u.origin}/en/season/${season}`;
   },
-  calendar(doc, ctx) {
-    const html = stripComments(doc.raw);
-    const byUrl = new Map<string, CalendarEntry>();
-    const re = new RegExp(`<a\\b[^>]*href="(/en/race/[^"]*-${ctx.season})\\s*"[^>]*>([\\s\\S]*?)</a>`, 'g');
-    for (const m of html.matchAll(re)) {
-      const url = absoluteUrl(m[1]!.trim(), doc.url);
-      if (!url) continue;
-      const inner = m[2] ?? '';
-      const after = html.slice(m.index! + m[0].length, m.index! + m[0].length + 1500);
-      const strip = inner.match(/<strong[^>]*>\s*(\d{1,2})\s*<\/strong>\s*<small[^>]*>\s*([A-Za-z]+)\s*<\/small>/);
-      const card = after.match(/class="text-primary text-uppercase[^"]*"[^>]*>\s*(\d{1,2}\s+[A-Za-z]+)\s*</);
-      const dayText = strip ? `${strip[1]} ${strip[2]}` : card?.[1];
-      const flag = (inner + after.slice(0, 600)).match(/flag:([A-Z]{2})/)?.[1] ?? '';
-      const venue = textOf(after.match(/class="fs-7 fw-bold[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? '');
-      const alt = attr(inner.match(/<img\b[^>]*>/)?.[0] ?? '', 'alt');
-      const slugName = m[1]!.split('/').pop()!.replace(new RegExp(`-${ctx.season}$`), '').replace(/-/g, ' ');
-      const name = alt ? textOf(alt) : slugName.replace(/\b\w/g, (c) => c.toUpperCase());
-      const existing = byUrl.get(url);
-      if (existing?.dateStart) continue;
-      if (!dayText) {
-        if (!existing) byUrl.set(url, { name, circuit: venue || name, country: countryName(flag), tz: tzFor(flag, venue), dateStart: '', dateEnd: '', url });
-        continue;
-      }
-      const day = parseDateRangeText(dayText, ctx.season);
-      if (!day) continue;
-      byUrl.set(url, {
-        name: alt === undefined && existing ? existing.name : name,
-        circuit: venue || existing?.circuit || name,
-        country: countryName(flag || existing?.country || ''),
-        tz: tzFor(flag || existing?.country || '', venue || name),
-        dateStart: shiftDate(day.start, /prologue|test/i.test(name) ? -1 : -2),
-        dateEnd: day.start,
-        url,
-      });
+  /**
+   * La página de la temporada lista las carreras; las fechas exactas salen del JSON-LD de la página de cada
+   * carrera. Si esa página no se puede leer se usa el día de carrera de la temporada (viernes a domingo); si la
+   * temporada solo muestra el mes, la carrera se omite (nunca se publica un mes entero como fechas del evento).
+   */
+  async calendar(doc, ctx) {
+    const out: CalendarEntry[] = [];
+    for (const race of acoSeasonRaces(doc, ctx.season)) {
+      const page = await pageOrNull(ctx, race.url).catch(() => null);
+      const ld = page ? acoRaceDates(page) : null;
+      const name = race.name || ld?.name || humanize(race.url.split('/').pop()!.replace(new RegExp(`-${ctx.season}$`), ''));
+      const circuit = race.venue || ld?.place || name;
+      const country = race.flag || ld?.country || '';
+      const tz = tzFor(country, `${circuit} ${ld?.city ?? ''} ${name}`);
+      let dates: { start: string; end: string } | null = null;
+      if (ld) dates = { start: ld.start, end: ld.end };
+      else if (race.raceDay) dates = { start: shiftDate(race.raceDay, ACO_TEST.test(name) ? -1 : -2), end: race.raceDay };
+      if (!dates || !dates.start.startsWith(String(ctx.season))) continue;
+      out.push({ name, circuit, country: countryName(country), tz, dateStart: dates.start, dateEnd: dates.end, url: race.url });
     }
-    return [...byUrl.values()].filter((e) => e.dateStart);
+    out.sort((a, b) => a.dateStart.localeCompare(b.dateStart));
+    // Ronda = orden en el calendario, sin contar prólogo ni ensayos oficiales (el sitio no publica el número).
+    let round = 0;
+    for (const e of out) if (!ACO_TEST.test(e.name)) e.round = ++round;
+    return out;
+  },
+  /**
+   * Cronograma: subEvent del JSON-LD de la página de la carrera. Las horas son locales del circuito aunque el
+   * offset diga París, y las que todavía no se publicaron figuran como 00:00 (se omiten). Si la página trae el
+   * evento en JSON-LD pero ninguna hora publicada, devuelve una lista vacía (no se busca el cronograma por otro
+   * lado, donde esas horas de relleno se leerían como reales); null solo si la página no trae JSON-LD.
+   */
+  async sessions(entry, ctx) {
+    if (!entry.url) return null;
+    const html = await pageOrNull(ctx, entry.url);
+    if (!html || !acoRaceDates(html)) return null;
+    const page: FetchedDocument = { url: entry.url, kind: 'html', raw: html, text: '', title: '', hash: '' };
+    const { sessions } = jsonLdSessions(page, { wallClockZone: entry.tz });
+    const title = textOf(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '');
+    return {
+      sessions,
+      source: { url: entry.url, title: title || `Programa — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
+    };
   },
 };
 

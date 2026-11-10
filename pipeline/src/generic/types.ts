@@ -64,7 +64,8 @@ export interface SiteRecipe {
   match(url: string): boolean;
   /** URL a descargar para la temporada pedida (p. ej. agregar ?year=2026). */
   calendarUrl?(url: string, season: number): string;
-  calendar?(doc: FetchedDocument, ctx: RecipeContext): CalendarEntry[];
+  /** Puede ser asíncrono si el calendario solo lista los eventos y las fechas salen de la página de cada uno. */
+  calendar?(doc: FetchedDocument, ctx: RecipeContext): CalendarEntry[] | Promise<CalendarEntry[]>;
   /** Sesiones por lectura directa (API oficial). null si todavía no hay cronograma publicado. */
   sessions?(entry: CalendarEntry, ctx: RecipeContext): Promise<SessionsFound | null>;
   /**

@@ -146,12 +146,41 @@ const calendarSchema: GeminiSchema = {
   required: ['events'],
 };
 
+/** Días que puede durar un evento sin que su rango parezca sospechoso (fin de semana largo con días de ensayo). */
+export const MAX_PLAUSIBLE_EVENT_DAYS = 7;
+/** Ningún evento dura más que esto (el Dakar o el TT de la Isla de Man rondan las dos semanas). */
+const MAX_EVENT_DAYS = 31;
+
+/**
+ * Controla el rango de fechas de un evento leído con IA. Cuando la página solo muestra el mes ("November"),
+ * Gemini tiende a completar del día 1 al último del mes, y la app mostraría el evento todos los días de ese mes.
+ * Se rechaza (devuelve el motivo) un rango de más de MAX_PLAUSIBLE_EVENT_DAYS que arranca un día 1 y termina el
+ * último día de un mes, y cualquier rango de más de MAX_EVENT_DAYS. Los eventos largos de verdad (24H Series con
+ * días de ensayo, NLS, Dakar, TT) no tienen esa forma: duran menos de un mes y no coinciden con el mes calendario.
+ */
+export function implausibleDateRange(dateStart: string, dateEnd: string): string | null {
+  const start = DateTime.fromISO(dateStart);
+  const end = DateTime.fromISO(dateEnd);
+  if (!start.isValid || !end.isValid) return 'fecha inválida';
+  const days = end.diff(start, 'days').days + 1;
+  if (days > MAX_EVENT_DAYS) return `rango de ${days} días`;
+  if (days > MAX_PLAUSIBLE_EVENT_DAYS && start.day === 1 && end.day === end.daysInMonth) {
+    return `rango de ${days} días que cubre el mes entero (la página probablemente solo indica el mes)`;
+  }
+  return null;
+}
+
+/**
+ * Eventos de la temporada leídos con Gemini. Los que no figuran en el documento o tienen un rango de fechas
+ * inverosímil (ver implausibleDateRange) se descartan: un evento sin días concretos no se puede ubicar en la
+ * agenda, y mostrarlo todo el mes es peor que no mostrarlo. `onDropped` recibe cada descarte por fechas.
+ */
 export async function aiCalendar(
   deps: AiDeps,
   series: Series,
   doc: FetchedDocument,
   season: number,
-  opts: { multiSeries?: boolean } = {},
+  opts: { multiSeries?: boolean; onDropped?: (name: string, reason: string) => void } = {},
 ): Promise<CalendarEntry[]> {
   if (!hasUsableText(doc)) return [];
   const data = await cached<AiCalendar>(deps, series.id, opts.multiSeries ? 'calendar-multi' : 'calendar', doc, String(season), () =>
@@ -174,6 +203,11 @@ export async function aiCalendar(
     const dateEnd = e.dateEnd && /^\d{4}-\d{2}-\d{2}$/.test(e.dateEnd) && e.dateEnd >= e.dateStart ? e.dateEnd : e.dateStart;
     // Anti-alucinación: el nombre o el circuito tienen que figurar en el documento.
     if (!appearsInDocument(e.name, doc.text) && !(e.circuit && appearsInDocument(e.circuit, doc.text))) continue;
+    const implausible = implausibleDateRange(e.dateStart, dateEnd);
+    if (implausible) {
+      opts.onDropped?.(e.name, `${e.dateStart} a ${dateEnd}: ${implausible}`);
+      continue;
+    }
     const tz = validZone(e.timeZone) ?? guessTimeZone(e.country ?? '', `${e.city ?? ''} ${e.circuit ?? ''}`) ?? 'UTC';
     out.push({
       name: e.name.trim(),

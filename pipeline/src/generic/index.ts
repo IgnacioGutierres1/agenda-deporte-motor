@@ -91,7 +91,7 @@ export async function readCalendar(
   const recipe = findRecipe(url);
   const target = recipe?.calendarUrl?.(url, ctx.season) ?? url;
   const doc = await fetchDocument(ctx.http, target);
-  let entries = recipe?.calendar?.(doc, recipeCtx(series, ctx)) ?? [];
+  let entries = (await recipe?.calendar?.(doc, recipeCtx(series, ctx))) ?? [];
   let method: Source['method'] = 'directo';
   // Calendario multi-categoría usado como sitio de una sola serie (p. ej. una categoría descubierta en el
   // calendario de la FIA o de la CDA): se queda con las fechas de ese campeonato.
@@ -103,11 +103,20 @@ export async function readCalendar(
   let read: FetchedDocument = doc;
   if (entries.length === 0) {
     method = 'ia';
+    let dropped = 0;
+    const aiOpts = {
+      ...opts,
+      onDropped: (name: string, reason: string) => {
+        dropped++;
+        ctx.log.warn(`Calendario: "${name}" descartado, ${reason}`);
+      },
+    };
     try {
       const ai = aiDeps(ctx, deps);
-      entries = await aiCalendar(ai, series, doc, ctx.season, opts);
+      entries = await aiCalendar(ai, series, doc, ctx.season, aiOpts);
       // Calendario publicado como imágenes (una por fecha, p. ej. Turismo Pista): se leen las imágenes.
-      if (entries.length === 0 && doc.kind === 'html') {
+      // (No si Gemini sí encontró eventos en el texto pero sin días concretos: las imágenes no los van a tener.)
+      if (entries.length === 0 && dropped === 0 && doc.kind === 'html') {
         const img = await imageDocument(ai, series.id, doc, await fetchImages(ctx.http, contentImages(doc.raw, doc.url).slice(0, MAX_CALENDAR_IMAGES)));
         if (img) {
           // Primero lectura determinista de la transcripción ("FECHA 10 / NOVIEMBRE 20, 21 y 22 / Rafaela");
@@ -120,7 +129,7 @@ export async function readCalendar(
                   seriesNames: [series.name, series.shortName],
                 })
               : [];
-          if (entries.length === 0) entries = await aiCalendar(ai, series, img, ctx.season, opts);
+          if (entries.length === 0) entries = await aiCalendar(ai, series, img, ctx.season, aiOpts);
           if (entries.length > 0) read = { ...img, url: doc.url };
         }
       }

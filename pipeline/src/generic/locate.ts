@@ -2,7 +2,7 @@
  * Ubicación de documentos oficiales: calendario por JSON-LD, sesiones por JSON-LD (subEvent),
  * cronograma (PDF/página del evento/nota de prensa) y resultados/campeonato.
  */
-import { toUtcIso } from '@dm/shared';
+import { localToUtc, toUtcIso } from '@dm/shared';
 import type { FetchedDocument } from '../extract/document.ts';
 import { extractLinks, parseJsonLd, type Link } from '../extract/html.ts';
 import { normalizeForMatch } from '../validate.ts';
@@ -59,9 +59,24 @@ export function jsonLdCalendar(doc: FetchedDocument, season: number): CalendarEn
   return out.filter((e) => e.name && /^\d{4}-\d{2}-\d{2}$/.test(e.dateStart));
 }
 
+export interface JsonLdSessionOptions {
+  /**
+   * Zona IANA del circuito cuando el sitio escribe la hora local del circuito con un offset equivocado
+   * (fiawec.com / ELMS ponen siempre el offset de París: Fuji "11:00+02:00" es 11:00 en Japón).
+   * Con esta opción se toma la hora tal como está escrita, en esa zona, y se ignora el offset.
+   * Además, "00:00:00" se toma como hora todavía no publicada (esos sitios la usan de relleno).
+   */
+  wallClockZone?: string;
+}
+
 /** Sesiones publicadas como subEvent de un SportsEvent en la página del evento (WEC, ELMS…). */
-export function jsonLdSessions(doc: FetchedDocument): { sessions: ExtractedSession[]; event?: { start: string; end: string } } {
+export function jsonLdSessions(
+  doc: FetchedDocument,
+  opts: JsonLdSessionOptions = {},
+): { sessions: ExtractedSession[]; event?: { start: string; end: string } } {
   if (doc.kind !== 'html') return { sessions: [] };
+  const zone = opts.wallClockZone;
+  const utc = (iso: string) => (zone ? localToUtc(iso.slice(0, 10), iso.slice(11, 16), zone) : toUtcIso(iso));
   for (const o of parseJsonLd(doc.raw)) {
     if (!isEventType(o) || !Array.isArray(o.subEvent)) continue;
     const parentName = str(o.name);
@@ -69,6 +84,7 @@ export function jsonLdSessions(doc: FetchedDocument): { sessions: ExtractedSessi
     for (const sub of o.subEvent as Record<string, unknown>[]) {
       const start = str(sub.startDate);
       if (start.length <= 10) continue; // sin hora
+      if (zone && /T00:00(:00)?/.test(start)) continue; // hora de relleno: todavía no publicada
       let name = str(sub.name);
       // "Free Practice 1 - 6 Hours of Monza" -> "Free Practice 1" (el sufijo repite el nombre del evento).
       const cut = name.lastIndexOf(' - ');
@@ -76,8 +92,8 @@ export function jsonLdSessions(doc: FetchedDocument): { sessions: ExtractedSessi
       try {
         sessions.push({
           name: name.trim(),
-          startUtc: toUtcIso(start),
-          ...(str(sub.endDate).length > 10 ? { endUtc: toUtcIso(str(sub.endDate)) } : {}),
+          startUtc: utc(start),
+          ...(str(sub.endDate).length > 10 ? { endUtc: utc(str(sub.endDate)) } : {}),
           localStartText: start.slice(11, 16),
         });
       } catch {
