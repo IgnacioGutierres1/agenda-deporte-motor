@@ -15,13 +15,17 @@ export const useNewsStore = defineStore('news', {
   actions: {
     async load(force = false) {
       if (!force && (this.status === 'ok' || this.status === 'loading')) return;
-      this.status = 'loading';
+      // Al actualizar se siguen mostrando las notas anteriores hasta que lleguen las nuevas.
+      if (!this.file) this.status = 'loading';
       try {
         this.file = await fetchData<NewsFile>('news.json', { force });
         this.status = 'ok';
         this.error = null;
       } catch (e) {
-        if (e instanceof DataNotFoundError) {
+        if (this.file) {
+          // Falló una actualización: se conserva la copia que ya había.
+          this.status = 'ok';
+        } else if (e instanceof DataNotFoundError) {
           this.status = 'missing';
         } else {
           this.status = 'error';

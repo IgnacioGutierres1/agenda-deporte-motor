@@ -4,6 +4,7 @@ import App from './App.vue';
 import { createAppRouter } from './router.ts';
 import { persistStore } from './lib/storage.ts';
 import { listenInstallPrompt } from './lib/install.ts';
+import { watchForAppUpdates } from './lib/appUpdate.ts';
 import { useSettingsStore } from './stores/settings.ts';
 import { useScheduleStore } from './stores/schedule.ts';
 import './styles.css';
@@ -29,5 +30,11 @@ app.mount('#app');
 
 // Service worker (PWA). Se actualiza solo cuando hay una versión nueva publicada.
 if ('serviceWorker' in navigator && import.meta.env.PROD) {
-  void import('virtual:pwa-register').then(({ registerSW }) => registerSW({ immediate: true }));
+  void import('virtual:pwa-register').then(({ registerSW }) =>
+    registerSW({
+      immediate: true,
+      // Busca versiones nuevas también con la app abierta (cada 30 min, al volver y al tocar Actualizar).
+      onRegisteredSW: (swUrl, registration) => watchForAppUpdates(swUrl, registration),
+    }),
+  );
 }

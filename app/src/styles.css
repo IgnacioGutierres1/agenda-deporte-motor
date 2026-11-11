@@ -746,3 +746,7 @@ a.driver-link:hover {
   font-weight: 700;
   text-align: center;
 }
+
+.error-text {
+  color: var(--error);
+}

@@ -117,8 +117,3 @@ export default defineComponent({
 });
 </script>
 
-<style>
-.error-text {
-  color: var(--error);
-}
-</style>
