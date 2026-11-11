@@ -265,7 +265,7 @@ import AppIcon from '../components/AppIcon.vue';
 import NotificationsCard from '../components/NotificationsCard.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { useResultsStore } from '../stores/results.ts';
+import { refreshEverything } from '../lib/refresh.ts';
 import { groupSeries, seriesColor, seriesSort } from '../lib/grid.ts';
 import { ZONE_OPTIONS, deviceZone, timeAgo, zoneLabel } from '../lib/format.ts';
 import { absoluteDataUrl, webcalUrl } from '../lib/data.ts';
@@ -352,7 +352,6 @@ export default defineComponent({
   methods: {
     ...mapActions(useScheduleStore, ['load']),
     ...mapActions(useSettingsStore, ['setSeriesVisible']),
-    ...mapActions(useResultsStore, { clearResults: 'clear' }),
     color(s: Series): string {
       return seriesColor(s);
     },
@@ -360,8 +359,7 @@ export default defineComponent({
       return timeAgo(iso, this.now);
     },
     async refresh() {
-      this.clearResults();
-      await this.load({ force: true });
+      await refreshEverything();
     },
     client(): GitHubClient {
       const ref = this.repoRef;

@@ -60,11 +60,14 @@
     <BottomSheet :open="menuOpen" title="Menú" @close="menuOpen = false">
       <ul class="list-card menu-list">
         <li>
-          <button type="button" class="list-row menu-row" :disabled="loading" @click="refresh">
-            <AppIcon name="refresh" :class="{ spin: loading }" />
+          <button type="button" class="list-row menu-row" :disabled="refreshing" @click="refresh">
+            <AppIcon name="refresh" :class="{ spin: refreshing }" />
             <span class="grow">
-              Actualizar datos
+              Actualizar
               <span class="block small dim">{{ generatedAt ? `Datos de ${dataAge}` : 'Sin datos todavía' }}</span>
+              <span v-if="refreshMessage" class="block small" :class="refreshError ? 'error-text' : 'accent-text'" role="status">
+                {{ refreshMessage }}
+              </span>
             </span>
           </button>
         </li>
@@ -95,8 +98,8 @@ import { mapActions, mapState } from 'pinia';
 import AppIcon from './components/AppIcon.vue';
 import BottomSheet from './components/BottomSheet.vue';
 import { useScheduleStore } from './stores/schedule.ts';
-import { useResultsStore } from './stores/results.ts';
 import { timeAgo } from './lib/format.ts';
+import { refreshEverything } from './lib/refresh.ts';
 import { installState, promptInstall } from './lib/install.ts';
 import { syncPush } from './lib/push.ts';
 import { useSettingsStore } from './stores/settings.ts';
@@ -117,6 +120,9 @@ export default defineComponent({
       timer: 0 as number,
       pushTimer: 0 as number,
       menuOpen: false,
+      refreshing: false,
+      refreshMessage: '',
+      refreshError: false,
       nav: [
         { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar', '/en-vivo'] },
         { to: '/noticias', label: 'Noticias', icon: 'news', match: [] },
@@ -170,6 +176,9 @@ export default defineComponent({
     $route() {
       this.menuOpen = false;
     },
+    menuOpen(open: boolean) {
+      if (open) this.refreshMessage = '';
+    },
     // Si cambian las categorías/pilotos seguidos o la anticipación, se actualiza la suscripción.
     pushPrefsKey(key: string, old: string) {
       if (!key || key === old) return;
@@ -190,10 +199,20 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['load', 'tick']),
-    ...mapActions(useResultsStore, { clearResults: 'clear' }),
+    /** Vuelve a pedir todo lo abierto y busca una versión nueva de la app. */
     async refresh() {
-      this.clearResults();
-      await this.load({ force: true });
+      this.refreshing = true;
+      this.refreshMessage = '';
+      try {
+        const r = await refreshEverything();
+        this.refreshError = !!r.error;
+        if (r.app === 'updating') this.refreshMessage = 'Hay una versión nueva de la app: se está instalando y se va a recargar sola.';
+        else if (r.error) this.refreshMessage = `No se pudieron actualizar los datos: ${r.error}`;
+        else if (r.app === 'offline') this.refreshMessage = 'Datos actualizados (sin conexión para buscar versiones nuevas de la app).';
+        else this.refreshMessage = 'Todo al día: datos y app actualizados.';
+      } finally {
+        this.refreshing = false;
+      }
     },
     async install() {
       this.menuOpen = false;

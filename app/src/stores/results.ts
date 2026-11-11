@@ -30,9 +30,22 @@ export const useResultsStore = defineStore('results', {
       this.results[key] = { status: 'loading' };
       this.results[key] = await load<EventResultsFile>(`results/${seriesId}/${eventId}.json`, force);
     },
-    clear() {
-      this.standings = {};
-      this.results = {};
+    /**
+     * Vuelve a pedir (sin caché) todo lo que ya estaba abierto. Mientras tanto se siguen mostrando
+     * los datos anteriores: no pasa por el estado "Cargando…".
+     */
+    async reloadLoaded() {
+      await Promise.all([
+        ...Object.keys(this.standings).map(async (id) => {
+          const fresh = await load<StandingsFile>(`standings/${id}.json`, true);
+          // Si falla la red, se conserva lo que había.
+          if (fresh.status === 'ok' || !this.standings[id]?.data) this.standings[id] = fresh;
+        }),
+        ...Object.keys(this.results).map(async (key) => {
+          const fresh = await load<EventResultsFile>(`results/${key}.json`, true);
+          if (fresh.status === 'ok' || !this.results[key]?.data) this.results[key] = fresh;
+        }),
+      ]);
     },
   },
 });
