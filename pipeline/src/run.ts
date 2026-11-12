@@ -35,6 +35,7 @@ import { mergeRun, type SeriesOutcome } from './core/merge.ts';
 import { CACHE_DIR, DATA_DIR } from './core/paths.ts';
 import { collectExistingResults, runResultsForSeries, type AttemptsLog } from './core/results.ts';
 import { runRosters } from './core/rosters.ts';
+import { hasSeasonToken, scheduleWithNextSeason, seriesForSeason } from './core/season.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
 import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
@@ -84,6 +85,16 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
 
   const selected = config.series.filter((s) => !opts.only || opts.only.includes(s.id));
   const outcomes = new Map<string, SeriesOutcome>();
+  // Lo publicado (schedule.series, sourceUrl de los estados) lleva las URL de la temporada vigente de cada serie;
+  // los lectores reciben la serie con los marcadores {season} y los resuelven según la temporada que leen.
+  const published = await Promise.all(
+    config.series.map(async (s) =>
+      [...s.officialUrls, ...(s.rosterUrls ?? [])].some(hasSeasonToken)
+        ? seriesForSeason(s, (await withSeriesSeason(s, { ...ctx, log: log.child(s.id) })).season)
+        : s,
+    ),
+  );
+  const publishedById = new Map(published.map((s) => [s.id, s]));
 
   // Con --only, las series no seleccionadas conservan sus datos anteriores tal cual.
   const untouched = opts.only ? config.series.filter((s) => !opts.only!.includes(s.id)) : [];
@@ -96,7 +107,8 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     const slog = log.child(series.id);
     try {
       const adapter = resolveAdapter(series);
-      const chunk = await adapter.schedule(series, { ...ctx, log: slog });
+      // Si la temporada ya terminó, también la siguiente (si el sitio oficial ya la publica).
+      const chunk = await scheduleWithNextSeason(adapter, series, { ...ctx, log: slog });
       const { valid, issues } = validateSessions(chunk.sessions, chunk.events);
       for (const i of issues) slog.warn(`Sesión descartada ${i.sessionId}: ${i.reason}`);
       outcomes.set(series.id, { kind: 'ok', chunk: { events: chunk.events, sessions: valid } });
@@ -108,7 +120,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     }
   });
 
-  const merged = mergeRun(selected, outcomes, previous, prevStatusMap, nowIso);
+  const merged = mergeRun(selected.map((s) => publishedById.get(s.id) ?? s), outcomes, previous, prevStatusMap, nowIso);
   for (const s of untouched) {
     merged.events.push(...(previous?.events ?? []).filter((e) => e.seriesId === s.id));
     merged.sessions.push(...(previous?.sessions ?? []).filter((x) => x.seriesId === s.id));
@@ -150,14 +162,14 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   const schedule: ScheduleFile = {
     version: 1,
     generatedAt: nowIso,
-    series: config.series,
+    series: published,
     events: merged.events,
     sessions: merged.sessions.sort((a, b) => a.startUtc.localeCompare(b.startUtc)),
   };
   const status: StatusFile = {
     version: 1,
     generatedAt: nowIso,
-    series: sortStatuses(merged.statuses, config.series),
+    series: sortStatuses(merged.statuses, published),
   };
 
   scheduleFileSchema.parse(schedule);
@@ -182,7 +194,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   }
 
   // Índices de pilotos y equipos (tablas, inscriptos y resultados de carreras ya publicados).
-  const { drivers, teams } = await buildIndexFromData(dataDir, config.series, schedule.events, schedule.sessions, nowIso, freshRosters);
+  const { drivers, teams } = await buildIndexFromData(dataDir, published, schedule.events, schedule.sessions, nowIso, freshRosters);
   driversFileSchema.parse(drivers);
   teamsFileSchema.parse(teams);
 
@@ -194,7 +206,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     await writeJson(attemptsFile, attempts);
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
-      buildFeed(config.series, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
+      buildFeed(published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
     );
   }
 

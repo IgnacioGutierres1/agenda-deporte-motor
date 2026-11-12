@@ -25,7 +25,8 @@ function dateIn(isoUtc: string, tz: string): string {
  *
  * Además de las sesiones con horario, cada evento futuro todavía sin cronograma (sessionsStatus 'pending' y
  * ninguna sesión) va como evento de día completo con UID = id del evento: cuando se publican los horarios ese
- * evento deja de emitirse y los calendarios suscriptos lo reemplazan por las sesiones al refrescar.
+ * evento deja de emitirse y los calendarios suscriptos lo reemplazan por las sesiones al refrescar. Los ensayos
+ * (MotorEvent.kind 'test') no van como día completo.
  */
 export function buildFeed(
   series: Series[],
@@ -59,11 +60,14 @@ export function buildFeed(
   });
 
   // Eventos sin horarios: desde hoy (los que terminan hoy todavía cuentan) hasta el mismo horizonte que las sesiones.
+  // Los ensayos (kind 'test') no van como día completo: sin horarios no aportan nada al calendario y se confundían
+  // con carreras; si publican sesiones, esas sí van (arriba).
   const withSessions = new Set(sessions.map((s) => s.eventId));
   const allDay: IcsAllDayEventInput[] = events
     .filter(
       (e) =>
         e.sessionsStatus === 'pending' &&
+        e.kind !== 'test' &&
         !withSessions.has(e.id) &&
         included(e.seriesId) &&
         e.dateEnd >= dateIn(nowIso, e.tz) &&

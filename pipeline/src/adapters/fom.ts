@@ -214,6 +214,8 @@ export interface MeetingBuildOptions {
   sessionType?(s: FomSession): SessionType;
   /** Filtro adicional (p. ej. que la sesión sea de la categoría pedida). */
   accept?(s: FomSession): boolean;
+  /** Tipo de evento si la fuente lo informa (ensayos); si falta, se deduce del nombre. */
+  kind?: MotorEvent['kind'];
 }
 
 /** Convierte un meeting de la fuente en evento + sesiones con ids estables. */
@@ -247,6 +249,7 @@ export function buildMeeting(o: MeetingBuildOptions): MeetingBuild {
     dateStart: dates[0]!,
     dateEnd: dates.at(-1)!,
     sessionsStatus: timed.length > 0 ? 'published' : 'pending',
+    ...(o.kind ? { kind: o.kind } : {}),
     source: o.source,
   });
 

@@ -99,7 +99,9 @@ const sro: SiteRecipe = {
         ...(championship ? { championship, ...(url ? { championshipUrl: `${new URL(url).origin}/calendar` } : {}) } : {}),
       });
     }
-    for (const b of blocksByClass(html, 'past-events__list-item')) {
+    // Eventos pasados (sin año en el texto): nunca son de una temporada futura (lectura de la temporada siguiente).
+    const pastBlocks = ctx.season > ctx.now.getUTCFullYear() ? [] : blocksByClass(html, 'past-events__list-item');
+    for (const b of pastBlocks) {
       const spans = [...b.matchAll(/class="past-events__piped-list-span"[^>]*>([\s\S]*?)<\/span>\s*<\/li>/g)].map((m) => m[1] ?? '');
       if (spans.length < 2) continue;
       const dates = parseDateRangeText(textOf(spans[0]!), ctx.season);
@@ -279,6 +281,10 @@ const indycar: SiteRecipe = {
         dateStart: shiftDate(day.start, -2),
         dateEnd: day.start,
         url,
+        // Desde 2027 la clave es el slug de la URL (/Schedule/2027/St-Petersburg): las fechas futuras figuran primero
+        // con el nombre del circuito y después con el nombre comercial, y el id no tiene que cambiar por eso. (2026
+        // sigue con el nombre para no cambiar los ids ya publicados, con sus resultados.)
+        ...(ctx.season >= 2027 ? { key: href.split('/').filter(Boolean).pop()!.toLowerCase() } : {}),
       });
     }
     return dedupe(out);
@@ -589,6 +595,9 @@ const tc2000: SiteRecipe = {
     return u.pathname === '/' ? `${u.origin}/carreras.php?evento=calendario` : url;
   },
   calendar(doc, ctx) {
+    // Las fechas no traen año ("12 - 14"): la página no dice de qué temporada es, así que no se usa para la
+    // temporada siguiente (se leería el calendario terminado con el año cambiado).
+    if (ctx.season > ctx.now.getUTCFullYear()) return [];
     const out: CalendarEntry[] = [];
     for (const b of blocksByClass(stripComments(doc.raw), 'box-fechas', 1500)) {
       const round = Number(textByClass(b, 'item-fechas'));
