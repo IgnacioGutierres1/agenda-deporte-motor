@@ -113,3 +113,49 @@ describe('DTM: campeonato desde la API de dtm.com', () => {
   });
 });
 
+describe('IMSA: sitio nuevo (imsa.com/{año}/schedule)', () => {
+  it('fechas del aria-label de cada tarjeta', () => {
+    expect(imsaDateRange('April 30, 2027 through May 2, 2027')).toEqual({ start: '2027-04-30', end: '2027-05-02' });
+    expect(imsaDateRange('January 23, 2027')).toEqual({ start: '2027-01-23', end: '2027-01-23' });
+  });
+
+  it('calendario del WeatherTech (sin las tarjetas de otros campeonatos), con zona horaria y rondas sin el Roar', () => {
+    const url = 'https://www.imsa.com/2027/schedule?series=weathertech';
+    const entries = imsaCalendar(fixture('imsa-schedule-2027.html'), url, 'weathertech', 2027);
+    expect(entries.map((e) => [e.name, e.round, e.circuit, e.country, e.tz, e.dateStart, e.dateEnd])).toEqual([
+      ['Roar Before The Rolex 24', undefined, 'Daytona International Speedway', 'United States', 'America/New_York', '2027-01-22', '2027-01-24'],
+      ['Rolex 24 At Daytona', 1, 'Daytona International Speedway', 'United States', 'America/New_York', '2027-01-28', '2027-01-31'],
+      ['Chevrolet Detroit Sports Car Classic', 2, 'Detroit Street Circuit', 'United States', 'America/Detroit', '2027-06-04', '2027-06-05'],
+      ['Chevrolet Grand Prix', 3, 'Canadian Tire Motorsport Park', 'Canada', 'America/Toronto', '2027-07-09', '2027-07-11'],
+    ]);
+    expect(entries[1]!.url).toBe('https://www.imsa.com/events/2027-rolex-24-at-daytona?tab=schedule&series=weathertech');
+    // Otro campeonato de la misma página.
+    expect(imsaCalendar(fixture('imsa-schedule-2027.html'), url, 'imsa-michelin-pilot-challenge', 2027).map((e) => e.name)).toEqual(['Rolex 24 At Daytona']);
+  });
+
+  it('cronograma del panel del campeonato, con horas en UTC', () => {
+    const html = fixture('imsa-event-road-atlanta-2026.html');
+    expect(imsaSessions(html, 'weathertech')).toEqual([
+      { name: 'Practice 1', startUtc: '2026-10-01T14:40:00Z' },
+      { name: 'Practice 2', startUtc: '2026-10-01T19:20:00Z' },
+      { name: 'Practice 3', startUtc: '2026-10-01T23:30:00Z' },
+      { name: 'Qualifying', startUtc: '2026-10-02T18:15:00Z' },
+      { name: 'Motul Petit Le Mans', startUtc: '2026-10-03T16:10:00Z' },
+    ]);
+    expect(imsaSessions(html, 'imsa-michelin-pilot-challenge')[0]).toEqual({ name: 'Practice 1', startUtc: '2026-09-30T16:25:00Z' });
+    expect(imsaSessions(html, 'mx5-cup')).toEqual([]);
+  });
+
+  it('terminada la temporada (el sitio ya no publica /2026/schedule) la temporada vigente es la siguiente', async () => {
+    const imsa = genericSeries('imsa', 'IMSA WeatherTech SportsCar Championship', ['https://www.imsa.com/schedule?series=weathertech'], { shortName: 'IMSA' });
+    const http = fakeHttp({ 'https://www.imsa.com/2027/schedule?series=weathertech': fixture('imsa-schedule-2027.html') });
+    const chunk = await createGenericAdapter({ gemini: () => fakeGemini() }).schedule(imsa, testContext(http, NOW));
+    expect(chunk.events.map((e) => [e.name, e.round, e.dateStart])).toEqual([
+      ['Roar Before The Rolex 24', undefined, '2027-01-22'],
+      ['Rolex 24 At Daytona', 1, '2027-01-28'],
+      ['Chevrolet Detroit Sports Car Classic', 2, '2027-06-04'],
+      ['Chevrolet Grand Prix', 3, '2027-07-09'],
+    ]);
+    expect(http.requested).toContain('https://www.imsa.com/2026/schedule?series=weathertech');
+  });
+});

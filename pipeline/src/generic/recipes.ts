@@ -49,6 +49,7 @@ import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, Standi
 import { apatSessions } from './apat.ts';
 import { aptpSessions, aptpTimetableImages } from './aptp.ts';
 import { creventic } from './creventic.ts';
+import { imsa } from './imsa.ts';
 import { macau } from './macau.ts';
 import { supercars } from './supercars.ts';
 import { superformula } from './superformula.ts';
@@ -1175,7 +1176,7 @@ function humanize(slug: string): string {
     .join(' ');
 }
 
-export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca];
+export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca, imsa];
 // Asia y Oceanía: recetas en su propio archivo (importan sus utilidades de kit.ts, no de este).
 RECIPES.push(supergt, superformula, supertaikyu, macau, supercars);
 
