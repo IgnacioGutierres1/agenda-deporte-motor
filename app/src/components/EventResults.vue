@@ -11,7 +11,7 @@
         <button type="button" class="btn btn-small" @click="load(true)">Reintentar</button>
       </div>
       <template v-else-if="state.data">
-        <div class="session-chips" role="tablist" aria-label="Sesión">
+        <div v-tab-strip class="session-chips" role="tablist" aria-label="Sesión">
           <button
             v-for="sr in sessions"
             :key="sr.sessionId"
@@ -70,11 +70,13 @@ import { driverId, isSingleDriverName, type EventResultsFile, type MotorEvent, t
 import SourceLink from './SourceLink.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 
 /** Resultados de las sesiones de un evento, una tabla por vez (chips por sesión). */
 export default defineComponent({
   name: 'EventResults',
   components: { SourceLink },
+  directives: { tabStrip },
   props: {
     event: { type: Object as PropType<MotorEvent>, required: true },
     /** Sesión a mostrar primero (si tiene resultado). */

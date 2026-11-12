@@ -1,6 +1,6 @@
 <template>
   <div class="news-view">
-    <nav class="underline-tabs page-tabs" role="tablist">
+    <nav v-tab-strip class="underline-tabs page-tabs" role="tablist" aria-label="Noticias">
       <button
         v-for="t in tabs"
         :key="t.id"
@@ -29,7 +29,7 @@
 
       <!-- Por categoría -->
       <template v-else>
-        <div class="session-chips" role="tablist" aria-label="Categoría">
+        <div v-tab-strip class="session-chips" role="tablist" aria-label="Categoría">
           <button
             v-for="s in seriesWithNews"
             :key="s.series.id"
@@ -58,6 +58,7 @@ import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { seriesSort } from '../lib/grid.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 
 type Tab = 'para-ti' | 'ultimas' | 'categorias';
 
@@ -65,6 +66,7 @@ type Tab = 'para-ti' | 'ultimas' | 'categorias';
 export default defineComponent({
   name: 'NewsView',
   components: { NewsList },
+  directives: { tabStrip },
   data() {
     return {
       tabs: [
@@ -102,26 +104,13 @@ export default defineComponent({
       return this.currentSeries ? newsForSeries(this.items, [this.currentSeries]) : [];
     },
   },
-  watch: {
-    currentSeries() {
-      this.scrollChip();
-    },
-  },
   mounted() {
     void this.load();
-    this.scrollChip();
   },
   methods: {
     ...mapActions(useNewsStore, ['load']),
     setTab(tab: Tab) {
       void this.$router.replace({ query: tab === 'para-ti' ? {} : { tab } });
-    },
-    /** Lleva a la vista la pastilla de la categoría elegida. */
-    scrollChip() {
-      this.$nextTick(() => {
-        const el = this.$el?.querySelector?.('.session-chips .pill.active') as HTMLElement | null;
-        el?.scrollIntoView?.({ block: 'nearest', inline: 'center' });
-      });
     },
     pickSeries(id: string) {
       void this.$router.replace({ query: { tab: 'categorias', serie: id } });

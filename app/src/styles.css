@@ -505,6 +505,54 @@ table.data th.name-col {
   border-bottom-color: var(--accent);
 }
 
+/*
+ * Franjas deslizables (directiva v-tab-strip): degradé en el borde que tiene más contenido.
+ * Los pseudo-elementos son "sticky" dentro del scroll y no ocupan lugar (margen negativo = ancho + gap).
+ */
+.tab-strip {
+  --fade-w: 28px;
+  --strip-bg: var(--bg-header);
+  --strip-gap: 0px;
+}
+
+.underline-tabs.tab-strip {
+  --strip-gap: 0.25rem;
+}
+
+.session-chips.tab-strip {
+  --strip-bg: var(--bg);
+  --strip-gap: 0.4rem;
+}
+
+.tab-strip::before,
+.tab-strip::after {
+  content: '';
+  position: sticky;
+  z-index: 1;
+  flex: none;
+  width: var(--fade-w);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tab-strip::before {
+  left: 0;
+  margin-right: calc(-1 * (var(--fade-w) + var(--strip-gap)));
+  background: linear-gradient(to right, var(--strip-bg), transparent);
+}
+
+.tab-strip::after {
+  right: 0;
+  margin-left: calc(-1 * (var(--fade-w) + var(--strip-gap)));
+  background: linear-gradient(to left, var(--strip-bg), transparent);
+}
+
+.tab-strip.fade-start::before,
+.tab-strip.fade-end::after {
+  opacity: 1;
+}
+
 .list-card {
   list-style: none;
   margin: 0 0 0.75rem;

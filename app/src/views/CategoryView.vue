@@ -22,7 +22,7 @@
         </div>
       </section>
 
-      <nav class="underline-tabs page-tabs" role="tablist">
+      <nav v-tab-strip="$route.path" class="underline-tabs page-tabs" role="tablist" aria-label="Secciones de la categoría">
         <button
           v-for="t in tabs"
           :key="t.id"
@@ -157,6 +157,7 @@ import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { formatDateRange, timeAgo } from '../lib/format.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
 
@@ -166,6 +167,7 @@ type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noti
 export default defineComponent({
   name: 'CategoryView',
   components: { AppIcon, DataState, FollowButton, NewsList, RosterPanel, SeriesCrest, StandingsPanel },
+  directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),

@@ -22,7 +22,7 @@
         Todavía no hay lista oficial de inscriptos: estos son los pilotos y equipos de la tabla del campeonato.
       </p>
 
-      <div v-if="classes.length > 1" class="session-chips" role="tablist" aria-label="Clases">
+      <div v-if="classes.length > 1" v-tab-strip="series.id" class="session-chips" role="tablist" aria-label="Clases">
         <button type="button" class="pill" :class="{ active: !selectedClass }" @click="selectedClass = ''">Todas</button>
         <button
           v-for="c in classes"
@@ -86,11 +86,13 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { groupRoster, rosterClasses, rosterFromStandings, type RosterCar, type RosterTeam } from '../lib/roster.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { timeAgo } from '../lib/format.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 
 /** Plantel de una categoría: inscriptos agrupados por equipo y auto, con filtro por clase. */
 export default defineComponent({
   name: 'RosterPanel',
   components: { AppIcon, DriverAvatar, RosterCarRow, SourceLink },
+  directives: { tabStrip },
   props: {
     series: { type: Object as PropType<Series>, required: true },
   },
