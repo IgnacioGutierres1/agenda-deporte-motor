@@ -21,7 +21,7 @@
         <p class="hero-status" :class="state.kind">{{ state.text }}</p>
       </section>
 
-      <nav class="underline-tabs page-tabs" role="tablist">
+      <nav v-tab-strip="$route.path" class="underline-tabs page-tabs" role="tablist" aria-label="Secciones del evento">
         <button
           v-for="t in tabs"
           :key="t.id"
@@ -43,22 +43,32 @@
             <p><strong>Horarios a confirmar.</strong> El organizador todavía no publicó el cronograma.</p>
             <p class="small dim">Se revisa cada 3 horas de jueves a lunes y aparece acá apenas se publica.</p>
           </div>
+          <p v-if="items.length" class="zone-note small dim">
+            <AppIcon name="clock" :size="14" />
+            <span>Horarios en {{ zoneName.charAt(0).toLowerCase() + zoneName.slice(1) }}</span>
+          </p>
           <div v-for="d in days" :key="d.date" class="card flush day-card">
             <h3 class="card-title">{{ capitalize(d.label) }}</h3>
             <ul class="event-card-rows">
               <li v-for="item in d.items" :key="item.session.id" class="session-line" :class="{ live: item.live, finished: item.finished }">
                 <button type="button" class="session-line-btn" @click="selected = item">
-                  <span class="session-time">
+                  <span
+                    class="session-time range"
+                    :aria-label="item.live ? undefined : `de ${time(item.session.startUtc)} a ${time(item.session.endUtc)}`"
+                  >
                     <template v-if="item.live"><span class="live-dot" />En vivo</template>
                     <template v-else>
                       <strong>{{ time(item.session.startUtc) }}</strong>
-                      <span class="small dim">{{ time(item.session.endUtc) }}</span>
+                      <span class="range-end" :title="item.session.endEstimated ? 'Hora de fin estimada' : undefined">–{{ time(item.session.endUtc) }}</span>
                     </template>
                   </span>
                   <span class="session-info grow">
                     <span class="session-name">{{ item.session.name }}</span>
                     <span class="session-sub small dim">
-                      {{ item.session.broadcast.length ? item.session.broadcast.join(', ') : 'TV a confirmar' }}
+                      <span v-if="lateNight(item.session.startUtc)" class="late-tag" title="De madrugada en tu zona horaria">
+                        <AppIcon name="moon" :size="12" />madrugada
+                      </span>
+                      <template v-if="lateNight(item.session.startUtc)"> · </template>{{ item.session.broadcast.length ? item.session.broadcast.join(', ') : 'TV a confirmar' }}
                     </span>
                   </span>
                   <span class="session-flags">
@@ -99,6 +109,7 @@ import { defineComponent } from 'vue';
 import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import type { MotorEvent, Series, Source } from '@dm/shared';
+import AppIcon from '../components/AppIcon.vue';
 import ContextPanel from '../components/ContextPanel.vue';
 import DataState from '../components/DataState.vue';
 import EventResults from '../components/EventResults.vue';
@@ -109,9 +120,10 @@ import SourceLink from '../components/SourceLink.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { formatDateRange } from '../lib/format.ts';
+import { formatDateRange, zoneDisplayName } from '../lib/format.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/grid.ts';
-import { todayIn } from '../lib/agenda.ts';
+import { isLateNight, todayIn } from '../lib/agenda.ts';
 import { circuitId } from '../lib/circuits.ts';
 
 type Tab = 'horarios' | 'contexto' | 'resultados' | 'tabla';
@@ -119,7 +131,8 @@ type Tab = 'horarios' | 'contexto' | 'resultados' | 'tabla';
 /** Página de un evento (como la de un partido en FotMob). */
 export default defineComponent({
   name: 'EventView',
-  components: { ContextPanel, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
+  components: { AppIcon, ContextPanel, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
+  directives: { tabStrip },
   data() {
     return { selected: null as GridItem | null };
   },
@@ -139,6 +152,9 @@ export default defineComponent({
     },
     color(): string {
       return seriesColor(this.series);
+    },
+    zoneName(): string {
+      return zoneDisplayName(this.timeZone);
     },
     items(): GridItem[] {
       if (!this.event || !this.series) return [];
@@ -208,6 +224,9 @@ export default defineComponent({
     time(iso: string): string {
       return DateTime.fromISO(iso, { zone: 'utc' }).setZone(this.timeZone).toFormat('HH:mm');
     },
+    lateNight(iso: string): boolean {
+      return isLateNight(iso, this.timeZone);
+    },
     capitalize(s: string): string {
       return s.charAt(0).toUpperCase() + s.slice(1);
     },
@@ -226,6 +245,21 @@ a.circuit-link {
 
 .day-card {
   margin: 0 0 0.75rem;
+}
+
+/* "21:30–22:30" en una línea: inicio en negrita, fin atenuado. */
+.session-time.range {
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: flex-start;
+  width: auto;
+  min-width: 5.6rem;
+  white-space: nowrap;
+}
+
+.session-time.range .range-end {
+  color: var(--text-dim);
+  font-size: 0.88rem;
 }
 
 .source-box > div + div {

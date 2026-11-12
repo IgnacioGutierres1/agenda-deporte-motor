@@ -1,5 +1,5 @@
 <template>
-  <div class="agenda-view">
+  <div class="agenda-view" :class="{ 'has-fab': showFab }">
     <div class="strip-bar">
     <button
       type="button"
@@ -10,7 +10,7 @@
     >
       Finde
     </button>
-    <nav ref="strip" class="day-strip" aria-label="Día">
+    <nav ref="strip" v-tab-strip.nocenter class="day-strip" aria-label="Día" @scroll.passive="checkTodayTab">
       <button
         v-for="d in days"
         :key="d.value"
@@ -30,13 +30,36 @@
       <DataState />
 
       <template v-if="hasData">
+        <p class="zone-note small dim">
+          <AppIcon name="clock" :size="14" />
+          <span>Horarios en {{ zoneName.charAt(0).toLowerCase() + zoneName.slice(1) }}</span>
+        </p>
+
+        <!-- Día sin sesiones: que quede claro, con la próxima sesión -->
+        <section v-if="!agendaCards.length" class="card flush empty-day" role="status">
+          <p class="empty-day-title">{{ emptyText }}</p>
+          <RouterLink v-if="agendaNext" :to="nextLink" class="list-row empty-day-next">
+            <SeriesCrest :series="agendaNext.series" :size="26" />
+            <span class="grow">
+              <span class="block small dim">Próxima</span>
+              <strong>{{ agendaNext.series.shortName || agendaNext.series.name }}</strong>
+              <span> · {{ agendaNext.session.name }}</span>
+              <span class="block small accent-text">{{ nextWhen }}</span>
+            </span>
+            <AppIcon name="chevron" :size="16" class="dim" />
+          </RouterLink>
+          <p v-else class="card-foot small dim">No hay sesiones publicadas más adelante.</p>
+        </section>
+
         <!-- Siguiendo -->
         <section class="following-block">
           <h2 class="block-title">Siguiendo</h2>
           <template v-if="followedIds.length === 0">
             <p class="center small dim">
               Tocá ★ en una categoría, un piloto o un equipo para verlo primero acá.
-              <RouterLink to="/categorias">Elegir categorías</RouterLink>
+            </p>
+            <p class="center">
+              <RouterLink to="/categorias" class="pill choose-pill">Elegir categorías</RouterLink>
             </p>
           </template>
           <template v-else-if="followedCards.length === 0 && followedPending.length === 0">
@@ -62,7 +85,7 @@
             @toggle="toggle(c.key, false)"
             @select="selected = $event"
           />
-          <PendingList v-if="followedPending.length" :items="followedPending" />
+          <PendingList v-if="followedPending.length" :items="followedPending" :title="pendingTitle" />
         </section>
 
         <div class="center">
@@ -89,16 +112,12 @@
             @toggle="toggle(c.key, true)"
             @select="selected = $event"
           />
-          <PendingList v-if="otherPending.length" :items="otherPending" />
+          <PendingList v-if="otherPending.length" :items="otherPending" :title="pendingTitle" />
         </template>
-
-        <p v-if="!agendaCards.length && !agendaPending.length" class="card empty center dim">
-          No hay sesiones {{ isWeekend ? 'este fin de semana' : 'este día' }}.
-        </p>
       </template>
     </div>
 
-    <button v-if="!dayIsToday" type="button" class="today-fab" @click="goToday">Hoy</button>
+    <button v-if="showFab" type="button" class="today-fab" @click="goToday">Hoy</button>
 
     <SessionSheet :item="selected" :time-zone="timeZone" :now="now" @close="selected = null" />
   </div>
@@ -117,15 +136,29 @@ import SeriesCrest from '../components/SeriesCrest.vue';
 import SessionSheet from '../components/SessionSheet.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { WEEKEND, nextEventOf, splitFollowed, type AgendaCard } from '../lib/agenda.ts';
+import {
+  WEEKEND,
+  emptyDayText,
+  nextEventOf,
+  pendingTitle,
+  relativeDay,
+  splitFollowed,
+  type AgendaCard,
+  type NextSession,
+} from '../lib/agenda.ts';
+import { zoneDisplayName } from '../lib/format.ts';
+import { centerChild, tabStrip } from '../lib/tabStrip.ts';
 import type { GridItem, PendingItem } from '../lib/grid.ts';
 
 /** Pantalla principal: franja de días y sesiones agrupadas por evento (estilo FotMob). */
 export default defineComponent({
   name: 'AgendaView',
   components: { AppIcon, DataState, EventCard, PendingList, SeriesCrest, SessionSheet },
+  directives: { tabStrip },
   data() {
     return {
+      /** La pestaña "Hoy" de la franja quedó fuera de la vista (por el scroll horizontal). */
+      todayTabHidden: false,
       selected: null as GridItem | null,
       allCollapsed: false,
       /** Tarjetas plegadas/desplegadas a mano (invierte el estado por defecto). */
@@ -133,7 +166,7 @@ export default defineComponent({
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['hasData', 'strip', 'selectedDay', 'today', 'agendaCards', 'agendaPending', 'schedule', 'now', 'seriesById']),
+    ...mapState(useScheduleStore, ['hasData', 'strip', 'selectedDay', 'today', 'agendaCards', 'agendaPending', 'agendaNext', 'schedule', 'now', 'seriesById']),
     ...mapState(useSettingsStore, { followedIds: 'followedSeriesIds', timeZone: 'timeZone' }),
     /** Días de la franja (el "Finde" va fijo a la izquierda). */
     days() {
@@ -144,6 +177,36 @@ export default defineComponent({
     },
     dayIsToday(): boolean {
       return this.selectedDay === this.today;
+    },
+    /**
+     * Botón flotante "Hoy": si se eligió otro día, o si la pestaña "Hoy" quedó fuera de la franja.
+     * En "Finde" no aparece salvo que "Hoy" no se vea (ahí sería ambiguo).
+     */
+    showFab(): boolean {
+      return (!this.isWeekend && !this.dayIsToday) || this.todayTabHidden;
+    },
+    zoneName(): string {
+      return zoneDisplayName(this.timeZone);
+    },
+    emptyText(): string {
+      return emptyDayText(this.selectedDay, this.today, this.timeZone);
+    },
+    pendingTitle(): string {
+      return pendingTitle(this.selectedDay, this.now, this.timeZone);
+    },
+    nextLink(): string {
+      const n = this.agendaNext as NextSession | null;
+      if (!n) return '';
+      return n.event ? `/evento/${n.event.id}` : `/categoria/${n.series.id}`;
+    },
+    /** "Mañana a las 06:10 (madrugada)", "El viernes 20 a las 21:30". */
+    nextWhen(): string {
+      const n = this.agendaNext as NextSession | null;
+      if (!n) return '';
+      const start = DateTime.fromISO(n.session.startUtc, { zone: 'utc' }).setZone(this.timeZone);
+      const rel = relativeDay(start.toISODate()!, this.today, this.timeZone);
+      const late = start.hour < 7 ? ' (madrugada)' : '';
+      return `${rel.charAt(0).toUpperCase()}${rel.slice(1)} a las ${start.toFormat('HH:mm')}${late}`;
     },
     cardsSplit(): { followed: AgendaCard[]; rest: AgendaCard[] } {
       return splitFollowed(this.agendaCards, this.followedIds);
@@ -199,6 +262,10 @@ export default defineComponent({
   },
   mounted() {
     this.scrollStrip(false);
+    window.addEventListener('resize', this.checkTodayTab, { passive: true });
+  },
+  beforeUnmount() {
+    window.removeEventListener('resize', this.checkTodayTab);
   },
   methods: {
     ...mapActions(useScheduleStore, ['setAgendaDay']),
@@ -212,16 +279,30 @@ export default defineComponent({
       this.allCollapsed = !this.allCollapsed;
     },
     goToday() {
-      this.setAgendaDay(this.today);
+      if (this.dayIsToday) this.scrollStrip(true);
+      else this.setAgendaDay(this.today);
     },
-    /** Centra el día elegido en la franja. */
+    /** Centra el día elegido en la franja (en "Finde", el día de hoy). */
     scrollStrip(smooth: boolean) {
       this.$nextTick(() => {
         const strip = this.$refs.strip as HTMLElement | undefined;
-        const el = strip?.querySelector<HTMLElement>(`[data-day="${this.selectedDay}"]`);
-        if (!strip || !el || typeof strip.scrollTo !== 'function') return;
-        strip.scrollTo({ left: el.offsetLeft - strip.clientWidth / 2 + el.clientWidth / 2, behavior: smooth ? 'smooth' : 'auto' });
+        const day = this.isWeekend ? this.today : this.selectedDay;
+        const el = strip?.querySelector<HTMLElement>(`[data-day="${day}"]`);
+        if (strip && el) centerChild(strip, el, smooth);
+        // Con scroll suave la posición final se conoce al terminar: se revisa también un rato después.
+        this.checkTodayTab();
+        if (smooth) setTimeout(() => this.checkTodayTab(), 450);
       });
+    },
+    /** ¿La pestaña "Hoy" se ve en la franja? (si no, aparece el botón flotante). */
+    checkTodayTab() {
+      const strip = this.$refs.strip as HTMLElement | undefined;
+      const el = strip?.querySelector<HTMLElement>(`[data-day="${this.today}"]`);
+      if (!strip || !el) return;
+      const s = strip.getBoundingClientRect();
+      const r = el.getBoundingClientRect();
+      if (!s.width) return;
+      this.todayTabHidden = r.right <= s.left + r.width / 2 || r.left >= s.right - r.width / 2;
     },
   },
 });
@@ -322,6 +403,38 @@ export default defineComponent({
 
 .chev.down {
   transform: rotate(90deg);
+}
+
+.empty-day {
+  margin-bottom: 0.75rem;
+}
+
+.empty-day-title {
+  margin: 0;
+  padding: 0.85rem 0.85rem 0.35rem;
+  font-weight: 800;
+  font-size: 1rem;
+}
+
+.empty-day-next {
+  border-top: 1px solid var(--border);
+}
+
+a.choose-pill {
+  color: var(--accent);
+  border: 1px solid color-mix(in srgb, var(--accent) 55%, transparent);
+  background: transparent;
+  text-decoration: none;
+}
+
+a.choose-pill:hover {
+  background: color-mix(in srgb, var(--accent) 12%, transparent);
+  text-decoration: none;
+}
+
+/* Con el botón "Hoy" visible, la lista deja lugar para que no tape la última sesión. */
+.agenda-view.has-fab .page {
+  padding-bottom: calc(1.5rem + 40px + 14px);
 }
 
 .today-fab {

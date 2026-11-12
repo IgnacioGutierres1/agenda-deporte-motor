@@ -1,6 +1,6 @@
 <template>
   <section class="card flush pending-card">
-    <h3 class="card-title">Horarios a confirmar</h3>
+    <h3 class="card-title">{{ title }}</h3>
     <ul class="pending-rows">
       <li v-for="p in items" :key="p.event.id">
         <RouterLink :to="`/evento/${p.event.id}`" class="pending-row">
@@ -30,6 +30,8 @@ export default defineComponent({
   components: { AppIcon, SeriesCrest },
   props: {
     items: { type: Array as PropType<PendingItem[]>, required: true },
+    /** Título del bloque (en la Agenda aclara que corren ese fin de semana, no a esa hora). */
+    title: { type: String, default: 'Horarios a confirmar' },
   },
   methods: {
     dateRange: formatDateRange,

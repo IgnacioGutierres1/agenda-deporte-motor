@@ -747,6 +747,15 @@ a.driver-link:hover {
   outline: none;
 }
 
+/* Zona horaria de los horarios ("Horarios en hora Argentina") */
+.zone-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0 0 0.5rem;
+}
+
 /* Pastillas deslizables (sesiones, categorías) */
 .session-chips {
   display: flex;
