@@ -1,0 +1,256 @@
+{
+  "seriesId": "dtm",
+  "season": 2026,
+  "updatedAt": "2026-11-12T06:55:37Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Thomas PREINING",
+          "points": 225,
+          "country": "Austria"
+        },
+        {
+          "pos": 2,
+          "name": "Maro ENGEL",
+          "points": 213,
+          "country": "Germany"
+        },
+        {
+          "pos": 3,
+          "name": "Marco WITTMANN",
+          "points": 198,
+          "country": "Germany"
+        },
+        {
+          "pos": 4,
+          "name": "Lucas AUER",
+          "points": 182,
+          "country": "Austria"
+        },
+        {
+          "pos": 5,
+          "name": "Matteo CAIROLI",
+          "points": 160,
+          "country": "Italy"
+        },
+        {
+          "pos": 6,
+          "name": "Nicki THIIM",
+          "points": 149,
+          "country": "Denmark"
+        },
+        {
+          "pos": 7,
+          "name": "Ben DÖRR",
+          "points": 139,
+          "country": "Germany"
+        },
+        {
+          "pos": 8,
+          "name": "Arjun MAINI",
+          "points": 133,
+          "country": "India"
+        },
+        {
+          "pos": 9,
+          "name": "Ricardo FELLER",
+          "points": 121,
+          "country": "Switzerland"
+        },
+        {
+          "pos": 10,
+          "name": "Jules GOUNON",
+          "points": 111,
+          "country": "France"
+        },
+        {
+          "pos": 11,
+          "name": "Thierry VERMEULEN",
+          "points": 107,
+          "country": "Netherlands"
+        },
+        {
+          "pos": 12,
+          "name": "Luca ENGSTLER",
+          "points": 99,
+          "country": "Germany"
+        },
+        {
+          "pos": 13,
+          "name": "Mirko BORTOLOTTI",
+          "points": 97,
+          "country": "Italy"
+        },
+        {
+          "pos": 14,
+          "name": "Kelvin VAN DER LINDE",
+          "points": 96,
+          "country": "South Africa"
+        },
+        {
+          "pos": 15,
+          "name": "Finn WIEBELHAUS",
+          "points": 78,
+          "country": "Germany"
+        },
+        {
+          "pos": 16,
+          "name": "Bastian BUUS",
+          "points": 66,
+          "country": "Denmark"
+        },
+        {
+          "pos": 17,
+          "name": "Marco MAPELLI",
+          "points": 57,
+          "country": "Italy"
+        },
+        {
+          "pos": 18,
+          "name": "Tom KALENDER",
+          "points": 49,
+          "country": "Germany"
+        },
+        {
+          "pos": 19,
+          "name": "Timo GLOCK",
+          "points": 30,
+          "country": "Germany"
+        },
+        {
+          "pos": 20,
+          "name": "Maximilian PAUL",
+          "points": 14,
+          "country": "Germany"
+        },
+        {
+          "pos": 21,
+          "name": "Nicolas BAERT",
+          "points": 8,
+          "country": "Belgium"
+        },
+        {
+          "pos": 22,
+          "name": "Christian ENGELHART",
+          "points": 2,
+          "country": "Germany"
+        }
+      ]
+    },
+    {
+      "title": "Equipos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Manthey",
+          "points": 330
+        },
+        {
+          "pos": 2,
+          "name": "Winward Racing",
+          "points": 309
+        },
+        {
+          "pos": 3,
+          "name": "Schubert Motorsport",
+          "points": 284
+        },
+        {
+          "pos": 4,
+          "name": "EMIL FREY RACING",
+          "points": 254
+        },
+        {
+          "pos": 5,
+          "name": "Landgraf Motorsport",
+          "points": 225
+        },
+        {
+          "pos": 6,
+          "name": "HRT Ford Racing",
+          "points": 200
+        },
+        {
+          "pos": 7,
+          "name": "Doerr Motorsport",
+          "points": 165
+        },
+        {
+          "pos": 8,
+          "name": "ABT Sportsline",
+          "points": 148
+        },
+        {
+          "pos": 9,
+          "name": "Comtoyou Racing",
+          "points": 147
+        },
+        {
+          "pos": 10,
+          "name": "GRT Grasser-Racing-Team",
+          "points": 113
+        },
+        {
+          "pos": 11,
+          "name": "Land-Motorsport",
+          "points": 63
+        }
+      ]
+    },
+    {
+      "title": "Marcas",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Mercedes-AMG",
+          "points": 440
+        },
+        {
+          "pos": 2,
+          "name": "Porsche",
+          "points": 356
+        },
+        {
+          "pos": 3,
+          "name": "BMW",
+          "points": 293
+        },
+        {
+          "pos": 4,
+          "name": "Ferrari",
+          "points": 275
+        },
+        {
+          "pos": 5,
+          "name": "Lamborghini",
+          "points": 258
+        },
+        {
+          "pos": 6,
+          "name": "Ford",
+          "points": 222
+        },
+        {
+          "pos": 7,
+          "name": "McLaren",
+          "points": 188
+        },
+        {
+          "pos": 8,
+          "name": "Aston Martin",
+          "points": 181
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://www.dtm.com/en/standings",
+    "title": "Standings DTM 2026",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-12T06:55:37Z"
+  }
+}
