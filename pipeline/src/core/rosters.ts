@@ -27,6 +27,11 @@ export interface RostersContext {
   season: number;
   http: Http;
   log: Logger;
+  /**
+   * Temporada vigente de una serie si no es el año en curso (Asian LMS: la 2026-27 sigue siendo 2026 en enero
+   * de 2027). run.ts usa withSeriesSeason, la misma que el calendario y el campeonato.
+   */
+  seasonFor?(series: Series): Promise<number>;
 }
 
 /**
@@ -34,18 +39,19 @@ export interface RostersContext {
  * Lanza un error si alguna página no tiene el formato esperado o no hay receta para la URL.
  */
 export async function readRoster(series: Series, ctx: RostersContext): Promise<RosterFile | null> {
+  const current = (await ctx.seasonFor?.(series)) ?? ctx.season;
   const found: RosterFound[] = [];
   for (const url of series.rosterUrls ?? []) {
     const recipe = findRecipe(url);
     if (!recipe?.roster) throw new Error(`No hay lector de inscriptos para ${url}`);
-    const r = await recipe.roster(url, { season: ctx.season, series, http: ctx.http, now: ctx.now });
+    const r = await recipe.roster(url, { season: current, series, http: ctx.http, now: ctx.now });
     if (r) found.push(r);
   }
   if (found.length === 0) return null;
-  const season = Math.max(...found.map((f) => f.season ?? ctx.season));
+  const season = Math.max(...found.map((f) => f.season ?? current));
   // Varias URL (o una lista con el mismo auto repetido): un piloto por auto.
   const rows = new Map<string, RosterRow>();
-  for (const f of found.filter((x) => (x.season ?? ctx.season) === season)) {
+  for (const f of found.filter((x) => (x.season ?? current) === season)) {
     for (const r of f.rows) rows.set(`${driverKey(r.driver)}|${r.number ?? ''}|${teamKey(r.team ?? '')}`, r);
   }
   return rosterFileSchema.parse({

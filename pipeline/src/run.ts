@@ -25,7 +25,7 @@ import {
   type StatusFile,
 } from '@dm/shared';
 import { adapters } from './adapters/index.ts';
-import { genericAdapter } from './generic/index.ts';
+import { genericAdapter, withSeriesSeason } from './generic/index.ts';
 import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { buildFeed } from './core/feed.ts';
@@ -166,7 +166,19 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   // Listas oficiales de inscriptos: independientes de Gemini y de que el calendario se haya podido leer.
   let freshRosters = new Map<string, RosterFile>();
   if (!opts.skipRosters) {
-    freshRosters = await runRosters(selected, { now, season: ctx.season, http: ctx.http, log }, dataDir, !!opts.dryRun, opts.concurrency ?? 4);
+    freshRosters = await runRosters(
+      selected,
+      {
+        now,
+        season: ctx.season,
+        http: ctx.http,
+        log,
+        seasonFor: async (s) => (await withSeriesSeason(s, { ...ctx, log: log.child(`${s.id}:inscriptos`) })).season,
+      },
+      dataDir,
+      !!opts.dryRun,
+      opts.concurrency ?? 4,
+    );
   }
 
   // Índices de pilotos y equipos (tablas, inscriptos y resultados de carreras ya publicados).

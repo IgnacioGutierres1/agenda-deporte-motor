@@ -21,6 +21,7 @@ import {
   type PendingItem,
 } from '../lib/grid.ts';
 import { useSettingsStore } from './settings.ts';
+import { buildCircuits, type Circuit } from '../lib/circuits.ts';
 import { agendaPeriod, dayStrip, groupByEvent, todayIn, type AgendaCard, type AgendaDay, type StripDay } from '../lib/agenda.ts';
 
 function nowIso(): string {
@@ -66,6 +67,12 @@ export const useScheduleStore = defineStore('schedule', {
     generatedAt: (state): string | null => state.schedule?.generatedAt ?? null,
 
     seriesById: (state): Map<string, Series> => new Map((state.schedule?.series ?? []).map((s) => [s.id, s])),
+
+    /** Circuitos con todos sus eventos (de categorías habilitadas). */
+    circuits(state): Circuit[] {
+      const enabled = new Set((state.schedule?.series ?? []).filter((s) => s.enabled).map((s) => s.id));
+      return buildCircuits((state.schedule?.events ?? []).filter((e) => enabled.has(e.seriesId)));
+    },
 
     periodLabel(state): string {
       return PERIOD_LABELS[state.preset];

@@ -73,6 +73,13 @@ export interface SiteRecipe {
   name: string;
   /** true si la receta entiende esta URL oficial (calendario o posiciones). */
   match(url: string): boolean;
+  /**
+   * Temporada vigente de la serie cuando no coincide con el año en curso: campeonatos de invierno como la
+   * Asian Le Mans Series, cuya temporada 2026 corre de noviembre de 2026 a febrero de 2027. El flujo genérico
+   * la usa como ctx.season en todo lo de la serie (URL del calendario, ids de eventos, campeonato), así los
+   * eventos no cambian de id al pasar de año. Sin esta función, la temporada es el año en curso.
+   */
+  season?(ctx: RecipeContext): Promise<number>;
   /** URL a descargar para la temporada pedida (p. ej. agregar ?year=2026). */
   calendarUrl?(url: string, season: number): string;
   /** Puede ser asíncrono si el calendario solo lista los eventos y las fechas salen de la página de cada uno. */

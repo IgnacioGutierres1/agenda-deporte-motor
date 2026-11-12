@@ -39,8 +39,12 @@
                       <RouterLink v-if="driverLink(table.title, row.name)" :to="driverLink(table.title, row.name)" class="driver-link">
                         {{ row.name }}
                       </RouterLink>
+                      <RouterLink v-else-if="teamTableLink(table.title, row.name)" :to="teamTableLink(table.title, row.name)" class="driver-link">
+                        {{ row.name }}
+                      </RouterLink>
                       <template v-else>{{ row.name }}</template>
-                      <span v-if="row.team" class="small dim team">{{ row.team }}</span>
+                      <RouterLink v-if="row.team && teamLink(row.team)" :to="teamLink(row.team)" class="small dim team team-name-link">{{ row.team }}</RouterLink>
+                      <span v-else-if="row.team" class="small dim team">{{ row.team }}</span>
                     </span>
                   </div>
                 </td>
@@ -59,7 +63,7 @@
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
 import { mapActions, mapState } from 'pinia';
-import { driverId, isDriverTable, isSingleDriverName, type Series, type StandingsFile } from '@dm/shared';
+import { driverId, isDriverTable, isSingleDriverName, teamId, type Series, type StandingsFile } from '@dm/shared';
 import SourceLink from './SourceLink.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
@@ -106,6 +110,15 @@ export default defineComponent({
     driverLink(title: string, name: string): string {
       return isDriverTable(title) && isSingleDriverName(name) ? `/piloto/${driverId(name)}` : '';
     },
+    /** Link a la ficha del equipo (no para tablas de marcas ni de propietarios). */
+    teamTableLink(title: string, name: string): string {
+      if (!/equipo|team|constructor|escuder/i.test(title) || /marca|manufacturer|fabricante|propietario|owner/i.test(title)) return '';
+      return this.teamLink(name);
+    },
+    teamLink(name: string): string {
+      const id = teamId(name);
+      return id ? `/equipo/${id}` : '';
+    },
     isTeams(title: string): boolean {
       return /equipo|team|marca|constructor|manufacturer|fabricante/i.test(title);
     },
@@ -127,6 +140,10 @@ export default defineComponent({
 table.data.standings td,
 table.data.standings th {
   padding: 0.55rem 0.6rem;
+}
+
+a.team-name-link {
+  color: var(--text-dim);
 }
 
 table.data.standings tr.leader td.pos {
