@@ -64,7 +64,26 @@ describe('AgendaView', () => {
     await flushPromises();
     expect(wrapper.findAll('.session-line')).toHaveLength(6);
     expect(wrapper.find('.pending-card').text()).toContain('TC Pista');
+    expect(wrapper.find('.pending-card').text()).toContain('Este fin de semana, horarios a confirmar');
+    // Las sesiones se separan por día dentro de cada tarjeta.
+    expect(wrapper.findAll('.event-card')[0]!.findAll('.session-day-head').map((h) => h.text())).toEqual(['Viernes 13', 'Sábado 14', 'Domingo 15']);
+    // En "Finde" el botón "Hoy" no aparece (sería ambiguo).
+    expect(wrapper.find('.today-fab').exists()).toBe(false);
+  });
+
+  it('otro día: aparece el botón "Hoy"; un día sin sesiones muestra la próxima', async () => {
+    const wrapper = await mountAgenda();
+    expect(wrapper.find('.today-fab').exists()).toBe(false);
+    useScheduleStore().setAgendaDay('2026-11-17');
+    await flushPromises();
     expect(wrapper.find('.today-fab').exists()).toBe(true);
+    expect(wrapper.find('.agenda-view').classes()).toContain('has-fab');
+    expect(wrapper.find('.empty-day-title').text()).toBe('No hay sesiones el martes 17');
+    const next = wrapper.get('.empty-day-next');
+    expect(next.text()).toContain('F1');
+    expect(next.text()).toContain('Práctica 1');
+    expect(next.attributes('href')).toBe('/evento/ev-f1-qatar');
+    expect(wrapper.find('.zone-note').text()).toBe('Horarios en hora Argentina');
   });
 
   it('muestra un estado vacío amable si no hay datos publicados', async () => {
