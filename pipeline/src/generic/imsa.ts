@@ -107,8 +107,12 @@ export const imsa: SiteRecipe = {
    */
   async season(ctx) {
     const series = imsaSeriesKey(ctx.series.officialUrls[0] ?? '');
-    if (await publishes(ctx, ctx.season, series)) return ctx.season;
-    return (await publishes(ctx, ctx.season + 1, series)) ? ctx.season + 1 : ctx.season;
+    // Un error suelto en la página del año (el sitio a veces responde 403 tras muchos pedidos seguidos) no decide
+    // nada: se prueba igual el año siguiente, y si tampoco responde se queda la temporada del calendario.
+    const current = await publishes(ctx, ctx.season, series).catch(() => null);
+    if (current) return ctx.season;
+    const next = await publishes(ctx, ctx.season + 1, series).catch(() => false);
+    return next ? ctx.season + 1 : ctx.season;
   },
   calendarUrl: (url, season) => scheduleUrl(season, imsaSeriesKey(url)),
   calendar: (doc, ctx) => imsaCalendar(doc.raw, doc.url, imsaSeriesKey(ctx.series.officialUrls[0] ?? doc.url), ctx.season),
