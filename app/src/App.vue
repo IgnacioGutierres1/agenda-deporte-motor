@@ -103,6 +103,7 @@ import { refreshEverything } from './lib/refresh.ts';
 import { installState, promptInstall } from './lib/install.ts';
 import { navState } from './lib/navState.ts';
 import { syncPush } from './lib/push.ts';
+import { startClock } from './lib/clock.ts';
 import { useSettingsStore } from './stores/settings.ts';
 
 interface NavItem {
@@ -118,7 +119,8 @@ export default defineComponent({
   components: { AppIcon, BottomSheet },
   data() {
     return {
-      timer: 0 as number,
+      /** Detiene el reloj compartido (lib/clock.ts). */
+      stopClock: null as (() => void) | null,
       pushTimer: 0 as number,
       menuOpen: false,
       refreshing: false,
@@ -191,11 +193,12 @@ export default defineComponent({
   },
   mounted() {
     void this.load();
-    this.timer = window.setInterval(() => this.tick(), 30_000);
+    // Un solo reloj para toda la app: actualiza "ahora" al empezar cada minuto y se pausa con la pestaña oculta.
+    this.stopClock = startClock(() => this.tick());
     document.addEventListener('visibilitychange', this.onVisibility);
   },
   beforeUnmount() {
-    window.clearInterval(this.timer);
+    this.stopClock?.();
     document.removeEventListener('visibilitychange', this.onVisibility);
   },
   methods: {
