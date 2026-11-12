@@ -146,6 +146,12 @@ export interface StandingsRow {
   number?: string;
   points: number;
   wins?: number;
+  /**
+   * País o nacionalidad del piloto (nombre en inglés o código ISO), si la tabla lo publica. El índice de pilotos
+   * lo usa solo si ninguna lista de inscriptos lo da: en la 24H Series hay pilotos que no figuran en ninguna
+   * lista publicada (la del último evento sale sin tripulaciones).
+   */
+  country?: string;
 }
 
 export interface StandingsTable {

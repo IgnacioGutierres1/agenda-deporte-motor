@@ -52,7 +52,7 @@ function isRealDriver(name: string): boolean {
   return /\p{L}{2}/u.test(t) && /\S\s+\S/.test(t) && !/^(tba|tbc|tbd|n\/a)\b/i.test(t);
 }
 
-/** Códigos de país (COI o ISO3) que usan las listas de SRO y que places.ts no conoce. */
+/** Códigos de país (COI o ISO3) que usan las listas de SRO y la 24H Series y que places.ts no conoce. */
 const COUNTRY_CODES: Record<string, string> = {
   AGO: 'Angola', AND: 'Andorra', AUT: 'Austria', BEL: 'Belgium', BUL: 'Bulgaria', CHI: 'Chile', CHN: 'China',
   COL: 'Colombia', CRO: 'Croatia', CYP: 'Cyprus', CZE: 'Czech Republic', DEN: 'Denmark', ECU: 'Ecuador',
@@ -65,6 +65,11 @@ const COUNTRY_CODES: Record<string, string> = {
   SMR: 'San Marino', SRB: 'Serbia', SUI: 'Switzerland', SVK: 'Slovakia', SWE: 'Sweden', THA: 'Thailand',
   TPE: 'Chinese Taipei', TUR: 'Turkey', UKR: 'Ukraine', URU: 'Uruguay', VEN: 'Venezuela', ZIM: 'Zimbabwe',
   ZWE: 'Zimbabwe',
+  // ISO3 de las banderas de la 24H Series.
+  ARM: 'Armenia', BGD: 'Bangladesh', CRI: 'Costa Rica', GRD: 'Grenada', JOR: 'Jordan', KGZ: 'Kyrgyzstan',
+  KNA: 'St. Kitts & Nevis', KWT: 'Kuwait', LBN: 'Lebanon', LKA: 'Sri Lanka', LVA: 'Latvia', MNE: 'Montenegro',
+  OMN: 'Oman', PAK: 'Pakistan', SLV: 'El Salvador', SVN: 'Slovenia', SYC: 'Seychelles', UZB: 'Uzbekistan',
+  VUT: 'Vanuatu',
 };
 
 /** País en inglés a partir de un código de bandera ("ger", "den", "rsa"); el código si no se conoce. */
