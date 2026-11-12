@@ -3,7 +3,7 @@ import type { ScheduleFile, Series, Source } from '@dm/shared';
 import { classifySession, createBuilders } from '../src/core/builders.ts';
 import { mergeSeries } from '../src/core/config.ts';
 import { mergeRun } from '../src/core/merge.ts';
-import { pendingResultSessions } from '../src/core/results.ts';
+import { pendingResultSessions, retryAfterReaderFix } from '../src/core/results.ts';
 import { appearsInDocument, validateSessions } from '../src/validate.ts';
 
 const source: Source = {
@@ -191,5 +191,24 @@ describe('pendingResultSessions', () => {
     const future = { ...race, id: 'future', startUtc: '2026-12-11T10:00:00Z', endUtc: '2026-12-11T11:00:00Z' };
     const pending = pendingResultSessions([old, recent, future], now, { old: { count: 5, last: 'x' } });
     expect(pending.map((s) => s.id)).toEqual(['recent']);
+  });
+
+  it('vuelve a intentar (dos veces) las sesiones abandonadas antes del arreglo del lector', () => {
+    const now = new Date('2026-12-10T00:00:00Z');
+    const before = { ...race, id: 'before' };
+    const after = { ...race, id: 'after' };
+    const attempts = {
+      before: { count: 5, last: '2026-11-10T19:13:39.587Z' },
+      after: { count: 5, last: '2026-11-20T00:00:00.000Z' },
+      other: { count: 5, last: '2026-11-01T00:00:00.000Z' },
+    };
+    expect(retryAfterReaderFix(attempts, [before, after], '2026-11-12T12:00:00Z')).toBe(1);
+    expect(attempts.before).toEqual({ count: 3, last: '2026-11-10T19:13:39.587Z' });
+    expect(attempts.after.count).toBe(5);
+    expect(attempts.other.count).toBe(5); // de otra serie: no se toca
+    expect(pendingResultSessions([before, after], now, attempts).map((s) => s.id)).toEqual(['before']);
+    // Tras un intento fallido con el lector nuevo, 'last' queda después del arreglo: no se reactiva otra vez.
+    attempts.before = { count: 4, last: now.toISOString() };
+    expect(retryAfterReaderFix(attempts, [before], '2026-11-12T12:00:00Z')).toBe(0);
   });
 });

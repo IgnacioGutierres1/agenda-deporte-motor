@@ -62,4 +62,10 @@ export interface Adapter {
    * leyó con IA se relee entonces aunque esté al día, para reemplazarla por la lectura directa.
    */
   prefersDirectStandings?(series: Series): boolean;
+  /**
+   * ISO UTC del último arreglo del lector de resultados. Las sesiones que se dieron por perdidas (MAX_ATTEMPTS
+   * intentos) ANTES de esa fecha vuelven a intentarse un par de veces más: así un lector mejorado recupera los
+   * resultados viejos sin borrar a mano data/_cache/results-attempts.json.
+   */
+  resultsReaderSince?: string;
 }
