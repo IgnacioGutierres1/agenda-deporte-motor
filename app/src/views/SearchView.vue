@@ -31,7 +31,7 @@
     <template v-else>
       <p v-if="!total && !peopleLoading" class="card empty dim">Sin resultados para «{{ query }}».</p>
       <p v-else-if="suggestion" class="did-you-mean">
-        ¿Quisiste decir <button type="button" class="link-btn" @click="query = suggestion">{{ suggestion }}</button>?
+        ¿Quisiste decir <button type="button" class="link-btn tap-inline" @click="query = suggestion">{{ suggestion }}</button>?
       </p>
 
       <template v-if="seriesHits.length">
@@ -331,7 +331,9 @@ export default defineComponent({
 
 .did-you-mean .link-btn {
   min-height: 0;
-  padding: 0;
+  /* Área de toque de 44 px sin correr el texto de la línea. */
+  padding: 0.7rem 0;
+  margin: -0.7rem 0;
   font-size: inherit;
 }
 </style>

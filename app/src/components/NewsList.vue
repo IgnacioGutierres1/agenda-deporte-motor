@@ -28,7 +28,7 @@
       <p v-if="featured && hero && hero.alsoIn && hero.alsoIn.length" class="news-also news-also-hero">
         También en:
         <template v-for="(a, k) in hero.alsoIn" :key="a.url">
-          <a :href="a.url" target="_blank" rel="noopener noreferrer">{{ alsoLabel(hero, a) }}</a><template v-if="k < hero.alsoIn.length - 1">, </template>
+          <a :href="a.url" target="_blank" rel="noopener noreferrer" class="tap-inline">{{ alsoLabel(hero, a) }}</a><template v-if="k < hero.alsoIn.length - 1">, </template>
         </template>
       </p>
       <ul class="news-rows">
@@ -60,7 +60,7 @@
           <p v-if="n.alsoIn && n.alsoIn.length" class="news-also">
             También en:
             <template v-for="(a, k) in n.alsoIn" :key="a.url">
-              <a :href="a.url" target="_blank" rel="noopener noreferrer">{{ alsoLabel(n, a) }}</a><template v-if="k < n.alsoIn.length - 1">, </template>
+              <a :href="a.url" target="_blank" rel="noopener noreferrer" class="tap-inline">{{ alsoLabel(n, a) }}</a><template v-if="k < n.alsoIn.length - 1">, </template>
             </template>
           </p>
         </li>
