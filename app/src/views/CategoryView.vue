@@ -55,6 +55,9 @@
                 <span class="block small" :class="next.live ? 'live-text' : next.nextSession ? 'accent-text' : 'warn-text'">
                   {{ nextText }}
                 </span>
+                <span v-if="next.nextSession && !next.live" class="block countdown-line">
+                  <CountdownBadge :start-utc="next.nextSession.startUtc" long />
+                </span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
@@ -74,6 +77,7 @@
                   <span class="grow">
                     {{ ev.name }}
                     <span class="block small dim">{{ dateRange(ev.dateStart, ev.dateEnd) }} · {{ ev.circuit }}</span>
+                    <PodiumLine v-if="eventHasResults(ev.id)" :series-id="ev.seriesId" :event-id="ev.id" />
                   </span>
                   <span v-if="eventHasResults(ev.id)" class="badge badge-ok">Resultados</span>
                   <AppIcon name="chevron" :size="16" class="dim" />
@@ -142,6 +146,7 @@
                 <span class="grow">
                   {{ ev.name }}
                   <span class="block small dim">{{ dateRange(ev.dateStart, ev.dateEnd) }} · {{ ev.circuit }}</span>
+                  <PodiumLine :series-id="ev.seriesId" :event-id="ev.id" />
                 </span>
                 <AppIcon name="chevron" :size="16" class="dim" />
               </RouterLink>
@@ -159,6 +164,7 @@ import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import { GROUP_LABELS, type MotorEvent, type Series, type SeriesStatus } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
@@ -166,6 +172,7 @@ import SourceProblem from '../components/SourceProblem.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
 import RosterPanel from '../components/RosterPanel.vue';
 import NewsList from '../components/NewsList.vue';
+import PodiumLine from '../components/PodiumLine.vue';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
@@ -179,7 +186,7 @@ type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noti
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, DataState, FollowButton, NewsList, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
+  components: { AppIcon, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
   directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
@@ -290,3 +297,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.countdown-line {
+  margin-top: 0.3rem;
+}
+</style>
