@@ -1,0 +1,147 @@
+/**
+ * Equipos: helpers puros sobre data/teams.json y, mientras ese archivo no exista, un índice
+ * armado con los equipos que figuran en data/drivers.json (tablas e inscripciones de cada piloto).
+ */
+import { teamId, type Driver, type NewsItem, type Team, type TeamEntry } from '@dm/shared';
+
+/** Categorías en las que figura un piloto (campeonatos e inscripciones). */
+export function driverSeriesIds(d: Driver): string[] {
+  return [...new Set([...d.entries.map((e) => e.seriesId), ...(d.lineups ?? []).map((l) => l.seriesId)])];
+}
+
+const push = (list: string[] | undefined, value: string | undefined): string[] | undefined => {
+  if (!value) return list;
+  const out = list ?? [];
+  if (!out.includes(value)) out.push(value);
+  return out;
+};
+
+/** Equipos a partir de los pilotos (sin posiciones de la tabla de equipos). */
+export function deriveTeams(drivers: Driver[]): Team[] {
+  const teams = new Map<string, Team & { names: Map<string, number> }>();
+  const get = (raw: string) => {
+    const id = teamId(raw);
+    if (!id) return undefined;
+    let t = teams.get(id);
+    if (!t) {
+      t = { id, name: raw.trim(), entries: [], drivers: [], names: new Map() };
+      teams.set(id, t);
+    }
+    t.names.set(raw.trim(), (t.names.get(raw.trim()) ?? 0) + 1);
+    return t;
+  };
+  const entryOf = (t: Team, seriesId: string): TeamEntry => {
+    let e = t.entries.find((x) => x.seriesId === seriesId);
+    if (!e) {
+      e = { seriesId };
+      t.entries.push(e);
+    }
+    return e;
+  };
+  const addDriver = (t: Team, d: Driver, seriesId: string, number: string | undefined) => {
+    if (t.drivers.some((x) => x.id === d.id && x.seriesId === seriesId)) return;
+    t.drivers.push({ id: d.id, name: d.name, seriesId, ...(number ? { number } : {}) });
+  };
+  for (const d of drivers) {
+    for (const e of d.entries) {
+      if (!e.team) continue;
+      const t = get(e.team);
+      if (!t) continue;
+      const te = entryOf(t, e.seriesId);
+      te.numbers = push(te.numbers, e.number);
+      addDriver(t, d, e.seriesId, e.number);
+    }
+    for (const l of d.lineups ?? []) {
+      if (!l.team) continue;
+      const t = get(l.team);
+      if (!t) continue;
+      const te = entryOf(t, l.seriesId);
+      te.numbers = push(te.numbers, l.number);
+      te.vehicles = push(te.vehicles, l.vehicle);
+      te.classes = push(te.classes, l.class);
+      addDriver(t, d, l.seriesId, l.number);
+    }
+  }
+  return [...teams.values()].map(({ names, ...t }) => ({
+    ...t,
+    // El nombre más usado entre las variantes.
+    name: [...names.entries()].sort((a, b) => b[1] - a[1] || b[0].length - a[0].length)[0]![0],
+  }));
+}
+
+const norm = (s: string) =>
+  s
+    .normalize('NFD')
+    .replace(/[̀-ͯ]/g, '')
+    .toLowerCase();
+
+/** Palabras que aparecen en muchísimos nombres de equipo y no lo identifican. */
+const GENERIC = new Set([
+  'team',
+  'teams',
+  'racing',
+  'racer',
+  'motorsport',
+  'motorsports',
+  'sport',
+  'sports',
+  'competicion',
+  'competicao',
+  'competition',
+  'competizione',
+  'scuderia',
+  'escuderia',
+  'equipe',
+  'squadra',
+  'gp',
+  'f1',
+  'by',
+  'the',
+  'de',
+  'del',
+  'srl',
+  'sa',
+  'ltd',
+  'inc',
+  'llc',
+  'gmbh',
+  'ag',
+]);
+
+function teamWords(name: string): { words: string[]; core: string[] } {
+  const words = norm(name)
+    .replace(/#\s*\d+/g, ' ')
+    .split(/[^a-z0-9]+/)
+    .filter(Boolean);
+  return { words, core: words.filter((w) => !GENERIC.has(w)) };
+}
+
+/**
+ * Frases que, si aparecen en un título, se refieren al equipo ("Team WRT" -> "wrt").
+ * `rivals`: los otros equipos de sus categorías. La primera palabra distintiva sola
+ * ("Scuderia Ferrari HP" -> "ferrari") solo se usa si ningún rival empieza igual.
+ */
+export function teamNeedles(name: string, rivals: string[] = []): string[] {
+  const { words, core } = teamWords(name);
+  const out = new Set<string>();
+  const full = words.join(' ');
+  if (full.length >= 4) out.add(full);
+  if (core.length && core.join(' ').length >= 3) out.add(core.join(' '));
+  const first = core[0];
+  if (core.length > 1 && first && first.length >= 5 && !rivals.some((r) => teamWords(r).core[0] === first)) out.add(first);
+  return [...out];
+}
+
+/** Notas de las categorías del equipo cuyo título lo menciona. */
+export function newsForTeam(items: NewsItem[], team: Team, allTeams: Team[] = []): NewsItem[] {
+  const series = new Set(team.entries.map((e) => e.seriesId));
+  const rivals = allTeams.filter((t) => t.id !== team.id && t.entries.some((e) => series.has(e.seriesId))).map((t) => t.name);
+  const res = teamNeedles(team.name, rivals).map((n) => new RegExp(`(^|[^a-z0-9])${n.replace(/ /g, '[^a-z0-9]+')}([^a-z0-9]|$)`));
+  if (!res.length) return [];
+  return items.filter((n) => {
+    // Solo notas de sus categorías: un nombre puede repetirse en otras disciplinas.
+    if (!n.seriesIds.some((id) => series.has(id))) return false;
+    const title = norm(n.title);
+    return res.some((re) => re.test(title));
+  });
+}

@@ -35,6 +35,18 @@ export const routes: RouteRecordRaw[] = [
     meta: { title: 'Piloto' },
   },
   {
+    path: '/equipo/:teamId',
+    name: 'equipo',
+    component: () => import('./views/TeamView.vue'),
+    meta: { title: 'Equipo' },
+  },
+  {
+    path: '/circuito/:circuitId',
+    name: 'circuito',
+    component: () => import('./views/CircuitView.vue'),
+    meta: { title: 'Circuito' },
+  },
+  {
     path: '/siguiendo',
     name: 'siguiendo',
     component: () => import('./views/FollowingView.vue'),
