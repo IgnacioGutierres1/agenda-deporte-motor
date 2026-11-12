@@ -179,7 +179,7 @@ export default defineComponent({
     menuOpen(open: boolean) {
       if (open) this.refreshMessage = '';
     },
-    // Si cambian las categorías/pilotos seguidos o la anticipación, se actualiza la suscripción.
+    // Si cambian las categorías/pilotos/equipos seguidos o la anticipación, se actualiza la suscripción.
     pushPrefsKey(key: string, old: string) {
       if (!key || key === old) return;
       window.clearTimeout(this.pushTimer);

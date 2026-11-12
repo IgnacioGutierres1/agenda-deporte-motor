@@ -15,7 +15,7 @@ app.use(pinia);
 app.use(createAppRouter());
 
 const settings = useSettingsStore(pinia);
-persistStore(settings, ['timeZone', 'hiddenSeries', 'followedSeries', 'followedDrivers', 'notifyEnabled', 'notifyLead', 'theme', 'googleClientId', 'githubRepo', 'githubToken']);
+persistStore(settings, ['timeZone', 'hiddenSeries', 'followedSeries', 'followedDrivers', 'followedTeams', 'notifyEnabled', 'notifyLead', 'theme', 'googleClientId', 'githubRepo', 'githubToken']);
 watch(
   () => settings.theme,
   (theme) => {

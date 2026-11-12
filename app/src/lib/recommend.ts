@@ -2,7 +2,7 @@
  * "Te puede interesar": recomendaciones locales, deterministas y explicables a partir de lo que
  * sigue el usuario (nada sale del dispositivo). Cada regla agrega a lo sumo unas pocas sugerencias
  * con su motivo ("Porque seguís WEC"):
- *  1. Equipo y compañeros de los pilotos seguidos.
+ *  1. Equipo y compañeros de los pilotos seguidos, y pilotos de los equipos seguidos.
  *  2. Líderes del campeonato de las categorías seguidas.
  *  3. Categorías del mismo grupo que las seguidas (las que corren antes primero).
  *  4. Categorías que corren este finde.
@@ -35,6 +35,7 @@ export interface RecommendInput {
   zone: string;
   followedSeries: string[];
   followedDrivers: Array<{ id: string; name: string; seriesIds: string[] }>;
+  followedTeams?: Array<{ id: string; name: string; seriesIds: string[] }>;
   hiddenSeries?: string[];
   /** Índice de pilotos, si ya se descargó. */
   drivers?: Driver[];
@@ -43,7 +44,7 @@ export interface RecommendInput {
   limit?: number;
 }
 
-const CAPS = { team: 3, leader: 2, group: 3, weekend: 3, circuit: 2 };
+const CAPS = { team: 3, teamDrivers: 4, perTeam: 2, leader: 2, group: 3, weekend: 3, circuit: 2 };
 
 export function recommend(input: RecommendInput): Recommendation[] {
   const { schedule, now, zone } = input;
@@ -52,6 +53,7 @@ export function recommend(input: RecommendInput): Recommendation[] {
   const hidden = new Set(input.hiddenSeries ?? []);
   const followed = new Set(input.followedSeries.filter((id) => seriesById.get(id)?.enabled));
   const followedDrivers = new Set(input.followedDrivers.map((d) => d.id));
+  const followedTeams = new Set((input.followedTeams ?? []).map((t) => t.id));
   const short = (id: string) => seriesById.get(id)?.shortName ?? id;
   const today = todayIn(now, zone);
   const candidate = (s: Series | undefined): s is Series => !!s && s.enabled && !hidden.has(s.id) && !followed.has(s.id);
@@ -83,11 +85,31 @@ export function recommend(input: RecommendInput): Recommendation[] {
       const mine = team.drivers.filter((d) => d.id === fd.id);
       if (!mine.length || n >= CAPS.team) continue;
       const first = fd.name.split(' ').slice(-1)[0] ?? fd.name;
-      if (add({ kind: 'team', id: team.id, title: team.name, reason: `Equipo de ${fd.name}`, to: `/equipo/${team.id}`, seriesId: mine[0]!.seriesId })) n++;
+      if (!followedTeams.has(team.id) && add({ kind: 'team', id: team.id, title: team.name, reason: `Equipo de ${fd.name}`, to: `/equipo/${team.id}`, seriesId: mine[0]!.seriesId })) n++;
       for (const m of mine) {
         const mate = team.drivers.find((d) => d.seriesId === m.seriesId && d.id !== fd.id && !followedDrivers.has(d.id));
         if (!mate || n >= CAPS.team) continue;
         if (add({ kind: 'driver', id: mate.id, title: mate.name, reason: `Compañero de ${first} en ${short(m.seriesId)}`, to: `/piloto/${mate.id}`, seriesId: m.seriesId })) n++;
+      }
+    }
+  }
+
+  // 1b. Pilotos de los equipos seguidos: primero los mejor ubicados en su campeonato.
+  n = 0;
+  const bestPos = new Map((input.drivers ?? []).map((d) => [d.id, Math.min(...d.entries.map((e) => e.pos), 9999)]));
+  const teamsById = new Map((input.teams ?? []).map((t) => [t.id, t]));
+  for (const ft of input.followedTeams ?? []) {
+    const team = teamsById.get(ft.id);
+    if (!team) continue;
+    const candidates = team.drivers
+      .filter((d) => !followedDrivers.has(d.id))
+      .sort((a, b) => (bestPos.get(a.id) ?? 9999) - (bestPos.get(b.id) ?? 9999));
+    let k = 0;
+    for (const d of candidates) {
+      if (n >= CAPS.teamDrivers || k >= CAPS.perTeam) break;
+      if (add({ kind: 'driver', id: d.id, title: d.name, reason: `Porque seguís ${team.name}`, to: `/piloto/${d.id}`, seriesId: d.seriesId })) {
+        n++;
+        k++;
       }
     }
   }
