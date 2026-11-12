@@ -78,6 +78,25 @@ function recipeCtx(series: Series, ctx: AdapterContext): RecipeContext {
 }
 
 /**
+ * Contexto con la temporada vigente de la serie: el año en curso, salvo que la receta del sitio diga otra
+ * (campeonatos de invierno, ver SiteRecipe.season). Lo usan el calendario, los resultados y el campeonato, y
+ * debería usarlo cualquier otra fase que lea la serie con ctx.season (p. ej. los inscriptos).
+ */
+export async function withSeriesSeason(series: Series, ctx: AdapterContext): Promise<AdapterContext> {
+  const recipe = findRecipe(series.officialUrls[0] ?? '');
+  if (!recipe?.season) return ctx;
+  try {
+    const season = await recipe.season(recipeCtx(series, ctx));
+    if (season === ctx.season) return ctx;
+    ctx.log.info(`Temporada ${season}-${String(season + 1).slice(2)} (la que indica el sitio oficial)`);
+    return { ...ctx, season };
+  } catch (err) {
+    ctx.log.warn(`No se pudo determinar la temporada vigente (${err instanceof Error ? err.message : String(err)}); se usa ${ctx.season}`);
+    return ctx;
+  }
+}
+
+/**
  * Lee el calendario oficial de una serie (o un calendario multi-categoría, para el descubrimiento).
  * Lanza un error claro si hace falta IA y no hay clave.
  */
@@ -160,7 +179,8 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
   return {
     name: 'generic',
 
-    async schedule(series, ctx): Promise<ScheduleChunk> {
+    async schedule(series, baseCtx): Promise<ScheduleChunk> {
+      const ctx = await withSeriesSeason(series, baseCtx);
       const url = series.officialUrls[0];
       if (!url) throw new Error('La serie no tiene URL oficial (officialUrls[0])');
       const cal = await readCalendar(series, url, ctx, deps);
@@ -241,7 +261,7 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
     },
 
     async results(series, ctx, req): Promise<ResultsChunk> {
-      return genericResults(series, ctx, req, deps);
+      return genericResults(series, await withSeriesSeason(series, ctx), req, deps);
     },
   };
 }

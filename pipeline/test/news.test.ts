@@ -193,7 +193,8 @@ describe('tagSeries', () => {
     expect(en('Truck Series champion crowned')).toEqual(['nascar-truck']);
     expect(es('Ferrari gana las 24 Horas de Le Mans')).toEqual(['wec']);
     expect(en('European Le Mans Series: Portimão finale')).toEqual(['elms']);
-    expect(en('Inter Europol returns to Asian Le Mans Series')).toEqual([]);
+    expect(en('Inter Europol returns to Asian Le Mans Series')).toEqual(['alms']);
+    expect(en('ALMS: Le Castellet opens the 2026-27 season')).toEqual(['alms']);
     expect(en('Petit Le Mans: IMSA crowns champions')).toEqual(['imsa']);
     expect(en('DTM and GT World Challenge Europe share Hockenheim')).toEqual(['gtwc-europe', 'dtm']);
   });

@@ -6,7 +6,7 @@
  * "Súper TC2000" no cuenta como "TC", "F1 Academy" no cuenta como "F1",
  * "European Le Mans Series" no cuenta como "Le Mans" (WEC). Las reglas con `seriesId: null`
  * solo consumen nombres que se parecen a una categoría seguida pero no lo son
- * (Asian Le Mans Series, MotoGP Rookies Cup, Le Mans Classic…).
+ * (MotoGP Rookies Cup, Le Mans Classic…).
  */
 
 export interface TagRule {
@@ -75,14 +75,8 @@ export const TAG_RULES: TagRule[] = [
 
   // --- GT y resistencia ------------------------------------------------------------
   { seriesId: 'elms', patterns: [re(String.raw`\bEuropean\s+Le\s+Mans\s+Series\b`), re(String.raw`\bELMS\b`, C)] },
-  {
-    seriesId: null,
-    patterns: [
-      re(String.raw`\bAsian\s+Le\s+Mans\s+Series\b`),
-      re(String.raw`\bAsLMS\b`),
-      re(String.raw`\bLe\s+Mans\s+(?:Cup|Classic|Virtual|Ultimate)\b`),
-    ],
-  },
+  { seriesId: 'alms', patterns: [re(String.raw`\bAsian\s+Le\s+Mans\s+Series\b`), re(String.raw`\bAs?LMS\b`, C)] },
+  { seriesId: null, patterns: [re(String.raw`\bLe\s+Mans\s+(?:Cup|Classic|Virtual|Ultimate)\b`)] },
   {
     seriesId: 'imsa',
     patterns: [
@@ -177,6 +171,7 @@ const URL_SEGMENTS: Record<string, string> = {
   'nascar-xfinity': 'nascar-xfinity',
   'nascar-truck': 'nascar-truck',
   wec: 'wec',
+  alms: 'alms',
   imsa: 'imsa',
   elms: 'elms',
   dtm: 'dtm',

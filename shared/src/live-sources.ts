@@ -82,6 +82,7 @@ export const LIVE_SOURCES: Record<string, LiveSource> = {
   imsa: { officialUrl: 'https://www.imsa.com/leaderboard', officialNote: 'Protegido contra bots; abre bien en el navegador.' },
   wec: { officialUrl: 'https://plus.fiawec.com/en', officialNote: 'Tiempos en FIAWEC+ (puede pedir cuenta).' },
   elms: { officialUrl: 'https://plus.fiawec.com/en/european-le-mans-series', officialNote: 'Tiempos en FIAWEC+ (puede pedir cuenta).' },
+  alms: { officialUrl: 'https://plus.fiawec.com/en/asian-le-mans-series', officialNote: 'Tiempos en FIAWEC+ (puede pedir cuenta).' },
   '24h-series': { officialUrl: 'https://livetiming.getraceresults.com/24hseries' },
   'gt-open': { officialUrl: 'https://gtopen.gtsport.es/resultados', officialNote: 'Sin tiempos en vivo públicos: resultados.' },
   tc: {
