@@ -26,9 +26,17 @@ interface PersistableStore {
   $subscribe(cb: () => void, opts?: { detached?: boolean }): unknown;
 }
 
-/** Restaura los campos indicados de un store de Pinia desde localStorage y los guarda en cada cambio. */
-export function persistStore(store: PersistableStore, fields: string[]): void {
-  const saved = readJsonStorage<Record<string, unknown>>(store.$id);
+/**
+ * Restaura los campos indicados de un store de Pinia desde localStorage y los guarda en cada cambio.
+ * `migrate` adapta lo guardado por versiones anteriores antes de aplicarlo.
+ */
+export function persistStore(
+  store: PersistableStore,
+  fields: string[],
+  migrate?: (saved: Record<string, unknown>) => Record<string, unknown>,
+): void {
+  const raw = readJsonStorage<Record<string, unknown>>(store.$id);
+  const saved = raw && migrate ? migrate(raw) : raw;
   if (saved) {
     const patch: Record<string, unknown> = {};
     for (const f of fields) if (f in saved) patch[f] = saved[f];

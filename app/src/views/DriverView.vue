@@ -34,8 +34,13 @@
             <DriverAvatar :name="driver.name" :color="color" :number="mainNumber" :size="58" />
             <div>
               <h1 class="hero-title tight">{{ driver.name }}</h1>
-              <p class="hero-sub">{{ subtitle }}</p>
-              <p v-if="driver.country" class="hero-sub">{{ flag }} {{ country }}</p>
+              <p class="hero-sub">
+                <span v-if="mainNumber" class="car-number hero-number">#{{ mainNumber }}</span>
+                {{ subtitle }}
+              </p>
+              <p v-if="driver.country" class="hero-sub">
+                <span v-if="flag" class="hero-flag" aria-hidden="true">{{ flag }}</span> {{ country }}
+              </p>
             </div>
           </div>
         </div>
@@ -46,7 +51,7 @@
 
       <div class="page">
         <section v-if="entries.length" class="card flush">
-          <h3 class="card-title">Campeonato {{ season }}</h3>
+          <h3 class="card-title">{{ season ? `Campeonato ${season}` : 'Campeonato' }}</h3>
           <ul class="list-card inset">
             <li v-for="e in entries" :key="`${e.seriesId}-${e.table ?? ''}`" class="stretch">
               <div class="list-row">
@@ -56,7 +61,7 @@
                     {{ e.series?.shortName ?? e.seriesId }}<template v-if="e.table"> · {{ e.table }}</template>
                   </RouterLink>
                   <span class="block small dim">
-                    {{ fmt(e.points) }} pts<template v-if="e.wins"> · {{ e.wins }} {{ e.wins === 1 ? 'victoria' : 'victorias' }}</template><template v-if="e.team"> · <RouterLink :to="teamLink(e.team)" class="team-link">{{ e.team }}</RouterLink></template>
+                    {{ !season && e.season ? `${e.season} · ` : '' }}{{ fmt(e.points) }} pts<template v-if="e.wins"> · {{ e.wins }} {{ e.wins === 1 ? 'victoria' : 'victorias' }}</template><template v-if="e.team"> · <RouterLink :to="teamLink(e.team)" class="team-link tap-inline">{{ e.team }}</RouterLink></template>
                   </span>
                 </span>
                 <span class="pos-badge" :class="{ top: e.pos <= 3 }">P{{ e.pos }}</span>
@@ -76,7 +81,7 @@
                     {{ l.series?.shortName ?? l.seriesId }}<template v-if="l.class"> · {{ l.class }}</template>
                   </RouterLink>
                   <span v-if="l.team" class="block small">
-                    <RouterLink :to="teamLink(l.team)" class="team-link">{{ l.team }}</RouterLink>
+                    <RouterLink :to="teamLink(l.team)" class="team-link tap-inline">{{ l.team }}</RouterLink>
                   </span>
                   <span v-if="l.vehicle" class="block small dim">{{ l.vehicle }}</span>
                 </span>
@@ -153,16 +158,19 @@ import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { countryFlag, countryName } from '../lib/roster.ts';
 import { driverSeriesIds } from '../lib/teams.ts';
+import { commonSeason, standingsSeason } from '../lib/season.ts';
+import { useResultsStore } from '../stores/results.ts';
 
 /** Ficha de un piloto (como la de un jugador en FotMob). */
 export default defineComponent({
   name: 'DriverView',
   components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
   computed: {
-    ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', driversFile: 'file', details: 'details', detailStatus: 'detailStatus' }),
-    ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById', 'generatedAt']),
+    ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', details: 'details', detailStatus: 'detailStatus' }),
+    ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
     ...mapState(useNewsStore, { newsItems: 'items' }),
+    ...mapState(useResultsStore, ['standings']),
     driverNews() {
       if (!this.driver) return [];
       return newsForDriver(this.newsItems, this.driver.name, this.seriesIds).slice(0, 5);
@@ -206,8 +214,12 @@ export default defineComponent({
     seriesIds(): string[] {
       return this.driver ? driverSeriesIds(this.driver) : [];
     },
-    entries(): Array<DriverEntry & { series?: Series }> {
-      return (this.driver?.entries ?? []).map((e) => ({ ...e, series: this.seriesById.get(e.seriesId) }));
+    entries(): Array<DriverEntry & { series?: Series; season: number | null }> {
+      return (this.driver?.entries ?? []).map((e) => ({
+        ...e,
+        series: this.seriesById.get(e.seriesId),
+        season: standingsSeason(this.schedule, e.seriesId, this.now, this.standings[e.seriesId]?.data?.season),
+      }));
     },
     lineups(): Array<DriverLineup & { series?: Series }> {
       return (this.driver?.lineups ?? []).map((l) => ({ ...l, series: this.seriesById.get(l.seriesId) }));
@@ -229,8 +241,9 @@ export default defineComponent({
     country(): string {
       return countryName(this.driver?.country);
     },
-    season(): string {
-      return (this.generatedAt ?? this.driversFile?.generatedAt ?? '').slice(0, 4);
+    /** Año del título: el de las tablas (no el de los datos); se omite si son de temporadas distintas o no se sabe. */
+    season(): number | null {
+      return commonSeason(this.entries.map((e) => e.season));
     },
     followRef(): FollowedDriver | null {
       if (!this.driver) return null;
@@ -285,6 +298,13 @@ export default defineComponent({
 </script>
 
 <style>
+.hero-number {
+  display: inline-block;
+  margin-right: 0.3rem;
+  color: var(--text);
+  border: 1px solid var(--series-color, var(--border));
+}
+
 .skel {
   display: block;
   border-radius: 6px;

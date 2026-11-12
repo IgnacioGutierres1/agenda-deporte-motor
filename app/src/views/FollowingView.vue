@@ -186,6 +186,11 @@ import { tabStrip } from '../lib/tabStrip.ts';
 
 type Tab = 'categorias' | 'pilotos' | 'equipos';
 
+/** Pestaña pedida en ?tab= (categorías si falta o no existe). */
+export function tabFromQuery(value: unknown): Tab {
+  return value === 'pilotos' || value === 'equipos' ? value : 'categorias';
+}
+
 /** Tarjeta de un piloto o equipo seguido. */
 interface PersonCard {
   id: string;
@@ -210,7 +215,7 @@ export default defineComponent({
   directives: { tabStrip },
   data() {
     return {
-      tab: (['pilotos', 'equipos'].includes(String(this.$route.query.tab)) ? this.$route.query.tab : 'categorias') as Tab,
+      tab: tabFromQuery(this.$route.query.tab),
       driverQuery: '',
       teamQuery: '',
       tabs: [
@@ -273,6 +278,12 @@ export default defineComponent({
     },
   },
   watch: {
+    // Un link a /siguiendo?tab=equipos estando ya en Siguiendo reusa el componente: solo cambia la query.
+    '$route.query.tab'(value: unknown) {
+      if (this.$route.name !== 'siguiendo') return;
+      const next = tabFromQuery(value);
+      if (next !== this.tab) this.tab = next;
+    },
     tab: {
       immediate: true,
       handler(tab: Tab) {

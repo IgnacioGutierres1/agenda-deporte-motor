@@ -26,6 +26,7 @@ import SeriesCrest from './SeriesCrest.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { nextEventOf } from '../lib/agenda.ts';
+import { upcomingWhen } from '../lib/upcoming.ts';
 
 interface Upcoming {
   event: MotorEvent;
@@ -51,15 +52,12 @@ export default defineComponent({
         const series = this.seriesById.get(id);
         const next = series ? nextEventOf(this.schedule, id, this.now) : null;
         if (!series || !next) continue;
-        let when: string;
-        if (next.live) when = `En vivo: ${next.nextSession!.name}`;
-        else if (next.nextSession) {
-          when =
-            next.nextSession.name +
-            ' · ' +
-            DateTime.fromISO(next.nextSession.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat("ccc d 'de' LLL, HH:mm");
-        } else when = DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat("ccc d 'de' LLL") + ' · horarios a confirmar';
-        out.push({ event: next.event, series, live: next.live, when });
+        // La hora que importa es la de la carrera (no la de la primera práctica).
+        const sessions = (this.schedule?.sessions ?? []).filter((x) => x.eventId === next.event.id);
+        const w = upcomingWhen(sessions, this.now, this.timeZone);
+        const live = w?.live ?? false;
+        const when = w?.text ?? DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat("ccc d 'de' LLL") + ' · horarios a confirmar';
+        out.push({ event: next.event, series, live, when });
       }
       return out.sort((a, b) => a.event.dateStart.localeCompare(b.event.dateStart));
     },

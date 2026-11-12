@@ -46,24 +46,39 @@
           </ul>
         </section>
 
-        <section v-if="driverGroups.length" class="card flush">
+        <UpcomingList :series-ids="seriesIds" />
+
+        <section v-if="rosterGroups.length" class="card flush team-roster">
           <h3 class="card-title">Pilotos</h3>
-          <template v-for="g in driverGroups" :key="g.seriesId">
-            <p v-if="driverGroups.length > 1" class="team-group-title small dim">{{ g.label }}</p>
-            <ul class="list-card inset">
-              <li v-for="d in g.drivers" :key="`${g.seriesId}-${d.id}`">
+          <div v-for="g in rosterGroups" :key="g.seriesId" class="roster-group">
+            <!-- Con una sola categoría no hace falta desplegar nada. -->
+            <button
+              v-if="rosterGroups.length > 1"
+              type="button"
+              class="list-row roster-head"
+              :aria-expanded="isOpen(g.seriesId)"
+              :aria-controls="`roster-${g.seriesId}`"
+              @click="toggleGroup(g.seriesId)"
+            >
+              <SeriesCrest v-if="g.series" :series="g.series" :size="30" />
+              <span class="grow">
+                {{ g.label }}
+                <span class="block small dim">{{ g.drivers.length }} {{ g.drivers.length === 1 ? 'piloto' : 'pilotos' }}</span>
+              </span>
+              <AppIcon name="chevron" :size="18" class="roster-chev" :class="{ open: isOpen(g.seriesId) }" />
+            </button>
+            <ul v-if="rosterGroups.length === 1 || isOpen(g.seriesId)" :id="`roster-${g.seriesId}`" class="list-card inset roster-list">
+              <li v-for="d in g.drivers" :key="d.id">
                 <RouterLink :to="`/piloto/${d.id}`" class="list-row">
                   <DriverAvatar :name="d.name" :color="g.color" :size="34" />
                   <span class="grow">{{ d.name }}</span>
-                  <span v-if="d.number" class="car-number">#{{ d.number }}</span>
+                  <span v-for="n in d.numbers" :key="n" class="car-number">#{{ n }}</span>
                   <AppIcon name="chevron" :size="16" class="dim" />
                 </RouterLink>
               </li>
             </ul>
-          </template>
+          </div>
         </section>
-
-        <UpcomingList :series-ids="seriesIds" />
 
         <section v-if="teamNews.length" class="card">
           <h3>Noticias</h3>
@@ -82,7 +97,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
-import type { NewsItem, Series, Team, TeamDriver, TeamEntry } from '@dm/shared';
+import type { NewsItem, Series, Team, TeamEntry } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
@@ -97,7 +112,7 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { useTeamsStore } from '../stores/teams.ts';
 import type { FollowedTeam } from '../stores/settings.ts';
 import { seriesColor } from '../lib/grid.ts';
-import { newsForTeam, teamSeriesIds } from '../lib/teams.ts';
+import { newsForTeam, teamRoster, teamSeriesIds, type TeamRosterDriver } from '../lib/teams.ts';
 
 interface EntryRow extends TeamEntry {
   series?: Series;
@@ -105,13 +120,24 @@ interface EntryRow extends TeamEntry {
   vehicleText: string;
 }
 
-const byNumber = (a: TeamDriver, b: TeamDriver) =>
-  (Number.parseInt(a.number ?? '', 10) || 9999) - (Number.parseInt(b.number ?? '', 10) || 9999) || a.name.localeCompare(b.name, 'es');
+interface RosterGroupView {
+  seriesId: string;
+  series?: Series;
+  label: string;
+  color: string;
+  drivers: TeamRosterDriver[];
+}
 
 /** Ficha de un equipo: categorías en las que corre, pilotos, próximas carreras y noticias. */
 export default defineComponent({
   name: 'TeamView',
   components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
+  data() {
+    return {
+      /** Categorías del plantel abiertas a mano; null = la predeterminada (solo la primera). */
+      openRoster: null as string[] | null,
+    };
+  },
   computed: {
     ...mapState(useTeamsStore, { teamsById: 'byId', teamsStatus: 'status', teamsError: 'error', pending: 'pending', derived: 'derived', allTeams: 'teams' }),
     ...mapState(useDriversStore, { driversStatus: 'status' }),
@@ -142,18 +168,13 @@ export default defineComponent({
         return { ...e, series: this.seriesById.get(e.seriesId), detail: parts.join(' · '), vehicleText: (e.vehicles ?? []).join(' · ') };
       });
     },
-    driverGroups(): Array<{ seriesId: string; label: string; color: string; drivers: TeamDriver[] }> {
-      return this.seriesIds
-        .map((id) => {
-          const series = this.seriesById.get(id);
-          return {
-            seriesId: id,
-            label: series?.name ?? id,
-            color: seriesColor(series),
-            drivers: (this.team?.drivers ?? []).filter((d) => d.seriesId === id).sort(byNumber),
-          };
-        })
-        .filter((g) => g.drivers.length);
+    /** Plantel por categoría, sin pilotos repetidos (antes era una lista de ~50 renglones seguidos). */
+    rosterGroups(): RosterGroupView[] {
+      if (!this.team) return [];
+      return teamRoster(this.team, this.seriesIds).map((g) => {
+        const series = this.seriesById.get(g.seriesId);
+        return { seriesId: g.seriesId, series, label: series?.name ?? g.seriesId, color: seriesColor(series), drivers: g.drivers };
+      });
     },
     teamNews(): NewsItem[] {
       return this.team ? newsForTeam(this.newsItems, this.team, this.allTeams).slice(0, 5) : [];
@@ -163,6 +184,7 @@ export default defineComponent({
     '$route.params.teamId': {
       immediate: true,
       handler() {
+        this.openRoster = null;
         void this.loadTeams();
         void this.loadNews();
       },
@@ -170,18 +192,55 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useTeamsStore, { loadTeams: 'load' }),
+    isOpen(seriesId: string): boolean {
+      return this.openRoster ? this.openRoster.includes(seriesId) : this.rosterGroups[0]?.seriesId === seriesId;
+    },
+    toggleGroup(seriesId: string) {
+      const current = this.openRoster ?? this.rosterGroups.slice(0, 1).map((g) => g.seriesId);
+      this.openRoster = current.includes(seriesId) ? current.filter((id) => id !== seriesId) : [...current, seriesId];
+    },
     ...mapActions(useNewsStore, { loadNews: 'load' }),
   },
 });
 </script>
 
 <style>
-.team-group-title {
-  margin: 0;
-  padding: 0.5rem 0.85rem 0.15rem;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.03em;
-  font-size: 0.72rem;
+.roster-group + .roster-group {
+  border-top: 1px solid var(--border);
+}
+
+.roster-head {
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.roster-chev {
+  flex: none;
+  transition: transform 0.15s;
+}
+
+.roster-chev.open {
+  transform: rotate(90deg);
+}
+
+.roster-list .car-number + .car-number {
+  margin-left: -0.35rem;
+}
+
+/* En pantallas anchas el plantel va en dos columnas en vez de una lista larga. */
+@media (min-width: 900px) {
+  .roster-list {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .list-card.roster-list > li {
+    border-top: 1px solid var(--border);
+  }
 }
 </style>
