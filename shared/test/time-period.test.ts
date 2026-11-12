@@ -91,6 +91,16 @@ describe('period', () => {
     expect(eventInPeriod(p, '2026-11-12', '2026-11-13', 'Asia/Qatar')).toBe(true);
     expect(eventInPeriod(p, '2026-11-20', '2026-11-22', 'Asia/Qatar')).toBe(false);
   });
+
+  it('un evento que empieza al día siguiente no cuenta para hoy (límite exacto)', () => {
+    const AR = 'America/Argentina/Buenos_Aires';
+    const jueves = { startUtc: '2026-11-12T03:00:00Z', endUtc: '2026-11-13T03:00:00Z' };
+    expect(eventInPeriod(jueves, '2026-11-13', '2026-11-15', AR)).toBe(false);
+    expect(eventInPeriod(jueves, '2026-11-12', '2026-11-12', AR)).toBe(true);
+    const domingo = { startUtc: '2026-11-15T03:00:00Z', endUtc: '2026-11-16T03:00:00Z' };
+    expect(eventInPeriod(domingo, '2026-11-13', '2026-11-15', AR)).toBe(true);
+    expect(eventInPeriod({ startUtc: '2026-11-16T03:00:00Z', endUtc: '2026-11-17T03:00:00Z' }, '2026-11-13', '2026-11-15', AR)).toBe(false);
+  });
 });
 
 describe('hash', () => {

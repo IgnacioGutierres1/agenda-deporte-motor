@@ -220,8 +220,8 @@ select.input {
 }
 
 .check input {
-  width: 20px;
-  height: 20px;
+  width: 24px;
+  height: 24px;
   accent-color: var(--accent);
   flex: none;
 }
@@ -505,6 +505,54 @@ table.data th.name-col {
   border-bottom-color: var(--accent);
 }
 
+/*
+ * Franjas deslizables (directiva v-tab-strip): degradé en el borde que tiene más contenido.
+ * Los pseudo-elementos son "sticky" dentro del scroll y no ocupan lugar (margen negativo = ancho + gap).
+ */
+.tab-strip {
+  --fade-w: 28px;
+  --strip-bg: var(--bg-header);
+  --strip-gap: 0px;
+}
+
+.underline-tabs.tab-strip {
+  --strip-gap: 0.25rem;
+}
+
+.session-chips.tab-strip {
+  --strip-bg: var(--bg);
+  --strip-gap: 0.4rem;
+}
+
+.tab-strip::before,
+.tab-strip::after {
+  content: '';
+  position: sticky;
+  z-index: 1;
+  flex: none;
+  width: var(--fade-w);
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.15s;
+}
+
+.tab-strip::before {
+  left: 0;
+  margin-right: calc(-1 * (var(--fade-w) + var(--strip-gap)));
+  background: linear-gradient(to right, var(--strip-bg), transparent);
+}
+
+.tab-strip::after {
+  right: 0;
+  margin-left: calc(-1 * (var(--fade-w) + var(--strip-gap)));
+  background: linear-gradient(to left, var(--strip-bg), transparent);
+}
+
+.tab-strip.fade-start::before,
+.tab-strip.fade-end::after {
+  opacity: 1;
+}
+
 .list-card {
   list-style: none;
   margin: 0 0 0.75rem;
@@ -671,6 +719,48 @@ a.driver-link {
   color: var(--text);
 }
 
+/*
+ * Links dentro de un texto: más área de toque (≥ 24 px de alto) sin mover el renglón.
+ * Las tablas y listas usan filas enteras como link (min. 44 px).
+ */
+a.tap-inline {
+  display: inline-block;
+  padding-block: 0.3rem;
+  margin-block: -0.3rem;
+}
+
+/* Tablas (campeonato, resultados): la celda del nombre es el link (bloque de 44 px) y el resto de la fila responde al toque. */
+table.data tr td.name-td {
+  padding: 0;
+}
+
+table.data .row-link {
+  display: flex;
+  min-height: 44px;
+  padding: 0.35rem 0.6rem;
+  color: var(--text);
+  /* Nombres largos (duplas, equipos) bajan de renglón en vez de ensanchar la tabla. */
+  white-space: normal;
+  overflow-wrap: anywhere;
+}
+
+a.row-link:hover {
+  text-decoration: none;
+}
+
+table.data .row-name {
+  display: block;
+}
+
+table.data tr.linked {
+  cursor: pointer;
+}
+
+table.data tr.linked:hover td,
+table.data tr.linked:active td {
+  background: var(--bg-elev-2);
+}
+
 a.driver-link:hover {
   color: var(--accent);
   text-decoration: none;
@@ -697,6 +787,15 @@ a.driver-link:hover {
   color: var(--text);
   font: inherit;
   outline: none;
+}
+
+/* Zona horaria de los horarios ("Horarios en hora Argentina") */
+.zone-note {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.35rem;
+  margin: 0 0 0.5rem;
 }
 
 /* Pastillas deslizables (sesiones, categorías) */

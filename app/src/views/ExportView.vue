@@ -18,6 +18,7 @@
         <label v-for="item in day.items" :key="item.session.id" class="check export-item">
           <input
             type="checkbox"
+            :aria-label="`Exportar ${item.series.shortName || item.series.name} · ${item.session.name}, ${day.label} ${time(item.session.startUtc)}`"
             :checked="!excludedIds.includes(item.session.id)"
             @change="setExcluded(item.session.id, !($event.target as HTMLInputElement).checked)"
           />

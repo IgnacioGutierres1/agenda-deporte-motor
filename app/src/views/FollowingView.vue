@@ -1,6 +1,6 @@
 <template>
   <div class="following-view">
-    <nav class="underline-tabs page-tabs" role="tablist">
+    <nav v-tab-strip class="underline-tabs page-tabs" role="tablist" aria-label="Siguiendo">
       <button
         v-for="t in tabs"
         :key="t.id"
@@ -179,6 +179,7 @@ import { useTeamsStore } from '../stores/teams.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { driverSeriesIds, isGenericTeamTable, teamMainEntry, teamNumbers, teamSeriesIds } from '../lib/teams.ts';
 import { nextEventOf, type NextEvent } from '../lib/agenda.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 
 type Tab = 'categorias' | 'pilotos' | 'equipos';
 
@@ -203,6 +204,7 @@ interface FollowCard {
 export default defineComponent({
   name: 'FollowingView',
   components: { AppIcon, DataState, DriverAvatar, FollowButton, RecommendationsCard, SeriesCrest },
+  directives: { tabStrip },
   data() {
     return {
       tab: (['pilotos', 'equipos'].includes(String(this.$route.query.tab)) ? this.$route.query.tab : 'categorias') as Tab,
