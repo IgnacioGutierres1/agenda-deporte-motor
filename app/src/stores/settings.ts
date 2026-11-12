@@ -21,6 +21,25 @@ export interface FollowedDriver {
   seriesIds: string[];
 }
 
+/** Equipo seguido: igual que un piloto, con sus categorías (las de sus tablas, inscripciones y pilotos). */
+export type FollowedTeam = FollowedDriver;
+
+/**
+ * Lista actualizada con el índice publicado (nombre y categorías), o null si no cambió nada.
+ * Lo que no figura en el índice se conserva tal cual (puede volver la temporada siguiente).
+ */
+function syncRefs<T extends FollowedDriver>(list: T[], lookup: (id: string) => FollowedDriver | undefined): FollowedDriver[] | null {
+  let changed = false;
+  const next = list.map((d): FollowedDriver => {
+    const fresh = lookup(d.id);
+    if (!fresh) return d;
+    if (fresh.name === d.name && fresh.seriesIds.join() === d.seriesIds.join()) return d;
+    changed = true;
+    return { id: d.id, name: fresh.name, seriesIds: [...fresh.seriesIds] };
+  });
+  return changed ? next : null;
+}
+
 /** Preferencias de este dispositivo (se guardan en localStorage desde main.ts). */
 export const useSettingsStore = defineStore('settings', {
   state: () => ({
@@ -32,6 +51,8 @@ export const useSettingsStore = defineStore('settings', {
     followedSeries: [] as string[],
     /** Pilotos que sigue el usuario, en orden. */
     followedDrivers: [] as FollowedDriver[],
+    /** Equipos que sigue el usuario, en orden. */
+    followedTeams: [] as FollowedTeam[],
     /** Avisos push activados en este dispositivo. */
     notifyEnabled: false,
     /** Minutos de anticipación de los avisos. */
@@ -55,9 +76,22 @@ export const useSettingsStore = defineStore('settings', {
     repoRef(): RepoRef | null {
       return parseRepo(this.effectiveRepo);
     },
-    /** Categorías de las que se avisa: las seguidas y las de los pilotos seguidos. */
-    notifySeriesIds(state): string[] {
-      return [...new Set([...state.followedSeries, ...state.followedDrivers.flatMap((d) => d.seriesIds)])].sort();
+    /**
+     * Todas las categorías de interés: las seguidas y las de los pilotos y equipos seguidos (en ese orden).
+     * Son las que van primero en la Agenda, En vivo y "Para ti".
+     */
+    followedSeriesIds(state): string[] {
+      return [
+        ...new Set([
+          ...state.followedSeries,
+          ...state.followedDrivers.flatMap((d) => d.seriesIds),
+          ...state.followedTeams.flatMap((t) => t.seriesIds),
+        ]),
+      ];
+    },
+    /** Categorías de las que se avisa (se mandan así al Worker): las mismas, ordenadas. */
+    notifySeriesIds(): string[] {
+      return [...this.followedSeriesIds].sort();
     },
     canWriteRepo(state): boolean {
       return state.githubToken.trim() !== '' && parseRepo(this.effectiveRepo) !== null;
@@ -82,15 +116,21 @@ export const useSettingsStore = defineStore('settings', {
     },
     /** Actualiza nombre y categorías de los pilotos seguidos con el índice publicado. */
     syncFollowedDrivers(lookup: (id: string) => FollowedDriver | undefined) {
-      let changed = false;
-      const next = this.followedDrivers.map((d) => {
-        const fresh = lookup(d.id);
-        if (!fresh) return d;
-        if (fresh.name === d.name && fresh.seriesIds.join() === d.seriesIds.join()) return d;
-        changed = true;
-        return { id: d.id, name: fresh.name, seriesIds: [...fresh.seriesIds] };
-      });
-      if (changed) this.followedDrivers = next;
+      const next = syncRefs(this.followedDrivers, lookup);
+      if (next) this.followedDrivers = next;
+    },
+    isTeamFollowed(teamId: string): boolean {
+      return this.followedTeams.some((t) => t.id === teamId);
+    },
+    toggleFollowTeam(team: FollowedTeam) {
+      this.followedTeams = this.isTeamFollowed(team.id)
+        ? this.followedTeams.filter((t) => t.id !== team.id)
+        : [...this.followedTeams, { id: team.id, name: team.name, seriesIds: [...team.seriesIds] }];
+    },
+    /** Actualiza nombre y categorías de los equipos seguidos con el índice de equipos. */
+    syncFollowedTeams(lookup: (id: string) => FollowedTeam | undefined) {
+      const next = syncRefs(this.followedTeams, lookup);
+      if (next) this.followedTeams = next;
     },
     isHidden(seriesId: string): boolean {
       return this.hiddenSeries.includes(seriesId);

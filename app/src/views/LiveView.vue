@@ -54,7 +54,7 @@ export default defineComponent({
   components: { DataState, LiveSessionCard, SeriesCrest },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'hasData', 'now', 'visibleSeriesPredicate']),
-    ...mapState(useSettingsStore, ['timeZone', 'followedSeries', 'followedDrivers']),
+    ...mapState(useSettingsStore, ['timeZone', 'followedSeriesIds']),
     window(): GridItem[] {
       const now = Date.parse(this.now);
       const period = {
@@ -64,7 +64,7 @@ export default defineComponent({
       return sessionsInPeriod(this.schedule, period, this.visibleSeriesPredicate, this.now);
     },
     followedIds(): Set<string> {
-      return new Set([...this.followedSeries, ...this.followedDrivers.flatMap((d) => d.seriesIds)]);
+      return new Set(this.followedSeriesIds);
     },
     /** En curso, primero lo que sigue el usuario. */
     liveItems(): GridItem[] {

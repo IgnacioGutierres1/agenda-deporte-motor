@@ -12,9 +12,10 @@
               {{ r.title }}
               <span class="block small dim">{{ r.reason }}</span>
             </span>
-            <AppIcon v-if="r.kind !== 'driver'" name="chevron" :size="16" class="dim" />
+            <AppIcon v-if="r.kind === 'circuit'" name="chevron" :size="16" class="dim" />
           </RouterLink>
           <FollowButton v-if="r.kind === 'driver'" :driver="driverRef(r)" :name="r.title" compact />
+          <FollowButton v-else-if="r.kind === 'team'" :team="teamRef(r)" :name="r.title" compact />
         </div>
       </li>
     </ul>
@@ -31,11 +32,11 @@ import FollowButton from './FollowButton.vue';
 import SeriesRow from './SeriesRow.vue';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
-import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
+import { useSettingsStore, type FollowedDriver, type FollowedTeam } from '../stores/settings.ts';
 import { useTeamsStore } from '../stores/teams.ts';
 import { recommend, type Recommendation } from '../lib/recommend.ts';
 import { seriesColor } from '../lib/grid.ts';
-import { driverSeriesIds } from '../lib/teams.ts';
+import { driverSeriesIds, teamSeriesIds } from '../lib/teams.ts';
 
 /**
  * "Te puede interesar": sugerencias armadas en el dispositivo con lo que sigue el usuario
@@ -50,11 +51,15 @@ export default defineComponent({
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
-    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'hiddenSeries', 'timeZone']),
+    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'followedTeams', 'hiddenSeries', 'timeZone']),
     ...mapState(useDriversStore, { driversFile: 'file', driversById: 'byId' }),
-    ...mapState(useTeamsStore, { teams: 'teams' }),
+    ...mapState(useTeamsStore, { teams: 'teams', teamsById: 'byId' }),
     followsSomething(): boolean {
-      return this.followedSeries.length > 0 || this.followedDrivers.length > 0;
+      return this.followedSeries.length > 0 || this.followsPeople;
+    },
+    /** Sigue pilotos o equipos: hacen falta los equipos. */
+    followsPeople(): boolean {
+      return this.followedDrivers.length > 0 || this.followedTeams.length > 0;
     },
     items(): Recommendation[] {
       return recommend({
@@ -63,17 +68,18 @@ export default defineComponent({
         zone: this.timeZone,
         followedSeries: this.followedSeries,
         followedDrivers: this.followedDrivers,
+        followedTeams: this.followedTeams,
         hiddenSeries: this.hiddenSeries,
         drivers: this.driversFile?.drivers ?? [],
-        teams: this.followedDrivers.length ? this.teams : [],
+        teams: this.followsPeople ? this.teams : [],
         limit: this.limit,
       });
     },
   },
   mounted() {
-    // Pilotos y equipos solo hacen falta para las sugerencias basadas en pilotos y líderes.
+    // Pilotos y equipos solo hacen falta para las sugerencias basadas en pilotos, equipos y líderes.
     if (this.followsSomething) void this.loadDrivers();
-    if (this.followedDrivers.length) void this.loadTeams();
+    if (this.followsPeople) void this.loadTeams();
   },
   methods: {
     ...mapActions(useDriversStore, { loadDrivers: 'load' }),
@@ -87,6 +93,10 @@ export default defineComponent({
     driverRef(r: Recommendation): FollowedDriver {
       const d = this.driversById.get(r.id);
       return { id: r.id, name: r.title, seriesIds: d ? driverSeriesIds(d) : r.seriesId ? [r.seriesId] : [] };
+    },
+    teamRef(r: Recommendation): FollowedTeam {
+      const t = this.teamsById.get(r.id);
+      return { id: r.id, name: r.title, seriesIds: t ? teamSeriesIds(t) : r.seriesId ? [r.seriesId] : [] };
     },
   },
 });

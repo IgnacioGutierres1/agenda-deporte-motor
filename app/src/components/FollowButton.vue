@@ -16,9 +16,9 @@
 import { defineComponent, type PropType } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import AppIcon from './AppIcon.vue';
-import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
+import { useSettingsStore, type FollowedDriver, type FollowedTeam } from '../stores/settings.ts';
 
-/** Seguir / dejar de seguir una categoría o un piloto (se guarda en este dispositivo). */
+/** Seguir / dejar de seguir una categoría, un piloto o un equipo (se guarda en este dispositivo). */
 export default defineComponent({
   name: 'FollowButton',
   components: { AppIcon },
@@ -26,21 +26,25 @@ export default defineComponent({
     seriesId: { type: String, default: '' },
     /** Si se pasa, el botón sigue a este piloto en lugar de a una categoría. */
     driver: { type: Object as PropType<FollowedDriver | null>, default: null },
+    /** Si se pasa, el botón sigue a este equipo. */
+    team: { type: Object as PropType<FollowedTeam | null>, default: null },
     name: { type: String, default: '' },
     /** Solo la estrella (listas). */
     compact: { type: Boolean, default: false },
   },
   computed: {
-    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers']),
+    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'followedTeams']),
     following(): boolean {
+      if (this.team) return this.followedTeams.some((t) => t.id === this.team!.id);
       if (this.driver) return this.followedDrivers.some((d) => d.id === this.driver!.id);
       return this.followedSeries.includes(this.seriesId);
     },
   },
   methods: {
-    ...mapActions(useSettingsStore, ['toggleFollow', 'toggleFollowDriver']),
+    ...mapActions(useSettingsStore, ['toggleFollow', 'toggleFollowDriver', 'toggleFollowTeam']),
     toggle() {
-      if (this.driver) this.toggleFollowDriver(this.driver);
+      if (this.team) this.toggleFollowTeam(this.team);
+      else if (this.driver) this.toggleFollowDriver(this.driver);
       else this.toggleFollow(this.seriesId);
     },
   },

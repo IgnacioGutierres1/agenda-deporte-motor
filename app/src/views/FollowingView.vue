@@ -97,7 +97,60 @@
               <DriverAvatar :name="c.name" color="rgba(255,255,255,0.18)" :size="38" />
               <span class="follow-card-name">{{ c.name }}</span>
               <span class="follow-card-next">
-                <span v-if="c.standing" class="follow-card-event">{{ c.standing }}</span>
+                <span v-if="c.standing" class="follow-card-standing">{{ c.standing }}</span>
+                <span>{{ c.next }}</span>
+              </span>
+            </RouterLink>
+          </div>
+        </template>
+      </template>
+
+      <template v-else-if="tab === 'equipos'">
+        <label class="search-box">
+          <AppIcon name="search" :size="18" />
+          <input v-model="teamQuery" type="search" class="search-input" placeholder="Buscar equipos" aria-label="Buscar equipos" />
+        </label>
+
+        <div v-if="teamsStatus === 'error' && driversStatus === 'error'" class="notice notice-error">
+          No se pudieron cargar los equipos ({{ teamsError }}).
+          <button type="button" class="btn btn-small" @click="loadTeams(true)">Reintentar</button>
+        </div>
+
+        <template v-if="teamQuery.trim().length >= 2">
+          <p v-if="teamsPending" class="dim">Cargando equipos…</p>
+          <ul v-else-if="teamMatches.length" class="list-card">
+            <li v-for="t in teamMatches" :key="t.id" class="series-row">
+              <RouterLink :to="`/equipo/${t.id}`" class="list-row grow">
+                <DriverAvatar :name="t.name" :color="teamColor(t)" :size="34" />
+                <span class="grow">
+                  {{ t.name }}
+                  <span class="block small dim">{{ teamSummary(t) }}</span>
+                </span>
+              </RouterLink>
+              <FollowButton :team="teamRefOf(t)" :name="t.name" compact />
+            </li>
+          </ul>
+          <p v-else class="card empty dim">No hay equipos que coincidan con "{{ teamQuery }}".</p>
+        </template>
+
+        <template v-else>
+          <div v-if="!followedTeams.length" class="card empty center">
+            <p>Todavía no seguís ningún equipo.</p>
+            <p class="small dim">Buscalo arriba o tocá ★ Seguir en la ficha del equipo.</p>
+          </div>
+          <div v-else class="follow-grid">
+            <RouterLink
+              v-for="c in teamCards"
+              :key="c.id"
+              :to="`/equipo/${c.id}`"
+              class="follow-card"
+              :style="{ '--card-color': c.color }"
+            >
+              <DriverAvatar :name="c.name" color="rgba(255,255,255,0.18)" :size="38" />
+              <span class="follow-card-name">{{ c.name }}</span>
+              <span class="follow-card-next">
+                <span v-if="c.standing" class="follow-card-standing">{{ c.standing }}</span>
+                <span v-if="c.numbers" class="follow-card-numbers">{{ c.numbers }}</span>
                 <span>{{ c.next }}</span>
               </span>
             </RouterLink>
@@ -112,7 +165,7 @@
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import type { Series } from '@dm/shared';
+import type { Driver, Series, Team } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
@@ -120,12 +173,24 @@ import DataState from '../components/DataState.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import RecommendationsCard from '../components/RecommendationsCard.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
-import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
+import { useSettingsStore, type FollowedDriver, type FollowedTeam } from '../stores/settings.ts';
 import { useDriversStore } from '../stores/drivers.ts';
-import type { Driver } from '@dm/shared';
+import { useTeamsStore } from '../stores/teams.ts';
 import { seriesColor } from '../lib/grid.ts';
-import { driverSeriesIds } from '../lib/teams.ts';
+import { driverSeriesIds, isGenericTeamTable, teamMainEntry, teamNumbers, teamSeriesIds } from '../lib/teams.ts';
 import { nextEventOf, type NextEvent } from '../lib/agenda.ts';
+
+type Tab = 'categorias' | 'pilotos' | 'equipos';
+
+/** Tarjeta de un piloto o equipo seguido. */
+interface PersonCard {
+  id: string;
+  name: string;
+  color: string;
+  standing: string;
+  numbers?: string;
+  next: string;
+}
 
 interface FollowCard {
   series: Series;
@@ -140,22 +205,28 @@ export default defineComponent({
   components: { AppIcon, DataState, DriverAvatar, FollowButton, RecommendationsCard, SeriesCrest },
   data() {
     return {
-      tab: (this.$route.query.tab === 'pilotos' ? 'pilotos' : 'categorias') as 'categorias' | 'pilotos',
+      tab: (['pilotos', 'equipos'].includes(String(this.$route.query.tab)) ? this.$route.query.tab : 'categorias') as Tab,
       driverQuery: '',
+      teamQuery: '',
       tabs: [
-        { id: 'categorias' as const, label: 'Categorías' },
-        { id: 'pilotos' as const, label: 'Pilotos' },
+        { id: 'categorias' as Tab, label: 'Categorías' },
+        { id: 'pilotos' as Tab, label: 'Pilotos' },
+        { id: 'equipos' as Tab, label: 'Equipos' },
       ],
     };
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'hasData', 'now', 'seriesById']),
-    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'timeZone']),
+    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'followedTeams', 'timeZone']),
     ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId' }),
+    ...mapState(useTeamsStore, { teamsStatus: 'status', teamsError: 'error', teamsById: 'byId', teamsPending: 'pending' }),
     driverMatches(): Driver[] {
       return useDriversStore().search(this.driverQuery);
     },
-    driverCards(): Array<{ id: string; name: string; color: string; standing: string; next: string }> {
+    teamMatches(): Team[] {
+      return useTeamsStore().search(this.teamQuery, 30);
+    },
+    driverCards(): PersonCard[] {
       return this.followedDrivers.map((f) => {
         const d = this.driversById.get(f.id);
         const main = d?.entries[0];
@@ -164,13 +235,25 @@ export default defineComponent({
         let standing = '';
         if (main) standing = `P${main.pos} · ${series?.shortName ?? main.seriesId}${main.table ? ' ' + main.table : ''} · ${main.points.toLocaleString('es-AR')} pts`;
         else if (lineup) standing = `${series?.shortName ?? lineup.seriesId}${lineup.number ? ' #' + lineup.number : ''}${lineup.team ? ' · ' + lineup.team : ''}`;
-        // Próxima carrera entre todas sus categorías.
-        let next: NextEvent | null = null;
-        for (const id of f.seriesIds) {
-          const n = nextEventOf(this.schedule, id, this.now);
-          if (n && (!next || n.event.dateStart < next.event.dateStart)) next = n;
+        return { id: f.id, name: d?.name ?? f.name, color: seriesColor(series), standing, next: this.nextText(f.seriesIds) };
+      });
+    },
+    teamCards(): PersonCard[] {
+      return this.followedTeams.map((f) => {
+        const t = this.teamsById.get(f.id);
+        const main = t ? teamMainEntry(t) : undefined;
+        const seriesId = main?.seriesId ?? f.seriesIds[0] ?? '';
+        const series = this.seriesById.get(seriesId);
+        const short = series?.shortName ?? seriesId;
+        let standing = '';
+        if (main?.pos !== undefined) {
+          const table = isGenericTeamTable(main.table) ? '' : ` ${main.table}`;
+          standing = `P${main.pos} · ${short}${table}${main.points !== undefined ? ` · ${main.points.toLocaleString('es-AR')} pts` : ''}`;
+        } else if (seriesId) {
+          standing = short;
         }
-        return { id: f.id, name: d?.name ?? f.name, color: seriesColor(series), standing, next: next ? `${next.event.name} · ${this.whenText(next)}` : 'Sin carreras próximas' };
+        const numbers = t && seriesId ? teamNumbers(t, seriesId).map((n) => `#${n}`).join(' ') : '';
+        return { id: f.id, name: t?.name ?? f.name, color: seriesColor(series), standing, numbers, next: this.nextText(f.seriesIds) };
       });
     },
     cards(): FollowCard[] {
@@ -187,16 +270,43 @@ export default defineComponent({
   watch: {
     tab: {
       immediate: true,
-      handler(tab: string) {
+      handler(tab: Tab) {
         if (tab === 'pilotos') void this.loadDrivers();
-        void this.$router.replace({ query: tab === 'pilotos' ? { tab } : {} });
+        if (tab === 'equipos') void this.loadTeams();
+        void this.$router.replace({ query: tab === 'categorias' ? {} : { tab } });
       },
     },
   },
   methods: {
     ...mapActions(useDriversStore, { loadDrivers: 'load' }),
+    ...mapActions(useTeamsStore, { loadTeams: 'load' }),
     refOf(d: Driver): FollowedDriver {
       return { id: d.id, name: d.name, seriesIds: driverSeriesIds(d) };
+    },
+    teamRefOf(t: Team): FollowedTeam {
+      return { id: t.id, name: t.name, seriesIds: teamSeriesIds(t) };
+    },
+    teamColor(t: Team): string {
+      return seriesColor(this.seriesById.get(teamSeriesIds(t)[0] ?? ''));
+    },
+    /** Una parte por categoría: posición en la primera tabla (la general) y números de auto. */
+    teamSummary(t: Team): string {
+      return teamSeriesIds(t)
+        .map((id) => {
+          const pos = t.entries.find((e) => e.seriesId === id && e.pos !== undefined)?.pos;
+          const nums = teamNumbers(t, id);
+          return `${this.seriesById.get(id)?.shortName ?? id}${pos ? ' P' + pos : ''}${nums.length ? ' ' + nums.map((n) => '#' + n).join(' ') : ''}`;
+        })
+        .join(' · ');
+    },
+    /** Próxima carrera entre todas las categorías de un piloto o equipo. */
+    nextText(seriesIds: string[]): string {
+      let next: NextEvent | null = null;
+      for (const id of seriesIds) {
+        const n = nextEventOf(this.schedule, id, this.now);
+        if (n && (!next || n.event.dateStart < next.event.dateStart)) next = n;
+      }
+      return next ? `${next.event.name} · ${this.whenText(next)}` : 'Sin carreras próximas';
     },
     driverColor(d: Driver): string {
       return seriesColor(this.seriesById.get(driverSeriesIds(d)[0] ?? ''));
@@ -268,6 +378,18 @@ export default defineComponent({
 
 .follow-card-event {
   font-weight: 700;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Posición en el campeonato: puede ocupar dos líneas para no cortar los puntos. */
+.follow-card-standing {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.follow-card-numbers {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;

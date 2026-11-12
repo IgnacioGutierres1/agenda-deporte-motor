@@ -77,13 +77,11 @@ export default defineComponent({
   computed: {
     ...mapState(useNewsStore, ['items']),
     ...mapState(useScheduleStore, ['seriesById']),
-    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers']),
+    /** Categorías seguidas + las de los pilotos y equipos seguidos. */
+    ...mapState(useSettingsStore, { followedIds: 'followedSeriesIds' }),
     tab(): Tab {
       const q = this.$route.query.tab;
       return q === 'ultimas' || q === 'categorias' ? q : 'para-ti';
-    },
-    followedIds(): string[] {
-      return [...new Set([...this.followedSeries, ...this.followedDrivers.flatMap((d) => d.seriesIds)])];
     },
     forYou(): NewsItem[] {
       return this.followedIds.length ? newsForSeries(this.items, this.followedIds) : this.items;

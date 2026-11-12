@@ -9,6 +9,26 @@ export function driverSeriesIds(d: Driver): string[] {
   return [...new Set([...d.entries.map((e) => e.seriesId), ...(d.lineups ?? []).map((l) => l.seriesId)])];
 }
 
+/** Categorías de un equipo: las de sus tablas e inscripciones y las de sus pilotos. */
+export function teamSeriesIds(t: Team): string[] {
+  return [...new Set([...t.entries.map((e) => e.seriesId), ...t.drivers.map((d) => d.seriesId)])];
+}
+
+/** Línea principal de un equipo: la primera con posición (la tabla general de su categoría principal), o la primera. */
+export function teamMainEntry(t: Team): TeamEntry | undefined {
+  return t.entries.find((e) => e.pos !== undefined) ?? t.entries[0];
+}
+
+/** Números de auto de un equipo en una categoría (de todas sus líneas y, si no hay, de sus pilotos). */
+export function teamNumbers(t: Team, seriesId: string): string[] {
+  const out = new Set(t.entries.filter((e) => e.seriesId === seriesId).flatMap((e) => e.numbers ?? []));
+  if (!out.size) for (const d of t.drivers) if (d.seriesId === seriesId && d.number) out.add(d.number);
+  return [...out];
+}
+
+/** Nombre de tabla que no agrega nada al lado de un equipo ("Equipos", "Teams"). */
+export const isGenericTeamTable = (table: string | undefined): boolean => !table || /^(equipos?|teams?)$/i.test(table.trim());
+
 const push = (list: string[] | undefined, value: string | undefined): string[] | undefined => {
   if (!value) return list;
   const out = list ?? [];
