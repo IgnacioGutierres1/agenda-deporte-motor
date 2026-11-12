@@ -12,15 +12,7 @@
         <button type="button" class="btn btn-block" :disabled="loading" @click="refresh">
           <AppIcon name="refresh" :size="18" /> {{ loading ? 'Actualizando…' : 'Actualizar ahora' }}
         </button>
-        <button v-if="canWriteRepo" type="button" class="btn btn-block" :disabled="busy" @click="forceUpdate">
-          Forzar actualización
-        </button>
-        <p v-else class="small dim">
-          "Forzar actualización" vuelve a leer todas las fuentes oficiales. Está disponible para el dueño del repo con su
-          token de GitHub (más abajo).
-        </p>
       </div>
-      <p v-if="updateMsg" class="notice" :class="updateErr ? 'notice-error' : 'notice-ok'">{{ updateMsg }}</p>
     </section>
 
     <!-- Avisos -->
@@ -38,11 +30,12 @@
           class="pill"
           :class="{ active: theme === t.value }"
           :aria-checked="theme === t.value"
-          @click="theme = t.value"
+          @click="setTheme(t.value)"
         >
           {{ t.label }}
         </button>
       </div>
+      <p class="small dim">"Según el sistema" sigue el modo claro u oscuro del teléfono o la computadora.</p>
     </section>
 
     <!-- Zona horaria -->
@@ -57,59 +50,89 @@
       <p class="small dim">La carga en Google Calendar siempre usa la hora de Argentina.</p>
     </section>
 
-    <!-- Categorías -->
+    <!-- Categorías visibles -->
     <section class="card">
-      <h2>Categorías</h2>
+      <h2>Categorías visibles en la agenda</h2>
       <p class="small dim">
-        La casilla elige qué ves en este dispositivo.
-        <template v-if="canWriteRepo">
-          Los botones cambian la lista compartida del repo (para todos) y lanzan una actualización.
-        </template>
-        <template v-else>
-          Para agregar, desactivar o fijar categorías de la lista compartida, cargá el token de GitHub (abajo).
-        </template>
+        Destildá las que no quieras ver en la agenda de este dispositivo. <strong>★ Seguir</strong> es otra cosa: pone la
+        categoría primero y te avisa de sus carreras.
+      </p>
+      <p v-if="canWriteRepo" class="small dim">
+        Los botones de cada categoría cambian la lista compartida del repo (para todos) y lanzan una actualización.
       </p>
       <p v-if="repoMsg" class="notice" :class="repoErr ? 'notice-error' : 'notice-ok'">{{ repoMsg }}</p>
 
       <div v-for="g in seriesGroups" :key="g.group" class="settings-group">
-        <div class="section-title">{{ g.label }}</div>
-        <div v-for="i in g.items" :key="i.series.id" class="settings-series">
-          <label class="check grow">
-            <input
-              type="checkbox"
-              :aria-label="`Mostrar ${i.series.name} en la agenda`"
-              :checked="!hiddenSeries.includes(i.series.id)"
-              :disabled="!i.series.enabled"
-              @change="setSeriesVisible(i.series.id, ($event.target as HTMLInputElement).checked)"
-            />
-            <span class="chip" :style="{ background: color(i.series) }" />
-            <span class="grow" :class="{ dim: !i.series.enabled }">
-              {{ i.series.name }}
-              <span v-if="i.series.origin === 'discovered'" class="badge badge-info">Descubierta</span>
-              <span v-else-if="i.series.origin === 'user'" class="badge badge-dim">Agregada</span>
-              <span v-if="!effectiveEnabled(i.series)" class="badge badge-dim">Desactivada</span>
+        <div class="settings-group-head">
+          <button
+            type="button"
+            class="list-row settings-group-toggle"
+            :aria-expanded="isGroupOpen(g.group)"
+            :aria-controls="`grupo-${g.group}`"
+            @click="toggleGroup(g.group)"
+          >
+            <span class="grow">
+              <strong>{{ g.label }}</strong>
+              <span class="block small dim">{{ visibleCount(g.items) }} de {{ enabledCount(g.items) }} visibles</span>
             </span>
-          </label>
-          <div v-if="canWriteRepo" class="row series-actions">
-            <template v-if="i.series.origin === 'discovered'">
-              <button type="button" class="btn btn-small" :disabled="busy" @click="pin(i.series)">Fijar</button>
-              <button type="button" class="btn btn-small" :disabled="busy" @click="hide(i.series)">Ocultar</button>
-            </template>
-            <template v-else-if="isAdded(i.series.id)">
-              <button type="button" class="btn btn-small btn-danger" :disabled="busy" @click="removeAdded(i.series)">Quitar</button>
-            </template>
-            <template v-else-if="isPinned(i.series.id)">
-              <button type="button" class="btn btn-small" :disabled="busy" @click="hide(i.series)">Ocultar</button>
-            </template>
-            <button
-              v-if="!isAdded(i.series.id)"
-              type="button"
-              class="btn btn-small"
-              :disabled="busy"
-              @click="toggleDisabled(i.series)"
-            >
-              {{ effectiveEnabled(i.series) ? 'Desactivar' : 'Activar' }}
-            </button>
+            <AppIcon name="chevron" :size="18" class="settings-chev" :class="{ open: isGroupOpen(g.group) }" />
+          </button>
+          <button
+            type="button"
+            class="btn btn-small btn-ghost"
+            :aria-label="`Mostrar todas: ${g.label}`"
+            @click="setGroupVisible(g.items, true)"
+          >
+            Todas
+          </button>
+          <button
+            type="button"
+            class="btn btn-small btn-ghost"
+            :aria-label="`Ocultar todas: ${g.label}`"
+            @click="setGroupVisible(g.items, false)"
+          >
+            Ninguna
+          </button>
+        </div>
+        <div v-if="isGroupOpen(g.group)" :id="`grupo-${g.group}`">
+          <div v-for="i in g.items" :key="i.series.id" class="settings-series">
+            <label class="check grow">
+              <input
+                type="checkbox"
+                :aria-label="`Mostrar ${i.series.name} en la agenda`"
+                :checked="!hiddenSeries.includes(i.series.id)"
+                :disabled="!i.series.enabled"
+                @change="setSeriesVisible(i.series.id, ($event.target as HTMLInputElement).checked)"
+              />
+              <span class="chip" :style="{ background: color(i.series) }" />
+              <span class="grow" :class="{ dim: !i.series.enabled }">
+                {{ i.series.name }}
+                <span v-if="i.series.origin === 'discovered'" class="badge badge-info">Descubierta</span>
+                <span v-else-if="i.series.origin === 'user'" class="badge badge-dim">Agregada</span>
+                <span v-if="!effectiveEnabled(i.series)" class="badge badge-dim">Desactivada</span>
+              </span>
+            </label>
+            <div v-if="canWriteRepo" class="row series-actions">
+              <template v-if="i.series.origin === 'discovered'">
+                <button type="button" class="btn btn-small" :disabled="busy" @click="pin(i.series)">Fijar</button>
+                <button type="button" class="btn btn-small" :disabled="busy" @click="hide(i.series)">Ocultar</button>
+              </template>
+              <template v-else-if="isAdded(i.series.id)">
+                <button type="button" class="btn btn-small btn-danger" :disabled="busy" @click="removeAdded(i.series)">Quitar</button>
+              </template>
+              <template v-else-if="isPinned(i.series.id)">
+                <button type="button" class="btn btn-small" :disabled="busy" @click="hide(i.series)">Ocultar</button>
+              </template>
+              <button
+                v-if="!isAdded(i.series.id)"
+                type="button"
+                class="btn btn-small"
+                :disabled="busy"
+                @click="toggleDisabled(i.series)"
+              >
+                {{ effectiveEnabled(i.series) ? 'Desactivar' : 'Activar' }}
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -181,72 +204,6 @@
       </details>
     </section>
 
-    <!-- Google Calendar -->
-    <section class="card">
-      <h2>Google Calendar</h2>
-      <p class="small dim">
-        Para "Cargar en Google Calendar" hace falta un Client ID OAuth (tipo "Aplicación web") de Google Cloud con la
-        Calendar API habilitada y este sitio como origen autorizado. El calendario "Deporte Motor" tiene que existir.
-      </p>
-      <label class="field">
-        <span>Client ID de Google</span>
-        <input
-          v-model.trim="googleClientId"
-          class="input"
-          type="text"
-          autocomplete="off"
-          spellcheck="false"
-          :placeholder="envClientId || '1234-abc.apps.googleusercontent.com'"
-        />
-      </label>
-      <button type="button" class="btn btn-small" @click="logoutGoogle">Cerrar sesión de Google en la app</button>
-      <p v-if="googleMsg" class="small dim">{{ googleMsg }}</p>
-    </section>
-
-    <!-- GitHub -->
-    <section class="card">
-      <h2>GitHub (solo para el dueño)</h2>
-      <p class="small dim">
-        Solo lo necesita quien administra el repo: sirve para cambiar la lista compartida de categorías y para "Forzar
-        actualización". El token se guarda <strong>solo en este dispositivo</strong> y se usa únicamente contra
-        api.github.com.
-      </p>
-      <label class="field">
-        <span>Repositorio (owner/repo)</span>
-        <input
-          v-model.trim="githubRepo"
-          class="input"
-          type="text"
-          autocomplete="off"
-          spellcheck="false"
-          autocapitalize="off"
-          :placeholder="envRepo || 'owner/repo'"
-        />
-      </label>
-      <label class="field">
-        <span>Token de acceso (fine-grained)</span>
-        <input
-          v-model.trim="githubToken"
-          class="input"
-          type="password"
-          autocomplete="off"
-          spellcheck="false"
-          placeholder="github_pat_…"
-        />
-      </label>
-      <details class="small">
-        <summary>Cómo crear el token</summary>
-        <ol>
-          <li>GitHub → Settings → Developer settings → Personal access tokens → <strong>Fine-grained tokens</strong>.</li>
-          <li>Repository access: <strong>Only select repositories</strong> → este repo.</li>
-          <li>Permisos: <strong>Contents: Read and write</strong> y <strong>Actions: Read and write</strong>.</li>
-          <li>Ponele vencimiento y pegalo acá.</li>
-        </ol>
-      </details>
-      <p v-if="githubToken && !repoRef" class="small" style="color: var(--error)">Falta el repositorio en formato owner/repo.</p>
-      <button v-if="githubToken" type="button" class="btn btn-small btn-danger" @click="githubToken = ''">Borrar token</button>
-    </section>
-
     <!-- Instalación -->
     <section class="card">
       <h2>Instalar la app</h2>
@@ -254,6 +211,95 @@
       <p class="small"><strong>Android (Chrome):</strong> menú ⋮ → <strong>Instalar app</strong> (o "Agregar a la pantalla principal").</p>
       <p class="small"><strong>iPhone (Safari):</strong> botón Compartir → <strong>Agregar a inicio</strong>.</p>
       <p class="small dim">Instalada funciona sin conexión con la última copia de los datos.</p>
+    </section>
+
+    <!-- Avanzado: solo para quien administra la app (token de GitHub, repo, Client ID de Google) -->
+    <section class="card advanced">
+      <button
+        type="button"
+        class="list-row advanced-toggle"
+        :aria-expanded="advancedOpen"
+        aria-controls="ajustes-avanzado"
+        @click="advancedOpen = !advancedOpen"
+      >
+        <span class="grow">
+          <strong>Avanzado (dueño de la app)</strong>
+          <span class="block small dim">Actualización forzada, GitHub y Google Calendar. No hace falta para usar la app.</span>
+        </span>
+        <AppIcon name="chevron" :size="18" class="settings-chev" :class="{ open: advancedOpen }" />
+      </button>
+
+      <div v-if="advancedOpen" id="ajustes-avanzado" class="advanced-body">
+        <h3>Forzar actualización</h3>
+        <p class="small dim">
+          "Forzar actualización" vuelve a leer ahora todas las fuentes oficiales (con GitHub Actions) en vez de esperar la
+          próxima actualización automática.
+          <template v-if="!canWriteRepo">El botón aparece cuando cargás el token de GitHub (abajo).</template>
+        </p>
+        <button v-if="canWriteRepo" type="button" class="btn btn-block" :disabled="busy" @click="forceUpdate">
+          Forzar actualización
+        </button>
+        <p v-if="updateMsg" class="notice" :class="updateErr ? 'notice-error' : 'notice-ok'">{{ updateMsg }}</p>
+
+        <h3>GitHub</h3>
+        <p class="small dim">
+          Sirve para cambiar la lista compartida de categorías y para "Forzar actualización". El token se guarda <strong>solo en este dispositivo</strong> y se usa únicamente contra
+          api.github.com.
+        </p>
+        <label class="field">
+          <span>Repositorio (owner/repo)</span>
+          <input
+            v-model.trim="githubRepo"
+            class="input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            autocapitalize="off"
+            :placeholder="envRepo || 'owner/repo'"
+          />
+        </label>
+        <label class="field">
+          <span>Token de acceso (fine-grained)</span>
+          <input
+            v-model.trim="githubToken"
+            class="input"
+            type="password"
+            autocomplete="off"
+            spellcheck="false"
+            placeholder="github_pat_…"
+          />
+        </label>
+        <details class="small">
+          <summary>Cómo crear el token</summary>
+          <ol>
+            <li>GitHub → Settings → Developer settings → Personal access tokens → <strong>Fine-grained tokens</strong>.</li>
+            <li>Repository access: <strong>Only select repositories</strong> → este repo.</li>
+            <li>Permisos: <strong>Contents: Read and write</strong> y <strong>Actions: Read and write</strong>.</li>
+            <li>Ponele vencimiento y pegalo acá.</li>
+          </ol>
+        </details>
+        <p v-if="githubToken && !repoRef" class="small" style="color: var(--error)">Falta el repositorio en formato owner/repo.</p>
+        <button v-if="githubToken" type="button" class="btn btn-small btn-danger" @click="githubToken = ''">Borrar token</button>
+
+        <h3>Google Calendar</h3>
+        <p class="small dim">
+          Para "Cargar en Google Calendar" hace falta un Client ID OAuth (tipo "Aplicación web") de Google Cloud con la
+          Calendar API habilitada y este sitio como origen autorizado. El calendario "Deporte Motor" tiene que existir.
+        </p>
+        <label class="field">
+          <span>Client ID de Google</span>
+          <input
+            v-model.trim="googleClientId"
+            class="input"
+            type="text"
+            autocomplete="off"
+            spellcheck="false"
+            :placeholder="envClientId || '1234-abc.apps.googleusercontent.com'"
+          />
+        </label>
+        <button type="button" class="btn btn-small" @click="logoutGoogle">Cerrar sesión de Google en la app</button>
+        <p v-if="googleMsg" class="small dim">{{ googleMsg }}</p>
+      </div>
     </section>
   </div>
 </template>
@@ -308,18 +354,22 @@ export default defineComponent({
       newGroup: 'otros' as SeriesGroup,
       groupLabels: GROUP_LABELS,
       themes: [
+        { value: 'system' as const, label: 'Según el sistema' },
         { value: 'dark' as const, label: 'Oscuro' },
         { value: 'light' as const, label: 'Claro' },
-        { value: 'system' as const, label: 'Según el sistema' },
       ],
+      /** Grupos de "Categorías visibles" desplegados (todos cerrados al entrar). */
+      openGroups: [] as SeriesGroup[],
+      /** Sección "Avanzado (dueño de la app)" desplegada. */
+      advancedOpen: false,
       envClientId: import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '',
       envRepo: import.meta.env.VITE_GITHUB_REPO ?? '',
     };
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'generatedAt', 'fetchedAt', 'loading', 'now']),
-    ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef']),
-    ...mapWritableState(useSettingsStore, ['timeZone', 'theme', 'googleClientId', 'githubRepo', 'githubToken']),
+    ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef', 'theme']),
+    ...mapWritableState(useSettingsStore, ['timeZone', 'googleClientId', 'githubRepo', 'githubToken']),
     zoneOptions(): Array<{ value: string; label: string }> {
       const list = [...ZONE_OPTIONS];
       for (const z of [deviceZone(), this.timeZone]) {
@@ -352,7 +402,27 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['load']),
-    ...mapActions(useSettingsStore, ['setSeriesVisible']),
+    ...mapActions(useSettingsStore, ['setSeriesVisible', 'setManyVisible', 'setTheme']),
+    isGroupOpen(group: SeriesGroup): boolean {
+      return this.openGroups.includes(group);
+    },
+    toggleGroup(group: SeriesGroup) {
+      this.openGroups = this.isGroupOpen(group) ? this.openGroups.filter((g) => g !== group) : [...this.openGroups, group];
+    },
+    /** Visibles en este dispositivo, sin contar las desactivadas para todos. */
+    visibleCount(items: Array<{ series: Series }>): number {
+      return items.filter((i) => i.series.enabled && !this.hiddenSeries.includes(i.series.id)).length;
+    },
+    enabledCount(items: Array<{ series: Series }>): number {
+      return items.filter((i) => i.series.enabled).length;
+    },
+    /** "Todas" / "Ninguna" de un grupo (las desactivadas para todos no se tocan: su casilla está bloqueada). */
+    setGroupVisible(items: Array<{ series: Series }>, visible: boolean) {
+      this.setManyVisible(
+        items.filter((i) => i.series.enabled).map((i) => i.series.id),
+        visible,
+      );
+    },
     color(s: Series): string {
       return seriesColor(s);
     },
@@ -483,6 +553,48 @@ export default defineComponent({
 
 .settings-group .section-title {
   margin-top: 0.9rem;
+}
+
+.settings-group-head {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.settings-group-toggle,
+.advanced-toggle {
+  flex: 1;
+  min-width: 0;
+  padding-left: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+  cursor: pointer;
+}
+
+.settings-group-head .btn-small {
+  padding: 0 0.5rem;
+}
+
+.settings-chev {
+  flex: none;
+  transition: transform 0.15s;
+}
+
+.settings-chev.open {
+  transform: rotate(90deg);
+}
+
+.advanced-toggle {
+  width: 100%;
+  padding-right: 0;
+}
+
+.advanced-body h3 {
+  margin: 1rem 0 0.3rem;
 }
 
 .settings-series {

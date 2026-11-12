@@ -38,18 +38,37 @@
         <button v-if="shareSupported" type="button" class="btn btn-block" :disabled="!exportItems.length" @click="share">
           <AppIcon name="share" :size="18" /> Compartir archivo .ics
         </button>
-        <button type="button" class="btn btn-block" :disabled="!exportItems.length || busy" @click="loadToGoogle">
-          <AppIcon name="calendar" :size="18" /> Cargar en Google Calendar
-        </button>
-        <button type="button" class="btn btn-block btn-ghost btn-small" :disabled="!exportItems.length || busy" @click="auditOnly">
-          Solo auditar el calendario
-        </button>
+        <template v-if="effectiveClientId">
+          <button type="button" class="btn btn-block" :disabled="!exportItems.length || busy" @click="loadToGoogle">
+            <AppIcon name="calendar" :size="18" /> Cargar en Google Calendar
+          </button>
+          <button type="button" class="btn btn-block btn-ghost btn-small" :disabled="!exportItems.length || busy" @click="auditOnly">
+            Solo auditar el calendario
+          </button>
+        </template>
         <p v-if="icsNote" class="small dim">{{ icsNote }}</p>
         <p class="small dim">
-          Horarios del .ics en UTC (tu calendario los muestra en tu hora). En Google Calendar se cargan en hora argentina
-          en el calendario "Deporte Motor", con aviso 30 minutos antes.
+          Horarios del .ics en UTC (tu calendario los muestra en tu hora).
+          <template v-if="effectiveClientId">
+            En Google Calendar se cargan en hora argentina en el calendario "Deporte Motor", con aviso 30 minutos antes.
+          </template>
         </p>
       </div>
+
+      <!-- Sin Client ID de Google la carga directa no funciona: la suscripción hace lo mismo y se actualiza sola. -->
+      <section class="card subscribe-card">
+        <h2 class="subscribe-title">{{ effectiveClientId ? 'O suscribite al calendario' : '¿Usás Google Calendar o el del iPhone?' }}</h2>
+        <p class="small">
+          <template v-if="!effectiveClientId">
+            La carga directa en Google Calendar no está configurada en esta app.
+          </template>
+          Suscribite al calendario de la agenda: se actualiza solo cuando cambian los horarios (próximos 60 días).
+        </p>
+        <a :href="webcal" class="btn btn-primary btn-block">
+          <AppIcon name="calendar" :size="18" /> Suscribirse al calendario
+        </a>
+        <RouterLink to="/ajustes" class="btn btn-block btn-ghost btn-small">Cómo agregarlo en Google Calendar</RouterLink>
+      </section>
 
       <section v-if="gcalLog.length || audit" class="gcal-section">
         <h2 class="section-title">Google Calendar</h2>
@@ -124,6 +143,7 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { seriesColor, type GridItem } from '../lib/grid.ts';
 import { formatDateTime } from '../lib/format.ts';
+import { webcalUrl } from '../lib/data.ts';
 import { canShareFile, downloadIcs, icsFile, shareIcs } from '../lib/download.ts';
 import { toExpectedEvent, type ExpectedEvent } from '../gcal/mapping.ts';
 import { eventInstant, planFixes, type CalendarAuditResult, type CalendarAuditRow, type CalendarAuditStatus, type CalendarEvent } from '../gcal/audit.ts';
@@ -151,6 +171,9 @@ export default defineComponent({
     ...mapState(useSettingsStore, ['timeZone', 'effectiveClientId']),
     expected(): ExpectedEvent[] {
       return this.exportItems.map((i) => toExpectedEvent(i));
+    },
+    webcal(): string {
+      return webcalUrl('feeds/deporte-motor.ics');
     },
     fixCount(): number {
       return this.audit ? planFixes(this.audit).length : 0;
@@ -317,6 +340,19 @@ export default defineComponent({
 
 .export-actions {
   margin-top: 1rem;
+}
+
+.subscribe-card {
+  margin-top: 1rem;
+}
+
+.subscribe-card .subscribe-title {
+  margin: 0 0 0.3rem;
+  font-size: 1.05rem;
+}
+
+.subscribe-card .btn + .btn {
+  margin-top: 0.4rem;
 }
 
 .ok-text {

@@ -26,6 +26,42 @@ export function teamNumbers(t: Team, seriesId: string): string[] {
   return [...out];
 }
 
+/** Piloto del plantel de un equipo en una categoría, con todos sus números (sin repetir). */
+export interface TeamRosterDriver {
+  id: string;
+  name: string;
+  numbers: string[];
+}
+
+export interface TeamRosterGroup {
+  seriesId: string;
+  drivers: TeamRosterDriver[];
+}
+
+const numValue = (n: string | undefined) => Number.parseInt(n ?? '', 10) || 9999;
+
+/**
+ * Plantel de un equipo agrupado por categoría (en el orden de `seriesIds`): cada piloto una sola vez por categoría,
+ * con sus números juntos ("#32 #46"), ordenados por su número más bajo y después por nombre.
+ */
+export function teamRoster(t: Team, seriesIds: string[] = teamSeriesIds(t)): TeamRosterGroup[] {
+  return seriesIds
+    .map((seriesId) => {
+      const byId = new Map<string, TeamRosterDriver>();
+      for (const d of t.drivers) {
+        if (d.seriesId !== seriesId) continue;
+        const row = byId.get(d.id) ?? { id: d.id, name: d.name, numbers: [] };
+        if (d.number && !row.numbers.includes(d.number)) row.numbers.push(d.number);
+        byId.set(d.id, row);
+      }
+      const drivers = [...byId.values()];
+      for (const d of drivers) d.numbers.sort((a, b) => numValue(a) - numValue(b) || a.localeCompare(b));
+      drivers.sort((a, b) => numValue(a.numbers[0]) - numValue(b.numbers[0]) || a.name.localeCompare(b.name, 'es'));
+      return { seriesId, drivers };
+    })
+    .filter((g) => g.drivers.length > 0);
+}
+
 /** Nombre de tabla que no agrega nada al lado de un equipo ("Equipos", "Teams"). */
 export const isGenericTeamTable = (table: string | undefined): boolean => !table || /^(equipos?|teams?)$/i.test(table.trim());
 
