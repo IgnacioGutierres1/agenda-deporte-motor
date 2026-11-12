@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { flushPromises, mount } from '@vue/test-utils';
 import { createPinia, setActivePinia, type Pinia } from 'pinia';
 import { createMemoryHistory, createRouter } from 'vue-router';
-import type { Driver, DriversFile, NewsItem, RosterFile, StandingsFile, TeamsFile } from '@dm/shared';
+import type { Driver, DriversIndexFile, NewsItem, RosterFile, StandingsFile, TeamsFile } from '@dm/shared';
 import CircuitView from '../src/views/CircuitView.vue';
 import DriverView from '../src/views/DriverView.vue';
 import EventView from '../src/views/EventView.vue';
@@ -48,7 +48,7 @@ const drivers: Driver[] = [
     recent: [],
   },
 ];
-const driversFile: DriversFile = { version: 1, generatedAt: NOW, drivers };
+const driversFile: DriversIndexFile = { version: 1, generatedAt: NOW, drivers };
 
 const teamsFile: TeamsFile = {
   version: 1,

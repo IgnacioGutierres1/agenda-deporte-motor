@@ -723,7 +723,8 @@ a.driver-link {
  * Links dentro de un texto: más área de toque (≥ 24 px de alto) sin mover el renglón.
  * Las tablas y listas usan filas enteras como link (min. 44 px).
  */
-a.tap-inline {
+a.tap-inline,
+button.tap-inline {
   display: inline-block;
   padding-block: 0.3rem;
   margin-block: -0.3rem;
@@ -895,4 +896,12 @@ a.team-link {
 .pos-badge.out {
   color: var(--text-dim);
   font-size: 0.8rem;
+}
+
+/* Subtítulo de una sola línea (resultados de búsqueda, sugerencias). */
+.one-line {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

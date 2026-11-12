@@ -101,6 +101,7 @@ import { useScheduleStore } from './stores/schedule.ts';
 import { timeAgo } from './lib/format.ts';
 import { refreshEverything } from './lib/refresh.ts';
 import { installState, promptInstall } from './lib/install.ts';
+import { navState } from './lib/navState.ts';
 import { syncPush } from './lib/push.ts';
 import { useSettingsStore } from './stores/settings.ts';
 
@@ -230,6 +231,8 @@ export default defineComponent({
       if (Date.now() - last > 10 * 60_000) void this.load();
     },
     isActive(item: NavItem): boolean {
+      // Ficha de un piloto o equipo que no existe: ninguna pestaña.
+      if (navState.notFound) return false;
       const path = this.$route.path;
       if (item.to === '/' ? path === '/' : path.startsWith(item.to)) return true;
       return item.match.some((m) => path.startsWith(m));

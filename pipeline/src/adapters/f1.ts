@@ -50,7 +50,8 @@ export function parseF1RoundPage(
   if (!meeting || !Array.isArray(meeting.meetingSessions)) {
     throw new Error(`No se encontró el cronograma en ${url}`);
   }
-  const round = !isTesting(meeting, slug) && meeting.meetingNumber ? Number(meeting.meetingNumber) : undefined;
+  const testing = isTesting(meeting, slug);
+  const round = !testing && meeting.meetingNumber ? Number(meeting.meetingNumber) : undefined;
   const source = htmlSource(url, `Formula 1 — ${meeting.meetingOfficialName || meeting.meetingName} (cronograma)`, ctx);
   const built = buildMeeting({
     series,
@@ -58,6 +59,7 @@ export function parseF1RoundPage(
     meeting,
     key: slug,
     ...(round !== undefined && Number.isFinite(round) ? { round } : {}),
+    ...(testing ? { kind: 'test' as const } : {}),
     source,
     sessionName: (s) => s.description || s.shortName || s.session,
   });

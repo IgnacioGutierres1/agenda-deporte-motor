@@ -40,7 +40,9 @@
       <div class="page">
         <!-- Resumen -->
         <template v-if="tab === 'resumen'">
-          <section class="card flush">
+          <!-- Sin fechas guardadas y la fuente falla: se explica en lugar de "Sin fechas próximas". -->
+          <SourceProblem v-if="sourceFailing && !events.length" :status="seriesStatus" :series="series" />
+          <section v-else class="card flush">
             <h3 class="card-title">Próximo evento</h3>
             <RouterLink v-if="next" :to="`/evento/${next.event.id}`" class="list-row next-event">
               <span class="date-box">
@@ -56,7 +58,12 @@
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
-            <p v-else class="card-foot dim">Sin fechas próximas publicadas.</p>
+            <p v-else class="card-foot dim">
+              {{ sourceFailing ? 'Sin fechas próximas en los datos guardados.' : 'Sin fechas próximas publicadas.' }}
+            </p>
+            <div v-if="sourceFailing && events.length" class="card-foot">
+              <SourceProblem :status="seriesStatus" :series="series" has-events />
+            </div>
           </section>
 
           <section v-if="recent.length" class="card flush">
@@ -81,7 +88,9 @@
               <span class="badge" :class="statusBadge.cls">{{ statusBadge.label }}</span>
               <span v-if="seriesStatus" class="dim"> · última verificación {{ ago(seriesStatus.lastAttempt) }}</span>
             </p>
-            <p v-if="seriesStatus?.message" class="small dim">{{ seriesStatus.message }}</p>
+            <SourceProblem v-if="sourceFailing" :status="seriesStatus" :series="series" variant="compact" />
+            <p v-else-if="seriesStatus?.message" class="small dim">{{ seriesStatus.message }}</p>
+            <p v-if="seriesStatus?.state === 'ok' && seriesStatus.timetables" class="small dim">{{ timetablesLine }}</p>
             <p class="small dim">
               {{ series.strategy === 'adapter' ? 'Lectura directa de la fuente oficial.' : 'Leído del sitio oficial (con IA cuando el documento no tiene estructura).' }}
             </p>
@@ -89,24 +98,27 @@
         </template>
 
         <!-- Calendario -->
-        <ul v-else-if="tab === 'calendario'" class="list-card">
-          <li v-if="!events.length" class="list-row dim">Sin eventos publicados.</li>
-          <li v-for="ev in events" :key="ev.id">
-            <RouterLink :to="`/evento/${ev.id}`" class="list-row" :class="{ past: isPast(ev) }">
-              <span class="date-box small-box">
-                <span class="date-day">{{ dayNum(ev.dateStart) }}</span>
-                <span class="date-month">{{ monthShort(ev.dateStart) }}</span>
-              </span>
-              <span class="grow">
-                <span v-if="showRound(ev)" class="dim small">Fecha {{ ev.round }} · </span>{{ ev.name }}
-                <span class="block small dim">{{ ev.circuit }}</span>
-              </span>
-              <span v-if="isPast(ev)" class="small dim">Final</span>
-              <span v-else-if="ev.sessionsStatus === 'pending'" class="small warn-text">A confirmar</span>
-              <AppIcon name="chevron" :size="16" class="dim" />
-            </RouterLink>
-          </li>
-        </ul>
+        <template v-else-if="tab === 'calendario'">
+          <SourceProblem v-if="sourceFailing" :status="seriesStatus" :series="series" :has-events="events.length > 0" />
+          <ul v-if="events.length || !sourceFailing" class="list-card">
+            <li v-if="!events.length" class="list-row dim">Sin eventos publicados.</li>
+            <li v-for="ev in events" :key="ev.id">
+              <RouterLink :to="`/evento/${ev.id}`" class="list-row" :class="{ past: isPast(ev) }">
+                <span class="date-box small-box">
+                  <span class="date-day">{{ dayNum(ev.dateStart) }}</span>
+                  <span class="date-month">{{ monthShort(ev.dateStart) }}</span>
+                </span>
+                <span class="grow">
+                  <span v-if="showRound(ev)" class="dim small">Fecha {{ ev.round }} · </span>{{ ev.name }}
+                  <span class="block small dim">{{ ev.circuit }}</span>
+                </span>
+                <span v-if="isPast(ev)" class="small dim">Final</span>
+                <span v-else-if="ev.sessionsStatus === 'pending'" class="small warn-text">A confirmar</span>
+                <AppIcon name="chevron" :size="16" class="dim" />
+              </RouterLink>
+            </li>
+          </ul>
+        </template>
 
         <!-- Tabla -->
         <StandingsPanel v-else-if="tab === 'tabla'" :series="series" />
@@ -150,13 +162,14 @@ import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
+import SourceProblem from '../components/SourceProblem.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
 import RosterPanel from '../components/RosterPanel.vue';
 import NewsList from '../components/NewsList.vue';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { formatDateRange, timeAgo } from '../lib/format.ts';
+import { formatDateRange, timeAgo, timetablesText } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
@@ -166,7 +179,7 @@ type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noti
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, DataState, FollowButton, NewsList, RosterPanel, SeriesCrest, StandingsPanel },
+  components: { AppIcon, DataState, FollowButton, NewsList, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
   directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
@@ -227,6 +240,13 @@ export default defineComponent({
     },
     seriesStatus(): SeriesStatus | undefined {
       return this.status?.series.find((s) => s.seriesId === this.series?.id);
+    },
+    timetablesLine(): string {
+      return this.seriesStatus?.timetables ? timetablesText(this.seriesStatus.timetables) : '';
+    },
+    /** La última lectura de la fuente oficial falló (o está vieja). */
+    sourceFailing(): boolean {
+      return this.seriesStatus?.state === 'error' || this.seriesStatus?.state === 'stale';
     },
     statusBadge(): { label: string; cls: string } {
       switch (this.seriesStatus?.state) {

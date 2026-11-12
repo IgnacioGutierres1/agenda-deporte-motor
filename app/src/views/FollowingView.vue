@@ -50,6 +50,7 @@
             <span>Agregar</span>
           </RouterLink>
         </div>
+        <StarterPack :kinds="['series']" />
         <RecommendationsCard title="Para vos" />
       </template>
 
@@ -86,6 +87,7 @@
             <p>Todavía no seguís ningún piloto.</p>
             <p class="small dim">Buscalo arriba o tocá su nombre en una tabla de campeonato o de resultados.</p>
           </div>
+          <StarterPack v-if="!followedDrivers.length" :kinds="['driver']" title="Pilotos para empezar" />
           <div v-else class="follow-grid">
             <RouterLink
               v-for="c in driverCards"
@@ -172,6 +174,7 @@ import FollowButton from '../components/FollowButton.vue';
 import DataState from '../components/DataState.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import RecommendationsCard from '../components/RecommendationsCard.vue';
+import StarterPack from '../components/StarterPack.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore, type FollowedDriver, type FollowedTeam } from '../stores/settings.ts';
 import { useDriversStore } from '../stores/drivers.ts';
@@ -203,7 +206,7 @@ interface FollowCard {
 /** Lo que sigue el usuario (como "Siguiendo" en FotMob): tarjetas con la próxima fecha. */
 export default defineComponent({
   name: 'FollowingView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, RecommendationsCard, SeriesCrest },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, RecommendationsCard, SeriesCrest, StarterPack },
   directives: { tabStrip },
   data() {
     return {

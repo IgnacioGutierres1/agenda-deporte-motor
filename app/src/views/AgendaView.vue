@@ -58,9 +58,6 @@
             <p class="center small dim">
               Tocá ★ en una categoría, un piloto o un equipo para verlo primero acá.
             </p>
-            <p class="center">
-              <RouterLink to="/categorias" class="pill choose-pill">Elegir categorías</RouterLink>
-            </p>
           </template>
           <template v-else-if="followedCards.length === 0 && followedPending.length === 0">
             <p class="center dim">{{ dayIsToday ? 'Hoy' : 'Este día' }} no corren tus categorías</p>
@@ -86,6 +83,10 @@
             @select="selected = $event"
           />
           <PendingList v-if="followedPending.length" :items="followedPending" :title="pendingTitle" />
+          <StarterPack variant="chips" />
+          <p v-if="followedIds.length === 0" class="center">
+            <RouterLink to="/categorias" class="pill choose-pill">Elegir categorías</RouterLink>
+          </p>
         </section>
 
         <div class="center">
@@ -134,6 +135,7 @@ import EventCard from '../components/EventCard.vue';
 import PendingList from '../components/PendingList.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import SessionSheet from '../components/SessionSheet.vue';
+import StarterPack from '../components/StarterPack.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import {
@@ -153,7 +155,7 @@ import type { GridItem, PendingItem } from '../lib/grid.ts';
 /** Pantalla principal: franja de días y sesiones agrupadas por evento (estilo FotMob). */
 export default defineComponent({
   name: 'AgendaView',
-  components: { AppIcon, DataState, EventCard, PendingList, SeriesCrest, SessionSheet },
+  components: { AppIcon, DataState, EventCard, PendingList, SeriesCrest, SessionSheet, StarterPack },
   directives: { tabStrip },
   data() {
     return {

@@ -8,6 +8,7 @@
  * 3. Gemini transcribe las sesiones; las horas que no figuran literalmente en el documento se descartan.
  * 4. Caché por serie + hash del documento: Gemini solo se llama cuando el documento cambió.
  */
+import path from 'node:path';
 import {
   slugify,
   type EventResultsFile,
@@ -18,8 +19,10 @@ import {
   type Source,
   type StandingsFile,
 } from '@dm/shared';
-import { classifySession } from '../core/builders.ts';
-import type { Adapter, AdapterContext, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
+import { classifySession, isNonRaceEvent } from '../core/builders.ts';
+import { seriesForSeason } from '../core/season.ts';
+import { readJson, writeJson } from '../core/store.ts';
+import type { Adapter, AdapterContext, MissingTimetable, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
 import { fetchDocument, fetchImages, looksLikePdf, type FetchedDocument } from '../extract/document.ts';
 import { getAi } from '../extract/ai-chain.ts';
 import { GeminiUnavailableError, MISSING_KEY_MESSAGE, type Gemini } from '../extract/gemini.ts';
@@ -67,6 +70,12 @@ const MAX_RESULT_DOCS = 3;
 /** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
 const MAX_CALENDAR_IMAGES = 16;
 const MAX_TIMETABLE_IMAGES = 3;
+/**
+ * Temporada siguiente sin lectura directa: la IA lee su calendario solo si la página ya nombra ese año al menos
+ * estas veces, y como mucho una vez por semana y serie (registro en data/_cache/next-season-ai.json).
+ */
+const NEXT_SEASON_MIN_MENTIONS = 3;
+const NEXT_SEASON_AI_EVERY_MS = 7 * 24 * 3600_000;
 
 export interface CalendarRead {
   entries: CalendarEntry[];
@@ -90,12 +99,13 @@ function recipeCtx(series: Series, ctx: AdapterContext): RecipeContext {
  * debería usarlo cualquier otra fase que lea la serie con ctx.season (p. ej. los inscriptos).
  */
 export async function withSeriesSeason(series: Series, ctx: AdapterContext): Promise<AdapterContext> {
-  const recipe = findRecipe(series.officialUrls[0] ?? '');
+  const resolved = seriesForSeason(series, ctx.season);
+  const recipe = findRecipe(resolved.officialUrls[0] ?? '');
   if (!recipe?.season) return ctx;
   try {
-    const season = await recipe.season(recipeCtx(series, ctx));
+    const season = await recipe.season(recipeCtx(resolved, ctx));
     if (season === ctx.season) return ctx;
-    ctx.log.info(`Temporada ${season}-${String(season + 1).slice(2)} (la que indica el sitio oficial)`);
+    ctx.log.info(`Temporada vigente: ${season} (la que indica el sitio oficial, no el año en curso)`);
     return { ...ctx, season };
   } catch (err) {
     ctx.log.warn(`No se pudo determinar la temporada vigente (${err instanceof Error ? err.message : String(err)}); se usa ${ctx.season}`);
@@ -126,8 +136,15 @@ export async function readCalendar(
     entries = entries.filter((e) => e.championship && championshipKey(e.championship) === key);
   }
   if (entries.length === 0) entries = jsonLdCalendar(doc, ctx.season);
+  entries = dropNonRaceEvents(entries, ctx);
   let read: FetchedDocument = doc;
   const trace = newTrace();
+  // Temporada siguiente sin lectura directa: IA solo si el sitio no tiene receta de calendario y la página ya
+  // la muestra (con tope semanal); si no, el calendario queda vacío y no se gasta cupo.
+  const nextSeasonAi = entries.length === 0 && ctx.nextSeason ? await nextSeasonAiGate(series, doc, ctx, !!recipe?.calendar) : null;
+  if (entries.length === 0 && ctx.nextSeason && !nextSeasonAi) {
+    return { entries, doc, source: { url: doc.url, title: doc.title || `Calendario ${series.shortName} ${ctx.season}`, kind: doc.kind, method: 'directo', fetchedAt: isoNow(ctx.now) } };
+  }
   if (entries.length === 0) {
     method = 'ia';
     let dropped = 0;
@@ -141,10 +158,18 @@ export async function readCalendar(
     };
     try {
       const ai = aiDeps(ctx, deps);
-      entries = await aiCalendar(ai, series, doc, ctx.season, aiOpts);
+      try {
+        entries = await aiCalendar(ai, series, doc, ctx.season, aiOpts);
+      } catch (err) {
+        // Sin IA disponible no hubo pedido: no cuenta para el tope semanal de la temporada siguiente.
+        if (!(err instanceof GeminiUnavailableError)) await nextSeasonAi?.record();
+        throw err;
+      }
+      await nextSeasonAi?.record();
       // Calendario publicado como imágenes (una por fecha, p. ej. Turismo Pista): se leen las imágenes.
-      // (No si Gemini sí encontró eventos en el texto pero sin días concretos: las imágenes no los van a tener.)
-      if (entries.length === 0 && dropped === 0 && doc.kind === 'html') {
+      // (No si Gemini sí encontró eventos en el texto pero sin días concretos: las imágenes no los van a tener;
+      // tampoco para la temporada siguiente, que espera al 1 de enero antes que gastar cupo en imágenes.)
+      if (entries.length === 0 && dropped === 0 && doc.kind === 'html' && !ctx.nextSeason) {
         const imgTrace = newTrace();
         const img = await imageDocument(ai, series.id, doc, await fetchImages(ctx.http, contentImages(doc.raw, doc.url).slice(0, MAX_CALENDAR_IMAGES)), imgTrace);
         if (img) {
@@ -163,6 +188,7 @@ export async function readCalendar(
           if (entries.length > 0) read = { ...img, url: doc.url };
         }
       }
+      entries = dropNonRaceEvents(entries, ctx);
     } catch (err) {
       if (err instanceof GeminiUnavailableError) {
         throw new Error(`${err.message}: el calendario oficial (${target}) no se puede leer sin IA`);
@@ -182,9 +208,51 @@ export async function readCalendar(
   return { entries, doc, source };
 }
 
+/** Saca del calendario las galas, premiaciones y presentaciones (no son eventos de pista). */
+function dropNonRaceEvents(entries: CalendarEntry[], ctx: AdapterContext): CalendarEntry[] {
+  return entries.filter((e) => {
+    if (!isNonRaceEvent(e.name)) return true;
+    ctx.log.info(`Calendario: "${e.name}" no es un evento de pista (gala, premiación o presentación); se omite`);
+    return false;
+  });
+}
+
+type NextSeasonAiLog = Record<string, string>;
+
+/**
+ * ¿Se puede gastar IA en el calendario de la temporada siguiente? Solo si:
+ * - el sitio no tiene receta de calendario (si la tiene y no encontró fechas de ese año, es que no están);
+ * - la página nombra ese año al menos NEXT_SEASON_MIN_MENTIONS veces (si no, todavía muestra la terminada);
+ * - no se probó en la última semana (data/_cache/next-season-ai.json): aunque el documento cambie en cada
+ *   corrida, como mucho un pedido por semana y serie.
+ * Devuelve con qué registrar el intento (se llama al pedirle a la IA), o null si no corresponde.
+ */
+async function nextSeasonAiGate(
+  series: Series,
+  doc: FetchedDocument,
+  ctx: AdapterContext,
+  hasRecipe: boolean,
+): Promise<{ record(): Promise<void> } | null> {
+  if (hasRecipe) return null;
+  const mentions = doc.text.match(new RegExp(`(?<!\\d)${ctx.season}(?!\\d)`, 'g'))?.length ?? 0;
+  if (mentions < NEXT_SEASON_MIN_MENTIONS) return null;
+  const file = path.join(ctx.cacheDir, 'next-season-ai.json');
+  const key = `${series.id}|${ctx.season}`;
+  const last = Date.parse((await readJson<NextSeasonAiLog>(file).catch(() => null))?.[key] ?? '');
+  if (Number.isFinite(last) && ctx.now.getTime() - last < NEXT_SEASON_AI_EVERY_MS) return null;
+  ctx.log.info(`Temporada ${ctx.season}: la página la nombra ${mentions} veces; se lee su calendario con IA`);
+  return {
+    async record() {
+      const log = (await readJson<NextSeasonAiLog>(file).catch(() => null)) ?? {};
+      log[key] = isoNow(ctx.now);
+      await writeJson(file, log);
+    },
+  };
+}
+
 /** Claves estables de evento: número de fecha/ronda si existe, si no el nombre; desambigua repetidos. */
 export function eventKeys(entries: CalendarEntry[]): string[] {
-  const keys = entries.map((e) => (e.round !== undefined ? `r${e.round}` : slugify(e.name)));
+  const keys = entries.map((e) => e.key ?? (e.round !== undefined ? `r${e.round}` : slugify(e.name)));
   return keys.map((k, i) => (keys.indexOf(k) !== i || keys.lastIndexOf(k) !== i ? `${k}|${entries[i]!.dateEnd}` : k));
 }
 
@@ -197,8 +265,11 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       return !!(url && findRecipe(url)?.standings);
     },
 
-    async schedule(series, baseCtx): Promise<ScheduleChunk> {
-      const ctx = await withSeriesSeason(series, baseCtx);
+    async schedule(template, baseCtx): Promise<ScheduleChunk> {
+      const ctx = await withSeriesSeason(template, baseCtx);
+      // Temporada de invierno (ALMS): la vigente la dice el sitio; la "siguiente" del año calendario no aplica.
+      if (baseCtx.nextSeason && ctx.season !== baseCtx.season) return { events: [], sessions: [] };
+      const series = seriesForSeason(template, ctx.season);
       const url = series.officialUrls[0];
       if (!url) throw new Error('La serie no tiene URL oficial (officialUrls[0])');
       const cal = await readCalendar(series, url, ctx, deps);
@@ -214,6 +285,7 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       const prevSessions = ctx.previous?.sessions ?? [];
       const events: MotorEvent[] = [];
       const sessions: Session[] = [];
+      const missing: MissingTimetable[] = [];
       let needsKey = 0;
       let unavailable = MISSING_KEY_MESSAGE;
 
@@ -233,11 +305,14 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
           source: cal.source,
         });
         let found: SessionsFound | null = null;
+        // Un error al buscar o leer el cronograma (o la falta de IA) no es lo mismo que "todavía no publicado".
+        let unreadable = false;
         const inHorizon = entry.dateEnd >= from && entry.dateStart <= to;
         if (inHorizon) {
           try {
             found = await findSessions(series, entry, cal, ctx, deps);
           } catch (err) {
+            unreadable = true;
             if (err instanceof GeminiUnavailableError) {
               needsKey++;
               unavailable = err.message;
@@ -270,16 +345,18 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
           const kept = prevSessions.filter((s) => s.eventId === draft.id);
           events.push(kept.length > 0 ? { ...draft, sessionsStatus: 'published' } : draft);
           sessions.push(...kept);
+          if (inHorizon && kept.length === 0) missing.push({ eventId: draft.id, reason: unreadable ? 'ilegible' : 'no-publicado' });
         }
       }
       if (needsKey > 0) {
         ctx.log.warn(`${unavailable}: ${needsKey} cronograma(s) dentro del horizonte quedan "a confirmar"`);
       }
-      return { events, sessions };
+      return { events, sessions, ...(missing.length ? { missingTimetables: missing } : {}) };
     },
 
-    async results(series, ctx, req): Promise<ResultsChunk> {
-      return genericResults(series, await withSeriesSeason(series, ctx), req, deps);
+    async results(template, baseCtx, req): Promise<ResultsChunk> {
+      const ctx = await withSeriesSeason(template, baseCtx);
+      return genericResults(seriesForSeason(template, ctx.season), ctx, req, deps);
     },
   };
 }
@@ -318,7 +395,8 @@ async function findSessions(
 
   const result = await aiTimetable(aiDeps(ctx, deps), series, entry, doc.doc, trace);
   for (const d of result.dropped) ctx.log.warn(`${entry.name}: sesión descartada "${d.name}": ${d.reason}`);
-  if (result.sessions.length === 0) return null;
+  // Había un documento de cronograma pero no salió ninguna sesión válida: no es "todavía no publicado".
+  if (result.sessions.length === 0) throw new Error(`el cronograma (${doc.doc.url}) no tiene sesiones legibles`);
   const model = traceModel(trace);
   return {
     sessions: result.sessions,

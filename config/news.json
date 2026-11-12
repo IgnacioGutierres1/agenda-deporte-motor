@@ -1,7 +1,10 @@
 {
   "maxAgeDays": 10,
-  "maxItems": 250,
-  "maxPerFeed": 40,
+  "maxItems": 450,
+  "maxPerFeed": 80,
+  "maxPerFeedPerDay": 10,
+  "maxPerSeriesPerDay": 14,
+  "imageFetchesPerRun": 12,
   "summaryMaxChars": 240,
   "feeds": [
     {

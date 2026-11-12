@@ -92,12 +92,20 @@ export function overlaps(period: Period, startUtc: string, endUtc: string): bool
   return startUtc < period.endUtc && endUtc > period.startUtc;
 }
 
+const DAY_MS = 86_400_000;
+const MARGIN_MS = 15 * 3_600_000;
+
 /**
  * true si un evento (fechas locales YYYY-MM-DD, inclusivas) cae dentro del período.
  * Los límites van sin milisegundos, igual que los del período: se comparan como texto y
  * "…T03:00:00.000Z" < "…T03:00:00Z" haría que un evento que empieza justo al terminar el día cuente para ese día.
  */
 export function eventInPeriod(period: Period, dateStart: string, dateEnd: string, zone: string): boolean {
+  // Descarte rápido sin luxon (la Agenda lo llama para cada evento): el día local empieza entre las
+  // 14 h antes y las 12 h después de la medianoche UTC de esa fecha, así que con 15 h de margen alcanza.
+  const lo = Date.parse(`${dateStart}T00:00:00Z`) - MARGIN_MS;
+  const hi = Date.parse(`${dateEnd}T00:00:00Z`) + DAY_MS + MARGIN_MS;
+  if (hi <= Date.parse(period.startUtc) || lo >= Date.parse(period.endUtc)) return false;
   const a = DateTime.fromISO(dateStart, { zone }).startOf('day').toUTC().toISO({ suppressMilliseconds: true })!;
   const b = DateTime.fromISO(dateEnd, { zone }).startOf('day').plus({ days: 1 }).toUTC().toISO({ suppressMilliseconds: true })!;
   return overlaps(period, a, b);

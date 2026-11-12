@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import { markRaw } from 'vue';
 import { DateTime } from 'luxon';
 import {
   PERIOD_LABELS,
@@ -185,8 +186,11 @@ export const useScheduleStore = defineStore('schedule', {
           fetchData<ScheduleFile>('schedule.json', opts),
           fetchData<StatusFile>('status.json', opts).catch(() => null),
         ]);
-        this.schedule = schedule;
-        this.status = status;
+        // Sin proxies reactivos: el archivo se reemplaza entero en cada carga y nunca se modifica en el lugar.
+        // Con miles de sesiones, los proxies (y el $subscribe profundo de persistStore, que recorría todo
+        // el archivo en cada cambio) eran la mayor parte del tiempo de bloqueo al abrir la app.
+        this.schedule = markRaw(schedule);
+        this.status = status ? markRaw(status) : null;
         this.error = null;
         this.missing = false;
         this.fetchedAt = nowIso();

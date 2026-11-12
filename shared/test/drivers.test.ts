@@ -54,3 +54,21 @@ describe('pilotos', () => {
     expect(driverInitials('Marc Marquez')).toBe('MM');
   });
 });
+
+describe('grupos de fichas de pilotos', () => {
+  it('el shard es estable (lo comparten el pipeline y la app) y reparte parejo', async () => {
+    const { driverShard, driverShardPath, DRIVER_SHARDS } = await import('../src/drivers.ts');
+    expect(driverShard('agustin-canapino')).toMatch(/^[0-9a-f]{2}$/);
+    expect(driverShard('agustin-canapino')).toBe(driverShard('agustin-canapino'));
+    expect(driverShardPath('max-verstappen')).toBe(`drivers/${driverShard('max-verstappen')}.json`);
+    // Valor fijo: si cambia el hash, cambian las rutas publicadas y las apps instaladas piden otros archivos.
+    expect(driverShard('a')).toBe('2c');
+    const counts = new Map<string, number>();
+    for (let i = 0; i < 2000; i++) {
+      const k = driverShard(`piloto-${i}`);
+      counts.set(k, (counts.get(k) ?? 0) + 1);
+    }
+    expect(counts.size).toBeGreaterThan(DRIVER_SHARDS * 0.9);
+    expect(Math.max(...counts.values())).toBeLessThan(30);
+  });
+});

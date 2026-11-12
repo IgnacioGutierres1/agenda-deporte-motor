@@ -6,7 +6,7 @@
  *   4. Busca resultados de sesiones terminadas y actualiza campeonatos.
  *   5. Lee las listas oficiales de inscriptos vencidas (data/rosters/**, sin IA; si fallan se conservan).
  *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/drivers.json,
- *      data/teams.json y data/feeds/*.ics.
+ *      data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
  *   7. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
  * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-news] [--dry-run]
@@ -30,11 +30,13 @@ import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { buildFeed } from './core/feed.ts';
 import { buildIndexFromData } from './core/drivers.ts';
+import { writeDriverFiles } from './core/driver-files.ts';
 import { createLogger } from './core/log.ts';
 import { mergeRun, type SeriesOutcome } from './core/merge.ts';
 import { CACHE_DIR, DATA_DIR } from './core/paths.ts';
 import { collectExistingResults, runResultsForSeries, type AttemptsLog } from './core/results.ts';
 import { runRosters } from './core/rosters.ts';
+import { hasSeasonToken, scheduleWithNextSeason, seriesForSeason } from './core/season.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
 import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
@@ -84,6 +86,16 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
 
   const selected = config.series.filter((s) => !opts.only || opts.only.includes(s.id));
   const outcomes = new Map<string, SeriesOutcome>();
+  // Lo publicado (schedule.series, sourceUrl de los estados) lleva las URL de la temporada vigente de cada serie;
+  // los lectores reciben la serie con los marcadores {season} y los resuelven según la temporada que leen.
+  const published = await Promise.all(
+    config.series.map(async (s) =>
+      [...s.officialUrls, ...(s.rosterUrls ?? [])].some(hasSeasonToken)
+        ? seriesForSeason(s, (await withSeriesSeason(s, { ...ctx, log: log.child(s.id) })).season)
+        : s,
+    ),
+  );
+  const publishedById = new Map(published.map((s) => [s.id, s]));
 
   // Con --only, las series no seleccionadas conservan sus datos anteriores tal cual.
   const untouched = opts.only ? config.series.filter((s) => !opts.only!.includes(s.id)) : [];
@@ -96,10 +108,11 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     const slog = log.child(series.id);
     try {
       const adapter = resolveAdapter(series);
-      const chunk = await adapter.schedule(series, { ...ctx, log: slog });
+      // Si la temporada ya terminó, también la siguiente (si el sitio oficial ya la publica).
+      const chunk = await scheduleWithNextSeason(adapter, series, { ...ctx, log: slog });
       const { valid, issues } = validateSessions(chunk.sessions, chunk.events);
       for (const i of issues) slog.warn(`Sesión descartada ${i.sessionId}: ${i.reason}`);
-      outcomes.set(series.id, { kind: 'ok', chunk: { events: chunk.events, sessions: valid } });
+      outcomes.set(series.id, { kind: 'ok', chunk: { ...chunk, sessions: valid } });
       slog.info(`${chunk.events.length} eventos, ${valid.length} sesiones`);
     } catch (err) {
       const error = err instanceof Error ? err : new Error(String(err));
@@ -108,7 +121,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     }
   });
 
-  const merged = mergeRun(selected, outcomes, previous, prevStatusMap, nowIso);
+  const merged = mergeRun(selected.map((s) => publishedById.get(s.id) ?? s), outcomes, previous, prevStatusMap, nowIso, ctx.horizonDays);
   for (const s of untouched) {
     merged.events.push(...(previous?.events ?? []).filter((e) => e.seriesId === s.id));
     merged.sessions.push(...(previous?.sessions ?? []).filter((x) => x.seriesId === s.id));
@@ -150,14 +163,14 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   const schedule: ScheduleFile = {
     version: 1,
     generatedAt: nowIso,
-    series: config.series,
+    series: published,
     events: merged.events,
     sessions: merged.sessions.sort((a, b) => a.startUtc.localeCompare(b.startUtc)),
   };
   const status: StatusFile = {
     version: 1,
     generatedAt: nowIso,
-    series: sortStatuses(merged.statuses, config.series),
+    series: sortStatuses(merged.statuses, published),
   };
 
   scheduleFileSchema.parse(schedule);
@@ -182,19 +195,20 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   }
 
   // Índices de pilotos y equipos (tablas, inscriptos y resultados de carreras ya publicados).
-  const { drivers, teams } = await buildIndexFromData(dataDir, config.series, schedule.events, schedule.sessions, nowIso, freshRosters);
+  const { drivers, teams } = await buildIndexFromData(dataDir, published, schedule.events, schedule.sessions, nowIso, freshRosters);
   driversFileSchema.parse(drivers);
   teamsFileSchema.parse(teams);
 
   if (!opts.dryRun) {
     await writeJson(path.join(dataDir, 'schedule.json'), schedule);
     await writeJson(path.join(dataDir, 'status.json'), status);
-    await writeJson(path.join(dataDir, 'drivers.json'), drivers);
-    await writeJson(path.join(dataDir, 'teams.json'), teams);
+    // drivers.json y teams.json completos, más el índice liviano y las fichas por grupo (solo las que cambiaron).
+    const files = await writeDriverFiles(dataDir, drivers, teams);
+    log.info(`Fichas de pilotos: ${files.written} grupos escritos, ${files.unchanged} sin cambios, ${files.removed} borrados`);
     await writeJson(attemptsFile, attempts);
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
-      buildFeed(config.series, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
+      buildFeed(published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
     );
   }
 

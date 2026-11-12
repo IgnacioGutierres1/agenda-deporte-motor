@@ -192,7 +192,8 @@ export function clip(text: string, max = 240): string {
 const NOT_CONTENT_IMAGE =
   /logo|icon|favicon|sponsor|banner|publicidad|advert|avatar|emoji|gravatar|placeholder|spinner|loading|pixel|tracking|feedburner|share|button/i;
 
-function httpImage(src: string | undefined, base: string): string | undefined {
+/** Link http(s) absoluto de una imagen de contenido (no GIF, SVG, logo, ícono ni publicidad). */
+export function httpImage(src: string | undefined, base: string): string | undefined {
   if (!src || src.startsWith('data:')) return undefined;
   const url = absoluteUrl(decodeEntities(src), base);
   if (!url) return undefined;

@@ -44,6 +44,7 @@ export const eventSchema = z.object({
   dateStart: isoDate,
   dateEnd: isoDate,
   sessionsStatus: z.enum(['published', 'pending']),
+  kind: z.enum(['test']).optional(),
   source: sourceSchema,
 });
 
@@ -87,6 +88,7 @@ export const statusFileSchema = z.object({
       message: z.string().optional(),
       sourceUrl: z.string().optional(),
       standingsAvailable: z.boolean(),
+      timetables: z.object({ found: z.number().int().nonnegative(), due: z.number().int().positive() }).optional(),
     }),
   ),
 });
@@ -166,48 +168,64 @@ export const discoveredFileSchema = z.object({
   ),
 });
 
+const driverSummarySchema = z.object({
+  id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
+  name: z.string().min(1),
+  entries: z.array(
+    z.object({
+      seriesId: z.string(),
+      table: z.string().optional(),
+      pos: z.number().int().positive(),
+      points: z.number(),
+      wins: z.number().int().nonnegative().optional(),
+      number: z.string().optional(),
+      team: z.string().optional(),
+    }),
+  ),
+  country: z.string().optional(),
+  lineups: z
+    .array(
+      z.object({
+        seriesId: z.string(),
+        team: z.string().optional(),
+        number: z.string().optional(),
+        vehicle: z.string().optional(),
+        class: z.string().optional(),
+      }),
+    )
+    .optional(),
+});
+
+const driverDetailSchema = driverSummarySchema.extend({
+  recent: z.array(
+    z.object({
+      seriesId: z.string(),
+      eventId: z.string(),
+      sessionId: z.string(),
+      startUtc: isoUtc,
+      pos: z.number().int().positive().nullable(),
+      status: z.string().optional(),
+    }),
+  ),
+});
+
 export const driversFileSchema = z.object({
   version: z.literal(1),
   generatedAt: isoUtc,
-  drivers: z.array(
-    z.object({
-      id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
-      name: z.string().min(1),
-      entries: z.array(
-        z.object({
-          seriesId: z.string(),
-          table: z.string().optional(),
-          pos: z.number().int().positive(),
-          points: z.number(),
-          wins: z.number().int().nonnegative().optional(),
-          number: z.string().optional(),
-          team: z.string().optional(),
-        }),
-      ),
-      country: z.string().optional(),
-      lineups: z
-        .array(
-          z.object({
-            seriesId: z.string(),
-            team: z.string().optional(),
-            number: z.string().optional(),
-            vehicle: z.string().optional(),
-            class: z.string().optional(),
-          }),
-        )
-        .optional(),
-      recent: z.array(
-        z.object({
-          seriesId: z.string(),
-          eventId: z.string(),
-          sessionId: z.string(),
-          startUtc: isoUtc,
-          pos: z.number().int().positive().nullable(),
-          status: z.string().optional(),
-        }),
-      ),
-    }),
-  ),
+  drivers: z.array(driverDetailSchema),
+});
+
+/** data/drivers-index.json: sin las últimas carreras (strict: que no se cuelen campos pesados). */
+export const driversIndexFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  drivers: z.array(driverSummarySchema.strict()),
+});
+
+/** data/drivers/{shard}.json */
+export const driverShardFileSchema = z.object({
+  version: z.literal(1),
+  drivers: z.array(driverDetailSchema),
 });
 
 export const rosterFileSchema = z.object({
@@ -269,6 +287,9 @@ export const newsFileSchema = z.object({
       summary: z.string().optional(),
       seriesIds: z.array(z.string()),
       lang: z.string().optional(),
+      alsoIn: z
+        .array(z.object({ source: z.string().min(1), url: z.string().url(), lang: z.string().optional() }))
+        .optional(),
     }),
   ),
 });

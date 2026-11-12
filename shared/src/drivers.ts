@@ -47,7 +47,15 @@ export interface Driver {
   entries: DriverEntry[];
   /** Categorías en las que figura inscripto (listas oficiales de inscriptos). */
   lineups?: DriverLineup[];
-  /** Últimas carreras, de la más reciente a la más vieja. */
+  /**
+   * Últimas carreras, de la más reciente a la más vieja. Solo viene en la ficha completa
+   * (data/drivers/{shard}.json y data/drivers.json); el índice liviano no la trae.
+   */
+  recent?: DriverResult[];
+}
+
+/** Ficha completa de un piloto: lo del índice más sus últimas carreras. */
+export interface DriverDetail extends Driver {
   recent: DriverResult[];
 }
 
@@ -98,11 +106,51 @@ export function teamId(raw: string): string {
   return slugify(teamKey(raw));
 }
 
-/** Contenido de data/drivers.json */
+/** Contenido de data/drivers.json (todas las fichas completas; se sigue publicando por compatibilidad). */
 export interface DriversFile {
   version: 1;
   generatedAt: string;
+  drivers: DriverDetail[];
+}
+
+/**
+ * Contenido de data/drivers-index.json: un renglón por piloto, sin las últimas carreras. Alcanza para
+ * buscar, listar, recomendar y seguir pilotos; la ficha se pide aparte (ver driverShard).
+ */
+export interface DriversIndexFile {
+  version: 1;
+  generatedAt: string;
   drivers: Driver[];
+}
+
+/**
+ * Contenido de data/drivers/{shard}.json: fichas completas de los pilotos de ese grupo, ordenadas por id.
+ * No lleva fecha de generación para que el archivo solo cambie cuando cambia algún piloto.
+ */
+export interface DriverShardFile {
+  version: 1;
+  drivers: DriverDetail[];
+}
+
+/** Cantidad de grupos de fichas de pilotos (data/drivers/00.json … ff.json). */
+export const DRIVER_SHARDS = 256;
+
+/**
+ * Grupo de la ficha de un piloto: "agustin-canapino" -> "3f" (FNV-1a de 32 bits del id, módulo 256).
+ * Lo usan el pipeline para escribir y la app para pedir; si cambia, cambia la ruta de todos los archivos.
+ */
+export function driverShard(id: string): string {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < id.length; i++) {
+    h ^= id.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return (h % DRIVER_SHARDS).toString(16).padStart(2, '0');
+}
+
+/** Ruta (dentro de data/) del archivo con la ficha de un piloto. */
+export function driverShardPath(id: string): string {
+  return `drivers/${driverShard(id)}.json`;
 }
 
 const TEAM_TABLE = /equipo|team|constructor|propietario|owner|marca|manufacturer|fabricante|maker|escuder/i;
