@@ -253,8 +253,16 @@ export default defineComponent({
       return seriesColor(this.seriesById.get(t.entries[0]?.seriesId ?? t.drivers[0]?.seriesId ?? ''));
     },
     teamSummary(t: Team): string {
-      return t.entries
-        .map((e) => `${this.seriesById.get(e.seriesId)?.shortName ?? e.seriesId}${e.pos ? ' P' + e.pos : ''}${e.numbers?.length ? ' ' + e.numbers.map((n) => '#' + n).join(' ') : ''}`)
+      // Una línea por categoría: la posición de la primera tabla (la general) y todos sus números de auto.
+      const bySeries = new Map<string, { pos?: number; numbers: Set<string> }>();
+      for (const e of t.entries) {
+        const s = bySeries.get(e.seriesId) ?? { numbers: new Set<string>() };
+        if (s.pos === undefined && e.pos) s.pos = e.pos;
+        e.numbers?.forEach((n) => s.numbers.add(n));
+        bySeries.set(e.seriesId, s);
+      }
+      return [...bySeries]
+        .map(([id, s]) => `${this.seriesById.get(id)?.shortName ?? id}${s.pos ? ' P' + s.pos : ''}${s.numbers.size ? ' ' + [...s.numbers].map((n) => '#' + n).join(' ') : ''}`)
         .join(' · ');
     },
     circuitColor(c: Circuit): string {

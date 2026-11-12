@@ -105,20 +105,68 @@ export function rosterFromStandings(standings: StandingsFile): { rows: RosterRow
   return { rows, teams: [...teams] };
 }
 
-/** Bandera para códigos ISO de dos letras ("AR" -> 🇦🇷); '' para el resto. */
+/** Nombres que publican las listas oficiales y que no coinciden con el nombre en inglés de Intl. */
+const COUNTRY_ALIASES: Record<string, string> = {
+  'great britain': 'GB',
+  england: 'GB',
+  scotland: 'GB',
+  wales: 'GB',
+  'united states of america': 'US',
+  usa: 'US',
+  holland: 'NL',
+  'hong kong sar china': 'HK',
+  'south korea': 'KR',
+  korea: 'KR',
+  russia: 'RU',
+  'czech republic': 'CZ',
+  turkey: 'TR',
+  'macao sar china': 'MO',
+  macau: 'MO',
+};
+
+let englishToCode: Map<string, string> | null = null;
+
+/** Código ISO de dos letras a partir del código o del nombre en inglés ("Germany" -> "DE"); '' si no se reconoce. */
+export function countryCode(country: string | undefined): string {
+  const c = (country ?? '').trim();
+  if (/^[A-Za-z]{2}$/.test(c)) return c.toUpperCase();
+  const key = c.toLowerCase();
+  if (!key) return '';
+  if (COUNTRY_ALIASES[key]) return COUNTRY_ALIASES[key]!;
+  if (!englishToCode) {
+    englishToCode = new Map();
+    try {
+      const en = new Intl.DisplayNames(['en'], { type: 'region' });
+      for (let a = 65; a <= 90; a++) {
+        for (let b = 65; b <= 90; b++) {
+          const code = String.fromCharCode(a, b);
+          const name = en.of(code);
+          // El primero gana: "FR" antes que códigos viejos con el mismo nombre ("FX").
+          if (name && name !== code && !englishToCode.has(name.toLowerCase())) englishToCode.set(name.toLowerCase(), code);
+        }
+      }
+    } catch {
+      // Sin Intl.DisplayNames: se muestra el país tal como vino.
+    }
+  }
+  return englishToCode.get(key) ?? '';
+}
+
+/** Bandera del país ("AR" o "Argentina" -> 🇦🇷); '' si no se reconoce. */
 export function countryFlag(country: string | undefined): string {
-  const c = (country ?? '').trim().toUpperCase();
-  if (!/^[A-Z]{2}$/.test(c)) return '';
+  const c = countryCode(country);
+  if (!c) return '';
   return String.fromCodePoint(...[...c].map((ch) => 0x1f1e6 + ch.charCodeAt(0) - 65));
 }
 
-/** Nombre del país en castellano para códigos ISO de dos letras ("IT" -> "Italia"); el resto, tal cual. */
+/** Nombre del país en castellano ("IT" o "Italy" -> "Italia"); si no se reconoce, tal cual. */
 export function countryName(country: string | undefined): string {
-  const c = (country ?? '').trim();
-  if (!/^[A-Za-z]{2}$/.test(c)) return c;
+  const raw = (country ?? '').trim();
+  const c = countryCode(raw);
+  if (!c) return raw;
   try {
-    return new Intl.DisplayNames(['es'], { type: 'region' }).of(c.toUpperCase()) ?? c;
+    return new Intl.DisplayNames(['es'], { type: 'region' }).of(c) ?? raw;
   } catch {
-    return c;
+    return raw;
   }
 }

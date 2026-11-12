@@ -60,11 +60,23 @@ describe('plantel', () => {
     expect(out.teams).toEqual(['Salvita Racing']);
   });
 
-  it('bandera solo para códigos ISO de dos letras', () => {
+  it('bandera por código ISO o nombre en inglés', () => {
     expect(countryFlag('AR')).toBe('🇦🇷');
-    expect(countryFlag('Argentina')).toBe('');
+    expect(countryFlag('Argentina')).toBe('🇦🇷');
     expect(countryFlag(undefined)).toBe('');
     expect(countryName('it')).toBe('Italia');
     expect(countryName('Argentina')).toBe('Argentina');
+  });
+});
+
+describe('países en castellano', () => {
+  it('traduce nombres en inglés y códigos, con bandera', async () => {
+    const { countryName, countryFlag } = await import('../src/lib/roster.ts');
+    expect(countryName('Germany')).toBe('Alemania');
+    expect(countryName('Great Britain')).toBe('Reino Unido');
+    expect(countryName('IT')).toBe('Italia');
+    expect(countryFlag('France')).toBe('🇫🇷');
+    expect(countryName('Atlantis')).toBe('Atlantis');
+    expect(countryFlag('Atlantis')).toBe('');
   });
 });

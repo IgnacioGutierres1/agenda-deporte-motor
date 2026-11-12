@@ -10,13 +10,14 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 |---|---|
 | **Agenda** | Franja de días (y "Finde"): sesiones del día agrupadas por evento; primero lo que seguís. Ícono de calendario → exportar (`.ics`, Google Calendar, suscripción). |
 | **Noticias** | Notas de sitios oficiales y medios especializados (RSS): Para ti / Últimas / Por categoría. Siempre se leen en el sitio original. |
-| **Categorías** | Todas las categorías; cada una con Resumen, Calendario, Tabla de campeonato, Resultados y Noticias. |
-| **Siguiendo** | Categorías y pilotos seguidos (se guardan en el dispositivo). Ficha de piloto con campeonatos, próximas y últimas carreras. |
-| **Buscar** | Categorías, pilotos, eventos/circuitos y noticias. |
+| **Categorías** | Todas las categorías (incluido el grupo Asia y Oceanía); cada una con Resumen, Calendario, Tabla de campeonato, Resultados, Plantel (pilotos, equipos, números y autos) y Noticias. |
+| **Siguiendo** | Categorías y pilotos seguidos (se guardan en el dispositivo) y recomendaciones "Para vos". Ficha de piloto con país, campeonatos, inscripciones, próximas y últimas carreras. |
+| **Buscar** | Categorías, pilotos, equipos, circuitos, eventos y noticias; sin texto muestra "Te puede interesar". |
+| Equipo / Circuito | Ficha de equipo (categorías, posiciones, autos, pilotos, próximas carreras y notas) y de circuito (todas las categorías que corren ahí). |
 | Menú ☰ | Actualizar datos, Exportar, Auditoría de fuentes y Ajustes (tema oscuro/claro, zona horaria, cuentas). |
 
 Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `standings/*.json`, `results/**`,
-`drivers.json` (índice de pilotos armado desde tablas y resultados), `news.json` y `feeds/deporte-motor.ics`.
+`rosters/*.json` (listas oficiales de inscriptos), `drivers.json` (índice de pilotos armado desde tablas, resultados e inscriptos), `teams.json` (índice de equipos), `news.json` y `feeds/deporte-motor.ics`.
 
 ## Estructura
 

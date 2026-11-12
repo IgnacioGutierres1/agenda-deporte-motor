@@ -165,7 +165,7 @@ describe('equipos: pantallas', () => {
     const wrapper = mount(DriverView, { global: { plugins: [pinia, router] } });
     await flushPromises();
     const text = wrapper.text();
-    expect(text).toContain('Italy');
+    expect(text).toContain('🇮🇹 Italia');
     expect(text).toContain('Inscripto en');
     expect(text).not.toContain('Campeonato');
     expect(text).toContain('BMW M4 GT3');
