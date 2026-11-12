@@ -85,6 +85,9 @@ export const LIVE_SOURCES: Record<string, LiveSource> = {
   alms: { officialUrl: 'https://plus.fiawec.com/en/asian-le-mans-series', officialNote: 'Tiempos en FIAWEC+ (puede pedir cuenta).' },
   'super-gt': { officialUrl: 'https://supergt.net/en/', officialNote: 'Sin página pública de tiempos en vivo: resultados en el sitio oficial.' },
   'super-formula': { officialUrl: 'https://superformula.net/sf3/live_timing/' },
+  'super-taikyu': { officialUrl: 'https://www.supertaikyu.live/timings/' },
+  'macau-gp': { officialUrl: 'https://www.macau.grandprix.gov.mo/en/info/schedule', officialNote: 'Sin página pública de tiempos en vivo: programa y resultados en el sitio oficial.' },
+  supercars: { officialUrl: 'https://www.supercars.com/live-timing' },
   '24h-series': { officialUrl: 'https://livetiming.getraceresults.com/24hseries' },
   'gt-open': { officialUrl: 'https://gtopen.gtsport.es/resultados', officialNote: 'Sin tiempos en vivo públicos: resultados.' },
   tc: {

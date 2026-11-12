@@ -43,7 +43,10 @@ export const TAG_RULES: TagRule[] = [
   // --- Asia y Oceanía (antes de las genéricas: "Super Formula" no es F1) ----------
   { seriesId: null, patterns: [re(String.raw`\bSuper\s*Formula\s+Lights\b`)] },
   { seriesId: 'super-formula', patterns: [re(String.raw`\bSuper\s*Formula\b`)] },
-  { seriesId: 'super-gt', patterns: [re(String.raw`\bSUPER\s*GT\b`, C), re(String.raw`\bSuper\s+GT\b`)] },
+  { seriesId: 'super-taikyu', patterns: [re(String.raw`\bSuper\s*Taikyu\b`)] },
+  { seriesId: 'macau-gp', patterns: [re(String.raw`\bMaca[ou]\s+(?:Grand\s+Prix|GP)\b`), re(String.raw`\bGran\s+Premio\s+de\s+Macao\b`)] },
+  { seriesId: 'supercars', patterns: [re(String.raw`\bSupercars\b`), re(String.raw`\bBathurst\s*1000\b`)] },
+  { seriesId: 'super-gt',patterns: [re(String.raw`\bSUPER\s*GT\b`, C), re(String.raw`\bSuper\s+GT\b`)] },
 
   // --- Monoplazas FIA ----------------------------------------------------------
   { seriesId: 'f1-academy', patterns: [re(String.raw`\bF1\s*Academy\b`)] },
