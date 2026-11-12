@@ -130,6 +130,25 @@ describe('mergeRun', () => {
     expect(out.statuses[0]).toMatchObject({ state: 'stale', message: 'HTTP 503', lastSuccess: '2026-11-09T12:00:00Z' });
   });
 
+  it('un modelo de respaldo que lee muchas menos fechas no reemplaza las anteriores', () => {
+    const many = (n: number, model: string, method: 'ia' | 'directo' = 'ia') =>
+      Array.from({ length: n }, (_, i) => ({
+        ...event,
+        id: `e${i}`,
+        dateStart: `2026-0${(i % 9) + 1}-10`,
+        dateEnd: `2026-0${(i % 9) + 1}-12`,
+        source: { ...event.source, method, model },
+      }));
+    const prev: ScheduleFile = { ...previous, events: many(10, 'gemini-3.6-flash'), sessions: [] };
+    const groq = mergeRun([series], new Map([['f2', { kind: 'ok', chunk: { events: many(4, 'groq/qwen/qwen3.8-27b'), sessions: [] } }]]), prev, new Map(), 'now');
+    expect(groq.events).toHaveLength(10);
+    expect(groq.statuses[0]).toMatchObject({ state: 'stale' });
+    expect(groq.statuses[0]?.message).toContain('4 de 10 fechas');
+    // Gemini, o un respaldo que lee casi todo, sí reemplaza.
+    expect(mergeRun([series], new Map([['f2', { kind: 'ok', chunk: { events: many(4, 'gemini-3.6-flash'), sessions: [] } }]]), prev, new Map(), 'now').events).toHaveLength(4);
+    expect(mergeRun([series], new Map([['f2', { kind: 'ok', chunk: { events: many(9, 'groq/openai/gpt-oss-120b'), sessions: [] } }]]), prev, new Map(), 'now').events).toHaveLength(9);
+  });
+
   it('sin datos previos queda en error', () => {
     const out = mergeRun([series], new Map([['f2', { kind: 'error', error: new Error('x') }]]), null, new Map(), 'now');
     expect(out.statuses[0]?.state).toBe('error');

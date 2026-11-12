@@ -15,6 +15,7 @@ export const sourceSchema = z.object({
   kind: z.enum(['api', 'html', 'pdf', 'image']),
   method: z.enum(['directo', 'ia']),
   fetchedAt: isoUtc,
+  model: z.string().optional(),
 });
 
 export const seriesSchema = z.object({

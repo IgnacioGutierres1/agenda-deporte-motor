@@ -35,13 +35,19 @@ concurrency:
   cancel-in-progress: false
 
 env:
+  # Cadena de IA gratuita: Gemini y, cuando agota el cupo diario (o falla), Groq. Sin GROQ_API_KEY se usa solo Gemini.
   GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
   GEMINI_MODEL: ${{ vars.GEMINI_MODEL }}
+  GEMINI_FALLBACK_MODELS: ${{ vars.GEMINI_FALLBACK_MODELS }}
   GEMINI_SEARCH_MODEL: ${{ vars.GEMINI_SEARCH_MODEL }}
   GEMINI_PROVIDER: ${{ vars.GEMINI_PROVIDER }}
   GEMINI_MAX_CALLS: ${{ vars.GEMINI_MAX_CALLS }}
   GOOGLE_CLOUD_PROJECT: ${{ vars.GOOGLE_CLOUD_PROJECT }}
   GOOGLE_CLOUD_LOCATION: ${{ vars.GOOGLE_CLOUD_LOCATION }}
+  GROQ_API_KEY: ${{ secrets.GROQ_API_KEY }}
+  GROQ_MODEL: ${{ vars.GROQ_MODEL }}
+  GROQ_FALLBACK_MODELS: ${{ vars.GROQ_FALLBACK_MODELS }}
+  GROQ_VISION_MODEL: ${{ vars.GROQ_VISION_MODEL }}
   DISCOVERY_SEARCH: ${{ vars.DISCOVERY_SEARCH }}
 
 jobs:

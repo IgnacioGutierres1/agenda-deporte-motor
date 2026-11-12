@@ -64,12 +64,40 @@ npm run build         # build de producción en app/dist (incluye data/)
 1. Crear una clave gratis en <https://aistudio.google.com/apikey>.
 2. En el repo → **Settings → Secrets and variables → Actions → New repository secret**:
    `GEMINI_API_KEY`.
-3. Opcionales (pestaña *Variables*): `GEMINI_MODEL`, `GEMINI_SEARCH_MODEL`, `GEMINI_MAX_CALLS`,
-   `GEMINI_PROVIDER` (`aistudio` o `vertex`), `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION`, `DISCOVERY_SEARCH`.
-   Ver `.env.example`.
+3. Opcionales (pestaña *Variables*): `GEMINI_MODEL`, `GEMINI_FALLBACK_MODELS`, `GEMINI_SEARCH_MODEL`,
+   `GEMINI_MAX_CALLS`, `GEMINI_PROVIDER` (`aistudio` o `vertex`), `GOOGLE_CLOUD_PROJECT`, `GOOGLE_CLOUD_LOCATION`,
+   `DISCOVERY_SEARCH`. Ver `.env.example`.
 
-Sin la clave, las categorías con lector directo (F1, F2, F3, MotoGP, NASCAR) funcionan igual; el resto
+Sin ninguna clave de IA, las categorías con lector directo (F1, F2, F3, MotoGP, NASCAR) funcionan igual; el resto
 aparece como "Error de fuente" en Auditoría.
+
+#### Respaldo gratuito: Groq (recomendado)
+
+El plan gratis de Gemini da unos 20 pedidos por día y por modelo, y en días con mucha actividad no alcanza.
+Por eso la IA funciona como una **cadena**, siempre gratis:
+
+1. **Gemini** (con su propio respaldo entre modelos Flash, cada uno con su cupo).
+2. **Groq**, cuando Gemini agotó el cupo diario de todos sus modelos, falta su clave o falla.
+
+Un proveedor que agota su cupo del día no se vuelve a probar en esa corrida; si ninguno puede responder, el dato
+queda "a confirmar" y se reintenta en la próxima corrida. Cada dato leído con IA guarda en `source.model` qué
+proveedor y modelo lo transcribió (p. ej. `groq/openai/gpt-oss-120b`), y pasa por los mismos controles contra el
+documento oficial sea cual sea el proveedor.
+
+Para activar Groq:
+
+1. Crear una cuenta gratis (no pide tarjeta) en <https://console.groq.com> y una clave en
+   <https://console.groq.com/keys>.
+2. En el repo → **Settings → Secrets and variables → Actions → New repository secret**: `GROQ_API_KEY`.
+3. Opcionales (pestaña *Variables*): `GROQ_MODEL` (por defecto `openai/gpt-oss-120b`), `GROQ_FALLBACK_MODELS`
+   (`openai/gpt-oss-20b`), `GROQ_VISION_MODEL` (`qwen/qwen3.8-27b`, para calendarios publicados como imagen).
+
+Diferencias con Gemini: Groq no lee PDF, así que recibe el texto que el pipeline ya extrae del PDF; las imágenes
+van solo al modelo con visión y de a pocas por pedido; y como el plan gratis permite ~8 mil tokens por minuto,
+los documentos largos se recortan a las partes que nombran la serie, el evento y sus fechas. La búsqueda con
+Google del descubrimiento sigue siendo solo de Gemini.
+
+> GitHub Models, que se había evaluado como otro eslabón gratuito, fue retirado por GitHub el 30/7/2026.
 
 ### 3. Instalar en el celular
 
@@ -128,5 +156,5 @@ En iPhone los avisos web funcionan solo con la app instalada en la pantalla de i
 - **Commits**: [Conventional Commits](https://www.conventionalcommits.org/es/) en español
   (`feat(pipeline): …`, `fix(app): …`, `chore: …`, `test: …`, `docs: …`).
 - **Ramas**: `main` siempre estable; trabajo en `feat/<tema>` o `fix/<tema>` y merge con `--no-ff`.
-- **Datos**: todo lo publicado lleva `source` (URL, tipo, método directo/IA, fecha de lectura). Las horas se guardan en UTC.
+- **Datos**: todo lo publicado lleva `source` (URL, tipo, método directo/IA, fecha de lectura y, si es IA, el modelo). Las horas se guardan en UTC.
 - **Vue**: Options API (`defineComponent({ data, computed, methods })`), sin `<script setup>`.

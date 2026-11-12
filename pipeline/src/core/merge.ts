@@ -19,6 +19,26 @@ export interface MergeResult {
  * - Serie con error: se conservan sus datos anteriores y queda en estado "stale" (o "error" si no había nada).
  * - Serie desactivada: no se publica.
  */
+/** Un modelo de respaldo (no Gemini) que trae menos de esta fracción de las fechas anteriores no las reemplaza. */
+const BACKUP_MIN_SHARE = 0.75;
+
+/**
+ * Si el calendario de esta corrida lo leyó un modelo de IA de respaldo (Groq…) y trae bastantes menos fechas que
+ * la corrida anterior, es más probable que haya leído mal (p. ej. 4 de las 10 imágenes del calendario de Turismo
+ * Pista) que que se hayan cancelado fechas: se conservan las anteriores y la serie queda "desactualizada".
+ * Devuelve el motivo, o null si la lectura se puede usar.
+ */
+export function backupShrink(seriesId: string, chunk: ScheduleChunk, previous: ScheduleFile | null): string | null {
+  const fresh = chunk.events;
+  const model = fresh.find((e) => e.source.method === 'ia' && e.source.model)?.source.model;
+  if (!model || /^gemini/i.test(model) || model.split(' + ').every((m) => /^gemini/i.test(m))) return null;
+  // Solo contra fechas de los mismos años (al cambiar de temporada la cantidad no se compara).
+  const years = new Set(fresh.map((e) => e.dateStart.slice(0, 4)));
+  const old = (previous?.events ?? []).filter((e) => e.seriesId === seriesId && years.has(e.dateStart.slice(0, 4)));
+  if (old.length < 3 || fresh.length >= old.length * BACKUP_MIN_SHARE) return null;
+  return `Lectura con modelo de respaldo (${model}) incompleta: ${fresh.length} de ${old.length} fechas; se conservan las anteriores`;
+}
+
 export function mergeRun(
   series: Series[],
   outcomes: Map<string, SeriesOutcome>,
@@ -42,7 +62,9 @@ export function mergeRun(
       continue;
     }
 
-    if (outcome.kind === 'error') {
+    const shrunk = outcome.kind === 'ok' ? backupShrink(s.id, outcome.chunk, previous) : null;
+    if (outcome.kind === 'error' || shrunk) {
+      const reason = outcome.kind === 'error' ? outcome.error.message : shrunk!;
       const oldEvents = (previous?.events ?? []).filter((e) => e.seriesId === s.id);
       const oldSessions = (previous?.sessions ?? []).filter((x) => x.seriesId === s.id);
       events.push(...oldEvents);
@@ -52,7 +74,7 @@ export function mergeRun(
         state: oldEvents.length > 0 ? 'stale' : 'error',
         lastAttempt: nowIso,
         ...(prevStatus?.lastSuccess ? { lastSuccess: prevStatus.lastSuccess } : {}),
-        message: outcome.error.message,
+        message: reason,
         sourceUrl,
         standingsAvailable,
       });

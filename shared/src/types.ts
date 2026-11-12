@@ -21,7 +21,7 @@ export type Origin = 'default' | 'user' | 'discovered';
 /** image: el dato se leyó de una imagen oficial (Gemini transcribe el texto de la imagen). */
 export type SourceKind = 'api' | 'html' | 'pdf' | 'image';
 
-/** directo: leído sin IA. ia: transcripto por Gemini desde el documento oficial descargado. */
+/** directo: leído sin IA. ia: transcripto por IA (Gemini o, de respaldo, Groq) desde el documento oficial descargado. */
 export type SourceMethod = 'directo' | 'ia';
 
 export interface Source {
@@ -31,6 +31,11 @@ export interface Source {
   method: SourceMethod;
   /** ISO UTC del momento en que el pipeline leyó el documento. */
   fetchedAt: string;
+  /**
+   * Solo method "ia": proveedor/modelo que transcribió el dato (p. ej. "gemini/gemini-3.6-flash",
+   * "groq/openai/gpt-oss-120b"; varios unidos con " + "). Falta en datos anteriores a la cadena de IA.
+   */
+  model?: string;
 }
 
 export interface Series {
