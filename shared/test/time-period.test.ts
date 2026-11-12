@@ -115,3 +115,35 @@ describe('hash', () => {
     expect(slugify('Autódromo Oscar Cabalén')).toBe('autodromo-oscar-cabalen');
   });
 });
+
+describe('eventInPeriod: descarte rápido', () => {
+  it('da lo mismo que la cuenta con luxon en todos los husos extremos y bordes de día', async () => {
+    const { DateTime } = await import('luxon');
+    const slow = (p: { startUtc: string; endUtc: string }, a: string, b: string, zone: string) =>
+      overlaps(
+        p,
+        DateTime.fromISO(a, { zone }).startOf('day').toUTC().toISO({ suppressMilliseconds: true })!,
+        DateTime.fromISO(b, { zone }).startOf('day').plus({ days: 1 }).toUTC().toISO({ suppressMilliseconds: true })!,
+      );
+    const zones = ['Pacific/Kiritimati', 'Pacific/Pago_Pago', 'Asia/Tokyo', 'America/Argentina/Buenos_Aires', 'UTC', 'Australia/Adelaide'];
+    const periods = [
+      { startUtc: '2026-11-12T03:00:00Z', endUtc: '2026-11-13T03:00:00Z' },
+      { startUtc: '2026-11-13T10:00:00Z', endUtc: '2026-11-16T03:00:00Z' },
+      { startUtc: '2026-11-11T14:00:00Z', endUtc: '2026-11-11T15:00:00Z' },
+    ];
+    let checked = 0;
+    for (const zone of zones) {
+      for (const p of periods) {
+        for (let d = 5; d <= 20; d++) {
+          for (const len of [0, 2]) {
+            const a = `2026-11-${String(d).padStart(2, '0')}`;
+            const b = `2026-11-${String(d + len).padStart(2, '0')}`;
+            expect(eventInPeriod(p, a, b, zone), `${zone} ${a}..${b} ${p.startUtc}`).toBe(slow(p, a, b, zone));
+            checked++;
+          }
+        }
+      }
+    }
+    expect(checked).toBeGreaterThan(500);
+  });
+});

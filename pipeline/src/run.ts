@@ -6,7 +6,7 @@
  *   4. Busca resultados de sesiones terminadas y actualiza campeonatos.
  *   5. Lee las listas oficiales de inscriptos vencidas (data/rosters/**, sin IA; si fallan se conservan).
  *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/drivers.json,
- *      data/teams.json y data/feeds/*.ics.
+ *      data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
  *   7. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
  * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-news] [--dry-run]
@@ -30,6 +30,7 @@ import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { buildFeed } from './core/feed.ts';
 import { buildIndexFromData } from './core/drivers.ts';
+import { writeDriverFiles } from './core/driver-files.ts';
 import { createLogger } from './core/log.ts';
 import { mergeRun, type SeriesOutcome } from './core/merge.ts';
 import { CACHE_DIR, DATA_DIR } from './core/paths.ts';
@@ -201,8 +202,9 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   if (!opts.dryRun) {
     await writeJson(path.join(dataDir, 'schedule.json'), schedule);
     await writeJson(path.join(dataDir, 'status.json'), status);
-    await writeJson(path.join(dataDir, 'drivers.json'), drivers);
-    await writeJson(path.join(dataDir, 'teams.json'), teams);
+    // drivers.json y teams.json completos, más el índice liviano y las fichas por grupo (solo las que cambiaron).
+    const files = await writeDriverFiles(dataDir, drivers, teams);
+    log.info(`Fichas de pilotos: ${files.written} grupos escritos, ${files.unchanged} sin cambios, ${files.removed} borrados`);
     await writeJson(attemptsFile, attempts);
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),

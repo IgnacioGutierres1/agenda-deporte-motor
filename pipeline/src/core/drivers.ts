@@ -17,7 +17,7 @@ import {
   splitDriverNames,
   teamId,
   teamKey,
-  type Driver,
+  type DriverDetail,
   type DriverLineup,
   type DriversFile,
   type EventResultsFile,
@@ -38,7 +38,7 @@ import { readJson } from './store.ts';
 export const RECENT_RESULTS = 6;
 const RACE_TYPES = new Set(['carrera', 'sprint']);
 
-interface Building extends Driver {
+interface Building extends DriverDetail {
   /** Calidad de la variante del nombre que se está mostrando. */
   quality: number;
   lineups: DriverLineup[];
@@ -157,7 +157,7 @@ export function buildDrivers(input: IndexInput): DriversFile {
     }
   }
 
-  const list: Driver[] = [...drivers.values()]
+  const list: DriverDetail[] = [...drivers.values()]
     .filter((d) => d.entries.length > 0 || d.lineups.length > 0)
     .map(({ quality: _q, lineups, ...d }) => ({
       ...d,

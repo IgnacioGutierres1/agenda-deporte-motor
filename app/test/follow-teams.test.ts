@@ -2,7 +2,7 @@ import { afterEach, beforeEach, describe, expect, it, vi } from 'vitest';
 import { flushPromises, mount } from '@vue/test-utils';
 import { createPinia, setActivePinia, type Pinia } from 'pinia';
 import { createMemoryHistory, createRouter } from 'vue-router';
-import type { Driver, DriversFile, Team, TeamsFile } from '@dm/shared';
+import type { Driver, DriversIndexFile, Team, TeamsFile } from '@dm/shared';
 import AgendaView from '../src/views/AgendaView.vue';
 import FollowingView from '../src/views/FollowingView.vue';
 import TeamView from '../src/views/TeamView.vue';
@@ -41,7 +41,7 @@ const drivers: Driver[] = [
   { id: 'augusto-farfus', name: 'Augusto Farfus', entries: [{ seriesId: 'f2', pos: 2, points: 140 }], recent: [] },
   { id: 'charles-weerts', name: 'Charles Weerts', entries: [], recent: [] },
 ];
-const driversFile: DriversFile = { version: 1, generatedAt: NOW, drivers };
+const driversFile: DriversIndexFile = { version: 1, generatedAt: NOW, drivers };
 
 beforeEach(() => {
   pinia = createPinia();

@@ -1,14 +1,31 @@
 <template>
   <div class="driver-view">
     <DataState />
-    <p v-if="driversStatus === 'loading' && !driver" class="page dim">Cargando piloto…</p>
-    <div v-else-if="driversStatus === 'error'" class="page">
-      <div class="notice notice-error">
-        No se pudieron cargar los pilotos ({{ driversError }}).
-        <button type="button" class="btn btn-small" @click="loadDrivers(true)">Reintentar</button>
+    <div v-if="loading" class="driver-skeleton" aria-busy="true" aria-label="Cargando piloto…">
+      <section class="hero">
+        <div class="hero-top">
+          <div class="hero-series big">
+            <span class="skel skel-avatar" />
+            <div class="grow">
+              <span class="skel skel-line wide" />
+              <span class="skel skel-line" />
+            </div>
+          </div>
+        </div>
+      </section>
+      <div class="page">
+        <section class="card">
+          <span v-for="i in 3" :key="i" class="skel skel-line wide" />
+        </section>
       </div>
     </div>
-    <NotFoundCard v-else-if="(driversStatus === 'ok' || driversStatus === 'missing') && !driver" kind="piloto" :slug="String($route.params.driverId ?? '')" />
+    <div v-else-if="failed" class="page">
+      <div class="notice notice-error">
+        No se pudo cargar el piloto ({{ failMessage }}).
+        <button type="button" class="btn btn-small" @click="retry">Reintentar</button>
+      </div>
+    </div>
+    <NotFoundCard v-else-if="!driver" kind="piloto" :slug="driverId" />
 
     <template v-if="driver">
       <section class="hero" :style="{ '--series-color': color }">
@@ -77,7 +94,14 @@
 
         <section class="card flush">
           <h3 class="card-title">Últimas carreras</h3>
-          <p v-if="!recent.length" class="card-foot small dim">
+          <ul v-if="recentPending" class="list-card inset" aria-busy="true">
+            <li v-for="i in 3" :key="i" class="list-row"><span class="skel skel-line wide" /></li>
+          </ul>
+          <p v-else-if="recentFailed" class="card-foot small dim">
+            No se pudieron cargar las últimas carreras.
+            <button type="button" class="btn btn-small" @click="retry">Reintentar</button>
+          </p>
+          <p v-else-if="!recent.length" class="card-foot small dim">
             Todavía no hay resultados de carrera publicados para {{ driver.name }}.
           </p>
           <ul v-else class="list-card inset">
@@ -113,7 +137,7 @@
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import { teamId, type Driver, type DriverEntry, type DriverLineup, type Series } from '@dm/shared';
+import { teamId, type Driver, type DriverDetail, type DriverEntry, type DriverLineup, type Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
@@ -135,16 +159,48 @@ export default defineComponent({
   name: 'DriverView',
   components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
   computed: {
-    ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', driversFile: 'file' }),
-    ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
+    ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', driversFile: 'file', details: 'details', detailStatus: 'detailStatus' }),
+    ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById', 'generatedAt']),
     ...mapState(useSettingsStore, ['timeZone']),
     ...mapState(useNewsStore, { newsItems: 'items' }),
     driverNews() {
       if (!this.driver) return [];
       return newsForDriver(this.newsItems, this.driver.name, this.seriesIds).slice(0, 5);
     },
-    driver(): Driver | undefined {
-      return this.driversById.get(String(this.$route.params.driverId));
+    driverId(): string {
+      return String(this.$route.params.driverId);
+    },
+    /** Ficha completa si ya llegó; si no, la línea del índice (si ya se había descargado, p. ej. desde Buscar). */
+    driver(): DriverDetail | Driver | undefined {
+      return this.details[this.driverId] ?? this.driversById.get(this.driverId);
+    },
+    /** Estado de la ficha completa (data/drivers/{shard}.json). */
+    detailState(): string {
+      return this.detailStatus(this.driverId);
+    },
+    /** Todavía no hay nada que mostrar: esqueleto. */
+    loading(): boolean {
+      if (this.driver) return false;
+      return this.detailState === 'idle' || this.detailState === 'loading' || this.driversStatus === 'loading';
+    },
+    /** No se pudo leer ni la ficha ni el índice (sin conexión y sin copia guardada). */
+    failed(): boolean {
+      if (this.driver || this.loading) return false;
+      return this.detailState === 'error' && this.driversStatus === 'error';
+    },
+    /** No está en su grupo de fichas (ni en el índice): link viejo o mal escrito. */
+    notFound(): boolean {
+      return !this.driver && !this.loading && !this.failed;
+    },
+    failMessage(): string {
+      return this.driversError ?? 'sin conexión';
+    },
+    /** Las últimas carreras vienen solo en la ficha completa. */
+    recentPending(): boolean {
+      return !!this.driver && !this.driver.recent && (this.detailState === 'loading' || this.detailState === 'idle');
+    },
+    recentFailed(): boolean {
+      return !!this.driver && !this.driver.recent && this.detailState === 'error';
     },
     /** Categorías del piloto: las de sus campeonatos y las de sus inscripciones. */
     seriesIds(): string[] {
@@ -174,36 +230,45 @@ export default defineComponent({
       return countryName(this.driver?.country);
     },
     season(): string {
-      return this.driversFile ? this.driversFile.generatedAt.slice(0, 4) : '';
+      return (this.generatedAt ?? this.driversFile?.generatedAt ?? '').slice(0, 4);
     },
     followRef(): FollowedDriver | null {
       if (!this.driver) return null;
       return { id: this.driver.id, name: this.driver.name, seriesIds: this.seriesIds };
     },
     recent() {
-      const events = new Map((this.schedule?.events ?? []).map((e) => [e.id, e]));
-      const sessions = new Map((this.schedule?.sessions ?? []).map((s) => [s.id, s]));
+      // Son pocas (6): se buscan una por una en vez de indexar toda la agenda.
+      const events = this.schedule?.events ?? [];
+      const sessions = this.schedule?.sessions ?? [];
       return (this.driver?.recent ?? []).map((r) => ({
         ...r,
         series: this.seriesById.get(r.seriesId),
-        eventName: events.get(r.eventId)?.name ?? 'Evento',
-        sessionName: sessions.get(r.sessionId)?.name ?? 'Carrera',
+        eventName: events.find((e) => e.id === r.eventId)?.name ?? 'Evento',
+        sessionName: sessions.find((x) => x.id === r.sessionId)?.name ?? 'Carrera',
         date: DateTime.fromISO(r.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat('d LLL yyyy'),
       }));
     },
   },
   watch: {
-    // Si se abre directo el link de un piloto que no está en el índice en memoria, se vuelve a pedir.
+    // Las sugerencias de nombres parecidos (NotFoundCard) buscan en el índice: solo entonces se pide.
+    notFound(value: boolean) {
+      if (value) void this.loadIndex();
+    },
+    // Solo se pide la ficha de este piloto (unos pocos KB), no el índice de todos.
     '$route.params.driverId': {
       immediate: true,
-      handler() {
-        void this.loadDrivers();
+      handler(id: unknown) {
+        if (typeof id !== 'string' || !id) return;
+        void this.loadDetail(id);
         void this.loadNews();
       },
     },
   },
   methods: {
-    ...mapActions(useDriversStore, { loadDrivers: 'load' }),
+    ...mapActions(useDriversStore, { loadDetail: 'loadDetail', loadIndex: 'load' }),
+    retry() {
+      void this.loadDetail(this.driverId, true);
+    },
     ...mapActions(useNewsStore, { loadNews: 'load' }),
     fmt(n: number): string {
       return n.toLocaleString('es-AR');
@@ -218,3 +283,35 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.skel {
+  display: block;
+  border-radius: 6px;
+  background: var(--border);
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.skel-avatar {
+  width: 58px;
+  height: 58px;
+  flex: none;
+  border-radius: 50%;
+}
+
+.skel-line {
+  width: 40%;
+  height: 0.9rem;
+  margin: 0.35rem 0;
+}
+
+.skel-line.wide {
+  width: 75%;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .skel {
+    animation: none;
+  }
+}
+</style>

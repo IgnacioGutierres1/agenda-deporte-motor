@@ -31,6 +31,8 @@ export async function refreshEverything(): Promise<RefreshResult> {
     // Solo lo que ya se abrió (si nunca se abrió, se descarga al entrar).
     news.status !== 'idle' ? news.load(true) : Promise.resolve(),
     drivers.status !== 'idle' ? drivers.load(true) : Promise.resolve(),
+    // Fichas de pilotos ya abiertas (data/drivers/*.json).
+    drivers.reloadDetails(),
     teams.status !== 'idle' ? teams.load(true) : Promise.resolve(),
   ]);
   return { app, error: schedule.error };

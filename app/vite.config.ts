@@ -58,6 +58,18 @@ export default defineConfig(({ command, mode }) => {
           importScripts: ['push-handler.js'],
           runtimeCaching: [
             {
+              // Fichas de pilotos (data/drivers/{shard}.json): caché aparte, para que abrir muchas fichas
+              // no desplace de la caché general a la agenda y demás datos que se usan sin conexión.
+              urlPattern: ({ url }) => /\/data\/drivers\/[^/]+\.json$/.test(url.pathname),
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'dm-drivers',
+                networkTimeoutSeconds: 10,
+                expiration: { maxEntries: 256, maxAgeSeconds: 60 * 60 * 24 * 60 },
+                cacheableResponse: { statuses: [200] },
+              },
+            },
+            {
               // Datos del pipeline: siempre intenta la red y, sin conexión, usa la última copia.
               urlPattern: ({ url }) => /\/data\/.+\.json$/.test(url.pathname),
               handler: 'NetworkFirst',
