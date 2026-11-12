@@ -57,4 +57,9 @@ export interface Adapter {
   name: string;
   schedule(series: Series, ctx: AdapterContext): Promise<ScheduleChunk>;
   results?(series: Series, ctx: AdapterContext, req: ResultsRequest): Promise<ResultsChunk>;
+  /**
+   * true si el campeonato de la serie tiene lector directo (receta del sitio). Una tabla publicada que se
+   * leyó con IA se relee entonces aunque esté al día, para reemplazarla por la lectura directa.
+   */
+  prefersDirectStandings?(series: Series): boolean;
 }

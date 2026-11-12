@@ -1,0 +1,157 @@
+{
+  "drivers": [
+    {
+      "firstName": "Maro",
+      "lastName": "Engel",
+      "webVisibility": true,
+      "country": {
+        "countryCode": "DE",
+        "name": "Germany"
+      },
+      "driverSeasons": [
+        {
+          "season": 2022,
+          "driverNumber": 88,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Mercedes-AMG Team GruppeM Racing"
+          },
+          "car": {
+            "name": "Mercedes-AMG #88"
+          }
+        },
+        {
+          "season": 2023,
+          "driverNumber": 48,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Mercedes-AMG Team Landgraf"
+          },
+          "car": null
+        },
+        {
+          "season": 2024,
+          "driverNumber": 130,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "WINWARD RACING"
+          },
+          "car": null
+        },
+        {
+          "season": 2025,
+          "driverNumber": 24,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Mercedes-AMG Team Winward Racing"
+          },
+          "car": {
+            "name": "Mercedes-AMG GT3"
+          }
+        },
+        {
+          "season": 2026,
+          "driverNumber": 80,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Mercedes-AMG Team Ravenol"
+          },
+          "car": {
+            "name": "Mercedes-AMG GT3"
+          }
+        }
+      ]
+    },
+    {
+      "firstName": "Alex",
+      "lastName": "Albon",
+      "webVisibility": false,
+      "country": {
+        "countryCode": "TH",
+        "name": "Thailand"
+      },
+      "driverSeasons": [
+        {
+          "season": 2021,
+          "driverNumber": 23,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Red Bull AlphaTauri AF Corse"
+          },
+          "car": null
+        }
+      ]
+    },
+    {
+      "firstName": "René",
+      "lastName": "Rast",
+      "webVisibility": true,
+      "country": {
+        "countryCode": "DE",
+        "name": "Germany"
+      },
+      "driverSeasons": [
+        {
+          "season": 2020,
+          "driverNumber": 33,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Audi Sport Team Rosberg"
+          },
+          "car": null
+        },
+        {
+          "season": 2019,
+          "driverNumber": 33,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Audi Sport Team Rosberg"
+          },
+          "car": null
+        },
+        {
+          "season": 2022,
+          "driverNumber": 33,
+          "raceSeries": "DTM",
+          "team": null,
+          "car": {
+            "name": "Audi R8 #33"
+          }
+        },
+        {
+          "season": 2023,
+          "driverNumber": 33,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Schubert Motorsport"
+          },
+          "car": {
+            "name": "BMW M4 GT3 #33"
+          }
+        },
+        {
+          "season": 2024,
+          "driverNumber": 33,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Schubert Motorsport"
+          },
+          "car": {
+            "name": "BMW M4 GT3 #33"
+          }
+        },
+        {
+          "season": 2025,
+          "driverNumber": 33,
+          "raceSeries": "DTM",
+          "team": {
+            "name": "Schubert Motorsport"
+          },
+          "car": {
+            "name": "BMW M4 GT3 Evo"
+          }
+        }
+      ]
+    }
+  ]
+}

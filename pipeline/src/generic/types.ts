@@ -51,6 +51,11 @@ export interface StandingsFound {
 export interface RosterFound {
   rows: RosterRow[];
   source: Source;
+  /**
+   * Temporada que publica la página, si no es la pedida: ELMS sigue mostrando la lista de 2026 en enero de 2027,
+   * y la del Asian LMS lleva el año en que empieza (2025 para la temporada 2025/26).
+   */
+  season?: number;
 }
 
 export interface RecipeContext {
