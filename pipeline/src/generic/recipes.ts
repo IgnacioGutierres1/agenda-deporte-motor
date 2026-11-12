@@ -15,6 +15,7 @@ import {
   textOf,
 } from '../extract/html.ts';
 import { jsonLdSessions } from './locate.ts';
+import { f1AcademyUtc, f1AcademyWeekendSessions, PLANNED_SESSIONS } from './f1academy.ts';
 import {
   countryName,
   dateInZone,
@@ -905,14 +906,16 @@ const f1academy: SiteRecipe = {
         if (!start.startsWith(String(ctx.season))) continue;
         const circuit = str(r.CircuitName);
         const country = str(r.CountryName);
-        const sessions: ExtractedSession[] = ((r.Sessions as Record<string, unknown>[] | undefined) ?? [])
+        const raw = (r.Sessions as Record<string, unknown>[] | undefined) ?? [];
+        const tz = tzFor(country, `${circuit} ${str(r.CircuitShortName)}`);
+        const sessions: ExtractedSession[] = raw
           .filter((s) => s.Unconfirmed !== true && str(s.SessionStartTime))
           .map((s) => {
             const startIso = str(s.SessionStartTime);
             return {
               name: str(s.SessionName),
-              startUtc: toUtcIso(startIso),
-              ...(str(s.SessionEndTime) ? { endUtc: toUtcIso(str(s.SessionEndTime)) } : {}),
+              startUtc: f1AcademyUtc(startIso, tz),
+              ...(str(s.SessionEndTime) ? { endUtc: f1AcademyUtc(str(s.SessionEndTime), tz) } : {}),
               localStartText: startIso.slice(11, 16),
             };
           });
@@ -920,18 +923,22 @@ const f1academy: SiteRecipe = {
           name: str(r.CircuitShortName) || circuit,
           circuit,
           country: countryName(country),
-          tz: tzFor(country, `${circuit} ${str(r.CircuitShortName)}`),
+          tz,
           dateStart: start,
           dateEnd: str(r.RaceEndDate) || start,
           round: Number(r.RoundNumber) || undefined,
           url: `https://www.f1academy.com/Racing-Series/Results?raceid=${str(r.RaceId)}`,
           ...(sessions.length ? { sessions } : {}),
+          // Sin horarios confirmados: los nombres previstos sirven para leer el cronograma de formula1.com.
+          ...(!sessions.length && raw.length ? { meta: { [PLANNED_SESSIONS]: raw.map((s) => str(s.SessionName)).filter(Boolean).join('|') } } : {}),
         });
       }
       break;
     }
     return out;
   },
+  // Mientras f1academy.com marca las sesiones "Unconfirmed": cronograma oficial del fin de semana (formula1.com).
+  sessions: (entry, ctx) => f1AcademyWeekendSessions(entry, ctx),
 };
 
 // ─── International GT Open (gtopen.gtsport.es) ────────────────────────────────────────────────
