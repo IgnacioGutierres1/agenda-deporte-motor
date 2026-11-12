@@ -15,6 +15,7 @@ export const GROUP_LABELS: Record<SeriesGroup, string> = {
   moto: 'Motociclismo',
   usa: 'Monoplazas y turismo USA',
   'gt-endurance': 'GT, turismo y resistencia',
+  asia: 'Asia y Oceanía',
   argentina: 'Nacionales argentinas',
   otros: 'Otras',
 };

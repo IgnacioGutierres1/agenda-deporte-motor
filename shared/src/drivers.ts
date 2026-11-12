@@ -28,13 +28,74 @@ export interface DriverResult {
   status?: string;
 }
 
+/** Inscripción en una categoría según la lista oficial de inscriptos (aunque no sume puntos). */
+export interface DriverLineup {
+  seriesId: string;
+  team?: string;
+  number?: string;
+  vehicle?: string;
+  class?: string;
+}
+
 export interface Driver {
   /** Id estable: palabras del nombre normalizadas y ordenadas ("agustin-canapino"). */
   id: string;
   name: string;
+  /** País o nacionalidad publicada por alguna lista oficial de inscriptos. */
+  country?: string;
+  /** Campeonatos en los que figura en la tabla (con posición y puntos). */
   entries: DriverEntry[];
+  /** Categorías en las que figura inscripto (listas oficiales de inscriptos). */
+  lineups?: DriverLineup[];
   /** Últimas carreras, de la más reciente a la más vieja. */
   recent: DriverResult[];
+}
+
+/** Una línea de un equipo en una categoría (tabla de equipos y/o lista de inscriptos). */
+export interface TeamEntry {
+  seriesId: string;
+  /** Tabla de equipos en la que figura, si hay varias. */
+  table?: string;
+  pos?: number;
+  points?: number;
+  /** Números de auto que usa en esa categoría. */
+  numbers?: string[];
+  vehicles?: string[];
+  classes?: string[];
+}
+
+export interface TeamDriver {
+  id: string;
+  name: string;
+  seriesId: string;
+  number?: string;
+}
+
+export interface Team {
+  /** Id estable a partir del nombre (ver teamId). */
+  id: string;
+  name: string;
+  entries: TeamEntry[];
+  drivers: TeamDriver[];
+}
+
+/** Contenido de data/teams.json */
+export interface TeamsFile {
+  version: 1;
+  generatedAt: string;
+  teams: Team[];
+}
+
+/**
+ * Clave de un equipo: "Team WRT", "TEAM WRT" y "Team WRT #31" son el mismo. Se quitan acentos, mayúsculas,
+ * signos y el número de auto; el orden de las palabras sí importa (a diferencia de los pilotos).
+ */
+export function teamKey(raw: string): string {
+  return tokens(raw.replace(/#\s*\d+/g, ' ')).join(' ');
+}
+
+export function teamId(raw: string): string {
+  return slugify(teamKey(raw));
 }
 
 /** Contenido de data/drivers.json */

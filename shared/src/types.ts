@@ -8,6 +8,7 @@ export type SeriesGroup =
   | 'moto'
   | 'usa'
   | 'gt-endurance'
+  | 'asia'
   | 'argentina'
   | 'otros';
 
@@ -50,6 +51,11 @@ export interface Series {
   enabled: boolean;
   /** Color de acento para la UI (hex). */
   color?: string;
+  /**
+   * Páginas oficiales con la lista de inscriptos (pilotos, equipos, números y autos) de la temporada.
+   * Las lee una receta sin IA y se publican en data/rosters/{id}.json.
+   */
+  rosterUrls?: string[];
 }
 
 export type SessionType =
@@ -154,6 +160,27 @@ export interface StandingsFile {
   season: number;
   updatedAt: string;
   tables: StandingsTable[];
+  source: Source;
+}
+
+/** Un piloto inscripto en la temporada, tal como lo publica la lista oficial de inscriptos. */
+export interface RosterRow {
+  driver: string;
+  team?: string;
+  number?: string;
+  vehicle?: string;
+  /** Clase dentro de la categoría ("Hypercar", "LMGT3", "GT500", "Pro-Am"). */
+  class?: string;
+  /** País o nacionalidad tal como la publica la fuente (nombre en inglés o código ISO). */
+  country?: string;
+}
+
+/** Contenido de data/rosters/{seriesId}.json */
+export interface RosterFile {
+  seriesId: string;
+  season: number;
+  updatedAt: string;
+  rows: RosterRow[];
   source: Source;
 }
 

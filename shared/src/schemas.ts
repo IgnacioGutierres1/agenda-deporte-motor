@@ -21,7 +21,7 @@ export const seriesSchema = z.object({
   id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
   name: z.string().min(1),
   shortName: z.string().min(1),
-  group: z.enum(['f1-fia', 'moto', 'usa', 'gt-endurance', 'argentina', 'otros']),
+  group: z.enum(['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'argentina', 'otros']),
   checklistItem: z.number().int().min(1).optional(),
   officialUrls: z.array(z.string().url()),
   strategy: z.enum(['adapter', 'generic']),
@@ -29,6 +29,7 @@ export const seriesSchema = z.object({
   origin: z.enum(['default', 'user', 'discovered']),
   enabled: z.boolean(),
   color: z.string().optional(),
+  rosterUrls: z.array(z.string().url()).optional(),
 });
 
 export const eventSchema = z.object({
@@ -181,6 +182,18 @@ export const driversFileSchema = z.object({
           team: z.string().optional(),
         }),
       ),
+      country: z.string().optional(),
+      lineups: z
+        .array(
+          z.object({
+            seriesId: z.string(),
+            team: z.string().optional(),
+            number: z.string().optional(),
+            vehicle: z.string().optional(),
+            class: z.string().optional(),
+          }),
+        )
+        .optional(),
       recent: z.array(
         z.object({
           seriesId: z.string(),
@@ -190,6 +203,50 @@ export const driversFileSchema = z.object({
           pos: z.number().int().positive().nullable(),
           status: z.string().optional(),
         }),
+      ),
+    }),
+  ),
+});
+
+export const rosterFileSchema = z.object({
+  seriesId: z.string(),
+  season: z.number().int(),
+  updatedAt: isoUtc,
+  rows: z.array(
+    z.object({
+      driver: z.string().min(1),
+      team: z.string().optional(),
+      number: z.string().optional(),
+      vehicle: z.string().optional(),
+      class: z.string().optional(),
+      country: z.string().optional(),
+    }),
+  ),
+  source: sourceSchema,
+});
+
+const slugId = z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/);
+
+export const teamsFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  teams: z.array(
+    z.object({
+      id: slugId,
+      name: z.string().min(1),
+      entries: z.array(
+        z.object({
+          seriesId: z.string(),
+          table: z.string().optional(),
+          pos: z.number().int().positive().optional(),
+          points: z.number().optional(),
+          numbers: z.array(z.string()).optional(),
+          vehicles: z.array(z.string()).optional(),
+          classes: z.array(z.string()).optional(),
+        }),
+      ),
+      drivers: z.array(
+        z.object({ id: slugId, name: z.string().min(1), seriesId: z.string(), number: z.string().optional() }),
       ),
     }),
   ),
