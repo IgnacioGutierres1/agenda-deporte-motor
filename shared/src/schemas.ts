@@ -128,6 +128,7 @@ export const standingsFileSchema = z.object({
           number: z.string().optional(),
           points: z.number(),
           wins: z.number().int().optional(),
+          country: z.string().optional(),
         }),
       ),
     }),

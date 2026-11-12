@@ -44,6 +44,7 @@ import {
 } from './kit.ts';
 import { acoRoster, dtmRoster, sroRoster } from './rosters.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
+import { creventic } from './creventic.ts';
 import { macau } from './macau.ts';
 import { supercars } from './supercars.ts';
 import { superformula } from './superformula.ts';
@@ -490,44 +491,6 @@ const nls: SiteRecipe = {
         dateEnd: dates.end,
         round: roundOf(name),
         url: href ? (absoluteUrl(href, doc.url) ?? undefined) : undefined,
-      });
-    }
-    return dedupe(out);
-  },
-};
-
-// ─── 24H Series (Creventic) ───────────────────────────────────────────────────────────────────
-
-const creventic: SiteRecipe = {
-  name: '24h-series',
-  match: (url) => host(url) === '24hseries.com',
-  calendarUrl: (url) => {
-    const u = new URL(url);
-    return u.pathname === '/' ? `${u.origin}/races` : url;
-  },
-  calendar(doc, ctx) {
-    const out: CalendarEntry[] = [];
-    const ymd = (frag: string) => {
-      const spans = [...frag.matchAll(/<span class="day[^"]*">([^<]*)<\/span>/g)].map((m) => m[1]!.trim());
-      return spans.length >= 3 ? isoDate(Number(spans[2]), monthNumber(spans[1]!) ?? 0, Number(spans[0])) : null;
-    };
-    for (const b of blocksByClass(stripComments(doc.raw), 'raceItem', 4000)) {
-      if (attr(b.slice(0, 400), 'data-year') !== String(ctx.season)) continue;
-      const href = attr(b.slice(0, 400), 'href');
-      const start = ymd(b.match(/<span class="start">([\s\S]*?<\/span>)<\/span>/)?.[1] ?? '');
-      const end = ymd(b.match(/<span class="end">([\s\S]*?<\/span>)<\/span>/)?.[1] ?? '') ?? start;
-      const name = textOf((b.match(/class="mediumTitle">([\s\S]*?)<\/span>(?:<i|\s*<\/span>)/)?.[1] ?? '').replace(/<span class="year">[\s\S]*?(<\/span>|$)/, '')).replace(/\s*\|\s*\d{4}$/, '');
-      if (!href || !start || !end || !name) continue;
-      const flag = decodeURIComponent(b.match(/Countries(?:%20| )Flags\/(?:flags\/)?([^"_.]+)[_.]/)?.[1] ?? '');
-      const circuit = textOf(b.match(/class="infoContent">\s*<span class="smallTitle">([\s\S]*?)<\/span>/)?.[1] ?? '') || name;
-      out.push({
-        name,
-        circuit,
-        country: countryName(flag),
-        tz: tzFor(flag, `${circuit} ${name}`),
-        dateStart: start,
-        dateEnd: end < start ? start : end,
-        url: absoluteUrl(href, doc.url) ?? undefined,
       });
     }
     return dedupe(out);
