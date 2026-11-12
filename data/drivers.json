@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-12T03:57:24Z",
+  "generatedAt": "2026-11-12T05:21:00Z",
   "drivers": [
     {
       "id": "bankcy",
@@ -1775,6 +1775,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 6
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 5
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -1783,31 +1797,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 5
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 17
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 9
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 13
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 22
         }
       ]
     },
@@ -2390,10 +2390,31 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 7
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 3
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
           "pos": 14
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 19
         }
       ]
     },
@@ -2590,6 +2611,14 @@
           "pos": null,
           "status": "NC"
         }
+      ],
+      "country": "Thailand",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Williams",
+          "number": "23"
+        }
       ]
     },
     {
@@ -2647,6 +2676,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 1
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 3
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -2654,31 +2697,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 7
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 6
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 11
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 4
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 4
         }
       ]
     },
@@ -5018,6 +5047,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 10
         }
+      ],
+      "country": "Great Britain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Racing Bulls",
+          "number": "41"
+        }
       ]
     },
     {
@@ -7062,10 +7099,25 @@
       "recent": [
         {
           "seriesId": "f3",
+          "eventId": "456105b16bef8d63",
+          "sessionId": "6de789c3826b5186",
+          "startUtc": "2026-06-06T08:45:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
           "eventId": "ba44846e73e0505b",
           "sessionId": "f3b9be1d342a132b",
           "startUtc": "2026-03-07T21:50:00Z",
           "pos": 7
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "ba44846e73e0505b",
+          "sessionId": "271f87cfc6ba9857",
+          "startUtc": "2026-03-07T00:15:00Z",
+          "pos": 17
         }
       ]
     },
@@ -7324,6 +7376,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 17
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 21
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -7331,31 +7397,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 23
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 3
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 14
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 17
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 21
         }
       ]
     },
@@ -7924,6 +7976,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 4
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -7931,31 +7998,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 10
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 14
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 11
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 18
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 17
         }
       ]
     },
@@ -8646,6 +8699,14 @@
           "sessionId": "b5928c2404d29497",
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 17
+        }
+      ],
+      "country": "Spain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Williams",
+          "number": "55"
         }
       ]
     },
@@ -9550,6 +9611,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 4
         }
+      ],
+      "country": "Monaco",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Ferrari",
+          "number": "16"
+        }
       ]
     },
     {
@@ -10199,10 +10268,24 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 18
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 9
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "6bc5ee7fcbdbda2e",
+          "sessionId": "9a53bdbafc61c418",
+          "startUtc": "2026-07-25T08:05:00Z",
+          "pos": 22
         },
         {
           "seriesId": "f3",
@@ -10213,24 +10296,10 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 26
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 16
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "6de1732878cead05",
-          "sessionId": "35a0a1d92da5202f",
-          "startUtc": "2026-06-14T06:40:00Z",
-          "pos": 28
+          "eventId": "006c70dd631aafe6",
+          "sessionId": "33107fe189d77103",
+          "startUtc": "2026-07-18T08:00:00Z",
+          "pos": 11
         }
       ]
     },
@@ -10615,6 +10684,21 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 12
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -10622,31 +10706,17 @@
         },
         {
           "seriesId": "f2",
-          "eventId": "014024ebf757a1d2",
-          "sessionId": "bb88d57744b4f597",
-          "startUtc": "2026-09-06T07:45:00Z",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
           "pos": 16
         },
         {
           "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 20
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 12
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 19
+          "eventId": "014024ebf757a1d2",
+          "sessionId": "bb88d57744b4f597",
+          "startUtc": "2026-09-06T07:45:00Z",
+          "pos": 16
         }
       ]
     },
@@ -11296,6 +11366,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 13
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 9
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
@@ -11304,31 +11388,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "014024ebf757a1d2",
+          "sessionId": "8f37fd1b0216ff03",
+          "startUtc": "2026-09-05T12:15:00Z",
+          "pos": 15
+        },
+        {
+          "seriesId": "f2",
           "eventId": "cbe5d313164e1221",
           "sessionId": "70ece86b12ee5b86",
           "startUtc": "2026-07-26T09:25:00Z",
           "pos": 19
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 7
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 16
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "7dfb185a5ea9722c",
-          "sessionId": "64b9004365948284",
-          "startUtc": "2026-06-28T08:10:00Z",
-          "pos": 18
         }
       ]
     },
@@ -14778,6 +14848,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 3
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 1
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -14785,32 +14869,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 10
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 14
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 6
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 12
         }
       ]
     },
@@ -15936,6 +16005,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 12
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 18
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -15943,31 +16026,16 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 2
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
-          "pos": 20
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 17
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
           "pos": 20
         }
       ]
@@ -16179,10 +16247,32 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 15
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
           "pos": 9
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 8
         },
         {
           "seriesId": "f3",
@@ -16191,27 +16281,6 @@
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": null,
           "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 25
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 16
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 12
         }
       ]
     },
@@ -16454,6 +16523,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 8
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 6
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -16462,31 +16545,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 7
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 6
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 1
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 10
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 18
         }
       ]
     },
@@ -17791,6 +17860,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 8
         }
+      ],
+      "country": "Spain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Aston Martin",
+          "number": "14"
+        }
       ]
     },
     {
@@ -17813,6 +17890,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 25
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -17821,33 +17913,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 27,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
           "pos": null,
           "status": "DNF"
         }
@@ -18040,6 +18116,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 13
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -18048,31 +18139,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 14
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 16
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 13
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 19
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 24
         }
       ]
     },
@@ -18582,6 +18659,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 13
         }
+      ],
+      "country": "Argentina",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Alpine",
+          "number": "43"
+        }
       ]
     },
     {
@@ -18927,6 +19012,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 18
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -18935,31 +19035,17 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "6bc5ee7fcbdbda2e",
-          "sessionId": "9369f0ac6c9e54cc",
-          "startUtc": "2026-07-26T06:40:00Z",
-          "pos": 1
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 3
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
           "pos": 2
         },
         {
           "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 3
+          "eventId": "6bc5ee7fcbdbda2e",
+          "sessionId": "9369f0ac6c9e54cc",
+          "startUtc": "2026-07-26T06:40:00Z",
+          "pos": 1
         }
       ]
     },
@@ -19158,6 +19244,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 18
         }
+      ],
+      "country": "Brazil",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Audi",
+          "number": "5"
+        }
       ]
     },
     {
@@ -19243,6 +19337,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 6
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 14
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -19250,31 +19358,17 @@
         },
         {
           "seriesId": "f2",
-          "eventId": "014024ebf757a1d2",
-          "sessionId": "bb88d57744b4f597",
-          "startUtc": "2026-09-06T07:45:00Z",
-          "pos": 11
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
           "pos": 9
         },
         {
           "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 5
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 6
+          "eventId": "014024ebf757a1d2",
+          "sessionId": "bb88d57744b4f597",
+          "startUtc": "2026-09-06T07:45:00Z",
+          "pos": 11
         }
       ]
     },
@@ -19725,6 +19819,14 @@
           "pos": 20,
           "status": "DNF"
         }
+      ],
+      "country": "Great Britain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Mercedes",
+          "number": "63"
+        }
       ]
     },
     {
@@ -19876,11 +19978,26 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": null,
           "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "6bc5ee7fcbdbda2e",
+          "sessionId": "9a53bdbafc61c418",
+          "startUtc": "2026-07-25T08:05:00Z",
+          "pos": 28
         },
         {
           "seriesId": "f3",
@@ -19891,24 +20008,10 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 22
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 25
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "6de1732878cead05",
-          "sessionId": "35a0a1d92da5202f",
-          "startUtc": "2026-06-14T06:40:00Z",
-          "pos": 15
+          "eventId": "006c70dd631aafe6",
+          "sessionId": "33107fe189d77103",
+          "startUtc": "2026-07-18T08:00:00Z",
+          "pos": 21
         }
       ]
     },
@@ -21761,6 +21864,20 @@
           "pos": 14
         },
         {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 9
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 17
+        },
+        {
           "seriesId": "f3",
           "eventId": "442923105d9d7b1d",
           "sessionId": "8df2922594c6aaa7",
@@ -21770,31 +21887,17 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "46cb00c38b184d1b",
-          "sessionId": "1251d5d3689941b7",
-          "startUtc": "2026-09-06T06:15:00Z",
-          "pos": 6
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 15
         },
         {
           "seriesId": "f3",
-          "eventId": "6bc5ee7fcbdbda2e",
-          "sessionId": "9369f0ac6c9e54cc",
-          "startUtc": "2026-07-26T06:40:00Z",
-          "pos": 10
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 2
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 8
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 17
         }
       ]
     },
@@ -22559,6 +22662,14 @@
           "sessionId": "b5928c2404d29497",
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 5
+        }
+      ],
+      "country": "France",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Red Bull Racing",
+          "number": "6"
         }
       ]
     },
@@ -23946,6 +24057,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 10
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 2
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -23953,31 +24078,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 21
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 7
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 17
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 11
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 11
         }
       ]
     },
@@ -25338,10 +25449,31 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 5
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 7
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
           "pos": 20
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 12
         },
         {
           "seriesId": "f3",
@@ -25350,27 +25482,6 @@
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": null,
           "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 8
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 15
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 5
         }
       ]
     },
@@ -26131,9 +26242,32 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 10
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
           "pos": null,
           "status": "DNF"
         },
@@ -26143,27 +26277,6 @@
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 4
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 10
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 15
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 11
         }
       ]
     },
@@ -27114,6 +27227,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 22
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -27121,31 +27249,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 17
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 11
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 22
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 21
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 23
         }
       ]
     },
@@ -27632,6 +27746,22 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -27639,31 +27769,17 @@
         },
         {
           "seriesId": "f2",
-          "eventId": "014024ebf757a1d2",
-          "sessionId": "bb88d57744b4f597",
-          "startUtc": "2026-09-06T07:45:00Z",
-          "pos": 1
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 8
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
           "pos": 14
         },
         {
           "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 9
+          "eventId": "014024ebf757a1d2",
+          "sessionId": "bb88d57744b4f597",
+          "startUtc": "2026-09-06T07:45:00Z",
+          "pos": 1
         }
       ]
     },
@@ -28826,10 +28942,31 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 13
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 24
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
           "pos": 5
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 24
         },
         {
           "seriesId": "f3",
@@ -28838,27 +28975,6 @@
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": null,
           "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 23
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 6
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 10
         }
       ]
     },
@@ -29729,6 +29845,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 2
         }
+      ],
+      "country": "Italy",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Mercedes",
+          "number": "12"
+        }
       ]
     },
     {
@@ -30273,9 +30397,31 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 10
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 8
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
           "pos": null,
           "status": "DNF"
         },
@@ -30285,27 +30431,6 @@
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 17
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 2
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 16
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 3
         }
       ]
     },
@@ -30709,6 +30834,11 @@
       "country": "Canada",
       "lineups": [
         {
+          "seriesId": "f1",
+          "team": "Aston Martin",
+          "number": "18"
+        },
+        {
           "seriesId": "gtwc-europe",
           "team": "Comtoyou Racing",
           "number": "18",
@@ -30829,6 +30959,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 9
         }
+      ],
+      "country": "Great Britain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "McLaren",
+          "number": "1"
+        }
       ]
     },
     {
@@ -30926,6 +31064,21 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 2
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -30933,32 +31086,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 3
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 12
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 4
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 17
         }
       ]
     },
@@ -31660,6 +31798,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 3
         }
+      ],
+      "country": "Great Britain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Ferrari",
+          "number": "44"
+        }
       ]
     },
     {
@@ -31760,6 +31906,14 @@
           "sessionId": "b5928c2404d29497",
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 7
+        }
+      ],
+      "country": "New Zealand",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Racing Bulls",
+          "number": "30"
         }
       ]
     },
@@ -32603,10 +32757,24 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "6bc5ee7fcbdbda2e",
+          "sessionId": "9a53bdbafc61c418",
+          "startUtc": "2026-07-25T08:05:00Z",
+          "pos": 12
+        },
+        {
+          "seriesId": "f3",
           "eventId": "006c70dd631aafe6",
           "sessionId": "fe24e1238b9d3797",
           "startUtc": "2026-07-19T06:30:00Z",
           "pos": 16
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "006c70dd631aafe6",
+          "sessionId": "33107fe189d77103",
+          "startUtc": "2026-07-18T08:00:00Z",
+          "pos": 13
         },
         {
           "seriesId": "f3",
@@ -32617,24 +32785,10 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 13
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "6de1732878cead05",
-          "sessionId": "35a0a1d92da5202f",
-          "startUtc": "2026-06-14T06:40:00Z",
-          "pos": 19
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "456105b16bef8d63",
-          "sessionId": "55fb4cfd6e719f4a",
-          "startUtc": "2026-06-07T05:45:00Z",
-          "pos": 12
+          "eventId": "d00dc1a3793e53ee",
+          "sessionId": "940b30f9e22608e0",
+          "startUtc": "2026-07-04T08:35:00Z",
+          "pos": 8
         }
       ]
     },
@@ -33742,6 +33896,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 19
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -33749,31 +33918,17 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "6bc5ee7fcbdbda2e",
-          "sessionId": "9369f0ac6c9e54cc",
-          "startUtc": "2026-07-26T06:40:00Z",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
           "pos": null,
           "status": "DNF"
         },
         {
           "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 5
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 1
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
+          "eventId": "6bc5ee7fcbdbda2e",
+          "sessionId": "9369f0ac6c9e54cc",
+          "startUtc": "2026-07-26T06:40:00Z",
           "pos": null,
           "status": "DNF"
         }
@@ -35070,6 +35225,22 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -35077,31 +35248,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 8
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 13
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 15
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 9
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 15
         }
       ],
       "country": "Spain",
@@ -35771,6 +35928,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 2
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 4
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -35778,32 +35949,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 5
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 15
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 21
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 10
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": null,
-          "status": "DNS"
         }
       ]
     },
@@ -36928,6 +37084,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 14
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 12
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -36935,33 +37105,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 20
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 21
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": null,
-          "status": "DSQ"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 14
         }
       ]
     },
@@ -37204,6 +37358,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 12
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 14
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -37211,31 +37379,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 6
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 4
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 4
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 20
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 20
         }
       ]
     },
@@ -37707,6 +37861,11 @@
       ],
       "country": "Netherlands",
       "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Red Bull Racing",
+          "number": "3"
+        },
         {
           "seriesId": "gtwc-europe",
           "team": "Mercedes - AMG Team Verstappen Racing",
@@ -39591,6 +39750,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 19
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 27
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -39598,32 +39771,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 16
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 19
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": null,
-          "status": "DNS"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 24
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 26
         }
       ]
     },
@@ -40474,6 +40632,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 11
         }
+      ],
+      "country": "Germany",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Audi",
+          "number": "27"
+        }
       ]
     },
     {
@@ -40532,10 +40698,25 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 10
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "014024ebf757a1d2",
+          "sessionId": "8f37fd1b0216ff03",
+          "startUtc": "2026-09-05T12:15:00Z",
+          "pos": 11
         },
         {
           "seriesId": "f2",
@@ -40546,24 +40727,10 @@
         },
         {
           "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 13
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 13
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "7dfb185a5ea9722c",
-          "sessionId": "64b9004365948284",
-          "startUtc": "2026-06-28T08:10:00Z",
-          "pos": 16
+          "eventId": "cbe5d313164e1221",
+          "sessionId": "409df9d80d42d412",
+          "startUtc": "2026-07-25T12:15:00Z",
+          "pos": 11
         }
       ]
     },
@@ -40663,6 +40830,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 20
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 23
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -40670,32 +40851,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 9
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 18
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 18
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 9
         }
       ],
       "country": "Italy",
@@ -41284,6 +41450,21 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 5
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -41291,31 +41472,18 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 7
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 7
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 3
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 1
         }
       ]
     },
@@ -41455,6 +41623,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 16
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 20
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -41462,31 +41644,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 15
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 12
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 10
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 5
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 1
         }
       ]
     },
@@ -41555,6 +41723,21 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 5
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 20,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -41562,32 +41745,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 4
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 3
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 1
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": null,
-          "status": "DSQ"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 7
         }
       ]
     },
@@ -41852,6 +42020,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 14
         }
+      ],
+      "country": "Great Britain",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "number": "87"
+        }
       ]
     },
     {
@@ -41920,6 +42096,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 14
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 16
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -41928,32 +42118,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 12
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 9
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 18
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 18
         }
       ],
       "country": "Germany",
@@ -42142,6 +42317,14 @@
           "sessionId": "b5928c2404d29497",
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 6
+        }
+      ],
+      "country": "Australia",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "McLaren",
+          "number": "81"
         }
       ]
     },
@@ -42788,6 +42971,13 @@
           "sessionId": "f3b9be1d342a132b",
           "startUtc": "2026-03-07T21:50:00Z",
           "pos": 17
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "ba44846e73e0505b",
+          "sessionId": "271f87cfc6ba9857",
+          "startUtc": "2026-03-07T00:15:00Z",
+          "pos": 23
         }
       ]
     },
@@ -43177,6 +43367,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 1
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 11
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -43184,31 +43388,18 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 15
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 12
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 9
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 4
         }
       ]
     },
@@ -43738,6 +43929,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 16
         }
+      ],
+      "country": "France",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Alpine",
+          "number": "10"
+        }
       ]
     },
     {
@@ -44135,6 +44334,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 4
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 15
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -44142,24 +44355,18 @@
         },
         {
           "seriesId": "f2",
-          "eventId": "014024ebf757a1d2",
-          "sessionId": "bb88d57744b4f597",
-          "startUtc": "2026-09-06T07:45:00Z",
-          "pos": 2
-        },
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 6
+        }
+      ],
+      "country": "Brazil",
+      "lineups": [
         {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 3
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 1
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "number": "51"
         }
       ]
     },
@@ -44214,6 +44421,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 8
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 13
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -44221,32 +44442,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 13
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 19
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 6
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 2
         }
       ]
     },
@@ -45054,10 +45260,24 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 22
+        },
+        {
+          "seriesId": "f3",
           "eventId": "006c70dd631aafe6",
           "sessionId": "fe24e1238b9d3797",
           "startUtc": "2026-07-19T06:30:00Z",
           "pos": 26
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "006c70dd631aafe6",
+          "sessionId": "33107fe189d77103",
+          "startUtc": "2026-07-18T08:00:00Z",
+          "pos": 22
         },
         {
           "seriesId": "f3",
@@ -45069,10 +45289,10 @@
         },
         {
           "seriesId": "f3",
-          "eventId": "6de1732878cead05",
-          "sessionId": "35a0a1d92da5202f",
-          "startUtc": "2026-06-14T06:40:00Z",
-          "pos": 23
+          "eventId": "d00dc1a3793e53ee",
+          "sessionId": "940b30f9e22608e0",
+          "startUtc": "2026-07-04T08:35:00Z",
+          "pos": 28
         }
       ]
     },
@@ -45770,6 +45990,22 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 19,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -45777,31 +46013,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 1
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 5
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 13
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 8
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 14
         }
       ],
       "lineups": [
@@ -46472,6 +46694,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 7
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 6
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -46479,32 +46715,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 11
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 21
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 14
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 8
         }
       ]
     },
@@ -47710,10 +47931,24 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "6bc5ee7fcbdbda2e",
+          "sessionId": "9a53bdbafc61c418",
+          "startUtc": "2026-07-25T08:05:00Z",
+          "pos": 24
+        },
+        {
+          "seriesId": "f3",
           "eventId": "dc9b39ce38a96fe1",
           "sessionId": "3bbc72707791e3ff",
           "startUtc": "2026-06-28T06:40:00Z",
           "pos": 19
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "dc9b39ce38a96fe1",
+          "sessionId": "b92b560c36ffa66b",
+          "startUtc": "2026-06-27T08:05:00Z",
+          "pos": 26
         }
       ]
     },
@@ -48540,6 +48775,21 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": null,
+          "status": "DNS"
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 7
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -48547,32 +48797,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 17
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 18
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 16
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 11
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": null,
-          "status": "DNF"
         }
       ]
     },
@@ -49133,6 +49368,14 @@
           "sessionId": "b5928c2404d29497",
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": 19
+        }
+      ],
+      "country": "Mexico",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Cadillac",
+          "number": "11"
         }
       ]
     },
@@ -50960,6 +51203,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 2
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 9
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -50967,31 +51224,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 1
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 13
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 6
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 25
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 6
         }
       ]
     },
@@ -51461,6 +51704,20 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "4a62e40d18f53101",
+          "startUtc": "2026-09-25T10:15:00Z",
+          "pos": 11
+        },
+        {
+          "seriesId": "f2",
+          "eventId": "3d7b7b5e70f958f2",
+          "sessionId": "b717bfd59fe93b14",
+          "startUtc": "2026-09-25T04:15:00Z",
+          "pos": 11
+        },
+        {
+          "seriesId": "f2",
           "eventId": "340d0afefbab7fe6",
           "sessionId": "5daeed6048622b7a",
           "startUtc": "2026-09-13T09:25:00Z",
@@ -51468,31 +51725,17 @@
         },
         {
           "seriesId": "f2",
+          "eventId": "340d0afefbab7fe6",
+          "sessionId": "65374080ffb62236",
+          "startUtc": "2026-09-12T12:15:00Z",
+          "pos": 15
+        },
+        {
+          "seriesId": "f2",
           "eventId": "014024ebf757a1d2",
           "sessionId": "bb88d57744b4f597",
           "startUtc": "2026-09-06T07:45:00Z",
           "pos": 8
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "cbe5d313164e1221",
-          "sessionId": "70ece86b12ee5b86",
-          "startUtc": "2026-07-26T09:25:00Z",
-          "pos": 5
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "e13d367a42322577",
-          "sessionId": "2d5ba914643233ca",
-          "startUtc": "2026-07-19T08:00:00Z",
-          "pos": 2
-        },
-        {
-          "seriesId": "f2",
-          "eventId": "6ff6082d855e58f3",
-          "sessionId": "6b5f733d4131c4f7",
-          "startUtc": "2026-07-05T10:15:00Z",
-          "pos": 10
         }
       ]
     },
@@ -51808,6 +52051,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 9
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 1
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -51815,31 +52072,17 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 11
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 20
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 15
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 14
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 15
         }
       ]
     },
@@ -53889,6 +54132,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 3
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 10
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -53896,31 +54153,18 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 5
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 7
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 12
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": 7
         }
       ]
     },
@@ -54451,6 +54695,20 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 4
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 8
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -54458,30 +54716,16 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": 13
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
-          "pos": 2
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 20
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 3
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
           "pos": 2
         }
       ]
@@ -54917,6 +55161,14 @@
           "startUtc": "2026-10-04T07:00:00Z",
           "pos": null,
           "status": "NC"
+        }
+      ],
+      "country": "Finland",
+      "lineups": [
+        {
+          "seriesId": "f1",
+          "team": "Cadillac",
+          "number": "77"
         }
       ]
     },
@@ -55665,6 +55917,21 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 26
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
@@ -55672,32 +55939,18 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
+          "pos": null,
+          "status": "DNF"
+        },
+        {
+          "seriesId": "f3",
           "eventId": "6bc5ee7fcbdbda2e",
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 22
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": 19
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 23
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": null,
-          "status": "DNF"
         }
       ]
     },
@@ -56070,9 +56323,30 @@
         },
         {
           "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "8de8902594be52bc",
+          "startUtc": "2026-09-12T16:00:00Z",
+          "pos": 11
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "442923105d9d7b1d",
+          "sessionId": "9b180d10fb69bb41",
+          "startUtc": "2026-09-12T09:05:00Z",
+          "pos": 16
+        },
+        {
+          "seriesId": "f3",
           "eventId": "46cb00c38b184d1b",
           "sessionId": "1251d5d3689941b7",
           "startUtc": "2026-09-06T06:15:00Z",
+          "pos": 4
+        },
+        {
+          "seriesId": "f3",
+          "eventId": "46cb00c38b184d1b",
+          "sessionId": "08afcc1df1cd11a3",
+          "startUtc": "2026-09-05T07:30:00Z",
           "pos": 4
         },
         {
@@ -56081,29 +56355,6 @@
           "sessionId": "9369f0ac6c9e54cc",
           "startUtc": "2026-07-26T06:40:00Z",
           "pos": 23
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "006c70dd631aafe6",
-          "sessionId": "fe24e1238b9d3797",
-          "startUtc": "2026-07-19T06:30:00Z",
-          "pos": null,
-          "status": "DNF"
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "d00dc1a3793e53ee",
-          "sessionId": "76e472cda9042e14",
-          "startUtc": "2026-07-05T07:25:00Z",
-          "pos": 7
-        },
-        {
-          "seriesId": "f3",
-          "eventId": "dc9b39ce38a96fe1",
-          "sessionId": "3bbc72707791e3ff",
-          "startUtc": "2026-06-28T06:40:00Z",
-          "pos": null,
-          "status": "DNF"
         }
       ]
     },

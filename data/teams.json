@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-12T03:57:24Z",
+  "generatedAt": "2026-11-12T05:21:00Z",
   "teams": [
     {
       "id": "111-racing",
@@ -995,19 +995,25 @@
         {
           "seriesId": "f1",
           "pos": 6,
-          "points": 69
+          "points": 69,
+          "numbers": [
+            "10",
+            "43"
+          ]
         }
       ],
       "drivers": [
         {
-          "id": "colapinto-franco",
-          "name": "Franco Colapinto",
-          "seriesId": "f1"
-        },
-        {
           "id": "gasly-pierre",
           "name": "Pierre Gasly",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "10"
+        },
+        {
+          "id": "colapinto-franco",
+          "name": "Franco Colapinto",
+          "seriesId": "f1",
+          "number": "43"
         }
       ]
     },
@@ -1974,19 +1980,25 @@
         {
           "seriesId": "f1",
           "pos": 10,
-          "points": 7
+          "points": 7,
+          "numbers": [
+            "14",
+            "18"
+          ]
         }
       ],
       "drivers": [
         {
           "id": "alonso-fernando",
           "name": "Fernando Alonso",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "14"
         },
         {
           "id": "lance-stroll",
           "name": "Lance Stroll",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "18"
         }
       ]
     },
@@ -2078,19 +2090,25 @@
         {
           "seriesId": "f1",
           "pos": 8,
-          "points": 28
+          "points": 28,
+          "numbers": [
+            "5",
+            "27"
+          ]
         }
       ],
       "drivers": [
         {
           "id": "bortoleto-gabriel",
           "name": "Gabriel Bortoleto",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "5"
         },
         {
           "id": "hulkenberg-nico",
           "name": "Nico Hulkenberg",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "27"
         }
       ]
     },
@@ -2717,19 +2735,25 @@
         {
           "seriesId": "f1",
           "pos": 11,
-          "points": 0
+          "points": 0,
+          "numbers": [
+            "11",
+            "77"
+          ]
         }
       ],
       "drivers": [
         {
           "id": "perez-sergio",
           "name": "Sergio Perez",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "11"
         },
         {
           "id": "bottas-valtteri",
           "name": "Valtteri Bottas",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "77"
         }
       ]
     },
@@ -5651,19 +5675,25 @@
         {
           "seriesId": "f1",
           "pos": 2,
-          "points": 510
+          "points": 510,
+          "numbers": [
+            "16",
+            "44"
+          ]
         }
       ],
       "drivers": [
         {
           "id": "charles-leclerc",
           "name": "Charles Leclerc",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "16"
         },
         {
           "id": "hamilton-lewis",
           "name": "Lewis Hamilton",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "44"
         }
       ]
     },
@@ -7280,7 +7310,11 @@
         {
           "seriesId": "f1",
           "pos": 7,
-          "points": 31
+          "points": 31,
+          "numbers": [
+            "51",
+            "87"
+          ]
         }
       ],
       "drivers": [
@@ -7290,19 +7324,21 @@
           "seriesId": "f1"
         },
         {
-          "id": "bearman-oliver",
-          "name": "Oliver Bearman",
+          "id": "hirakawa-ryo",
+          "name": "Ryo Hirakawa",
           "seriesId": "f1"
         },
         {
           "id": "camara-rafael",
           "name": "Rafael Câmara",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "51"
         },
         {
-          "id": "hirakawa-ryo",
-          "name": "Ryo Hirakawa",
-          "seriesId": "f1"
+          "id": "bearman-oliver",
+          "name": "Oliver Bearman",
+          "seriesId": "f1",
+          "number": "87"
         }
       ]
     },
@@ -11762,19 +11798,25 @@
         {
           "seriesId": "f1",
           "pos": 4,
-          "points": 398
+          "points": 398,
+          "numbers": [
+            "1",
+            "81"
+          ]
         }
       ],
       "drivers": [
         {
           "id": "lando-norris",
           "name": "Lando Norris",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "1"
         },
         {
           "id": "oscar-piastri",
           "name": "Oscar Piastri",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "81"
         }
       ]
     },
@@ -11797,19 +11839,25 @@
         {
           "seriesId": "f1",
           "pos": 1,
-          "points": 652
+          "points": 652,
+          "numbers": [
+            "12",
+            "63"
+          ]
         }
       ],
       "drivers": [
         {
-          "id": "george-russell",
-          "name": "George Russell",
-          "seriesId": "f1"
-        },
-        {
           "id": "antonelli-kimi",
           "name": "Kimi Antonelli",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "12"
+        },
+        {
+          "id": "george-russell",
+          "name": "George Russell",
+          "seriesId": "f1",
+          "number": "63"
         }
       ]
     },
@@ -15320,24 +15368,30 @@
         {
           "seriesId": "f1",
           "pos": 5,
-          "points": 114
+          "points": 114,
+          "numbers": [
+            "30",
+            "41"
+          ]
         }
       ],
       "drivers": [
         {
-          "id": "arvid-lindblad",
-          "name": "Arvid Lindblad",
+          "id": "tsunoda-yuki",
+          "name": "Yuki Tsunoda",
           "seriesId": "f1"
         },
         {
           "id": "lawson-liam",
           "name": "Liam Lawson",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "30"
         },
         {
-          "id": "tsunoda-yuki",
-          "name": "Yuki Tsunoda",
-          "seriesId": "f1"
+          "id": "arvid-lindblad",
+          "name": "Arvid Lindblad",
+          "seriesId": "f1",
+          "number": "41"
         }
       ]
     },
@@ -16130,19 +16184,25 @@
         {
           "seriesId": "f1",
           "pos": 3,
-          "points": 415
+          "points": 415,
+          "numbers": [
+            "3",
+            "6"
+          ]
         }
       ],
       "drivers": [
         {
-          "id": "hadjar-isack",
-          "name": "Isack Hadjar",
-          "seriesId": "f1"
-        },
-        {
           "id": "max-verstappen",
           "name": "Max Verstappen",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "3"
+        },
+        {
+          "id": "hadjar-isack",
+          "name": "Isack Hadjar",
+          "seriesId": "f1",
+          "number": "6"
         }
       ]
     },
@@ -22284,19 +22344,25 @@
         {
           "seriesId": "f1",
           "pos": 9,
-          "points": 12
+          "points": 12,
+          "numbers": [
+            "23",
+            "55"
+          ]
         }
       ],
       "drivers": [
         {
           "id": "albon-alexander",
           "name": "Alexander Albon",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "23"
         },
         {
           "id": "carlos-sainz",
           "name": "Carlos Sainz",
-          "seriesId": "f1"
+          "seriesId": "f1",
+          "number": "55"
         }
       ]
     },

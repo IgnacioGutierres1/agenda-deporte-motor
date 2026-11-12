@@ -1,7 +1,7 @@
 {
   "seriesId": "f2",
   "eventId": "014024ebf757a1d2",
-  "updatedAt": "2026-11-10T19:13:39Z",
+  "updatedAt": "2026-11-12T05:21:00Z",
   "sessions": [
     {
       "sessionId": "bb88d57744b4f597",
@@ -210,7 +210,579 @@
         "title": "FIA Formula 2 — Italian Grand Prix: Feature Race (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T19:13:39Z"
+        "fetchedAt": "2026-11-12T05:21:00Z"
+      }
+    },
+    {
+      "sessionId": "403d54cdc7af92ce",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "15",
+          "driver": "Alexander Dunne",
+          "team": "Rodin Motorsport",
+          "laps": 10,
+          "time": "1:31.957"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Oliver Goethe",
+          "team": "MP Motorsport",
+          "laps": 10,
+          "time": "1:32.127"
+        },
+        {
+          "pos": 3,
+          "number": "22",
+          "driver": "Nico Varrone",
+          "team": "Van Amersfoort Racing",
+          "laps": 10,
+          "time": "1:32.463"
+        },
+        {
+          "pos": 4,
+          "number": "6",
+          "driver": "Nikola Tsolov",
+          "team": "Campos Racing",
+          "laps": 9,
+          "time": "1:32.486"
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Roman Bilinski",
+          "team": "DAMS Lucas Oil",
+          "laps": 9,
+          "time": "1:32.517"
+        },
+        {
+          "pos": 6,
+          "number": "2",
+          "driver": "Joshua Dürksen",
+          "team": "Invicta Racing",
+          "laps": 9,
+          "time": "1:32.587"
+        },
+        {
+          "pos": 7,
+          "number": "14",
+          "driver": "Martinius Stenshorne",
+          "team": "Rodin Motorsport",
+          "laps": 10,
+          "time": "1:32.591"
+        },
+        {
+          "pos": 8,
+          "number": "5",
+          "driver": "Noel Leon",
+          "team": "Campos Racing",
+          "laps": 9,
+          "time": "1:32.662"
+        },
+        {
+          "pos": 9,
+          "number": "1",
+          "driver": "Rafael Câmara",
+          "team": "Invicta Racing",
+          "laps": 9,
+          "time": "1:32.683"
+        },
+        {
+          "pos": 10,
+          "number": "17",
+          "driver": "Tasanapol Inthraphuvasak",
+          "team": "ART Grand Prix",
+          "laps": 9,
+          "time": "1:32.685"
+        },
+        {
+          "pos": 11,
+          "number": "7",
+          "driver": "Dino Beganovic",
+          "team": "DAMS Lucas Oil",
+          "laps": 9,
+          "time": "1:32.687"
+        },
+        {
+          "pos": 12,
+          "number": "3",
+          "driver": "Ritomo Miyata",
+          "team": "Hitech",
+          "laps": 9,
+          "time": "1:32.888"
+        },
+        {
+          "pos": 13,
+          "number": "16",
+          "driver": "Kush Maini",
+          "team": "ART Grand Prix",
+          "laps": 9,
+          "time": "1:32.904"
+        },
+        {
+          "pos": 14,
+          "number": "9",
+          "driver": "Gabriele Mini",
+          "team": "MP Motorsport",
+          "laps": 9,
+          "time": "1:32.992"
+        },
+        {
+          "pos": 15,
+          "number": "24",
+          "driver": "Laurens van Hoepen",
+          "team": "TRIDENT",
+          "laps": 9,
+          "time": "1:32.999"
+        },
+        {
+          "pos": 16,
+          "number": "20",
+          "driver": "Emerson Fittipaldi",
+          "team": "AIX Racing",
+          "laps": 14,
+          "time": "1:33.001"
+        },
+        {
+          "pos": 17,
+          "number": "25",
+          "driver": "John Bennett",
+          "team": "TRIDENT",
+          "laps": 9,
+          "time": "1:33.021"
+        },
+        {
+          "pos": 18,
+          "number": "4",
+          "driver": "Colton Herta",
+          "team": "Hitech",
+          "laps": 9,
+          "time": "1:33.146"
+        },
+        {
+          "pos": 19,
+          "number": "23",
+          "driver": "Rafael Villagomez",
+          "team": "Van Amersfoort Racing",
+          "laps": 10,
+          "time": "1:33.546"
+        },
+        {
+          "pos": 20,
+          "number": "12",
+          "driver": "Mari Boya",
+          "team": "PREMA Racing",
+          "laps": 9,
+          "time": "1:33.608"
+        },
+        {
+          "pos": 21,
+          "number": "21",
+          "driver": "Cian Shields",
+          "team": "AIX Racing",
+          "laps": 9,
+          "time": "1:33.782"
+        },
+        {
+          "pos": 22,
+          "number": "11",
+          "driver": "Sebastian Montoya",
+          "team": "PREMA Racing",
+          "laps": 7,
+          "time": "1:34.447"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/system/files/documents/doc_10_-_2026_monza_event_-_f2_practice_-_classification.pdf",
+        "title": "FIA — FIA Formula 2 Italian Grand Prix: 2026 Monza Event - F2 Practice - classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-12T05:21:00Z"
+      }
+    },
+    {
+      "sessionId": "20e051ad2e4d2dd1",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "1",
+          "driver": "Rafael Câmara",
+          "team": "Invicta Racing",
+          "laps": 10,
+          "time": "1:31.326"
+        },
+        {
+          "pos": 2,
+          "number": "2",
+          "driver": "Joshua Dürksen",
+          "team": "Invicta Racing",
+          "laps": 9,
+          "time": "1:31.383"
+        },
+        {
+          "pos": 3,
+          "number": "15",
+          "driver": "Alexander Dunne",
+          "team": "Rodin Motorsport",
+          "laps": 11,
+          "time": "1:31.472"
+        },
+        {
+          "pos": 4,
+          "number": "5",
+          "driver": "Noel Leon",
+          "team": "Campos Racing",
+          "laps": 9,
+          "time": "1:31.581"
+        },
+        {
+          "pos": 5,
+          "number": "14",
+          "driver": "Martinius Stenshorne",
+          "team": "Rodin Motorsport",
+          "laps": 11,
+          "time": "1:31.675"
+        },
+        {
+          "pos": 6,
+          "number": "6",
+          "driver": "Nikola Tsolov",
+          "team": "Campos Racing",
+          "laps": 9,
+          "time": "1:31.736"
+        },
+        {
+          "pos": 7,
+          "number": "17",
+          "driver": "Tasanapol Inthraphuvasak",
+          "team": "ART Grand Prix",
+          "laps": 9,
+          "time": "1:31.848"
+        },
+        {
+          "pos": 8,
+          "number": "3",
+          "driver": "Ritomo Miyata",
+          "team": "Hitech",
+          "laps": 10,
+          "time": "1:31.876"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Oliver Goethe",
+          "team": "MP Motorsport",
+          "laps": 9,
+          "time": "1:32.003"
+        },
+        {
+          "pos": 10,
+          "number": "25",
+          "driver": "John Bennett",
+          "team": "TRIDENT",
+          "laps": 9,
+          "time": "1:32.038"
+        },
+        {
+          "pos": 11,
+          "number": "9",
+          "driver": "Gabriele Mini",
+          "team": "MP Motorsport",
+          "laps": 9,
+          "time": "1:32.071"
+        },
+        {
+          "pos": 12,
+          "number": "8",
+          "driver": "Roman Bilinski",
+          "team": "DAMS Lucas Oil",
+          "laps": 9,
+          "time": "1:32.099"
+        },
+        {
+          "pos": 13,
+          "number": "12",
+          "driver": "Mari Boya",
+          "team": "PREMA Racing",
+          "laps": 9,
+          "time": "1:32.099"
+        },
+        {
+          "pos": 14,
+          "number": "11",
+          "driver": "Sebastian Montoya",
+          "team": "PREMA Racing",
+          "laps": 11,
+          "time": "1:32.107"
+        },
+        {
+          "pos": 15,
+          "number": "23",
+          "driver": "Rafael Villagomez",
+          "team": "Van Amersfoort Racing",
+          "laps": 10,
+          "time": "1:32.230"
+        },
+        {
+          "pos": 16,
+          "number": "7",
+          "driver": "Dino Beganovic",
+          "team": "DAMS Lucas Oil",
+          "laps": 9,
+          "time": "1:32.236"
+        },
+        {
+          "pos": 17,
+          "number": "22",
+          "driver": "Nico Varrone",
+          "team": "Van Amersfoort Racing",
+          "laps": 10,
+          "time": "1:32.303"
+        },
+        {
+          "pos": 18,
+          "number": "24",
+          "driver": "Laurens van Hoepen",
+          "team": "TRIDENT",
+          "laps": 9,
+          "time": "1:32.391"
+        },
+        {
+          "pos": 19,
+          "number": "20",
+          "driver": "Emerson Fittipaldi",
+          "team": "AIX Racing",
+          "laps": 9,
+          "time": "1:32.404"
+        },
+        {
+          "pos": 20,
+          "number": "4",
+          "driver": "Colton Herta",
+          "team": "Hitech",
+          "laps": 10,
+          "time": "1:32.409"
+        },
+        {
+          "pos": 21,
+          "number": "16",
+          "driver": "Kush Maini",
+          "team": "ART Grand Prix",
+          "laps": 9,
+          "time": "1:32.413"
+        },
+        {
+          "pos": 22,
+          "number": "21",
+          "driver": "Cian Shields",
+          "team": "AIX Racing",
+          "laps": 9,
+          "time": "1:32.835"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/system/files/documents/doc_42_-_2026_monza_event_-_f2_qualifying_-_final_classification.pdf",
+        "title": "FIA — FIA Formula 2 Italian Grand Prix: 2026 Monza Event - F2 Qualifying - final classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-12T05:21:00Z"
+      }
+    },
+    {
+      "sessionId": "8f37fd1b0216ff03",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "2",
+          "driver": "Joshua Dürksen",
+          "team": "Invicta Racing",
+          "laps": 21,
+          "time": "36:38.663",
+          "points": 11
+        },
+        {
+          "pos": 2,
+          "number": "25",
+          "driver": "John Bennett",
+          "team": "TRIDENT",
+          "laps": 21,
+          "gap": "+1.263s",
+          "points": 8
+        },
+        {
+          "pos": 3,
+          "number": "10",
+          "driver": "Oliver Goethe",
+          "team": "MP Motorsport",
+          "laps": 21,
+          "gap": "+1.818s",
+          "points": 6
+        },
+        {
+          "pos": 4,
+          "number": "5",
+          "driver": "Noel Leon",
+          "team": "Campos Racing",
+          "laps": 21,
+          "gap": "+2.284s",
+          "points": 5
+        },
+        {
+          "pos": 5,
+          "number": "6",
+          "driver": "Nikola Tsolov",
+          "team": "Campos Racing",
+          "laps": 21,
+          "gap": "+3.708s",
+          "points": 4
+        },
+        {
+          "pos": 6,
+          "number": "14",
+          "driver": "Martinius Stenshorne",
+          "team": "Rodin Motorsport",
+          "laps": 21,
+          "gap": "+4.160s",
+          "points": 3
+        },
+        {
+          "pos": 7,
+          "number": "15",
+          "driver": "Alexander Dunne",
+          "team": "Rodin Motorsport",
+          "laps": 21,
+          "gap": "+4.306s",
+          "points": 2
+        },
+        {
+          "pos": 8,
+          "number": "24",
+          "driver": "Laurens van Hoepen",
+          "team": "TRIDENT",
+          "laps": 21,
+          "gap": "+4.754s",
+          "points": 1
+        },
+        {
+          "pos": 9,
+          "number": "3",
+          "driver": "Ritomo Miyata",
+          "team": "Hitech",
+          "laps": 21,
+          "gap": "+5.241s"
+        },
+        {
+          "pos": 10,
+          "number": "9",
+          "driver": "Gabriele Mini",
+          "team": "MP Motorsport",
+          "laps": 21,
+          "gap": "+5.492s"
+        },
+        {
+          "pos": 11,
+          "number": "22",
+          "driver": "Nico Varrone",
+          "team": "Van Amersfoort Racing",
+          "laps": 21,
+          "gap": "+5.695s"
+        },
+        {
+          "pos": 12,
+          "number": "7",
+          "driver": "Dino Beganovic",
+          "team": "DAMS Lucas Oil",
+          "laps": 21,
+          "gap": "+6.584s"
+        },
+        {
+          "pos": 13,
+          "number": "12",
+          "driver": "Mari Boya",
+          "team": "PREMA Racing",
+          "laps": 21,
+          "gap": "+7.235s"
+        },
+        {
+          "pos": 14,
+          "number": "11",
+          "driver": "Sebastian Montoya",
+          "team": "PREMA Racing",
+          "laps": 21,
+          "gap": "+7.555s"
+        },
+        {
+          "pos": 15,
+          "number": "4",
+          "driver": "Colton Herta",
+          "team": "Hitech",
+          "laps": 21,
+          "gap": "+8.042s"
+        },
+        {
+          "pos": 16,
+          "number": "20",
+          "driver": "Emerson Fittipaldi",
+          "team": "AIX Racing",
+          "laps": 21,
+          "gap": "+8.574s"
+        },
+        {
+          "pos": 17,
+          "number": "23",
+          "driver": "Rafael Villagomez",
+          "team": "Van Amersfoort Racing",
+          "laps": 21,
+          "gap": "+8.861s"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "Cian Shields",
+          "team": "AIX Racing",
+          "laps": 21,
+          "gap": "+9.104s"
+        },
+        {
+          "pos": 19,
+          "number": "17",
+          "driver": "Tasanapol Inthraphuvasak",
+          "team": "ART Grand Prix",
+          "laps": 21,
+          "gap": "+10.556s"
+        },
+        {
+          "pos": 20,
+          "number": "16",
+          "driver": "Kush Maini",
+          "team": "ART Grand Prix",
+          "laps": 21,
+          "gap": "+12.176s"
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "8",
+          "driver": "Roman Bilinski",
+          "team": "DAMS Lucas Oil",
+          "laps": 15
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "1",
+          "driver": "Rafael Câmara",
+          "team": "Invicta Racing",
+          "laps": 4
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/system/files/documents/doc_51_-_2026_monza_event_-_f2_race_1_sprint_-_final_classification.pdf",
+        "title": "FIA — FIA Formula 2 Italian Grand Prix: 2026 Monza Event - F2 Race 1 (Sprint) - final classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-12T05:21:00Z"
       }
     }
   ]

@@ -1,7 +1,7 @@
 {
   "seriesId": "f3",
   "eventId": "6bc5ee7fcbdbda2e",
-  "updatedAt": "2026-11-10T19:13:39Z",
+  "updatedAt": "2026-11-12T05:21:00Z",
   "sessions": [
     {
       "sessionId": "9369f0ac6c9e54cc",
@@ -282,7 +282,772 @@
         "title": "FIA Formula 3 — Hungarian Grand Prix: Feature Race (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T19:13:39Z"
+        "fetchedAt": "2026-11-12T05:21:00Z"
+      }
+    },
+    {
+      "sessionId": "6818f237ecec908b",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "5",
+          "driver": "Freddie Slater",
+          "team": "TRIDENT",
+          "laps": 8,
+          "time": "1:33.947"
+        },
+        {
+          "pos": 2,
+          "number": "18",
+          "driver": "Brando Badoer",
+          "team": "Rodin Motorsport",
+          "laps": 7,
+          "time": "1:34.082"
+        },
+        {
+          "pos": 3,
+          "number": "17",
+          "driver": "Pedro Clerot",
+          "team": "Rodin Motorsport",
+          "laps": 7,
+          "time": "1:34.347"
+        },
+        {
+          "pos": 4,
+          "number": "25",
+          "driver": "Jin Nakamura",
+          "team": "Hitech",
+          "laps": 7,
+          "time": "1:34.369"
+        },
+        {
+          "pos": 5,
+          "number": "1",
+          "driver": "Théophile Naël",
+          "team": "Campos Racing",
+          "laps": 8,
+          "time": "1:34.397"
+        },
+        {
+          "pos": 6,
+          "number": "15",
+          "driver": "Enzo Deligny",
+          "team": "Van Amersfoort Racing",
+          "laps": 8,
+          "time": "1:34.418"
+        },
+        {
+          "pos": 7,
+          "number": "29",
+          "driver": "Nicola Lacorte",
+          "team": "DAMS Lucas Oil",
+          "laps": 8,
+          "time": "1:34.462"
+        },
+        {
+          "pos": 8,
+          "number": "2",
+          "driver": "Ugo Ugochukwu",
+          "team": "Campos Racing",
+          "laps": 7,
+          "time": "1:34.522"
+        },
+        {
+          "pos": 9,
+          "number": "7",
+          "driver": "Mattia Colnaghi",
+          "team": "MP Motorsport",
+          "laps": 8,
+          "time": "1:34.633"
+        },
+        {
+          "pos": 10,
+          "number": "11",
+          "driver": "Maciej Gladysz",
+          "team": "ART Grand Prix",
+          "laps": 7,
+          "time": "1:34.658"
+        },
+        {
+          "pos": 11,
+          "number": "10",
+          "driver": "Taito Kato",
+          "team": "ART Grand Prix",
+          "laps": 7,
+          "time": "1:34.732"
+        },
+        {
+          "pos": 12,
+          "number": "16",
+          "driver": "Bruno Del Pino",
+          "team": "Van Amersfoort Racing",
+          "laps": 8,
+          "time": "1:34.775"
+        },
+        {
+          "pos": 13,
+          "number": "3",
+          "driver": "Ernesto Rivera",
+          "team": "Campos Racing",
+          "laps": 7,
+          "time": "1:34.880"
+        },
+        {
+          "pos": 14,
+          "number": "20",
+          "driver": "Louis Sharp",
+          "team": "PREMA Racing",
+          "laps": 7,
+          "time": "1:34.882"
+        },
+        {
+          "pos": 15,
+          "number": "8",
+          "driver": "Tuukka Taponen",
+          "team": "MP Motorsport",
+          "laps": 7,
+          "time": "1:34.924"
+        },
+        {
+          "pos": 16,
+          "number": "19",
+          "driver": "Christian Ho",
+          "team": "Rodin Motorsport",
+          "laps": 6,
+          "time": "1:34.940"
+        },
+        {
+          "pos": 17,
+          "number": "27",
+          "driver": "Yevan David",
+          "team": "AIX Racing",
+          "laps": 7,
+          "time": "1:34.981"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "James Wharton",
+          "team": "PREMA Racing",
+          "laps": 7,
+          "time": "1:35.017"
+        },
+        {
+          "pos": 19,
+          "number": "9",
+          "driver": "Alessandro Giusti",
+          "team": "MP Motorsport",
+          "laps": 8,
+          "time": "1:35.024"
+        },
+        {
+          "pos": 20,
+          "number": "4",
+          "driver": "Noah Stromsted",
+          "team": "TRIDENT",
+          "laps": 7,
+          "time": "1:35.074"
+        },
+        {
+          "pos": 21,
+          "number": "12",
+          "driver": "Kanato Le",
+          "team": "ART Grand Prix",
+          "laps": 7,
+          "time": "1:35.195"
+        },
+        {
+          "pos": 22,
+          "number": "31",
+          "driver": "Gerrard Xie",
+          "team": "DAMS Lucas Oil",
+          "laps": 7,
+          "time": "1:35.302"
+        },
+        {
+          "pos": 23,
+          "number": "24",
+          "driver": "Fionn Mclaughlin",
+          "team": "Hitech",
+          "laps": 7,
+          "time": "1:35.371"
+        },
+        {
+          "pos": 24,
+          "number": "23",
+          "driver": "Woohyun Shin",
+          "team": "Hitech",
+          "laps": 12,
+          "time": "1:35.515"
+        },
+        {
+          "pos": 25,
+          "number": "14",
+          "driver": "Hiyu Yamakoshi",
+          "team": "Van Amersfoort Racing",
+          "laps": 7,
+          "time": "1:35.568"
+        },
+        {
+          "pos": 26,
+          "number": "22",
+          "driver": "Jose Garfias",
+          "team": "PREMA Racing",
+          "laps": 6,
+          "time": "1:35.686"
+        },
+        {
+          "pos": 27,
+          "number": "30",
+          "driver": "Nandhavud Bhirombhakdi",
+          "team": "DAMS Lucas Oil",
+          "laps": 8,
+          "time": "1:36.050"
+        },
+        {
+          "pos": 28,
+          "number": "6",
+          "driver": "Matteo De Palo",
+          "team": "TRIDENT",
+          "laps": 5,
+          "time": "1:48.286"
+        },
+        {
+          "pos": 29,
+          "number": "28",
+          "driver": "Fernando Barrichello",
+          "team": "AIX Racing",
+          "laps": 8,
+          "time": "1:58.830"
+        },
+        {
+          "pos": 30,
+          "number": "26",
+          "driver": "Salim Hanna",
+          "team": "AIX Racing",
+          "laps": 4,
+          "time": "2:02.773"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/system/files/documents/doc_9_-_f3_practice_-_classification.pdf",
+        "title": "FIA — FIA Formula 3 Hungarian Grand Prix: F3 Practice - Classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-12T05:21:00Z"
+      }
+    },
+    {
+      "sessionId": "750221137049f02a",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "8",
+          "driver": "Tuukka Taponen",
+          "team": "MP Motorsport",
+          "laps": 12,
+          "time": "1:33.411"
+        },
+        {
+          "pos": 2,
+          "number": "5",
+          "driver": "Freddie Slater",
+          "team": "TRIDENT",
+          "laps": 12,
+          "time": "1:33.451"
+        },
+        {
+          "pos": 3,
+          "number": "7",
+          "driver": "Mattia Colnaghi",
+          "team": "MP Motorsport",
+          "laps": 12,
+          "time": "1:33.475"
+        },
+        {
+          "pos": 4,
+          "number": "29",
+          "driver": "Nicola Lacorte",
+          "team": "DAMS Lucas Oil",
+          "laps": 13,
+          "time": "1:33.515"
+        },
+        {
+          "pos": 5,
+          "number": "18",
+          "driver": "Brando Badoer",
+          "team": "Rodin Motorsport",
+          "laps": 12,
+          "time": "1:33.523"
+        },
+        {
+          "pos": 6,
+          "number": "2",
+          "driver": "Ugo Ugochukwu",
+          "team": "Campos Racing",
+          "laps": 12,
+          "time": "1:33.524"
+        },
+        {
+          "pos": 7,
+          "number": "1",
+          "driver": "Théophile Naël",
+          "team": "Campos Racing",
+          "laps": 12,
+          "time": "1:33.533"
+        },
+        {
+          "pos": 8,
+          "number": "3",
+          "driver": "Ernesto Rivera",
+          "team": "Campos Racing",
+          "laps": 12,
+          "time": "1:33.553"
+        },
+        {
+          "pos": 9,
+          "number": "25",
+          "driver": "Jin Nakamura",
+          "team": "Hitech",
+          "laps": 12,
+          "time": "1:33.610"
+        },
+        {
+          "pos": 10,
+          "number": "31",
+          "driver": "Gerrard Xie",
+          "team": "DAMS Lucas Oil",
+          "laps": 12,
+          "time": "1:33.653"
+        },
+        {
+          "pos": 11,
+          "number": "11",
+          "driver": "Maciej Gladysz",
+          "team": "ART Grand Prix",
+          "laps": 13,
+          "time": "1:33.713"
+        },
+        {
+          "pos": 12,
+          "number": "12",
+          "driver": "Kanato Le",
+          "team": "ART Grand Prix",
+          "laps": 13,
+          "time": "1:33.744"
+        },
+        {
+          "pos": 13,
+          "number": "9",
+          "driver": "Alessandro Giusti",
+          "team": "MP Motorsport",
+          "laps": 12,
+          "time": "1:33.747"
+        },
+        {
+          "pos": 14,
+          "number": "19",
+          "driver": "Christian Ho",
+          "team": "Rodin Motorsport",
+          "laps": 13,
+          "time": "1:33.788"
+        },
+        {
+          "pos": 15,
+          "number": "21",
+          "driver": "James Wharton",
+          "team": "PREMA Racing",
+          "laps": 12,
+          "time": "1:33.805"
+        },
+        {
+          "pos": 16,
+          "number": "27",
+          "driver": "Yevan David",
+          "team": "AIX Racing",
+          "laps": 12,
+          "time": "1:33.814"
+        },
+        {
+          "pos": 17,
+          "number": "28",
+          "driver": "Fernando Barrichello",
+          "team": "AIX Racing",
+          "laps": 12,
+          "time": "1:33.903"
+        },
+        {
+          "pos": 18,
+          "number": "10",
+          "driver": "Taito Kato",
+          "team": "ART Grand Prix",
+          "laps": 12,
+          "time": "1:33.906"
+        },
+        {
+          "pos": 19,
+          "number": "20",
+          "driver": "Louis Sharp",
+          "team": "PREMA Racing",
+          "laps": 11,
+          "time": "1:33.931"
+        },
+        {
+          "pos": 20,
+          "number": "24",
+          "driver": "Fionn Mclaughlin",
+          "team": "Hitech",
+          "laps": 12,
+          "time": "1:33.966"
+        },
+        {
+          "pos": 21,
+          "number": "15",
+          "driver": "Enzo Deligny",
+          "team": "Van Amersfoort Racing",
+          "laps": 13,
+          "time": "1:33.990"
+        },
+        {
+          "pos": 22,
+          "number": "22",
+          "driver": "Jose Garfias",
+          "team": "PREMA Racing",
+          "laps": 12,
+          "time": "1:33.996"
+        },
+        {
+          "pos": 23,
+          "number": "4",
+          "driver": "Noah Stromsted",
+          "team": "TRIDENT",
+          "laps": 12,
+          "time": "1:34.022"
+        },
+        {
+          "pos": 24,
+          "number": "16",
+          "driver": "Bruno Del Pino",
+          "team": "Van Amersfoort Racing",
+          "laps": 12,
+          "time": "1:34.030"
+        },
+        {
+          "pos": 25,
+          "number": "23",
+          "driver": "Woohyun Shin",
+          "team": "Hitech",
+          "laps": 12,
+          "time": "1:34.039"
+        },
+        {
+          "pos": 26,
+          "number": "30",
+          "driver": "Nandhavud Bhirombhakdi",
+          "team": "DAMS Lucas Oil",
+          "laps": 12,
+          "time": "1:34.056"
+        },
+        {
+          "pos": 27,
+          "number": "17",
+          "driver": "Pedro Clerot",
+          "team": "Rodin Motorsport",
+          "laps": 13,
+          "time": "1:34.107"
+        },
+        {
+          "pos": 28,
+          "number": "26",
+          "driver": "Salim Hanna",
+          "team": "AIX Racing",
+          "laps": 12,
+          "time": "1:34.175"
+        },
+        {
+          "pos": 29,
+          "number": "6",
+          "driver": "Matteo De Palo",
+          "team": "TRIDENT",
+          "laps": 13,
+          "time": "1:34.466"
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "14",
+          "driver": "Hiyu Yamakoshi",
+          "team": "Van Amersfoort Racing"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/system/files/documents/doc_22_-_2026_budapest_event_-_f3_qualifying_-_final_classification.pdf",
+        "title": "FIA — FIA Formula 3 Hungarian Grand Prix: 2026 Budapest Event - F3 Qualifying - Final classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-12T05:21:00Z"
+      }
+    },
+    {
+      "sessionId": "9a53bdbafc61c418",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "1",
+          "driver": "Théophile Naël",
+          "team": "Campos Racing",
+          "laps": 19,
+          "time": "32:33.347",
+          "points": 10
+        },
+        {
+          "pos": 2,
+          "number": "12",
+          "driver": "Kanato Le",
+          "team": "ART Grand Prix",
+          "laps": 19,
+          "gap": "+2.715s",
+          "points": 9
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Ernesto Rivera",
+          "team": "Campos Racing",
+          "laps": 19,
+          "gap": "+3.839s",
+          "points": 8
+        },
+        {
+          "pos": 4,
+          "number": "7",
+          "driver": "Mattia Colnaghi",
+          "team": "MP Motorsport",
+          "laps": 19,
+          "gap": "+4.126s",
+          "points": 7
+        },
+        {
+          "pos": 5,
+          "number": "18",
+          "driver": "Brando Badoer",
+          "team": "Rodin Motorsport",
+          "laps": 19,
+          "gap": "+6.198s",
+          "points": 6
+        },
+        {
+          "pos": 6,
+          "number": "8",
+          "driver": "Tuukka Taponen",
+          "team": "MP Motorsport",
+          "laps": 19,
+          "gap": "+8.030s",
+          "points": 6
+        },
+        {
+          "pos": 7,
+          "number": "29",
+          "driver": "Nicola Lacorte",
+          "team": "DAMS Lucas Oil",
+          "laps": 19,
+          "gap": "+13.283s",
+          "points": 4
+        },
+        {
+          "pos": 8,
+          "number": "21",
+          "driver": "James Wharton",
+          "team": "PREMA Racing",
+          "laps": 19,
+          "gap": "+15.298s",
+          "points": 3
+        },
+        {
+          "pos": 9,
+          "number": "28",
+          "driver": "Fernando Barrichello",
+          "team": "AIX Racing",
+          "laps": 19,
+          "gap": "+15.690s",
+          "points": 2
+        },
+        {
+          "pos": 10,
+          "number": "5",
+          "driver": "Freddie Slater",
+          "team": "TRIDENT",
+          "laps": 19,
+          "gap": "+17.164s",
+          "points": 1
+        },
+        {
+          "pos": 11,
+          "number": "27",
+          "driver": "Yevan David",
+          "team": "AIX Racing",
+          "laps": 19,
+          "gap": "+18.802s"
+        },
+        {
+          "pos": 12,
+          "number": "20",
+          "driver": "Louis Sharp",
+          "team": "PREMA Racing",
+          "laps": 19,
+          "gap": "+19.375s"
+        },
+        {
+          "pos": 13,
+          "number": "9",
+          "driver": "Alessandro Giusti",
+          "team": "MP Motorsport",
+          "laps": 19,
+          "gap": "+19.760s"
+        },
+        {
+          "pos": 14,
+          "number": "10",
+          "driver": "Taito Kato",
+          "team": "ART Grand Prix",
+          "laps": 19,
+          "gap": "+20.238s"
+        },
+        {
+          "pos": 15,
+          "number": "22",
+          "driver": "Jose Garfias",
+          "team": "PREMA Racing",
+          "laps": 19,
+          "gap": "+20.551s"
+        },
+        {
+          "pos": 16,
+          "number": "15",
+          "driver": "Enzo Deligny",
+          "team": "Van Amersfoort Racing",
+          "laps": 19,
+          "gap": "+20.899s"
+        },
+        {
+          "pos": 17,
+          "number": "2",
+          "driver": "Ugo Ugochukwu",
+          "team": "Campos Racing",
+          "laps": 19,
+          "gap": "+21.385s"
+        },
+        {
+          "pos": 18,
+          "number": "16",
+          "driver": "Bruno Del Pino",
+          "team": "Van Amersfoort Racing",
+          "laps": 19,
+          "gap": "+21.572s"
+        },
+        {
+          "pos": 19,
+          "number": "24",
+          "driver": "Fionn Mclaughlin",
+          "team": "Hitech",
+          "laps": 19,
+          "gap": "+22.014s"
+        },
+        {
+          "pos": 20,
+          "number": "4",
+          "driver": "Noah Stromsted",
+          "team": "TRIDENT",
+          "laps": 19,
+          "gap": "+22.277s"
+        },
+        {
+          "pos": 21,
+          "number": "17",
+          "driver": "Pedro Clerot",
+          "team": "Rodin Motorsport",
+          "laps": 19,
+          "gap": "+22.717s"
+        },
+        {
+          "pos": 22,
+          "number": "19",
+          "driver": "Christian Ho",
+          "team": "Rodin Motorsport",
+          "laps": 19,
+          "gap": "+23.198s"
+        },
+        {
+          "pos": 23,
+          "number": "23",
+          "driver": "Woohyun Shin",
+          "team": "Hitech",
+          "laps": 19,
+          "gap": "+23.810s"
+        },
+        {
+          "pos": 24,
+          "number": "26",
+          "driver": "Salim Hanna",
+          "team": "AIX Racing",
+          "laps": 19,
+          "gap": "+24.570s"
+        },
+        {
+          "pos": 25,
+          "number": "30",
+          "driver": "Nandhavud Bhirombhakdi",
+          "team": "DAMS Lucas Oil",
+          "laps": 19,
+          "gap": "+24.870s"
+        },
+        {
+          "pos": 26,
+          "number": "14",
+          "driver": "Hiyu Yamakoshi",
+          "team": "Van Amersfoort Racing",
+          "laps": 19,
+          "gap": "+25.430s"
+        },
+        {
+          "pos": 27,
+          "number": "6",
+          "driver": "Matteo De Palo",
+          "team": "TRIDENT",
+          "laps": 19,
+          "gap": "+30.982s"
+        },
+        {
+          "pos": 28,
+          "number": "31",
+          "driver": "Gerrard Xie",
+          "team": "DAMS Lucas Oil",
+          "laps": 19,
+          "gap": "+37.156s"
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "11",
+          "driver": "Maciej Gladysz",
+          "team": "ART Grand Prix",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "25",
+          "driver": "Jin Nakamura",
+          "team": "Hitech",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/system/files/documents/doc_36_-_2026_budapest_event_-_f3_race_1_sprint_-_final_classification.pdf",
+        "title": "FIA — FIA Formula 3 Hungarian Grand Prix: 2026 Budapest Event - F3 Race 1 (Sprint) - Final classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-12T05:21:00Z"
       }
     }
   ]
