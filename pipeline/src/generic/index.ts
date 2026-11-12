@@ -19,7 +19,7 @@ import {
   type StandingsFile,
 } from '@dm/shared';
 import { classifySession } from '../core/builders.ts';
-import type { Adapter, AdapterContext, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
+import type { Adapter, AdapterContext, MissingTimetable, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
 import { fetchDocument, fetchImages, looksLikePdf, type FetchedDocument } from '../extract/document.ts';
 import { getAi } from '../extract/ai-chain.ts';
 import { GeminiUnavailableError, MISSING_KEY_MESSAGE, type Gemini } from '../extract/gemini.ts';
@@ -95,7 +95,7 @@ export async function withSeriesSeason(series: Series, ctx: AdapterContext): Pro
   try {
     const season = await recipe.season(recipeCtx(series, ctx));
     if (season === ctx.season) return ctx;
-    ctx.log.info(`Temporada ${season}-${String(season + 1).slice(2)} (la que indica el sitio oficial)`);
+    ctx.log.info(`Temporada vigente: ${season} (la que indica el sitio oficial, no el año en curso)`);
     return { ...ctx, season };
   } catch (err) {
     ctx.log.warn(`No se pudo determinar la temporada vigente (${err instanceof Error ? err.message : String(err)}); se usa ${ctx.season}`);
@@ -214,6 +214,7 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       const prevSessions = ctx.previous?.sessions ?? [];
       const events: MotorEvent[] = [];
       const sessions: Session[] = [];
+      const missing: MissingTimetable[] = [];
       let needsKey = 0;
       let unavailable = MISSING_KEY_MESSAGE;
 
@@ -233,11 +234,14 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
           source: cal.source,
         });
         let found: SessionsFound | null = null;
+        // Un error al buscar o leer el cronograma (o la falta de IA) no es lo mismo que "todavía no publicado".
+        let unreadable = false;
         const inHorizon = entry.dateEnd >= from && entry.dateStart <= to;
         if (inHorizon) {
           try {
             found = await findSessions(series, entry, cal, ctx, deps);
           } catch (err) {
+            unreadable = true;
             if (err instanceof GeminiUnavailableError) {
               needsKey++;
               unavailable = err.message;
@@ -270,12 +274,13 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
           const kept = prevSessions.filter((s) => s.eventId === draft.id);
           events.push(kept.length > 0 ? { ...draft, sessionsStatus: 'published' } : draft);
           sessions.push(...kept);
+          if (inHorizon && kept.length === 0) missing.push({ eventId: draft.id, reason: unreadable ? 'ilegible' : 'no-publicado' });
         }
       }
       if (needsKey > 0) {
         ctx.log.warn(`${unavailable}: ${needsKey} cronograma(s) dentro del horizonte quedan "a confirmar"`);
       }
-      return { events, sessions };
+      return { events, sessions, ...(missing.length ? { missingTimetables: missing } : {}) };
     },
 
     async results(series, ctx, req): Promise<ResultsChunk> {
@@ -318,7 +323,8 @@ async function findSessions(
 
   const result = await aiTimetable(aiDeps(ctx, deps), series, entry, doc.doc, trace);
   for (const d of result.dropped) ctx.log.warn(`${entry.name}: sesión descartada "${d.name}": ${d.reason}`);
-  if (result.sessions.length === 0) return null;
+  // Había un documento de cronograma pero no salió ninguna sesión válida: no es "todavía no publicado".
+  if (result.sessions.length === 0) throw new Error(`el cronograma (${doc.doc.url}) no tiene sesiones legibles`);
   const model = traceModel(trace);
   return {
     sessions: result.sessions,

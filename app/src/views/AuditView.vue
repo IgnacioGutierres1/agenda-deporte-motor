@@ -50,6 +50,9 @@
               <div v-if="row.status?.message && row.status.state !== 'ok'" class="audit-msg">
                 {{ row.status.message }}
               </div>
+              <div v-if="row.status?.state === 'ok' && row.status.timetables" :class="{ 'audit-partial': row.status.timetables.found < row.status.timetables.due }">
+                {{ timetables(row.status.timetables) }}<template v-if="row.status.message"> · {{ row.status.message }}</template>
+              </div>
               <div v-if="row.status" class="dim">
                 Última verificación {{ ago(row.status.lastAttempt) }}
                 <template v-if="row.status.state !== 'ok' && row.status.state !== 'disabled'">
@@ -68,13 +71,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapState } from 'pinia';
-import type { Series } from '@dm/shared';
+import type { Series, TimetableCoverage } from '@dm/shared';
 import DataState from '../components/DataState.vue';
 import PeriodPicker from '../components/PeriodPicker.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { AUDIT_STATE_LABELS, groupSeries, seriesColor, type AuditState } from '../lib/grid.ts';
-import { formatDateRange, formatDateTime, timeAgo } from '../lib/format.ts';
+import { formatDateRange, formatDateTime, timeAgo, timetablesText } from '../lib/format.ts';
 
 const ORDER: AuditState[] = ['activa', 'pendiente', 'receso', 'error', 'desactivada'];
 
@@ -121,6 +124,9 @@ export default defineComponent({
       return timeAgo(iso, this.now);
     },
     dateRange: formatDateRange,
+    timetables(t: TimetableCoverage): string {
+      return timetablesText(t);
+    },
   },
 });
 </script>
@@ -184,5 +190,9 @@ export default defineComponent({
 
 .audit-msg {
   color: var(--error);
+}
+
+.audit-partial {
+  color: var(--warn);
 }
 </style>

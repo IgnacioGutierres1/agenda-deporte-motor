@@ -87,6 +87,7 @@ export const statusFileSchema = z.object({
       message: z.string().optional(),
       sourceUrl: z.string().optional(),
       standingsAvailable: z.boolean(),
+      timetables: z.object({ found: z.number().int().nonnegative(), due: z.number().int().positive() }).optional(),
     }),
   ),
 });
