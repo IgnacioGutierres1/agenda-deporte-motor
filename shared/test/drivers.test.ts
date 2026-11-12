@@ -14,6 +14,11 @@ describe('pilotos', () => {
     const variants = ['Agustín CANAPINO', 'Canapino, Agustin', 'Agustín Canapino', 'CANAPINO, Agustín'];
     expect(new Set(variants.map(driverId))).toEqual(new Set(['agustin-canapino']));
     expect(driverKey('A. Palmowski PAL')).toBe('a palmowski');
+    expect(driverKey('C. Bättig (WCD) BAE')).toBe('battig c wcd');
+    // Apellido de tres letras en mayúsculas (listas de SRO): no es un código.
+    expect(driverId('Mikkel MAC')).toBe('mac-mikkel');
+    expect(driverId('Alex AKA')).toBe('aka-alex');
+    expect(driverDisplayName('Mikkel MAC')).toBe('Mikkel Mac');
     expect(driverId('Kimi Antonelli')).not.toBe(driverId('Andrea Kimi Antonelli'));
   });
 

@@ -179,6 +179,11 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
   return {
     name: 'generic',
 
+    prefersDirectStandings(series) {
+      const url = series.officialUrls.slice(1).find((u) => STANDINGS_RE.test(u));
+      return !!(url && findRecipe(url)?.standings);
+    },
+
     async schedule(series, baseCtx): Promise<ScheduleChunk> {
       const ctx = await withSeriesSeason(series, baseCtx);
       const url = series.officialUrls[0];

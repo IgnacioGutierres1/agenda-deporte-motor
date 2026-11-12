@@ -42,7 +42,8 @@ import {
   stripComments,
   tzFor,
 } from './kit.ts';
-import type { CalendarEntry, ExtractedSession, SiteRecipe } from './types.ts';
+import { acoRoster, dtmRoster, sroRoster } from './rosters.ts';
+import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
 import { macau } from './macau.ts';
 import { supercars } from './supercars.ts';
 import { superformula } from './superformula.ts';
@@ -114,7 +115,129 @@ const sro: SiteRecipe = {
     }
     return dedupe(out).sort((a, b) => a.dateStart.localeCompare(b.dateStart));
   },
+  standings: (url, ctx) => sroStandings(url, ctx),
+  roster: (url, ctx) => sroRoster(url, ctx),
 };
+
+interface SelectOption {
+  value: string;
+  label: string;
+  selected: boolean;
+}
+
+/** Opciones del <select name="…"> más completo de la página (algunas páginas lo repiten para celulares). */
+export function selectOptions(html: string, name: string): SelectOption[] {
+  let best: SelectOption[] = [];
+  for (const m of html.matchAll(/<select\b([^>]*)>([\s\S]*?)<\/select>/gi)) {
+    if (attr(m[1] ?? '', 'name') !== name) continue;
+    const opts = [...(m[2] ?? '').matchAll(/<option\b([^>]*)>([\s\S]*?)<\/option>/gi)].map((o) => ({
+      value: attr(o[1] ?? '', 'value') ?? '',
+      label: textOf(o[2] ?? ''),
+      selected: /\bselected\b/i.test(o[1] ?? ''),
+    }));
+    if (opts.length > best.length) best = opts;
+  }
+  return best;
+}
+
+/** Subcopas de SRO (por categoría de piloto o premios aparte): sus pilotos ya están en la tabla general. */
+const SRO_SUBCUP = /\b(gold|silver|bronze|pro-?am|silver-?am|am|pro|trophy|academy|independent|china cup|rookie)\b/i;
+const SRO_PREFIX = /^.*?powered by aws\s*|^(gt world challenge (europe|asia|america|australia)|intercontinental gt challenge)\s*/i;
+
+/**
+ * Título de una tabla de SRO a partir de la opción del selector:
+ * "GT World Challenge Europe powered by AWS Endurance Cup Overall Driver" -> "Pilotos Endurance Cup",
+ * "GT World Challenge America powered by AWS Pro-Am Teams" -> "Equipos Pro-Am", "GT3 Manufacturers" -> "Marcas".
+ */
+export function sroTableTitle(label: string, value: string): string {
+  const kind = /manufacturer/i.test(label)
+    ? 'Marcas'
+    : /_teams$/i.test(value) || (!/_drivers$/i.test(value) && /\bteams?\b/i.test(label))
+      ? 'Equipos'
+      : 'Pilotos';
+  const qualifier = label
+    .replace(SRO_PREFIX, '')
+    .replace(/\b(gt3|overall|championship|drivers?|teams?|manufacturers?)\b/gi, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return qualifier ? `${kind} ${qualifier}` : kind;
+}
+
+/**
+ * Tablas que se leen: las generales de cada campeonato (en Europa: general, Endurance Cup y Sprint Cup) y no
+ * las subcopas Gold/Silver/Bronze/Pro-Am, que repiten pilotos. Si el sitio no publica una tabla general de
+ * pilotos (América y Australia solo tienen tablas por clase), se leen todas las clases: no se superponen.
+ */
+export function sroChosenTypes(types: SelectOption[]): SelectOption[] {
+  const usable = types.filter((o) => o.value && o.value !== '0' && !/pit stop/i.test(o.label));
+  const main = usable.filter((o) => !SRO_SUBCUP.test(o.label.replace(SRO_PREFIX, '')));
+  return main.some((o) => sroTableTitle(o.label, o.value).startsWith('Pilotos')) ? main : usable;
+}
+
+/** Filas de una tabla HTML con cada celda repetida según su colspan (para alinear encabezados y datos). */
+function expandedRows(tableHtml: string): string[][] {
+  return [...tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)].map((tr) =>
+    [...(tr[1] ?? '').matchAll(/<t([hd])\b([^>]*)>([\s\S]*?)<\/t\1>/gi)].flatMap((c) =>
+      Array<string>(Math.max(1, Number(attr(c[2] ?? '', 'colspan')) || 1)).fill(c[3] ?? ''),
+    ),
+  );
+}
+
+/**
+ * Tabla del campeonato de SRO. La fila de títulos ("Pos | Driver | Total", a veces dentro del <tbody>) es la
+ * que tiene la columna Total; las filas siguientes con posición numérica son los pilotos o equipos.
+ * La columna "Manufacturer" de las tablas de pilotos del IGTC es la marca, no el equipo: no se guarda.
+ * null si la tabla todavía no tiene filas.
+ */
+export function sroStandingsTable(html: string, title: string): StandingsTable | null {
+  const table = firstTable(html);
+  if (!table) throw new Error(`SRO: "${title}" sin tabla`);
+  const rows = expandedRows(table).map((r) => r.map((c) => textOf(c)));
+  const headerAt = rows.findIndex((r) => r.some((c) => /^total$/i.test(c)));
+  if (headerAt < 0) throw new Error(`SRO: "${title}" sin columna Total`);
+  const headers = rows[headerAt]!;
+  const cPos = column(headers, /^pos/i);
+  const cName = column(headers, /^(driver|team|manufacturer|brand|name)s?$/i);
+  const cTotal = column(headers, /^total$/i);
+  if (cPos < 0 || cName < 0) throw new Error(`SRO: "${title}" sin las columnas esperadas (${headers.join(', ')})`);
+  const out: StandingsRow[] = [];
+  for (const r of rows.slice(headerAt + 1)) {
+    const pos = r[cPos] ?? '';
+    if (!/^\d+$/.test(pos)) continue;
+    out.push({ pos: Number(pos), name: r[cName] ?? '', points: parseNumber(r[cTotal] ?? '') ?? NaN });
+  }
+  return out.length ? checkStandingsTable({ title, rows: out }, true) : null;
+}
+
+/**
+ * Campeonato de los sitios de SRO (https://www.gt-world-challenge-europe.com/standings y equivalentes): la
+ * página tiene un selector de temporada (filter_season_id, con ids propios: 26 = 2026 en Europa, 10 en Asia)
+ * y otro del tipo de tabla (filter_standing_type = "42_0_drivers"…, o filter_igtcstandingtype_id en el IGTC).
+ * Si la temporada pedida no está en el selector, o el sitio responde con otra (lo hace cuando la tabla todavía
+ * no existe), la temporada no está publicada.
+ */
+async function sroStandings(url: string, ctx: RecipeContext): Promise<StandingsFound | null> {
+  const base = `${new URL(url).origin}/standings`;
+  const first = stripComments((await ctx.http.text(base)).body);
+  const season = selectOptions(first, 'filter_season_id').find((o) => o.label === String(ctx.season));
+  if (!season) return null;
+  const typeName = first.match(/<select\b[^>]*name="(filter_[a-z]*standing[a-z_]*)"/i)?.[1];
+  if (!typeName) throw new Error('SRO: la página de posiciones no tiene el selector de tablas');
+  const types = sroChosenTypes(selectOptions(first, typeName));
+  if (types.length === 0) throw new Error('SRO: el selector de tablas está vacío');
+  const tables: StandingsTable[] = [];
+  for (const type of types) {
+    const pageUrl = `${base}?filter_season_id=${encodeURIComponent(season.value)}&${typeName}=${encodeURIComponent(type.value)}`;
+    const html = stripComments((await ctx.http.text(pageUrl)).body);
+    const shown = selectOptions(html, 'filter_season_id').find((o) => o.selected);
+    if (shown && shown.value !== season.value) return null;
+    const table = sroStandingsTable(html, sroTableTitle(type.label, type.value));
+    if (table) tables.push(table);
+  }
+  if (tables.length === 0) return null;
+  const title = textOf(first.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] ?? '') || 'Standings';
+  return { tables, source: standingsSource(base, `${title} ${ctx.season}`, ctx) };
+}
 
 // ─── IndyCar / Indy NXT ───────────────────────────────────────────────────────────────────────
 
@@ -340,7 +463,8 @@ const aco: SiteRecipe = {
       sessions,
       source: { url: entry.url, title: title || `Programa — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
     };
-  },
+  },  /** Inscriptos: grilla de autos del WEC (/en/page/grid) o página de pilotos de ELMS y Asian LMS (/en/page/drivers). */
+  roster: (url, ctx) => acoRoster(url, ctx),
 };
 
 // ─── Nürburgring Langstrecken-Serie ───────────────────────────────────────────────────────────
@@ -799,6 +923,8 @@ const dtm: SiteRecipe = {
       },
     };
   },
+  /** Inscriptos de la temporada: https://api.dtm.com/data?query=drivers (número, equipo y auto por temporada). */
+  roster: (url, ctx) => dtmRoster(url, ctx),
 };
 
 // ─── F1 Academy (datos de Next.js de f1academy.com) ───────────────────────────────────────────

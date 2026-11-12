@@ -4,10 +4,12 @@
  *   2. Lee el calendario y los cronogramas de cada serie habilitada (lector directo o flujo genérico).
  *   3. Valida, fusiona con la corrida anterior y detecta cambios de horario.
  *   4. Busca resultados de sesiones terminadas y actualiza campeonatos.
- *   5. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/** y data/feeds/*.ics.
- *   6. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
+ *   5. Lee las listas oficiales de inscriptos vencidas (data/rosters/**, sin IA; si fallan se conservan).
+ *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/drivers.json,
+ *      data/teams.json y data/feeds/*.ics.
+ *   7. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
- * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-news] [--dry-run]
+ * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-news] [--dry-run]
  */
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -15,21 +17,24 @@ import {
   driversFileSchema,
   scheduleFileSchema,
   statusFileSchema,
+  teamsFileSchema,
+  type RosterFile,
   type ScheduleFile,
   type Series,
   type SeriesStatus,
   type StatusFile,
 } from '@dm/shared';
 import { adapters } from './adapters/index.ts';
-import { genericAdapter } from './generic/index.ts';
+import { genericAdapter, withSeriesSeason } from './generic/index.ts';
 import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { buildFeed } from './core/feed.ts';
-import { buildDriversFromData } from './core/drivers.ts';
+import { buildIndexFromData } from './core/drivers.ts';
 import { createLogger } from './core/log.ts';
 import { mergeRun, type SeriesOutcome } from './core/merge.ts';
 import { CACHE_DIR, DATA_DIR } from './core/paths.ts';
 import { collectExistingResults, runResultsForSeries, type AttemptsLog } from './core/results.ts';
+import { runRosters } from './core/rosters.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
 import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
@@ -39,6 +44,7 @@ export interface RunOptions {
   only?: string[];
   skipResults?: boolean;
   skipNews?: boolean;
+  skipRosters?: boolean;
   dryRun?: boolean;
   now?: Date;
   dataDir?: string;
@@ -157,14 +163,34 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   scheduleFileSchema.parse(schedule);
   statusFileSchema.parse(status);
 
-  // Índice de pilotos (tablas de pilotos + resultados de carreras ya publicados).
-  const drivers = await buildDriversFromData(dataDir, config.series, schedule.events, schedule.sessions, nowIso);
+  // Listas oficiales de inscriptos: independientes de Gemini y de que el calendario se haya podido leer.
+  let freshRosters = new Map<string, RosterFile>();
+  if (!opts.skipRosters) {
+    freshRosters = await runRosters(
+      selected,
+      {
+        now,
+        season: ctx.season,
+        http: ctx.http,
+        log,
+        seasonFor: async (s) => (await withSeriesSeason(s, { ...ctx, log: log.child(`${s.id}:inscriptos`) })).season,
+      },
+      dataDir,
+      !!opts.dryRun,
+      opts.concurrency ?? 4,
+    );
+  }
+
+  // Índices de pilotos y equipos (tablas, inscriptos y resultados de carreras ya publicados).
+  const { drivers, teams } = await buildIndexFromData(dataDir, config.series, schedule.events, schedule.sessions, nowIso, freshRosters);
   driversFileSchema.parse(drivers);
+  teamsFileSchema.parse(teams);
 
   if (!opts.dryRun) {
     await writeJson(path.join(dataDir, 'schedule.json'), schedule);
     await writeJson(path.join(dataDir, 'status.json'), status);
     await writeJson(path.join(dataDir, 'drivers.json'), drivers);
+    await writeJson(path.join(dataDir, 'teams.json'), teams);
     await writeJson(attemptsFile, attempts);
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
@@ -189,7 +215,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     return acc;
   }, {});
   log.info(
-    `Listo: ${schedule.events.length} eventos, ${schedule.sessions.length} sesiones, ${drivers.drivers.length} pilotos. Estados: ${JSON.stringify(counts)}`,
+    `Listo: ${schedule.events.length} eventos, ${schedule.sessions.length} sesiones, ${drivers.drivers.length} pilotos, ${teams.teams.length} equipos. Estados: ${JSON.stringify(counts)}`,
   );
   return { schedule, status };
 }
@@ -213,6 +239,7 @@ function parseArgs(argv: string[]): RunOptions {
     if (arg.startsWith('--only=')) opts.only = arg.slice(7).split(',').filter(Boolean);
     else if (arg === '--skip-results') opts.skipResults = true;
     else if (arg === '--skip-news') opts.skipNews = true;
+    else if (arg === '--skip-rosters') opts.skipRosters = true;
     else if (arg === '--dry-run') opts.dryRun = true;
   }
   return opts;

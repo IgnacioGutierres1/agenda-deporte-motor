@@ -98,13 +98,16 @@ export const firstTable = (html: string) => stripComments(html).match(/<table\b[
 
 /**
  * Controla una tabla leída: no vacía, puntos numéricos y posiciones 1, 2, 3… (se admiten empates).
+ * Con `loose`, solo exige que las posiciones arranquen en 1 y no bajen: SRO numera los empates a veces
+ * "1, 1, 2" y a veces "65, 65, 65, 67" dentro de la misma tabla.
  * Lanza un error si el formato no es el esperado (el flujo genérico prueba entonces con Gemini).
  */
-export function checkStandingsTable(table: StandingsTable): StandingsTable {
+export function checkStandingsTable(table: StandingsTable, loose = false): StandingsTable {
   if (table.rows.length === 0) throw new Error(`Tabla "${table.title}" vacía`);
   table.rows.forEach((r, i) => {
     const prev = table.rows[i - 1];
-    const ok = i === 0 ? r.pos === 1 : r.pos === i + 1 || r.pos === prev!.pos;
+    const ok =
+      i === 0 ? r.pos === 1 : loose ? r.pos >= prev!.pos && r.pos <= i + 1 : r.pos === i + 1 || r.pos === prev!.pos;
     if (!ok || !r.name || !Number.isFinite(r.points)) throw new Error(`Fila inesperada en "${table.title}": ${JSON.stringify(r)}`);
   });
   return table;
