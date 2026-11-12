@@ -15,7 +15,7 @@
       <p v-else-if="racesHere.length > 1" class="ctx-round">{{ racesHere.length }} carreras</p>
       <p class="small dim ctx-where">
         {{ dateRange(event.dateStart, event.dateEnd) }} ·
-        <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
+        <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link tap-inline">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
       </p>
     </section>
 
@@ -36,11 +36,10 @@
         <p v-if="driverTablesList.length > 1" class="ctx-subtitle small dim">{{ mainTable.title }}</p>
         <ul class="list-card inset ctx-gaps">
           <li v-for="r in mainTable.rows" :key="`${r.pos}-${r.name}`" :class="{ followed: r.followed }">
-            <div class="list-row">
+            <component :is="r.driverId ? 'RouterLink' : 'div'" :to="r.driverId ? `/piloto/${r.driverId}` : undefined" class="list-row">
               <span class="pos-badge" :class="{ top: r.pos === 1 }">{{ r.pos }}</span>
               <span class="grow">
-                <RouterLink v-if="r.driverId" :to="`/piloto/${r.driverId}`" class="driver-link">{{ r.name }}</RouterLink>
-                <template v-else>{{ r.name }}</template>
+                {{ r.name }}
                 <AppIcon v-if="r.followed" name="star" :size="13" filled class="accent-text ctx-star" />
                 <span v-if="r.team" class="block small dim">{{ r.team }}</span>
               </span>
@@ -48,7 +47,7 @@
                 <strong>{{ num(r.points) }}</strong>
                 <span class="block small dim">{{ r.gap ? `−${num(r.gap)}` : 'Líder' }}</span>
               </span>
-            </div>
+            </component>
           </li>
         </ul>
         <div v-if="math" class="ctx-math">
@@ -76,18 +75,17 @@
           <p class="ctx-subtitle small dim">{{ t.title }}</p>
           <ul class="list-card inset ctx-gaps compact">
             <li v-for="r in t.rows" :key="`${r.pos}-${r.name}`" :class="{ followed: r.followed }">
-              <div class="list-row">
+              <component :is="r.driverId ? 'RouterLink' : 'div'" :to="r.driverId ? `/piloto/${r.driverId}` : undefined" class="list-row">
                 <span class="pos-badge" :class="{ top: r.pos === 1 }">{{ r.pos }}</span>
                 <span class="grow">
-                  <RouterLink v-if="r.driverId" :to="`/piloto/${r.driverId}`" class="driver-link">{{ r.name }}</RouterLink>
-                  <template v-else>{{ r.name }}</template>
+                  {{ r.name }}
                   <AppIcon v-if="r.followed" name="star" :size="13" filled class="accent-text ctx-star" />
                 </span>
                 <span class="ctx-points small">
                   <strong>{{ num(r.points) }}</strong>
                   <span class="dim"> {{ r.gap ? `−${num(r.gap)}` : '' }}</span>
                 </span>
-              </div>
+              </component>
             </li>
           </ul>
         </template>
@@ -586,8 +584,10 @@ export default defineComponent({
 }
 
 a.ctx-more {
-  display: inline-block;
-  margin: 0.2rem 0.85rem 0.7rem;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin: 0 0.85rem 0.25rem;
   font-weight: 700;
 }
 

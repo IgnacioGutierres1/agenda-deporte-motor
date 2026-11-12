@@ -1,6 +1,6 @@
 <template>
   <div class="period-picker">
-    <div class="period-tabs" role="tablist" aria-label="Período">
+    <div v-tab-strip class="period-tabs" role="tablist" aria-label="Período">
       <button
         v-for="p in presets"
         :key="p"
@@ -26,7 +26,7 @@
     </div>
     <p v-if="periodError" class="small" style="color: var(--error)">{{ periodError }}</p>
     <label v-if="preset !== 'personalizado' && preset !== 'proximo-mes'" class="check small">
-      <input v-model="includeThursday" type="checkbox" />
+      <input v-model="includeThursday" type="checkbox" aria-label="Incluir jueves" />
       Incluir jueves
     </label>
   </div>
@@ -37,9 +37,11 @@ import { defineComponent } from 'vue';
 import { mapActions, mapState, mapWritableState } from 'pinia';
 import { PERIOD_LABELS } from '@dm/shared';
 import { PERIOD_PRESETS, useScheduleStore } from '../stores/schedule.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 
 export default defineComponent({
   name: 'PeriodPicker',
+  directives: { tabStrip },
   data() {
     return { presets: PERIOD_PRESETS, labels: PERIOD_LABELS };
   },
@@ -63,6 +65,11 @@ export default defineComponent({
   margin: 0 -1rem;
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.period-tabs.tab-strip {
+  --strip-bg: var(--bg);
+  --strip-gap: 0.4rem;
 }
 
 .period-tabs::-webkit-scrollbar {

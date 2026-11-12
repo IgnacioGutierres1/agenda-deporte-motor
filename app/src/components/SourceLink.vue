@@ -1,7 +1,7 @@
 <template>
   <div class="source-link small">
     <span class="dim">Fuente: </span>
-    <a :href="source.url" target="_blank" rel="noopener noreferrer">{{ source.title || host }}</a>
+    <a :href="source.url" target="_blank" rel="noopener noreferrer" class="tap-inline">{{ source.title || host }}</a>
     <span class="dim" :title="fullMethod"> · {{ methodLabel }} · leído {{ fetchedText }}</span>
   </div>
 </template>

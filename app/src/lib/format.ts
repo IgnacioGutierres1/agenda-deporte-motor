@@ -39,6 +39,14 @@ export function zoneLabel(zone: string): string {
   return last.replace(/_/g, ' ');
 }
 
+/** Nombre de la zona para el encabezado de la Agenda: "Hora Argentina", "Hora de Chile", "Hora de Tokyo"… */
+export function zoneDisplayName(zone: string): string {
+  if (zone === AR_TZ || zone.startsWith('America/Argentina/')) return 'Hora Argentina';
+  if (zone === 'UTC' || zone === 'Etc/UTC') return 'Hora UTC';
+  const option = ZONE_OPTIONS.find((o) => o.value === zone);
+  return `Hora de ${option ? option.label : zoneLabel(zone)}`;
+}
+
 /** Zonas ofrecidas en Ajustes (además de la del dispositivo). */
 export const ZONE_OPTIONS: Array<{ value: string; label: string }> = [
   { value: AR_TZ, label: 'Argentina (Buenos Aires)' },

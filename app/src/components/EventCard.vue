@@ -21,7 +21,9 @@
       </button>
     </header>
     <ul v-if="!collapsed" class="event-card-rows">
-      <li v-for="item in items" :key="item.session.id" class="session-line" :class="{ live: item.live, finished: item.finished }">
+      <template v-for="g in dayGroups" :key="g.date">
+      <li v-if="showDayHeaders" class="session-day-head">{{ g.label }}</li>
+      <li v-for="item in g.items" :key="item.session.id" class="session-line" :class="{ live: item.live, finished: item.finished }">
         <button type="button" class="session-line-btn" @click="$emit('select', item)">
           <span class="session-time">
             <template v-if="item.live"><span class="live-dot" />En vivo</template>
@@ -33,8 +35,10 @@
           <span class="session-info grow">
             <span class="session-name">{{ item.session.name }}</span>
             <span class="session-sub small dim">
-              <template v-if="showDay">{{ day(item.session.startUtc) }} · </template>
-              {{ broadcast(item) }}
+              <span v-if="lateNight(item.session.startUtc)" class="late-tag" title="De madrugada en tu zona horaria">
+                <AppIcon name="moon" :size="12" />madrugada
+              </span>
+              <template v-if="lateNight(item.session.startUtc)"> · </template>{{ broadcast(item) }}
             </span>
           </span>
           <span class="session-flags">
@@ -44,6 +48,7 @@
           </span>
         </button>
       </li>
+      </template>
     </ul>
   </section>
 </template>
@@ -57,6 +62,7 @@ import AppIcon from './AppIcon.vue';
 import SeriesCrest from './SeriesCrest.vue';
 import { useSettingsStore } from '../stores/settings.ts';
 import type { GridItem } from '../lib/grid.ts';
+import { groupSessionsByDay, isLateNight, type SessionDayGroup } from '../lib/agenda.ts';
 
 /** Tarjeta de un evento en la Agenda (como una competencia en FotMob). */
 export default defineComponent({
@@ -68,12 +74,19 @@ export default defineComponent({
     items: { type: Array as PropType<GridItem[]>, required: true },
     live: { type: Boolean, default: false },
     collapsed: { type: Boolean, default: false },
-    /** Mostrar el día en cada fila (vista "Finde"). */
+    /** Separar las sesiones por día con subtítulos "Viernes 13" (vista "Finde"). */
     showDay: { type: Boolean, default: false },
   },
   emits: ['toggle', 'select'],
   computed: {
     ...mapState(useSettingsStore, ['timeZone']),
+    dayGroups(): SessionDayGroup[] {
+      return groupSessionsByDay(this.items, this.timeZone);
+    },
+    /** Subtítulos por día en "Finde" o si la tarjeta cruza la medianoche. */
+    showDayHeaders(): boolean {
+      return this.showDay || this.dayGroups.length > 1;
+    },
     eventLink(): string {
       return this.event ? `/evento/${this.event.id}` : `/categoria/${this.series.id}`;
     },
@@ -82,8 +95,8 @@ export default defineComponent({
     time(iso: string): string {
       return DateTime.fromISO(iso, { zone: 'utc' }).setZone(this.timeZone).toFormat('HH:mm');
     },
-    day(iso: string): string {
-      return DateTime.fromISO(iso, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat('ccc d').replace('.', '');
+    lateNight(iso: string): boolean {
+      return isLateNight(iso, this.timeZone);
     },
     broadcast(item: GridItem): string {
       return item.session.broadcast.length ? item.session.broadcast.join(', ') : 'TV a confirmar';
@@ -151,8 +164,33 @@ export default defineComponent({
   padding: 0;
 }
 
-.session-line + .session-line {
+.session-line + .session-line,
+.session-day-head + .session-line {
   border-top: 1px solid var(--border);
+}
+
+.session-day-head {
+  padding: 0.45rem 0.85rem 0.3rem;
+  background: var(--bg-elev-2);
+  color: var(--text);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.session-line + .session-day-head {
+  border-top: 1px solid var(--border);
+}
+
+.late-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.2rem;
+  color: var(--warn, var(--text-dim));
+}
+
+.late-tag svg {
+  flex: none;
 }
 
 .session-line-btn {

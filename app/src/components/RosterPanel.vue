@@ -22,7 +22,7 @@
         Todavía no hay lista oficial de inscriptos: estos son los pilotos y equipos de la tabla del campeonato.
       </p>
 
-      <div v-if="classes.length > 1" class="session-chips" role="tablist" aria-label="Clases">
+      <div v-if="classes.length > 1" v-tab-strip="series.id" class="session-chips" role="tablist" aria-label="Clases">
         <button type="button" class="pill" :class="{ active: !selectedClass }" @click="selectedClass = ''">Todas</button>
         <button
           v-for="c in classes"
@@ -38,8 +38,10 @@
 
       <section v-for="t in namedTeams" :key="t.key" class="card flush roster-team">
         <h3 class="card-title roster-team-title">
-          <RouterLink :to="`/equipo/${t.teamId}`" class="driver-link">{{ t.name }}</RouterLink>
-          <AppIcon name="chevron" :size="14" class="dim" />
+          <RouterLink :to="`/equipo/${t.teamId}`" class="roster-team-link">
+            <span>{{ t.name }}</span>
+            <AppIcon name="chevron" :size="14" class="dim" />
+          </RouterLink>
         </h3>
         <ul class="list-card inset">
           <li v-for="car in t.cars" :key="car.key">
@@ -86,11 +88,13 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { groupRoster, rosterClasses, rosterFromStandings, type RosterCar, type RosterTeam } from '../lib/roster.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { timeAgo } from '../lib/format.ts';
+import { tabStrip } from '../lib/tabStrip.ts';
 
 /** Plantel de una categoría: inscriptos agrupados por equipo y auto, con filtro por clase. */
 export default defineComponent({
   name: 'RosterPanel',
   components: { AppIcon, DriverAvatar, RosterCarRow, SourceLink },
+  directives: { tabStrip },
   props: {
     series: { type: Object as PropType<Series>, required: true },
   },
@@ -187,8 +191,20 @@ export default defineComponent({
 }
 
 .roster-team-title {
+  padding: 0;
+}
+
+a.roster-team-link {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  min-height: 44px;
+  padding: 0.35rem 0.85rem;
+  color: var(--text);
+}
+
+a.roster-team-link:hover {
+  text-decoration: none;
+  color: var(--accent);
 }
 </style>

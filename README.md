@@ -124,7 +124,9 @@ Pegarlo en la app → **Ajustes**. Se guarda solo en ese dispositivo.
 
 En **Ajustes** está el link `webcal://…/data/feeds/deporte-motor.ics`. Agregarlo una vez en Google Calendar
 (*Otros calendarios → Desde URL*) o en el iPhone (*Ajustes → Calendario → Cuentas → Agregar calendario
-suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias horas.
+suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias horas. Los eventos de los
+próximos 60 días que todavía no tienen cronograma aparecen como evento de día completo "(horarios a confirmar)";
+cuando se publican los horarios, ese evento desaparece y quedan las sesiones.
 
 ### 7. Avisos y tiempos en vivo (Cloudflare Worker, gratis)
 

@@ -4,6 +4,10 @@
  * - Horas siempre en UTC con sufijo "Z". Sin VTIMEZONE ni parámetros TZID.
  * - UID: {hash}@agendadeportemotor.local
  * - SUMMARY: "Categoría (Circuito) - Sesión"
+ *
+ * Eventos sin cronograma todavía (solo se conocen las fechas): un evento de día completo con
+ * DTSTART;VALUE=DATE / DTEND;VALUE=DATE (fin exclusivo, RFC 5545 §3.6.1), con el mismo formato de SUMMARY y
+ * "(horarios a confirmar)". Son los únicos valores sin hora en UTC: una fecha no tiene zona horaria.
  */
 
 export const ICS_FILENAME = 'carreras_finde.ics';
@@ -19,9 +23,32 @@ export interface IcsEventInput {
   sessionName: string;
   country: string;
   broadcast: string[];
+  /** true si la transmisión es la habitual de la categoría (config) y no la que publica la fuente. */
+  broadcastIsDefault?: boolean;
   sourceUrl?: string;
   /** true si el horario se leyó de una imagen oficial (se aclara en la descripción). */
   fromImage?: boolean;
+}
+
+/** Evento sin horarios publicados: se exporta como evento de día completo. */
+export interface IcsAllDayEventInput {
+  allDay: true;
+  /**
+   * Id estable del evento (UID). Cuando aparecen los horarios, el feed deja de emitirlo y los clientes
+   * suscriptos lo borran al refrescar.
+   */
+  id: string;
+  /** Fechas locales del circuito, YYYY-MM-DD, ambas inclusive. */
+  dateStart: string;
+  dateEnd: string;
+  seriesName: string;
+  circuit: string;
+  /** Nombre del evento (ocupa el lugar de la sesión en el SUMMARY). */
+  eventName: string;
+  country: string;
+  broadcast: string[];
+  broadcastIsDefault?: boolean;
+  sourceUrl?: string;
 }
 
 export interface IcsOptions {
@@ -39,6 +66,25 @@ export function toIcsUtc(iso: string): string {
     `${d.getUTCFullYear()}${p(d.getUTCMonth() + 1)}${p(d.getUTCDate())}` +
     `T${p(d.getUTCHours())}${p(d.getUTCMinutes())}${p(d.getUTCSeconds())}Z`
   );
+}
+
+/** "2026-11-13" -> "20261113" (valor DATE). */
+export function toIcsDate(isoDate: string): string {
+  const m = isoDate.match(/^(\d{4})-(\d{2})-(\d{2})$/);
+  // "2026-02-30" pasa la expresión pero no es una fecha: Date la corre al 2 de marzo.
+  const d = new Date(`${isoDate}T00:00:00Z`);
+  if (!m || Number.isNaN(d.getTime()) || d.toISOString().slice(0, 10) !== isoDate) {
+    throw new Error(`Fecha inválida para .ics: ${isoDate}`);
+  }
+  return `${m[1]}${m[2]}${m[3]}`;
+}
+
+/** Día siguiente a una fecha YYYY-MM-DD (fin exclusivo de un evento de día completo). */
+export function nextIsoDate(isoDate: string): string {
+  toIcsDate(isoDate);
+  const d = new Date(`${isoDate}T00:00:00Z`);
+  d.setUTCDate(d.getUTCDate() + 1);
+  return d.toISOString().slice(0, 10);
 }
 
 /** Escapa texto según RFC 5545 §3.3.11. */
@@ -77,7 +123,18 @@ export function icsSummary(e: Pick<IcsEventInput, 'seriesName' | 'circuit' | 'se
   return `${e.seriesName} (${e.circuit}) - ${e.sessionName}`;
 }
 
-export function buildIcs(events: IcsEventInput[], opts: IcsOptions = {}): string {
+/** "Transmisión: X, Y", "Transmisión habitual: X" (la de config, no confirmada por la fuente) o "A confirmar". */
+export function icsBroadcastLine(broadcast: string[], isDefault = false): string {
+  if (broadcast.length === 0) return 'Transmisión: A confirmar';
+  return `${isDefault ? 'Transmisión habitual' : 'Transmisión'}: ${broadcast.join(', ')}`;
+}
+
+const isAllDay = (e: IcsEventInput | IcsAllDayEventInput): e is IcsAllDayEventInput => 'allDay' in e && e.allDay === true;
+
+/** Orden: por inicio; un evento de día completo va antes que las sesiones de ese mismo día. */
+const sortKey = (e: IcsEventInput | IcsAllDayEventInput) => (isAllDay(e) ? e.dateStart : e.startUtc);
+
+export function buildIcs(events: Array<IcsEventInput | IcsAllDayEventInput>, opts: IcsOptions = {}): string {
   const stamp = toIcsUtc((opts.now ?? new Date()).toISOString());
   const lines: string[] = [
     'BEGIN:VCALENDAR',
@@ -87,10 +144,28 @@ export function buildIcs(events: IcsEventInput[], opts: IcsOptions = {}): string
     'METHOD:PUBLISH',
     `X-WR-CALNAME:${escapeIcsText(opts.calendarName ?? 'Deporte Motor')}`,
   ];
-  const sorted = [...events].sort((a, b) => a.startUtc.localeCompare(b.startUtc));
+  const sorted = [...events].sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
   for (const e of sorted) {
-    const broadcast = e.broadcast.length ? e.broadcast.join(', ') : 'A confirmar';
-    let description = `Transmisión: ${broadcast}`;
+    if (isAllDay(e)) {
+      let description = `Horarios a confirmar: la fuente oficial todavía no publicó el cronograma.\n${icsBroadcastLine(e.broadcast, e.broadcastIsDefault)}`;
+      if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}`;
+      lines.push(
+        'BEGIN:VEVENT',
+        `UID:${e.id}@agendadeportemotor.local`,
+        `DTSTAMP:${stamp}`,
+        `DTSTART;VALUE=DATE:${toIcsDate(e.dateStart)}`,
+        `DTEND;VALUE=DATE:${toIcsDate(nextIsoDate(e.dateEnd < e.dateStart ? e.dateStart : e.dateEnd))}`,
+        `SUMMARY:${escapeIcsText(icsSummary({ seriesName: e.seriesName, circuit: e.circuit, sessionName: `${e.eventName} (horarios a confirmar)` }))}`,
+        `DESCRIPTION:${escapeIcsText(description)}`,
+        `LOCATION:${escapeIcsText(`${e.circuit}, ${e.country}`)}`,
+        'STATUS:CONFIRMED',
+        // Un fin de semana entero no debe figurar como ocupado.
+        'TRANSP:TRANSPARENT',
+        'END:VEVENT',
+      );
+      continue;
+    }
+    let description = icsBroadcastLine(e.broadcast, e.broadcastIsDefault);
     if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}${e.fromImage ? ' (leído de imagen)' : ''}`;
     lines.push(
       'BEGIN:VEVENT',

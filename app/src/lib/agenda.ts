@@ -3,7 +3,7 @@
  * "Finde" y agrupación de sesiones por evento. Sin Vue ni Pinia.
  */
 import { DateTime } from 'luxon';
-import { resolvePeriod, type MotorEvent, type Period, type ScheduleFile, type Series } from '@dm/shared';
+import { resolvePeriod, type MotorEvent, type Period, type ScheduleFile, type Series, type Session } from '@dm/shared';
 import { seriesSort, type GridItem, type PendingItem } from './grid.ts';
 
 /** Día elegido en la franja: fecha local YYYY-MM-DD, o "finde" (fin de semana en curso o el próximo). */
@@ -120,3 +120,99 @@ export function splitFollowed<T extends { series: Series }>(list: T[], followed:
 }
 
 export type { PendingItem };
+
+// ---------------------------------------------------------------------------
+// Días dentro de una tarjeta, madrugada y "próxima sesión" (estado vacío)
+// ---------------------------------------------------------------------------
+
+/** Sesiones de una tarjeta de un mismo día local (para los subtítulos "Viernes 13" de la vista Finde). */
+export interface SessionDayGroup {
+  /** YYYY-MM-DD en la zona de visualización. */
+  date: string;
+  /** "Viernes 13" */
+  label: string;
+  items: GridItem[];
+}
+
+/** "Viernes 13" a partir de una fecha local YYYY-MM-DD. */
+export function shortDayLabel(date: string, zone: string): string {
+  const s = DateTime.fromISO(date, { zone }).setLocale('es-AR').toFormat('cccc d');
+  return s.charAt(0).toUpperCase() + s.slice(1);
+}
+
+/** Agrupa las sesiones (ya ordenadas) por día local, para que los cambios de día se vean dentro de la tarjeta. */
+export function groupSessionsByDay(items: GridItem[], zone: string): SessionDayGroup[] {
+  const out: SessionDayGroup[] = [];
+  for (const item of items) {
+    const date = DateTime.fromISO(item.session.startUtc, { zone: 'utc' }).setZone(zone).toISODate()!;
+    let group = out[out.length - 1];
+    if (!group || group.date !== date) {
+      group = { date, label: shortDayLabel(date, zone), items: [] };
+      out.push(group);
+    }
+    group.items.push(item);
+  }
+  return out;
+}
+
+/** true si la sesión empieza de madrugada (00:00 a 06:59) en la zona del usuario. */
+export function isLateNight(isoUtc: string, zone: string): boolean {
+  return DateTime.fromISO(isoUtc, { zone: 'utc' }).setZone(zone).hour < 7;
+}
+
+/** "hoy", "mañana", "el viernes 20" (dentro de la semana) o "el vie 4 dic". */
+export function relativeDay(date: string, today: string, zone: string): string {
+  const d = DateTime.fromISO(date, { zone }).setLocale('es-AR');
+  const diff = Math.round(d.diff(DateTime.fromISO(today, { zone }), 'days').days);
+  if (diff === 0) return 'hoy';
+  if (diff === 1) return 'mañana';
+  if (diff === -1) return 'ayer';
+  if (diff > 1 && diff < 7) return `el ${d.toFormat('cccc d')}`;
+  return `el ${d.toFormat('ccc d LLL').replace(/\./g, '')}`;
+}
+
+/** Próxima sesión (de las categorías visibles) que empieza desde un instante dado. */
+export interface NextSession {
+  session: Session;
+  series: Series;
+  event: MotorEvent | undefined;
+}
+
+export function nextSessionFrom(
+  schedule: ScheduleFile | null,
+  fromUtc: string,
+  isVisible: (series: Series) => boolean,
+): NextSession | null {
+  if (!schedule) return null;
+  const series = new Map(schedule.series.map((s) => [s.id, s]));
+  let best: Session | null = null;
+  for (const session of schedule.sessions) {
+    if (session.startUtc < fromUtc) continue;
+    const s = series.get(session.seriesId);
+    if (!s || !isVisible(s)) continue;
+    if (!best || session.startUtc < best.startUtc) best = session;
+  }
+  if (!best) return null;
+  return { session: best, series: series.get(best.seriesId)!, event: schedule.events.find((e) => e.id === best!.eventId) };
+}
+
+/** Texto del estado vacío de un día: "Hoy no hay sesiones", "Este fin de semana no hay sesiones"… */
+export function emptyDayText(day: AgendaDay, today: string, zone: string): string {
+  if (day === WEEKEND) return 'Este fin de semana no hay sesiones';
+  if (day === today) return 'Hoy no hay sesiones';
+  const rel = relativeDay(day, today, zone);
+  if (rel === 'mañana' || rel === 'ayer') return `${rel.charAt(0).toUpperCase()}${rel.slice(1)} no hay sesiones`;
+  return `No hay sesiones ${rel}`;
+}
+
+/**
+ * Título de los eventos sin cronograma: deja claro que corren ese fin de semana,
+ * no que tienen actividad a esa hora del día elegido.
+ */
+export function pendingTitle(day: AgendaDay, now: string, zone: string): string {
+  if (day === WEEKEND) return 'Este fin de semana, horarios a confirmar';
+  const finde = resolvePeriod('este-finde', now, { zone });
+  const start = DateTime.fromISO(day, { zone }).startOf('day').toUTC().toISO({ suppressMilliseconds: true })!;
+  if (start >= finde.startUtc && start < finde.endUtc) return 'Este fin de semana, horarios a confirmar';
+  return 'Horarios a confirmar';
+}

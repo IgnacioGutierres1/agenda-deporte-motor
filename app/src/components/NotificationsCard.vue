@@ -16,7 +16,7 @@
 
     <template v-else>
       <label class="check">
-        <input type="checkbox" :checked="notifyEnabled" :disabled="busy" @change="toggle(($event.target as HTMLInputElement).checked)" />
+        <input type="checkbox" aria-label="Avisarme antes de cada sesión de lo que sigo" :checked="notifyEnabled" :disabled="busy" @change="toggle(($event.target as HTMLInputElement).checked)" />
         Avisarme antes de cada sesión de lo que sigo
       </label>
 

@@ -15,6 +15,7 @@ import {
   textOf,
 } from '../extract/html.ts';
 import { jsonLdSessions } from './locate.ts';
+import { f1AcademyUtc, f1AcademyWeekendSessions, PLANNED_SESSIONS } from './f1academy.ts';
 import {
   countryName,
   dateInZone,
@@ -44,12 +45,15 @@ import {
 } from './kit.ts';
 import { acoRoster, dtmRoster, sroRoster } from './rosters.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
+import { apatSessions } from './apat.ts';
+import { aptpSessions, aptpTimetableImages } from './aptp.ts';
 import { creventic } from './creventic.ts';
 import { macau } from './macau.ts';
 import { supercars } from './supercars.ts';
 import { superformula } from './superformula.ts';
 import { supergt } from './supergt.ts';
 import { supertaikyu } from './supertaikyu.ts';
+import { tc2000TimetableImages } from './tc2000.ts';
 
 export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
@@ -524,8 +528,15 @@ const apat: SiteRecipe = {
         url: absoluteUrl(link[1]!, doc.url) ?? undefined,
       });
     }
-    return dedupe(out).sort((a, b) => a.dateStart.localeCompare(b.dateStart));
+    // El sitio no numera las fechas: el número (para reconocer la nota "Cronograma de actividades: undécima
+    // fecha") es el orden en el calendario.
+    return dedupe(out)
+      .sort((a, b) => a.dateStart.localeCompare(b.dateStart))
+      .map((e, i) => ({ ...e, meta: { fecha: String(i + 1) } }));
   },
+  /** Cronograma: página de la fecha o nota de prensa con el PDF (apat.ts). Si no está en ninguna, no se publicó todavía. */
+  sessions: apatSessions,
+  timetableFallback: 'none',
   /**
    * Campeonato de cada clase (https://apat.org.ar/campeonato/ranking/c2, …/c3): tabla HTML con
    * Pos | Nro | Piloto | Equipo | Marca | Puntos. Las clases se toman de los links de la propia página.
@@ -602,6 +613,9 @@ const tc2000: SiteRecipe = {
     }
     return dedupe(out);
   },
+  /** Cronograma: imagen de la página de cronograma de cada fecha, transcripta por la IA (tc2000.ts). */
+  timetableImages: tc2000TimetableImages,
+  timetableFallback: 'none',
   /**
    * Posiciones (https://tc2000.com.ar/estadisticas.php?accion=posiciones): pestañas PILOTOS / EQUIPOS / MARCAS;
    * cada fila es un <ul class="puntajes"> con posición, nombre y total.
@@ -730,8 +744,12 @@ const actc: SiteRecipe = {
     const tz = entry.tz;
     const schedule = list.find((s) => {
       const cats = Array.isArray(s.categories) ? (s.categories as unknown[]).map((c) => str(c).toLowerCase()) : [str(s.category)];
+      if (s.published === false || !cats.includes(code)) return false;
       const evDate = str(obj(s.calendarEvent).raceDate);
-      return s.published !== false && cats.includes(code) && !!evDate && dateInZone(evDate, tz) === raceDate;
+      if (evDate) return dateInZone(evDate, tz) === raceDate;
+      // Cronograma sin evento del calendario asociado (calendarEventId null): se reconoce por sus días.
+      const days = Array.isArray(s.days) ? (s.days as unknown[]).map((d) => str(obj(d).date).slice(0, 10)) : [];
+      return days.includes(raceDate);
     });
     if (!schedule) return null;
     let days = schedule.days as Record<string, unknown>[] | undefined;
@@ -781,11 +799,15 @@ const actc: SiteRecipe = {
 /**
  * Turismo Pista publica una página de campeonato por clase y temporada
  * (https://aptpweb.com.ar/campeonato-clase-1-2026/): tabla P | N | PILOTO | AUTO | PTS | VICTORIAS.
- * El calendario sale de imágenes (flujo genérico), así que esta receta solo lee el campeonato.
+ * El calendario sale de imágenes (flujo genérico); el cronograma, del PDF que suben a la biblioteca de medios
+ * (aptp.ts). Si no aparece, se sigue buscando una nota de cronograma en las noticias (flujo genérico).
  */
 const aptp: SiteRecipe = {
   name: 'aptp',
   match: (url) => host(url) === 'aptpweb.com.ar',
+  sessions: aptpSessions,
+  timetableImages: aptpTimetableImages,
+  timetableFallback: 'generic',
   async standings(url, ctx) {
     const origin = new URL(url).origin;
     const own = url.match(/campeonato-clase-(\d+)/i)?.[1] ?? '1';
@@ -905,14 +927,16 @@ const f1academy: SiteRecipe = {
         if (!start.startsWith(String(ctx.season))) continue;
         const circuit = str(r.CircuitName);
         const country = str(r.CountryName);
-        const sessions: ExtractedSession[] = ((r.Sessions as Record<string, unknown>[] | undefined) ?? [])
+        const raw = (r.Sessions as Record<string, unknown>[] | undefined) ?? [];
+        const tz = tzFor(country, `${circuit} ${str(r.CircuitShortName)}`);
+        const sessions: ExtractedSession[] = raw
           .filter((s) => s.Unconfirmed !== true && str(s.SessionStartTime))
           .map((s) => {
             const startIso = str(s.SessionStartTime);
             return {
               name: str(s.SessionName),
-              startUtc: toUtcIso(startIso),
-              ...(str(s.SessionEndTime) ? { endUtc: toUtcIso(str(s.SessionEndTime)) } : {}),
+              startUtc: f1AcademyUtc(startIso, tz),
+              ...(str(s.SessionEndTime) ? { endUtc: f1AcademyUtc(str(s.SessionEndTime), tz) } : {}),
               localStartText: startIso.slice(11, 16),
             };
           });
@@ -920,18 +944,22 @@ const f1academy: SiteRecipe = {
           name: str(r.CircuitShortName) || circuit,
           circuit,
           country: countryName(country),
-          tz: tzFor(country, `${circuit} ${str(r.CircuitShortName)}`),
+          tz,
           dateStart: start,
           dateEnd: str(r.RaceEndDate) || start,
           round: Number(r.RoundNumber) || undefined,
           url: `https://www.f1academy.com/Racing-Series/Results?raceid=${str(r.RaceId)}`,
           ...(sessions.length ? { sessions } : {}),
+          // Sin horarios confirmados: los nombres previstos sirven para leer el cronograma de formula1.com.
+          ...(!sessions.length && raw.length ? { meta: { [PLANNED_SESSIONS]: raw.map((s) => str(s.SessionName)).filter(Boolean).join('|') } } : {}),
         });
       }
       break;
     }
     return out;
   },
+  // Mientras f1academy.com marca las sesiones "Unconfirmed": cronograma oficial del fin de semana (formula1.com).
+  sessions: (entry, ctx) => f1AcademyWeekendSessions(entry, ctx),
 };
 
 // ─── International GT Open (gtopen.gtsport.es) ────────────────────────────────────────────────

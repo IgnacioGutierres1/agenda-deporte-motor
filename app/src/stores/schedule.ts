@@ -22,7 +22,17 @@ import {
 } from '../lib/grid.ts';
 import { useSettingsStore } from './settings.ts';
 import { buildCircuits, type Circuit } from '../lib/circuits.ts';
-import { agendaPeriod, dayStrip, groupByEvent, todayIn, type AgendaCard, type AgendaDay, type StripDay } from '../lib/agenda.ts';
+import {
+  agendaPeriod,
+  dayStrip,
+  groupByEvent,
+  nextSessionFrom,
+  todayIn,
+  type AgendaCard,
+  type AgendaDay,
+  type NextSession,
+  type StripDay,
+} from '../lib/agenda.ts';
 
 function nowIso(): string {
   return new Date().toISOString().replace(/\.\d{3}Z$/, 'Z');
@@ -159,6 +169,11 @@ export const useScheduleStore = defineStore('schedule', {
     },
     agendaPending(state): PendingItem[] {
       return pendingEventsInPeriod(state.schedule, this.agendaPeriod, this.visibleSeriesPredicate);
+    },
+    /** Próxima sesión desde el día elegido (o desde ahora, si ese día ya empezó): para el estado vacío. */
+    agendaNext(state): NextSession | null {
+      const start = this.agendaPeriod.startUtc;
+      return nextSessionFrom(state.schedule, start > state.now ? start : state.now, this.visibleSeriesPredicate);
     },
   },
 

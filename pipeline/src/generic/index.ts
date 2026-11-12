@@ -298,15 +298,18 @@ async function findSessions(
   if (recipe?.sessions) {
     const direct = await recipe.sessions(entry, recipeCtx(series, ctx));
     if (direct) return direct;
-    if (!entry.url || entry.url === cal.doc.url) {
-      // La API oficial es la única fuente del cronograma.
-      ctx.log.info(`${entry.name}: cronograma todavía no publicado`);
-      return null;
-    }
   }
 
   const trace = newTrace();
-  const doc = await locateTimetable(series, entry, cal, ctx, deps, trace);
+  let doc: Located | null = null;
+  if (recipe?.timetableImages) {
+    // Cronograma publicado como imagen en un lugar fijo del sitio: la receta ubica las imágenes y la IA las transcribe.
+    const located = await recipe.timetableImages(entry, recipeCtx(series, ctx));
+    const img = located ? await imageDocument(aiDeps(ctx, deps), series.id, located, await fetchImages(ctx.http, located.images), trace) : null;
+    if (img) doc = { doc: img };
+  }
+  const fallback = recipe?.timetableFallback ?? (recipe?.sessions && (!entry.url || entry.url === cal.doc.url) ? 'none' : 'generic');
+  if (!doc && fallback === 'generic') doc = await locateTimetable(series, entry, cal, ctx, deps, trace);
   if (!doc) {
     ctx.log.info(`${entry.name}: cronograma todavía no publicado`);
     return null;

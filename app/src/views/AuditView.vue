@@ -56,7 +56,7 @@
                   · última lectura buena {{ row.status.lastSuccess ? ago(row.status.lastSuccess) : 'nunca' }}
                 </template>
               </div>
-              <a v-if="row.officialUrl" :href="row.officialUrl" target="_blank" rel="noopener noreferrer">Sitio oficial</a>
+              <a v-if="row.officialUrl" :href="row.officialUrl" target="_blank" rel="noopener noreferrer" class="tap-inline">Sitio oficial</a>
             </div>
           </li>
         </ul>

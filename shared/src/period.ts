@@ -92,9 +92,13 @@ export function overlaps(period: Period, startUtc: string, endUtc: string): bool
   return startUtc < period.endUtc && endUtc > period.startUtc;
 }
 
-/** true si un evento (fechas locales YYYY-MM-DD, inclusivas) cae dentro del período. */
+/**
+ * true si un evento (fechas locales YYYY-MM-DD, inclusivas) cae dentro del período.
+ * Los límites van sin milisegundos, igual que los del período: se comparan como texto y
+ * "…T03:00:00.000Z" < "…T03:00:00Z" haría que un evento que empieza justo al terminar el día cuente para ese día.
+ */
 export function eventInPeriod(period: Period, dateStart: string, dateEnd: string, zone: string): boolean {
-  const a = DateTime.fromISO(dateStart, { zone }).startOf('day').toUTC().toISO()!;
-  const b = DateTime.fromISO(dateEnd, { zone }).startOf('day').plus({ days: 1 }).toUTC().toISO()!;
+  const a = DateTime.fromISO(dateStart, { zone }).startOf('day').toUTC().toISO({ suppressMilliseconds: true })!;
+  const b = DateTime.fromISO(dateEnd, { zone }).startOf('day').plus({ days: 1 }).toUTC().toISO({ suppressMilliseconds: true })!;
   return overlaps(period, a, b);
 }

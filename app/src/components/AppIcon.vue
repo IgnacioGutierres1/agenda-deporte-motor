@@ -47,6 +47,8 @@ const ICONS: Record<string, string[]> = {
   flag: ['M5 21V4', 'M5 4h11l-2 4 2 4H5'],
   news: ['M4 5h13v14H6a2 2 0 0 1-2-2V5z', 'M17 9h3v8a2 2 0 0 1-2 2', 'M7 9h7', 'M7 13h7', 'M7 17h4'],
   grid: ['M4 4h7v7H4z', 'M13 4h7v7h-7z', 'M4 13h7v7H4z', 'M13 13h7v7h-7z'],
+  moon: ['M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z'],
+  clock: ['M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z', 'M12 7v5l3 2'],
 };
 
 export default defineComponent({

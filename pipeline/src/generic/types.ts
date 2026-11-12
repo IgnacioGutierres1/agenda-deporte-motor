@@ -41,6 +41,14 @@ export interface SessionsFound {
   source: Source;
 }
 
+/** Imágenes oficiales del cronograma, ubicadas sin IA. */
+export interface TimetableImages {
+  /** Página oficial donde están publicadas. */
+  url: string;
+  title: string;
+  images: string[];
+}
+
 /** Tablas de campeonato leídas sin IA. */
 export interface StandingsFound {
   tables: StandingsTable[];
@@ -86,6 +94,20 @@ export interface SiteRecipe {
   calendar?(doc: FetchedDocument, ctx: RecipeContext): CalendarEntry[] | Promise<CalendarEntry[]>;
   /** Sesiones por lectura directa (API oficial). null si todavía no hay cronograma publicado. */
   sessions?(entry: CalendarEntry, ctx: RecipeContext): Promise<SessionsFound | null>;
+  /**
+   * Cronograma publicado solo como imagen en un lugar fijo del sitio (p. ej. TC2000): la receta ubica las
+   * imágenes sin IA y el flujo genérico las transcribe (solo para eventos dentro del horizonte).
+   * null si todavía no está publicado.
+   */
+  timetableImages?(entry: CalendarEntry, ctx: RecipeContext): Promise<TimetableImages | null>;
+  /**
+   * Qué hacer cuando sessions()/timetableImages() no encuentran el cronograma: 'none' = nada (el sitio lo
+   * publica siempre en los lugares que ya miró la receta, así que todavía no está publicado; evita gastar IA
+   * en imágenes de la página del evento que no son el cronograma); 'generic' = buscarlo con el flujo genérico
+   * (página del evento, notas de prensa). Por defecto: 'none' si la receta tiene sessions() y el evento no
+   * tiene página propia; si no, 'generic'.
+   */
+  timetableFallback?: 'none' | 'generic';
   /**
    * Campeonato por lectura directa a partir de la URL de posiciones de la serie (officialUrls[1..]).
    * null si el sitio todavía no publica la tabla de la temporada pedida; lanza un error si la página

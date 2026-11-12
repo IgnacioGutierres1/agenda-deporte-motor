@@ -46,6 +46,11 @@ export interface ResultsChunk {
   /** Resultados por evento. run.ts los fusiona con los archivos existentes. */
   results: EventResultsFile[];
   standings?: StandingsFile;
+  /**
+   * Sesiones que esta corrida no llegó a probar de verdad (la fuente pidió esperar con 429/5xx, o se agotó el cupo
+   * de descargas de la corrida): no cuentan como intento fallido y se vuelven a buscar en la próxima.
+   */
+  deferred?: string[];
 }
 
 /**
@@ -62,4 +67,10 @@ export interface Adapter {
    * leyó con IA se relee entonces aunque esté al día, para reemplazarla por la lectura directa.
    */
   prefersDirectStandings?(series: Series): boolean;
+  /**
+   * ISO UTC del último arreglo del lector de resultados. Las sesiones que se dieron por perdidas (MAX_ATTEMPTS
+   * intentos) ANTES de esa fecha vuelven a intentarse un par de veces más: así un lector mejorado recupera los
+   * resultados viejos sin borrar a mano data/_cache/results-attempts.json.
+   */
+  resultsReaderSince?: string;
 }
