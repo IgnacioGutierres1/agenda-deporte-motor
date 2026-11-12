@@ -77,6 +77,9 @@ describe('países en castellano', () => {
     expect(countryName('IT')).toBe('Italia');
     expect(countryFlag('France')).toBe('🇫🇷');
     expect(countryName('Atlantis')).toBe('Atlantis');
+    expect(countryFlag('Zimbabwe')).toBe('🇿🇼');
+    expect(countryName('Hong Kong')).toBe('Hong Kong');
+    expect(countryFlag('Germany')).toBe('🇩🇪');
     expect(countryFlag('Atlantis')).toBe('');
   });
 });

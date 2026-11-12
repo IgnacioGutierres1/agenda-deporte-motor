@@ -69,6 +69,7 @@
       <RouterLink v-if="item.finished && item.session.hasResults" :to="resultsLink" class="btn btn-primary btn-block">
         Ver resultado
       </RouterLink>
+      <RouterLink :to="`/evento/${item.session.eventId}?tab=contexto`" class="btn btn-block">Ponerme en contexto</RouterLink>
       <RouterLink :to="`/evento/${item.session.eventId}`" class="btn btn-block">Ver evento completo</RouterLink>
     </div>
   </BottomSheet>

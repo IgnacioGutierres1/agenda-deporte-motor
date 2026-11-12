@@ -78,6 +78,9 @@ export function buildDrivers(input: IndexInput): DriversFile {
     return d;
   };
 
+  // País publicado en alguna tabla: se usa al final, solo si ninguna lista de inscriptos lo dio.
+  const tableCountry = new Map<string, string>();
+
   for (const file of input.standings) {
     const tables = file.tables.filter((t) => isDriverTable(t.title));
     for (const table of tables) {
@@ -87,6 +90,7 @@ export function buildDrivers(input: IndexInput): DriversFile {
         for (const name of splitDriverNames(row.name)) {
           const d = get(name);
           if (!d) continue;
+          if (row.country && !tableCountry.has(d.id)) tableCountry.set(d.id, row.country);
           // Si aparece dos veces en la misma tabla (homónimos), se queda la mejor posición.
           if (d.entries.some((e) => e.seriesId === file.seriesId && e.table === tableName)) continue;
           d.entries.push({
@@ -123,6 +127,11 @@ export function buildDrivers(input: IndexInput): DriversFile {
         });
       }
     }
+  }
+
+  for (const [id, country] of tableCountry) {
+    const d = drivers.get(id)!;
+    if (!d.country) d.country = country;
   }
 
   const sessions = new Map(input.sessions.map((s) => [s.id, s]));

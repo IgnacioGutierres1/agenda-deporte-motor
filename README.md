@@ -11,8 +11,9 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 | **Agenda** | Franja de días (y "Finde"): sesiones del día agrupadas por evento; primero lo que seguís. Ícono de calendario → exportar (`.ics`, Google Calendar, suscripción). |
 | **Noticias** | Notas de sitios oficiales y medios especializados (RSS): Para ti / Últimas / Por categoría. Siempre se leen en el sitio original. |
 | **Categorías** | Todas las categorías (incluido el grupo Asia y Oceanía); cada una con Resumen, Calendario, Tabla de campeonato, Resultados, Plantel (pilotos, equipos, números y autos) y Noticias. |
-| **Siguiendo** | Categorías y pilotos seguidos (se guardan en el dispositivo) y recomendaciones "Para vos". Ficha de piloto con país, campeonatos, inscripciones, próximas y últimas carreras. |
+| **Siguiendo** | Categorías, pilotos y equipos seguidos (se guardan en el dispositivo; las categorías de pilotos y equipos seguidos también van primero en la Agenda y en "Para ti") y recomendaciones "Para vos". Ficha de piloto con país, campeonatos, inscripciones, próximas y últimas carreras. |
 | **Buscar** | Categorías, pilotos, equipos, circuitos, eventos y noticias; sin texto muestra "Te puede interesar". |
+| Evento → **Contexto** | "Ponerme en contexto" (desde el evento, En vivo o la hoja de cada sesión): fecha N de M, qué se juega (tabla con diferencias, fechas que quedan y, en F1, MotoGP, Moto2/3, F2/F3 e IndyCar, quién puede salir campeón), formato y clases, a quién mirar, qué ya pasó en el finde y en la fecha anterior, notas recientes y fuentes. Solo datos oficiales, sin IA. |
 | Equipo / Circuito | Ficha de equipo (categorías, posiciones, autos, pilotos, próximas carreras y notas) y de circuito (todas las categorías que corren ahí). |
 | Menú ☰ | Actualizar datos, Exportar, Auditoría de fuentes y Ajustes (tema oscuro/claro, zona horaria, cuentas). |
 
@@ -102,7 +103,7 @@ suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias hor
 `worker/` es un Cloudflare Worker (plan gratuito) que:
 
 - guarda las suscripciones de avisos de cada dispositivo (KV) y, cada 5 minutos, avisa las sesiones de las
-  categorías seguidas (y las de los pilotos seguidos) con la anticipación elegida en *Ajustes → Avisos*;
+  categorías seguidas (y las de los pilotos y equipos seguidos: la app manda la lista de categorías ya armada) con la anticipación elegida en *Ajustes → Avisos*;
 - hace de proxy, solo para una lista cerrada de fuentes oficiales, de tiempos en vivo que no se pueden leer
   directo desde el navegador (CORS).
 

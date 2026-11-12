@@ -32,7 +32,7 @@
           Categorías: {{ seriesNames }}.
         </template>
         <template v-else>
-          Todavía no seguís ninguna categoría ni piloto: tocá ★ en una categoría o un piloto para recibir sus avisos.
+          Todavía no seguís ninguna categoría, piloto ni equipo: tocá ★ en uno para recibir sus avisos.
         </template>
       </p>
 
@@ -52,7 +52,7 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { disablePush, enablePush, pushSupport, testPush, type PushSupport } from '../lib/push.ts';
 
-/** Ajustes de avisos push (sesiones de las categorías y pilotos seguidos). */
+/** Ajustes de avisos push (sesiones de las categorías, pilotos y equipos seguidos). */
 export default defineComponent({
   name: 'NotificationsCard',
   data() {
