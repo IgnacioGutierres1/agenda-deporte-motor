@@ -82,7 +82,7 @@
             </ul>
           </section>
 
-          <section class="card">
+          <section class="card desk-side">
             <h3>Fuente de los datos</h3>
             <p class="small">
               <span class="badge" :class="statusBadge.cls">{{ statusBadge.label }}</span>

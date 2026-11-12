@@ -8,12 +8,14 @@
         <div class="grow header-titles">
           <div v-if="isHome" class="brand" aria-label="Deporte Motor">DEPORTE<span>MOTOR</span></div>
           <div v-else class="app-title" :class="{ big: isRoot }">{{ title }}</div>
+          <!-- En escritorio la marca va arriba del riel lateral: el encabezado de la portada muestra el título. -->
+          <div v-if="isHome" class="app-title big home-title">{{ title }}</div>
           <div v-if="loading" class="app-sub">Actualizando…</div>
         </div>
         <RouterLink
           v-if="isHome"
           to="/en-vivo"
-          class="icon-btn live-btn"
+          class="icon-btn live-btn rail-dup"
           :class="{ on: liveCount > 0 }"
           :aria-label="liveCount ? `En vivo: ${liveCount} sesiones` : 'En vivo'"
           title="En vivo"
@@ -24,13 +26,13 @@
         <RouterLink
           v-if="isHome"
           to="/exportar"
-          class="icon-btn"
+          class="icon-btn rail-dup"
           aria-label="Exportar o cargar en el calendario"
           title="Exportar / calendario"
         >
           <AppIcon name="calendar" />
         </RouterLink>
-        <button class="icon-btn" type="button" aria-label="Menú" title="Menú" @click="menuOpen = true">
+        <button class="icon-btn rail-dup" type="button" aria-label="Menú" title="Menú" @click="menuOpen = true">
           <AppIcon name="menu" />
         </button>
       </div>
@@ -45,6 +47,11 @@
     </main>
 
     <nav class="bottom-nav" aria-label="Secciones">
+      <!-- Solo en escritorio (riel lateral): marca arriba de las secciones. -->
+      <RouterLink to="/" class="rail-only rail-brand" aria-label="Deporte Motor: agenda">
+        <span class="rail-brand-full">DEPORTE<span>MOTOR</span></span>
+        <span class="rail-brand-mono" aria-hidden="true">D<span>M</span></span>
+      </RouterLink>
       <RouterLink
         v-for="item in nav"
         :key="item.to"
@@ -55,6 +62,24 @@
         <AppIcon :name="item.icon" :filled="item.icon === 'star' && isActive(item)" />
         <span>{{ item.label }}</span>
       </RouterLink>
+      <!-- Solo en escritorio: lo que en el celular está en el encabezado. -->
+      <span class="rail-only rail-sep" aria-hidden="true" />
+      <RouterLink to="/en-vivo" class="nav-item rail-only rail-extra live-btn"
+        :class="{ on: liveCount > 0 }"
+        :aria-label="liveCount ? `En vivo: ${liveCount} sesiones` : undefined"
+      >
+        <AppIcon name="live" />
+        <span>En vivo</span>
+        <span v-if="liveCount" class="live-dot-badge" />
+      </RouterLink>
+      <RouterLink to="/exportar" class="nav-item rail-only rail-extra">
+        <AppIcon name="calendar" />
+        <span>Exportar</span>
+      </RouterLink>
+      <button type="button" class="nav-item rail-only rail-extra rail-menu" @click="menuOpen = true">
+        <AppIcon name="menu" />
+        <span>Menú</span>
+      </button>
     </nav>
 
     <BottomSheet :open="menuOpen" title="Menú" @close="menuOpen = false">
@@ -392,5 +417,208 @@ export default defineComponent({
   border: none;
   text-align: left;
   font: inherit;
+}
+
+/* ── Tablet y escritorio ── (en el celular nada de esto aplica: los extras del riel quedan ocultos) */
+.rail-only,
+.home-title {
+  display: none;
+}
+
+/* Tablet: la barra de abajo se alinea con la columna de contenido (760 px) en vez de estirarse. */
+@media (min-width: 768px) {
+  .bottom-nav {
+    justify-content: center;
+  }
+
+  .nav-item {
+    max-width: 152px;
+  }
+}
+
+/*
+ * Escritorio: la barra de abajo pasa a ser un riel lateral fijo a la izquierda (íconos con texto debajo;
+ * desde 1280 px, ícono y texto en fila con la marca arriba). El encabezado y el contenido se corren a la derecha.
+ */
+@media (min-width: 1024px) {
+  .shell {
+    --content-w: 760px;
+  }
+
+  /* Vistas que aprovechan el ancho (dos columnas o grillas). El resto mantiene el ancho de lectura. */
+  .shell:has(> .app-main > :is(.agenda-view, .search-view, .following-view, .event-view, .category-view, .driver-view, .team-view, .circuit-view)) {
+    --content-w: 1200px;
+  }
+
+  .app-header,
+  .offline-banner {
+    margin-left: var(--rail-w);
+  }
+
+  .app-header-inner {
+    max-width: var(--content-w);
+    padding: 0 1rem 0 1.1rem;
+  }
+
+  /* Los accesos del encabezado (en vivo, exportar, menú) están en el riel. */
+  .app-header .rail-dup {
+    display: none;
+  }
+
+  .app-main {
+    margin: 0 0 0 var(--rail-w);
+    width: auto;
+    max-width: none;
+    padding-bottom: 1.5rem;
+  }
+
+  .shell .app-main > * {
+    max-width: var(--content-w);
+    margin-inline: auto;
+  }
+
+  .shell .page {
+    padding-inline: 1.5rem;
+  }
+
+  .bottom-nav {
+    top: 0;
+    right: auto;
+    width: var(--rail-w);
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0.15rem;
+    padding: var(--safe-top) 0.5rem 1rem calc(0.5rem + var(--safe-left));
+    border-top: none;
+    border-right: 1px solid var(--border);
+    overflow-y: auto;
+  }
+
+  .bottom-nav .rail-only {
+    display: flex;
+  }
+
+  .nav-item {
+    flex: none;
+    max-width: none;
+    height: auto;
+    min-height: 60px;
+    padding: 0.4rem 0.2rem;
+    border: none;
+    border-radius: 12px;
+    background: transparent;
+    font: inherit;
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: var(--text-dim);
+    position: relative;
+  }
+
+  .nav-item:hover {
+    background: var(--bg-elev);
+    color: var(--text);
+  }
+
+  .nav-item.active,
+  .nav-item.rail-extra.router-link-active {
+    color: var(--accent);
+    background: color-mix(in srgb, var(--accent) 12%, transparent);
+  }
+
+  /* En vivo y Exportar tienen su propio ítem en el riel: Agenda no se marca a la vez. */
+  .bottom-nav:has(.rail-extra.router-link-active) .nav-item.active:not(.rail-extra) {
+    color: var(--text-dim);
+    background: transparent;
+  }
+
+  .nav-item.live-btn.on {
+    color: var(--live);
+  }
+
+  .nav-item .live-dot-badge {
+    top: 8px;
+    right: calc(50% - 16px);
+  }
+
+  .rail-brand {
+    align-items: center;
+    justify-content: center;
+    height: var(--header-h);
+    flex: none;
+    margin-bottom: 0.25rem;
+    color: var(--text);
+    font-weight: 900;
+    font-style: italic;
+    text-decoration: none;
+  }
+
+  .rail-brand:hover {
+    text-decoration: none;
+  }
+
+  .rail-brand span span {
+    color: var(--accent);
+  }
+
+  .rail-brand-full {
+    display: none;
+    font-size: 1.2rem;
+    letter-spacing: 0.02em;
+  }
+
+  .rail-brand-full span {
+    margin-left: 0.25rem;
+  }
+
+  .rail-brand-mono {
+    font-size: 1.3rem;
+  }
+
+  .rail-sep {
+    flex: none;
+    height: 1px;
+    margin: 0.5rem 0.6rem;
+    background: var(--border);
+  }
+}
+
+@media (min-width: 1280px) {
+  .nav-item {
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 0.85rem;
+    min-height: 48px;
+    padding: 0 0.9rem;
+    font-size: 0.95rem;
+  }
+
+  .nav-item .live-dot-badge {
+    top: 12px;
+    right: auto;
+    left: 30px;
+  }
+
+  .rail-brand {
+    justify-content: flex-start;
+    padding-left: 0.9rem;
+  }
+
+  .rail-brand-full {
+    display: inline;
+  }
+
+  .rail-brand-mono {
+    display: none;
+  }
+
+  /* La marca ya está en el riel: el encabezado de la portada muestra "Agenda". */
+  .app-header .brand {
+    display: none;
+  }
+
+  .app-header .home-title {
+    display: block;
+  }
 }
 </style>
