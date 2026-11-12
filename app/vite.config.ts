@@ -12,10 +12,13 @@ const base = process.env.VITE_BASE ?? '/';
 
 export default defineConfig(({ command, mode }) => {
   // `npm run dev:fixtures` sirve los datos de prueba de app/test/fixtures en /data/ (solo en desarrollo).
+  // DM_DATA_DIR permite probar con otra copia de data/ (p. ej. con archivos que el pipeline todavía no publica).
   const useFixtures = command === 'serve' && mode === 'fixtures';
-  const dataDir = useFixtures
-    ? path.resolve(here, 'test', 'fixtures')
-    : path.resolve(here, '..', 'data');
+  const dataDir = process.env.DM_DATA_DIR
+    ? path.resolve(process.env.DM_DATA_DIR)
+    : useFixtures
+      ? path.resolve(here, 'test', 'fixtures')
+      : path.resolve(here, '..', 'data');
 
   return {
     base,

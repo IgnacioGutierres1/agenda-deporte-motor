@@ -1,13 +1,9 @@
 import { defineStore } from 'pinia';
 import type { Driver, DriversFile } from '@dm/shared';
 import { DataNotFoundError, fetchData } from '../lib/data.ts';
+import { searchDrivers } from '../lib/search.ts';
+import { driverSeriesIds } from '../lib/teams.ts';
 import { useSettingsStore } from './settings.ts';
-
-const normalize = (s: string) =>
-  s
-    .normalize('NFD')
-    .replace(/[̀-ͯ]/g, '')
-    .toLowerCase();
 
 /** Índice de pilotos (data/drivers.json): se descarga solo al abrir una pantalla de pilotos. */
 export const useDriversStore = defineStore('drivers', {
@@ -33,7 +29,7 @@ export const useDriversStore = defineStore('drivers', {
         // Mantiene al día las categorías de los pilotos seguidos (las usa la Agenda).
         useSettingsStore().syncFollowedDrivers((id) => {
           const d = this.byId.get(id);
-          return d ? { id: d.id, name: d.name, seriesIds: [...new Set(d.entries.map((e) => e.seriesId))] } : undefined;
+          return d ? { id: d.id, name: d.name, seriesIds: driverSeriesIds(d) } : undefined;
         });
       } catch (e) {
         if (this.file) {
@@ -49,17 +45,7 @@ export const useDriversStore = defineStore('drivers', {
     },
     /** Búsqueda por nombre (sin acentos) o número; primero los que están mejor ubicados. */
     search(query: string, limit = 30): Driver[] {
-      const q = normalize(query.trim());
-      if (q.length < 2) return [];
-      const words = q.split(/\s+/);
-      const best = (d: Driver) => Math.min(...d.entries.map((e) => e.pos));
-      return (this.file?.drivers ?? [])
-        .filter((d) => {
-          const hay = normalize(d.name);
-          return words.every((w) => hay.includes(w)) || d.entries.some((e) => e.number === q);
-        })
-        .sort((a, b) => best(a) - best(b) || a.name.localeCompare(b.name, 'es'))
-        .slice(0, limit);
+      return searchDrivers(this.file?.drivers ?? [], query, limit);
     },
   },
 });

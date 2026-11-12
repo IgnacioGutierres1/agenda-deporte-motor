@@ -5,7 +5,9 @@
 import { useDriversStore } from '../stores/drivers.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useResultsStore } from '../stores/results.ts';
+import { useRostersStore } from '../stores/rosters.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
+import { useTeamsStore } from '../stores/teams.ts';
 import { checkForAppUpdate, type UpdateCheck } from './appUpdate.ts';
 
 export interface RefreshResult {
@@ -19,13 +21,17 @@ export async function refreshEverything(): Promise<RefreshResult> {
   const news = useNewsStore();
   const drivers = useDriversStore();
   const results = useResultsStore();
+  const rosters = useRostersStore();
+  const teams = useTeamsStore();
   const [app] = await Promise.all([
     checkForAppUpdate(true),
     schedule.load({ force: true }),
     results.reloadLoaded(),
+    rosters.reloadLoaded(),
     // Solo lo que ya se abrió (si nunca se abrió, se descarga al entrar).
     news.status !== 'idle' ? news.load(true) : Promise.resolve(),
     drivers.status !== 'idle' ? drivers.load(true) : Promise.resolve(),
+    teams.status !== 'idle' ? teams.load(true) : Promise.resolve(),
   ]);
   return { app, error: schedule.error };
 }
