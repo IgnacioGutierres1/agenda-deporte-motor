@@ -1,10 +1,10 @@
 {
   "seriesId": "gtwc-america",
   "season": 2026,
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-12T02:34:30Z",
   "tables": [
     {
-      "title": "GT World Challenge America powered by AWS Pro Teams",
+      "title": "Equipos Pro",
       "rows": [
         {
           "pos": 1,
@@ -32,13 +32,108 @@
           "points": 68
         }
       ]
+    },
+    {
+      "title": "Equipos Pro-Am",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "GMG Racing",
+          "points": 145
+        },
+        {
+          "pos": 2,
+          "name": "Wright Motorsports",
+          "points": 116
+        },
+        {
+          "pos": 3,
+          "name": "RS1",
+          "points": 113
+        },
+        {
+          "pos": 4,
+          "name": "Archangel Motorsports",
+          "points": 88
+        },
+        {
+          "pos": 5,
+          "name": "JMF Motorsports",
+          "points": 70
+        },
+        {
+          "pos": 6,
+          "name": "Kellymoss",
+          "points": 65
+        },
+        {
+          "pos": 7,
+          "name": "TR3 Racing",
+          "points": 53
+        },
+        {
+          "pos": 8,
+          "name": "Riley Technologies",
+          "points": 45
+        },
+        {
+          "pos": 9,
+          "name": "Random Vandals Racing",
+          "points": 43
+        },
+        {
+          "pos": 10,
+          "name": "Triarsi Competizione",
+          "points": 30
+        },
+        {
+          "pos": 11,
+          "name": "Chicago Performance and Tuning Co.",
+          "points": 18
+        },
+        {
+          "pos": 12,
+          "name": "Rebel Rock Racing",
+          "points": 12
+        },
+        {
+          "pos": 13,
+          "name": "HP-TECH Motorsport",
+          "points": 10
+        },
+        {
+          "pos": 14,
+          "name": "Chouest Povoledo Racing",
+          "points": 0
+        }
+      ]
+    },
+    {
+      "title": "Equipos Am",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "AF Corse USA",
+          "points": 179
+        },
+        {
+          "pos": 2,
+          "name": "MAD JOKER by Lone Star Racing",
+          "points": 68
+        },
+        {
+          "pos": 3,
+          "name": "Scuderia Corsa",
+          "points": 55
+        }
+      ]
     }
   ],
   "source": {
     "url": "https://www.gt-world-challenge-america.com/standings",
-    "title": "Standings GT World Challenge America powered by AWS Pro Teams 2026 | GT World Challenge America Powered by AWS",
+    "title": "Standings GT World Challenge America powered by AWS Pro Teams 2026 | GT World Challenge America Powered by AWS 2026",
     "kind": "html",
-    "method": "ia",
-    "fetchedAt": "2026-11-10T06:21:47Z"
+    "method": "directo",
+    "fetchedAt": "2026-11-12T02:34:30Z"
   }
 }

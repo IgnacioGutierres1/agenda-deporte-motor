@@ -1,10 +1,205 @@
 {
   "seriesId": "gtwc-australia",
   "season": 2026,
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-12T02:34:30Z",
   "tables": [
     {
-      "title": "GT World Challenge Australia powered by AWS Overall Teams Championship Teams",
+      "title": "Pilotos Pro-Am",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Broc Feeney",
+          "points": 146
+        },
+        {
+          "pos": 1,
+          "name": "Brad Schumacher",
+          "points": 146
+        },
+        {
+          "pos": 2,
+          "name": "Mark Rosser",
+          "points": 132
+        },
+        {
+          "pos": 3,
+          "name": "Brendon Leitch",
+          "points": 119
+        },
+        {
+          "pos": 3,
+          "name": "Sergio Pires",
+          "points": 119
+        },
+        {
+          "pos": 4,
+          "name": "Jayden Ojeda",
+          "points": 106
+        },
+        {
+          "pos": 4,
+          "name": "Paul Lucchitti",
+          "points": 106
+        },
+        {
+          "pos": 5,
+          "name": "Jaxon Evans",
+          "points": 100
+        },
+        {
+          "pos": 5,
+          "name": "Elliott Schutte",
+          "points": 100
+        },
+        {
+          "pos": 6,
+          "name": "Ryan Wood",
+          "points": 95
+        },
+        {
+          "pos": 6,
+          "name": "Steve Brooks",
+          "points": 95
+        },
+        {
+          "pos": 7,
+          "name": "Oscar Targett",
+          "points": 93
+        },
+        {
+          "pos": 8,
+          "name": "Alex Peroni",
+          "points": 82
+        },
+        {
+          "pos": 9,
+          "name": "Will Davison",
+          "points": 80
+        },
+        {
+          "pos": 9,
+          "name": "Renee Gracie",
+          "points": 80
+        },
+        {
+          "pos": 10,
+          "name": "Shane Smollen",
+          "points": 65
+        },
+        {
+          "pos": 11,
+          "name": "Valentino Astuti",
+          "points": 58
+        },
+        {
+          "pos": 11,
+          "name": "Darren Currie",
+          "points": 58
+        },
+        {
+          "pos": 12,
+          "name": "Josh Buchan",
+          "points": 52
+        },
+        {
+          "pos": 12,
+          "name": "Cameron Campbell",
+          "points": 52
+        },
+        {
+          "pos": 13,
+          "name": "Thomas Randle",
+          "points": 50
+        },
+        {
+          "pos": 14,
+          "name": "Justin Tigani",
+          "points": 28
+        },
+        {
+          "pos": 15,
+          "name": "Antonio D'Alberto",
+          "points": 16
+        },
+        {
+          "pos": 15,
+          "name": "Adrian Deitz",
+          "points": 16
+        },
+        {
+          "pos": 16,
+          "name": "Garnet Patterson",
+          "points": 14
+        },
+        {
+          "pos": 16,
+          "name": "JP Drake",
+          "points": 14
+        },
+        {
+          "pos": 17,
+          "name": "Josh Hunt",
+          "points": 9
+        },
+        {
+          "pos": 17,
+          "name": "Geoff Emery",
+          "points": 9
+        }
+      ]
+    },
+    {
+      "title": "Pilotos Trophy",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Paul Stokell",
+          "points": 216
+        },
+        {
+          "pos": 2,
+          "name": "Nathan Halstead",
+          "points": 191
+        },
+        {
+          "pos": 2,
+          "name": "Luke Youlden",
+          "points": 191
+        },
+        {
+          "pos": 3,
+          "name": "Matthew Stoupas",
+          "points": 180
+        },
+        {
+          "pos": 4,
+          "name": "Alex Gardner",
+          "points": 77
+        },
+        {
+          "pos": 5,
+          "name": "Lee Stibbs",
+          "points": 44
+        },
+        {
+          "pos": 6,
+          "name": "Gary Higgon",
+          "points": 36
+        },
+        {
+          "pos": 7,
+          "name": "Ben Porter",
+          "points": 33
+        },
+        {
+          "pos": 8,
+          "name": "Cameron Rees",
+          "points": 31
+        }
+      ]
+    },
+    {
+      "title": "Equipos",
       "rows": [
         {
           "pos": 1,
@@ -51,9 +246,9 @@
   ],
   "source": {
     "url": "https://www.gt-world-challenge-australia.com/standings",
-    "title": "Standings GT World Challenge Australia powered by AWS Overall Teams Championship Teams 2026 | GT World Challenge Australia Powered by AWS",
+    "title": "Standings GT World Challenge Australia powered by AWS Overall Teams Championship Teams 2026 | GT World Challenge Australia Powered by AWS 2026",
     "kind": "html",
-    "method": "ia",
-    "fetchedAt": "2026-11-10T06:21:47Z"
+    "method": "directo",
+    "fetchedAt": "2026-11-12T02:34:30Z"
   }
 }
