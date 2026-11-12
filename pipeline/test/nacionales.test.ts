@@ -163,7 +163,7 @@ describe('TC2000: cronograma publicado como imagen', () => {
     const event = chunk.events.find((e) => e.round === 10)!;
     expect(event.sessionsStatus).toBe('published');
     expect(chunk.sessions.map((s) => [s.name, s.type, s.startUtc])).toEqual([
-      ['Shakedown', 'otro', '2026-10-31T11:30:00Z'],
+      ['Shakedown', 'practica', '2026-10-31T11:30:00Z'],
       ['Clasificación 1 vuelta lanzada', 'clasificacion', '2026-10-31T18:40:00Z'],
       ['Carrera final', 'carrera', '2026-11-01T16:05:00Z'],
     ]);
