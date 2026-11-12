@@ -154,6 +154,8 @@ describe('diferencias y cuentas del título', () => {
       ['Max Verstappen', 111, false],
       ['Franco Colapinto', 370, true],
     ]);
+    // Nombres prolijos aunque la fuente publique el apellido en mayúsculas.
+    expect(gapTable(table([['Agustín CANAPINO', 347]]), 1, { driverIds: [] }).rows[0]!.name).toBe('Agustín Canapino');
     // Equipos seguidos: se resaltan sus pilotos.
     expect(gapTable(t, 1, { driverIds: [], teamIds: ['mclaren'] }).rows.map((r) => r.name)).toEqual(['Kimi Antonelli', 'Lando Norris']);
   });
@@ -286,6 +288,25 @@ describe('formato, resultados y a quién mirar', () => {
       ['equipo', 'Alpine', 'Lo seguís'],
       ['piloto', 'Kimi Antonelli', 'Líder del campeonato'],
       ['piloto', 'Lando Norris', 'Ganó carrera en São Paulo Grand Prix'],
+    ]);
+  });
+});
+
+describe('equipos seguidos', () => {
+  it('resalta al equipo y suma a sus pilotos (tabla o inscriptos)', () => {
+    const items = whoToWatch({
+      followed: { driverIds: [], teamIds: ['team-wrt'] },
+      followedNames: new Map([['team-wrt', 'Team WRT']]),
+      tables: [],
+      roster: [
+        { driver: 'Charles Weerts / Sheldon van der Linde', team: 'Team WRT #32', number: '32', class: 'GT' },
+        { driver: 'Otro Piloto', team: 'Otro Equipo', number: '9' },
+      ],
+    });
+    expect(items.map((i) => [i.kind, i.name, i.reason, i.followed])).toEqual([
+      ['equipo', 'Team WRT', 'Lo seguís', true],
+      ['piloto', 'Charles Weerts', 'Corre para Team WRT, que seguís', true],
+      ['piloto', 'Sheldon van der Linde', 'Corre para Team WRT, que seguís', true],
     ]);
   });
 });

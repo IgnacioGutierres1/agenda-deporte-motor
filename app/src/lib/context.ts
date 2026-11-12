@@ -4,6 +4,7 @@
  * sin IA y sin inventar nada. Lógica pura, sin Vue ni Pinia.
  */
 import {
+  driverDisplayName,
   driverId,
   isDriverTable,
   splitDriverNames,
@@ -194,7 +195,8 @@ export function gapTable(table: StandingsTable, top: number, followed: Followed)
       const ids = driverIdsOf(r.name);
       return {
         pos: r.pos,
-        name: r.name,
+        // "Agustín CANAPINO" -> "Agustín Canapino" (las tripulaciones quedan como las publica la fuente).
+        name: ids.length === 1 ? driverDisplayName(r.name) : r.name,
         ...(r.team ? { team: r.team } : {}),
         ...(r.number ? { number: r.number } : {}),
         points: r.points,
@@ -509,7 +511,7 @@ export function whoToWatch(input: WatchInput): WatchItem[] {
         add({
           kind: 'piloto',
           id,
-          name: input.followedNames?.get(id) ?? r.name,
+          name: input.followedNames?.get(id) ?? driverDisplayName(r.name),
           reason: multi ? `Lo seguís · ${t.title}` : 'Lo seguís',
           detail: ptsText(r),
           followed: true,
@@ -518,12 +520,13 @@ export function whoToWatch(input: WatchInput): WatchItem[] {
     }
   }
   for (const r of input.roster ?? []) {
-    for (const id of driverIdsOf(r.driver)) {
+    for (const name of splitDriverNames(r.driver)) {
+      const id = driverId(name);
       if (!followedDrivers.has(id)) continue;
       add({
         kind: 'piloto',
         id,
-        name: input.followedNames?.get(id) ?? r.driver,
+        name: input.followedNames?.get(id) ?? driverDisplayName(name),
         reason: 'Lo seguís',
         detail: [r.number ? `#${r.number}` : '', r.team ?? '', r.class ?? ''].filter(Boolean).join(' · '),
         followed: true,
@@ -546,17 +549,32 @@ export function whoToWatch(input: WatchInput): WatchItem[] {
       const id = teamId(name);
       if (followedTeams.has(id)) add({ kind: 'equipo', id, name: input.followedNames?.get(id) ?? name, reason: 'Lo seguís', followed: true });
     }
+    // Sus pilotos (de la tabla principal o, si no hay, de los inscriptos), hasta 4.
+    let added = 0;
+    const addTeamDriver = (rawName: string, team: string, detail: string) => {
+      const ids = driverIdsOf(rawName);
+      const tid = teamId(team);
+      if (ids.length !== 1 || !followedTeams.has(tid) || added >= 4 || seen.has(`piloto:${ids[0]}`)) return;
+      added++;
+      add({ kind: 'piloto', id: ids[0]!, name: rawName, reason: `Corre para ${input.followedNames?.get(tid) ?? team}, que seguís`, ...(detail ? { detail } : {}), followed: true });
+    };
+    for (const r of input.tables[0]?.rows ?? []) if (r.team) addTeamDriver(driverDisplayName(r.name), r.team, ptsText(r));
+    for (const r of input.roster ?? []) {
+      if (!r.team) continue;
+      for (const name of splitDriverNames(r.driver)) addTeamDriver(driverDisplayName(name), r.team, [r.number ? `#${r.number}` : '', r.class ?? ''].filter(Boolean).join(' · '));
+    }
   }
   // Líderes del campeonato (uno por tabla).
   for (const t of input.tables) {
     const leader = [...t.rows].sort((a, b) => a.pos - b.pos)[0];
     if (!leader) continue;
     for (const id of driverIdsOf(leader.name)) {
-      add({ kind: 'piloto', id, name: leader.name, reason: multi ? `Líder · ${t.title}` : 'Líder del campeonato', detail: ptsText(leader), followed: false });
+      add({ kind: 'piloto', id, name: driverDisplayName(leader.name), reason: multi ? `Líder · ${t.title}` : 'Líder del campeonato', detail: ptsText(leader), followed: false });
     }
   }
-  for (const w of input.winnersHere ?? []) {
-    add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: `Ganó ${w.sessionName}`, ...(w.team ? { detail: w.team } : {}), followed: false });
+  const here = input.winnersHere ?? [];
+  for (const w of here) {
+    add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: here.length > 1 ? `Ganó ${w.sessionName}` : 'Ganó esta carrera', ...(w.team ? { detail: w.team } : {}), followed: false });
   }
   const before = input.winnersBefore ?? [];
   for (const w of before) {
@@ -564,7 +582,7 @@ export function whoToWatch(input: WatchInput): WatchItem[] {
     const what = before.length > 1 ? ` ${w.sessionName}` : '';
     add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: `Ganó${what}${where}`, ...(w.team ? { detail: w.team } : {}), followed: false });
   }
-  return out.slice(0, input.limit ?? 8);
+  return out.slice(0, input.limit ?? 10);
 }
 
 // ── Notas recientes ──

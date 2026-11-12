@@ -26,7 +26,7 @@
       <h3 class="card-title">Qué se juega</h3>
       <div class="ctx-pad">
         <p v-if="round" class="ctx-strong" :class="{ 'accent-text': round.after.length <= 1 }">
-          {{ remaining }}<template v-if="racesAfterText"> {{ racesAfterText }}</template>
+          {{ racesAfterText ? `${remaining} ${racesAfterText}` : remaining }}
         </p>
         <p v-if="standings" class="small dim">
           {{ timingLabel }} · leída {{ ago(standings.updatedAt) }}
@@ -231,10 +231,11 @@ import { useNewsStore } from '../stores/news.ts';
 import { useResultsStore } from '../stores/results.ts';
 import { useRostersStore } from '../stores/rosters.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
-import { useSettingsStore } from '../stores/settings.ts';
+import { useSettingsStore, type FollowedTeam } from '../stores/settings.ts';
 import { circuitId } from '../lib/circuits.ts';
 import { formatDateRange, timeAgo, zoneLabel } from '../lib/format.ts';
 import { seriesColor } from '../lib/grid.ts';
+import { teamNeedles } from '../lib/teams.ts';
 import {
   TIMING_LABELS,
   driverTables,
@@ -267,11 +268,8 @@ import {
   type WatchItem,
 } from '../lib/context.ts';
 
-/** Equipo seguido (Ajustes todavía puede no guardarlos: se lee si existe). */
-interface FollowedTeam {
-  id: string;
-  name: string;
-}
+/** Equipo seguido (con lo mínimo que hace falta acá). */
+type FollowedTeamRef = Pick<FollowedTeam, 'id' | 'name'>;
 
 interface RaceRow {
   id: string;
@@ -290,12 +288,12 @@ export default defineComponent({
   props: {
     event: { type: Object as PropType<MotorEvent>, required: true },
     series: { type: Object as PropType<Series>, required: true },
-    /** Equipos seguidos; si no se pasan, se leen de Ajustes cuando existan. */
-    followedTeams: { type: Array as PropType<FollowedTeam[] | null>, default: null },
+    /** Equipos seguidos; si no se pasan, los de Ajustes. */
+    teamsOverride: { type: Array as PropType<FollowedTeamRef[] | null>, default: null },
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'now', 'status']),
-    ...mapState(useSettingsStore, ['timeZone', 'followedDrivers', 'followedSeries']),
+    ...mapState(useSettingsStore, ['timeZone', 'followedDrivers', 'followedSeries', 'followedTeams']),
     ...mapState(useResultsStore, { standingsMap: 'standings', resultsMap: 'results' }),
     ...mapState(useRostersStore, { rostersMap: 'rosters' }),
     ...mapState(useNewsStore, { newsItems: 'items', newsStatus: 'status' }),
@@ -309,10 +307,8 @@ export default defineComponent({
     seriesFollowed(): boolean {
       return this.followedSeries.includes(this.series.id);
     },
-    teams(): FollowedTeam[] {
-      if (this.followedTeams) return this.followedTeams;
-      const s = useSettingsStore() as unknown as { followedTeams?: FollowedTeam[] };
-      return Array.isArray(s.followedTeams) ? s.followedTeams : [];
+    teams(): FollowedTeamRef[] {
+      return this.teamsOverride ?? this.followedTeams;
     },
     followed(): Followed {
       return { driverIds: this.followedDrivers.map((d) => d.id), teamIds: this.teams.map((t) => t.id) };
@@ -441,13 +437,11 @@ export default defineComponent({
 
     // ── Notas ──
     news(): NewsItem[] {
-      const followedNames = [
-        ...this.followedDrivers.filter((d) => d.seriesIds.includes(this.series.id)).map((d) => d.name),
-        ...this.teams.map((t) => t.name),
-      ];
+      const drivers = this.followedDrivers.filter((d) => d.seriesIds.includes(this.series.id)).map((d) => d.name);
+      const teams = this.teamsOverride ?? this.followedTeams.filter((t) => t.seriesIds.includes(this.series.id));
       return pickNews(this.newsItems, this.series.id, newsReference(this.event, this.now), {
         eventWords: eventNeedles(this.event),
-        followedWords: surnameNeedles(followedNames),
+        followedWords: [...surnameNeedles(drivers), ...teams.flatMap((t) => teamNeedles(t.name))],
       });
     },
 

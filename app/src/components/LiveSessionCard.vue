@@ -13,8 +13,8 @@
     </header>
     <RouterLink :to="`/evento/${item.session.eventId}?tab=contexto`" class="context-link">
       <AppIcon name="flag" :size="16" />
-      <span class="grow">Ponerme en contexto</span>
-      <span class="small dim">qué se juega, a quién mirar</span>
+      <span class="context-link-label">Ponerme en contexto</span>
+      <span class="grow small dim context-link-hint">qué se juega, a quién mirar</span>
       <AppIcon name="chevron" :size="14" class="dim" />
     </RouterLink>
 
@@ -126,6 +126,18 @@ a.context-link {
   color: var(--accent);
   font-weight: 700;
   font-size: 0.9rem;
+}
+
+.context-link-label {
+  white-space: nowrap;
+}
+
+.context-link-hint {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  font-weight: 400;
 }
 
 a.context-link:hover {
