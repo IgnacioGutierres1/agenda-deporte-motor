@@ -23,6 +23,9 @@
             </div>
           </div>
         </div>
+        <div class="hero-actions">
+          <FollowButton :team="followRef" :name="team.name" />
+        </div>
       </section>
 
       <div class="page">
@@ -85,6 +88,7 @@ import type { NewsItem, Series, Team, TeamDriver, TeamEntry } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
+import FollowButton from '../components/FollowButton.vue';
 import NewsList from '../components/NewsList.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import UpcomingList from '../components/UpcomingList.vue';
@@ -92,8 +96,9 @@ import { useDriversStore } from '../stores/drivers.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useTeamsStore } from '../stores/teams.ts';
+import type { FollowedTeam } from '../stores/settings.ts';
 import { seriesColor } from '../lib/grid.ts';
-import { newsForTeam } from '../lib/teams.ts';
+import { newsForTeam, teamSeriesIds } from '../lib/teams.ts';
 
 interface EntryRow extends TeamEntry {
   series?: Series;
@@ -107,7 +112,7 @@ const byNumber = (a: TeamDriver, b: TeamDriver) =>
 /** Ficha de un equipo: categorías en las que corre, pilotos, próximas carreras y noticias. */
 export default defineComponent({
   name: 'TeamView',
-  components: { AppIcon, DataState, DriverAvatar, NewsList, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, SeriesCrest, UpcomingList },
   computed: {
     ...mapState(useTeamsStore, { teamsById: 'byId', teamsStatus: 'status', teamsError: 'error', pending: 'pending', derived: 'derived', allTeams: 'teams' }),
     ...mapState(useDriversStore, { driversStatus: 'status' }),
@@ -117,7 +122,11 @@ export default defineComponent({
       return this.teamsById.get(String(this.$route.params.teamId));
     },
     seriesIds(): string[] {
-      return [...new Set([...(this.team?.entries ?? []).map((e) => e.seriesId), ...(this.team?.drivers ?? []).map((d) => d.seriesId)])];
+      return this.team ? teamSeriesIds(this.team) : [];
+    },
+    followRef(): FollowedTeam | null {
+      if (!this.team) return null;
+      return { id: this.team.id, name: this.team.name, seriesIds: this.seriesIds };
     },
     color(): string {
       return seriesColor(this.seriesById.get(this.seriesIds[0] ?? ''));

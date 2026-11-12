@@ -35,7 +35,7 @@
           <h2 class="block-title">Siguiendo</h2>
           <template v-if="followedIds.length === 0">
             <p class="center small dim">
-              Tocá ★ en una categoría o en un piloto para verlo primero acá.
+              Tocá ★ en una categoría, un piloto o un equipo para verlo primero acá.
               <RouterLink to="/categorias">Elegir categorías</RouterLink>
             </p>
           </template>
@@ -134,11 +134,7 @@ export default defineComponent({
   },
   computed: {
     ...mapState(useScheduleStore, ['hasData', 'strip', 'selectedDay', 'today', 'agendaCards', 'agendaPending', 'schedule', 'now', 'seriesById']),
-    ...mapState(useSettingsStore, ['followedSeries', 'followedDrivers', 'timeZone']),
-    /** Categorías seguidas + las de los pilotos seguidos. */
-    followedIds(): string[] {
-      return [...new Set([...this.followedSeries, ...this.followedDrivers.flatMap((d) => d.seriesIds)])];
-    },
+    ...mapState(useSettingsStore, { followedIds: 'followedSeriesIds', timeZone: 'timeZone' }),
     /** Días de la franja (el "Finde" va fijo a la izquierda). */
     days() {
       return this.strip.filter((d) => d.value !== WEEKEND);
