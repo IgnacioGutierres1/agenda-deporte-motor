@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { buildIcs, escapeIcsText, foldLine, toIcsUtc, type IcsEventInput } from '../src/ics.ts';
+import { buildIcs, escapeIcsText, foldLine, nextIsoDate, toIcsDate, toIcsUtc, type IcsAllDayEventInput, type IcsEventInput } from '../src/ics.ts';
 import { localToUtc } from '../src/time.ts';
 
 const base: IcsEventInput = {
@@ -66,5 +66,68 @@ describe('ics', () => {
 
   it('convierte ISO con offset a UTC', () => {
     expect(toIcsUtc('2026-11-28T17:00:00+03:00')).toBe('20261128T140000Z');
+  });
+
+  it('aclara cuando la transmisión es la habitual y no la publicada por la fuente', () => {
+    const ics = buildIcs([{ ...base, broadcastIsDefault: true }]);
+    expect(ics).toContain('DESCRIPTION:Transmisión habitual: TV Pública\\, Motorplay\\nFuente:');
+    expect(buildIcs([{ ...base, broadcast: [], broadcastIsDefault: true }])).toContain('DESCRIPTION:Transmisión: A confirmar');
+  });
+});
+
+describe('ics: eventos sin horarios (día completo)', () => {
+  const pending: IcsAllDayEventInput = {
+    allDay: true,
+    id: 'ev123',
+    dateStart: '2026-11-13',
+    dateEnd: '2026-11-15',
+    seriesName: 'Turismo Carretera',
+    circuit: 'Parque Ciudad de Río Cuarto',
+    eventName: 'Fecha 14 – Río Cuarto',
+    country: 'Argentina',
+    broadcast: ['TV Pública', 'Motorplay'],
+    broadcastIsDefault: true,
+    sourceUrl: 'https://www.actc.org.ar/tc/calendario.html',
+  };
+
+  it('usa DTSTART/DTEND con VALUE=DATE y fin exclusivo', () => {
+    const ics = buildIcs([pending], { now: new Date('2026-11-12T12:00:00Z') });
+    expect(ics).toContain('UID:ev123@agendadeportemotor.local');
+    expect(ics).toContain('DTSTART;VALUE=DATE:20261113\r\n');
+    // El domingo 15 inclusive: el fin es el lunes 16.
+    expect(ics).toContain('DTEND;VALUE=DATE:20261116\r\n');
+    expect(ics).toContain('TRANSP:TRANSPARENT');
+    expect(ics).not.toContain('TZID');
+    expect(ics).not.toContain('VTIMEZONE');
+  });
+
+  it('titula como las sesiones con "(horarios a confirmar)" y lleva transmisión habitual y fuente', () => {
+    const ics = buildIcs([pending]);
+    const unfolded = ics.replace(/\r\n /g, '');
+    expect(unfolded).toContain('SUMMARY:Turismo Carretera (Parque Ciudad de Río Cuarto) - Fecha 14 – Río Cuarto (horarios a confirmar)');
+    expect(unfolded).toContain(
+      'DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el cronograma.\\nTransmisión habitual: TV Pública\\, Motorplay\\nFuente: https://www.actc.org.ar/tc/calendario.html',
+    );
+    expect(unfolded).toContain('LOCATION:Parque Ciudad de Río Cuarto\\, Argentina');
+    // CRLF y plegado a 75 octetos también en estas líneas.
+    expect(ics.replace(/\r\n/g, '')).not.toContain('\n');
+    for (const line of ics.split('\r\n')) expect(new TextEncoder().encode(line).length).toBeLessThanOrEqual(75);
+  });
+
+  it('un evento de un solo día termina al día siguiente; ordena antes que las sesiones del mismo día', () => {
+    const oneDay = { ...pending, id: 'gala', dateStart: '2026-12-31', dateEnd: '2026-12-31' };
+    const session = { ...base, id: 'ses', startUtc: '2026-12-31T10:00:00Z', endUtc: '2026-12-31T11:00:00Z' };
+    const ics = buildIcs([session, oneDay]);
+    expect(ics).toContain('DTSTART;VALUE=DATE:20261231');
+    expect(ics).toContain('DTEND;VALUE=DATE:20270101');
+    expect(ics.indexOf('UID:gala@')).toBeLessThan(ics.indexOf('UID:ses@'));
+  });
+
+  it('convierte y valida fechas', () => {
+    expect(toIcsDate('2026-11-13')).toBe('20261113');
+    expect(nextIsoDate('2028-02-28')).toBe('2028-02-29');
+    expect(nextIsoDate('2026-12-31')).toBe('2027-01-01');
+    expect(() => toIcsDate('2026-02-30')).toThrow(/inválida/);
+    expect(() => toIcsDate('13/11/2026')).toThrow(/inválida/);
   });
 });
