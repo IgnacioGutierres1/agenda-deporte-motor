@@ -419,3 +419,16 @@ describe('trazabilidad y controles con cualquier proveedor', () => {
     expect(sourceSchema.parse(base).model).toBeUndefined();
   });
 });
+
+describe('titulares de notas no son eventos', () => {
+  it('descarta titulares y conserva nombres reales largos', async () => {
+    const { looksLikeHeadline } = await import('../src/generic/ai.ts');
+    expect(looksLikeHeadline('SANTIAGO LANTELLA SE PRESENTARÁ EN LA CLASE UNO DE LA MANO DEL MDS RACING')).toBe(true);
+    expect(looksLikeHeadline('SAÚL EIDILSTEIN: "SIN DUDAS PEGAMOS UN SALTO DE CALIDAD CON EL AUTO NUEVO"')).toBe(true);
+    expect(looksLikeHeadline('SANTINO PAIRETTI VUELVE EN EL CORONACIÓN JUNTO AL CDS CARRERA PRO')).toBe(true);
+    expect(looksLikeHeadline('Red Bull Grand Prix of San Marino and the Rimini Riviera')).toBe(false);
+    expect(looksLikeHeadline("Black's Tire 200 presented by Down East Heating & Air Conditioning")).toBe(false);
+    expect(looksLikeHeadline('Autódromo Ciudad de San Martín (SAN MARTÍN , Est. Lib. Grl. San Martín, Mendoza)')).toBe(false);
+    expect(looksLikeHeadline('FECHA 10 RAFAELA')).toBe(false);
+  });
+});

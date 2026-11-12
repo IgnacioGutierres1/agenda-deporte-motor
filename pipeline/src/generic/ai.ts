@@ -244,7 +244,8 @@ export async function aiCalendar(
           'Para cada una indicá el campeonato/categoría al que pertenece, fechas, circuito y país.'
         : `Listá TODOS los eventos (fechas/rondas) de la temporada ${season} de "${series.name}" que figuran en este calendario oficial, uno por cada fecha. ` +
           'Incluí fechas de inicio y fin (días del fin de semana del evento). Si solo figura el día de la carrera, usá ese día en ambas fechas. ' +
-          'No incluyas eventos de otras categorías.',
+          'No incluyas eventos de otras categorías. Las fechas de publicación de noticias, notas o comunicados NO son eventos: ' +
+          'si el documento no trae el calendario de la temporada (p. ej. solo hay titulares de notas), devolvé la lista vacía.',
     }),
     opts.trace,
   );
@@ -254,6 +255,12 @@ export async function aiCalendar(
     const dateEnd = e.dateEnd && /^\d{4}-\d{2}-\d{2}$/.test(e.dateEnd) && e.dateEnd >= e.dateStart ? e.dateEnd : e.dateStart;
     // Anti-alucinación: el nombre o el circuito tienen que figurar en el documento.
     if (!appearsInDocument(e.name, doc.text) && !(e.circuit && appearsInDocument(e.circuit, doc.text))) continue;
+    // Un titular de nota tomado como evento ("SANTIAGO LANTELLA SE PRESENTARÁ EN LA CLASE UNO…", con la fecha
+    // de publicación): los nombres de eventos son cortos. Pasó con modelos de respaldo en páginas sin calendario.
+    if (looksLikeHeadline(e.name)) {
+      opts.onDropped?.(e.name, 'parece el titular de una nota, no un evento');
+      continue;
+    }
     const implausible = implausibleDateRange(e.dateStart, dateEnd);
     if (implausible) {
       opts.onDropped?.(e.name, `${e.dateStart} a ${dateEnd}: ${implausible}`);
@@ -273,6 +280,20 @@ export async function aiCalendar(
     });
   }
   return out;
+}
+
+/**
+ * true si el texto parece el titular de una nota y no el nombre de un evento: tiene comillas, o es una frase
+ * larga toda en mayúsculas (como titulan los sitios argentinos), o es larguísima. Nombres reales largos como
+ * "Red Bull Grand Prix of San Marino and the Rimini Riviera" o "DQS Solutions & Staffing 250 powered by…"
+ * van en mayúsculas y minúsculas y no llegan a 15 palabras.
+ */
+export function looksLikeHeadline(name: string): boolean {
+  const t = name.trim();
+  const words = t.split(/\s+/).length;
+  const letters = t.replace(/[^\p{L}]/gu, '');
+  const allCaps = letters.length > 0 && letters === letters.toLocaleUpperCase('es');
+  return /["“”«»]/.test(t) || (allCaps && words > 9) || words > 14;
 }
 
 /** Días del evento en los formatos en que suelen figurar en un cronograma ("2026-11-21", "21/11", "21.11."). */
