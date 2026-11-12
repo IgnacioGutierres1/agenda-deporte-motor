@@ -72,9 +72,23 @@ describe('pilotos', () => {
     const series = useScheduleStore().seriesById.get('tc')!;
     const wrapper = mount(StandingsPanel, { props: { series }, global: { plugins: [pinia, router] } });
     await flushPromises();
-    const links = wrapper.findAll('a.driver-link').map((a) => a.attributes('href'));
+    // Cada fila es un link entero (a.row-link); las de marcas no llevan link.
+    const links = wrapper.findAll('a.row-link').map((a) => a.attributes('href'));
     expect(links).toContain('/piloto/agustin-canapino');
     expect(links.length).toBe(3); // solo la tabla de pilotos
+  });
+
+  it('tocar cualquier parte de la fila (posición, puntos) lleva a la ficha del piloto', async () => {
+    useResultsStore().$patch({ standings: { tc: { status: 'ok', data: fixture<StandingsFile>('standings/tc.json') } } });
+    const router = makeRouter();
+    const series = useScheduleStore().seriesById.get('tc')!;
+    const wrapper = mount(StandingsPanel, { props: { series }, global: { plugins: [pinia, router] } });
+    await flushPromises();
+    const row = wrapper.findAll('tr.linked')[0]!;
+    const href = row.get('a.row-link').attributes('href');
+    await row.findAll('td.num').at(-1)!.trigger('click');
+    await flushPromises();
+    expect(router.currentRoute.value.fullPath).toBe(href);
   });
 
   it('la agenda pone primero las categorías de los pilotos seguidos', async () => {

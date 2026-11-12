@@ -38,8 +38,10 @@
 
       <section v-for="t in namedTeams" :key="t.key" class="card flush roster-team">
         <h3 class="card-title roster-team-title">
-          <RouterLink :to="`/equipo/${t.teamId}`" class="driver-link">{{ t.name }}</RouterLink>
-          <AppIcon name="chevron" :size="14" class="dim" />
+          <RouterLink :to="`/equipo/${t.teamId}`" class="roster-team-link">
+            <span>{{ t.name }}</span>
+            <AppIcon name="chevron" :size="14" class="dim" />
+          </RouterLink>
         </h3>
         <ul class="list-card inset">
           <li v-for="car in t.cars" :key="car.key">
@@ -189,8 +191,20 @@ export default defineComponent({
 }
 
 .roster-team-title {
+  padding: 0;
+}
+
+a.roster-team-link {
   display: flex;
   align-items: center;
   gap: 0.25rem;
+  min-height: 44px;
+  padding: 0.35rem 0.85rem;
+  color: var(--text);
+}
+
+a.roster-team-link:hover {
+  text-decoration: none;
+  color: var(--accent);
 }
 </style>

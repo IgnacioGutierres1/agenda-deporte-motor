@@ -77,6 +77,7 @@
           <label class="check grow">
             <input
               type="checkbox"
+              :aria-label="`Mostrar ${i.series.name} en la agenda`"
               :checked="!hiddenSeries.includes(i.series.id)"
               :disabled="!i.series.enabled"
               @change="setSeriesVisible(i.series.id, ($event.target as HTMLInputElement).checked)"

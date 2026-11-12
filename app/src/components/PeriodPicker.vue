@@ -26,7 +26,7 @@
     </div>
     <p v-if="periodError" class="small" style="color: var(--error)">{{ periodError }}</p>
     <label v-if="preset !== 'personalizado' && preset !== 'proximo-mes'" class="check small">
-      <input v-model="includeThursday" type="checkbox" />
+      <input v-model="includeThursday" type="checkbox" aria-label="Incluir jueves" />
       Incluir jueves
     </label>
   </div>

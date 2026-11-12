@@ -30,21 +30,26 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="row in table.rows" :key="`${row.pos}-${row.name}`" :class="{ leader: row.pos === 1 }">
+              <tr
+                v-for="row in table.rows"
+                :key="`${row.pos}-${row.name}`"
+                :class="{ leader: row.pos === 1, linked: !!rowLink(table.title, row) }"
+                @click="openRow($event, rowLink(table.title, row))"
+              >
                 <td class="num pos">{{ row.pos }}</td>
-                <td>
-                  <div class="name-cell">
+                <td class="name-td">
+                  <RouterLink v-if="rowLink(table.title, row)" :to="rowLink(table.title, row)" class="name-cell row-link">
                     <span v-if="row.number" class="car-number">{{ row.number }}</span>
                     <span class="grow">
-                      <RouterLink v-if="driverLink(table.title, row.name)" :to="driverLink(table.title, row.name)" class="driver-link">
-                        {{ row.name }}
-                      </RouterLink>
-                      <RouterLink v-else-if="teamTableLink(table.title, row.name)" :to="teamTableLink(table.title, row.name)" class="driver-link">
-                        {{ row.name }}
-                      </RouterLink>
-                      <template v-else>{{ row.name }}</template>
-                      <RouterLink v-if="row.team && teamLink(row.team)" :to="teamLink(row.team)" class="small dim team team-name-link">{{ row.team }}</RouterLink>
-                      <span v-else-if="row.team" class="small dim team">{{ row.team }}</span>
+                      <span class="row-name">{{ row.name }}</span>
+                      <span v-if="row.team" class="small dim team">{{ row.team }}</span>
+                    </span>
+                  </RouterLink>
+                  <div v-else class="name-cell row-link">
+                    <span v-if="row.number" class="car-number">{{ row.number }}</span>
+                    <span class="grow">
+                      {{ row.name }}
+                      <span v-if="row.team" class="small dim team">{{ row.team }}</span>
                     </span>
                   </div>
                 </td>
@@ -119,6 +124,18 @@ export default defineComponent({
       const id = teamId(name);
       return id ? `/equipo/${id}` : '';
     },
+    /**
+     * A dónde lleva la fila: al piloto; si el nombre no es de un piloto solo (dupla, marca), al equipo.
+     * El equipo de un piloto queda a un toque desde su ficha.
+     */
+    rowLink(title: string, row: { name: string; team?: string }): string {
+      return this.driverLink(title, row.name) || this.teamTableLink(title, row.name) || (isDriverTable(title) && row.team ? this.teamLink(row.team) : '');
+    },
+    /** Toque en cualquier parte de la fila (posición, puntos): misma navegación que el link. */
+    openRow(e: MouseEvent, to: string) {
+      if (!to || (e.target as Element | null)?.closest?.('a')) return;
+      void this.$router.push(to);
+    },
     isTeams(title: string): boolean {
       return /equipo|team|marca|constructor|manufacturer|fabricante/i.test(title);
     },
@@ -140,10 +157,6 @@ export default defineComponent({
 table.data.standings td,
 table.data.standings th {
   padding: 0.55rem 0.6rem;
-}
-
-a.team-name-link {
-  color: var(--text-dim);
 }
 
 table.data.standings tr.leader td.pos {

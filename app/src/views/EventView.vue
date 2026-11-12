@@ -16,7 +16,7 @@
         <p class="hero-sub">
           <span v-if="event.round" class="pill pill-small">Fecha {{ event.round }}</span>
           {{ dateRange(event.dateStart, event.dateEnd) }} ·
-          <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
+          <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link tap-inline">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
         </p>
         <p class="hero-status" :class="state.kind">{{ state.text }}</p>
       </section>

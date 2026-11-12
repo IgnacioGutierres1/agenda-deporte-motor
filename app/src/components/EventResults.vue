@@ -38,14 +38,25 @@
               </tr>
             </thead>
             <tbody>
-              <tr v-for="(row, i) in current.rows" :key="i" :class="{ podium: row.pos !== null && row.pos !== undefined && row.pos <= 3 }">
+              <tr
+                v-for="(row, i) in current.rows"
+                :key="i"
+                :class="{ podium: row.pos !== null && row.pos !== undefined && row.pos <= 3, linked: isSingle(row.driver) }"
+                @click="openRow($event, row.driver)"
+              >
                 <td class="num pos">{{ row.pos ?? row.status ?? '—' }}</td>
-                <td>
-                  <div class="name-cell">
+                <td class="name-td">
+                  <RouterLink v-if="isSingle(row.driver)" :to="`/piloto/${idOf(row.driver)}`" class="name-cell row-link">
                     <span v-if="row.number" class="car-number">{{ row.number }}</span>
                     <span class="grow">
-                      <RouterLink v-if="isSingle(row.driver)" :to="`/piloto/${idOf(row.driver)}`" class="driver-link">{{ row.driver }}</RouterLink>
-                      <template v-else>{{ row.driver }}</template>
+                      <span class="row-name">{{ row.driver }}</span>
+                      <span v-if="row.team || row.vehicle" class="small dim team">{{ row.team ?? row.vehicle }}</span>
+                    </span>
+                  </RouterLink>
+                  <div v-else class="name-cell row-link">
+                    <span v-if="row.number" class="car-number">{{ row.number }}</span>
+                    <span class="grow">
+                      {{ row.driver }}
                       <span v-if="row.team || row.vehicle" class="small dim team">{{ row.team ?? row.vehicle }}</span>
                     </span>
                   </div>
@@ -119,6 +130,11 @@ export default defineComponent({
     },
   },
   methods: {
+    /** Toque en cualquier parte de la fila (posición, tiempo): lleva al piloto, como el link. */
+    openRow(e: MouseEvent, driver: string) {
+      if (!this.isSingle(driver) || (e.target as Element | null)?.closest?.('a')) return;
+      void this.$router.push(`/piloto/${this.idOf(driver)}`);
+    },
     ...mapActions(useResultsStore, ['loadResults']),
     load(force = false) {
       if (!this.hasAnyResult) return;
