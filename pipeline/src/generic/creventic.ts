@@ -105,6 +105,8 @@ function teamAndNumber(raw: string): { name: string; number?: string } {
  * y TCE y TCX comparten autos; son títulos distintos, así que se publican todas.
  * Orden: los pilotos de cada clase primero y después los equipos, como en SUPER GT.
  */
+const SUBCUP_RE = /-(P\/?A|PRO\/?AM|AM)$/i;
+
 export function creventicTables(html: string, suffix: string): StandingsTable[] {
   const drivers: StandingsTable[] = [];
   const teams: StandingsTable[] = [];
@@ -115,6 +117,9 @@ export function creventicTables(html: string, suffix: string): StandingsTable[] 
     if (!kind) continue;
     for (const chunk of parts[i + 1]!.split(/<h2>/).slice(1)) {
       const cls = textOf(chunk.slice(0, chunk.indexOf('</h2>')));
+      // Subcopas (GT3-P/A, GT3-AM, 992-AM) repiten pilotos de su clase madre: como en SRO, solo se publican
+      // las clases completas para no duplicar cada piloto en la ficha y en la pestaña Tabla.
+      if (SUBCUP_RE.test(cls)) continue;
       const title = `${kind} ${cls}${suffix ? ` (${suffix})` : ''}`;
       const rows: StandingsRow[] = [];
       for (const row of chunk.split(/<div class="row">/).slice(1)) {

@@ -60,14 +60,12 @@ describe('24H Series (Creventic): campeonato', () => {
     ]);
   });
 
-  it('tablas por clase: empates "1, 1, 1, 2", equipos por auto, nacionalidad, sin autos sin puntos ni clases vacías', () => {
+  it('tablas por clase: empates "1, 1, 1, 2", equipos por auto, nacionalidad, sin autos sin puntos, clases vacías ni subcopas', () => {
     const tables = creventicTables(fixture('creventic-dashboard-middle-east-2026.html'), '');
     expect(tables.map((t) => `${t.title} (${t.rows.length})`)).toEqual([
       'Pilotos GT3 (5)',
-      'Pilotos GT3-P/A (5)',
       'Pilotos TCE (5)',
       'Equipos GT3 (5)',
-      'Equipos GT3-P/A (5)',
       'Equipos TCE (4)',
     ]);
     expect(tables[0]!.rows.slice(0, 4)).toEqual([
@@ -77,10 +75,10 @@ describe('24H Series (Creventic): campeonato', () => {
       // ISO3 que places.ts no conoce.
       { pos: 3, name: 'Stanislav Minsky', points: 68, country: 'Kyrgyzstan' },
     ]);
-    // "Herberth Motorsport (269)": el número del auto va aparte, así el equipo se une con sus otros autos.
-    expect(tables[4]!.rows.slice(0, 2)).toEqual([
-      { pos: 1, name: 'Herberth Motorsport', number: '269', points: 94 },
-      { pos: 2, name: 'Herberth Motorsport', number: '91', points: 76 },
+    // "Herberth Motorsport (10)": el número del auto va aparte, así el equipo se une con sus otros autos.
+    expect(tables[2]!.rows.slice(0, 2)).toEqual([
+      { pos: 1, name: 'Team WRT', number: '669', points: 96 },
+      { pos: 2, name: 'Herberth Motorsport', number: '10', points: 76 },
     ]);
     // Los autos sin puntos (posición "*" o total 0) no entran: el fixture tiene de los dos.
     const all = tables.flatMap((t) => t.rows);
@@ -100,21 +98,17 @@ describe('24H Series (Creventic): campeonato', () => {
     expect(file.season).toBe(2026);
     expect(file.tables.map((t) => t.title)).toEqual([
       'Pilotos GT3 (Europa)',
-      'Pilotos GT3-P/A (Europa)',
       'Pilotos TCE (Europa)',
       'Equipos GT3 (Europa)',
-      'Equipos GT3-P/A (Europa)',
       'Equipos TCE (Europa)',
       'Pilotos GT3 (Middle East Trophy)',
-      'Pilotos GT3-P/A (Middle East Trophy)',
       'Pilotos TCE (Middle East Trophy)',
       'Equipos GT3 (Middle East Trophy)',
-      'Equipos GT3-P/A (Middle East Trophy)',
       'Equipos TCE (Middle East Trophy)',
     ]);
     // El esquema conserva la nacionalidad (antes la descartaba).
     expect(file.tables[0]!.rows[0]).toEqual({ pos: 1, name: 'Pierre Kaffer', points: 134, country: 'Germany' });
-    expect(file.tables[3]!.rows[0]).toEqual({ pos: 1, name: 'Sainteloc Junior Team', number: '18', points: 134 });
+    expect(file.tables[2]!.rows[0]).toEqual({ pos: 1, name: 'Sainteloc Junior Team', number: '18', points: 134 });
     expect(file.source).toMatchObject({ url: `${DASH}?championship=12`, method: 'directo', kind: 'html' });
   });
 
@@ -189,7 +183,7 @@ describe('24H Series (Creventic): índice de pilotos', () => {
     expect(engel.country).toBe('Germany');
 
     const kaffer = file.drivers.find((d) => d.id === 'kaffer-pierre')!;
-    expect(kaffer.entries.map((e) => e.table)).toEqual(['Pilotos GT3 (Europa)', 'Pilotos GT3-P/A (Europa)']);
+    expect(kaffer.entries.map((e) => e.table)).toEqual(['Pilotos GT3 (Europa)']);
     expect(kaffer.country).toBe('Austria');
     // Solo en la tabla (sin lista de inscriptos): el país sale de la tabla.
     expect(file.drivers.find((d) => d.name === 'Torsten Kratz')?.country).toBe('Germany');
