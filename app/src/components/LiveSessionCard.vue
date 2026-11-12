@@ -11,6 +11,12 @@
         <span class="badge badge-live">En vivo</span>
       </RouterLink>
     </header>
+    <RouterLink :to="`/evento/${item.session.eventId}?tab=contexto`" class="context-link">
+      <AppIcon name="flag" :size="16" />
+      <span class="context-link-label">Ponerme en contexto</span>
+      <span class="grow small dim context-link-hint">qué se juega, a quién mirar</span>
+      <AppIcon name="chevron" :size="14" class="dim" />
+    </RouterLink>
 
     <template v-if="target.load">
       <p v-if="loading && !board" class="small dim live-empty">Conectando con el cronometraje oficial…</p>
@@ -107,6 +113,35 @@ export default defineComponent({
 .results-note {
   border-bottom: 1px solid var(--border);
   color: var(--warn);
+}
+
+a.context-link {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 44px;
+  padding: 0.35rem 0.85rem;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  color: var(--accent);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.context-link-label {
+  white-space: nowrap;
+}
+
+.context-link-hint {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: right;
+  font-weight: 400;
+}
+
+a.context-link:hover {
+  text-decoration: none;
 }
 
 .live-card {

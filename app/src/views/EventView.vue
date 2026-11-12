@@ -79,6 +79,9 @@
           </div>
         </section>
 
+        <!-- Contexto -->
+        <ContextPanel v-else-if="tab === 'contexto'" :event="event" :series="series" />
+
         <!-- Resultados -->
         <EventResults v-else-if="tab === 'resultados'" :event="event" :focus-session="focusSession" />
 
@@ -96,6 +99,7 @@ import { defineComponent } from 'vue';
 import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import type { MotorEvent, Series, Source } from '@dm/shared';
+import ContextPanel from '../components/ContextPanel.vue';
 import DataState from '../components/DataState.vue';
 import EventResults from '../components/EventResults.vue';
 import FollowButton from '../components/FollowButton.vue';
@@ -110,12 +114,12 @@ import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/gri
 import { todayIn } from '../lib/agenda.ts';
 import { circuitId } from '../lib/circuits.ts';
 
-type Tab = 'horarios' | 'resultados' | 'tabla';
+type Tab = 'horarios' | 'contexto' | 'resultados' | 'tabla';
 
 /** Página de un evento (como la de un partido en FotMob). */
 export default defineComponent({
   name: 'EventView',
-  components: { DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
+  components: { ContextPanel, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
   data() {
     return { selected: null as GridItem | null };
   },
@@ -163,13 +167,15 @@ export default defineComponent({
     tabs(): Array<{ id: Tab; label: string }> {
       return [
         { id: 'horarios', label: 'Horarios' },
+        { id: 'contexto', label: 'Contexto' },
         { id: 'resultados', label: 'Resultados' },
         { id: 'tabla', label: 'Tabla' },
       ];
     },
     tab(): Tab {
       const q = this.$route.query.tab;
-      return q === 'resultados' || q === 'tabla' ? q : 'horarios';
+      // Horarios queda por defecto; "Ponerme en contexto" (En vivo, ficha de la sesión) abre ?tab=contexto.
+      return q === 'contexto' || q === 'resultados' || q === 'tabla' ? q : 'horarios';
     },
     focusSession(): string {
       return (this.$route.query.session as string | undefined) ?? '';
@@ -187,6 +193,12 @@ export default defineComponent({
       if (ev.dateEnd < todayIn(this.now, ev.tz)) return { kind: 'done', text: 'Finalizado' };
       if (!this.items.length) return { kind: 'pending', text: 'Horarios a confirmar' };
       return { kind: 'done', text: 'Sesiones terminadas' };
+    },
+  },
+  watch: {
+    /** Al cambiar de pestaña (p. ej. "Ponerme en contexto" desde la ficha de la sesión) se cierra la ficha. */
+    tab() {
+      this.selected = null;
     },
   },
   methods: {
