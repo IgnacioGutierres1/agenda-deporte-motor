@@ -67,6 +67,8 @@ describe('builders', () => {
     expect(classifySession('Free Practice 1')).toBe('practica');
     expect(classifySession('Sprint Qualifying')).toBe('clasificacion');
     expect(classifySession('Sprint Race')).toBe('sprint');
+    expect(classifySession('FIA FR World Cup - Qualifying Race')).toBe('sprint');
+    expect(classifySession('Shakedown')).toBe('practica');
     expect(classifySession('Feature Race')).toBe('carrera');
     expect(classifySession('Clasificación')).toBe('clasificacion');
     expect(classifySession('2ª Serie')).toBe('serie');

@@ -99,9 +99,11 @@ export function classifySession(name: string): SessionType {
   const n = name.toLowerCase();
   if (/warm\s*-?\s*up/.test(n)) return 'warmup';
   if (/sprint\s*(qualifying|shootout|clasificaci)/.test(n)) return 'clasificacion';
+  // "Qualification Race" (Macao): es una carrera que define la grilla de la principal, no una clasificación.
+  if (/qualif\w*\s+race|carrera\s+clasificatoria/.test(n)) return 'sprint';
   if (/qualif|clasif|pole|shootout|super\s*pole|hyperpole|q1|q2/.test(n)) return 'clasificacion';
   if (/sprint/.test(n)) return 'sprint';
-  if (/practi|entren|libre|fp\d|test|ensayo/.test(n)) return 'practica';
+  if (/practi|entren|libre|fp\d|test|ensayo|shakedown/.test(n)) return 'practica';
   if (/\bserie|\bheat/.test(n)) return 'serie';
   if (/race|carrera|final|feature|grand prix|gran premio|\bgp\b/.test(n)) return 'carrera';
   return 'otro';
