@@ -41,7 +41,7 @@ export interface PendingItem {
   series: Series;
 }
 
-export const GROUP_ORDER: SeriesGroup[] = ['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'argentina', 'otros'];
+export const GROUP_ORDER: SeriesGroup[] = ['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'rally', 'argentina', 'otros'];
 
 export function seriesSort(a: Series, b: Series): number {
   const ga = GROUP_ORDER.indexOf(a.group);

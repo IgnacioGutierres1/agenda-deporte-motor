@@ -1,5 +1,6 @@
 import type {
   EventResultsFile,
+  EventStagesFile,
   MotorEvent,
   ScheduleFile,
   Series,
@@ -41,6 +42,11 @@ export interface ScheduleChunk {
    * Las fechas sin cronograma que no figuran acá se dan por no publicadas.
    */
   missingTimetables?: MissingTimetable[];
+  /**
+   * Rally y rally raid: itinerario de cada evento (tramos o etapas). run.ts lo escribe en
+   * data/stages/{seriesId}/{eventId}.json; el evento debe llevar stageCount para que la app lo pida.
+   */
+  stages?: EventStagesFile[];
 }
 
 export interface MissingTimetable {

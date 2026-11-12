@@ -352,10 +352,11 @@ const TYPE_WORDS: Record<SessionType, [string, string]> = {
   serie: ['serie', 'series'],
   carrera: ['carrera', 'carreras'],
   warmup: ['warm up', 'warm ups'],
+  etapa: ['etapa', 'etapas'],
   otro: ['otra sesión', 'otras sesiones'],
 };
 
-const TYPE_ORDER: SessionType[] = ['practica', 'clasificacion', 'serie', 'warmup', 'sprint', 'carrera', 'otro'];
+const TYPE_ORDER: SessionType[] = ['practica', 'clasificacion', 'serie', 'warmup', 'sprint', 'etapa', 'carrera', 'otro'];
 
 /** "3 prácticas · 1 clasificación · 1 carrera". */
 export function sessionCounts(sessions: Session[]): string {

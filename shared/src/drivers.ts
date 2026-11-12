@@ -56,9 +56,30 @@ export interface Driver {
   recent?: DriverResult[];
 }
 
-/** Ficha completa de un piloto: lo del índice más sus últimas carreras. */
+/** Números de la temporada de un piloto en una categoría, calculados con los resultados publicados. */
+export interface DriverSeasonStats {
+  seriesId: string;
+  season?: number;
+  /** Carreras (sesiones tipo carrera y sprint) con resultado publicado en las que figura. */
+  races: number;
+  wins: number;
+  podiums: number;
+  top5: number;
+  top10: number;
+  /** Carreras sin posición final (abandono, descalificado, no largó). */
+  dnfs: number;
+  bestPos?: number;
+  /** Promedio de llegada entre las carreras con posición, con un decimal. */
+  avgPos?: number;
+  /** Primeros puestos en sesiones de clasificación con resultado publicado. */
+  poles?: number;
+}
+
+/** Ficha completa de un piloto: lo del índice más sus últimas carreras y los números de la temporada. */
 export interface DriverDetail extends Driver {
   recent: DriverResult[];
+  /** Una entrada por categoría con carreras disputadas. Solo en la ficha completa. */
+  stats?: DriverSeasonStats[];
 }
 
 /** Una línea de un equipo en una categoría (tabla de equipos y/o lista de inscriptos). */

@@ -5,8 +5,8 @@
  *   3. Valida, fusiona con la corrida anterior y detecta cambios de horario.
  *   4. Busca resultados de sesiones terminadas y actualiza campeonatos.
  *   5. Lee las listas oficiales de inscriptos vencidas (data/rosters/**, sin IA; si fallan se conservan).
- *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/drivers.json,
- *      data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
+ *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/stages/**,
+ *      data/drivers.json, data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
  *   7. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
  * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-news] [--dry-run]
@@ -15,6 +15,7 @@ import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import {
   driversFileSchema,
+  eventStagesFileSchema,
   scheduleFileSchema,
   statusFileSchema,
   teamsFileSchema,
@@ -218,6 +219,14 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     const files = await writeDriverFiles(dataDir, drivers, teams);
     log.info(`Fichas de pilotos: ${files.written} grupos escritos, ${files.unchanged} sin cambios, ${files.removed} borrados`);
     await writeJson(attemptsFile, attempts);
+    // Itinerarios de rally y rally raid (los de series con error se conservan: no se tocan).
+    for (const [seriesId, outcome] of outcomes) {
+      if (outcome.kind !== 'ok') continue;
+      for (const file of outcome.chunk.stages ?? []) {
+        eventStagesFileSchema.parse(file);
+        await writeJson(path.join(dataDir, 'stages', seriesId, `${file.eventId}.json`), file);
+      }
+    }
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
       buildFeed(published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),

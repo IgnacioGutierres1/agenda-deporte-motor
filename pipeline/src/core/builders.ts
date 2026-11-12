@@ -10,6 +10,7 @@ import {
   type Session,
   type SessionType,
   type Source,
+  type Surface,
 } from '@dm/shared';
 import { countryEs } from '../generic/places.ts';
 
@@ -31,6 +32,10 @@ export interface EventInput {
   sessionsStatus: MotorEvent['sessionsStatus'];
   /** Si falta, se deduce del nombre (ver eventKindOf). */
   kind?: EventKind;
+  /** Solo rally y rally raid. */
+  surface?: Surface;
+  /** Solo rally y rally raid: cantidad de tramos o etapas del itinerario (ScheduleChunk.stages). */
+  stageCount?: number;
   source: Source;
 }
 
@@ -80,6 +85,8 @@ export function createBuilders(durations: DurationsConfig, broadcast: BroadcastC
           dateEnd: i.dateEnd,
           sessionsStatus: i.sessionsStatus,
           ...(kind ? { kind } : {}),
+          ...(i.surface ? { surface: i.surface } : {}),
+          ...(i.stageCount !== undefined ? { stageCount: i.stageCount } : {}),
           source: i.source,
         },
         i.series,
