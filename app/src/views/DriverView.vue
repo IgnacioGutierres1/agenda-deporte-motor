@@ -139,6 +139,7 @@
 </template>
 
 <script lang="ts">
+import { fixMonthAbbr } from '../lib/format.ts';
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
@@ -258,7 +259,7 @@ export default defineComponent({
         series: this.seriesById.get(r.seriesId),
         eventName: events.find((e) => e.id === r.eventId)?.name ?? 'Evento',
         sessionName: sessions.find((x) => x.id === r.sessionId)?.name ?? 'Carrera',
-        date: DateTime.fromISO(r.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat('d LLL yyyy'),
+        date: fixMonthAbbr(DateTime.fromISO(r.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat('d LLL yyyy')),
       }));
     },
   },

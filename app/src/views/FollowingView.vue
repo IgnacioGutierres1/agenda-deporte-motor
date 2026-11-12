@@ -164,6 +164,7 @@
 </template>
 
 <script lang="ts">
+import { fixMonthAbbr } from '../lib/format.ts';
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
@@ -339,13 +340,15 @@ export default defineComponent({
       if (!next) return '';
       if (next.live) return 'En vivo';
       if (next.nextSession) {
-        return DateTime.fromISO(next.nextSession.startUtc, { zone: 'utc' })
-          .setZone(this.timeZone)
-          .setLocale('es-AR')
-          .toFormat("ccc d LLL, HH:mm")
-          .replace(/\./g, '');
+        return fixMonthAbbr(
+          DateTime.fromISO(next.nextSession.startUtc, { zone: 'utc' })
+            .setZone(this.timeZone)
+            .setLocale('es-AR')
+            .toFormat("ccc d LLL, HH:mm")
+            .replace(/\./g, ''),
+        );
       }
-      return DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat('ccc d LLL').replace(/\./g, '') + ' · a confirmar';
+      return fixMonthAbbr(DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat('ccc d LLL').replace(/\./g, '')) + ' · a confirmar';
     },
   },
 });

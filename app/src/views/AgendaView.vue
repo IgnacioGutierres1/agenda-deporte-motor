@@ -154,7 +154,7 @@ import {
   type AgendaCard,
   type NextSession,
 } from '../lib/agenda.ts';
-import { zoneDisplayName } from '../lib/format.ts';
+import { zoneDisplayName, fixMonthAbbr } from '../lib/format.ts';
 import { centerChild, tabStrip } from '../lib/tabStrip.ts';
 import type { GridItem, PendingItem } from '../lib/grid.ts';
 
@@ -262,9 +262,9 @@ export default defineComponent({
       const n = this.nextFollowed;
       if (!n) return '';
       if (n.startUtc) {
-        return DateTime.fromISO(n.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat("cccc d 'de' LLL · HH:mm");
+        return fixMonthAbbr(DateTime.fromISO(n.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat("cccc d 'de' LLL · HH:mm"));
       }
-      return DateTime.fromISO(n.event.dateStart).setLocale('es-AR').toFormat("cccc d 'de' LLL") + ' · horarios a confirmar';
+      return fixMonthAbbr(DateTime.fromISO(n.event.dateStart).setLocale('es-AR').toFormat("cccc d 'de' LLL")) + ' · horarios a confirmar';
     },
     summary(): string {
       const names = [...new Set(this.otherCards.map((c) => c.series.shortName || c.series.name))];

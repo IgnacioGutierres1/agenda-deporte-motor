@@ -130,7 +130,7 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
 import { eventWinner } from '../lib/podium.ts';
-import { formatDateRange, zoneDisplayName } from '../lib/format.ts';
+import { formatDateRange, zoneDisplayName, fixMonthAbbr } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/grid.ts';
 import { isLateNight, todayIn } from '../lib/agenda.ts';
@@ -238,7 +238,7 @@ export default defineComponent({
       const next = this.items.find((i) => !i.finished);
       if (next) {
         const when = DateTime.fromISO(next.session.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR');
-        return { kind: 'next', text: `Próxima: ${next.session.name} · ${when.toFormat("ccc d 'de' LLL, HH:mm")}` };
+        return { kind: 'next', text: `Próxima: ${next.session.name} · ${fixMonthAbbr(when.toFormat("ccc d 'de' LLL, HH:mm"))}` };
       }
       if (ev.dateEnd < todayIn(this.now, ev.tz)) return { kind: 'done', text: 'Finalizado' };
       if (!this.items.length) return { kind: 'pending', text: 'Horarios a confirmar' };

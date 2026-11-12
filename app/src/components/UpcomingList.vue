@@ -17,6 +17,7 @@
 </template>
 
 <script lang="ts">
+import { fixMonthAbbr } from '../lib/format.ts';
 import { defineComponent, type PropType } from 'vue';
 import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
@@ -56,7 +57,7 @@ export default defineComponent({
         const sessions = (this.schedule?.sessions ?? []).filter((x) => x.eventId === next.event.id);
         const w = upcomingWhen(sessions, this.now, this.timeZone);
         const live = w?.live ?? false;
-        const when = w?.text ?? DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat("ccc d 'de' LLL") + ' · horarios a confirmar';
+        const when = w?.text ?? fixMonthAbbr(DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat("ccc d 'de' LLL")) + ' · horarios a confirmar';
         out.push({ event: next.event, series, live, when });
       }
       return out.sort((a, b) => a.event.dateStart.localeCompare(b.event.dateStart));
