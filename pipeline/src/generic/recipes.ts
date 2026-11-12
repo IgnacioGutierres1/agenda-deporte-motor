@@ -4,7 +4,6 @@
  * (cronogramas en PDF, páginas sin estructura) queda para el flujo genérico con Gemini.
  */
 import { localToUtc, toUtcIso, type Source, type StandingsRow, type StandingsTable } from '@dm/shared';
-import { HttpError } from '../core/http.ts';
 import type { FetchedDocument } from '../extract/document.ts';
 import {
   absoluteUrl,
@@ -19,128 +18,38 @@ import { jsonLdSessions } from './locate.ts';
 import {
   countryName,
   dateInZone,
-  guessTimeZone,
   isoDate,
   monthNumber,
   parseDateRangeText,
   shiftDate,
 } from './places.ts';
-import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe } from './types.ts';
+import {
+  checkStandingsTable,
+  column,
+  dedupe,
+  findArray,
+  findObject,
+  firstTable,
+  host,
+  isoNow,
+  obj,
+  pageOrNull,
+  parseHtmlTable,
+  parseNumber,
+  roundOf,
+  standingsSource,
+  str,
+  stripComments,
+  tzFor,
+} from './kit.ts';
+import type { CalendarEntry, ExtractedSession, SiteRecipe } from './types.ts';
+import { macau } from './macau.ts';
+import { supercars } from './supercars.ts';
+import { superformula } from './superformula.ts';
+import { supergt } from './supergt.ts';
+import { supertaikyu } from './supertaikyu.ts';
 
-const host = (url: string): string => {
-  try {
-    return new URL(url).hostname.replace(/^www\./, '');
-  } catch {
-    return '';
-  }
-};
-
-const stripComments = (html: string) => html.replace(/<!--[\s\S]*?-->/g, ' ');
-
-function tzFor(country: string, place: string, fallback = 'UTC'): string {
-  return guessTimeZone(country, place) ?? fallback;
-}
-
-function dedupe(entries: CalendarEntry[]): CalendarEntry[] {
-  const seen = new Set<string>();
-  return entries.filter((e) => {
-    const key = e.url ? e.url.toLowerCase() : `${e.name}|${e.dateStart}|${e.championship ?? ''}`;
-    if (seen.has(key)) return false;
-    seen.add(key);
-    return true;
-  });
-}
-
-function roundOf(text: string): number | undefined {
-  const m = text.match(/(?:round|fecha|ronda|nls)\s*(\d{1,2})/i);
-  return m ? Number(m[1]) : undefined;
-}
-
-/** Busca recursivamente en un JSON el primer array de objetos que cumpla el predicado. */
-export function findArray(value: unknown, pred: (item: Record<string, unknown>) => boolean, depth = 0): Record<string, unknown>[] | null {
-  if (depth > 25 || !value || typeof value !== 'object') return null;
-  if (Array.isArray(value)) {
-    const objs = value.filter((v): v is Record<string, unknown> => !!v && typeof v === 'object' && !Array.isArray(v));
-    if (objs.length > 0 && objs.length === value.length && objs.some(pred)) return objs;
-    for (const v of value) {
-      const r = findArray(v, pred, depth + 1);
-      if (r) return r;
-    }
-    return null;
-  }
-  for (const v of Object.values(value as Record<string, unknown>)) {
-    const r = findArray(v, pred, depth + 1);
-    if (r) return r;
-  }
-  return null;
-}
-
-/** Busca recursivamente en un JSON el primer objeto que cumpla el predicado. */
-export function findObject(value: unknown, pred: (item: Record<string, unknown>) => boolean, depth = 0): Record<string, unknown> | null {
-  if (depth > 25 || !value || typeof value !== 'object') return null;
-  if (!Array.isArray(value) && pred(value as Record<string, unknown>)) return value as Record<string, unknown>;
-  for (const v of Array.isArray(value) ? value : Object.values(value as Record<string, unknown>)) {
-    const r = findObject(v, pred, depth + 1);
-    if (r) return r;
-  }
-  return null;
-}
-
-const str = (v: unknown): string => (typeof v === 'string' ? v : typeof v === 'number' ? String(v) : '');
-const obj = (v: unknown): Record<string, unknown> => (v && typeof v === 'object' ? (v as Record<string, unknown>) : {});
-
-// ─── Campeonatos: utilidades comunes ──────────────────────────────────────────────────────────
-
-/** Número tal como lo publican los sitios ("258.5", "258,5", "1°", "x4"). null si no hay número. */
-export function parseNumber(text: string): number | null {
-  const m = text.replace(/\s+/g, '').match(/-?\d+(?:[.,]\d+)?/);
-  return m ? Number(m[0].replace(',', '.')) : null;
-}
-
-/** Tabla HTML: textos de los encabezados y celdas (HTML crudo) de cada fila del cuerpo. */
-export function parseHtmlTable(tableHtml: string): { headers: string[]; rows: string[][] } {
-  const headers = [...tableHtml.matchAll(/<th\b[^>]*>([\s\S]*?)<\/th>/gi)].map((m) => textOf(m[1] ?? ''));
-  const rows: string[][] = [];
-  for (const tr of tableHtml.matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/gi)) {
-    const cells = [...(tr[1] ?? '').matchAll(/<td\b[^>]*>([\s\S]*?)<\/td>/gi)].map((m) => m[1] ?? '');
-    if (cells.length > 0) rows.push(cells);
-  }
-  return { headers, rows };
-}
-
-/** Índice de la primera columna cuyo encabezado cumple el patrón (-1 si no hay). */
-const column = (headers: string[], re: RegExp) => headers.findIndex((h) => re.test(h.trim()));
-
-/** Primera tabla de la página (sin comentarios HTML). */
-const firstTable = (html: string) => stripComments(html).match(/<table\b[\s\S]*?<\/table>/i)?.[0] ?? '';
-
-/**
- * Controla una tabla leída: no vacía, puntos numéricos y posiciones 1, 2, 3… (se admiten empates).
- * Lanza un error si el formato no es el esperado (el flujo genérico prueba entonces con Gemini).
- */
-export function checkStandingsTable(table: StandingsTable): StandingsTable {
-  if (table.rows.length === 0) throw new Error(`Tabla "${table.title}" vacía`);
-  table.rows.forEach((r, i) => {
-    const prev = table.rows[i - 1];
-    const ok = i === 0 ? r.pos === 1 : r.pos === i + 1 || r.pos === prev!.pos;
-    if (!ok || !r.name || !Number.isFinite(r.points)) throw new Error(`Fila inesperada en "${table.title}": ${JSON.stringify(r)}`);
-  });
-  return table;
-}
-
-function standingsSource(url: string, title: string, ctx: RecipeContext): Source {
-  return { url, title, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) };
-}
-
-/** HTML de una página; null si no existe (404), p. ej. la tabla de una temporada que todavía no empezó. */
-async function pageOrNull(ctx: RecipeContext, url: string): Promise<string | null> {
-  try {
-    return (await ctx.http.text(url)).body;
-  } catch (err) {
-    if (err instanceof HttpError && err.status === 404) return null;
-    throw err;
-  }
-}
+export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
 // ─── SRO Motorsports Group (GT World Challenge, IGTC, calendario general de SRO) ───────────────
 
@@ -248,7 +157,7 @@ const indycar: SiteRecipe = {
   },
 };
 
-// ─── FIA WEC / ELMS (misma plataforma del ACO) ────────────────────────────────────────────────
+// ─── FIA WEC / ELMS / Asian Le Mans Series (misma plataforma del ACO) ─────────────────────────
 
 /** Carrera listada en la página /season/{año} del ACO, con lo que esa página dice de ella. */
 export interface AcoRace {
@@ -263,11 +172,38 @@ export interface AcoRace {
 const ACO_TEST = /prologue|test/i;
 
 /**
+ * La Asian Le Mans Series corre en invierno: la temporada "2026 - 2027" (página /season/2026) va de noviembre a
+ * febrero. El slug de cada carrera lleva el año en que se corre (…-le-castellet-by-alms-2026, …-jerez-by-alms-2027)
+ * o a veces el de inicio de la temporada (…-dubai-2024 se corrió en febrero de 2025): el slug no dice a qué
+ * temporada pertenece una carrera, manda la grilla de la página de la temporada.
+ */
+const isAcoWinter = (url: string) => host(url) === 'asianlemansseries.com';
+
+/**
+ * Temporada vigente según el propio sitio: todas las páginas de la ALMS muestran en el encabezado el botón activo
+ * "Season 2026 - 2027" (cambia cuando el sitio pasa a la temporada siguiente). null si no figura.
+ */
+export function acoCurrentSeason(html: string): number | null {
+  const m =
+    html.match(/class="season-selector[^"]*\bactive\b[^"]*"[^>]*>\s*Season\s+(\d{4})\s*-\s*\d{4}/i) ??
+    html.match(/>\s*Season\s+(\d{4})\s*-\s*\d{4}\s*</i);
+  return m ? Number(m[1]) : null;
+}
+
+/** "4 Hours of Le Castellet by ALMS" -> "4 Hours of Le Castellet" (la firma repite el nombre de la serie). */
+const acoEventName = (name: string) => name.replace(/\s+by\s+(ALMS|ELMS|WEC)$/i, '').trim();
+
+/**
  * Carreras de la temporada en la página /season/{año} de fiawec.com / europeanlemansseries.com. Según el momento
  * del año la página muestra una tira con el día de cada carrera, tarjetas con "5 July" (ELMS) o solo una lista
  * por mes (div.race-item: bandera, nombre y mes, sin día; así está WEC al terminar la temporada).
+ *
+ * Temporada de invierno (ALMS): la tira del encabezado muestra siempre la temporada vigente (también en las páginas
+ * de temporadas anteriores), así que solo cuentan las tarjetas de la grilla "Rounds", con cualquier año en el slug;
+ * el día de la tarjeta ("17 January") es del año siguiente si cae en el primer semestre.
  */
-export function acoSeasonRaces(doc: FetchedDocument, season: number): AcoRace[] {
+export function acoSeasonRaces(doc: FetchedDocument, season: number, opts: { winter?: boolean } = {}): AcoRace[] {
+  const winter = !!opts.winter;
   const html = stripComments(doc.raw);
   const byUrl = new Map<string, AcoRace>();
   const add = (href: string, info: Omit<AcoRace, 'url'>) => {
@@ -279,17 +215,18 @@ export function acoSeasonRaces(doc: FetchedDocument, season: number): AcoRace[] 
     }
     byUrl.set(url, race);
   };
-  const raceHref = new RegExp(`href="(/en/race/[^"]*-${season})\\s*"`);
+  const year = winter ? '\\d{4}' : String(season);
+  const raceHref = new RegExp(`href="(/en/race/[^"]*-${year})\\s*"`);
 
   // Lista por mes: cada div.race-item trae su propia bandera y nombre.
-  for (const b of blocksByClass(html, 'race-item', 2500)) {
+  for (const b of winter ? [] : blocksByClass(html, 'race-item', 2500)) {
     const href = b.match(raceHref)?.[1];
     if (!href) continue;
     add(href, { name: textByClass(b, 'name') || undefined, flag: b.match(/flag:([A-Z]{2})/)?.[1] });
   }
 
   // Tira de fechas (<strong>11</strong><small>Apr</small>) y tarjetas ("5 July" debajo del link).
-  const re = new RegExp(`<a\\b[^>]*href="(/en/race/[^"]*-${season})\\s*"[^>]*>([\\s\\S]*?)</a>`, 'g');
+  const re = new RegExp(`<a\\b[^>]*href="(/en/race/[^"]*-${year})\\s*"[^>]*>([\\s\\S]*?)</a>`, 'g');
   for (const m of html.matchAll(re)) {
     const inner = m[2] ?? '';
     const after = html.slice(m.index! + m[0].length, m.index! + m[0].length + 1500);
@@ -297,13 +234,16 @@ export function acoSeasonRaces(doc: FetchedDocument, season: number): AcoRace[] 
     const card = /^\s*<div class="thumb/.test(inner)
       ? after.match(/class="text-primary text-uppercase[^"]*"[^>]*>\s*(\d{1,2}\s+[A-Za-z]+)\s*</)
       : null;
+    if (winter && !card) continue;
     const dayText = strip ? `${strip[1]} ${strip[2]}` : card?.[1];
+    let raceDay = dayText ? parseDateRangeText(dayText, season)?.start : undefined;
+    if (winter && raceDay && Number(raceDay.slice(5, 7)) < 7) raceDay = `${season + 1}${raceDay.slice(4)}`;
     const alt = attr(inner.match(/<img\b[^>]*>/)?.[0] ?? '', 'alt');
     add(m[1]!, {
       name: alt ? textOf(alt) : undefined,
       flag: (strip || card ? inner + after.slice(0, 600) : inner).match(/flag:([A-Z]{2})/)?.[1],
       venue: card ? textOf(after.match(/class="fs-7 fw-bold[^"]*"[^>]*>([\s\S]*?)<\/div>/)?.[1] ?? '') || undefined : undefined,
-      raceDay: dayText ? parseDateRangeText(dayText, season)?.start : undefined,
+      raceDay,
     });
   }
   return [...byUrl.values()];
@@ -324,8 +264,8 @@ export function acoRaceDates(html: string): { start: string; end: string; name: 
     return {
       start,
       end,
-      // "WEC 6 Hours of Monza 2026" -> "6 Hours of Monza"
-      name: str(o.name).replace(/^(WEC|ELMS|AsLMS)\s+/i, '').replace(/\s+\d{4}$/, '').trim(),
+      // "WEC 6 Hours of Monza 2026" -> "6 Hours of Monza"; "ALMS 4 Hours of Jerez by ALMS 2026" -> "4 Hours of Jerez"
+      name: acoEventName(str(o.name).replace(/^(WEC|ELMS|AsLMS|ALMS)\s+/i, '').replace(/\s+\d{4}$/, '')),
       place: str(loc.name),
       city: address.length > 1 ? address[0]! : '',
       country: address.at(-1) ?? '',
@@ -342,23 +282,39 @@ const aco: SiteRecipe = {
     return /\/season\/\d{4}/.test(u.pathname) ? url.replace(/\/season\/\d{4}/, `/season/${season}`) : `${u.origin}/en/season/${season}`;
   },
   /**
+   * ALMS: la temporada vigente es la que indica el sitio ("Season 2026 - 2027" = 2026), no el año en curso. Así, en
+   * enero de 2027 se sigue leyendo /season/2026 (Jerez y Portimão) y los eventos conservan su id. Si el encabezado no
+   * aparece: de julio en adelante, la que empieza este año; antes, la que empezó el anterior.
+   */
+  async season(ctx) {
+    const year = ctx.now.getUTCFullYear();
+    const url = ctx.series.officialUrls[0] ?? '';
+    if (!isAcoWinter(url)) return ctx.season;
+    const page = await pageOrNull(ctx, url).catch(() => null);
+    return (page ? acoCurrentSeason(page) : null) ?? (ctx.now.getUTCMonth() >= 6 ? year : year - 1);
+  },
+  /**
    * La página de la temporada lista las carreras; las fechas exactas salen del JSON-LD de la página de cada
    * carrera. Si esa página no se puede leer se usa el día de carrera de la temporada (viernes a domingo); si la
    * temporada solo muestra el mes, la carrera se omite (nunca se publica un mes entero como fechas del evento).
    */
   async calendar(doc, ctx) {
     const out: CalendarEntry[] = [];
-    for (const race of acoSeasonRaces(doc, ctx.season)) {
+    const winter = isAcoWinter(doc.url);
+    // Temporada de invierno: de julio del año de inicio a junio del siguiente.
+    const inSeason = (date: string) =>
+      winter ? date >= `${ctx.season}-07-01` && date < `${ctx.season + 1}-07-01` : date.startsWith(String(ctx.season));
+    for (const race of acoSeasonRaces(doc, ctx.season, { winter })) {
       const page = await pageOrNull(ctx, race.url).catch(() => null);
       const ld = page ? acoRaceDates(page) : null;
-      const name = race.name || ld?.name || humanize(race.url.split('/').pop()!.replace(new RegExp(`-${ctx.season}$`), ''));
+      const name = acoEventName(race.name || ld?.name || humanize(race.url.split('/').pop()!.replace(/-\d{4}$/, '')));
       const circuit = race.venue || ld?.place || name;
       const country = race.flag || ld?.country || '';
       const tz = tzFor(country, `${circuit} ${ld?.city ?? ''} ${name}`);
       let dates: { start: string; end: string } | null = null;
       if (ld) dates = { start: ld.start, end: ld.end };
       else if (race.raceDay) dates = { start: shiftDate(race.raceDay, ACO_TEST.test(name) ? -1 : -2), end: race.raceDay };
-      if (!dates || !dates.start.startsWith(String(ctx.season))) continue;
+      if (!dates || !inSeason(dates.start)) continue;
       out.push({ name, circuit, country: countryName(country), tz, dateStart: dates.start, dateEnd: dates.end, url: race.url });
     }
     out.sort((a, b) => a.dateStart.localeCompare(b.dateStart));
@@ -1043,11 +999,9 @@ function humanize(slug: string): string {
     .join(' ');
 }
 
-function isoNow(now: Date): string {
-  return now.toISOString().replace(/\.\d{3}Z$/, 'Z');
-}
-
 export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca];
+// Asia y Oceanía: recetas en su propio archivo (importan sus utilidades de kit.ts, no de este).
+RECIPES.push(supergt, superformula, supertaikyu, macau, supercars);
 
 export function findRecipe(url: string): SiteRecipe | undefined {
   return RECIPES.find((r) => r.match(url));

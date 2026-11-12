@@ -6,7 +6,7 @@
  * "Súper TC2000" no cuenta como "TC", "F1 Academy" no cuenta como "F1",
  * "European Le Mans Series" no cuenta como "Le Mans" (WEC). Las reglas con `seriesId: null`
  * solo consumen nombres que se parecen a una categoría seguida pero no lo son
- * (Asian Le Mans Series, MotoGP Rookies Cup, Le Mans Classic…).
+ * (MotoGP Rookies Cup, Le Mans Classic…).
  */
 
 export interface TagRule {
@@ -39,6 +39,14 @@ export const TAG_RULES: TagRule[] = [
   { seriesId: 'tc', patterns: [re(String.raw`\bTurismo\s+Carretera\b`)] },
   // "TC" a secas, en mayúsculas y solo en notas en castellano (en inglés puede ser "traction control").
   { seriesId: 'tc', patterns: [re(String.raw`(?<![\w-])TC(?![\w-])`, C)], langs: ['es'] },
+
+  // --- Asia y Oceanía (antes de las genéricas: "Super Formula" no es F1) ----------
+  { seriesId: null, patterns: [re(String.raw`\bSuper\s*Formula\s+Lights\b`)] },
+  { seriesId: 'super-formula', patterns: [re(String.raw`\bSuper\s*Formula\b`)] },
+  { seriesId: 'super-taikyu', patterns: [re(String.raw`\bSuper\s*Taikyu\b`)] },
+  { seriesId: 'macau-gp', patterns: [re(String.raw`\bMaca[ou]\s+(?:Grand\s+Prix|GP)\b`), re(String.raw`\bGran\s+Premio\s+de\s+Macao\b`)] },
+  { seriesId: 'supercars', patterns: [re(String.raw`\bSupercars\b`), re(String.raw`\bBathurst\s*1000\b`)] },
+  { seriesId: 'super-gt',patterns: [re(String.raw`\bSUPER\s*GT\b`, C), re(String.raw`\bSuper\s+GT\b`)] },
 
   // --- Monoplazas FIA ----------------------------------------------------------
   { seriesId: 'f1-academy', patterns: [re(String.raw`\bF1\s*Academy\b`)] },
@@ -75,14 +83,8 @@ export const TAG_RULES: TagRule[] = [
 
   // --- GT y resistencia ------------------------------------------------------------
   { seriesId: 'elms', patterns: [re(String.raw`\bEuropean\s+Le\s+Mans\s+Series\b`), re(String.raw`\bELMS\b`, C)] },
-  {
-    seriesId: null,
-    patterns: [
-      re(String.raw`\bAsian\s+Le\s+Mans\s+Series\b`),
-      re(String.raw`\bAsLMS\b`),
-      re(String.raw`\bLe\s+Mans\s+(?:Cup|Classic|Virtual|Ultimate)\b`),
-    ],
-  },
+  { seriesId: 'alms', patterns: [re(String.raw`\bAsian\s+Le\s+Mans\s+Series\b`), re(String.raw`\bAs?LMS\b`, C)] },
+  { seriesId: null, patterns: [re(String.raw`\bLe\s+Mans\s+(?:Cup|Classic|Virtual|Ultimate)\b`)] },
   {
     seriesId: 'imsa',
     patterns: [
@@ -177,6 +179,7 @@ const URL_SEGMENTS: Record<string, string> = {
   'nascar-xfinity': 'nascar-xfinity',
   'nascar-truck': 'nascar-truck',
   wec: 'wec',
+  alms: 'alms',
   imsa: 'imsa',
   elms: 'elms',
   dtm: 'dtm',
