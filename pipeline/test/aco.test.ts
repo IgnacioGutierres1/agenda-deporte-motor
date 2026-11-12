@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { implausibleDateRange } from '../src/generic/ai.ts';
 import { createGenericAdapter } from '../src/generic/index.ts';
 import { jsonLdSessions } from '../src/generic/locate.ts';
-import { findRecipe } from '../src/generic/recipes.ts';
+import { acoCurrentSeason, acoSeasonRaces, findRecipe } from '../src/generic/recipes.ts';
 import { fakeGemini, fakeHttp, fixture, genericSeries, testContext } from './fakes.ts';
 
 const WEC = 'https://www.fiawec.com/en/season/2026';
@@ -81,6 +81,82 @@ describe('ACO (WEC / ELMS): fechas desde la página de cada carrera', () => {
       ['4 Hours of Imola', 1, 'Imola', '2026-07-03', '2026-07-05', 'Europe/Rome'],
       // Página de la carrera no disponible (404 en el fake): el día de la tarjeta ("10 October") y los dos anteriores.
       ['4 Hours of Portimão', 2, 'Autódromo Internacional do Algarve', '2026-10-08', '2026-10-10', 'Europe/Lisbon'],
+    ]);
+  });
+});
+
+const ALMS = 'https://www.asianlemansseries.com/en/season/2026';
+const ALMS_RACE = 'https://www.asianlemansseries.com/en/race/';
+const alms = genericSeries('alms', 'Asian Le Mans Series', [ALMS], { shortName: 'ALMS', group: 'asia' });
+
+function almsHttp() {
+  return fakeHttp({
+    [ALMS]: fixture('alms-season-2026.html'),
+    [`${ALMS_RACE}4-hours-of-le-castellet-by-alms-2026`]: fixture('alms-race-le-castellet-2026.html'),
+    [`${ALMS_RACE}4-hours-of-jerez-by-alms-2027`]: fixture('alms-race-jerez-2027.html'),
+    [`${ALMS_RACE}4-hours-of-portimao-by-alms-2027`]: fixture('alms-race-portimao-2027.html'),
+  });
+}
+
+describe('Asian Le Mans Series: temporada de invierno (2026-27)', () => {
+  it('lee todas las carreras de la temporada aunque caigan en 2027, con fechas del JSON-LD', async () => {
+    const http = almsHttp();
+    const gemini = fakeGemini();
+    const chunk = await createGenericAdapter({ gemini: () => gemini }).schedule(alms, testContext(http, '2026-11-11T12:00:00Z'));
+    expect(chunk.events.map((e) => [e.name, e.round, e.circuit, e.country, e.tz, e.dateStart, e.dateEnd, e.sessionsStatus])).toEqual([
+      ['4 Hours of Le Castellet', 1, 'Paul Ricard', 'France', 'Europe/Paris', '2026-11-13', '2026-11-15', 'published'],
+      ['4 Hours of Jerez', 2, 'Jerez-Ángel Nieto', 'Spain', 'Europe/Madrid', '2027-01-15', '2027-01-17', 'pending'],
+      ['4 Hours of Portimão', 3, 'Autódromo Internacional do Algarve', 'Portugal', 'Europe/Lisbon', '2027-02-19', '2027-02-21', 'pending'],
+    ]);
+    // Le Castellet: subEvent del JSON-LD, hora de París (UTC+1 en noviembre). Dos carreras, cada una con su id.
+    expect(chunk.sessions.map((s) => [s.name, s.type, s.startUtc, s.localStartText])).toEqual([
+      ['Free Practice 1', 'practica', '2026-11-13T09:10:00Z', '10:10'],
+      ['Free Practice 2', 'practica', '2026-11-13T12:30:00Z', '13:30'],
+      ['Qualifications 1 - GT3', 'clasificacion', '2026-11-13T15:05:00Z', '16:05'],
+      ['Qualifications 1 - Hypercar & LMP2', 'clasificacion', '2026-11-13T15:50:00Z', '16:50'],
+      ['Qualifications 2 - GT3', 'clasificacion', '2026-11-13T15:25:00Z', '16:25'],
+      ['Qualifications 2 - Hypercar & LMP2', 'clasificacion', '2026-11-13T16:10:00Z', '17:10'],
+      ['Race 1', 'carrera', '2026-11-14T12:15:00Z', '13:15'],
+      ['Race 2', 'carrera', '2026-11-15T12:15:00Z', '13:15'],
+    ]);
+    expect(new Set(chunk.sessions.map((s) => s.id)).size).toBe(8);
+    // La temporada anterior y la tira del encabezado no se piden ni suman eventos.
+    expect(http.requested.some((u) => /season\/(2025|2027)/.test(u))).toBe(false);
+    expect(gemini.requests).toHaveLength(0);
+  });
+
+  it('en enero de 2027 sigue en la temporada 2026 (la que indica el sitio) y los eventos conservan su id', async () => {
+    const adapter = createGenericAdapter({ gemini: () => fakeGemini() });
+    const nov = await adapter.schedule(alms, testContext(almsHttp(), '2026-11-11T12:00:00Z'));
+    const http = almsHttp();
+    const jan = await adapter.schedule(alms, testContext(http, '2027-01-10T12:00:00Z'));
+    expect(jan.events.map((e) => [e.id, e.round, e.dateStart])).toEqual(nov.events.map((e) => [e.id, e.round, e.dateStart]));
+    expect(http.requested).not.toContain('https://www.asianlemansseries.com/en/season/2027');
+    // Jerez (UTC+1 en enero) ya entra en el horizonte.
+    const jerez = jan.events.find((e) => e.round === 2)!;
+    expect(jan.sessions.filter((s) => s.eventId === jerez.id && s.type === 'carrera').map((s) => [s.name, s.startUtc])).toEqual([
+      ['Race 1', '2027-01-16T12:45:00Z'],
+      ['Race 2', '2027-01-17T12:45:00Z'],
+    ]);
+  });
+
+  it('temporada vigente: el botón activo del encabezado; si no está, por la fecha (julio en adelante, la nueva)', async () => {
+    expect(acoCurrentSeason(fixture('alms-season-2025.html'))).toBe(2026);
+    const recipe = findRecipe(ALMS)!;
+    const ctx = (now: string, http = fakeHttp({})) => ({ season: Number(now.slice(0, 4)), series: alms, http, now: new Date(now) });
+    expect(await recipe.season!(ctx('2027-01-10T12:00:00Z', almsHttp()))).toBe(2026);
+    expect(await recipe.season!(ctx('2027-03-01T12:00:00Z'))).toBe(2026);
+    expect(await recipe.season!(ctx('2027-08-01T12:00:00Z'))).toBe(2027);
+    // WEC/ELMS son de año calendario.
+    expect(await findRecipe(WEC)!.season!({ season: 2027, series: wec, http: fakeHttp({}), now: new Date('2027-01-10T12:00:00Z') })).toBe(2027);
+  });
+
+  it('la página de una temporada anterior solo aporta sus tarjetas, no la tira de la temporada vigente', () => {
+    const doc = { url: 'https://www.asianlemansseries.com/en/season/2025', kind: 'html' as const, raw: fixture('alms-season-2025.html'), text: '', title: '', hash: '' };
+    expect(acoSeasonRaces(doc, 2025, { winter: true }).map((r) => [r.url.split('/').pop(), r.name, r.flag, r.raceDay])).toEqual([
+      ['4-hours-of-sepang-2025', '4 Hours of Sepang', 'MY', '2025-12-14'],
+      ['4-hours-of-dubai-2026', '4 Hours of Dubai', 'AE', '2026-02-01'],
+      ['4-hours-of-abu-dhabi-2026', '4 Hours of Abu Dhabi', 'AE', '2026-02-08'],
     ]);
   });
 });

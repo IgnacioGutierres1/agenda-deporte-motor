@@ -50,6 +50,7 @@
             <span>Agregar</span>
           </RouterLink>
         </div>
+        <RecommendationsCard title="Para vos" />
       </template>
 
       <template v-else-if="tab === 'pilotos'">
@@ -117,11 +118,13 @@ import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
 import DataState from '../components/DataState.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
+import RecommendationsCard from '../components/RecommendationsCard.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore, type FollowedDriver } from '../stores/settings.ts';
 import { useDriversStore } from '../stores/drivers.ts';
 import type { Driver } from '@dm/shared';
 import { seriesColor } from '../lib/grid.ts';
+import { driverSeriesIds } from '../lib/teams.ts';
 import { nextEventOf, type NextEvent } from '../lib/agenda.ts';
 
 interface FollowCard {
@@ -134,7 +137,7 @@ interface FollowCard {
 /** Lo que sigue el usuario (como "Siguiendo" en FotMob): tarjetas con la próxima fecha. */
 export default defineComponent({
   name: 'FollowingView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, SeriesCrest },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, RecommendationsCard, SeriesCrest },
   data() {
     return {
       tab: (this.$route.query.tab === 'pilotos' ? 'pilotos' : 'categorias') as 'categorias' | 'pilotos',
@@ -156,8 +159,11 @@ export default defineComponent({
       return this.followedDrivers.map((f) => {
         const d = this.driversById.get(f.id);
         const main = d?.entries[0];
-        const series = this.seriesById.get(main?.seriesId ?? f.seriesIds[0] ?? '');
-        const standing = main ? `P${main.pos} · ${series?.shortName ?? main.seriesId}${main.table ? ' ' + main.table : ''} · ${main.points.toLocaleString('es-AR')} pts` : '';
+        const lineup = d?.lineups?.[0];
+        const series = this.seriesById.get(main?.seriesId ?? lineup?.seriesId ?? f.seriesIds[0] ?? '');
+        let standing = '';
+        if (main) standing = `P${main.pos} · ${series?.shortName ?? main.seriesId}${main.table ? ' ' + main.table : ''} · ${main.points.toLocaleString('es-AR')} pts`;
+        else if (lineup) standing = `${series?.shortName ?? lineup.seriesId}${lineup.number ? ' #' + lineup.number : ''}${lineup.team ? ' · ' + lineup.team : ''}`;
         // Próxima carrera entre todas sus categorías.
         let next: NextEvent | null = null;
         for (const id of f.seriesIds) {
@@ -190,15 +196,18 @@ export default defineComponent({
   methods: {
     ...mapActions(useDriversStore, { loadDrivers: 'load' }),
     refOf(d: Driver): FollowedDriver {
-      return { id: d.id, name: d.name, seriesIds: [...new Set(d.entries.map((e) => e.seriesId))] };
+      return { id: d.id, name: d.name, seriesIds: driverSeriesIds(d) };
     },
     driverColor(d: Driver): string {
-      return seriesColor(this.seriesById.get(d.entries[0]?.seriesId ?? ''));
+      return seriesColor(this.seriesById.get(driverSeriesIds(d)[0] ?? ''));
     },
     entrySummary(d: Driver): string {
-      return d.entries
-        .map((e) => `${this.seriesById.get(e.seriesId)?.shortName ?? e.seriesId}${e.table ? ' ' + e.table : ''} P${e.pos}`)
-        .join(' · ');
+      const short = (id: string) => this.seriesById.get(id)?.shortName ?? id;
+      const inTable = new Set(d.entries.map((e) => e.seriesId));
+      return [
+        ...d.entries.map((e) => `${short(e.seriesId)}${e.table ? ' ' + e.table : ''} P${e.pos}`),
+        ...(d.lineups ?? []).filter((l) => !inTable.has(l.seriesId)).map((l) => `${short(l.seriesId)}${l.number ? ' #' + l.number : ''}`),
+      ].join(' · ');
     },
     whenText(next: NextEvent | null): string {
       if (!next) return '';

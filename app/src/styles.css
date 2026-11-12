@@ -750,3 +750,50 @@ a.driver-link:hover {
 .error-text {
   color: var(--error);
 }
+
+/* Posiciones y filas con link (fichas de piloto y de equipo) */
+.pos-badge {
+  min-width: 2.6rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 8px;
+  background: var(--bg-elev-2);
+  font-weight: 800;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.pos-badge.top {
+  background: var(--accent);
+  color: var(--accent-text);
+}
+
+/* Fila con un link principal que cubre toda la fila y links secundarios por encima (equipo). */
+li.stretch {
+  position: relative;
+}
+
+a.stretch-link {
+  color: var(--text);
+}
+
+a.stretch-link::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+}
+
+a.stretch-link:hover {
+  text-decoration: none;
+}
+
+a.team-link {
+  position: relative;
+  z-index: 1;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.pos-badge.out {
+  color: var(--text-dim);
+  font-size: 0.8rem;
+}

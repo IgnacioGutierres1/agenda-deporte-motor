@@ -59,7 +59,7 @@ describe('buscar', () => {
     expect(wrapper.text()).toContain('Agustín Canapino');
 
     const byPlace = await search('san nicolas');
-    expect(byPlace.findAll('.section-title').map((h) => h.text())).toEqual(['Eventos', 'Noticias']);
+    expect(byPlace.findAll('.section-title').map((h) => h.text())).toEqual(['Circuitos', 'Eventos', 'Noticias']);
     expect(byPlace.text()).toContain('Fecha 14 – San Nicolás');
   });
 

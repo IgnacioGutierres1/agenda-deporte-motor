@@ -100,7 +100,10 @@ export async function runResultsForSeries(
   if (!adapter.results) return out;
 
   const pending = pendingResultSessions(sessions, ctx.now, attempts);
-  const stale = standingsStale(existingStandings, sessions, events, ctx.now);
+  // Una tabla leída con IA se reemplaza por la lectura directa en cuanto el sitio tiene receta (p. ej. GT World
+  // Challenge, que antes se leía con Gemini y solo traía la tabla de equipos).
+  const upgrade = existingStandings?.source.method === 'ia' && !!adapter.prefersDirectStandings?.(series);
+  const stale = upgrade || standingsStale(existingStandings, sessions, events, ctx.now);
   if (pending.length === 0 && !stale) return out;
 
   const chunk = await adapter.results(series, ctx, { events, pendingSessions: pending, sessions, standingsStale: stale });
