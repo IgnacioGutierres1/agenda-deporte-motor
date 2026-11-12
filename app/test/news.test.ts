@@ -73,3 +73,67 @@ describe('noticias', () => {
     expect(newsForDriver(file.items, 'Agustín Canapino', ['f1'])).toEqual([]);
   });
 });
+
+describe('lista de noticias', () => {
+  const many = (n: number): NewsItem[] =>
+    Array.from({ length: n }, (_, k) =>
+      item(`m${k}`, `Nota ${k}`, ['f1'], {
+        publishedAt: `2026-11-14T${String(10 - Math.floor(k / 6)).padStart(2, '0')}:${String(59 - (k % 6)).padStart(2, '0')}:00Z`,
+        ...(k % 2 ? {} : { image: `https://example.org/${k}.jpg` }),
+      }),
+    );
+
+  it('muestra 20 notas por tanda con "Ver más", y vuelve a la primera tanda al cambiar de lista', async () => {
+    useNewsStore().$patch({ file: { ...file, items: many(45) } });
+    const wrapper = await mountNews('/noticias?tab=ultimas');
+    // 1 destacada + 20 filas
+    expect(wrapper.findAll('.news-row')).toHaveLength(20);
+    const more = wrapper.get('.news-more');
+    expect(more.text()).toContain('Ver más');
+    expect(more.text()).toContain('(24)');
+    await more.trigger('click');
+    expect(wrapper.findAll('.news-row')).toHaveLength(40);
+    await wrapper.get('.news-more').trigger('click');
+    expect(wrapper.findAll('.news-row')).toHaveLength(44);
+    expect(wrapper.find('.news-more').exists()).toBe(false);
+  });
+
+  it('miniaturas diferidas; sin foto, el distintivo de la categoría', async () => {
+    useNewsStore().$patch({ file: { ...file, items: many(5) } });
+    const wrapper = await mountNews('/noticias?tab=ultimas');
+    const thumbs = wrapper.findAll('.news-row .news-thumb img');
+    expect(thumbs.length).toBeGreaterThan(0);
+    for (const img of thumbs) {
+      expect(img.attributes('loading')).toBe('lazy');
+      expect(img.attributes('decoding')).toBe('async');
+    }
+    const rows = wrapper.findAll('.news-row');
+    const noImage = rows.filter((r) => !r.find('img').exists());
+    expect(noImage.length).toBeGreaterThan(0);
+    expect(noImage.every((r) => r.find('.news-thumb .crest').exists())).toBe(true);
+  });
+
+  it('la misma noticia en otros medios: "También en", con el idioma si es otro', async () => {
+    useNewsStore().$patch({
+      file: {
+        ...file,
+        items: [
+          item('a', 'Con foto', ['f1'], { image: 'https://example.org/a.jpg' }),
+          item('b', 'Andrea Stella quiere que McLaren haga las paces con Las Vegas', ['f1'], {
+            lang: 'es',
+            alsoIn: [
+              { source: 'Motorsport.com', url: 'https://www.motorsport.com/f1/news/x/', lang: 'en' },
+              { source: 'Campeones', url: 'https://campeones.com.ar/x/', lang: 'es' },
+            ],
+          }),
+        ],
+      },
+    });
+    const wrapper = await mountNews('/noticias?tab=ultimas');
+    const also = wrapper.get('.news-also');
+    expect(also.text().replace(/\s+/g, ' ')).toBe('También en: Motorsport.com (EN), Campeones');
+    expect(also.findAll('a').map((a) => a.attributes('href'))).toEqual(['https://www.motorsport.com/f1/news/x/', 'https://campeones.com.ar/x/']);
+    // Fuera del link de la nota (no hay links anidados).
+    expect(wrapper.find('.news-row .news-also').exists()).toBe(false);
+  });
+});

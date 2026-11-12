@@ -4,6 +4,7 @@ import type { Team, TeamsFile } from '@dm/shared';
 import { DataNotFoundError, fetchData } from '../lib/data.ts';
 import { deriveTeams, teamSeriesIds } from '../lib/teams.ts';
 import { searchTeams } from '../lib/search.ts';
+import { searchContext } from '../lib/searchContext.ts';
 import { useDriversStore } from './drivers.ts';
 import { useSettingsStore } from './settings.ts';
 
@@ -75,7 +76,7 @@ export const useTeamsStore = defineStore('teams', {
       });
     },
     search(query: string, limit = 10): Team[] {
-      return searchTeams(this.teams, query, limit);
+      return searchTeams(this.teams, query, limit, searchContext());
     },
   },
 });

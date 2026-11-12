@@ -30,4 +30,14 @@ const bySeries = new Map<string, number>();
 for (const i of items) for (const id of i.seriesIds) bySeries.set(id, (bySeries.get(id) ?? 0) + 1);
 console.log(`\nPor categoría (${items.filter((i) => !i.seriesIds.length).length} sin categoría):`);
 for (const [id, n] of [...bySeries].sort((a, b) => b[1] - a[1])) console.log(`  ${id.padEnd(18)} ${n}`);
+
+if (items.length) {
+  const oldest = items[items.length - 1]!.publishedAt;
+  const days = (Date.parse(items[0]!.publishedAt) - Date.parse(oldest)) / 86_400_000;
+  const grouped = items.filter((i) => i.alsoIn?.length);
+  console.log(
+    `\nVentana: ${days.toFixed(1)} días (desde ${oldest}); ${grouped.length} notas agrupadas con ` +
+      `${grouped.reduce((n, i) => n + i.alsoIn!.length, 0)} versiones de otros medios; ${items.filter((i) => !i.image).length} sin foto`,
+  );
+}
 if (!result.file) process.exit(1);

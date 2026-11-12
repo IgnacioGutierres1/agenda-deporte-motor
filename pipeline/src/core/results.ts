@@ -52,6 +52,16 @@ export function standingsStale(
   return updated < lastRaceEnd || nowMs - lastRaceEnd < STANDINGS_REFRESH_MS;
 }
 
+/**
+ * true si ya empezó alguna fecha (no ensayo) de la temporada. Antes de eso no hay campeonato nuevo: al cambiar de
+ * año se conserva la tabla de la temporada terminada (la app la muestra como "temporada finalizada") en vez de
+ * pedir una tabla que no existe o, peor, leer la anterior con el año nuevo.
+ */
+export function seasonStarted(events: Pick<MotorEvent, 'dateStart' | 'kind'>[], season: number, now: Date): boolean {
+  const today = now.toISOString().slice(0, 10);
+  return events.some((e) => e.kind !== 'test' && e.dateStart.startsWith(String(season)) && e.dateStart <= today);
+}
+
 export function pendingResultSessions(
   sessions: Session[],
   now: Date,
@@ -128,7 +138,9 @@ export async function runResultsForSeries(
   // Una tabla leída con IA se reemplaza por la lectura directa en cuanto el sitio tiene receta (p. ej. GT World
   // Challenge, que antes se leía con Gemini y solo traía la tabla de equipos).
   const upgrade = existingStandings?.source.method === 'ia' && !!adapter.prefersDirectStandings?.(series);
-  const stale = upgrade || standingsStale(existingStandings, sessions, events, ctx.now);
+  // Año nuevo sin fechas corridas todavía: se conserva la tabla de la temporada terminada sin buscar otra.
+  const waiting = !!existingStandings && existingStandings.season < ctx.season && !seasonStarted(events, ctx.season, ctx.now);
+  const stale = !waiting && (upgrade || standingsStale(existingStandings, sessions, events, ctx.now));
   if (pending.length === 0 && !stale) return out;
 
   const chunk = await adapter.results(series, ctx, { events, pendingSessions: pending, sessions, standingsStale: stale });
@@ -146,7 +158,14 @@ export async function runResultsForSeries(
     else if (deferred.has(s.id)) continue;
     else attempts[s.id] = { count: (attempts[s.id]?.count ?? 0) + 1, last: nowIso };
   }
-  if (chunk.standings) {
+  const premature =
+    !!chunk.standings &&
+    !!existingStandings &&
+    chunk.standings.season > existingStandings.season &&
+    !seasonStarted(events, chunk.standings.season, ctx.now);
+  if (premature) {
+    ctx.log.info(`Campeonato ${chunk.standings!.season} sin fechas corridas todavía; se conserva el de ${existingStandings!.season}`);
+  } else if (chunk.standings) {
     if (!dryRun) await writeJson(standingsFile, standingsFileSchema.parse(chunk.standings));
     out.standingsAvailable = true;
   }

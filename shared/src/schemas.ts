@@ -44,6 +44,7 @@ export const eventSchema = z.object({
   dateStart: isoDate,
   dateEnd: isoDate,
   sessionsStatus: z.enum(['published', 'pending']),
+  kind: z.enum(['test']).optional(),
   source: sourceSchema,
 });
 
@@ -87,6 +88,7 @@ export const statusFileSchema = z.object({
       message: z.string().optional(),
       sourceUrl: z.string().optional(),
       standingsAvailable: z.boolean(),
+      timetables: z.object({ found: z.number().int().nonnegative(), due: z.number().int().positive() }).optional(),
     }),
   ),
 });
@@ -285,6 +287,9 @@ export const newsFileSchema = z.object({
       summary: z.string().optional(),
       seriesIds: z.array(z.string()),
       lang: z.string().optional(),
+      alsoIn: z
+        .array(z.object({ source: z.string().min(1), url: z.string().url(), lang: z.string().optional() }))
+        .optional(),
     }),
   ),
 });

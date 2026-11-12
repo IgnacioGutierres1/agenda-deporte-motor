@@ -25,9 +25,7 @@
         <button type="button" class="btn btn-small" @click="retry">Reintentar</button>
       </div>
     </div>
-    <p v-else-if="!driver" class="page card empty">
-      No encontramos a este piloto en las tablas de campeonato ni en las listas de inscriptos publicadas.
-    </p>
+    <NotFoundCard v-else-if="!driver" kind="piloto" :slug="driverId" />
 
     <template v-if="driver">
       <section class="hero" :style="{ '--series-color': color }">
@@ -54,7 +52,7 @@
               <div class="list-row">
                 <SeriesCrest v-if="e.series" :series="e.series" :size="30" />
                 <span class="grow">
-                  <RouterLink :to="`/categoria/${e.seriesId}?tab=tabla`" class="stretch-link">
+                  <RouterLink :to="tableLink(e.seriesId, e.table)" class="stretch-link">
                     {{ e.series?.shortName ?? e.seriesId }}<template v-if="e.table"> · {{ e.table }}</template>
                   </RouterLink>
                   <span class="block small dim">
@@ -146,6 +144,7 @@ import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import NewsList from '../components/NewsList.vue';
+import NotFoundCard from '../components/NotFoundCard.vue';
 import UpcomingList from '../components/UpcomingList.vue';
 import { newsForDriver, useNewsStore } from '../stores/news.ts';
 import { useDriversStore } from '../stores/drivers.ts';
@@ -158,7 +157,7 @@ import { driverSeriesIds } from '../lib/teams.ts';
 /** Ficha de un piloto (como la de un jugador en FotMob). */
 export default defineComponent({
   name: 'DriverView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
   computed: {
     ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', driversFile: 'file', details: 'details', detailStatus: 'detailStatus' }),
     ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById', 'generatedAt']),
@@ -188,6 +187,10 @@ export default defineComponent({
     failed(): boolean {
       if (this.driver || this.loading) return false;
       return this.detailState === 'error' && this.driversStatus === 'error';
+    },
+    /** No está en su grupo de fichas (ni en el índice): link viejo o mal escrito. */
+    notFound(): boolean {
+      return !this.driver && !this.loading && !this.failed;
     },
     failMessage(): string {
       return this.driversError ?? 'sin conexión';
@@ -247,6 +250,10 @@ export default defineComponent({
     },
   },
   watch: {
+    // Las sugerencias de nombres parecidos (NotFoundCard) buscan en el índice: solo entonces se pide.
+    notFound(value: boolean) {
+      if (value) void this.loadIndex();
+    },
     // Solo se pide la ficha de este piloto (unos pocos KB), no el índice de todos.
     '$route.params.driverId': {
       immediate: true,
@@ -258,7 +265,7 @@ export default defineComponent({
     },
   },
   methods: {
-    ...mapActions(useDriversStore, { loadDetail: 'loadDetail' }),
+    ...mapActions(useDriversStore, { loadDetail: 'loadDetail', loadIndex: 'load' }),
     retry() {
       void this.loadDetail(this.driverId, true);
     },
@@ -268,6 +275,10 @@ export default defineComponent({
     },
     teamLink(name: string): string {
       return `/equipo/${teamId(name)}`;
+    },
+    /** Tabla del campeonato, abierta en la del piloto si la categoría tiene varias. */
+    tableLink(seriesId: string, table?: string): string {
+      return `/categoria/${seriesId}?tab=tabla${table ? `&tabla=${encodeURIComponent(table)}` : ''}`;
     },
   },
 });

@@ -87,8 +87,18 @@ export interface MotorEvent {
   dateEnd: string;
   /** published: ya hay cronograma con horarios. pending: solo se conoce la fecha. */
   sessionsStatus: 'published' | 'pending';
+  /**
+   * Tipo de evento cuando no es una fecha del campeonato. 'test': ensayos oficiales, pretemporada o prólogo
+   * (F1 "Pre-Season Testing", WEC "Official Prologue", GT Open "Winter Test"…): no suman puntos ni tienen ronda,
+   * y no van al .ics de suscripción como evento de día completo (sí sus sesiones, si las tienen).
+   * Ausente = fecha normal del campeonato. Opcional: los datos viejos no lo traen.
+   */
+  kind?: EventKind;
   source: Source;
 }
+
+/** Ver MotorEvent.kind. */
+export type EventKind = 'test';
 
 export interface Session {
   /** Hash estable de serie + evento + nombre de sesión. */
@@ -213,9 +223,25 @@ export interface SeriesStatus {
   lastAttempt: string;
   /** ISO UTC de la última lectura exitosa. */
   lastSuccess?: string;
+  /**
+   * Motivo legible del estado: el error de la fuente o, con la serie OK, qué cronogramas faltan ("El organizador
+   * todavía no publicó el cronograma de X" / "No se pudo leer el cronograma de Y").
+   */
   message?: string;
   sourceUrl?: string;
   standingsAvailable: boolean;
+  /**
+   * Cobertura de cronogramas: de las fechas dentro del horizonte de búsqueda de cronogramas (desde ayer hasta
+   * horizonDays días adelante), cuántas ya tienen sesiones con horario. Solo si hay alguna fecha en el horizonte.
+   */
+  timetables?: TimetableCoverage;
+}
+
+export interface TimetableCoverage {
+  /** Fechas en el horizonte con cronograma publicado. */
+  found: number;
+  /** Fechas en el horizonte. */
+  due: number;
 }
 
 /** Contenido de data/status.json */
@@ -274,6 +300,15 @@ export interface NewsItem {
   summary?: string;
   /** Categorías a las que se refiere (por la fuente o por palabras clave del título). */
   seriesIds: string[];
+  lang?: string;
+  /** La misma nota en otros medios o idiomas (agrupada para no repetirla en la lista). */
+  alsoIn?: NewsAlternate[];
+}
+
+/** Otra versión de la misma nota (otro medio u otra edición/idioma del mismo medio). */
+export interface NewsAlternate {
+  source: string;
+  url: string;
   lang?: string;
 }
 

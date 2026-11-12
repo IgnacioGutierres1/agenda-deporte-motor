@@ -97,11 +97,13 @@ describe('pilotos: índice liviano + fichas por grupo', () => {
     expect(wrapper.find('.hero-title').text()).toBe('Agustín Canapino');
   });
 
-  it('un id que no está en su grupo: "no encontramos"', async () => {
-    stubFetch({ [driverShardPath('nadie-ninguno')]: { version: 1, drivers: [] } });
-    const wrapper = await mountDriver('nadie-ninguno');
+  it('un id que no está en su grupo: "no encontramos" con sugerencias del índice (sin bajar otras fichas)', async () => {
+    const requested = stubFetch({ [driverShardPath('canapino-agustn')]: { version: 1, drivers: [] }, 'drivers-index.json': index });
+    const wrapper = await mountDriver('canapino-agustn');
     await flushPromises();
     expect(wrapper.text()).toContain('No encontramos a este piloto');
+    expect(wrapper.text()).toContain('Agustín Canapino');
+    expect(requested.filter((r) => r.startsWith('drivers'))).toEqual([driverShardPath('canapino-agustn'), 'drivers-index.json']);
   });
 
   it('datos viejos (sin índice ni fichas): usa drivers.json completo', async () => {

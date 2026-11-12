@@ -120,6 +120,31 @@ describe('mergeRun', () => {
     expect(out.statuses[0]?.state).toBe('ok');
   });
 
+  it('cobertura de cronogramas: fechas del horizonte con horarios y motivo legible de las que faltan', () => {
+    const other = (key: number, name: string, dateStart: string, dateEnd: string) =>
+      build.event({ series, season: 2026, key, name, circuit: name, country: 'Italy', tz: 'Europe/Rome', dateStart, dateEnd, sessionsStatus: 'pending', source: event.source });
+    const monza = other(14, 'Monza', '2026-11-20', '2026-11-22');
+    const imola = other(15, 'Imola', '2026-11-27', '2026-11-29');
+    const far = other(16, 'Lejos', '2027-03-01', '2027-03-03');
+    const chunk = {
+      events: [event, monza, imola, far],
+      sessions: [race],
+      missingTimetables: [{ eventId: imola.id, reason: 'ilegible' as const }],
+    };
+    const out = mergeRun([series], new Map([['f2', { kind: 'ok', chunk }]]), null, new Map(), '2026-11-12T12:00:00Z', 21);
+    expect(out.statuses[0]).toMatchObject({
+      state: 'ok',
+      timetables: { found: 1, due: 3 },
+      message: 'El organizador todavía no publicó el cronograma de Monza. No se pudo leer el cronograma de Imola.',
+    });
+    // Sin fechas en el horizonte no hay métrica; con todas publicadas, métrica sin mensaje.
+    const quiet = mergeRun([series], new Map([['f2', { kind: 'ok', chunk: { events: [far], sessions: [] } }]]), null, new Map(), '2026-11-12T12:00:00Z');
+    expect(quiet.statuses[0]?.timetables).toBeUndefined();
+    const full = mergeRun([series], new Map([['f2', { kind: 'ok', chunk: { events: [event], sessions: [race] } }]]), null, new Map(), '2026-11-12T12:00:00Z');
+    expect(full.statuses[0]).toMatchObject({ timetables: { found: 1, due: 1 } });
+    expect(full.statuses[0]?.message).toBeUndefined();
+  });
+
   it('ante un error conserva el último dato bueno como desactualizado', () => {
     const out = mergeRun(
       [series],

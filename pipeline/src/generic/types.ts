@@ -13,6 +13,11 @@ export interface CalendarEntry {
   dateStart: string;
   dateEnd: string;
   round?: number;
+  /**
+   * Clave estable del evento dentro de la temporada, si el sitio da una que no cambia (slug de la URL del evento).
+   * Sin ella se usa la ronda o el nombre, que a veces cambia cuando se anuncia el nombre comercial de la fecha.
+   */
+  key?: string;
   /** Página oficial del evento (donde suele estar el cronograma). */
   url?: string;
   /** Documento del cronograma, si el calendario ya lo enlaza (p. ej. PDF de GT Open). */

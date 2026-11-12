@@ -896,3 +896,11 @@ a.team-link {
   color: var(--text-dim);
   font-size: 0.8rem;
 }
+
+/* Subtítulo de una sola línea (resultados de búsqueda, sugerencias). */
+.one-line {
+  display: block;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

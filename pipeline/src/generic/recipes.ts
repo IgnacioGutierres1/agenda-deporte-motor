@@ -43,11 +43,13 @@ import {
   stripComments,
   tzFor,
 } from './kit.ts';
-import { acoRoster, dtmRoster, sroRoster } from './rosters.ts';
+import { acoStandings } from './aco-standings.ts';
+import { acoRoster, countryFromCode, dtmRoster, sroRoster } from './rosters.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
 import { apatSessions } from './apat.ts';
 import { aptpSessions, aptpTimetableImages } from './aptp.ts';
 import { creventic } from './creventic.ts';
+import { imsa } from './imsa.ts';
 import { macau } from './macau.ts';
 import { supercars } from './supercars.ts';
 import { superformula } from './superformula.ts';
@@ -99,7 +101,9 @@ const sro: SiteRecipe = {
         ...(championship ? { championship, ...(url ? { championshipUrl: `${new URL(url).origin}/calendar` } : {}) } : {}),
       });
     }
-    for (const b of blocksByClass(html, 'past-events__list-item')) {
+    // Eventos pasados (sin año en el texto): nunca son de una temporada futura (lectura de la temporada siguiente).
+    const pastBlocks = ctx.season > ctx.now.getUTCFullYear() ? [] : blocksByClass(html, 'past-events__list-item');
+    for (const b of pastBlocks) {
       const spans = [...b.matchAll(/class="past-events__piped-list-span"[^>]*>([\s\S]*?)<\/span>\s*<\/li>/g)].map((m) => m[1] ?? '');
       if (spans.length < 2) continue;
       const dates = parseDateRangeText(textOf(spans[0]!), ctx.season);
@@ -279,6 +283,10 @@ const indycar: SiteRecipe = {
         dateStart: shiftDate(day.start, -2),
         dateEnd: day.start,
         url,
+        // Desde 2027 la clave es el slug de la URL (/Schedule/2027/St-Petersburg): las fechas futuras figuran primero
+        // con el nombre del circuito y después con el nombre comercial, y el id no tiene que cambiar por eso. (2026
+        // sigue con el nombre para no cambiar los ids ya publicados, con sus resultados.)
+        ...(ctx.season >= 2027 ? { key: href.split('/').filter(Boolean).pop()!.toLowerCase() } : {}),
       });
     }
     return dedupe(out);
@@ -468,7 +476,10 @@ const aco: SiteRecipe = {
       sessions,
       source: { url: entry.url, title: title || `Programa — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
     };
-  },  /** Inscriptos: grilla de autos del WEC (/en/page/grid) o página de pilotos de ELMS y Asian LMS (/en/page/drivers). */
+  },
+  /** Campeonato: página de clasificaciones de cada sitio (ver aco-standings.ts). */
+  standings: (url, ctx) => acoStandings(url, ctx),
+  /** Inscriptos: grilla de autos del WEC (/en/page/grid) o página de pilotos de ELMS y Asian LMS (/en/page/drivers). */
   roster: (url, ctx) => acoRoster(url, ctx),
 };
 
@@ -589,6 +600,9 @@ const tc2000: SiteRecipe = {
     return u.pathname === '/' ? `${u.origin}/carreras.php?evento=calendario` : url;
   },
   calendar(doc, ctx) {
+    // Las fechas no traen año ("12 - 14"): la página no dice de qué temporada es, así que no se usa para la
+    // temporada siguiente (se leería el calendario terminado con el año cambiado).
+    if (ctx.season > ctx.now.getUTCFullYear()) return [];
     const out: CalendarEntry[] = [];
     for (const b of blocksByClass(stripComments(doc.raw), 'box-fechas', 1500)) {
       const round = Number(textByClass(b, 'item-fechas'));
@@ -908,9 +922,64 @@ const dtm: SiteRecipe = {
       },
     };
   },
+  /**
+   * Campeonato: la misma consulta que usa www.dtm.com/en/standings (wigeStandings, por rango de fechas de la
+   * temporada), con pilotos, equipos y marcas. null si la temporada todavía no tiene tabla.
+   */
+  async standings(_url, ctx) {
+    const res = await ctx.http.json<unknown>(
+      `https://api.dtm.com/data?query=wigeStandings&raceSeries=DTM&startDate=${ctx.season}-01-01&endDate=${ctx.season}-12-31`,
+    );
+    const tables = dtmStandingsTables(res.body, ctx.season);
+    if (!tables) return null;
+    return { tables, source: { ...standingsSource('https://www.dtm.com/en/standings', `Standings DTM ${ctx.season}`, ctx), kind: 'api' } };
+  },
   /** Inscriptos de la temporada: https://api.dtm.com/data?query=drivers (número, equipo y auto por temporada). */
   roster: (url, ctx) => dtmRoster(url, ctx),
 };
+
+/** "PREINING Thomas" -> "Thomas PREINING": la API escribe primero el apellido (en mayúsculas). */
+export function dtmDriverName(raw: string): string {
+  const t = raw.replace(/\s+/g, ' ').trim();
+  const m = t.match(/^((?:[\p{Lu}'’.-]{2,}\s+)*[\p{Lu}'’.-]{2,})\s+(\S.*)$/u);
+  return m && /\p{Ll}/u.test(m[2]!) ? `${m[2]} ${m[1]}` : t;
+}
+
+/**
+ * Tablas del DTM a partir de la respuesta de wigeStandings: { wigeStandingses: [{ raceSeries, startDate, jsonText }] },
+ * con jsonText = { drivers, teams, manufacturers } (position, name, totalpoints; los pilotos con nationality).
+ * null si la temporada no tiene tabla todavía.
+ */
+export function dtmStandingsTables(data: unknown, season: number): StandingsTable[] | null {
+  const list = ((obj(data).wigeStandingses as unknown[] | undefined) ?? []).map(obj);
+  const entry = list.find((e) => /^dtm$/i.test(str(e.raceSeries)) && str(e.startDate).startsWith(String(season)));
+  if (!entry) return null;
+  let doc: Record<string, unknown>;
+  try {
+    doc = obj(JSON.parse(str(entry.jsonText)));
+  } catch {
+    throw new Error('DTM: el campeonato de la API no es un JSON válido');
+  }
+  const table = (key: string, title: string, driver: boolean): StandingsTable | null => {
+    const rows = ((doc[key] as unknown[] | undefined) ?? [])
+      .map(obj)
+      .map((r): StandingsRow => {
+        const country = driver ? str(r.nationality) : '';
+        return {
+          pos: Number(r.position),
+          name: driver ? dtmDriverName(str(r.name)) : str(r.name).trim(),
+          points: parseNumber(str(r.totalpoints)) ?? NaN,
+          ...(country ? { country: countryFromCode(country) } : {}),
+        };
+      })
+      .sort((a, b) => a.pos - b.pos);
+    return rows.length ? checkStandingsTable({ title, rows }) : null;
+  };
+  const tables = [table('drivers', 'Pilotos', true), table('teams', 'Equipos', false), table('manufacturers', 'Marcas', false)].filter(
+    (t): t is StandingsTable => t !== null,
+  );
+  return tables.length ? tables : null;
+}
 
 // ─── F1 Academy (datos de Next.js de f1academy.com) ───────────────────────────────────────────
 
@@ -1116,7 +1185,7 @@ function humanize(slug: string): string {
     .join(' ');
 }
 
-export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca];
+export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca, imsa];
 // Asia y Oceanía: recetas en su propio archivo (importan sus utilidades de kit.ts, no de este).
 RECIPES.push(supergt, superformula, supertaikyu, macau, supercars);
 

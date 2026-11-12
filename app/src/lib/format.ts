@@ -1,5 +1,10 @@
 import { DateTime } from 'luxon';
-import { AR_TZ } from '@dm/shared';
+import { AR_TZ, type TimetableCoverage } from '@dm/shared';
+
+/** "Horarios publicados: 1 de 3 próximas fechas" (cobertura de cronogramas del estado de la serie). */
+export function timetablesText(t: TimetableCoverage): string {
+  return `Horarios publicados: ${t.found} de ${t.due} ${t.due === 1 ? 'próxima fecha' : 'próximas fechas'}`;
+}
 
 /** "hace 3 horas", "hace 5 minutos", "recién". */
 export function timeAgo(isoUtc: string | null | undefined, now: string | Date = new Date()): string {

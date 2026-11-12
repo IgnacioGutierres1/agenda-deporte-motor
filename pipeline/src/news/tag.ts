@@ -14,12 +14,23 @@ export interface TagRule {
   patterns: RegExp[];
   /** Solo para notas en estos idiomas (siglas ambiguas en otros, como "TC"). */
   langs?: string[];
+  /** La regla no cuenta si el texto también menciona esto (p. ej. "IMSA" en una nota de una copa que IMSA fiscaliza). */
+  unless?: RegExp;
 }
 
 const I = 'gi'; // sin distinguir mayúsculas
 const C = 'g'; // siglas: solo en mayúsculas
 
 const re = (src: string, flags = I) => new RegExp(src, flags);
+
+/**
+ * Copas y campeonatos que fiscaliza IMSA pero no son el WeatherTech SportsCar Championship
+ * (Sportscar365 les pone igual la etiqueta "IMSA").
+ */
+export const IMSA_SUPPORT = new RegExp(
+  String.raw`\b(?:Mustang\s+(?:Challenge|Dark\s+Horse\s+R)|Veterans\s+Day\s+Classic|Porsche\s+(?:Carrera\s+Cup\s+(?:North\s+America|NA)|Junior\s+Shootout|Sprint\s+Challenge)|Michelin\s+Pilot\s+Challenge|VP\s+Racing\s+SportsCar\s+Challenge|MX-?5\s+Cup|Lamborghini\s+Super\s+Trofeo|Ferrari\s+Challenge|GR\s+Cup)\b`,
+  'i',
+);
 
 export const TAG_RULES: TagRule[] = [
   // --- Argentina: de lo más específico a lo más genérico ---------------------
@@ -83,12 +94,24 @@ export const TAG_RULES: TagRule[] = [
 
   // --- GT y resistencia ------------------------------------------------------------
   { seriesId: 'elms', patterns: [re(String.raw`\bEuropean\s+Le\s+Mans\s+Series\b`), re(String.raw`\bELMS\b`, C)] },
-  { seriesId: 'alms', patterns: [re(String.raw`\bAsian\s+Le\s+Mans\s+Series\b`), re(String.raw`\bAs?LMS\b`, C)] },
+  {
+    seriesId: 'alms',
+    patterns: [
+      re(String.raw`\bAsian\s+(?:Le\s+Mans|LMS)(?:\s+Series)?\b`),
+      re(String.raw`\bLe\s+Mans\s+(?:Series\s+)?(?:de\s+)?Asia\b`),
+      // ALMS, AsLMS, ASLMS: siglas, solo así escritas.
+      re(String.raw`\bA[sS]?LMS\b`, C),
+    ],
+  },
   { seriesId: null, patterns: [re(String.raw`\bLe\s+Mans\s+(?:Cup|Classic|Virtual|Ultimate)\b`)] },
+  // "IMSA" a secas no alcanza si la nota es de una copa de apoyo (Mustang Challenge, Carrera Cup NA, MX-5 Cup…).
+  { seriesId: 'imsa', patterns: [re(String.raw`\bIMSA\b`, C)], unless: IMSA_SUPPORT },
   {
     seriesId: 'imsa',
     patterns: [
-      re(String.raw`\bIMSA\b`, C),
+      re(String.raw`\bIMSA\s+(?:WeatherTech|GTP|GTD)\b`),
+      // Clases propias del WeatherTech.
+      re(String.raw`\b(?:GTP|GTD(?:\s+PRO)?)\b`, C),
       re(String.raw`\bWeatherTech\b`),
       re(String.raw`\bRolex\s*24\b`),
       re(String.raw`\bPetit\s+Le\s+Mans\b`),
@@ -134,15 +157,20 @@ export interface TagInput {
   summary?: string;
   categories?: string[];
   lang?: string;
+  /** Texto que no se etiqueta pero sí cuenta para las excepciones (`unless`), p. ej. la bajada. */
+  context?: string;
 }
 
 /** Categorías mencionadas en el título, las categorías del feed o la bajada. */
 export function tagSeries(input: TagInput, rules: TagRule[] = TAG_RULES): string[] {
   // Separadores fuertes para que una sigla no se una con la palabra del campo siguiente.
   let text = [input.title, ...(input.categories ?? []), input.summary ?? ''].join(' \n ');
+  // Las excepciones miran el texto original completo (antes de consumir coincidencias).
+  const whole = `${text} \n ${input.context ?? ''}`;
   const found = new Set<string>();
   for (const rule of rules) {
     if (rule.langs && !(input.lang && rule.langs.includes(input.lang))) continue;
+    if (rule.unless?.test(whole)) continue;
     for (const p of rule.patterns) {
       p.lastIndex = 0;
       if (!p.test(text)) continue;
@@ -204,6 +232,9 @@ const SLUG_WORDS: Record<string, string> = {
   tc2000: 'tc2000',
 };
 
+/** Secciones de Sportscar365 bajo /imsa/ que son copas de apoyo, no el WeatherTech. */
+const IMSA_SUPPORT_SLUG = /carrera-cup|sportscar-challenge|pilot-challenge|mx-?5|mustang|super-trofeo|ferrari-challenge|gr-cup/;
+
 export function tagUrl(url: string): string[] {
   let segments: string[];
   try {
@@ -212,8 +243,9 @@ export function tagUrl(url: string): string[] {
     return [];
   }
   const found = new Set<string>();
-  for (const seg of segments) {
+  for (const [i, seg] of segments.entries()) {
     const s = URL_SEGMENTS[seg];
+    if (s === 'imsa' && IMSA_SUPPORT_SLUG.test(segments[i + 1] ?? '')) continue;
     if (s) found.add(s);
     for (const w of seg.split(/[-_.]+/)) {
       const id = SLUG_WORDS[w];
