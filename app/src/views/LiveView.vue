@@ -5,7 +5,7 @@
       <h2 class="section-title">En vivo ahora</h2>
       <p v-if="!liveItems.length" class="card empty dim">
         No hay sesiones en curso.
-        <template v-if="upcoming.length">La próxima: <strong>{{ upcoming[0]!.series.shortName }} · {{ upcoming[0]!.session.name }}</strong> {{ inText(upcoming[0]!.session.startUtc) }}.</template>
+        <template v-if="upcoming.length">La próxima: <strong>{{ upcoming[0]!.series.shortName }} · {{ upcoming[0]!.session.name }}</strong> {{ inText(upcoming[0]!.session) }}.</template>
       </p>
       <LiveSessionCard v-for="item in liveItems" :key="item.session.id" :item="item" :now="now" />
 
@@ -21,7 +21,7 @@
               </span>
               <span class="small upcoming-time">
                 <strong>{{ time(item.session.startUtc) }}</strong>
-                <span class="block dim">{{ inText(item.session.startUtc) }}</span>
+                <span class="block"><CountdownBadge :start-utc="item.session.startUtc" :end-utc="item.session.endUtc" plain /></span>
               </span>
             </RouterLink>
           </li>
@@ -41,17 +41,20 @@
 import { defineComponent } from 'vue';
 import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
+import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import LiveSessionCard from '../components/LiveSessionCard.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { sessionsInPeriod, type GridItem } from '../lib/grid.ts';
+import { countdown } from '../lib/countdown.ts';
+import type { Session } from '@dm/shared';
 
 /** Sesiones en curso con sus tiempos en vivo, y las próximas 24 horas (como el filtro "En vivo" de FotMob). */
 export default defineComponent({
   name: 'LiveView',
-  components: { DataState, LiveSessionCard, SeriesCrest },
+  components: { CountdownBadge, DataState, LiveSessionCard, SeriesCrest },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'hasData', 'now', 'visibleSeriesPredicate']),
     ...mapState(useSettingsStore, ['timeZone', 'followedSeriesIds']),
@@ -80,11 +83,9 @@ export default defineComponent({
     time(iso: string): string {
       return DateTime.fromISO(iso, { zone: 'utc' }).setZone(this.timeZone).toFormat('HH:mm');
     },
-    inText(iso: string): string {
-      const min = Math.round((Date.parse(iso) - Date.parse(this.now)) / 60_000);
-      if (min < 60) return `en ${Math.max(min, 0)} min`;
-      const h = Math.floor(min / 60);
-      return `en ${h} h ${String(min % 60).padStart(2, '0')} min`;
+    /** "en 2 h 15 min" (misma cuenta regresiva que el resto de la app). */
+    inText(session: Session): string {
+      return countdown(session.startUtc, session.endUtc, this.now).text.toLowerCase();
     },
   },
 });

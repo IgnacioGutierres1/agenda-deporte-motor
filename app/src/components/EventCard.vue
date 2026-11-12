@@ -23,7 +23,12 @@
     <ul v-if="!collapsed" class="event-card-rows">
       <template v-for="g in dayGroups" :key="g.date">
       <li v-if="showDayHeaders" class="session-day-head">{{ g.label }}</li>
-      <li v-for="item in g.items" :key="item.session.id" class="session-line" :class="{ live: item.live, finished: item.finished }">
+      <li
+        v-for="item in g.items"
+        :key="item.session.id"
+        class="session-line"
+        :class="{ live: item.live, finished: item.finished, next: item.session.id === nextId }"
+      >
         <button type="button" class="session-line-btn" @click="$emit('select', item)">
           <span class="session-time">
             <template v-if="item.live"><span class="live-dot" />En vivo</template>
@@ -42,6 +47,7 @@
             </span>
           </span>
           <span class="session-flags">
+            <CountdownBadge v-if="item.session.id === nextId" :start-utc="item.session.startUtc" :end-utc="item.session.endUtc" />
             <span v-if="item.session.source.kind === 'image'" class="badge badge-dim" title="Horario leído de una imagen oficial">Imagen</span>
             <span v-if="item.session.changedAt" class="badge badge-warn">Cambió</span>
             <span v-if="item.finished && item.session.hasResults" class="results-dot" title="Con resultados" />
@@ -59,6 +65,7 @@ import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import type { MotorEvent, Series } from '@dm/shared';
 import AppIcon from './AppIcon.vue';
+import CountdownBadge from './CountdownBadge.vue';
 import SeriesCrest from './SeriesCrest.vue';
 import { useSettingsStore } from '../stores/settings.ts';
 import type { GridItem } from '../lib/grid.ts';
@@ -67,7 +74,7 @@ import { groupSessionsByDay, isLateNight, type SessionDayGroup } from '../lib/ag
 /** Tarjeta de un evento en la Agenda (como una competencia en FotMob). */
 export default defineComponent({
   name: 'EventCard',
-  components: { AppIcon, SeriesCrest },
+  components: { AppIcon, CountdownBadge, SeriesCrest },
   props: {
     series: { type: Object as PropType<Series>, required: true },
     event: { type: Object as PropType<MotorEvent>, default: undefined },
@@ -76,6 +83,8 @@ export default defineComponent({
     collapsed: { type: Boolean, default: false },
     /** Separar las sesiones por día con subtítulos "Viernes 13" (vista "Finde"). */
     showDay: { type: Boolean, default: false },
+    /** Sesión a destacar con su cuenta regresiva (la próxima del día o del finde elegido). */
+    nextId: { type: String, default: '' },
   },
   emits: ['toggle', 'select'],
   computed: {
@@ -240,6 +249,16 @@ export default defineComponent({
   50% {
     opacity: 0.3;
   }
+}
+
+/* Próxima sesión del día elegido: barra de acento a la izquierda y cuenta regresiva. */
+.session-line.next {
+  box-shadow: inset 3px 0 0 var(--accent);
+  background: color-mix(in srgb, var(--accent) 7%, transparent);
+}
+
+.session-line.next .session-time strong {
+  color: var(--accent);
 }
 
 .session-line.finished .session-name {
