@@ -15,7 +15,8 @@
         <h1 class="hero-title">{{ event.name }}</h1>
         <p class="hero-sub">
           <span v-if="event.round" class="pill pill-small">Fecha {{ event.round }}</span>
-          {{ dateRange(event.dateStart, event.dateEnd) }} · {{ event.circuit }}<template v-if="event.country">, {{ event.country }}</template>
+          {{ dateRange(event.dateStart, event.dateEnd) }} ·
+          <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
         </p>
         <p class="hero-status" :class="state.kind">{{ state.text }}</p>
       </section>
@@ -107,6 +108,7 @@ import { useSettingsStore } from '../stores/settings.ts';
 import { formatDateRange } from '../lib/format.ts';
 import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/grid.ts';
 import { todayIn } from '../lib/agenda.ts';
+import { circuitId } from '../lib/circuits.ts';
 
 type Tab = 'horarios' | 'resultados' | 'tabla';
 
@@ -125,6 +127,11 @@ export default defineComponent({
     },
     series(): Series | undefined {
       return this.event ? this.seriesById.get(this.event.seriesId) : undefined;
+    },
+    /** Página del circuito (todo lo que se corre ahí), si el nombre corresponde a un circuito. */
+    circuitLink(): string {
+      const id = this.event ? circuitId(this.event.circuit) : '';
+      return id ? `/circuito/${id}` : '';
     },
     color(): string {
       return seriesColor(this.series);
@@ -198,6 +205,13 @@ export default defineComponent({
 </script>
 
 <style>
+a.circuit-link {
+  color: var(--text);
+  text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--text) 40%, transparent);
+  text-underline-offset: 2px;
+}
+
 .day-card {
   margin: 0 0 0.75rem;
 }
