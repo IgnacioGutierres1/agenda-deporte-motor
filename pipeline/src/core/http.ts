@@ -96,16 +96,22 @@ export function createHttp(opts: HttpOptions = {}): Http {
     return p;
   }
 
-  async function textWithFallback(url: string, init: RequestInit | undefined): Promise<HttpResponse<string>> {
+  async function withFallback<T>(
+    kind: string,
+    url: string,
+    init: RequestInit | undefined,
+    read: (res: Response) => Promise<T>,
+    unproxy: (body: T) => T,
+  ): Promise<HttpResponse<T>> {
     try {
-      return await memoized('text', url, init, (r) => r.text());
+      return await memoized(kind, url, init, read);
     } catch (err) {
       const isGet = !init?.method || init.method.toUpperCase() === 'GET';
       const proxied = err instanceof HttpError && err.status === 403 && isGet && !init?.body ? googleProxyUrl(url) : null;
       if (!proxied) throw err;
       try {
-        const res = await memoized('text', proxied, init, (r) => r.text());
-        return { ...res, url, body: unproxyHtml(res.body) };
+        const res = await memoized(kind, proxied, init, read);
+        return { ...res, url, body: unproxy(res.body) };
       } catch {
         throw err; // se informa el 403 original, que es el que explica el problema
       }
@@ -113,10 +119,11 @@ export function createHttp(opts: HttpOptions = {}): Http {
   }
 
   return {
-    text: textWithFallback,
+    text: (url, init) => withFallback('text', url, init, (r) => r.text(), unproxyHtml),
     json: <T>(url: string, init?: RequestInit) =>
       memoized('json', url, init, async (r) => (await r.json()) as T),
-    bytes: (url, init) => memoized('bytes', url, init, async (r) => new Uint8Array(await r.arrayBuffer())),
+    // Imágenes y PDF (p. ej. el cronograma de TC2000, publicado como imagen): el proxy los devuelve tal cual.
+    bytes: (url, init) => withFallback('bytes', url, init, async (r) => new Uint8Array(await r.arrayBuffer()), (b) => b),
   };
 }
 
