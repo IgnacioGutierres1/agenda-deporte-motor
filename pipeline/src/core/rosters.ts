@@ -6,13 +6,25 @@
  */
 import path from 'node:path';
 import { driverKey, rosterFileSchema, teamKey, type RosterFile, type RosterRow, type Series } from '@dm/shared';
+import { formula1Roster } from '../generic/formula1.ts';
 import { findRecipe } from '../generic/recipes.ts';
-import type { RosterFound } from '../generic/types.ts';
+import type { RosterFound, SiteRecipe } from '../generic/types.ts';
 import type { Http } from './http.ts';
 import type { Logger } from './log.ts';
 import { readJson, writeJson } from './store.ts';
 
 export const ROSTER_MAX_AGE_MS = 3 * 24 * 3600_000;
+
+/**
+ * Lectores de inscriptos de series con adaptador propio (F1): no están en RECIPES porque el calendario y el
+ * campeonato de esas series no pasan por el flujo genérico.
+ */
+const ROSTER_ONLY: SiteRecipe[] = [formula1Roster];
+
+/** Receta que lee la lista de inscriptos de una URL de Series.rosterUrls. */
+export function findRosterRecipe(url: string): SiteRecipe | undefined {
+  return ROSTER_ONLY.find((r) => r.match(url)) ?? findRecipe(url);
+}
 
 /** true si hay que (re)leer la lista: no existe, tiene más de tres días o se leyó el año anterior. */
 export function rosterStale(existing: Pick<RosterFile, 'updatedAt'> | null, now: Date): boolean {
@@ -42,7 +54,7 @@ export async function readRoster(series: Series, ctx: RostersContext): Promise<R
   const current = (await ctx.seasonFor?.(series)) ?? ctx.season;
   const found: RosterFound[] = [];
   for (const url of series.rosterUrls ?? []) {
-    const recipe = findRecipe(url);
+    const recipe = findRosterRecipe(url);
     if (!recipe?.roster) throw new Error(`No hay lector de inscriptos para ${url}`);
     const r = await recipe.roster(url, { season: current, series, http: ctx.http, now: ctx.now });
     if (r) found.push(r);
