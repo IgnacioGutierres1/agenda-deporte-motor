@@ -1,5 +1,8 @@
 import {
   addMinutes,
+  normalizeCircuitName,
+  normalizeEventName,
+  spanishSessionName,
   stableHash,
   type EventKind,
   type MotorEvent,
@@ -8,6 +11,7 @@ import {
   type SessionType,
   type Source,
 } from '@dm/shared';
+import { countryEs } from '../generic/places.ts';
 
 export type DurationsConfig = Record<string, Partial<Record<SessionType, number>>>;
 export type BroadcastConfig = Record<string, string[]>;
@@ -61,26 +65,31 @@ export function createBuilders(durations: DurationsConfig, broadcast: BroadcastC
     estimateMinutes,
     defaultBroadcast,
     event(i) {
+      // El tipo se deduce del nombre original y el id sale de la clave (nunca del nombre ya normalizado).
       const kind = i.kind ?? eventKindOf(i.name);
-      return {
-        id: stableHash(i.series.id, i.season, i.key),
-        seriesId: i.series.id,
-        name: i.name,
-        ...(i.round !== undefined ? { round: i.round } : {}),
-        circuit: i.circuit,
-        country: i.country,
-        tz: i.tz,
-        dateStart: i.dateStart,
-        dateEnd: i.dateEnd,
-        sessionsStatus: i.sessionsStatus,
-        ...(kind ? { kind } : {}),
-        source: i.source,
-      };
+      return normalizeEvent(
+        {
+          id: stableHash(i.series.id, i.season, i.key),
+          seriesId: i.series.id,
+          name: i.name,
+          ...(i.round !== undefined ? { round: i.round } : {}),
+          circuit: i.circuit,
+          country: i.country,
+          tz: i.tz,
+          dateStart: i.dateStart,
+          dateEnd: i.dateEnd,
+          sessionsStatus: i.sessionsStatus,
+          ...(kind ? { kind } : {}),
+          source: i.source,
+        },
+        i.series,
+      );
     },
     session(i) {
       const fromSource = i.broadcast && i.broadcast.length > 0;
       const endUtc = i.endUtc ?? addMinutes(i.startUtc, estimateMinutes(i.event.seriesId, i.type));
-      return {
+      return normalizeSession({
+        // El id usa el nombre tal como lo publica la fuente (el traducido puede cambiar si mejora el diccionario).
         id: stableHash(i.event.id, i.type, i.name, i.key),
         eventId: i.event.id,
         seriesId: i.event.seriesId,
@@ -94,9 +103,40 @@ export function createBuilders(durations: DurationsConfig, broadcast: BroadcastC
         broadcastIsDefault: !fromSource,
         source: i.source,
         hasResults: false,
-      };
+      });
     },
   };
+}
+
+/**
+ * Nombre, circuito y país prolijos para publicar (ver @dm/shared names.ts): mayúsculas, acentos de lugares
+ * argentinos, prefijos de ronda repetidos ("Round1 …"), sede "a confirmar" y país en español. No cambia el id.
+ * Idempotente: también se aplica a los eventos que se conservan de corridas anteriores.
+ */
+export function normalizeEvent(e: MotorEvent, series: Pick<Series, 'group'> | undefined): MotorEvent {
+  const country = countryEs(e.country, e.tz);
+  const opts = {
+    argentina: series?.group === 'argentina' || country === 'Argentina',
+    // NASCAR, IndyCar e IMSA escriben en mayúsculas marcas y carreras a propósito ("DAYTONA 500", "XPEL").
+    titleCase: series?.group !== 'usa',
+  };
+  return {
+    ...e,
+    name: normalizeEventName(e.name, { ...opts, ...(e.round !== undefined ? { round: e.round } : {}) }),
+    circuit: normalizeCircuitName(e.circuit, opts),
+    country,
+  };
+}
+
+/**
+ * Nombre de sesión en español, con el original de la fuente en originalName (solo si cambió). El id no cambia.
+ * Idempotente: si ya tiene originalName, se vuelve a traducir desde ese.
+ */
+export function normalizeSession(s: Session): Session {
+  const original = s.originalName ?? s.name;
+  const name = spanishSessionName(original);
+  const { originalName: _o, ...rest } = s;
+  return { ...rest, name, ...(name !== original ? { originalName: original } : {}) };
 }
 
 /** Clasifica un nombre de sesión (en inglés o español) en un SessionType. */

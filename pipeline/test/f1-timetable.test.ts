@@ -58,10 +58,10 @@ describe('F1 Academy (f1academy.com + cronograma de formula1.com)', () => {
     expect(lv).toMatchObject({ round: 6, dateStart: '2026-11-19', dateEnd: '2026-11-21', sessionsStatus: 'published' });
     const sessions = chunk.sessions.filter((s) => s.eventId === lv.id);
     expect(sessions.map((s) => [s.type, s.name, s.localStartText, s.startUtc, s.endUtc, s.endEstimated])).toEqual([
-      ['practica', 'Free Practice', '18:00', '2026-11-20T02:00:00Z', '2026-11-20T02:40:00Z', false],
-      ['clasificacion', 'Qualifying', '21:30', '2026-11-20T05:30:00Z', '2026-11-20T06:00:00Z', false],
-      ['carrera', 'Reverse Grid Race', '18:15', '2026-11-21T02:15:00Z', '2026-11-21T02:50:00Z', false],
-      ['carrera', 'Feature Race', '16:20', '2026-11-22T00:20:00Z', '2026-11-22T00:55:00Z', false],
+      ['practica', 'Práctica libre', '18:00', '2026-11-20T02:00:00Z', '2026-11-20T02:40:00Z', false],
+      ['clasificacion', 'Clasificación', '21:30', '2026-11-20T05:30:00Z', '2026-11-20T06:00:00Z', false],
+      ['carrera', 'Carrera de grilla invertida', '18:15', '2026-11-21T02:15:00Z', '2026-11-21T02:50:00Z', false],
+      ['carrera', 'Carrera principal', '16:20', '2026-11-22T00:20:00Z', '2026-11-22T00:55:00Z', false],
     ]);
     expect(sessions[0]!.source).toMatchObject({ url: LV_SCHEDULE, kind: 'html', method: 'directo' });
     expect(gemini.callsMade()).toBe(0);
@@ -72,9 +72,9 @@ describe('F1 Academy (f1academy.com + cronograma de formula1.com)', () => {
     const austin = chunk.events.find((e) => e.name === 'Austin')!;
     const sessions = chunk.sessions.filter((s) => s.eventId === austin.id);
     // El sitio publica "12:25-06:00" (offset de invierno): en octubre Austin está en UTC-5.
-    expect(sessions[0]).toMatchObject({ name: 'Free Practice', localStartText: '12:25', startUtc: '2026-10-22T17:25:00Z' });
+    expect(sessions[0]).toMatchObject({ name: 'Práctica libre', originalName: 'Free Practice', localStartText: '12:25', startUtc: '2026-10-22T17:25:00Z' });
     // Feature Race: 12:00 local, igual que el cronograma oficial de formula1.com (17:00Z).
-    expect(sessions.at(-1)).toMatchObject({ name: 'Feature Race', startUtc: '2026-10-25T17:00:00Z' });
+    expect(sessions.at(-1)).toMatchObject({ name: 'Carrera principal', startUtc: '2026-10-25T17:00:00Z' });
     expect(sessions[0]!.source.url).toBe(F1A_CAL);
   });
 });

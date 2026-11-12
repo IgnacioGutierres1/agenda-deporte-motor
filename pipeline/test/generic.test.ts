@@ -89,8 +89,8 @@ describe('recetas de sitios oficiales', () => {
     const gemini = fakeGemini();
     const chunk = await createGenericAdapter({ gemini: () => gemini }).schedule(series, testContext(http, NOW));
     expect(chunk.events.map((e) => [e.name, e.dateStart, e.dateEnd, e.sessionsStatus])).toEqual([
-      ['Fecha 14 — RIO CUARTO', '2026-11-13', '2026-11-15', 'published'],
-      ['Fecha 15 — LA PLATA', '2026-12-04', '2026-12-06', 'pending'],
+      ['Fecha 14 — Río Cuarto', '2026-11-13', '2026-11-15', 'published'],
+      ['Fecha 15 — La Plata', '2026-12-04', '2026-12-06', 'pending'],
     ]);
     expect(chunk.sessions.map((s) => [s.name, s.type, s.localStartText, s.startUtc])).toEqual([
       ['1er. Entrenamiento TCP (Grupo A)', 'practica', '09:25', '2026-11-14T12:25:00Z'],
@@ -117,9 +117,9 @@ describe('flujo genérico: calendario + cronograma con IA', () => {
     ]);
     // "Warm Up 08:45" no figura en el documento: se descarta.
     expect(chunk.sessions.map((s) => [s.name, s.startUtc, s.endUtc, s.endEstimated, s.localStartText])).toEqual([
-      ['Free Practice 1', '2026-11-20T12:30:00Z', '2026-11-20T13:30:00Z', false, '09:30'],
-      ['Qualifying', '2026-11-21T17:05:00Z', '2026-11-21T17:35:00Z', false, '14:05'],
-      ['Race', '2026-11-22T16:00:00Z', '2026-11-22T17:00:00Z', true, '13.00'],
+      ['Práctica libre 1', '2026-11-20T12:30:00Z', '2026-11-20T13:30:00Z', false, '09:30'],
+      ['Clasificación', '2026-11-21T17:05:00Z', '2026-11-21T17:35:00Z', false, '14:05'],
+      ['Carrera', '2026-11-22T16:00:00Z', '2026-11-22T17:00:00Z', true, '13.00'],
     ]);
     expect(chunk.sessions[0]!.source).toMatchObject({ url: EVENT_BA, kind: 'html', method: 'ia' });
     expect(validateSessions(chunk.sessions, chunk.events).issues).toEqual([]);
@@ -258,7 +258,7 @@ describe('resultados con IA', () => {
     });
     expect(out.results).toHaveLength(1);
     const file = eventResultsFileSchema.parse(out.results[0]);
-    const race = baSessions.find((s: Session) => s.name === 'Race')!;
+    const race = baSessions.find((s: Session) => s.originalName === 'Race')!;
     expect(file.sessions.map((s) => s.sessionId)).toEqual([race.id]);
     expect(file.sessions[0]!.rows).toHaveLength(4);
     expect(file.sessions[0]!.source).toMatchObject({ url: RESULTS, method: 'ia' });

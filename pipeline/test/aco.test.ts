@@ -31,23 +31,23 @@ describe('ACO (WEC / ELMS): fechas desde la página de cada carrera', () => {
 
     // Las carreras sin página legible (404 en el fake) solo tienen el mes: se omiten en vez de ocupar todo el mes.
     expect(chunk.events.map((e) => [e.name, e.round, e.dateStart, e.dateEnd, e.tz, e.country, e.sessionsStatus, e.source.method])).toEqual([
-      ['Official Prologue - IMOLA', undefined, '2026-04-14', '2026-04-14', 'Europe/Rome', 'Italy', 'pending', 'directo'],
-      ['6 Hours of Fuji', 1, '2026-09-25', '2026-09-27', 'Asia/Tokyo', 'Japan', 'pending', 'directo'],
-      ['6 Hours of Monza', 2, '2026-11-06', '2026-11-08', 'Europe/Rome', 'Italy', 'published', 'directo'],
+      ['Official Prologue - Imola', undefined, '2026-04-14', '2026-04-14', 'Europe/Rome', 'Italia', 'pending', 'directo'],
+      ['6 Hours of Fuji', 1, '2026-09-25', '2026-09-27', 'Asia/Tokyo', 'Japón', 'pending', 'directo'],
+      ['6 Hours of Monza', 2, '2026-11-06', '2026-11-08', 'Europe/Rome', 'Italia', 'published', 'directo'],
     ]);
     // Las carreras de la temporada siguiente (tira de 2027) y los links de la tabla de campeonato no suman eventos.
     expect(http.requested.some((u) => u.includes('-2027'))).toBe(false);
 
     // Cronograma de Monza: subEvent del JSON-LD (sin IA), con el sufijo del evento recortado.
     expect(chunk.sessions.map((s) => [s.name, s.type, s.startUtc, s.localStartText])).toEqual([
-      ['Free Practice 1', 'practica', '2026-11-06T09:30:00Z', '10:30'],
-      ['Free Practice 2', 'practica', '2026-11-06T13:30:00Z', '14:30'],
-      ['Free Practice 3', 'practica', '2026-11-07T09:30:00Z', '10:30'],
-      ['Qualifying - LMGT3', 'clasificacion', '2026-11-07T13:20:00Z', '14:20'],
+      ['Práctica libre 1', 'practica', '2026-11-06T09:30:00Z', '10:30'],
+      ['Práctica libre 2', 'practica', '2026-11-06T13:30:00Z', '14:30'],
+      ['Práctica libre 3', 'practica', '2026-11-07T09:30:00Z', '10:30'],
+      ['Clasificación - LMGT3', 'clasificacion', '2026-11-07T13:20:00Z', '14:20'],
       ['Hyperpole - LMGT3', 'clasificacion', '2026-11-07T13:40:00Z', '14:40'],
-      ['Qualifying - HYPERCAR', 'clasificacion', '2026-11-07T14:00:00Z', '15:00'],
+      ['Clasificación - HYPERCAR', 'clasificacion', '2026-11-07T14:00:00Z', '15:00'],
       ['Hyperpole - HYPERCAR', 'clasificacion', '2026-11-07T14:20:00Z', '15:20'],
-      ['Race', 'carrera', '2026-11-08T10:00:00Z', '11:00'],
+      ['Carrera', 'carrera', '2026-11-08T10:00:00Z', '11:00'],
     ]);
     expect(chunk.sessions[0]!.source).toMatchObject({ url: `${WEC_RACE}6-hours-of-monza-2026`, kind: 'html', method: 'directo' });
     expect(gemini.requests).toHaveLength(0);
@@ -104,20 +104,20 @@ describe('Asian Le Mans Series: temporada de invierno (2026-27)', () => {
     const gemini = fakeGemini();
     const chunk = await createGenericAdapter({ gemini: () => gemini }).schedule(alms, testContext(http, '2026-11-11T12:00:00Z'));
     expect(chunk.events.map((e) => [e.name, e.round, e.circuit, e.country, e.tz, e.dateStart, e.dateEnd, e.sessionsStatus])).toEqual([
-      ['4 Hours of Le Castellet', 1, 'Paul Ricard', 'France', 'Europe/Paris', '2026-11-13', '2026-11-15', 'published'],
-      ['4 Hours of Jerez', 2, 'Jerez-Ángel Nieto', 'Spain', 'Europe/Madrid', '2027-01-15', '2027-01-17', 'pending'],
+      ['4 Hours of Le Castellet', 1, 'Paul Ricard', 'Francia', 'Europe/Paris', '2026-11-13', '2026-11-15', 'published'],
+      ['4 Hours of Jerez', 2, 'Jerez-Ángel Nieto', 'España', 'Europe/Madrid', '2027-01-15', '2027-01-17', 'pending'],
       ['4 Hours of Portimão', 3, 'Autódromo Internacional do Algarve', 'Portugal', 'Europe/Lisbon', '2027-02-19', '2027-02-21', 'pending'],
     ]);
     // Le Castellet: subEvent del JSON-LD, hora de París (UTC+1 en noviembre). Dos carreras, cada una con su id.
     expect(chunk.sessions.map((s) => [s.name, s.type, s.startUtc, s.localStartText])).toEqual([
-      ['Free Practice 1', 'practica', '2026-11-13T09:10:00Z', '10:10'],
-      ['Free Practice 2', 'practica', '2026-11-13T12:30:00Z', '13:30'],
-      ['Qualifications 1 - GT3', 'clasificacion', '2026-11-13T15:05:00Z', '16:05'],
-      ['Qualifications 1 - Hypercar & LMP2', 'clasificacion', '2026-11-13T15:50:00Z', '16:50'],
-      ['Qualifications 2 - GT3', 'clasificacion', '2026-11-13T15:25:00Z', '16:25'],
-      ['Qualifications 2 - Hypercar & LMP2', 'clasificacion', '2026-11-13T16:10:00Z', '17:10'],
-      ['Race 1', 'carrera', '2026-11-14T12:15:00Z', '13:15'],
-      ['Race 2', 'carrera', '2026-11-15T12:15:00Z', '13:15'],
+      ['Práctica libre 1', 'practica', '2026-11-13T09:10:00Z', '10:10'],
+      ['Práctica libre 2', 'practica', '2026-11-13T12:30:00Z', '13:30'],
+      ['Clasificación 1 - GT3', 'clasificacion', '2026-11-13T15:05:00Z', '16:05'],
+      ['Clasificación 1 - Hypercar & LMP2', 'clasificacion', '2026-11-13T15:50:00Z', '16:50'],
+      ['Clasificación 2 - GT3', 'clasificacion', '2026-11-13T15:25:00Z', '16:25'],
+      ['Clasificación 2 - Hypercar & LMP2', 'clasificacion', '2026-11-13T16:10:00Z', '17:10'],
+      ['Carrera 1', 'carrera', '2026-11-14T12:15:00Z', '13:15'],
+      ['Carrera 2', 'carrera', '2026-11-15T12:15:00Z', '13:15'],
     ]);
     expect(new Set(chunk.sessions.map((s) => s.id)).size).toBe(8);
     // La temporada anterior y la tira del encabezado no se piden ni suman eventos.
@@ -135,8 +135,8 @@ describe('Asian Le Mans Series: temporada de invierno (2026-27)', () => {
     // Jerez (UTC+1 en enero) ya entra en el horizonte.
     const jerez = jan.events.find((e) => e.round === 2)!;
     expect(jan.sessions.filter((s) => s.eventId === jerez.id && s.type === 'carrera').map((s) => [s.name, s.startUtc])).toEqual([
-      ['Race 1', '2027-01-16T12:45:00Z'],
-      ['Race 2', '2027-01-17T12:45:00Z'],
+      ['Carrera 1', '2027-01-16T12:45:00Z'],
+      ['Carrera 2', '2027-01-17T12:45:00Z'],
     ]);
   });
 

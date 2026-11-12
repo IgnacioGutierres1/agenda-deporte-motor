@@ -215,7 +215,9 @@ export const supertaikyu: SiteRecipe = {
         rows.push({ pos, name: textOf(r[iTeam] ?? ''), ...(number ? { number } : {}), points });
       }
       // Clase sin autos con puntos (p. ej. antes de la primera fecha): no hay tabla que mostrar.
-      if (rows.length) tables.push(checkStandingsTable({ title: `Clase ${cls}`, rows }));
+      // El campeonato de Super Taikyu es por auto/equipo (columna TEAM, sin pilotos): se titula "Equipos" para que
+      // el índice de pilotos no tome a los equipos como pilotos (isDriverTable) y la app los liste como equipos.
+      if (rows.length) tables.push(checkStandingsTable({ title: `Equipos Clase ${cls}`, rows }));
     }
     if (tables.length === 0) return null;
     return { tables, source: standingsSource(url, `Super Taikyu ${ctx.season} — Standing`, ctx) };

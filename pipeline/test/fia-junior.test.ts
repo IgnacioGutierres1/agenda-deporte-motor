@@ -83,7 +83,7 @@ describe('lector F2/F3 (fiaformula2.com / fiaformula3.com)', () => {
     const madrid = events.find((e) => e.round === 11)!;
     expect(madrid).toMatchObject({
       circuit: 'Madring',
-      country: 'Spain',
+      country: 'España',
       tz: 'Europe/Madrid',
       dateStart: '2026-09-11',
       dateEnd: '2026-09-13',
@@ -97,10 +97,10 @@ describe('lector F2/F3 (fiaformula2.com / fiaformula3.com)', () => {
     });
     const ms = sessions.filter((s) => s.eventId === madrid.id);
     expect(ms.map((s) => [s.type, s.name, s.localStartText, s.startUtc, s.endUtc, s.endEstimated])).toEqual([
-      ['practica', 'Practice', '11:05', '2026-09-11T09:05:00Z', '2026-09-11T09:50:00Z', false],
-      ['clasificacion', 'Qualifying', '15:00', '2026-09-11T13:00:00Z', '2026-09-11T13:30:00Z', false],
-      ['sprint', 'Sprint Race', '14:15', '2026-09-12T12:15:00Z', '2026-09-12T13:05:00Z', false],
-      ['carrera', 'Feature Race', '11:25', '2026-09-13T09:25:00Z', '2026-09-13T10:30:00Z', false],
+      ['practica', 'Práctica', '11:05', '2026-09-11T09:05:00Z', '2026-09-11T09:50:00Z', false],
+      ['clasificacion', 'Clasificación', '15:00', '2026-09-11T13:00:00Z', '2026-09-11T13:30:00Z', false],
+      ['sprint', 'Sprint', '14:15', '2026-09-12T12:15:00Z', '2026-09-12T13:05:00Z', false],
+      ['carrera', 'Carrera principal', '11:25', '2026-09-13T09:25:00Z', '2026-09-13T10:30:00Z', false],
     ]);
   });
 
@@ -134,10 +134,10 @@ describe('lector F2/F3 (fiaformula2.com / fiaformula3.com)', () => {
     const ls = sessions.filter((s) => s.eventId === lusail.id);
     // Nombres de F2 (los ids no cambian cuando el sitio confirme) y horas de la tabla "FIA Formula 2" (UTC+3).
     expect(ls.map((s) => [s.type, s.name, s.localStartText, s.startUtc, s.endUtc, s.endEstimated])).toEqual([
-      ['practica', 'Practice', '14:00', '2026-11-27T11:00:00Z', '2026-11-27T11:45:00Z', false],
-      ['clasificacion', 'Qualifying', '18:00', '2026-11-27T15:00:00Z', '2026-11-27T15:30:00Z', false],
-      ['sprint', 'Sprint Race', '19:40', '2026-11-28T16:40:00Z', '2026-11-28T17:30:00Z', false],
-      ['carrera', 'Feature Race', '15:00', '2026-11-29T12:00:00Z', '2026-11-29T13:05:00Z', false],
+      ['practica', 'Práctica', '14:00', '2026-11-27T11:00:00Z', '2026-11-27T11:45:00Z', false],
+      ['clasificacion', 'Clasificación', '18:00', '2026-11-27T15:00:00Z', '2026-11-27T15:30:00Z', false],
+      ['sprint', 'Sprint', '19:40', '2026-11-28T16:40:00Z', '2026-11-28T17:30:00Z', false],
+      ['carrera', 'Carrera principal', '15:00', '2026-11-29T12:00:00Z', '2026-11-29T13:05:00Z', false],
     ]);
     expect(ls[0]!.source).toMatchObject({ url: QATAR_SCHEDULE, kind: 'html', method: 'directo' });
     // Abu Dhabi: formula1.com todavía no tiene su página en el fixture -> sigue "a confirmar".
@@ -158,7 +158,7 @@ describe('lector F2/F3 (fiaformula2.com / fiaformula3.com)', () => {
     const http = fakeHttp(f2Routes({ [`${F2}/en/racing/2026/madrid`]: page }));
     const { events, sessions } = await fiaJuniorAdapter.schedule(f2, ctxWith(http));
     const madrid = events.find((e) => e.round === 11)!;
-    expect(sessions.filter((s) => s.eventId === madrid.id).map((s) => s.name)).toEqual(['Practice', 'Qualifying']);
+    expect(sessions.filter((s) => s.eventId === madrid.id).map((s) => s.name)).toEqual(['Práctica', 'Clasificación']);
   });
 
   it('F3 usa su propio sitio y conserva sesiones con nombres numerados', async () => {
@@ -171,12 +171,12 @@ describe('lector F2/F3 (fiaformula2.com / fiaformula3.com)', () => {
     expect(events[0]).toMatchObject({ round: 9, seriesId: 'f3' });
     expect(events[0]!.source.url).toBe('https://www.fiaformula3.com/en/racing/2026/madrid');
     expect(sessions.map((s) => [s.type, s.name])).toEqual([
-      ['practica', 'Practice'],
-      ['clasificacion', 'Qualifying 1'],
-      ['clasificacion', 'Qualifying 2'],
-      ['sprint', 'Sprint Race'],
-      ['carrera', 'Feature Race 1'],
-      ['carrera', 'Feature Race 2'],
+      ['practica', 'Práctica'],
+      ['clasificacion', 'Clasificación 1'],
+      ['clasificacion', 'Clasificación 2'],
+      ['sprint', 'Sprint'],
+      ['carrera', 'Carrera principal 1'],
+      ['carrera', 'Carrera principal 2'],
     ]);
     expect(new Set(sessions.map((s) => s.id)).size).toBe(6);
   });
@@ -249,6 +249,15 @@ describe('resultados de F2 desde las clasificaciones de la FIA (fia.com/document
     const { events, sessions } = await adapter.schedule(f2, ctx);
     const baku = events[0]!;
     expect(sessions.map((s) => s.name)).toEqual([
+      'Práctica',
+      'Clasificación 1',
+      'Clasificación 2',
+      'Sprint',
+      'Carrera principal 1',
+      'Carrera principal 2',
+    ]);
+    // El nombre original de la fuente queda en originalName (y el id sale de ese).
+    expect(sessions.map((s) => s.originalName)).toEqual([
       'Practice',
       'Qualifying 1',
       'Qualifying 2',
@@ -261,7 +270,7 @@ describe('resultados de F2 desde las clasificaciones de la FIA (fia.com/document
     expect(out.results).toHaveLength(1);
     const file = out.results[0]!;
     expect(file.eventId).toBe(baku.id);
-    const byName = new Map(file.sessions.map((r) => [sessions.find((s) => s.id === r.sessionId)!.name, r]));
+    const byName = new Map(file.sessions.map((r) => [sessions.find((s) => s.id === r.sessionId)!.originalName!, r]));
     // Feature Race 2: embebida en la página; sprint y Qualifying 1: PDF final (no el provisorio).
     // Practice, Qualifying 2 y Feature Race 1 no tienen PDF en el fixture (404): quedan pendientes.
     expect([...byName.keys()].sort()).toEqual(['Feature Race 2', 'Qualifying 1', 'Sprint Race']);

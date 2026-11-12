@@ -19,6 +19,13 @@
           <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link tap-inline">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
         </p>
         <p class="hero-status" :class="state.kind">{{ state.text }}</p>
+        <p v-if="nextItem" class="hero-countdown">
+          <CountdownBadge :start-utc="nextItem.session.startUtc" :end-utc="nextItem.session.endUtc" long />
+        </p>
+        <RouterLink v-else-if="winner && tab === 'horarios'" :to="{ query: { ...$route.query, tab: 'resultados' } }" class="hero-winner">
+          <AppIcon name="trophy" :size="15" />
+          <span>Ganador: <strong>{{ winnerName }}</strong><template v-if="winner.team || winner.vehicle"> · {{ winner.team ?? winner.vehicle }}</template></span>
+        </RouterLink>
       </section>
 
       <nav v-tab-strip="$route.path" class="underline-tabs page-tabs" role="tablist" aria-label="Secciones del evento">
@@ -106,11 +113,12 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState } from 'pinia';
+import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import type { MotorEvent, Series, Source } from '@dm/shared';
+import { driverDisplayName, type EventResultsFile, type MotorEvent, type ResultRow, type Series, type Source } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import ContextPanel from '../components/ContextPanel.vue';
+import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import EventResults from '../components/EventResults.vue';
 import FollowButton from '../components/FollowButton.vue';
@@ -120,7 +128,9 @@ import SourceLink from '../components/SourceLink.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { formatDateRange, zoneDisplayName } from '../lib/format.ts';
+import { useResultsStore, type Loaded } from '../stores/results.ts';
+import { eventWinner } from '../lib/podium.ts';
+import { formatDateRange, zoneDisplayName, fixMonthAbbr } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/grid.ts';
 import { isLateNight, todayIn } from '../lib/agenda.ts';
@@ -131,7 +141,7 @@ type Tab = 'horarios' | 'contexto' | 'resultados' | 'tabla';
 /** Página de un evento (como la de un partido en FotMob). */
 export default defineComponent({
   name: 'EventView',
-  components: { AppIcon, ContextPanel, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
+  components: { AppIcon, ContextPanel, CountdownBadge, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
   directives: { tabStrip },
   data() {
     return { selected: null as GridItem | null };
@@ -139,6 +149,7 @@ export default defineComponent({
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'hasData', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
+    ...mapState(useResultsStore, { resultsMap: 'results' }),
     event(): MotorEvent | undefined {
       return this.schedule?.events.find((e) => e.id === this.$route.params.eventId);
     },
@@ -196,6 +207,29 @@ export default defineComponent({
     focusSession(): string {
       return (this.$route.query.session as string | undefined) ?? '';
     },
+    /** Próxima sesión (si no hay ninguna en vivo): para la cuenta regresiva del encabezado. */
+    nextItem(): GridItem | undefined {
+      if (this.items.some((i) => i.live)) return undefined;
+      return this.items.find((i) => !i.finished);
+    },
+    /** Todas las sesiones terminadas y con algún resultado: se muestra el ganador en el encabezado. */
+    allFinishedWithResults(): boolean {
+      return this.items.length > 0 && this.items.every((i) => i.finished) && this.hasResults;
+    },
+    /** Clave de resultados a descargar para el ganador ('' si todavía no corresponde). */
+    winnerResultsKey(): string {
+      return this.allFinishedWithResults && this.event ? `${this.event.seriesId}/${this.event.id}` : '';
+    },
+    resultsState(): Loaded<EventResultsFile> | undefined {
+      return this.event ? this.resultsMap[`${this.event.seriesId}/${this.event.id}`] : undefined;
+    },
+    winner(): ResultRow | null {
+      if (!this.allFinishedWithResults || !this.resultsState?.data) return null;
+      return eventWinner(this.resultsState.data.sessions, this.items.map((i) => i.session));
+    },
+    winnerName(): string {
+      return this.winner ? driverDisplayName(this.winner.driver) : '';
+    },
     /** Estado del evento: en vivo, próxima sesión, finalizado o a confirmar. */
     state(): { kind: string; text: string } {
       const ev = this.event!;
@@ -204,7 +238,7 @@ export default defineComponent({
       const next = this.items.find((i) => !i.finished);
       if (next) {
         const when = DateTime.fromISO(next.session.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR');
-        return { kind: 'next', text: `Próxima: ${next.session.name} · ${when.toFormat("ccc d 'de' LLL, HH:mm")}` };
+        return { kind: 'next', text: `Próxima: ${next.session.name} · ${fixMonthAbbr(when.toFormat("ccc d 'de' LLL, HH:mm"))}` };
       }
       if (ev.dateEnd < todayIn(this.now, ev.tz)) return { kind: 'done', text: 'Finalizado' };
       if (!this.items.length) return { kind: 'pending', text: 'Horarios a confirmar' };
@@ -212,12 +246,20 @@ export default defineComponent({
     },
   },
   watch: {
+    /** El ganador se busca solo si el evento terminó (los resultados se descargan una vez por evento). */
+    winnerResultsKey: {
+      immediate: true,
+      handler(key: string) {
+        if (key && this.event) void this.loadResults(this.event.seriesId, this.event.id);
+      },
+    },
     /** Al cambiar de pestaña (p. ej. "Ponerme en contexto" desde la ficha de la sesión) se cierra la ficha. */
     tab() {
       this.selected = null;
     },
   },
   methods: {
+    ...mapActions(useResultsStore, ['loadResults']),
     setTab(tab: Tab) {
       void this.$router.replace({ query: { ...this.$route.query, tab } });
     },
@@ -241,6 +283,29 @@ a.circuit-link {
   text-decoration: underline;
   text-decoration-color: color-mix(in srgb, var(--text) 40%, transparent);
   text-underline-offset: 2px;
+}
+
+.hero-countdown {
+  margin: 0.35rem 0 0;
+}
+
+a.hero-winner {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  min-height: 32px;
+  margin-top: 0.2rem;
+  color: var(--text);
+  font-size: 0.9rem;
+}
+
+a.hero-winner svg {
+  color: var(--accent);
+  flex: none;
+}
+
+a.hero-winner:hover {
+  text-decoration: none;
 }
 
 .day-card {

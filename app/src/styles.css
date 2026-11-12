@@ -872,7 +872,11 @@ li.stretch {
   position: relative;
 }
 
+/* El link en sí también mide ≥ 24 × 24 px (la fila entera ya responde por el ::after), sin mover el renglón. */
 a.stretch-link {
+  display: inline-block;
+  padding: 0.3rem;
+  margin: -0.3rem;
   color: var(--text);
 }
 
@@ -904,4 +908,195 @@ a.team-link {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+}
+
+/*
+ * ── Escritorio (≥ 1024 px) ──
+ * El riel lateral y los anchos de columna están en App.vue. Acá, las vistas que usan dos columnas.
+ * Todo va dentro de media queries: el celular y la tablet no cambian.
+ */
+:root {
+  --rail-w: 0px;
+}
+
+@media (min-width: 1024px) {
+  :root {
+    --rail-w: 96px;
+  }
+
+  /*
+   * Columna lateral sin tocar la plantilla: el contenedor es una grilla de muchas filas "auto" (vacías miden 0)
+   * y una última "1fr". El bloque lateral ocupa todas las filas en la segunda columna; si es más alto que la
+   * columna principal, el sobrante va a la fila 1fr y no separa los elementos de la izquierda.
+   */
+  /* Dentro de las vistas anchas la página usa todo el ancho de la vista (1200 px como máximo). */
+  :is(.agenda-view, .following-view) > .page {
+    max-width: none;
+  }
+
+  .agenda-view > .page {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    grid-template-rows: repeat(150, auto) 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .agenda-view > .page > * {
+    grid-column: 1;
+  }
+
+  .agenda-view > .page > .following-block {
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
+
+  .agenda-view .following-block {
+    margin-top: 0;
+  }
+
+  .agenda-view .following-block .block-title {
+    margin-top: 0;
+  }
+
+  /* El botón "Hoy" queda centrado en el área de contenido (sin barra de abajo). */
+  .shell .today-fab {
+    left: calc(50% + var(--rail-w) / 2);
+    bottom: calc(1.25rem + var(--safe-bottom));
+  }
+
+  /*
+   * Fichas (evento, categoría, piloto, equipo, circuito): el encabezado de color queda como panel lateral fijo
+   * a la izquierda y las pestañas con su contenido ocupan la columna derecha.
+   */
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view) {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    grid-template-rows: repeat(8, auto) 1fr;
+    column-gap: 1.5rem;
+    align-items: start;
+    padding: 0 1.5rem;
+  }
+
+  /* Sin márgenes automáticos: en una grilla achicarían el elemento a su contenido. */
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view) > * {
+    grid-column: 2;
+    margin-inline: 0;
+  }
+
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view) > .hero {
+    grid-column: 1;
+    grid-row: 1 / -1;
+    position: sticky;
+    top: calc(var(--header-h) + var(--safe-top) + 0.75rem);
+    margin-top: 0.75rem;
+    border-radius: var(--radius);
+    padding: 1.1rem 1.1rem 1rem;
+  }
+
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view) .hero-actions {
+    flex-wrap: wrap;
+  }
+
+  /* Sin encabezado (no encontrado, cargando): el aviso usa todo el ancho. */
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view):not(:has(> .hero)) > * {
+    grid-column: 1 / -1;
+  }
+
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view) > .page {
+    max-width: none;
+    padding-inline: 0;
+  }
+
+  :is(.event-view, .category-view, .driver-view, .team-view, .circuit-view) > .page-tabs {
+    margin-top: 0.75rem;
+    border-radius: var(--radius) var(--radius) 0 0;
+  }
+
+  /* Horarios del evento: un día por tarjeta, en grilla. */
+  .event-view .page > section:has(> .day-card) {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    column-gap: 0.75rem;
+    align-items: start;
+  }
+
+  .event-view .page > section:has(> .day-card) > :not(.day-card) {
+    grid-column: 1 / -1;
+  }
+
+  /* Búsqueda: resultados agrupados en dos columnas (cada grupo entero en una). */
+  .shell .search-view {
+    max-width: var(--content-w);
+  }
+
+  .search-view:has(> .list-card, > .news-list) {
+    column-count: 2;
+    column-gap: 1.5rem;
+  }
+
+  .search-view > :is(.search-box, .did-you-mean, .card.empty, p) {
+    column-span: all;
+  }
+
+  /* Relleno en vez de margen: el margen se recorta arriba de la segunda columna y los títulos quedarían desparejos. */
+  .search-view > .section-title {
+    break-after: avoid;
+    margin-top: 0;
+    padding-top: 0.85rem;
+  }
+
+  .search-view > :is(.list-card, .news-list) {
+    break-inside: avoid;
+  }
+
+  /* Siguiendo: más tarjetas por fila. */
+  .following-view .follow-grid {
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+  }
+
+  /* Búsqueda vacía y Siguiendo: "Empezá por acá" y las recomendaciones, una al lado de la otra. */
+  .search-view:has(> .recommendations, > .starter-list),
+  .following-view .page:has(> .recommendations, > .starter-list) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 1.5rem;
+    align-items: start;
+  }
+
+  .search-view:has(> .recommendations, > .starter-list) > *,
+  .following-view .page:has(> .recommendations, > .starter-list) > * {
+    grid-column: 1 / -1;
+  }
+
+  .search-view > :is(.recommendations, .starter-list),
+  .following-view .page > :is(.recommendations, .starter-list) {
+    grid-column: auto;
+  }
+}
+
+@media (min-width: 1280px) {
+  :root {
+    --rail-w: 232px;
+  }
+}
+
+/* Resumen de la categoría en dos columnas solo cuando la columna derecha de la ficha alcanza (≈ 800 px). */
+@media (min-width: 1400px) {
+  .category-view .page:has(> .desk-side) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 280px;
+    grid-template-rows: repeat(20, auto) 1fr;
+    column-gap: 1.25rem;
+    align-items: start;
+  }
+
+  .category-view .page:has(> .desk-side) > * {
+    grid-column: 1;
+  }
+
+  .category-view .page > .desk-side {
+    grid-column: 2;
+    grid-row: 1 / -1;
+  }
 }

@@ -78,7 +78,9 @@ export interface MotorEvent {
   seriesId: string;
   name: string;
   round?: number;
+  /** Nombre del circuito o sede ("A confirmar" si todavía no se conoce). */
   circuit: string;
+  /** País en español ("Estados Unidos", "Reino Unido"); vacío si la fuente no lo informa. */
   country: string;
   /** Zona IANA del circuito, p. ej. "Asia/Qatar". */
   tz: string;
@@ -106,8 +108,13 @@ export interface Session {
   eventId: string;
   seriesId: string;
   type: SessionType;
-  /** Nombre tal como lo publica la fuente (o normalizado en español). */
+  /** Nombre en español ("Práctica 1", "Clasificación", "Carrera principal"): traducido si la fuente está en otro idioma. */
   name: string;
+  /**
+   * Nombre tal como lo publica la fuente, solo si difiere de `name` ("Practice 1", "Feature Race"). Sirve para
+   * unir resultados y tiempos en vivo que vienen con el nombre original. Ausente en datos viejos.
+   */
+  originalName?: string;
   startUtc: string;
   endUtc: string;
   /** true cuando la fuente no publica la hora de fin y se estimó con config/durations.json. */

@@ -55,6 +55,9 @@
                 <span class="block small" :class="next.live ? 'live-text' : next.nextSession ? 'accent-text' : 'warn-text'">
                   {{ nextText }}
                 </span>
+                <span v-if="next.nextSession && !next.live" class="block countdown-line">
+                  <CountdownBadge :start-utc="next.nextSession.startUtc" long />
+                </span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
@@ -74,6 +77,7 @@
                   <span class="grow">
                     {{ ev.name }}
                     <span class="block small dim">{{ dateRange(ev.dateStart, ev.dateEnd) }} · {{ ev.circuit }}</span>
+                    <PodiumLine v-if="eventHasResults(ev.id)" :series-id="ev.seriesId" :event-id="ev.id" />
                   </span>
                   <span v-if="eventHasResults(ev.id)" class="badge badge-ok">Resultados</span>
                   <AppIcon name="chevron" :size="16" class="dim" />
@@ -82,7 +86,7 @@
             </ul>
           </section>
 
-          <section class="card">
+          <section class="card desk-side">
             <h3>Fuente de los datos</h3>
             <p class="small">
               <span class="badge" :class="statusBadge.cls">{{ statusBadge.label }}</span>
@@ -142,6 +146,7 @@
                 <span class="grow">
                   {{ ev.name }}
                   <span class="block small dim">{{ dateRange(ev.dateStart, ev.dateEnd) }} · {{ ev.circuit }}</span>
+                  <PodiumLine :series-id="ev.seriesId" :event-id="ev.id" />
                 </span>
                 <AppIcon name="chevron" :size="16" class="dim" />
               </RouterLink>
@@ -159,6 +164,7 @@ import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import { GROUP_LABELS, type MotorEvent, type Series, type SeriesStatus } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
@@ -166,10 +172,11 @@ import SourceProblem from '../components/SourceProblem.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
 import RosterPanel from '../components/RosterPanel.vue';
 import NewsList from '../components/NewsList.vue';
+import PodiumLine from '../components/PodiumLine.vue';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { formatDateRange, timeAgo, timetablesText } from '../lib/format.ts';
+import { formatDateRange, monthShort, timeAgo, timetablesText } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
@@ -179,7 +186,7 @@ type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noti
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, DataState, FollowButton, NewsList, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
+  components: { AppIcon, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
   directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
@@ -272,7 +279,7 @@ export default defineComponent({
     },
     /** "Fecha N ·" solo si el nombre del evento no lo dice ya. */
     showRound(ev: MotorEvent): boolean {
-      return !!ev.round && !/^(fecha|ronda|round)\s/i.test(ev.name);
+      return !!ev.round && !/^(fechas?|ronda|round)\s/i.test(ev.name);
     },
     isPast(ev: MotorEvent): boolean {
       return ev.dateEnd < todayIn(this.now, ev.tz);
@@ -280,9 +287,7 @@ export default defineComponent({
     dayNum(date: string): string {
       return String(Number(date.slice(8, 10)));
     },
-    monthShort(date: string): string {
-      return DateTime.fromISO(date).setLocale('es-AR').toFormat('LLL').replace('.', '');
-    },
+    monthShort,
     ago(iso: string): string {
       return timeAgo(iso, this.now);
     },
@@ -290,3 +295,9 @@ export default defineComponent({
   },
 });
 </script>
+
+<style>
+.countdown-line {
+  margin-top: 0.3rem;
+}
+</style>

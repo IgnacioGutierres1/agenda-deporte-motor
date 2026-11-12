@@ -5,7 +5,7 @@ import { createAppRouter } from './router.ts';
 import { persistStore } from './lib/storage.ts';
 import { listenInstallPrompt } from './lib/install.ts';
 import { watchForAppUpdates } from './lib/appUpdate.ts';
-import { useSettingsStore } from './stores/settings.ts';
+import { PERSISTED_SETTINGS, migrateSettings, useSettingsStore } from './stores/settings.ts';
 import { useScheduleStore } from './stores/schedule.ts';
 import './styles.css';
 
@@ -15,7 +15,7 @@ app.use(pinia);
 app.use(createAppRouter());
 
 const settings = useSettingsStore(pinia);
-persistStore(settings, ['timeZone', 'hiddenSeries', 'followedSeries', 'followedDrivers', 'followedTeams', 'notifyEnabled', 'notifyLead', 'theme', 'googleClientId', 'githubRepo', 'githubToken']);
+persistStore(settings, PERSISTED_SETTINGS, migrateSettings);
 watch(
   () => settings.theme,
   (theme) => {

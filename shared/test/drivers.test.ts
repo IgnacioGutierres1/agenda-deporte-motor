@@ -1,20 +1,27 @@
 import { describe, expect, it } from 'vitest';
+import aliasConfig from '../../config/driver-aliases.json' with { type: 'json' };
 import {
+  baseDriverId,
+  cleanDriverName,
   driverDisplayName,
   driverId,
   driverInitials,
   driverKey,
+  isBrokenDriverName,
   isDriverTable,
   isSingleDriverName,
+  knownHomonyms,
   nameQuality,
+  resolveDriverId,
 } from '../src/drivers.ts';
 
 describe('pilotos', () => {
   it('une las variantes de un mismo nombre publicadas por distintos sitios', () => {
     const variants = ['Agustín CANAPINO', 'Canapino, Agustin', 'Agustín Canapino', 'CANAPINO, Agustín'];
-    expect(new Set(variants.map(driverId))).toEqual(new Set(['agustin-canapino']));
+    expect(new Set(variants.map((n) => driverId(n)))).toEqual(new Set(['agustin-canapino']));
     expect(driverKey('A. Palmowski PAL')).toBe('a palmowski');
-    expect(driverKey('C. Bättig (WCD) BAE')).toBe('battig c wcd');
+    // "(WCD)" (invitado) no es parte del nombre.
+    expect(driverKey('C. Bättig (WCD) BAE')).toBe('battig c');
     // Apellido de tres letras en mayúsculas (listas de SRO): no es un código.
     expect(driverId('Mikkel MAC')).toBe('mac-mikkel');
     expect(driverId('Alex AKA')).toBe('aka-alex');
@@ -70,5 +77,64 @@ describe('grupos de fichas de pilotos', () => {
     }
     expect(counts.size).toBeGreaterThan(DRIVER_SHARDS * 0.9);
     expect(Math.max(...counts.values())).toBeLessThan(30);
+  });
+});
+
+describe('nombres sucios, alias y homónimos (config/driver-aliases.json)', () => {
+  it('quita notas al pie y etiquetas de invitado; "(h)" va al final', () => {
+    expect(driverDisplayName('Alex Sedgwick***')).toBe('Alex Sedgwick');
+    expect(driverId('Alex Sedgwick***')).toBe(driverId('Alex Sedgwick'));
+    expect(driverDisplayName('A. Danielsson (WCD) DAN')).toBe('A. Danielsson');
+    expect(driverDisplayName('Gustavo (H) TADEI')).toBe('Gustavo Tadei (h)');
+    // El hijo no se une con el padre.
+    expect(driverId('Gustavo (h) Tadei')).not.toBe(driverId('Gustavo Tadei'));
+    expect(cleanDriverName('Name†')).toBe('Name');
+  });
+
+  it('repara letras perdidas y rechaza las que no se pueden reparar', () => {
+    expect(driverId('MENENDEZ, AGUST?N')).toBe('agustin-menendez');
+    expect(driverDisplayName('MENENDEZ, AGUST?N')).toBe('Agustín Menendez');
+    expect(isBrokenDriverName('MENENDEZ, AGUST?N')).toBe(false);
+    expect(isBrokenDriverName('P?REZ, JUAN')).toBe(true);
+    expect(nameQuality('Alex Sedgwick***')).toBeLessThan(nameQuality('Alex Sedgwick'));
+  });
+
+  it('fuentes en español: acento del nombre de pila escrito en mayúsculas', () => {
+    expect(driverDisplayName('CORTINA, JOAQUIN', { spanish: true })).toBe('Joaquín Cortina');
+    expect(driverDisplayName('VAZQUEZ, JUAN MARTIN', { spanish: true })).toBe('Juan Martín Vazquez');
+    // Sin coma no se sabe si "MARTIN" es nombre o apellido: no se toca.
+    expect(driverDisplayName('MARTIN AGUSTIN', { spanish: true })).toBe('Martin Agustin');
+    expect(driverDisplayName('NICOLAS PEZZUCCHI', { spanish: true })).toBe('Nicolás Pezzucchi');
+    // Fuera de las categorías argentinas, tal cual.
+    expect(driverDisplayName('CORTINA, JOAQUIN')).toBe('Joaquin Cortina');
+    // Lo que la fuente escribió con minúsculas se respeta.
+    expect(driverDisplayName('Joaquin Cortina', { spanish: true })).toBe('Joaquin Cortina');
+  });
+
+  it('variantes conocidas van al id canónico; homónimos conocidos se separan por categoría', () => {
+    expect(driverId('Cam Waters')).toBe('cameron-waters');
+    expect(driverId('Alexey Nesov')).toBe('aleksei-nesov');
+    expect(driverId('Jamie Alan Day')).toBe('day-jamie');
+    expect(baseDriverId('Cam Waters')).toBe('cam-waters');
+    expect(driverId('Josh Berry')).toBe('berry-josh');
+    expect(driverId('Josh Berry', 'nascar-cup')).toBe('berry-josh');
+    expect(driverId('Josh Berry', '24h-series')).toBe('berry-josh-24h');
+    expect(resolveDriverId('dario-franchitti', '24h-series')).toBe('dario-franchitti-24h');
+  });
+
+  it('config/driver-aliases.json es consistente', () => {
+    const slug = /^[a-z0-9]+(-[a-z0-9]+)*$/;
+    for (const [alias, canonical] of Object.entries(aliasConfig.aliases)) {
+      expect(alias, alias).toMatch(slug);
+      expect(canonical, canonical).toMatch(slug);
+      // Sin cadenas: el destino no puede ser a su vez un alias.
+      expect(aliasConfig.aliases, canonical).not.toHaveProperty(canonical);
+    }
+    for (const rule of aliasConfig.doNotMerge) {
+      expect(rule.as).toMatch(slug);
+      expect(rule.series.length).toBeGreaterThan(0);
+      expect(aliasConfig.aliases).not.toHaveProperty(rule.id);
+    }
+    expect(knownHomonyms()).toContainEqual(['berry-josh', 'berry-josh-24h']);
   });
 });

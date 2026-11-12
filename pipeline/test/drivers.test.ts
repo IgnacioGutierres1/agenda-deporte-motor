@@ -170,7 +170,7 @@ describe('listas de inscriptos en el índice de pilotos', () => {
       name: 'Georgios Kolovos',
       country: 'Germany',
       entries: [],
-      lineups: [{ seriesId: 'elms', team: 'PROTON COMPETITION', number: '9', class: 'LMP2' }],
+      lineups: [{ seriesId: 'elms', team: 'Proton Competition', number: '9', class: 'LMP2' }],
       recent: [],
     });
     expect(engel!.country).toBe('Germany');

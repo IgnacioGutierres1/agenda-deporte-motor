@@ -45,6 +45,9 @@
               <strong>{{ agendaNext.series.shortName || agendaNext.series.name }}</strong>
               <span> · {{ agendaNext.session.name }}</span>
               <span class="block small accent-text">{{ nextWhen }}</span>
+              <span class="block empty-day-countdown">
+                <CountdownBadge :start-utc="agendaNext.session.startUtc" :end-utc="agendaNext.session.endUtc" long />
+              </span>
             </span>
             <AppIcon name="chevron" :size="16" class="dim" />
           </RouterLink>
@@ -78,6 +81,7 @@
             :items="c.items"
             :live="c.live"
             :show-day="isWeekend"
+            :next-id="nextSessionId"
             :collapsed="isCollapsed(c.key, false)"
             @toggle="toggle(c.key, false)"
             @select="selected = $event"
@@ -109,6 +113,7 @@
             :items="c.items"
             :live="c.live"
             :show-day="isWeekend"
+            :next-id="nextSessionId"
             :collapsed="isCollapsed(c.key, true)"
             @toggle="toggle(c.key, true)"
             @select="selected = $event"
@@ -130,6 +135,7 @@ import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import type { MotorEvent, Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import EventCard from '../components/EventCard.vue';
 import PendingList from '../components/PendingList.vue';
@@ -148,14 +154,14 @@ import {
   type AgendaCard,
   type NextSession,
 } from '../lib/agenda.ts';
-import { zoneDisplayName } from '../lib/format.ts';
+import { zoneDisplayName, fixMonthAbbr } from '../lib/format.ts';
 import { centerChild, tabStrip } from '../lib/tabStrip.ts';
 import type { GridItem, PendingItem } from '../lib/grid.ts';
 
 /** Pantalla principal: franja de días y sesiones agrupadas por evento (estilo FotMob). */
 export default defineComponent({
   name: 'AgendaView',
-  components: { AppIcon, DataState, EventCard, PendingList, SeriesCrest, SessionSheet, StarterPack },
+  components: { AppIcon, CountdownBadge, DataState, EventCard, PendingList, SeriesCrest, SessionSheet, StarterPack },
   directives: { tabStrip },
   data() {
     return {
@@ -210,6 +216,17 @@ export default defineComponent({
       const late = start.hour < 7 ? ' (madrugada)' : '';
       return `${rel.charAt(0).toUpperCase()}${rel.slice(1)} a las ${start.toFormat('HH:mm')}${late}`;
     },
+    /** Próxima sesión (que todavía no empezó) del día o del finde elegido: se destaca con su cuenta regresiva. */
+    nextSessionId(): string {
+      let best: GridItem | undefined;
+      for (const card of this.agendaCards) {
+        for (const item of card.items) {
+          if (item.live || item.finished || item.session.startUtc <= this.now) continue;
+          if (!best || item.session.startUtc < best.session.startUtc) best = item;
+        }
+      }
+      return best?.session.id ?? '';
+    },
     cardsSplit(): { followed: AgendaCard[]; rest: AgendaCard[] } {
       return splitFollowed(this.agendaCards, this.followedIds);
     },
@@ -245,9 +262,9 @@ export default defineComponent({
       const n = this.nextFollowed;
       if (!n) return '';
       if (n.startUtc) {
-        return DateTime.fromISO(n.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat("cccc d 'de' LLL · HH:mm");
+        return fixMonthAbbr(DateTime.fromISO(n.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat("cccc d 'de' LLL · HH:mm"));
       }
-      return DateTime.fromISO(n.event.dateStart).setLocale('es-AR').toFormat("cccc d 'de' LLL") + ' · horarios a confirmar';
+      return fixMonthAbbr(DateTime.fromISO(n.event.dateStart).setLocale('es-AR').toFormat("cccc d 'de' LLL")) + ' · horarios a confirmar';
     },
     summary(): string {
       const names = [...new Set(this.otherCards.map((c) => c.series.shortName || c.series.name))];
@@ -416,6 +433,10 @@ export default defineComponent({
   padding: 0.85rem 0.85rem 0.35rem;
   font-weight: 800;
   font-size: 1rem;
+}
+
+.empty-day-countdown {
+  margin-top: 0.3rem;
 }
 
 .empty-day-next {

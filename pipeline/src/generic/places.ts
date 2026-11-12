@@ -7,59 +7,61 @@ import { normalizeForMatch } from '../validate.ts';
 
 interface Country {
   name: string;
+  /** Nombre en español (el que se publica en MotorEvent.country). */
+  es: string;
   tz: string;
   codes: string[];
   aliases?: string[];
 }
 
 const COUNTRIES: Country[] = [
-  { name: 'Argentina', tz: 'America/Argentina/Buenos_Aires', codes: ['AR', 'ARG'] },
-  { name: 'Australia', tz: 'Australia/Sydney', codes: ['AU', 'AUS'] },
-  { name: 'Austria', tz: 'Europe/Vienna', codes: ['AT', 'AUT'] },
-  { name: 'Azerbaijan', tz: 'Asia/Baku', codes: ['AZ', 'AZE'], aliases: ['azerbaiyan'] },
-  { name: 'Bahrain', tz: 'Asia/Bahrain', codes: ['BH', 'BHR'], aliases: ['barein', 'bahrein'] },
-  { name: 'Belgium', tz: 'Europe/Brussels', codes: ['BE', 'BEL'], aliases: ['belgica'] },
-  { name: 'Brazil', tz: 'America/Sao_Paulo', codes: ['BR', 'BRA'], aliases: ['brasil'] },
-  { name: 'Canada', tz: 'America/Toronto', codes: ['CA', 'CAN'] },
-  { name: 'Chile', tz: 'America/Santiago', codes: ['CL', 'CHL'] },
-  { name: 'China', tz: 'Asia/Shanghai', codes: ['CN', 'CHN'] },
-  { name: 'Czech Republic', tz: 'Europe/Prague', codes: ['CZ', 'CZE'], aliases: ['czechia', 'republica checa'] },
-  { name: 'Denmark', tz: 'Europe/Copenhagen', codes: ['DK', 'DNK'] },
-  { name: 'Finland', tz: 'Europe/Helsinki', codes: ['FI', 'FIN'] },
-  { name: 'France', tz: 'Europe/Paris', codes: ['FR', 'FRA'], aliases: ['francia'] },
-  { name: 'Germany', tz: 'Europe/Berlin', codes: ['DE', 'DEU', 'GER'], aliases: ['alemania', 'deutschland'] },
-  { name: 'Great Britain', tz: 'Europe/London', codes: ['GB', 'GBR', 'UK'], aliases: ['united kingdom', 'england', 'gran bretana', 'reino unido', 'inglaterra'] },
-  { name: 'Hungary', tz: 'Europe/Budapest', codes: ['HU', 'HUN'], aliases: ['hungria'] },
-  { name: 'India', tz: 'Asia/Kolkata', codes: ['IN', 'IND'] },
-  { name: 'Indonesia', tz: 'Asia/Makassar', codes: ['ID', 'IDN'] },
-  { name: 'Italy', tz: 'Europe/Rome', codes: ['IT', 'ITA'], aliases: ['italia'] },
-  { name: 'Japan', tz: 'Asia/Tokyo', codes: ['JP', 'JPN'], aliases: ['japon'] },
-  { name: 'Kazakhstan', tz: 'Asia/Almaty', codes: ['KZ', 'KAZ'] },
-  { name: 'Korea', tz: 'Asia/Seoul', codes: ['KR', 'KOR'], aliases: ['south korea', 'corea'] },
-  { name: 'Macau', tz: 'Asia/Macau', codes: ['MO', 'MAC'], aliases: ['macao'] },
-  { name: 'Malaysia', tz: 'Asia/Kuala_Lumpur', codes: ['MY', 'MYS', 'MAS'], aliases: ['malasia'] },
-  { name: 'Mexico', tz: 'America/Mexico_City', codes: ['MX', 'MEX'] },
-  { name: 'Monaco', tz: 'Europe/Monaco', codes: ['MC', 'MCO', 'MON'] },
-  { name: 'Morocco', tz: 'Africa/Casablanca', codes: ['MA', 'MAR'], aliases: ['marruecos'] },
-  { name: 'Netherlands', tz: 'Europe/Amsterdam', codes: ['NL', 'NLD', 'NED'], aliases: ['holland', 'paises bajos', 'holanda'] },
-  { name: 'New Zealand', tz: 'Pacific/Auckland', codes: ['NZ', 'NZL'], aliases: ['nueva zelanda'] },
-  { name: 'Paraguay', tz: 'America/Asuncion', codes: ['PY', 'PRY'] },
-  { name: 'Poland', tz: 'Europe/Warsaw', codes: ['PL', 'POL'] },
-  { name: 'Portugal', tz: 'Europe/Lisbon', codes: ['PT', 'PRT', 'POR'] },
-  { name: 'Qatar', tz: 'Asia/Qatar', codes: ['QA', 'QAT'] },
-  { name: 'Saudi Arabia', tz: 'Asia/Riyadh', codes: ['SA', 'SAU', 'KSA'], aliases: ['arabia saudita', 'arabia saudi'] },
-  { name: 'Singapore', tz: 'Asia/Singapore', codes: ['SG', 'SGP'], aliases: ['singapur'] },
-  { name: 'Slovakia', tz: 'Europe/Bratislava', codes: ['SK', 'SVK'] },
-  { name: 'South Africa', tz: 'Africa/Johannesburg', codes: ['ZA', 'ZAF', 'RSA'], aliases: ['sudafrica'] },
-  { name: 'Spain', tz: 'Europe/Madrid', codes: ['ES', 'ESP'], aliases: ['espana'] },
-  { name: 'Sweden', tz: 'Europe/Stockholm', codes: ['SE', 'SWE'] },
-  { name: 'Switzerland', tz: 'Europe/Zurich', codes: ['CH', 'CHE', 'SUI'] },
-  { name: 'Thailand', tz: 'Asia/Bangkok', codes: ['TH', 'THA'], aliases: ['tailandia'] },
-  { name: 'Turkey', tz: 'Europe/Istanbul', codes: ['TR', 'TUR'], aliases: ['turkiye', 'turquia'] },
-  { name: 'United Arab Emirates', tz: 'Asia/Dubai', codes: ['AE', 'ARE', 'UAE'], aliases: ['abu dhabi', 'dubai', 'emiratos arabes unidos'] },
-  { name: 'United States', tz: 'America/New_York', codes: ['US', 'USA'], aliases: ['united states of america', 'estados unidos', 'eeuu', 'ee. uu.'] },
-  { name: 'Uruguay', tz: 'America/Montevideo', codes: ['UY', 'URY', 'URU'] },
-  { name: 'Vietnam', tz: 'Asia/Ho_Chi_Minh', codes: ['VN', 'VNM'] },
+  { name: 'Argentina', es: 'Argentina', tz: 'America/Argentina/Buenos_Aires', codes: ['AR', 'ARG'] },
+  { name: 'Australia', es: 'Australia', tz: 'Australia/Sydney', codes: ['AU', 'AUS'] },
+  { name: 'Austria', es: 'Austria', tz: 'Europe/Vienna', codes: ['AT', 'AUT'] },
+  { name: 'Azerbaijan', es: 'Azerbaiyán', tz: 'Asia/Baku', codes: ['AZ', 'AZE'], aliases: ['azerbaiyan'] },
+  { name: 'Bahrain', es: 'Baréin', tz: 'Asia/Bahrain', codes: ['BH', 'BHR'], aliases: ['barein', 'bahrein'] },
+  { name: 'Belgium', es: 'Bélgica', tz: 'Europe/Brussels', codes: ['BE', 'BEL'], aliases: ['belgica'] },
+  { name: 'Brazil', es: 'Brasil', tz: 'America/Sao_Paulo', codes: ['BR', 'BRA'], aliases: ['brasil'] },
+  { name: 'Canada', es: 'Canadá', tz: 'America/Toronto', codes: ['CA', 'CAN'] },
+  { name: 'Chile', es: 'Chile', tz: 'America/Santiago', codes: ['CL', 'CHL'] },
+  { name: 'China', es: 'China', tz: 'Asia/Shanghai', codes: ['CN', 'CHN'] },
+  { name: 'Czech Republic', es: 'Chequia', tz: 'Europe/Prague', codes: ['CZ', 'CZE'], aliases: ['czechia', 'republica checa', 'czech'] },
+  { name: 'Denmark', es: 'Dinamarca', tz: 'Europe/Copenhagen', codes: ['DK', 'DNK'] },
+  { name: 'Finland', es: 'Finlandia', tz: 'Europe/Helsinki', codes: ['FI', 'FIN'] },
+  { name: 'France', es: 'Francia', tz: 'Europe/Paris', codes: ['FR', 'FRA'], aliases: ['francia'] },
+  { name: 'Germany', es: 'Alemania', tz: 'Europe/Berlin', codes: ['DE', 'DEU', 'GER'], aliases: ['alemania', 'deutschland'] },
+  { name: 'Great Britain', es: 'Reino Unido', tz: 'Europe/London', codes: ['GB', 'GBR', 'UK'], aliases: ['united kingdom', 'england', 'gran bretana', 'reino unido', 'inglaterra'] },
+  { name: 'Hungary', es: 'Hungría', tz: 'Europe/Budapest', codes: ['HU', 'HUN'], aliases: ['hungria'] },
+  { name: 'India', es: 'India', tz: 'Asia/Kolkata', codes: ['IN', 'IND'] },
+  { name: 'Indonesia', es: 'Indonesia', tz: 'Asia/Makassar', codes: ['ID', 'IDN'] },
+  { name: 'Italy', es: 'Italia', tz: 'Europe/Rome', codes: ['IT', 'ITA'], aliases: ['italia'] },
+  { name: 'Japan', es: 'Japón', tz: 'Asia/Tokyo', codes: ['JP', 'JPN'], aliases: ['japon'] },
+  { name: 'Kazakhstan', es: 'Kazajistán', tz: 'Asia/Almaty', codes: ['KZ', 'KAZ'] },
+  { name: 'Korea', es: 'Corea del Sur', tz: 'Asia/Seoul', codes: ['KR', 'KOR'], aliases: ['south korea', 'corea'] },
+  { name: 'Macau', es: 'Macao', tz: 'Asia/Macau', codes: ['MO', 'MAC'], aliases: ['macao'] },
+  { name: 'Malaysia', es: 'Malasia', tz: 'Asia/Kuala_Lumpur', codes: ['MY', 'MYS', 'MAS'], aliases: ['malasia'] },
+  { name: 'Mexico', es: 'México', tz: 'America/Mexico_City', codes: ['MX', 'MEX'] },
+  { name: 'Monaco', es: 'Mónaco', tz: 'Europe/Monaco', codes: ['MC', 'MCO', 'MON'] },
+  { name: 'Morocco', es: 'Marruecos', tz: 'Africa/Casablanca', codes: ['MA', 'MAR'], aliases: ['marruecos'] },
+  { name: 'Netherlands', es: 'Países Bajos', tz: 'Europe/Amsterdam', codes: ['NL', 'NLD', 'NED'], aliases: ['holland', 'paises bajos', 'holanda'] },
+  { name: 'New Zealand', es: 'Nueva Zelanda', tz: 'Pacific/Auckland', codes: ['NZ', 'NZL'], aliases: ['nueva zelanda'] },
+  { name: 'Paraguay', es: 'Paraguay', tz: 'America/Asuncion', codes: ['PY', 'PRY'] },
+  { name: 'Poland', es: 'Polonia', tz: 'Europe/Warsaw', codes: ['PL', 'POL'] },
+  { name: 'Portugal', es: 'Portugal', tz: 'Europe/Lisbon', codes: ['PT', 'PRT', 'POR'] },
+  { name: 'Qatar', es: 'Catar', tz: 'Asia/Qatar', codes: ['QA', 'QAT'] },
+  { name: 'Saudi Arabia', es: 'Arabia Saudita', tz: 'Asia/Riyadh', codes: ['SA', 'SAU', 'KSA'], aliases: ['arabia saudita', 'arabia saudi'] },
+  { name: 'Singapore', es: 'Singapur', tz: 'Asia/Singapore', codes: ['SG', 'SGP'], aliases: ['singapur'] },
+  { name: 'Slovakia', es: 'Eslovaquia', tz: 'Europe/Bratislava', codes: ['SK', 'SVK'] },
+  { name: 'South Africa', es: 'Sudáfrica', tz: 'Africa/Johannesburg', codes: ['ZA', 'ZAF', 'RSA'], aliases: ['sudafrica'] },
+  { name: 'Spain', es: 'España', tz: 'Europe/Madrid', codes: ['ES', 'ESP'], aliases: ['espana'] },
+  { name: 'Sweden', es: 'Suecia', tz: 'Europe/Stockholm', codes: ['SE', 'SWE'] },
+  { name: 'Switzerland', es: 'Suiza', tz: 'Europe/Zurich', codes: ['CH', 'CHE', 'SUI'] },
+  { name: 'Thailand', es: 'Tailandia', tz: 'Asia/Bangkok', codes: ['TH', 'THA'], aliases: ['tailandia'] },
+  { name: 'Turkey', es: 'Turquía', tz: 'Europe/Istanbul', codes: ['TR', 'TUR'], aliases: ['turkiye', 'turquia'] },
+  { name: 'United Arab Emirates', es: 'Emiratos Árabes Unidos', tz: 'Asia/Dubai', codes: ['AE', 'ARE', 'UAE'], aliases: ['abu dhabi', 'dubai', 'emiratos arabes unidos', 'uae'] },
+  { name: 'United States', es: 'Estados Unidos', tz: 'America/New_York', codes: ['US', 'USA'], aliases: ['united states of america', 'estados unidos', 'eeuu', 'ee. uu.'] },
+  { name: 'Uruguay', es: 'Uruguay', tz: 'America/Montevideo', codes: ['UY', 'URY', 'URU'] },
+  { name: 'Vietnam', es: 'Vietnam', tz: 'Asia/Ho_Chi_Minh', codes: ['VN', 'VNM'] },
 ];
 
 const US_STATES: Record<string, string> = {
@@ -117,8 +119,28 @@ function findCountry(country: string): Country | undefined {
   if (!key) return undefined;
   const upper = country.trim().toUpperCase();
   return COUNTRIES.find(
-    (c) => normalizeKey(c.name) === key || c.codes.includes(upper) || (c.aliases ?? []).includes(key),
+    (c) =>
+      normalizeKey(c.name) === key || normalizeKey(c.es) === key || c.codes.includes(upper) || (c.aliases ?? []).includes(key),
   );
+}
+
+/** Zonas IANA de Canadá (para corregir eventos canadienses publicados como "United States", p. ej. Markham). */
+const CANADA_ZONES = /^America\/(Toronto|Montreal|Vancouver|Edmonton|Winnipeg|Halifax|Regina|St_Johns|Moncton)$/;
+
+/**
+ * País en español para publicar en MotorEvent.country, a partir del nombre (inglés o español), ISO2 o ISO3:
+ * "United States" / "USA" / "Estados Unidos" -> "Estados Unidos", "Great Britain" / "United Kingdom" ->
+ * "Reino Unido". Con la zona del circuito se corrige un evento canadiense publicado como EE. UU. y, si falta el
+ * país, se deduce cuando la zona es de un solo país de la tabla. Si no se conoce, el texto original.
+ */
+export function countryEs(country: string, tz?: string): string {
+  let c = findCountry(country);
+  if (tz && c?.name === 'United States' && CANADA_ZONES.test(tz)) c = findCountry('Canada');
+  if (!c && !country.trim() && tz) {
+    const byZone = COUNTRIES.filter((x) => x.tz === tz);
+    if (byZone.length === 1) c = byZone[0];
+  }
+  return c?.es ?? country.trim();
 }
 
 /** Nombre del país en inglés a partir de un nombre, ISO2 o ISO3 (o el texto original si no se conoce). */

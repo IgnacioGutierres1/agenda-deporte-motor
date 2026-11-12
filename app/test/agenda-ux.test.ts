@@ -11,7 +11,7 @@ import {
   shortDayLabel,
 } from '../src/lib/agenda.ts';
 import { sessionsInPeriod } from '../src/lib/grid.ts';
-import { zoneDisplayName } from '../src/lib/format.ts';
+import { fixMonthAbbr, monthShort, zoneDisplayName } from '../src/lib/format.ts';
 import { centeredScrollLeft } from '../src/lib/tabStrip.ts';
 import { useScheduleStore } from '../src/stores/schedule.ts';
 import { NOW, scheduleFixture } from './helpers.ts';
@@ -143,5 +143,15 @@ describe('franjas deslizables', () => {
     expect(centeredScrollLeft(fakeStrip(500), child(-500, 90))).toBe(0);
     // La última no pasa del máximo.
     expect(centeredScrollLeft(fakeStrip(0), child(780, 20))).toBe(500);
+  });
+});
+
+describe('abreviatura de los meses', () => {
+  it('septiembre es "sep" como el resto (no "sept")', () => {
+    expect(monthShort('2026-09-12')).toBe('sep');
+    expect(monthShort('2026-11-12')).toBe('nov');
+    expect(fixMonthAbbr('jue, 3 sept')).toBe('jue, 3 sep');
+    expect(fixMonthAbbr('Sept.')).toBe('Sep');
+    expect(fixMonthAbbr('septiembre')).toBe('septiembre');
   });
 });

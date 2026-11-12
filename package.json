@@ -19,6 +19,7 @@
     "preview": "npm run preview -w app",
     "pipeline": "tsx pipeline/src/run.ts",
     "discovery": "tsx pipeline/src/discovery/cli.ts",
+    "drivers:candidates": "tsx pipeline/src/drivers-candidates.ts",
     "news": "tsx pipeline/src/news/cli.ts",
     "test": "vitest run",
     "test:watch": "vitest",

@@ -2,7 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildDrivers } from '../src/core/drivers.ts';
 import { acoStandingsTables, acoTableTitle } from '../src/generic/aco-standings.ts';
 import { createGenericAdapter } from '../src/generic/index.ts';
-import { imsaCalendar, imsaDateRange, imsaSessions } from '../src/generic/imsa.ts';
+import { imsaCalendar, imsaDateRange, imsaSessions, imsaStandingsApi, imsaStandingsSeason, imsaStandingsTables } from '../src/generic/imsa.ts';
 import { dtmDriverName, dtmStandingsTables, findRecipe } from '../src/generic/recipes.ts';
 import { standingsFileSchema, type StandingsFile } from '@dm/shared';
 import { fakeGemini, fakeHttp, fixture, genericSeries, testContext } from './fakes.ts';
@@ -157,5 +157,94 @@ describe('IMSA: sitio nuevo (imsa.com/{año}/schedule)', () => {
       ['Chevrolet Grand Prix', 3, '2027-07-09'],
     ]);
     expect(http.requested).toContain('https://www.imsa.com/2026/schedule?series=weathertech');
+  });
+});
+
+describe('IMSA: campeonato por lectura directa (/api/imsa-standings)', () => {
+  const IMSA_STANDINGS = 'https://www.imsa.com/weathertech/standings';
+  const imsa = genericSeries('imsa', 'IMSA WeatherTech SportsCar Championship', ['https://www.imsa.com/schedule?series=weathertech', IMSA_STANDINGS], { shortName: 'IMSA' });
+  const json = (type: string, season: number) => fixture(`imsa-standings-${type}-${season}.json`);
+  const bodies = () => ({
+    driver: JSON.parse(json('driver', 2026)) as unknown,
+    team: JSON.parse(json('team', 2026)) as unknown,
+    manufacturer: JSON.parse(json('manufacturer', 2026)) as unknown,
+  });
+
+  it('pilotos (uno por fila, con equipo, número y país), equipos y marcas por clase, en castellano', () => {
+    const tables = imsaStandingsTables(bodies());
+    expect(tables.map((t) => [t.title, t.rows.length])).toEqual([
+      ['Pilotos GTP', 8],
+      ['Pilotos LMP2', 8],
+      ['Pilotos GTD Pro', 8],
+      ['Pilotos GTD', 8],
+      ['Equipos GTP', 4],
+      ['Equipos LMP2', 4],
+      ['Equipos GTD Pro', 4],
+      ['Equipos GTD', 4],
+      ['Marcas GTP', 3],
+      ['Marcas GTD Pro', 3],
+      ['Marcas GTD', 3],
+    ]);
+    const gtp = tables[0]!.rows;
+    expect(gtp[0]).toEqual({ pos: 1, name: 'Jack Aitken', team: 'Cadillac Whelen', number: '31', points: 3020, country: 'GB' });
+    // Compañeros de auto empatados comparten la posición; la siguiente no salta (3, 3, 4).
+    expect(gtp.slice(2, 5).map((r) => [r.pos, r.name, r.number])).toEqual([
+      [3, 'Renger van der Zande', '93'],
+      [3, 'Nick Yelloly', '93'],
+      [4, 'Kevin Estre', '6'],
+    ]);
+    // La ficha dice #7 y en la tabla de equipos recortada no está ese auto de Penske: mejor sin número que uno ajeno.
+    expect(gtp[1]).toEqual({ pos: 2, name: 'Laurin Heinrich', team: 'Porsche Penske Motorsport', points: 2859, country: 'DE' });
+    // "4" en la ficha y "04" en el auto (CrowdStrike by APR).
+    expect(tables[1]!.rows[0]).toMatchObject({ pos: 1, name: 'George Kurtz', number: '04' });
+    expect(tables[5]!.rows[0]).toEqual({ pos: 1, name: 'Crowdstrike Racing by APR', number: '04', points: 2322 });
+    expect(tables[8]!.rows.map((r) => [r.pos, r.name, r.points])).toEqual([
+      [1, 'Cadillac', 3244],
+      [2, 'Porsche', 3156],
+      [3, 'Acura', 2973],
+    ]);
+  });
+
+  it('temporada de la respuesta; null si todavía no tiene tabla; error si el formato cambió', () => {
+    expect(imsaStandingsSeason(JSON.parse(json('driver', 2026)), 'driver', 1)).toBe(2026);
+    expect(imsaStandingsSeason(JSON.parse(json('driver', 2027)), 'driver', 1)).toBeNull();
+    expect(() => imsaStandingsSeason({ data: [] }, 'driver', 1)).toThrow('respuesta inesperada');
+    expect(() => imsaStandingsSeason(JSON.parse(json('team', 2026)), 'driver', 1)).toThrow('respuesta inesperada');
+  });
+
+  it('con el calendario ya en 2027 y la tabla 2027 vacía, publica la de 2026 con su año', async () => {
+    const { out, http, gemini } = await readStandings(imsa, {
+      'https://www.imsa.com/2027/schedule?series=weathertech': fixture('imsa-schedule-2027.html'),
+      [imsaStandingsApi(1, 'driver', 2027)]: json('driver', 2027),
+      [imsaStandingsApi(1, 'driver', 2026)]: json('driver', 2026),
+      [imsaStandingsApi(1, 'team', 2026)]: json('team', 2026),
+      [imsaStandingsApi(1, 'manufacturer', 2026)]: json('manufacturer', 2026),
+    });
+    const file = standingsFileSchema.parse(out.standings);
+    expect(file.season).toBe(2026);
+    expect(file.tables[0]!.title).toBe('Pilotos GTP');
+    expect(file.source).toMatchObject({
+      url: IMSA_STANDINGS,
+      title: 'IMSA WeatherTech SportsCar Championship — Point Standings 2026',
+      kind: 'api',
+      method: 'directo',
+    });
+    expect(http.requested).not.toContain(imsaStandingsApi(1, 'team', 2027));
+    expect(gemini.requests).toHaveLength(0);
+    const index = buildDrivers({ series: [imsa], standings: [file], results: [], sessions: [], generatedAt: NOW });
+    const aitken = index.drivers.find((d) => d.name === 'Jack Aitken');
+    expect(aitken?.country).toBe('GB');
+    expect(aitken?.entries[0]).toMatchObject({ seriesId: 'imsa', table: 'Pilotos GTP', pos: 1, number: '31', team: 'Cadillac Whelen' });
+  });
+
+  it('sin tabla ni de la temporada pedida ni de la anterior: null (sin IA)', async () => {
+    const empty = json('driver', 2027);
+    const { out, gemini } = await readStandings(imsa, {
+      'https://www.imsa.com/2027/schedule?series=weathertech': fixture('imsa-schedule-2027.html'),
+      [imsaStandingsApi(1, 'driver', 2027)]: empty,
+      [imsaStandingsApi(1, 'driver', 2026)]: empty.replace(/2027/g, '2026'),
+    });
+    expect(out.standings).toBeUndefined();
+    expect(gemini.requests).toHaveLength(0);
   });
 });

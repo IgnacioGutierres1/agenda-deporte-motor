@@ -40,6 +40,34 @@ function syncRefs<T extends FollowedDriver>(list: T[], lookup: (id: string) => F
   return changed ? next : null;
 }
 
+/** Campos de useSettingsStore que se guardan en localStorage (main.ts). */
+export const PERSISTED_SETTINGS = [
+  'timeZone',
+  'hiddenSeries',
+  'followedSeries',
+  'followedDrivers',
+  'followedTeams',
+  'notifyEnabled',
+  'notifyLead',
+  'theme',
+  'themeChosen',
+  'googleClientId',
+  'githubRepo',
+  'githubToken',
+];
+
+/**
+ * Ajusta lo guardado por versiones anteriores antes de restaurarlo.
+ * Tema: antes el predeterminado era "Oscuro" y se guardaba siempre (el snapshot incluye todos los campos), así que un
+ * "dark" sin themeChosen no distingue "lo eligió" de "nunca tocó el tema". Quien ya usaba la app la conoce oscura:
+ * se le conserva así (no cambia de golpe a claro si el sistema está en claro). "Según el sistema" es el predeterminado
+ * solo para instalaciones nuevas. Lo guardado se marca como elegido para no volver a migrarlo.
+ */
+export function migrateSettings(saved: Record<string, unknown>): Record<string, unknown> {
+  if ('themeChosen' in saved || !('theme' in saved)) return saved;
+  return { ...saved, themeChosen: saved.theme !== 'system' };
+}
+
 /** Preferencias de este dispositivo (se guardan en localStorage desde main.ts). */
 export const useSettingsStore = defineStore('settings', {
   state: () => ({
@@ -57,8 +85,10 @@ export const useSettingsStore = defineStore('settings', {
     notifyEnabled: false,
     /** Minutos de anticipación de los avisos. */
     notifyLead: 30,
-    /** Tema visual: oscuro por defecto, como FotMob. */
-    theme: 'dark' as ThemeChoice,
+    /** Tema visual: por defecto el del sistema (prefers-color-scheme); oscuro o claro si el usuario lo eligió. */
+    theme: 'system' as ThemeChoice,
+    /** true cuando el usuario eligió el tema a mano (ver migrateSettings). */
+    themeChosen: false,
     /** Client ID OAuth de Google; vacío = el de VITE_GOOGLE_CLIENT_ID. */
     googleClientId: '',
     /** "owner/repo"; vacío = VITE_GITHUB_REPO. */
@@ -98,6 +128,11 @@ export const useSettingsStore = defineStore('settings', {
     },
   },
   actions: {
+    /** Tema elegido a mano desde Ajustes (se respeta aunque cambie el predeterminado). */
+    setTheme(theme: ThemeChoice) {
+      this.theme = theme;
+      this.themeChosen = true;
+    },
     isFollowed(seriesId: string): boolean {
       return this.followedSeries.includes(seriesId);
     },
