@@ -68,6 +68,27 @@ export function pendingResultSessions(
     .sort((a, b) => b.startUtc.localeCompare(a.startUtc));
 }
 
+/** Intentos que recupera una sesión abandonada cuando el lector de su serie mejoró después. */
+const RETRIES_AFTER_FIX = 2;
+
+/**
+ * Sesiones abandonadas (MAX_ATTEMPTS intentos fallidos) cuyo último intento es anterior a `since` (el último arreglo
+ * del lector): se les devuelven RETRIES_AFTER_FIX intentos. Como cada intento actualiza `last`, el ajuste se
+ * aplica una sola vez: si vuelven a fallar quedan abandonadas de nuevo. Devuelve cuántas se reactivaron.
+ */
+export function retryAfterReaderFix(attempts: AttemptsLog, sessions: Pick<Session, 'id'>[], since: string): number {
+  const sinceMs = Date.parse(since);
+  if (!Number.isFinite(sinceMs)) return 0;
+  let n = 0;
+  for (const s of sessions) {
+    const a = attempts[s.id];
+    if (!a || a.count < MAX_ATTEMPTS || !(Date.parse(a.last) < sinceMs)) continue;
+    attempts[s.id] = { count: MAX_ATTEMPTS - RETRIES_AFTER_FIX, last: a.last };
+    n++;
+  }
+  return n;
+}
+
 export function mergeEventResults(
   existing: EventResultsFile | null,
   incoming: EventResultsFile,
@@ -99,6 +120,10 @@ export async function runResultsForSeries(
   const out: ResultsPhaseOutput = { withResults: new Set(), standingsAvailable: !!existingStandings };
   if (!adapter.results) return out;
 
+  if (adapter.resultsReaderSince) {
+    const revived = retryAfterReaderFix(attempts, sessions, adapter.resultsReaderSince);
+    if (revived > 0) ctx.log.info(`${revived} sesión(es) sin resultado se vuelven a buscar con el lector actualizado`);
+  }
   const pending = pendingResultSessions(sessions, ctx.now, attempts);
   // Una tabla leída con IA se reemplaza por la lectura directa en cuanto el sitio tiene receta (p. ej. GT World
   // Challenge, que antes se leía con Gemini y solo traía la tabla de equipos).
