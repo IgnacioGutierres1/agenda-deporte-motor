@@ -35,6 +35,7 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore, type FollowedDriver, type FollowedTeam } from '../stores/settings.ts';
 import { useTeamsStore } from '../stores/teams.ts';
 import { recommend, type Recommendation } from '../lib/recommend.ts';
+import { followCount, STARTER_HIDE_AT, STARTER_SERIES } from '../lib/onboarding.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { driverSeriesIds, teamSeriesIds } from '../lib/teams.ts';
 
@@ -70,6 +71,8 @@ export default defineComponent({
         followedDrivers: this.followedDrivers,
         followedTeams: this.followedTeams,
         hiddenSeries: this.hiddenSeries,
+        // Lo que ya ofrece "Empezá por acá" (mientras se ve) no se repite acá.
+        excludeSeries: followCount(this) < STARTER_HIDE_AT ? STARTER_SERIES.flatMap((s) => s.ids) : [],
         drivers: this.driversFile?.drivers ?? [],
         teams: this.followsPeople ? this.teams : [],
         limit: this.limit,

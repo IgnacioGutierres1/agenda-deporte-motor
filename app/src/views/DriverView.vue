@@ -8,9 +8,7 @@
         <button type="button" class="btn btn-small" @click="loadDrivers(true)">Reintentar</button>
       </div>
     </div>
-    <p v-else-if="(driversStatus === 'ok' || driversStatus === 'missing') && !driver" class="page card empty">
-      No encontramos a este piloto en las tablas de campeonato ni en las listas de inscriptos publicadas.
-    </p>
+    <NotFoundCard v-else-if="(driversStatus === 'ok' || driversStatus === 'missing') && !driver" kind="piloto" :slug="String($route.params.driverId ?? '')" />
 
     <template v-if="driver">
       <section class="hero" :style="{ '--series-color': color }">
@@ -37,7 +35,7 @@
               <div class="list-row">
                 <SeriesCrest v-if="e.series" :series="e.series" :size="30" />
                 <span class="grow">
-                  <RouterLink :to="`/categoria/${e.seriesId}?tab=tabla`" class="stretch-link">
+                  <RouterLink :to="tableLink(e.seriesId, e.table)" class="stretch-link">
                     {{ e.series?.shortName ?? e.seriesId }}<template v-if="e.table"> · {{ e.table }}</template>
                   </RouterLink>
                   <span class="block small dim">
@@ -122,6 +120,7 @@ import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import NewsList from '../components/NewsList.vue';
+import NotFoundCard from '../components/NotFoundCard.vue';
 import UpcomingList from '../components/UpcomingList.vue';
 import { newsForDriver, useNewsStore } from '../stores/news.ts';
 import { useDriversStore } from '../stores/drivers.ts';
@@ -134,7 +133,7 @@ import { driverSeriesIds } from '../lib/teams.ts';
 /** Ficha de un piloto (como la de un jugador en FotMob). */
 export default defineComponent({
   name: 'DriverView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
   computed: {
     ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', driversFile: 'file' }),
     ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
@@ -211,6 +210,10 @@ export default defineComponent({
     },
     teamLink(name: string): string {
       return `/equipo/${teamId(name)}`;
+    },
+    /** Tabla del campeonato, abierta en la del piloto si la categoría tiene varias. */
+    tableLink(seriesId: string, table?: string): string {
+      return `/categoria/${seriesId}?tab=tabla${table ? `&tabla=${encodeURIComponent(table)}` : ''}`;
     },
   },
 });

@@ -2,6 +2,7 @@ import { defineStore } from 'pinia';
 import type { Driver, DriversFile } from '@dm/shared';
 import { DataNotFoundError, fetchData } from '../lib/data.ts';
 import { searchDrivers } from '../lib/search.ts';
+import { searchContext } from '../lib/searchContext.ts';
 import { driverSeriesIds } from '../lib/teams.ts';
 import { useSettingsStore } from './settings.ts';
 
@@ -43,9 +44,9 @@ export const useDriversStore = defineStore('drivers', {
         }
       }
     },
-    /** Búsqueda por nombre (sin acentos) o número; primero los que están mejor ubicados. */
+    /** Búsqueda por nombre (sin acentos, con errores de tipeo) o número; primero lo seguido y lo principal. */
     search(query: string, limit = 30): Driver[] {
-      return searchDrivers(this.file?.drivers ?? [], query, limit);
+      return searchDrivers(this.file?.drivers ?? [], query, limit, searchContext());
     },
   },
 });

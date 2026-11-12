@@ -8,9 +8,7 @@
         <button type="button" class="btn btn-small" @click="loadTeams(true)">Reintentar</button>
       </div>
     </div>
-    <p v-else-if="!team" class="page card empty">
-      No encontramos este equipo en las tablas de campeonato ni en las listas de inscriptos publicadas.
-    </p>
+    <NotFoundCard v-else-if="!team" kind="equipo" :slug="String($route.params.teamId ?? '')" />
 
     <template v-if="team">
       <section class="hero" :style="{ '--series-color': color }">
@@ -36,7 +34,7 @@
               <div class="list-row">
                 <SeriesCrest v-if="e.series" :series="e.series" :size="30" />
                 <span class="grow">
-                  <RouterLink :to="`/categoria/${e.seriesId}?tab=${e.pos ? 'tabla' : 'plantel'}`" class="stretch-link">
+                  <RouterLink :to="`/categoria/${e.seriesId}?tab=${e.pos ? 'tabla' : 'plantel'}${e.pos && e.table ? `&tabla=${encodeURIComponent(e.table)}` : ''}`" class="stretch-link">
                     {{ e.series?.shortName ?? e.seriesId }}<template v-if="e.table"> · {{ e.table }}</template>
                   </RouterLink>
                   <span v-if="e.detail" class="block small dim">{{ e.detail }}</span>
@@ -90,6 +88,7 @@ import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
 import NewsList from '../components/NewsList.vue';
+import NotFoundCard from '../components/NotFoundCard.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import UpcomingList from '../components/UpcomingList.vue';
 import { useDriversStore } from '../stores/drivers.ts';
@@ -112,7 +111,7 @@ const byNumber = (a: TeamDriver, b: TeamDriver) =>
 /** Ficha de un equipo: categorías en las que corre, pilotos, próximas carreras y noticias. */
 export default defineComponent({
   name: 'TeamView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
   computed: {
     ...mapState(useTeamsStore, { teamsById: 'byId', teamsStatus: 'status', teamsError: 'error', pending: 'pending', derived: 'derived', allTeams: 'teams' }),
     ...mapState(useDriversStore, { driversStatus: 'status' }),

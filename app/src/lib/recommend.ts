@@ -4,8 +4,10 @@
  * con su motivo ("Porque seguís WEC"):
  *  1. Equipo y compañeros de los pilotos seguidos, y pilotos de los equipos seguidos.
  *  2. Líderes del campeonato de las categorías seguidas.
- *  3. Categorías del mismo grupo que las seguidas (las que corren antes primero).
- *  4. Categorías que corren este finde.
+ *  3. Categorías del mismo grupo que las seguidas (las principales y argentinas primero, después
+ *     las que corren antes).
+ *  4. Categorías que corren este finde (también las principales y argentinas primero: si corre el TC,
+ *     va antes que Asian Le Mans o Super Taikyu).
  *  5. Circuitos de la próxima fecha de una categoría seguida donde también corre otra.
  * Lógica pura, sin Vue ni Pinia.
  */
@@ -14,6 +16,7 @@ import { circuitId, circuitKey } from './circuits.ts';
 import { formatDateRange } from './format.ts';
 import { seriesSort } from './grid.ts';
 import { todayIn } from './agenda.ts';
+import { seriesRelevanceSort, seriesTier, type SearchContext } from './search.ts';
 
 export type RecommendationKind = 'series' | 'driver' | 'team' | 'circuit';
 
@@ -37,6 +40,8 @@ export interface RecommendInput {
   followedDrivers: Array<{ id: string; name: string; seriesIds: string[] }>;
   followedTeams?: Array<{ id: string; name: string; seriesIds: string[] }>;
   hiddenSeries?: string[];
+  /** Categorías que no hace falta sugerir (ya se ofrecen en otro lado, como "Empezá por acá"). */
+  excludeSeries?: string[];
   /** Índice de pilotos, si ya se descargó. */
   drivers?: Driver[];
   /** Equipos (teams.json o derivados de los pilotos), si ya se descargaron. */
@@ -50,7 +55,7 @@ export function recommend(input: RecommendInput): Recommendation[] {
   const { schedule, now, zone } = input;
   if (!schedule) return [];
   const seriesById = new Map(schedule.series.map((s) => [s.id, s]));
-  const hidden = new Set(input.hiddenSeries ?? []);
+  const hidden = new Set([...(input.hiddenSeries ?? []), ...(input.excludeSeries ?? [])]);
   const followed = new Set(input.followedSeries.filter((id) => seriesById.get(id)?.enabled));
   const followedDrivers = new Set(input.followedDrivers.map((d) => d.id));
   const followedTeams = new Set((input.followedTeams ?? []).map((t) => t.id));
@@ -77,6 +82,10 @@ export function recommend(input: RecommendInput): Recommendation[] {
   }
   const bySoonest = (a: Series, b: Series) =>
     (nextStart.get(a.id) ?? '9999').localeCompare(nextStart.get(b.id) ?? '9999') || seriesSort(a, b);
+  // Relevancia para un fan argentino: principales (F1, MotoGP, TC…), argentinas y el resto.
+  const ctx: SearchContext = { argentineSeries: schedule.series.filter((s) => s.group === 'argentina').map((s) => s.id) };
+  const byRelevance = seriesRelevanceSort(ctx);
+  const tierOf = (s: Series) => (seriesTier(s.id, ctx) <= 2 ? 0 : 1);
 
   // 1. Equipo y compañeros de los pilotos seguidos.
   let n = 0;
@@ -129,7 +138,10 @@ export function recommend(input: RecommendInput): Recommendation[] {
   for (const id of followed) {
     const s = seriesById.get(id)!;
     if (s.group === 'otros') continue;
-    const siblings = schedule.series.filter((x) => x.group === s.group && candidate(x)).sort(bySoonest).slice(0, 2);
+    const siblings = schedule.series
+      .filter((x) => x.group === s.group && candidate(x))
+      .sort((a, b) => tierOf(a) - tierOf(b) || bySoonest(a, b))
+      .slice(0, 2);
     for (const x of siblings) {
       if (n >= CAPS.group) break;
       if (add({ kind: 'series', id: x.id, title: x.name, reason: `Porque seguís ${s.shortName}`, to: `/categoria/${x.id}`, seriesId: x.id })) n++;
@@ -140,7 +152,7 @@ export function recommend(input: RecommendInput): Recommendation[] {
   n = 0;
   const weekend = resolvePeriod('este-finde', now, { zone });
   const racing = new Set(schedule.events.filter((e) => eventInPeriod(weekend, e.dateStart, e.dateEnd, e.tz)).map((e) => e.seriesId));
-  for (const s of schedule.series.filter((x) => racing.has(x.id) && candidate(x)).sort(seriesSort)) {
+  for (const s of schedule.series.filter((x) => racing.has(x.id) && candidate(x)).sort(byRelevance)) {
     if (n >= CAPS.weekend) break;
     if (add({ kind: 'series', id: s.id, title: s.name, reason: 'Corre este finde', to: `/categoria/${s.id}`, seriesId: s.id })) n++;
   }
