@@ -12,6 +12,9 @@
  *   por si el crédito mensual de Google AI Pro solo se aplica vía Vertex.
  *
  * La clave nunca se escribe en logs ni en mensajes de error (viaja en un header, no en la URL).
+ *
+ * Es el primer eslabón de la cadena de IA (ai-chain.ts): el pipeline usa getAi(), que pasa a Groq cuando
+ * este cliente agota su cupo o falla. Los tipos de pedido (GeminiJsonRequest, GeminiSchema) son los de toda la cadena.
  */
 
 /** Esquema de respuesta (subconjunto OpenAPI que aceptan AI Studio y Vertex). */
@@ -35,11 +38,29 @@ export interface GeminiJsonRequest {
   text?: string;
   /** PDF del documento oficial (se envía inline). */
   pdf?: Uint8Array;
+  /**
+   * Texto ya extraído de ese PDF. Gemini no lo usa (lee el PDF); los proveedores que no leen PDF
+   * (Groq) reciben este texto en su lugar.
+   */
+  pdfText?: string;
+  /**
+   * Términos que identifican lo que se busca (serie, evento, circuito, fechas…). Si el documento no entra
+   * entero en el límite de un proveedor, se conservan las partes que los mencionan.
+   */
+  focus?: string[];
   /** Imágenes oficiales (se envían inline, en alta resolución para leer tablas chicas). */
   images?: Array<{ mimeType: string; data: Uint8Array }>;
   model?: string;
   /** Etiqueta para los logs (nunca incluye datos sensibles). */
   label?: string;
+  /** Avisa qué proveedor y modelo respondió (trazabilidad: queda en la caché y en el `source` del dato). */
+  onAnswer?: (answer: AiAnswerInfo) => void;
+}
+
+export interface AiAnswerInfo {
+  /** gemini | groq */
+  provider: string;
+  model: string;
 }
 
 export interface GroundingSource {
@@ -64,6 +85,11 @@ export interface Gemini {
   searchGrounded(prompt: string): Promise<GeminiSearchResult>;
   /** Llamadas lógicas hechas en esta corrida (sin contar reintentos). */
   callsMade(): number;
+  /**
+   * Cuántas imágenes acepta un pedido del proveedor que va a responder (Gemini: sin tope práctico).
+   * Opcional: sin este método se asume que no hay tope.
+   */
+  maxImagesPerRequest?(): number;
 }
 
 export const MISSING_KEY_MESSAGE = 'Falta GEMINI_API_KEY';
@@ -91,8 +117,8 @@ export class GeminiUnavailableError extends Error {
 
 /** Todos los modelos agotaron su cupo diario gratuito: los datos que dependen de IA quedan para la próxima corrida. */
 export class GeminiQuotaError extends GeminiUnavailableError {
-  constructor(models: string[]) {
-    super(`Se agotó el cupo diario gratuito de Gemini (modelos: ${models.join(', ')}); se reintenta en la próxima corrida`);
+  constructor(models: string[], message?: string) {
+    super(message ?? `Se agotó el cupo diario gratuito de Gemini (modelos: ${models.join(', ')}); se reintenta en la próxima corrida`);
     this.name = 'GeminiQuotaError';
   }
 }
@@ -223,12 +249,12 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
   const exhausted = new Set<string>();
 
   /** Llama al modelo pedido y, si agotó su cupo diario, a los de respaldo (en orden). */
-  async function callWithFallback(model: string, body: unknown): Promise<GenerateResponse> {
+  async function callWithFallback(model: string, body: unknown): Promise<{ res: GenerateResponse; model: string }> {
     const chain = [model, ...cfg.fallbackModels.filter((m) => m !== model)];
     for (const m of chain) {
       if (exhausted.has(m)) continue;
       try {
-        return await call(m, body);
+        return { res: await call(m, body), model: m };
       } catch (err) {
         // Cupo diario agotado, modelo retirado (404) o saturado aun después de los reintentos (5xx):
         // se prueba el siguiente modelo y este no se vuelve a usar en la corrida.
@@ -275,13 +301,16 @@ export function createGemini(opts: GeminiOptions = {}): Gemini {
             ...(req.images?.length ? { mediaResolution: 'MEDIA_RESOLUTION_HIGH' } : {}),
           },
         };
-        const res = await callWithFallback(req.model ?? cfg.extractModel, body);
+        const { res, model } = await callWithFallback(req.model ?? cfg.extractModel, body);
         const text = responseText(res);
+        let data: T;
         try {
-          return JSON.parse(text) as T;
+          data = JSON.parse(text) as T;
         } catch {
-          throw new GeminiApiError(200, 'Gemini devolvió un JSON inválido');
+          throw new GeminiApiError(200, `Gemini devolvió un JSON inválido (${model})`);
         }
+        req.onAnswer?.({ provider: 'gemini', model });
+        return data;
       });
     },
 

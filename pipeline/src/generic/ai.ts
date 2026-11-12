@@ -1,13 +1,14 @@
 /**
- * Extracciones con Gemini sobre documentos oficiales ya descargados (Gemini no busca en la web):
- * calendario, cronograma, resultados y campeonato. Cada salida pasa por controles anti-alucinación
- * contra el texto del documento antes de usarse.
+ * Extracciones con IA (cadena Gemini -> Groq, ver extract/ai-chain.ts) sobre documentos oficiales ya
+ * descargados (la IA no busca en la web): calendario, cronograma, resultados y campeonato. Cada salida pasa
+ * por controles anti-alucinación contra el texto COMPLETO del documento antes de usarse, sea cual sea el
+ * proveedor que respondió.
  */
 import { DateTime } from 'luxon';
 import { localToUtc, type ResultRow, type Series, type StandingsTable } from '@dm/shared';
 import type { DocImage, FetchedDocument } from '../extract/document.ts';
 import { hasUsableText, sha256 } from '../extract/document.ts';
-import { GeminiUnavailableError, type Gemini, type GeminiSchema } from '../extract/gemini.ts';
+import { GeminiUnavailableError, type AiAnswerInfo, type Gemini, type GeminiSchema } from '../extract/gemini.ts';
 import { appearsInDocument, normalizeForMatch } from '../validate.ts';
 import type { ExtractionCache } from './cache.ts';
 import { guessTimeZone } from './places.ts';
@@ -21,29 +22,57 @@ export interface AiDeps {
   cache: ExtractionCache;
 }
 
+/**
+ * Trazabilidad: modelos de IA ("proveedor/modelo") que produjeron un dato, incluida la transcripción previa
+ * de imágenes. Lo llena cada extracción (también desde la caché) y termina en `source.model`.
+ */
+export interface AiTrace {
+  models: string[];
+}
+
+export function newTrace(): AiTrace {
+  return { models: [] };
+}
+
+/** "gemini/gemini-3.6-flash" o, si intervino más de uno, "gemini/… + groq/…". undefined si no hubo IA. */
+export function traceModel(trace: AiTrace | undefined): string | undefined {
+  const models = [...new Set(trace?.models ?? [])];
+  return models.length ? models.join(' + ') : undefined;
+}
+
 const SYSTEM =
   'Sos un transcriptor de documentos oficiales de automovilismo. Copiás datos tal como figuran en el documento, ' +
   'sin inventar, completar ni deducir nada que no esté escrito. Si un dato no figura, lo omitís o devolvés null.';
 
-/** Llama a Gemini solo si no hay una extracción en caché para este documento. */
+/** Llama a la IA solo si no hay una extracción en caché para este documento. */
 async function cached<T>(
   deps: AiDeps,
   seriesId: string,
   kind: string,
   doc: FetchedDocument,
   extra: string,
-  run: () => Promise<T>,
+  run: (onAnswer: (a: AiAnswerInfo) => void) => Promise<T>,
+  trace?: AiTrace,
 ): Promise<T> {
   const hit = await deps.cache.get<T>(seriesId, kind, doc.hash, extra);
-  if (hit) return hit.data;
+  if (hit) {
+    if (hit.model) trace?.models.push(hit.model);
+    return hit.data;
+  }
   if (!deps.gemini.available) throw new GeminiUnavailableError(deps.gemini.unavailableReason);
-  const data = await run();
-  await deps.cache.set(seriesId, kind, doc.hash, { url: doc.url, model: deps.gemini.extractModel, createdAt: new Date().toISOString(), data }, extra);
+  let model = deps.gemini.extractModel;
+  const data = await run((a) => (model = `${a.provider}/${a.model}`));
+  trace?.models.push(model);
+  await deps.cache.set(seriesId, kind, doc.hash, { url: doc.url, model, createdAt: new Date().toISOString(), data }, extra);
   return data;
 }
 
-function docPayload(doc: FetchedDocument): { text?: string; pdf?: Uint8Array } {
-  return doc.kind === 'pdf' && doc.pdf ? { pdf: doc.pdf } : { text: doc.text };
+/**
+ * El documento para la IA. Un PDF va como PDF (Gemini lo lee directo, con su diagramación) y con su texto
+ * ya extraído, que es lo que reciben los proveedores que no leen PDF.
+ */
+function docPayload(doc: FetchedDocument): { text?: string; pdf?: Uint8Array; pdfText?: string } {
+  return doc.kind === 'pdf' && doc.pdf ? { pdf: doc.pdf, pdfText: doc.text } : { text: doc.text };
 }
 
 const S = (description?: string): GeminiSchema => ({ type: 'STRING', ...(description ? { description } : {}) });
@@ -79,24 +108,43 @@ export async function imageDocument(
   seriesId: string,
   page: Pick<FetchedDocument, 'url' | 'title'>,
   images: DocImage[],
+  trace?: AiTrace,
 ): Promise<FetchedDocument | null> {
   if (images.length === 0) return null;
   const hash = sha256(images.map((i) => sha256(i.data)).join('|'));
   const url = images.length === 1 ? images[0]!.url : page.url;
   const title = page.title ? `${page.title} (imagen)` : 'Imagen oficial';
   const base: FetchedDocument = { url, kind: 'image', raw: '', text: '', title, hash, images };
-  const data = await cached<AiImageText>(deps, seriesId, 'image-text', base, '', () =>
-    deps.gemini.generateJson<AiImageText>({
-      system: SYSTEM,
-      label: `imagen ${seriesId}`,
-      images: images.map(({ mimeType, data }) => ({ mimeType, data })),
-      schema: imageTextSchema,
-      prompt:
-        `Transcribí todo el texto visible de cada una de las ${images.length} imagen(es), en orden de lectura. ` +
-        'En tablas, escribí una fila por línea con las celdas separadas por " | " y los encabezados (día, fecha, columnas) en su propia línea. ' +
-        'Copiá números, fechas y horas exactamente como figuran, sin corregir, completar ni traducir nada. ' +
-        'Si una parte no se puede leer, escribí [ilegible].',
-    }),
+  const data = await cached<AiImageText>(
+    deps,
+    seriesId,
+    'image-text',
+    base,
+    '',
+    async (onAnswer) => {
+      // Gemini acepta todas las imágenes en un pedido; los respaldos (Groq), pocas por pedido: se mandan
+      // en tandas y se juntan las transcripciones en el mismo orden.
+      const per = Math.max(1, Math.min(images.length, deps.gemini.maxImagesPerRequest?.() ?? images.length));
+      const out: AiImageText = { images: [] };
+      for (let i = 0; i < images.length; i += per) {
+        const batch = images.slice(i, i + per);
+        const res = await deps.gemini.generateJson<AiImageText>({
+          system: SYSTEM,
+          label: `imagen ${seriesId}`,
+          images: batch.map(({ mimeType, data }) => ({ mimeType, data })),
+          schema: imageTextSchema,
+          onAnswer,
+          prompt:
+            `Transcribí todo el texto visible de cada una de las ${batch.length} imagen(es), en orden de lectura. ` +
+            'En tablas, escribí una fila por línea con las celdas separadas por " | " y los encabezados (día, fecha, columnas) en su propia línea. ' +
+            'Copiá números, fechas y horas exactamente como figuran, sin corregir, completar ni traducir nada. ' +
+            'Si una parte no se puede leer, escribí [ilegible].',
+        });
+        out.images.push(...(res.images ?? []));
+      }
+      return out;
+    },
+    trace,
   );
   const parts = (data.images ?? []).map((im, i) => `=== Imagen ${i + 1} ===\n${(im.text ?? '').trim()}`);
   const text = [page.title, ...parts].filter(Boolean).join('\n\n');
@@ -180,14 +228,16 @@ export async function aiCalendar(
   series: Series,
   doc: FetchedDocument,
   season: number,
-  opts: { multiSeries?: boolean; onDropped?: (name: string, reason: string) => void } = {},
+  opts: { multiSeries?: boolean; onDropped?: (name: string, reason: string) => void; trace?: AiTrace } = {},
 ): Promise<CalendarEntry[]> {
   if (!hasUsableText(doc)) return [];
-  const data = await cached<AiCalendar>(deps, series.id, opts.multiSeries ? 'calendar-multi' : 'calendar', doc, String(season), () =>
+  const data = await cached<AiCalendar>(deps, series.id, opts.multiSeries ? 'calendar-multi' : 'calendar', doc, String(season), (onAnswer) =>
     deps.gemini.generateJson<AiCalendar>({
       system: SYSTEM,
       label: `calendario ${series.id}`,
       ...docPayload(doc),
+      focus: opts.multiSeries ? [String(season)] : [series.name, series.shortName, String(season)],
+      onAnswer,
       schema: calendarSchema,
       prompt: opts.multiSeries
         ? `Listá todas las competencias de automovilismo de ${season} y comienzos de ${season + 1} que figuran en este calendario oficial con varias categorías. ` +
@@ -196,6 +246,7 @@ export async function aiCalendar(
           'Incluí fechas de inicio y fin (días del fin de semana del evento). Si solo figura el día de la carrera, usá ese día en ambas fechas. ' +
           'No incluyas eventos de otras categorías.',
     }),
+    opts.trace,
   );
   const out: CalendarEntry[] = [];
   for (const e of data.events ?? []) {
@@ -220,6 +271,17 @@ export async function aiCalendar(
       ...(e.url && /^https?:\/\//.test(e.url) ? { url: e.url } : {}),
       ...(e.championship ? { championship: e.championship.trim() } : {}),
     });
+  }
+  return out;
+}
+
+/** Días del evento en los formatos en que suelen figurar en un cronograma ("2026-11-21", "21/11", "21.11."). */
+function datesBetween(from: string, to: string): string[] {
+  const out: string[] = [];
+  let d = DateTime.fromISO(from);
+  const end = DateTime.fromISO(to);
+  for (let i = 0; d.isValid && d <= end && i < 10; i++, d = d.plus({ days: 1 })) {
+    out.push(d.toISODate()!, d.toFormat('dd/MM'), d.toFormat('dd.MM.'));
   }
   return out;
 }
@@ -315,14 +377,17 @@ export async function aiTimetable(
   series: Series,
   entry: CalendarEntry,
   doc: FetchedDocument,
+  trace?: AiTrace,
 ): Promise<TimetableResult> {
   if (!hasUsableText(doc)) return { sessions: [], dropped: [{ name: '*', reason: 'El documento no tiene texto legible para validar' }] };
   const names = [...new Set([series.name, series.shortName])].map((n) => `"${n}"`).join(' / ');
-  const data = await cached<AiTimetable>(deps, series.id, 'timetable', doc, `${entry.dateStart}|${entry.dateEnd}`, () =>
+  const data = await cached<AiTimetable>(deps, series.id, 'timetable', doc, `${entry.dateStart}|${entry.dateEnd}`, (onAnswer) =>
     deps.gemini.generateJson<AiTimetable>({
       system: SYSTEM,
       label: `cronograma ${series.id}`,
       ...docPayload(doc),
+      focus: [series.name, series.shortName, entry.name, entry.circuit, ...datesBetween(entry.dateStart, entry.dateEnd)],
+      onAnswer,
       schema: timetableSchema,
       prompt:
         `Transcribí el cronograma oficial del evento "${entry.name}" (${entry.circuit}), que se disputa entre ${entry.dateStart} y ${entry.dateEnd}. ` +
@@ -331,6 +396,7 @@ export async function aiTimetable(
         'Si hay una columna de hora local del circuito y otra en GMT/UTC, usá la hora local. ' +
         'Copiá la hora de inicio exactamente como figura (sin agregar ni quitar ceros) y deducí la fecha de cada sesión por el día que la encabeza, usando el año del evento.',
     }),
+    trace,
   );
 
   const sessions: ExtractedSession[] = [];
@@ -416,19 +482,23 @@ export async function aiResults(
   eventName: string,
   sessionNames: string[],
   doc: FetchedDocument,
+  trace?: AiTrace,
 ): Promise<AiResults> {
   if (!hasUsableText(doc)) return { sessions: [] };
-  return cached<AiResults>(deps, series.id, 'results', doc, eventName, () =>
+  return cached<AiResults>(deps, series.id, 'results', doc, eventName, (onAnswer) =>
     deps.gemini.generateJson<AiResults>({
       system: SYSTEM,
       label: `resultados ${series.id}`,
       ...docPayload(doc),
+      focus: [series.name, series.shortName, eventName, ...sessionNames],
+      onAnswer,
       schema: resultsSchema,
       prompt:
         `Transcribí las clasificaciones oficiales de "${series.name}" en el evento "${eventName}". ` +
         `Sesiones esperadas: ${sessionNames.map((n) => `"${n}"`).join(', ')}. ` +
         'Una tabla por sesión, en el orden del documento, con todos los pilotos. Omití otras categorías. Copiá nombres y números exactamente como figuran.',
     }),
+    trace,
   );
 }
 
@@ -497,18 +567,27 @@ const standingsSchema: GeminiSchema = {
   required: ['tables'],
 };
 
-export async function aiStandings(deps: AiDeps, series: Series, season: number, doc: FetchedDocument): Promise<StandingsTable[]> {
+export async function aiStandings(
+  deps: AiDeps,
+  series: Series,
+  season: number,
+  doc: FetchedDocument,
+  trace?: AiTrace,
+): Promise<StandingsTable[]> {
   if (!hasUsableText(doc)) return [];
-  const data = await cached<AiStandings>(deps, series.id, 'standings', doc, String(season), () =>
+  const data = await cached<AiStandings>(deps, series.id, 'standings', doc, String(season), (onAnswer) =>
     deps.gemini.generateJson<AiStandings>({
       system: SYSTEM,
       label: `campeonato ${series.id}`,
       ...docPayload(doc),
+      focus: [series.name, series.shortName, String(season)],
+      onAnswer,
       schema: standingsSchema,
       prompt:
         `Transcribí las tablas del campeonato ${season} de "${series.name}" (pilotos y, si figuran, equipos/marcas). ` +
         'Copiá nombres exactamente como figuran. Omití otras categorías.',
     }),
+    trace,
   );
   return (data.tables ?? []).map(cleanStandingsTable).filter((t) => validateStandingsRows(t, doc.text) === null);
 }

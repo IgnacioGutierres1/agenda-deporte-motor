@@ -21,7 +21,8 @@ import {
 import { classifySession } from '../core/builders.ts';
 import type { Adapter, AdapterContext, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
 import { fetchDocument, fetchImages, looksLikePdf, type FetchedDocument } from '../extract/document.ts';
-import { GeminiUnavailableError, getGemini, MISSING_KEY_MESSAGE, type Gemini } from '../extract/gemini.ts';
+import { getAi } from '../extract/ai-chain.ts';
+import { GeminiUnavailableError, MISSING_KEY_MESSAGE, type Gemini } from '../extract/gemini.ts';
 import { contentImages } from '../extract/html.ts';
 import { normalizeForMatch } from '../validate.ts';
 import {
@@ -30,9 +31,12 @@ import {
   aiStandings,
   aiTimetable,
   imageDocument,
+  newTrace,
   PROMPT_VERSION,
+  traceModel,
   validateResultRows,
   type AiDeps,
+  type AiTrace,
 } from './ai.ts';
 import { createExtractionCache } from './cache.ts';
 import {
@@ -51,7 +55,10 @@ import { findRecipe } from './recipes.ts';
 import type { CalendarEntry, RecipeContext, SessionsFound, StandingsFound } from './types.ts';
 
 export interface GenericDeps {
-  /** Cliente de Gemini (por defecto, el compartido de la corrida, configurado por variables de entorno). */
+  /**
+   * Cliente de IA (por defecto, la cadena compartida de la corrida: Gemini -> Groq, configurada por variables
+   * de entorno). Se llama `gemini` por historia: cualquier cliente con esa interfaz sirve.
+   */
   gemini?: () => Gemini;
 }
 
@@ -70,7 +77,7 @@ export interface CalendarRead {
 const isoNow = (d: Date) => d.toISOString().replace(/\.\d{3}Z$/, 'Z');
 
 function aiDeps(ctx: AdapterContext, deps: GenericDeps): AiDeps {
-  return { gemini: (deps.gemini ?? getGemini)(), cache: createExtractionCache(ctx.cacheDir, PROMPT_VERSION) };
+  return { gemini: (deps.gemini ?? getAi)(), cache: createExtractionCache(ctx.cacheDir, PROMPT_VERSION) };
 }
 
 function recipeCtx(series: Series, ctx: AdapterContext): RecipeContext {
@@ -120,11 +127,13 @@ export async function readCalendar(
   }
   if (entries.length === 0) entries = jsonLdCalendar(doc, ctx.season);
   let read: FetchedDocument = doc;
+  const trace = newTrace();
   if (entries.length === 0) {
     method = 'ia';
     let dropped = 0;
     const aiOpts = {
       ...opts,
+      trace,
       onDropped: (name: string, reason: string) => {
         dropped++;
         ctx.log.warn(`Calendario: "${name}" descartado, ${reason}`);
@@ -136,8 +145,10 @@ export async function readCalendar(
       // Calendario publicado como imágenes (una por fecha, p. ej. Turismo Pista): se leen las imágenes.
       // (No si Gemini sí encontró eventos en el texto pero sin días concretos: las imágenes no los van a tener.)
       if (entries.length === 0 && dropped === 0 && doc.kind === 'html') {
-        const img = await imageDocument(ai, series.id, doc, await fetchImages(ctx.http, contentImages(doc.raw, doc.url).slice(0, MAX_CALENDAR_IMAGES)));
+        const imgTrace = newTrace();
+        const img = await imageDocument(ai, series.id, doc, await fetchImages(ctx.http, contentImages(doc.raw, doc.url).slice(0, MAX_CALENDAR_IMAGES)), imgTrace);
         if (img) {
+          trace.models.push(...imgTrace.models);
           // Primero lectura determinista de la transcripción ("FECHA 10 / NOVIEMBRE 20, 21 y 22 / Rafaela");
           // si no tiene ese formato, Gemini arma la lista a partir del texto transcripto.
           entries =
@@ -159,12 +170,14 @@ export async function readCalendar(
       throw err;
     }
   }
+  const model = method === 'ia' ? traceModel(trace) : undefined;
   const source: Source = {
     url: read.url,
     title: doc.title || `Calendario ${series.shortName} ${ctx.season}`,
     kind: read.kind,
     method,
     fetchedAt: isoNow(ctx.now),
+    ...(model ? { model } : {}),
   };
   return { entries, doc, source };
 }
@@ -292,16 +305,18 @@ async function findSessions(
     }
   }
 
-  const doc = await locateTimetable(series, entry, cal, ctx, deps);
+  const trace = newTrace();
+  const doc = await locateTimetable(series, entry, cal, ctx, deps, trace);
   if (!doc) {
     ctx.log.info(`${entry.name}: cronograma todavía no publicado`);
     return null;
   }
   if ('direct' in doc) return doc.direct;
 
-  const result = await aiTimetable(aiDeps(ctx, deps), series, entry, doc.doc);
+  const result = await aiTimetable(aiDeps(ctx, deps), series, entry, doc.doc, trace);
   for (const d of result.dropped) ctx.log.warn(`${entry.name}: sesión descartada "${d.name}": ${d.reason}`);
   if (result.sessions.length === 0) return null;
+  const model = traceModel(trace);
   return {
     sessions: result.sessions,
     source: {
@@ -313,6 +328,7 @@ async function findSessions(
       kind: doc.doc.kind === 'api' ? 'html' : doc.doc.kind,
       method: 'ia',
       fetchedAt: isoNow(ctx.now),
+      ...(model ? { model } : {}),
     },
   };
 }
@@ -337,11 +353,12 @@ async function timetableFromImages(
   page: FetchedDocument,
   ctx: AdapterContext,
   deps: GenericDeps,
+  trace?: AiTrace,
 ): Promise<FetchedDocument | null> {
   if (page.kind !== 'html') return null;
   const urls = contentImages(page.raw, page.url).slice(0, MAX_TIMETABLE_IMAGES);
   if (urls.length === 0) return null;
-  return imageDocument(aiDeps(ctx, deps), series.id, page, await fetchImages(ctx.http, urls));
+  return imageDocument(aiDeps(ctx, deps), series.id, page, await fetchImages(ctx.http, urls), trace);
 }
 
 async function locateTimetable(
@@ -350,6 +367,7 @@ async function locateTimetable(
   cal: CalendarRead,
   ctx: AdapterContext,
   deps: GenericDeps,
+  trace?: AiTrace,
 ): Promise<Located | null> {
   if (entry.timetableUrl) {
     const doc = await tryFetch(ctx, entry.timetableUrl);
@@ -371,7 +389,7 @@ async function locateTimetable(
         const doc = await tryFetch(ctx, link.url);
         if (!doc) continue;
         if (doc.kind === 'pdf' || looksLikeTimetable(doc.text)) return { doc };
-        const img = await timetableFromImages(series, doc, ctx, deps);
+        const img = await timetableFromImages(series, doc, ctx, deps, trace);
         if (img) return { doc: img };
       }
       if (looksLikeTimetable(page.text)) return { doc: page };
@@ -392,7 +410,7 @@ async function locateTimetable(
       if (pdfDoc) return { doc: pdfDoc };
     }
     if (!looksLikeTimetable(doc.text)) {
-      const img = await timetableFromImages(series, doc, ctx, deps);
+      const img = await timetableFromImages(series, doc, ctx, deps, trace);
       if (img) return { doc: img };
     }
     return { doc };
@@ -464,8 +482,17 @@ async function genericResults(
         docs++;
         const pending = req.pendingSessions.filter((s) => s.eventId === eventId);
         const all = req.sessions.filter((s) => s.eventId === eventId);
-        const data = await aiResults(ai, series, event.name, all.map((s) => s.name), doc);
-        const source: Source = { url: doc.url, title: doc.title || `Resultados ${series.shortName}`, kind: doc.kind === 'api' ? 'html' : doc.kind, method: 'ia', fetchedAt: nowIso };
+        const trace = newTrace();
+        const data = await aiResults(ai, series, event.name, all.map((s) => s.name), doc, trace);
+        const model = traceModel(trace);
+        const source: Source = {
+          url: doc.url,
+          title: doc.title || `Resultados ${series.shortName}`,
+          kind: doc.kind === 'api' ? 'html' : doc.kind,
+          method: 'ia',
+          fetchedAt: nowIso,
+          ...(model ? { model } : {}),
+        };
         const sessionResults: SessionResult[] = [];
         for (const s of data.sessions ?? []) {
           const target = matchSession(s.sessionName, pending);
@@ -487,14 +514,23 @@ async function genericResults(
     if (req.standingsStale && !standingsRead && docs < MAX_RESULT_DOCS) {
       const doc = standingsUrl ? await tryFetch(ctx, standingsUrl) : null;
       if (doc) {
-        const tables = await aiStandings(ai, series, ctx.season, doc);
+        const trace = newTrace();
+        const tables = await aiStandings(ai, series, ctx.season, doc, trace);
+        const model = traceModel(trace);
         if (tables.length > 0) {
           const standings: StandingsFile = {
             seriesId: series.id,
             season: ctx.season,
             updatedAt: nowIso,
             tables,
-            source: { url: doc.url, title: doc.title || `Campeonato ${series.shortName}`, kind: doc.kind === 'api' ? 'html' : doc.kind, method: 'ia', fetchedAt: nowIso },
+            source: {
+              url: doc.url,
+              title: doc.title || `Campeonato ${series.shortName}`,
+              kind: doc.kind === 'api' ? 'html' : doc.kind,
+              method: 'ia',
+              fetchedAt: nowIso,
+              ...(model ? { model } : {}),
+            },
           };
           out.standings = standings;
         }
