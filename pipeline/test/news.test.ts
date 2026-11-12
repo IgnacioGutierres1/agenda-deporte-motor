@@ -195,6 +195,9 @@ describe('tagSeries', () => {
     expect(en('European Le Mans Series: Portimão finale')).toEqual(['elms']);
     expect(en('Inter Europol returns to Asian Le Mans Series')).toEqual(['alms']);
     expect(en('ALMS: Le Castellet opens the 2026-27 season')).toEqual(['alms']);
+    expect(en('Super Formula title decided at Suzuka')).toEqual(['super-formula']);
+    expect(en('Super Formula Lights: rookie wins')).toEqual([]);
+    expect(en('SUPER GT: GT500 champions crowned at Motegi')).toEqual(['super-gt']);
     expect(en('Petit Le Mans: IMSA crowns champions')).toEqual(['imsa']);
     expect(en('DTM and GT World Challenge Europe share Hockenheim')).toEqual(['gtwc-europe', 'dtm']);
   });

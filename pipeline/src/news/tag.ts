@@ -40,6 +40,11 @@ export const TAG_RULES: TagRule[] = [
   // "TC" a secas, en mayúsculas y solo en notas en castellano (en inglés puede ser "traction control").
   { seriesId: 'tc', patterns: [re(String.raw`(?<![\w-])TC(?![\w-])`, C)], langs: ['es'] },
 
+  // --- Asia y Oceanía (antes de las genéricas: "Super Formula" no es F1) ----------
+  { seriesId: null, patterns: [re(String.raw`\bSuper\s*Formula\s+Lights\b`)] },
+  { seriesId: 'super-formula', patterns: [re(String.raw`\bSuper\s*Formula\b`)] },
+  { seriesId: 'super-gt', patterns: [re(String.raw`\bSUPER\s*GT\b`, C), re(String.raw`\bSuper\s+GT\b`)] },
+
   // --- Monoplazas FIA ----------------------------------------------------------
   { seriesId: 'f1-academy', patterns: [re(String.raw`\bF1\s*Academy\b`)] },
   { seriesId: 'f2', patterns: [re(String.raw`\bF[oó]rmula\s*(?:2|Dos|Two)\b`), re(String.raw`\bF2\b`, C)] },

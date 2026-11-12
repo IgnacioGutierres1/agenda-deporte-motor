@@ -43,6 +43,8 @@ import {
   tzFor,
 } from './kit.ts';
 import type { CalendarEntry, ExtractedSession, SiteRecipe } from './types.ts';
+import { superformula } from './superformula.ts';
+import { supergt } from './supergt.ts';
 
 export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
@@ -995,6 +997,8 @@ function humanize(slug: string): string {
 }
 
 export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca];
+// Asia y Oceanía: recetas en su propio archivo (importan sus utilidades de kit.ts, no de este).
+RECIPES.push(supergt, superformula);
 
 export function findRecipe(url: string): SiteRecipe | undefined {
   return RECIPES.find((r) => r.match(url));
