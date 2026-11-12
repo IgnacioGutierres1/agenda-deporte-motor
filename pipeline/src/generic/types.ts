@@ -1,4 +1,4 @@
-import type { Series, Source, StandingsTable } from '@dm/shared';
+import type { RosterRow, Series, Source, StandingsTable } from '@dm/shared';
 import type { Http } from '../core/http.ts';
 import type { FetchedDocument } from '../extract/document.ts';
 
@@ -47,6 +47,12 @@ export interface StandingsFound {
   source: Source;
 }
 
+/** Lista oficial de inscriptos leída sin IA. */
+export interface RosterFound {
+  rows: RosterRow[];
+  source: Source;
+}
+
 export interface RecipeContext {
   season: number;
   series: Series;
@@ -74,4 +80,9 @@ export interface SiteRecipe {
    * no tiene el formato esperado (entonces se intenta con Gemini).
    */
   standings?(url: string, ctx: RecipeContext): Promise<StandingsFound | null>;
+  /**
+   * Inscriptos de la temporada a partir de una URL de Series.rosterUrls. null si la lista de la temporada
+   * todavía no está publicada; lanza un error si la página no tiene el formato esperado.
+   */
+  roster?(url: string, ctx: RecipeContext): Promise<RosterFound | null>;
 }
