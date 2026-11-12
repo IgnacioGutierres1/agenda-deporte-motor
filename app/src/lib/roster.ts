@@ -115,6 +115,10 @@ const COUNTRY_ALIASES: Record<string, string> = {
   usa: 'US',
   holland: 'NL',
   'hong kong sar china': 'HK',
+  'hong kong': 'HK',
+  'hong kong, china': 'HK',
+  'chinese taipei': 'TW',
+  'ivory coast': 'CI',
   'south korea': 'KR',
   korea: 'KR',
   russia: 'RU',
@@ -123,6 +127,12 @@ const COUNTRY_ALIASES: Record<string, string> = {
   'macao sar china': 'MO',
   macau: 'MO',
 };
+
+/** Nombres cortos para los que Intl da la forma oficial larga ("RAE de Hong Kong (China)"). */
+const SHORT_ES: Record<string, string> = { HK: 'Hong Kong', MO: 'Macao' };
+
+/** Códigos ISO retirados que Intl todavía nombra igual que el actual ("RH" = Zimbabue): nunca se eligen. */
+const RETIRED_CODES = new Set(['AN', 'BU', 'CS', 'DD', 'DY', 'FX', 'HV', 'NH', 'RH', 'SU', 'TP', 'UK', 'VD', 'YD', 'YU', 'ZR']);
 
 let englishToCode: Map<string, string> | null = null;
 
@@ -141,8 +151,7 @@ export function countryCode(country: string | undefined): string {
         for (let b = 65; b <= 90; b++) {
           const code = String.fromCharCode(a, b);
           const name = en.of(code);
-          // El primero gana: "FR" antes que códigos viejos con el mismo nombre ("FX").
-          if (name && name !== code && !englishToCode.has(name.toLowerCase())) englishToCode.set(name.toLowerCase(), code);
+          if (name && name !== code && !RETIRED_CODES.has(code)) englishToCode.set(name.toLowerCase(), code);
         }
       }
     } catch {
@@ -165,7 +174,7 @@ export function countryName(country: string | undefined): string {
   const c = countryCode(raw);
   if (!c) return raw;
   try {
-    return new Intl.DisplayNames(['es'], { type: 'region' }).of(c) ?? raw;
+    return SHORT_ES[c] ?? new Intl.DisplayNames(['es'], { type: 'region' }).of(c) ?? raw;
   } catch {
     return raw;
   }
