@@ -213,9 +213,25 @@ export interface SeriesStatus {
   lastAttempt: string;
   /** ISO UTC de la última lectura exitosa. */
   lastSuccess?: string;
+  /**
+   * Motivo legible del estado: el error de la fuente o, con la serie OK, qué cronogramas faltan ("El organizador
+   * todavía no publicó el cronograma de X" / "No se pudo leer el cronograma de Y").
+   */
   message?: string;
   sourceUrl?: string;
   standingsAvailable: boolean;
+  /**
+   * Cobertura de cronogramas: de las fechas dentro del horizonte de búsqueda de cronogramas (desde ayer hasta
+   * horizonDays días adelante), cuántas ya tienen sesiones con horario. Solo si hay alguna fecha en el horizonte.
+   */
+  timetables?: TimetableCoverage;
+}
+
+export interface TimetableCoverage {
+  /** Fechas en el horizonte con cronograma publicado. */
+  found: number;
+  /** Fechas en el horizonte. */
+  due: number;
 }
 
 /** Contenido de data/status.json */

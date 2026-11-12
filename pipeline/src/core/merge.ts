@@ -1,4 +1,4 @@
-import type { MotorEvent, ScheduleFile, Series, SeriesStatus, Session } from '@dm/shared';
+import type { MotorEvent, ScheduleFile, Series, SeriesStatus, Session, TimetableCoverage } from '@dm/shared';
 import type { ScheduleChunk } from './types.ts';
 
 export type SeriesOutcome =
@@ -39,12 +39,49 @@ export function backupShrink(seriesId: string, chunk: ScheduleChunk, previous: S
   return `Lectura con modelo de respaldo (${model}) incompleta: ${fresh.length} de ${old.length} fechas; se conservan las anteriores`;
 }
 
+const shiftDay = (date: string, days: number) => new Date(Date.parse(`${date}T00:00:00Z`) + days * 86_400_000).toISOString().slice(0, 10);
+
+/** "A", "A y B", "A, B y C". */
+const listNames = (names: string[]) => (names.length <= 1 ? (names[0] ?? '') : `${names.slice(0, -1).join(', ')} y ${names.at(-1)}`);
+
+/**
+ * Cobertura de cronogramas de una serie leída bien: de las fechas dentro del horizonte (el mismo que usa el flujo
+ * genérico para buscar cronogramas: desde ayer hasta horizonDays días adelante), cuántas tienen sesiones. Si falta
+ * alguno, el motivo legible ("todavía no publicó" o "no se pudo leer", según lo informe el lector).
+ * null si no hay fechas en el horizonte.
+ */
+export function timetableCoverage(
+  chunk: ScheduleChunk,
+  todayIso: string,
+  horizonDays: number,
+): { timetables: TimetableCoverage; message?: string } | null {
+  const today = todayIso.slice(0, 10);
+  if (!/^\d{4}-\d{2}-\d{2}$/.test(today)) return null;
+  const from = shiftDay(today, -1);
+  const to = shiftDay(today, horizonDays);
+  const due = chunk.events.filter((e) => e.dateEnd >= from && e.dateStart <= to);
+  if (due.length === 0) return null;
+  const withSessions = new Set(chunk.sessions.map((x) => x.eventId));
+  const missing = due.filter((e) => !withSessions.has(e.id));
+  const timetables = { found: due.length - missing.length, due: due.length };
+  if (missing.length === 0) return { timetables };
+  const reasons = new Map((chunk.missingTimetables ?? []).map((m) => [m.eventId, m.reason]));
+  const unreadable = missing.filter((e) => reasons.get(e.id) === 'ilegible').map((e) => e.name);
+  const unpublished = missing.filter((e) => reasons.get(e.id) !== 'ilegible').map((e) => e.name);
+  const parts = [
+    ...(unpublished.length ? [`El organizador todavía no publicó el cronograma de ${listNames(unpublished)}`] : []),
+    ...(unreadable.length ? [`No se pudo leer el cronograma de ${listNames(unreadable)}`] : []),
+  ];
+  return { timetables, message: `${parts.join('. ')}.` };
+}
+
 export function mergeRun(
   series: Series[],
   outcomes: Map<string, SeriesOutcome>,
   previous: ScheduleFile | null,
   previousStatus: Map<string, SeriesStatus>,
   nowIso: string,
+  horizonDays = 21,
 ): MergeResult {
   const prevSessions = new Map((previous?.sessions ?? []).map((s) => [s.id, s]));
   const events: MotorEvent[] = [];
@@ -94,7 +131,17 @@ export function mergeRun(
       }
       sessions.push(merged);
     }
-    statuses.push({ seriesId: s.id, state: 'ok', lastAttempt: nowIso, lastSuccess: nowIso, sourceUrl, standingsAvailable });
+    const coverage = timetableCoverage(outcome.chunk, nowIso, horizonDays);
+    statuses.push({
+      seriesId: s.id,
+      state: 'ok',
+      lastAttempt: nowIso,
+      lastSuccess: nowIso,
+      ...(coverage?.message ? { message: coverage.message } : {}),
+      sourceUrl,
+      standingsAvailable,
+      ...(coverage ? { timetables: coverage.timetables } : {}),
+    });
   }
 
   events.sort((a, b) => a.dateStart.localeCompare(b.dateStart) || a.seriesId.localeCompare(b.seriesId));

@@ -82,6 +82,7 @@
               <span v-if="seriesStatus" class="dim"> · última verificación {{ ago(seriesStatus.lastAttempt) }}</span>
             </p>
             <p v-if="seriesStatus?.message" class="small dim">{{ seriesStatus.message }}</p>
+            <p v-if="seriesStatus?.state === 'ok' && seriesStatus.timetables" class="small dim">{{ timetablesLine }}</p>
             <p class="small dim">
               {{ series.strategy === 'adapter' ? 'Lectura directa de la fuente oficial.' : 'Leído del sitio oficial (con IA cuando el documento no tiene estructura).' }}
             </p>
@@ -156,7 +157,7 @@ import NewsList from '../components/NewsList.vue';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { formatDateRange, timeAgo } from '../lib/format.ts';
+import { formatDateRange, timeAgo, timetablesText } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
@@ -227,6 +228,9 @@ export default defineComponent({
     },
     seriesStatus(): SeriesStatus | undefined {
       return this.status?.series.find((s) => s.seriesId === this.series?.id);
+    },
+    timetablesLine(): string {
+      return this.seriesStatus?.timetables ? timetablesText(this.seriesStatus.timetables) : '';
     },
     statusBadge(): { label: string; cls: string } {
       switch (this.seriesStatus?.state) {

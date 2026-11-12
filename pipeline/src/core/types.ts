@@ -29,6 +29,17 @@ export interface AdapterContext {
 export interface ScheduleChunk {
   events: MotorEvent[];
   sessions: Session[];
+  /**
+   * Fechas dentro del horizonte que quedaron sin cronograma, con el motivo (lo informa el flujo genérico):
+   * 'no-publicado' = el sitio todavía no lo publicó; 'ilegible' = hay un documento pero no se pudo leer.
+   * Las fechas sin cronograma que no figuran acá se dan por no publicadas.
+   */
+  missingTimetables?: MissingTimetable[];
+}
+
+export interface MissingTimetable {
+  eventId: string;
+  reason: 'no-publicado' | 'ilegible';
 }
 
 export interface ResultsRequest {

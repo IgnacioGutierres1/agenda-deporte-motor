@@ -99,7 +99,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
       const chunk = await adapter.schedule(series, { ...ctx, log: slog });
       const { valid, issues } = validateSessions(chunk.sessions, chunk.events);
       for (const i of issues) slog.warn(`Sesión descartada ${i.sessionId}: ${i.reason}`);
-      outcomes.set(series.id, { kind: 'ok', chunk: { events: chunk.events, sessions: valid } });
+      outcomes.set(series.id, { kind: 'ok', chunk: { ...chunk, sessions: valid } });
       slog.info(`${chunk.events.length} eventos, ${valid.length} sesiones`);
     } catch (err) {
       const error = err instanceof Error ? err : new Error(String(err));
@@ -108,7 +108,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     }
   });
 
-  const merged = mergeRun(selected, outcomes, previous, prevStatusMap, nowIso);
+  const merged = mergeRun(selected, outcomes, previous, prevStatusMap, nowIso, ctx.horizonDays);
   for (const s of untouched) {
     merged.events.push(...(previous?.events ?? []).filter((e) => e.seriesId === s.id));
     merged.sessions.push(...(previous?.sessions ?? []).filter((x) => x.seriesId === s.id));
