@@ -24,11 +24,15 @@
           <button v-for="r in recent" :key="r" type="button" class="pill" @click="query = r">{{ r }}</button>
         </div>
       </template>
+      <StarterPack />
       <RecommendationsCard />
     </template>
 
     <template v-else>
       <p v-if="!total && !peopleLoading" class="card empty dim">Sin resultados para «{{ query }}».</p>
+      <p v-else-if="suggestion" class="did-you-mean">
+        ¿Quisiste decir <button type="button" class="link-btn" @click="query = suggestion">{{ suggestion }}</button>?
+      </p>
 
       <template v-if="seriesHits.length">
         <h2 class="section-title">Categorías</h2>
@@ -46,7 +50,7 @@
               <DriverAvatar :name="d.name" :color="driverColor(d)" :size="34" />
               <span class="grow">
                 {{ d.name }}
-                <span class="block small dim">{{ entrySummary(d) }}</span>
+                <span class="block small dim one-line">{{ entrySummary(d) }}</span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
@@ -62,7 +66,7 @@
               <DriverAvatar :name="t.name" :color="teamColor(t)" :size="34" />
               <span class="grow">
                 {{ t.name }}
-                <span class="block small dim">{{ teamSummary(t) }}</span>
+                <span class="block small dim one-line">{{ teamSummary(t) }}</span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
@@ -78,7 +82,7 @@
               <span class="rec-circuit" :style="{ background: circuitColor(c) }"><AppIcon name="flag" :size="16" /></span>
               <span class="grow">
                 {{ c.name }}
-                <span class="block small dim">{{ circuitSummary(c) }}</span>
+                <span class="block small dim one-line">{{ circuitSummary(c) }}</span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
@@ -94,7 +98,7 @@
               <SeriesCrest :series="h.series" :size="30" />
               <span class="grow">
                 {{ h.event.name }}
-                <span class="block small dim">{{ h.series.shortName }} · {{ dateRange(h.event.dateStart, h.event.dateEnd) }} · {{ h.event.circuit }}</span>
+                <span class="block small dim one-line">{{ h.series.shortName }} · {{ dateRange(h.event.dateStart, h.event.dateEnd) }} · {{ h.event.circuit }}</span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
@@ -120,15 +124,29 @@ import NewsList from '../components/NewsList.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import SeriesRow from '../components/SeriesRow.vue';
 import RecommendationsCard from '../components/RecommendationsCard.vue';
+import StarterPack from '../components/StarterPack.vue';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useTeamsStore } from '../stores/teams.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
+import { useSettingsStore } from '../stores/settings.ts';
 import { formatDateRange } from '../lib/format.ts';
-import { seriesColor, seriesSort } from '../lib/grid.ts';
+import { seriesColor } from '../lib/grid.ts';
 import { todayIn } from '../lib/agenda.ts';
 import { readJsonStorage, writeJsonStorage } from '../lib/storage.ts';
-import { matchesAll, normalize as norm, searchCircuits } from '../lib/search.ts';
+import {
+  carNumberQuery,
+  driverSubtitle,
+  matchesAll,
+  matchText,
+  normalize as norm,
+  numberSeriesOf,
+  rankSeries,
+  searchCircuits,
+  type SearchContext,
+  type TextMatch,
+} from '../lib/search.ts';
+import { searchContext } from '../lib/searchContext.ts';
 import { driverSeriesIds } from '../lib/teams.ts';
 import type { Circuit } from '../lib/circuits.ts';
 const RECENT_KEY = 'search-recent';
@@ -136,7 +154,7 @@ const RECENT_KEY = 'search-recent';
 /** Buscador general (como "Buscar" en FotMob): categorías, pilotos, equipos, circuitos, eventos y noticias. */
 export default defineComponent({
   name: 'SearchView',
-  components: { AppIcon, DriverAvatar, NewsList, RecommendationsCard, SeriesCrest, SeriesRow },
+  components: { AppIcon, DriverAvatar, NewsList, RecommendationsCard, SeriesCrest, SeriesRow, StarterPack },
   data() {
     return {
       query: (this.$route.query.q as string | undefined) ?? '',
@@ -157,11 +175,19 @@ export default defineComponent({
     words(): string[] {
       return this.q.split(/\s+/).filter(Boolean);
     },
+    ...mapState(useSettingsStore, ['followedSeriesIds', 'followedDrivers', 'followedTeams']),
+    /** Relevancia: lo seguido, las principales y las argentinas primero (depende de lo seguido). */
+    ctx(): SearchContext {
+      // Se lee lo seguido para que el orden se actualice al tocar ★.
+      void [this.followedSeriesIds, this.followedDrivers, this.followedTeams];
+      return searchContext();
+    },
+    /** Número de auto buscado ("#43" o "43"). */
+    carNumber(): string {
+      return carNumberQuery(this.query);
+    },
     seriesHits(): Series[] {
-      return (this.schedule?.series ?? [])
-        .filter((s) => s.enabled && matchesAll(`${s.name} ${s.shortName}`, this.words))
-        .sort(seriesSort)
-        .slice(0, 8);
+      return rankSeries((this.schedule?.series ?? []).filter((s) => s.enabled), this.query, this.ctx, 8).map((h) => h.item);
     },
     driverHits(): Driver[] {
       return useDriversStore().search(this.query, 10);
@@ -170,7 +196,7 @@ export default defineComponent({
       return useTeamsStore().search(this.query, 8);
     },
     circuitHits(): Circuit[] {
-      return searchCircuits(this.circuits, this.query, 6);
+      return searchCircuits(this.circuits, this.query, 6, this.ctx);
     },
     eventHits(): Array<{ event: MotorEvent; series: Series; past: boolean }> {
       const out: Array<{ event: MotorEvent; series: Series; past: boolean }> = [];
@@ -185,6 +211,27 @@ export default defineComponent({
           a.past !== b.past ? Number(a.past) - Number(b.past) : a.past ? b.event.dateStart.localeCompare(a.event.dateStart) : a.event.dateStart.localeCompare(b.event.dateStart),
         )
         .slice(0, 12);
+    },
+    /**
+     * "¿Quisiste decir…?": si nada coincide exacto ni por prefijo (solo con errores de tipeo), el nombre
+     * del mejor resultado aproximado.
+     */
+    suggestion(): string {
+      if (this.carNumber || this.eventHits.length || this.newsHits.length) return '';
+      const names = [
+        ...this.seriesHits.map((s) => s.name),
+        ...this.driverHits.map((d) => d.name),
+        ...this.teamHits.map((t) => t.name),
+        ...this.circuitHits.map((c) => c.name),
+      ];
+      let best: { name: string; m: TextMatch } | null = null;
+      for (const name of names) {
+        const m = matchText(name, this.query);
+        if (!m) continue;
+        if (m.kind !== 'fuzzy') return '';
+        if (!best || m.dist < best.m.dist) best = { name, m };
+      }
+      return best?.name ?? '';
     },
     newsHits(): NewsItem[] {
       return this.newsItems.filter((n) => matchesAll(n.title, this.words)).slice(0, 6);
@@ -239,15 +286,10 @@ export default defineComponent({
     driverColor(d: Driver): string {
       return seriesColor(this.seriesById.get(driverSeriesIds(d)[0] ?? ''));
     },
+    /** Campeonatos e inscripciones; si se buscó un número, primero ese auto ("#43 · F1 · P12"). */
     entrySummary(d: Driver): string {
       const short = (id: string) => this.seriesById.get(id)?.shortName ?? id;
-      const ranked = d.entries.map((e) => `${short(e.seriesId)}${e.table ? ' ' + e.table : ''} P${e.pos}`);
-      // Inscripciones en categorías donde no figura en la tabla.
-      const inTable = new Set(d.entries.map((e) => e.seriesId));
-      const entered = (d.lineups ?? [])
-        .filter((l) => !inTable.has(l.seriesId))
-        .map((l) => `${short(l.seriesId)}${l.number ? ' #' + l.number : ''}${l.team ? ' · ' + l.team : ''}`);
-      return [...ranked, ...entered].join(' · ');
+      return driverSubtitle(d, short, this.carNumber, this.carNumber ? numberSeriesOf(d, this.carNumber, this.ctx) : '');
     },
     teamColor(t: Team): string {
       return seriesColor(this.seriesById.get(t.entries[0]?.seriesId ?? t.drivers[0]?.seriesId ?? ''));
@@ -281,5 +323,15 @@ export default defineComponent({
 <style>
 .wrap-chips {
   flex-wrap: wrap;
+}
+
+.did-you-mean {
+  margin: 0.5rem 0 0;
+}
+
+.did-you-mean .link-btn {
+  min-height: 0;
+  padding: 0;
+  font-size: inherit;
 }
 </style>
