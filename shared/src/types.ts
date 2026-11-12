@@ -275,6 +275,15 @@ export interface NewsItem {
   /** Categorías a las que se refiere (por la fuente o por palabras clave del título). */
   seriesIds: string[];
   lang?: string;
+  /** La misma nota en otros medios o idiomas (agrupada para no repetirla en la lista). */
+  alsoIn?: NewsAlternate[];
+}
+
+/** Otra versión de la misma nota (otro medio u otra edición/idioma del mismo medio). */
+export interface NewsAlternate {
+  source: string;
+  url: string;
+  lang?: string;
 }
 
 /** Contenido de data/news.json */

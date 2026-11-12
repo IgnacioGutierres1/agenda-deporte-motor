@@ -269,6 +269,9 @@ export const newsFileSchema = z.object({
       summary: z.string().optional(),
       seriesIds: z.array(z.string()),
       lang: z.string().optional(),
+      alsoIn: z
+        .array(z.object({ source: z.string().min(1), url: z.string().url(), lang: z.string().optional() }))
+        .optional(),
     }),
   ),
 });
