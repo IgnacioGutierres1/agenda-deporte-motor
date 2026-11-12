@@ -200,6 +200,7 @@ export default defineComponent({
         country: i.event?.country ?? '',
         sessionName: i.session.name,
         broadcast: i.session.broadcast,
+        broadcastIsDefault: i.session.broadcastIsDefault,
         sourceUrl: i.session.source.url,
         fromImage: i.session.source.kind === 'image',
       }));

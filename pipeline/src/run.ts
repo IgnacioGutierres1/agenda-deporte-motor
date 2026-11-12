@@ -194,7 +194,7 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     await writeJson(attemptsFile, attempts);
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
-      buildFeed(config.series, schedule.events, schedule.sessions, now),
+      buildFeed(config.series, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
     );
   }
 
