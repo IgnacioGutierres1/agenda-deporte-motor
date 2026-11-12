@@ -3,7 +3,9 @@
  * "Canapino, Agustin", "Agustín CANAPINO" y "Agustín Canapino" son el mismo piloto
  * (mismas palabras sin acentos ni mayúsculas, en cualquier orden).
  */
+import aliasConfig from '../../config/driver-aliases.json' with { type: 'json' };
 import { slugify } from './hash.ts';
+import { accentGivenName, hasBrokenChars, repairBrokenChars } from './names.ts';
 
 /** Una línea del campeonato de un piloto en una categoría. */
 export interface DriverEntry {
@@ -192,13 +194,68 @@ function tokens(raw: string): string[] {
     .filter(Boolean);
 }
 
-/** Palabras del nombre, sin acentos, en minúsculas y ordenadas: clave para unir variantes. */
-export function driverKey(raw: string): string {
-  return [...new Set(tokens(stripCode(raw)))].sort().join(' ');
+/** Etiquetas entre paréntesis que no son parte del nombre: invitado (WCD, INV, G), novato (R, RC). */
+const NAME_TAGS = /\s*\((?:wcd|inv|g|guest|r|rc|rookie)\)/gi;
+
+/**
+ * Quita lo que no es parte del nombre: marcas de nota al pie ("Alex Sedgwick***", "Name†"), etiquetas de
+ * invitado o novato ("A. Danielsson (WCD)") y letras perdidas por la codificación que se pueden reparar
+ * ("MENENDEZ, AGUST?N" -> "MENENDEZ, AGUSTÍN"). "(h)" (hijo) sí es parte del nombre.
+ */
+export function cleanDriverName(raw: string): string {
+  return repairBrokenChars(raw)
+    .replace(/[*†‡§¹²³⁴⁵]+/g, ' ')
+    .replace(NAME_TAGS, ' ')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
-export function driverId(raw: string): string {
+/** true si el nombre no se puede usar (letras rotas que no se pudieron reparar). */
+export function isBrokenDriverName(raw: string): boolean {
+  return hasBrokenChars(cleanDriverName(raw));
+}
+
+/** Palabras del nombre, sin acentos, en minúsculas y ordenadas: clave para unir variantes. */
+export function driverKey(raw: string): string {
+  return [...new Set(tokens(stripCode(cleanDriverName(raw))))].sort().join(' ');
+}
+
+/** Id a partir de las palabras del nombre, sin aplicar config/driver-aliases.json. */
+export function baseDriverId(raw: string): string {
   return slugify(driverKey(raw));
+}
+
+interface DriverAliasConfig {
+  aliases: Record<string, string>;
+  doNotMerge: Array<{ id: string; series: string[]; as: string }>;
+}
+
+const DRIVER_ALIASES: Record<string, string> = (aliasConfig as DriverAliasConfig).aliases ?? {};
+const DRIVER_SPLITS = new Map((aliasConfig as DriverAliasConfig).doNotMerge?.map((r) => [r.id, r]) ?? []);
+
+/**
+ * Id canónico (config/driver-aliases.json): una variante conocida del nombre ("Cam Waters") va al id de la otra
+ * ("cameron-waters"); un homónimo conocido en otra categoría ("Josh Berry" en la 24H Series) va a su propio id.
+ * Sin `seriesId` no se separan homónimos.
+ */
+export function resolveDriverId(id: string, seriesId?: string): string {
+  const split = DRIVER_SPLITS.get(id);
+  if (split && seriesId && split.series.includes(seriesId)) return split.as;
+  return DRIVER_ALIASES[id] ?? id;
+}
+
+/** Homónimos conocidos que no se unen: pares [id, id del homónimo] (config/driver-aliases.json, doNotMerge). */
+export function knownHomonyms(): Array<[string, string]> {
+  return [...DRIVER_SPLITS.values()].map((r) => [r.id, r.as]);
+}
+
+/**
+ * Id estable del piloto: palabras del nombre normalizadas y ordenadas, con los alias y homónimos de
+ * config/driver-aliases.json. Pasar la categoría cuando se conoce (separa homónimos).
+ */
+export function driverId(raw: string, seriesId?: string): string {
+  const id = baseDriverId(raw);
+  return id ? resolveDriverId(id, seriesId) : '';
 }
 
 /**
@@ -228,18 +285,44 @@ function titleWord(w: string, first: boolean): string {
   return lower.replace(/(^|[-'’])(\p{L})/gu, (_m, sep: string, c: string) => sep + c.toLocaleUpperCase('es'));
 }
 
+/** Opciones de driverDisplayName. */
+export interface DisplayNameOptions {
+  /**
+   * Fuente en español (categorías argentinas): a los nombres de pila escritos en mayúsculas se les devuelve el
+   * acento ("CORTINA, JOAQUIN" -> "Joaquín Cortina").
+   */
+  spanish?: boolean;
+}
+
 /**
  * Nombre legible: "CANAPINO, Agustin" -> "Agustin Canapino", "NICOLÁS JAIME" -> "Nicolás Jaime",
- * "A. Palmowski PAL" -> "A. Palmowski".
+ * "A. Palmowski PAL" -> "A. Palmowski", "Gustavo (H) TADEI" -> "Gustavo Tadei (h)", "Alex Sedgwick***" ->
+ * "Alex Sedgwick".
  */
-export function driverDisplayName(raw: string): string {
-  let t = stripCode(raw);
+export function driverDisplayName(raw: string, opts: DisplayNameOptions = {}): string {
+  let t = stripCode(cleanDriverName(raw));
+  // "(h)" = hijo: va al final, como se escribe en la Argentina.
+  let junior = false;
+  t = t.replace(/\s*\(h\)\s*/gi, () => {
+    junior = true;
+    return ' ';
+  }).trim();
   const comma = t.split(',');
-  if (comma.length === 2 && comma[0]!.trim() && comma[1]!.trim()) t = `${comma[1]!.trim()} ${comma[0]!.trim()}`;
-  return t
-    .split(' ')
-    .map((w, i) => titleWord(w, i === 0))
+  let given: string[] | null = null;
+  if (comma.length === 2 && comma[0]!.trim() && comma[1]!.trim()) {
+    given = comma[1]!.trim().split(' ');
+    t = `${comma[1]!.trim()} ${comma[0]!.trim()}`;
+  }
+  const words = t.split(' ');
+  const out = words
+    .map((w, i) => {
+      // Acento del nombre de pila: todo lo que va después de la coma, o la primera palabra si no hay coma.
+      const isGiven = given ? i < given.length : i === 0;
+      const accented = opts.spanish && isGiven ? accentGivenName(w, !!given) : w;
+      return titleWord(accented, i === 0);
+    })
     .join(' ');
+  return junior ? `${out} (h)` : out;
 }
 
 /** Qué tan "prolija" es la forma original de un nombre (para elegir cuál mostrar entre variantes). */
@@ -248,7 +331,8 @@ export function nameQuality(raw: string): number {
   if (/[a-zà-ÿ]/.test(raw)) score += 2; // no está todo en mayúsculas
   if (!raw.includes(',')) score += 1; // no está como "Apellido, Nombre"
   if (/[À-ÿ]/.test(raw)) score += 1; // conserva acentos
-  if (!/\b[A-Z]\./.test(raw)) score += 1; // nombre completo, no inicial
+  if (!/[A-Z]\./.test(raw)) score += 1; // nombre completo, no inicial
+  if (/[*†‡?�]/.test(raw)) score -= 2; // notas al pie o letras rotas
   return score;
 }
 

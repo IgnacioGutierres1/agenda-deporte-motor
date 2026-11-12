@@ -55,6 +55,7 @@ export const sessionSchema = z
     seriesId: z.string(),
     type: z.enum(['practica', 'clasificacion', 'sprint', 'serie', 'carrera', 'warmup', 'otro']),
     name: z.string(),
+    originalName: z.string().optional(),
     startUtc: isoUtc,
     endUtc: isoUtc,
     endEstimated: z.boolean(),

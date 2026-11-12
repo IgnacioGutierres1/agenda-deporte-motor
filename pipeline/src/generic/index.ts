@@ -501,15 +501,15 @@ async function locateTimetable(
 
 // ─── Resultados y campeonato (Nivel B) ────────────────────────────────────────────────────────
 
+/** Nombres con que se puede reconocer una sesión: el original de la fuente ("Practice 1") y el publicado ("Práctica 1"). */
+const sessionNames = (c: Session) => [...new Set([c.originalName, c.name].filter((x): x is string => !!x).map(normalizeForMatch))];
+
 /** Une un nombre de sesión transcripto con la sesión del cronograma. */
 export function matchSession(name: string, candidates: Session[]): Session | undefined {
   const n = normalizeForMatch(name);
-  const exact = candidates.find((c) => normalizeForMatch(c.name) === n);
+  const exact = candidates.find((c) => sessionNames(c).includes(n));
   if (exact) return exact;
-  const contains = candidates.filter((c) => {
-    const cn = normalizeForMatch(c.name);
-    return cn.includes(n) || n.includes(cn);
-  });
+  const contains = candidates.filter((c) => sessionNames(c).some((cn) => cn.includes(n) || n.includes(cn)));
   if (contains.length === 1) return contains[0];
   const type = classifySession(name);
   const sameType = candidates.filter((c) => c.type === type);
@@ -564,7 +564,8 @@ async function genericResults(
         const pending = req.pendingSessions.filter((s) => s.eventId === eventId);
         const all = req.sessions.filter((s) => s.eventId === eventId);
         const trace = newTrace();
-        const data = await aiResults(ai, series, event.name, all.map((s) => s.name), doc, trace);
+        // La IA lee el documento oficial: se le pasan los nombres de sesión tal como figuran en la fuente.
+        const data = await aiResults(ai, series, event.name, all.map((s) => s.originalName ?? s.name), doc, trace);
         const model = traceModel(trace);
         const source: Source = {
           url: doc.url,

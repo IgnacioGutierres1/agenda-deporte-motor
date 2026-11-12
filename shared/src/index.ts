@@ -12,3 +12,4 @@ export * from './live-sources.ts';
 export * from './live-nascar.ts';
 export * from './live-motogp.ts';
 export * from './live-speedhive.ts';
+export * from './names.ts';

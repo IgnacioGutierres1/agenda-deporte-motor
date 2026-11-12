@@ -176,7 +176,7 @@ import PodiumLine from '../components/PodiumLine.vue';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
-import { formatDateRange, timeAgo, timetablesText } from '../lib/format.ts';
+import { formatDateRange, monthShort, timeAgo, timetablesText } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
@@ -279,7 +279,7 @@ export default defineComponent({
     },
     /** "Fecha N ·" solo si el nombre del evento no lo dice ya. */
     showRound(ev: MotorEvent): boolean {
-      return !!ev.round && !/^(fecha|ronda|round)\s/i.test(ev.name);
+      return !!ev.round && !/^(fechas?|ronda|round)\s/i.test(ev.name);
     },
     isPast(ev: MotorEvent): boolean {
       return ev.dateEnd < todayIn(this.now, ev.tz);
@@ -287,9 +287,7 @@ export default defineComponent({
     dayNum(date: string): string {
       return String(Number(date.slice(8, 10)));
     },
-    monthShort(date: string): string {
-      return DateTime.fromISO(date).setLocale('es-AR').toFormat('LLL').replace('.', '');
-    },
+    monthShort,
     ago(iso: string): string {
       return timeAgo(iso, this.now);
     },

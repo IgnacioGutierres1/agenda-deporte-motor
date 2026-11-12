@@ -27,6 +27,19 @@ export function formatDateTime(isoUtc: string, zone: string = AR_TZ): string {
   return DateTime.fromISO(isoUtc, { zone: 'utc' }).setZone(zone).setLocale('es-AR').toFormat('ccc d/L HH:mm');
 }
 
+/**
+ * Abreviatura del mes como la del resto de los meses: el locale es-AR de Intl escribe "sept" para septiembre
+ * ("ene", "feb"… "sept", "oct"); se usa "sep". Vale para un texto ya formateado ("jue, 3 sept" -> "jue, 3 sep").
+ */
+export function fixMonthAbbr(text: string): string {
+  return text.replace(/\b(s)ept\b\.?/gi, (_m, s: string) => `${s}ep`);
+}
+
+/** Mes abreviado sin punto de una fecha local YYYY-MM-DD: "ene", "sep", "dic". */
+export function monthShort(date: string): string {
+  return fixMonthAbbr(DateTime.fromISO(date).setLocale('es-AR').toFormat('LLL').replace('.', ''));
+}
+
 /** "28/11" o "27–29/11" a partir de fechas locales YYYY-MM-DD. */
 export function formatDateRange(dateStart: string, dateEnd: string): string {
   const a = DateTime.fromISO(dateStart);

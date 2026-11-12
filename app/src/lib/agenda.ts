@@ -4,6 +4,7 @@
  */
 import { DateTime } from 'luxon';
 import { resolvePeriod, type MotorEvent, type Period, type ScheduleFile, type Series, type Session } from '@dm/shared';
+import { fixMonthAbbr } from './format.ts';
 import { seriesSort, type GridItem, type PendingItem } from './grid.ts';
 
 /** Día elegido en la franja: fecha local YYYY-MM-DD, o "finde" (fin de semana en curso o el próximo). */
@@ -36,7 +37,7 @@ function dayLabel(offset: number, d: DateTime): string {
   if (offset === 0) return 'Hoy';
   if (offset === -1) return 'Ayer';
   if (offset === 1) return 'Mañana';
-  return d.setLocale('es-AR').toFormat('ccc, d LLL').replace(/\./g, '');
+  return fixMonthAbbr(d.setLocale('es-AR').toFormat('ccc, d LLL').replace(/\./g, ''));
 }
 
 /** Período (UTC) de un día local o del fin de semana. */
@@ -168,7 +169,7 @@ export function relativeDay(date: string, today: string, zone: string): string {
   if (diff === 1) return 'mañana';
   if (diff === -1) return 'ayer';
   if (diff > 1 && diff < 7) return `el ${d.toFormat('cccc d')}`;
-  return `el ${d.toFormat('ccc d LLL').replace(/\./g, '')}`;
+  return `el ${fixMonthAbbr(d.toFormat('ccc d LLL').replace(/\./g, ''))}`;
 }
 
 /** Próxima sesión (de las categorías visibles) que empieza desde un instante dado. */

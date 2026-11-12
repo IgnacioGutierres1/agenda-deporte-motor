@@ -169,7 +169,7 @@ export default defineComponent({
     },
     /** Link a la ficha del piloto (solo en tablas de pilotos y nombres de un solo piloto). */
     driverLink(title: string, name: string): string {
-      return isDriverTable(title) && isSingleDriverName(name) ? `/piloto/${driverId(name)}` : '';
+      return isDriverTable(title) && isSingleDriverName(name) ? `/piloto/${driverId(name, this.series.id)}` : '';
     },
     /** Link a la ficha del equipo (no para tablas de marcas ni de propietarios). */
     teamTableLink(title: string, name: string): string {

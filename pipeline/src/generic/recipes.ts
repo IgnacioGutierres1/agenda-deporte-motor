@@ -3,7 +3,7 @@
  * Cada receta solo interpreta el HTML/JSON que publica el sitio oficial; lo que no resuelve
  * (cronogramas en PDF, páginas sin estructura) queda para el flujo genérico con Gemini.
  */
-import { localToUtc, toUtcIso, type Source, type StandingsRow, type StandingsTable } from '@dm/shared';
+import { localToUtc, repairBrokenChars, toUtcIso, type Source, type StandingsRow, type StandingsTable } from '@dm/shared';
 import type { FetchedDocument } from '../extract/document.ts';
 import {
   absoluteUrl,
@@ -275,11 +275,13 @@ const indycar: SiteRecipe = {
         if (day.start > prev.dateEnd) prev.dateEnd = day.start;
         continue;
       }
+      // Las fechas en Canadá (Toronto, desde 2026 Markham) figuran en el mismo calendario.
+      const country = /canada|ontario|toronto|markham/i.test(`${location} ${track}`) ? 'Canada' : 'United States';
       out.push({
         name: title || track,
         circuit: track,
-        country: 'United States',
-        tz: tzFor(/canada|ontario|toronto/i.test(location) ? 'Canada' : 'United States', `${location} ${track}`),
+        country,
+        tz: tzFor(country, `${location} ${track}`),
         dateStart: shiftDate(day.start, -2),
         dateEnd: day.start,
         url,
@@ -845,7 +847,9 @@ const aptp: SiteRecipe = {
         const number = cNum! >= 0 ? textOf(cells[cNum!] ?? '') : '';
         return {
           pos: parseNumber(textOf(cells[cPos!] ?? '')) ?? 0,
-          name: textOf(cells[cName!] ?? ''),
+          // El sitio guarda algunos nombres con "?" en lugar de la vocal acentuada ("MENENDEZ, AGUST?N"): se
+          // reparan con los nombres de pila conocidos (la página en sí es UTF-8; el "?" está en el texto).
+          name: repairBrokenChars(textOf(cells[cName!] ?? '')),
           ...(number ? { number } : {}),
           points: parseNumber(textOf(cells[cPts!] ?? '')) ?? NaN,
           // La columna muestra una copa con "x4"; vacía = sin victorias.

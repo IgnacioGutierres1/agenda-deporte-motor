@@ -1,0 +1,46 @@
+{
+  "_comment": "Pilotos: variantes del mismo nombre (alias -> id canónico) y homónimos que no hay que unir. Los ids son los de driverId (palabras del nombre sin acentos, ordenadas). El id canónico decide el nombre que se muestra si las variantes empatan en prolijidad. Para encontrar candidatos nuevos: npm run drivers:candidates.",
+  "aliases": {
+    "alexey-nesov": "aleksei-nesov",
+    "alexandar-sims": "alexander-sims",
+    "cam-waters": "cameron-waters",
+    "dani-juncadella": "daniel-juncadella",
+    "fabien-schiller": "fabian-schiller",
+    "adam-jonny": "adam-jonathan",
+    "pera-ricardo": "pera-riccardo",
+    "jeff-machiels": "jef-machiels",
+    "niclkas-nielsen": "nicklas-nielsen",
+    "chris-froggatt": "christopher-froggatt",
+    "christopher-lulham": "chris-lulham",
+    "alan-day-jamie": "day-jamie",
+    "detry-mathieu-r-vincent": "detry-mathieu",
+    "fleming-tom": "fleming-thomas",
+    "mikey-porter": "michael-porter",
+    "lyu-wei": "lu-wei",
+    "bobby-thompson": "robert-thompson",
+    "eriksson-hampus": "ericsson-hampus",
+    "h-ibrahim-jefri-prince": "ibrahim-jefri-prince",
+    "abdulla-al-ali-khelaifi": "abdulla-al-khelaifi",
+    "austin-hill-j": "austin-hill",
+    "bennett-carl-wattana": "bennett-carl",
+    "cuarta-enzo-marti": "enzo-marti",
+    "cross-fluxa-lorenzo": "fluxa-lorenzo",
+    "gaarde-mikkel-pedersen": "mikkel-pedersen",
+    "sargent-tom": "sargent-thomas",
+    "cornargo-lao-manel": "lao-manel"
+  },
+  "doNotMerge": [
+    {
+      "id": "berry-josh",
+      "series": ["24h-series"],
+      "as": "berry-josh-24h",
+      "reason": "Josh Berry de la NASCAR Cup (EE. UU.) no es el Josh Berry australiano de la 24H Series"
+    },
+    {
+      "id": "dario-franchitti",
+      "series": ["24h-series"],
+      "as": "dario-franchitti-24h",
+      "reason": "El Dario Franchitti de la NASCAR Truck no es el de la 24H Series"
+    }
+  ]
+}
