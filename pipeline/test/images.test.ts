@@ -54,6 +54,24 @@ describe('plan B para sitios que bloquean a GitHub (proxy de Google)', () => {
     expect(asked).toHaveLength(2);
   });
 
+  it('también pide por el proxy las imágenes bloqueadas (cronograma de TC2000) y las devuelve tal cual', async () => {
+    const asked: string[] = [];
+    const http = createHttp({
+      retries: 0,
+      fetchImpl: async (url) => {
+        asked.push(String(url));
+        if (String(url).includes('translate.goog')) return new Response(JPG.body, { status: 200, headers: { 'Content-Type': 'image/jpeg' } });
+        return new Response('Forbidden', { status: 403 });
+      },
+    });
+    const res = await http.bytes('https://www.tc2000.com.ar/images/noticias/2009/noticias-56564-2-2026-10-22.jpg');
+    expect(res.url).toBe('https://www.tc2000.com.ar/images/noticias/2009/noticias-56564-2-2026-10-22.jpg');
+    expect([...res.body]).toEqual([...JPG.body]);
+    expect(asked[1]).toBe(
+      'https://www-tc2000-com-ar.translate.goog/images/noticias/2009/noticias-56564-2-2026-10-22.jpg?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es',
+    );
+  });
+
   it('si el proxy tampoco responde, informa el 403 original; otros errores no usan el proxy', async () => {
     const http = createHttp({ retries: 0, fetchImpl: async () => new Response('no', { status: 403 }) });
     await expect(http.text('https://imsa.example.com/schedule')).rejects.toThrow('HTTP 403 en https://imsa.example.com/schedule');
