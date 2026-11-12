@@ -46,6 +46,11 @@ export interface ResultsChunk {
   /** Resultados por evento. run.ts los fusiona con los archivos existentes. */
   results: EventResultsFile[];
   standings?: StandingsFile;
+  /**
+   * Sesiones que esta corrida no llegó a probar de verdad (la fuente pidió esperar con 429/5xx, o se agotó el cupo
+   * de descargas de la corrida): no cuentan como intento fallido y se vuelven a buscar en la próxima.
+   */
+  deferred?: string[];
 }
 
 /**

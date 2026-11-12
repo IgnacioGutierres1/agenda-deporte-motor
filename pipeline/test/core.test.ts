@@ -212,3 +212,26 @@ describe('pendingResultSessions', () => {
     expect(retryAfterReaderFix(attempts, [before], '2026-11-12T12:00:00Z')).toBe(0);
   });
 });
+
+describe('runResultsForSeries', () => {
+  it('las sesiones diferidas por la fuente (429) no gastan un intento', async () => {
+    const { runResultsForSeries } = await import('../src/core/results.ts');
+    const { testContext } = await import('./fakes.ts');
+    const { fakeHttp } = await import('./fake-http.ts');
+    const { mkdtempSync } = await import('node:fs');
+    const { tmpdir } = await import('node:os');
+    const pathMod = await import('node:path');
+    const a = { ...race, id: 'a' };
+    const b = { ...race, id: 'b' };
+    const adapter = {
+      name: 'x',
+      schedule: async () => ({ events: [], sessions: [] }),
+      results: async () => ({ results: [], deferred: ['b'] }),
+    };
+    const attempts: Record<string, { count: number; last: string }> = {};
+    const dir = mkdtempSync(pathMod.join(tmpdir(), 'dm-res-'));
+    await runResultsForSeries(series, adapter, testContext(fakeHttp({}), '2026-12-10T00:00:00Z'), [event], [a, b], attempts, dir, true);
+    expect(attempts.a?.count).toBe(1);
+    expect(attempts.b).toBeUndefined();
+  });
+});

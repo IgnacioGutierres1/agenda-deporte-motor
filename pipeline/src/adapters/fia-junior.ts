@@ -14,6 +14,7 @@
  * - Campeonato: https://www.fiaformula2.com/en/standings/{season}/drivers y …/teams (payload RSC `standings[]`).
  */
 import type { EventResultsFile, Series, SessionResult, StandingsRow, StandingsTable } from '@dm/shared';
+import { HttpError } from '../core/http.ts';
 import type { Adapter, AdapterContext, ResultsChunk, ScheduleChunk } from '../core/types.ts';
 import {
   buildMeeting,
@@ -249,6 +250,10 @@ export function createFiaJuniorAdapter(deps: FiaJuniorDeps = {}): Adapter {
       const eventIds = [...new Set(req.pendingSessions.map((s) => s.eventId))].slice(0, MAX_RESULT_FETCHES - 2);
       const files: EventResultsFile[] = [];
       let pdfBudget = MAX_PDF_FETCHES;
+      // fia.com corta con 429 si se le piden muchos PDF seguidos: al primer aviso se deja de pedir en esta corrida y
+      // esas sesiones quedan para la próxima sin gastar intentos (ver ResultsChunk.deferred).
+      let throttled = false;
+      const deferred: string[] = [];
       let fiaEvents: FiaEventOption[] | null = null;
 
       const loaded = await mapLimit(eventIds, 4, async (eventId) => {
@@ -308,7 +313,10 @@ export function createFiaJuniorAdapter(deps: FiaJuniorDeps = {}): Adapter {
                 return [{ session, doc }];
               });
               const read = await mapLimit(jobs, 3, async ({ session, doc }): Promise<SessionResult | null> => {
-                if (pdfBudget <= 0) return null;
+                if (pdfBudget <= 0 || throttled) {
+                  deferred.push(session.id);
+                  return null;
+                }
                 pdfBudget--;
                 try {
                   const bytes = (await ctx.http.bytes(doc.url)).body;
@@ -329,6 +337,12 @@ export function createFiaJuniorAdapter(deps: FiaJuniorDeps = {}): Adapter {
                     },
                   };
                 } catch (err) {
+                  if (err instanceof HttpError && (err.status === 429 || err.status >= 500)) {
+                    if (err.status === 429 && !throttled) ctx.log.warn(`La FIA pidió esperar (HTTP 429): los PDF que faltan quedan para la próxima corrida`);
+                    throttled ||= err.status === 429;
+                    deferred.push(session.id);
+                    return null;
+                  }
                   ctx.log.warn(`${event.name}: ${session.name}: no se pudo leer ${doc.url}: ${(err as Error).message}`);
                   return null;
                 }
@@ -342,7 +356,7 @@ export function createFiaJuniorAdapter(deps: FiaJuniorDeps = {}): Adapter {
         if (file.sessions.length > 0) files.push(file);
       }
 
-      const chunk: ResultsChunk = { results: files };
+      const chunk: ResultsChunk = { results: files, ...(deferred.length ? { deferred } : {}) };
       if (req.standingsStale) {
         const driversUrl = `${base}/en/standings/${ctx.season}/drivers`;
         const teamsUrl = `${base}/en/standings/${ctx.season}/teams`;

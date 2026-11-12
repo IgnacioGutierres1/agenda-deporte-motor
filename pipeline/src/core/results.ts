@@ -140,8 +140,10 @@ export async function runResultsForSeries(
     if (!dryRun) await writeJson(target, eventResultsFileSchema.parse(merged));
   }
   const nowIso = ctx.now.toISOString();
+  const deferred = new Set(chunk.deferred ?? []);
   for (const s of pending) {
     if (out.withResults.has(s.id)) delete attempts[s.id];
+    else if (deferred.has(s.id)) continue;
     else attempts[s.id] = { count: (attempts[s.id]?.count ?? 0) + 1, last: nowIso };
   }
   if (chunk.standings) {
