@@ -30,6 +30,7 @@ import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { normalizeEvent, normalizeSession } from './core/builders.ts';
 import { buildFeed } from './core/feed.ts';
+import { duplicateCandidates, ignoredPairs } from './core/driver-candidates.ts';
 import { buildIndexFromData } from './core/drivers.ts';
 import { writeDriverFiles } from './core/driver-files.ts';
 import { createLogger } from './core/log.ts';
@@ -204,6 +205,11 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   const { drivers, teams } = await buildIndexFromData(dataDir, published, schedule.events, schedule.sessions, nowIso, freshRosters);
   driversFileSchema.parse(drivers);
   teamsFileSchema.parse(teams);
+  // Variantes del nombre que todavía no están en config/driver-aliases.json (no se unen solas: solo se avisa).
+  const candidates = duplicateCandidates(drivers.drivers, ignoredPairs()).filter((c) => c.evidence.some((e) => e !== 'país'));
+  if (candidates.length > 0) {
+    log.info(`Pilotos: ${candidates.length} posibles duplicados por variantes del nombre (ver npm run drivers:candidates)`);
+  }
 
   if (!opts.dryRun) {
     await writeJson(path.join(dataDir, 'schedule.json'), schedule);

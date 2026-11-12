@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import { isDriverTable } from '@dm/shared';
 import { supertaikyu, supertaikyuSessionName } from '../src/generic/supertaikyu.ts';
 import type { RecipeContext } from '../src/generic/types.ts';
 import { fakeHttp, fixture, genericSeries } from './fakes.ts';
@@ -87,12 +88,15 @@ describe('Super Taikyu (supertaikyu.com)', () => {
     expect(supertaikyuSessionName('S耐スタート進行 ・カウントダウンセレモニー ・グリッドウォーク')).toBeNull();
   });
 
-  it('campeonato: una tabla por clase, sin los autos que todavía no sumaron', async () => {
+  it('campeonato: una tabla de equipos por clase, sin los autos que todavía no sumaron', async () => {
     const found = await supertaikyu.standings!(STANDING, ctx());
     expect(found!.tables.map((t) => [t.title, t.rows.length])).toEqual([
-      ['Clase ST-X', 6], ['Clase ST-Z', 12], ['Clase ST-TCR', 4], ['Clase ST-1', 2], ['Clase ST-2', 9],
-      ['Clase ST-3', 2], ['Clase ST-4', 10], ['Clase ST-5F', 7], ['Clase ST-5R', 8],
+      ['Equipos Clase ST-X', 6], ['Equipos Clase ST-Z', 12], ['Equipos Clase ST-TCR', 4], ['Equipos Clase ST-1', 2],
+      ['Equipos Clase ST-2', 9], ['Equipos Clase ST-3', 2], ['Equipos Clase ST-4', 10], ['Equipos Clase ST-5F', 7],
+      ['Equipos Clase ST-5R', 8],
     ]);
+    // Son equipos (la tabla no trae pilotos): no entran al índice de pilotos.
+    expect(found!.tables.every((t) => !isDriverTable(t.title))).toBe(true);
     expect(found!.tables[0]!.rows.slice(0, 2)).toEqual([
       { pos: 1, name: 'TKRI', number: '23', points: 144.5 },
       { pos: 2, name: 'Craft-Bamboo Racing', number: '33', points: 113 },

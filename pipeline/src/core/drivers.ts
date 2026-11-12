@@ -9,14 +9,17 @@
  */
 import path from 'node:path';
 import {
+  baseDriverId,
   driverDisplayName,
   driverId,
+  isBrokenDriverName,
   isDriverTable,
   nameQuality,
   rosterFileSchema,
   splitDriverNames,
   teamId,
   teamKey,
+  titleCaseCaps,
   type DriverDetail,
   type DriverLineup,
   type DriversFile,
@@ -62,17 +65,28 @@ const seriesOrder = (series: Series[]) => {
 export function buildDrivers(input: IndexInput): DriversFile {
   const rank = seriesOrder(input.series);
   const drivers = new Map<string, Building>();
+  const groupOf = new Map(input.series.map((s) => [s.id, s.group]));
 
-  const get = (rawName: string): Building | null => {
-    const id = driverId(rawName);
+  /**
+   * Calidad de una variante del nombre: la más prolija gana (minúsculas, acentos, nombre completo). A igualdad,
+   * la que ya corresponde al id canónico (config/driver-aliases.json: "Jef Machiels" antes que "Jeff Machiels").
+   */
+  const qualityOf = (rawName: string, id: string) => nameQuality(rawName) + (baseDriverId(rawName) === id ? 0.5 : 0);
+  const display = (rawName: string, seriesId: string) =>
+    driverDisplayName(rawName, { spanish: groupOf.get(seriesId) === 'argentina' });
+
+  /** Ficha del piloto (la crea si no existe). null si el nombre no sirve (vacío o con letras rotas sin reparar). */
+  const get = (rawName: string, seriesId: string): Building | null => {
+    if (isBrokenDriverName(rawName)) return null;
+    const id = driverId(rawName, seriesId);
     if (!id) return null;
     let d = drivers.get(id);
-    const quality = nameQuality(rawName);
+    const quality = qualityOf(rawName, id);
     if (!d) {
-      d = { id, name: driverDisplayName(rawName), entries: [], lineups: [], recent: [], quality };
+      d = { id, name: display(rawName, seriesId), entries: [], lineups: [], recent: [], quality };
       drivers.set(id, d);
     } else if (quality > d.quality) {
-      d.name = driverDisplayName(rawName);
+      d.name = display(rawName, seriesId);
       d.quality = quality;
     }
     return d;
@@ -88,7 +102,7 @@ export function buildDrivers(input: IndexInput): DriversFile {
       for (const row of table.rows) {
         // Una tripulación ("Vanthoor / Estre") suma la misma línea a cada uno de sus pilotos.
         for (const name of splitDriverNames(row.name)) {
-          const d = get(name);
+          const d = get(name, file.seriesId);
           if (!d) continue;
           if (row.country && !tableCountry.has(d.id)) tableCountry.set(d.id, row.country);
           // Si aparece dos veces en la misma tabla (homónimos), se queda la mejor posición.
@@ -100,7 +114,7 @@ export function buildDrivers(input: IndexInput): DriversFile {
             points: row.points,
             ...(row.wins !== undefined ? { wins: row.wins } : {}),
             ...(row.number ? { number: row.number } : {}),
-            ...(row.team ? { team: row.team } : {}),
+            ...(row.team ? { team: teamDisplayName(row.team) } : {}),
           });
         }
       }
@@ -112,7 +126,7 @@ export function buildDrivers(input: IndexInput): DriversFile {
   for (const file of rosters) {
     for (const row of file.rows) {
       for (const name of splitDriverNames(row.driver)) {
-        const d = get(name);
+        const d = get(name, file.seriesId);
         if (!d) continue;
         if (!d.country && row.country) d.country = row.country;
         const same = (l: DriverLineup) =>
@@ -120,7 +134,7 @@ export function buildDrivers(input: IndexInput): DriversFile {
         if (d.lineups.some(same)) continue;
         d.lineups.push({
           seriesId: file.seriesId,
-          ...(row.team ? { team: row.team } : {}),
+          ...(row.team ? { team: teamDisplayName(row.team) } : {}),
           ...(row.number ? { number: row.number } : {}),
           ...(row.vehicle ? { vehicle: row.vehicle } : {}),
           ...(row.class ? { class: row.class } : {}),
@@ -142,8 +156,15 @@ export function buildDrivers(input: IndexInput): DriversFile {
       for (const row of sr.rows) {
         // Solo pilotos que figuran en algún campeonato o lista de inscriptos (evita fichas sueltas de resultados parciales).
         for (const name of splitDriverNames(row.driver)) {
-          const d = drivers.get(driverId(name));
+          if (isBrokenDriverName(name)) continue;
+          const d = drivers.get(driverId(name, file.seriesId));
           if (!d || d.recent.some((r) => r.sessionId === sr.sessionId)) continue;
+          // Un resultado con el nombre más prolijo (acentos, minúsculas) también mejora el que se muestra.
+          const quality = qualityOf(name, d.id);
+          if (quality > d.quality) {
+            d.name = display(name, file.seriesId);
+            d.quality = quality;
+          }
           d.recent.push({
             seriesId: file.seriesId,
             eventId: file.eventId,
@@ -185,20 +206,15 @@ export function teamTables(file: StandingsFile): StandingsTable[] {
   return teams.length ? teams : candidates.filter((t) => /constructor/i.test(t.title));
 }
 
-/** Nombre de equipo prolijo cuando el sitio lo publica todo en mayúsculas: "PROTON COMPETITION" -> "Proton Competition". */
+/**
+ * Nombre de equipo prolijo cuando el sitio lo publica todo en mayúsculas: "PROTON COMPETITION" -> "Proton
+ * Competition", "HEART OF RACING TEAM" -> "Heart of Racing Team". Las siglas quedan en mayúsculas ("AF Corse",
+ * "KCMG", "KTMS", "Ziggo Sport Tempesta by ARGT"; ver isLikelyAcronym). Si el sitio ya usa minúsculas, tal cual.
+ */
 export function teamDisplayName(raw: string): string {
   const t = raw.replace(/#\s*[0-9A-Za-z]+/g, ' ').replace(/\s+/g, ' ').trim();
   if (/[a-zà-ÿ]/.test(t)) return t;
-  const small = new Set(['BY', 'OF', 'THE', 'AND', 'DE', 'DI', 'DU', 'LA', 'LE', 'DEL', 'VON', 'VAN']);
-  return t
-    .split(' ')
-    .map((w, i) => {
-      if (i > 0 && small.has(w)) return w.toLowerCase();
-      // Siglas cortas o con números ("WRT", "AF", "GR", "A424") se dejan como están.
-      if (w.length <= 3 || /\d/.test(w)) return w;
-      return w.toLowerCase().replace(/(^|[-'’.])(\p{L})/gu, (_m, sep: string, c: string) => sep + c.toUpperCase());
-    })
-    .join(' ');
+  return titleCaseCaps(t);
 }
 
 function teamNameQuality(raw: string): number {
@@ -257,7 +273,8 @@ export function buildTeams(input: IndexInput & { drivers: DriversFile }): TeamsF
 
   const link = (t: TeamBuilding, rawDriver: string, seriesId: string, number?: string) => {
     for (const name of splitDriverNames(rawDriver)) {
-      const id = driverId(name);
+      if (isBrokenDriverName(name)) continue;
+      const id = driverId(name, seriesId);
       if (!id) continue;
       const known = t.drivers.find((d) => d.id === id && d.seriesId === seriesId);
       if (known) {
