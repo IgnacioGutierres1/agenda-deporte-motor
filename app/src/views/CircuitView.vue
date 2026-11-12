@@ -74,14 +74,13 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapState } from 'pinia';
-import { DateTime } from 'luxon';
 import type { MotorEvent, Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import type { Circuit } from '../lib/circuits.ts';
-import { formatDateRange } from '../lib/format.ts';
+import { formatDateRange, monthShort } from '../lib/format.ts';
 import { seriesColor, seriesSort } from '../lib/grid.ts';
 import { todayIn } from '../lib/agenda.ts';
 
@@ -137,9 +136,7 @@ export default defineComponent({
     dayNum(date: string): string {
       return String(Number(date.slice(8, 10)));
     },
-    monthShort(date: string): string {
-      return DateTime.fromISO(date).setLocale('es-AR').toFormat('LLL').replace('.', '');
-    },
+    monthShort,
     dateRange: formatDateRange,
   },
 });
