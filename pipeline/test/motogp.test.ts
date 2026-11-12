@@ -114,9 +114,9 @@ describe('MotoGP: horarios', () => {
     const byEvent = (chunk: typeof gp, id: string) => chunk.sessions.filter((s) => s.eventId === id);
     // MotoGP: FP1, PR, FP2, Q1, Q2, SPR, WUP, RAC. Moto2/Moto3: FP1, PR, FP2, Q1, Q2, RAC.
     expect(byEvent(gp, qat.id).map((s) => s.name)).toEqual([
-      'Práctica Libre 1',
+      'Práctica libre 1',
       'Práctica',
-      'Práctica Libre 2',
+      'Práctica libre 2',
       'Clasificación Q1',
       'Clasificación Q2',
       'Sprint',
@@ -136,7 +136,7 @@ describe('MotoGP: horarios', () => {
     const gp = await motogpAdapter.schedule(series('motogp', 'MotoGP'), ctx);
     const m3 = await motogpAdapter.schedule(series('moto3', 'Moto3'), ctx);
     const qatId = gp.events[0]!.id;
-    const fp1 = gp.sessions.find((s) => s.eventId === qatId && s.name === 'Práctica Libre 1')!;
+    const fp1 = gp.sessions.find((s) => s.eventId === qatId && s.name === 'Práctica libre 1')!;
     expect(fp1).toMatchObject({
       type: 'practica',
       startUtc: '2026-11-06T11:45:00Z',
@@ -149,7 +149,7 @@ describe('MotoGP: horarios', () => {
     const race = gp.sessions.find((s) => s.eventId === qatId && s.type === 'carrera')!;
     expect(race).toMatchObject({ startUtc: '2026-11-08T16:00:00Z', endUtc: '2026-11-08T16:50:00Z', endEstimated: true });
     // Portugal (UTC+0 en noviembre), Moto3 FP1 09:00 local.
-    const porM3 = m3.sessions.find((s) => s.eventId === m3.events[1]!.id && s.name === 'Práctica Libre 1')!;
+    const porM3 = m3.sessions.find((s) => s.eventId === m3.events[1]!.id && s.name === 'Práctica libre 1')!;
     expect(porM3.startUtc).toBe('2026-11-20T09:00:00Z');
     expect(porM3.localStartText).toBe('09:00');
   });
@@ -192,7 +192,7 @@ describe('MotoGP: resultados y campeonato', () => {
     expect(race.rows[1]).toMatchObject({ pos: 2, driver: 'Marc Marquez', gap: '+3.083', points: 20 });
     expect(race.rows[2]).toMatchObject({ pos: null, status: 'DNF', driver: 'Diogo Moreira' });
 
-    const fp1Id = chunk.sessions.find((x) => x.eventId === file.eventId && x.name === 'Práctica Libre 1')!.id;
+    const fp1Id = chunk.sessions.find((x) => x.eventId === file.eventId && x.name === 'Práctica libre 1')!.id;
     const fp1 = file.sessions.find((x) => x.sessionId === fp1Id)!;
     expect(fp1.rows[0]).toMatchObject({ pos: 1, driver: 'Marc Marquez', bestLap: '1:52.278', time: '1:52.278' });
     expect(fp1.rows[1]).toMatchObject({ pos: 2, gap: '+0.110' });

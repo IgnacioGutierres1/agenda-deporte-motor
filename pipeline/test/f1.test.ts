@@ -47,7 +47,7 @@ describe('lector F1 (formula1.com)', () => {
     expect(qatar).toMatchObject({
       round: 22,
       circuit: 'Lusail International Circuit',
-      country: 'Qatar',
+      country: 'Catar',
       tz: 'Asia/Qatar',
       dateStart: '2026-11-27',
       dateEnd: '2026-11-29',
@@ -63,11 +63,11 @@ describe('lector F1 (formula1.com)', () => {
 
     const qs = sessions.filter((s) => s.eventId === qatar.id);
     expect(qs.map((s) => [s.type, s.name, s.startUtc, s.localStartText])).toEqual([
-      ['practica', 'Practice 1', '2026-11-27T13:30:00Z', '16:30'],
-      ['practica', 'Practice 2', '2026-11-27T17:00:00Z', '20:00'],
-      ['practica', 'Practice 3', '2026-11-28T14:30:00Z', '17:30'],
-      ['clasificacion', 'Qualifying', '2026-11-28T18:00:00Z', '21:00'],
-      ['carrera', 'Race', '2026-11-29T16:00:00Z', '19:00'],
+      ['practica', 'Práctica 1', '2026-11-27T13:30:00Z', '16:30'],
+      ['practica', 'Práctica 2', '2026-11-27T17:00:00Z', '20:00'],
+      ['practica', 'Práctica 3', '2026-11-28T14:30:00Z', '17:30'],
+      ['clasificacion', 'Clasificación', '2026-11-28T18:00:00Z', '21:00'],
+      ['carrera', 'Carrera', '2026-11-29T16:00:00Z', '19:00'],
     ]);
     const race = qs.at(-1)!;
     expect(race.endUtc).toBe('2026-11-29T18:00:00Z');
@@ -75,15 +75,15 @@ describe('lector F1 (formula1.com)', () => {
     expect(race.broadcast).toEqual(['Disney+']);
 
     const abuDhabi = events.find((e) => e.name === 'Abu Dhabi Grand Prix')!;
-    expect(abuDhabi).toMatchObject({ tz: 'Asia/Dubai', dateStart: '2026-12-04', country: 'United Arab Emirates' });
-    expect(sessions.find((s) => s.eventId === abuDhabi.id && s.name === 'Race')!.startUtc).toBe('2026-12-06T13:00:00Z');
+    expect(abuDhabi).toMatchObject({ tz: 'Asia/Dubai', dateStart: '2026-12-04', country: 'Emiratos Árabes Unidos' });
+    expect(sessions.find((s) => s.eventId === abuDhabi.id && s.originalName === 'Race')!.startUtc).toBe('2026-12-06T13:00:00Z');
   });
 
   it('respeta el horario de verano del circuito (Melbourne, AEDT +11)', async () => {
     const http = fakeHttp(routes());
     const { events, sessions } = await f1Adapter.schedule(series, ctxWith(http));
     const aus = events.find((e) => e.tz === 'Australia/Melbourne')!;
-    const fp1 = sessions.find((s) => s.eventId === aus.id && s.name === 'Practice 1')!;
+    const fp1 = sessions.find((s) => s.eventId === aus.id && s.originalName === 'Practice 1')!;
     expect(fp1.localStartText).toBe('12:30');
     expect(fp1.startUtc).toBe('2026-03-06T01:30:00Z');
     // Con la hora local sola (sin offset) se convierte con la zona IANA: mismo resultado en verano…
@@ -133,7 +133,7 @@ describe('lector F1 (formula1.com)', () => {
     const { events, sessions } = await f1Adapter.schedule(series, ctx);
     const brazil = events.find((e) => e.name === 'São Paulo Grand Prix')!;
     const pending = sessions
-      .filter((s) => s.eventId === brazil.id && ['Race', 'Qualifying', 'Practice 1'].includes(s.name))
+      .filter((s) => s.eventId === brazil.id && ['Race', 'Qualifying', 'Practice 1'].includes(s.originalName ?? ''))
       .reverse();
     const out = await f1Adapter.results!(series, ctx, { events, sessions, pendingSessions: pending, standingsStale: true });
 
@@ -141,7 +141,7 @@ describe('lector F1 (formula1.com)', () => {
     const file = out.results[0]!;
     expect(file.eventId).toBe(brazil.id);
     // Practice 1 no tiene página en el fake (404): se omite sin fallar.
-    expect(file.sessions.map((s) => sessions.find((x) => x.id === s.sessionId)!.name)).toEqual(['Race', 'Qualifying']);
+    expect(file.sessions.map((s) => sessions.find((x) => x.id === s.sessionId)!.originalName)).toEqual(['Race', 'Qualifying']);
 
     const race = file.sessions[0]!;
     expect(race.source.url).toBe(`${res}/races/1299/brazil/race-result`);

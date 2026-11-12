@@ -275,11 +275,13 @@ const indycar: SiteRecipe = {
         if (day.start > prev.dateEnd) prev.dateEnd = day.start;
         continue;
       }
+      // Las fechas en Canadá (Toronto, desde 2026 Markham) figuran en el mismo calendario.
+      const country = /canada|ontario|toronto|markham/i.test(`${location} ${track}`) ? 'Canada' : 'United States';
       out.push({
         name: title || track,
         circuit: track,
-        country: 'United States',
-        tz: tzFor(/canada|ontario|toronto/i.test(location) ? 'Canada' : 'United States', `${location} ${track}`),
+        country,
+        tz: tzFor(country, `${location} ${track}`),
         dateStart: shiftDate(day.start, -2),
         dateEnd: day.start,
         url,

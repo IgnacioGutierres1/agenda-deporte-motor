@@ -28,6 +28,7 @@ import { adapters } from './adapters/index.ts';
 import { genericAdapter, withSeriesSeason } from './generic/index.ts';
 import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
+import { normalizeEvent, normalizeSession } from './core/builders.ts';
 import { buildFeed } from './core/feed.ts';
 import { buildIndexFromData } from './core/drivers.ts';
 import { writeDriverFiles } from './core/driver-files.ts';
@@ -128,6 +129,11 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     const st = prevStatusMap.get(s.id);
     if (st) merged.statuses.push(st);
   }
+  // Lo que se conserva de corridas anteriores (series con error, cronogramas fuera del horizonte, --only) no pasó
+  // por los constructores de esta corrida: se le aplican los mismos nombres prolijos (no cambia ningún id).
+  const groupOf = new Map(config.series.map((s) => [s.id, s]));
+  merged.events = merged.events.map((e) => normalizeEvent(e, groupOf.get(e.seriesId)));
+  merged.sessions = merged.sessions.map(normalizeSession);
 
   // Resultados y campeonatos
   const attemptsFile = path.join(cacheDir, 'results-attempts.json');
