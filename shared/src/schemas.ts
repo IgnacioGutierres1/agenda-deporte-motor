@@ -44,6 +44,7 @@ export const eventSchema = z.object({
   dateStart: isoDate,
   dateEnd: isoDate,
   sessionsStatus: z.enum(['published', 'pending']),
+  kind: z.enum(['test']).optional(),
   source: sourceSchema,
 });
 

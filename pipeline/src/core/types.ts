@@ -12,8 +12,14 @@ import type { Builders } from './builders.ts';
 
 export interface AdapterContext {
   now: Date;
-  /** Temporada en curso (año de `now`). */
+  /** Temporada en curso (año de `now`), o la siguiente si nextSeason. */
   season: number;
+  /**
+   * true cuando se lee la temporada siguiente porque la en curso ya terminó (core/season.ts). Solo lectura
+   * directa: el flujo genérico no gasta IA en un calendario de la temporada siguiente salvo que la página ya la
+   * muestre (y con tope semanal). Si la temporada todavía no está publicada, el lector puede lanzar o devolver vacío.
+   */
+  nextSeason?: boolean;
   /** Días hacia adelante para los que se buscan cronogramas detallados. */
   horizonDays: number;
   http: Http;

@@ -87,8 +87,18 @@ export interface MotorEvent {
   dateEnd: string;
   /** published: ya hay cronograma con horarios. pending: solo se conoce la fecha. */
   sessionsStatus: 'published' | 'pending';
+  /**
+   * Tipo de evento cuando no es una fecha del campeonato. 'test': ensayos oficiales, pretemporada o prólogo
+   * (F1 "Pre-Season Testing", WEC "Official Prologue", GT Open "Winter Test"…): no suman puntos ni tienen ronda,
+   * y no van al .ics de suscripción como evento de día completo (sí sus sesiones, si las tienen).
+   * Ausente = fecha normal del campeonato. Opcional: los datos viejos no lo traen.
+   */
+  kind?: EventKind;
   source: Source;
 }
+
+/** Ver MotorEvent.kind. */
+export type EventKind = 'test';
 
 export interface Session {
   /** Hash estable de serie + evento + nombre de sesión. */

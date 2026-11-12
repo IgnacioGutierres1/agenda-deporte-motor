@@ -1,6 +1,7 @@
 import {
   addMinutes,
   stableHash,
+  type EventKind,
   type MotorEvent,
   type Series,
   type Session,
@@ -24,6 +25,8 @@ export interface EventInput {
   dateStart: string;
   dateEnd: string;
   sessionsStatus: MotorEvent['sessionsStatus'];
+  /** Si falta, se deduce del nombre (ver eventKindOf). */
+  kind?: EventKind;
   source: Source;
 }
 
@@ -58,6 +61,7 @@ export function createBuilders(durations: DurationsConfig, broadcast: BroadcastC
     estimateMinutes,
     defaultBroadcast,
     event(i) {
+      const kind = i.kind ?? eventKindOf(i.name);
       return {
         id: stableHash(i.series.id, i.season, i.key),
         seriesId: i.series.id,
@@ -69,6 +73,7 @@ export function createBuilders(durations: DurationsConfig, broadcast: BroadcastC
         dateStart: i.dateStart,
         dateEnd: i.dateEnd,
         sessionsStatus: i.sessionsStatus,
+        ...(kind ? { kind } : {}),
         source: i.source,
       };
     },
@@ -107,4 +112,30 @@ export function classifySession(name: string): SessionType {
   if (/\bserie|\bheat/.test(n)) return 'serie';
   if (/race|carrera|final|feature|grand prix|gran premio|\bgp\b/.test(n)) return 'carrera';
   return 'otro';
+}
+
+/**
+ * Ensayos oficiales, pretemporada y prólogos ("Pre-Season Testing", "Official Test Days - Prologue",
+ * "Barcelona Winter Test", "Official Tests - Barcelona", "Ensayos oficiales"…). Ojo: "Shakedown" es una sesión
+ * de práctica dentro de una fecha, no un evento de ensayos.
+ */
+const TEST_EVENT =
+  /\btest(?:s|ing)?\b|\bprolog(?:ue)?\b|\bpr[oó]logo\b|\bensayos?\s+(?:oficial|colectiv|de\s+pretemporada)|\bpruebas?\s+(?:oficial|colectiv|de\s+pretemporada)|\b(?:test|einstell)fahrten\b/i;
+
+/** Tipo de evento según su nombre oficial: 'test' para ensayos y prólogos; undefined para una fecha normal. */
+export function eventKindOf(name: string): EventKind | undefined {
+  return TEST_EVENT.test(name) ? 'test' : undefined;
+}
+
+/**
+ * Galas, entregas de premios, ceremonias y presentaciones que algunos calendarios oficiales listan entre las fechas
+ * ("2026 End of Year Gala" del GT World Challenge America): no son eventos de pista y no se publican.
+ * Cuidado con los nombres comerciales de carreras: "… 400 presented by …" o "GT Festival …" sí son fechas.
+ */
+const NON_RACE_EVENT =
+  /\bgala\b|\bawards?\b|\bceremon(?:y|ies|ia)\b|\bbanquet\b|\bpremiaci[oó]n\b|\bentrega\s+de\s+premios\b|\bpresentation\b|\bpresentaci[oó]n\b|\bseason\s+launch\b|\blanzamiento\b/i;
+
+/** true si el "evento" del calendario no es una competencia ni un ensayo (gala, premiación, presentación). */
+export function isNonRaceEvent(name: string): boolean {
+  return NON_RACE_EVENT.test(name);
 }

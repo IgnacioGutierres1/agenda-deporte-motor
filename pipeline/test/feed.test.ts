@@ -86,6 +86,13 @@ describe('feed de suscripción (.ics)', () => {
     expect(uids(buildFeed(all, [rioCuarto], [], new Date('2026-11-13T09:00:00Z')))).toEqual(['rio-cuarto']);
   });
 
+  it('los ensayos (kind test) no van como día completo, pero sus sesiones sí', () => {
+    const test = { ...event('ensayo', 'tc', '2026-11-17', '2026-11-18'), kind: 'test' as const };
+    expect(uids(buildFeed(all, [test], [], NOW))).toEqual([]);
+    const withTimes = { ...test, sessionsStatus: 'published' as const };
+    expect(uids(buildFeed(all, [withTimes], [session('s-ensayo', withTimes, '2026-11-17T13:00:00Z')], NOW))).toEqual(['s-ensayo']);
+  });
+
   it('respeta onlySeries y mantiene CRLF', () => {
     const ics = buildFeed(all, events, sessions, NOW, { onlySeries: ['tn'] });
     expect(uids(ics).sort()).toEqual(['hoy', 's-parcial']);

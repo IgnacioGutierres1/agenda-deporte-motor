@@ -11,6 +11,7 @@ import { findRecipe } from '../generic/recipes.ts';
 import type { RosterFound, SiteRecipe } from '../generic/types.ts';
 import type { Http } from './http.ts';
 import type { Logger } from './log.ts';
+import { seasonUrl, seriesForSeason } from './season.ts';
 import { readJson, writeJson } from './store.ts';
 
 export const ROSTER_MAX_AGE_MS = 3 * 24 * 3600_000;
@@ -53,10 +54,10 @@ export interface RostersContext {
 export async function readRoster(series: Series, ctx: RostersContext): Promise<RosterFile | null> {
   const current = (await ctx.seasonFor?.(series)) ?? ctx.season;
   const found: RosterFound[] = [];
-  for (const url of series.rosterUrls ?? []) {
+  for (const url of (series.rosterUrls ?? []).map((u) => seasonUrl(u, current))) {
     const recipe = findRosterRecipe(url);
     if (!recipe?.roster) throw new Error(`No hay lector de inscriptos para ${url}`);
-    const r = await recipe.roster(url, { season: current, series, http: ctx.http, now: ctx.now });
+    const r = await recipe.roster(url, { season: current, series: seriesForSeason(series, current), http: ctx.http, now: ctx.now });
     if (r) found.push(r);
   }
   if (found.length === 0) return null;
