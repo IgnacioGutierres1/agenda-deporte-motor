@@ -58,6 +58,11 @@ export interface TimetableImages {
 export interface StandingsFound {
   tables: StandingsTable[];
   source: Source;
+  /**
+   * Temporada de las tablas, si no es la pedida: IMSA sigue publicando el campeonato 2026 terminado cuando su
+   * calendario ya es el de 2027. El archivo del campeonato se guarda con este año.
+   */
+  season?: number;
 }
 
 /** Lista oficial de inscriptos leída sin IA. */
