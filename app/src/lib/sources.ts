@@ -26,3 +26,19 @@ export function hostOf(url: string): string {
     return url;
   }
 }
+
+/**
+ * Motivo entendible de un error de lectura de la fuente oficial (el mensaje técnico, como
+ * "HTTP 403 en https://…", queda para "Detalles").
+ */
+export function friendlySourceError(message: string | undefined): string {
+  const m = message ?? '';
+  if (/\b(401|403)\b|forbidden|denied|cloudflare|captcha/i.test(m)) return 'El sitio oficial no deja leer el calendario automáticamente.';
+  if (/\b404\b|not found|no encontrad/i.test(m)) return 'La página del calendario cambió de lugar.';
+  if (/\b429\b|too many|rate/i.test(m)) return 'El sitio oficial pidió esperar antes de volver a leerlo.';
+  if (/\b5\d\d\b/.test(m)) return 'El sitio oficial tuvo un error.';
+  if (/timeout|timed out|tard[oó]|abort/i.test(m)) return 'El sitio oficial tardó demasiado en responder.';
+  if (/ENOTFOUND|ECONNREFUSED|ECONNRESET|network|fetch failed|certificate|ssl/i.test(m)) return 'No se pudo conectar con el sitio oficial.';
+  if (/gemini|quota|cuota|\bIA\b/i.test(m)) return 'No se pudo interpretar el calendario con IA (límite diario).';
+  return 'No se pudo interpretar el calendario publicado.';
+}

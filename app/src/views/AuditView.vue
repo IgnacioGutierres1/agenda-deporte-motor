@@ -47,9 +47,7 @@
                 </template>
                 <template v-else>Sin fechas próximas publicadas.</template>
               </div>
-              <div v-if="row.status?.message && row.status.state !== 'ok'" class="audit-msg">
-                {{ row.status.message }}
-              </div>
+              <SourceProblem v-if="row.status" :status="row.status" :series="row.series" variant="compact" class="audit-msg" />
               <div v-if="row.status" class="dim">
                 Última verificación {{ ago(row.status.lastAttempt) }}
                 <template v-if="row.status.state !== 'ok' && row.status.state !== 'disabled'">
@@ -71,6 +69,7 @@ import { mapState } from 'pinia';
 import type { Series } from '@dm/shared';
 import DataState from '../components/DataState.vue';
 import PeriodPicker from '../components/PeriodPicker.vue';
+import SourceProblem from '../components/SourceProblem.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { AUDIT_STATE_LABELS, groupSeries, seriesColor, type AuditState } from '../lib/grid.ts';
@@ -80,7 +79,7 @@ const ORDER: AuditState[] = ['activa', 'pendiente', 'receso', 'error', 'desactiv
 
 export default defineComponent({
   name: 'AuditView',
-  components: { DataState, PeriodPicker },
+  components: { DataState, PeriodPicker, SourceProblem },
   computed: {
     ...mapState(useScheduleStore, ['auditRows', 'hasData', 'generatedAt', 'now', 'status']),
     ...mapState(useSettingsStore, ['timeZone']),
