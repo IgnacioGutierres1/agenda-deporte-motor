@@ -40,8 +40,8 @@ describe('tema', () => {
     expect(s.themeChosen).toBe(true);
   });
 
-  it('migración: "Oscuro" guardado por la versión anterior era el predeterminado → Según el sistema', () => {
-    expect(migrateSettings({ theme: 'dark', timeZone: AR })).toEqual({ theme: 'system', themeChosen: false, timeZone: AR });
+  it('migración: quien ya usaba la app sigue con el tema que tenía (Oscuro incluido)', () => {
+    expect(migrateSettings({ theme: 'dark', timeZone: AR })).toEqual({ theme: 'dark', themeChosen: true, timeZone: AR });
     // Claro y Según el sistema no eran el predeterminado: los eligió el usuario.
     expect(migrateSettings({ theme: 'light' })).toEqual({ theme: 'light', themeChosen: true });
     expect(migrateSettings({ theme: 'system' })).toEqual({ theme: 'system', themeChosen: false });
@@ -63,11 +63,11 @@ describe('tema', () => {
     window.localStorage.setItem('dm:settings', JSON.stringify({ theme: 'dark', followedSeries: ['tc'] }));
     const legacy = useSettingsStore();
     persistStore(legacy, PERSISTED_SETTINGS, migrateSettings);
-    expect(legacy.theme).toBe('system');
-    legacy.setTheme('dark');
+    expect(legacy.theme).toBe('dark');
+    legacy.setTheme('system');
     // Se guarda en el próximo cambio (subscribe sincrónico de Pinia en modo "detached").
     return flushPromises().then(() => {
-      expect(JSON.parse(window.localStorage.getItem('dm:settings')!)).toMatchObject({ theme: 'dark', themeChosen: true });
+      expect(JSON.parse(window.localStorage.getItem('dm:settings')!)).toMatchObject({ theme: 'system', themeChosen: true });
     });
   });
 });

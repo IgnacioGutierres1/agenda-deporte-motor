@@ -59,13 +59,13 @@ export const PERSISTED_SETTINGS = [
 /**
  * Ajusta lo guardado por versiones anteriores antes de restaurarlo.
  * Tema: antes el predeterminado era "Oscuro" y se guardaba siempre (el snapshot incluye todos los campos), así que un
- * "dark" sin themeChosen no distingue "lo eligió" de "nunca tocó el tema": se toma como lo segundo y pasa a "Según el
- * sistema". "Claro" y "Según el sistema" sí fueron elegidos (no eran el predeterminado) y se respetan.
+ * "dark" sin themeChosen no distingue "lo eligió" de "nunca tocó el tema". Quien ya usaba la app la conoce oscura:
+ * se le conserva así (no cambia de golpe a claro si el sistema está en claro). "Según el sistema" es el predeterminado
+ * solo para instalaciones nuevas. Lo guardado se marca como elegido para no volver a migrarlo.
  */
 export function migrateSettings(saved: Record<string, unknown>): Record<string, unknown> {
   if ('themeChosen' in saved || !('theme' in saved)) return saved;
-  const theme = saved.theme === 'dark' ? 'system' : saved.theme;
-  return { ...saved, theme, themeChosen: theme !== 'system' };
+  return { ...saved, themeChosen: saved.theme !== 'system' };
 }
 
 /** Preferencias de este dispositivo (se guardan en localStorage desde main.ts). */
