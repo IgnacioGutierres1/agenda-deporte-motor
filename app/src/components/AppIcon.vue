@@ -60,6 +60,7 @@ const ICONS: Record<string, string[]> = {
   route: ['M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', 'M18 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', 'M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16'],
   expand: ['M15 3h6v6', 'M9 21H3v-6', 'M21 3l-7 7', 'M3 21l7-7'],
   bolt: ['M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z'],
+  copy: ['M10 8h9a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-9a2 2 0 0 1-2-2v-9a2 2 0 0 1 2-2z', 'M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3'],
 };
 
 export default defineComponent({

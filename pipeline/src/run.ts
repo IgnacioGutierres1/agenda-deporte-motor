@@ -31,7 +31,7 @@ import { genericAdapter, withSeriesSeason } from './generic/index.ts';
 import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { normalizeEvent, normalizeSession } from './core/builders.ts';
-import { buildFeed } from './core/feed.ts';
+import { buildFeed, writeSeriesFeeds } from './core/feed.ts';
 import { duplicateCandidates, ignoredPairs } from './core/driver-candidates.ts';
 import { buildIndexFromData } from './core/drivers.ts';
 import { writeDriverFiles } from './core/driver-files.ts';
@@ -235,6 +235,9 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
       buildFeed(published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
     );
+    // Un calendario por categoría habilitada (data/feeds/{seriesId}.ics); borra los de las que ya no están.
+    const feeds = await writeSeriesFeeds(path.join(dataDir, 'feeds'), published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast });
+    log.info(`Calendarios por categoría: ${feeds.written.length} escritos, ${feeds.unchanged.length} sin cambios, ${feeds.removed.length} borrados`);
   }
 
   // Noticias: independiente del resto; ante cualquier error se conserva data/news.json.
