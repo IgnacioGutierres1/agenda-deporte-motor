@@ -87,6 +87,12 @@
               <AppIcon name="chevron" :size="16" class="dim" />
             </RouterLink>
           </li>
+          <li>
+            <RouterLink to="/circuitos" class="list-row see-all">
+              <span class="grow">Ver todos los circuitos</span>
+              <AppIcon name="chevron" :size="16" />
+            </RouterLink>
+          </li>
         </ul>
       </template>
 
@@ -327,6 +333,12 @@ export default defineComponent({
 
 .did-you-mean {
   margin: 0.5rem 0 0;
+}
+
+/* Última fila de un grupo de resultados: lleva a la lista completa. */
+a.list-row.see-all {
+  color: var(--link);
+  font-weight: 700;
 }
 
 .did-you-mean .link-btn {

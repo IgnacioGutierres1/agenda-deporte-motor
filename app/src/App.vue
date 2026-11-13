@@ -154,11 +154,12 @@ export default defineComponent({
       nav: [
         { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar', '/en-vivo'] },
         { to: '/noticias', label: 'Noticias', icon: 'news', match: [] },
-        { to: '/categorias', label: 'Categorías', icon: 'trophy', match: ['/categoria'] },
+        { to: '/categorias', label: 'Categorías', icon: 'trophy', match: ['/categoria', '/circuito'] },
         { to: '/siguiendo', label: 'Siguiendo', icon: 'star', match: ['/piloto'] },
         { to: '/buscar', label: 'Buscar', icon: 'search', match: [] },
       ] as NavItem[],
       menu: [
+        { to: '/circuitos', label: 'Circuitos', icon: 'flag', hint: 'Todos los del calendario, por país' },
         { to: '/exportar', label: 'Exportar y Google Calendar', icon: 'share', hint: '.ics, carga directa y suscripción' },
         { to: '/auditoria', label: 'Auditoría de fuentes', icon: 'check', hint: 'Estado de cada categoría y su fuente oficial' },
         { to: '/ajustes', label: 'Ajustes', icon: 'gear', hint: 'Tema, zona horaria, categorías y cuentas' },
