@@ -20,6 +20,9 @@ describe('circuitos: clave normalizada y alias', () => {
     const same = (names: string[]) => new Set(names.map(circuitKey));
     expect(same(['Circuit Paul Ricard', 'Paul Ricard', 'Michelin 12H PAUL RICARD', 'Le Castellet'])).toEqual(new Set(['paul ricard']));
     expect(same(['Autódromo José Carlos Pace', 'Interlagos'])).toEqual(new Set(['interlagos']));
+    // El año de la edición no crea otro circuito.
+    expect(same(['Michelin 12H Mugello 2027', 'Mugello'])).toEqual(new Set(['mugello']));
+    expect(same(['Michelin 24H Kyalami 2027', 'Kyalami'])).toEqual(new Set(['kyalami']));
     expect(
       same(['Circuit de Spa-Francorchamps', 'Spa-Francorchamps', 'CrowdStrike 24 Hours of Spa', 'Porsche Mobil 1 Supercup – Spa Race']),
     ).toEqual(new Set(['spa francorchamps']));

@@ -51,9 +51,12 @@ const PREFIXES = [
 
 /** Duraciones y sufijos de carrera: "24h", "6 hours of", "1000km", "… race", "… prologue". */
 const NOISE = [
+  // Año de la edición al final ("Michelin 12H Mugello 2027"): sin esto cada temporada sería otro circuito.
+  /\s+(?:19|20)\d{2}$/,
   /\b\d+\s*(h|hr|hrs|hour|hours|heures|horas)\b(\s+(of|de|du|des)\b)?/g,
   /\b\d+\s*km\b/g,
   /\s+(race|prologue|sprint|winter\s+test)$/,
+  /\s+(?:19|20)\d{2}$/,
 ];
 
 /**

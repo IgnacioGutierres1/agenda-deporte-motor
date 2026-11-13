@@ -10,9 +10,10 @@
  *   7. Completa las fichas de circuitos nuevos o vencidos en data/circuits.json (si falla, no afecta al resto).
  *   8. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
- * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-circuits] [--skip-news]
+ * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-circuits] [--skip-tracks] [--skip-news]
  *      [--dry-run]
  */
+import { setDefaultAutoSelectFamilyAttemptTimeout } from 'node:net';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import {
@@ -45,6 +46,7 @@ import { runRosters } from './core/rosters.ts';
 import { hasSeasonToken, scheduleWithNextSeason, seriesForSeason } from './core/season.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
 import { runCircuits } from './circuits/index.ts';
+import { createOverpassHttp, runTracks } from './circuits/tracks-run.ts';
 import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
 import { validateSessions } from './validate.ts';
@@ -55,12 +57,16 @@ export interface RunOptions {
   skipNews?: boolean;
   skipRosters?: boolean;
   skipCircuits?: boolean;
+  skipTracks?: boolean;
   dryRun?: boolean;
   now?: Date;
   dataDir?: string;
   configDir?: string;
   concurrency?: number;
 }
+
+/** Trazados nuevos por corrida (cada consulta a Overpass tarda ~40 s). */
+const TRACKS_PER_RUN = 4;
 
 export function resolveAdapter(series: Series): Adapter {
   if (series.strategy === 'adapter') {
@@ -257,6 +263,17 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     });
   }
 
+  // Trazados (OpenStreetMap): pocos por corrida, porque cada consulta a Overpass tarda ~40 s. Los ya dibujados no se
+  // vuelven a pedir. Ante cualquier error se sigue sin trazados nuevos.
+  if (!opts.skipTracks) {
+    try {
+      const tracks = await runTracks({ http: createOverpassHttp(), log: log.child('trazados'), dataDir, now, limit: TRACKS_PER_RUN, dryRun: opts.dryRun });
+      log.info(`Trazados: ${tracks.written.length} nuevos, ${tracks.without.length} sin trazado, ${tracks.failed.length} con error, ${tracks.pending} pendientes`);
+    } catch (err) {
+      log.warn(`Trazados: ${err instanceof Error ? err.message : String(err)}`);
+    }
+  }
+
   // Noticias: independiente del resto; ante cualquier error se conserva data/news.json.
   if (!opts.skipNews) {
     await runNews({
@@ -307,12 +324,16 @@ function parseArgs(argv: string[]): RunOptions {
     else if (arg === '--skip-news') opts.skipNews = true;
     else if (arg === '--skip-rosters') opts.skipRosters = true;
     else if (arg === '--skip-circuits') opts.skipCircuits = true;
+    else if (arg === '--skip-tracks') opts.skipTracks = true;
     else if (arg === '--dry-run') opts.dryRun = true;
   }
   return opts;
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  // Algunos sitios (Overpass) tardan en aceptar la conexión y Node le da 250 ms a cada dirección: sin esto, en una
+  // red sin salida IPv6 se cortan antes de probar la IPv4.
+  setDefaultAutoSelectFamilyAttemptTimeout(2000);
   run(parseArgs(process.argv.slice(2))).catch((err) => {
     console.error(err);
     process.exit(1);
