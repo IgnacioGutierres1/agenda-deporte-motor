@@ -1,0 +1,39 @@
+{
+  "seriesId": "wrc",
+  "eventId": "ev-wrc-japon",
+  "updatedAt": "2026-11-12T11:50:00Z",
+  "surface": "asfalto",
+  "surfaceNote": "Asfalto angosto de montaña, con hojas y humedad a la sombra",
+  "competitiveKm": 319.87,
+  "totalKm": 967.14,
+  "routeMapUrl": "https://example.org/rally/wrc-japon-recorrido.png",
+  "routeMapCredit": "Rally Japan",
+  "stages": [
+    { "code": "Shakedown", "name": "Kuragaike Park", "kind": "shakedown", "date": "2026-11-12", "startUtc": "2026-11-12T00:01:00Z", "localStartText": "09:01", "distanceKm": 2.75, "sessionId": "7a11000000000001" },
+    { "code": "SS1", "name": "Toyota Stadium 1", "kind": "superespecial", "date": "2026-11-12", "startUtc": "2026-11-12T10:05:00Z", "localStartText": "19:05", "distanceKm": 2.1, "note": "Dos autos a la vez dentro del estadio, en pistas paralelas.", "sessionId": "7a11000000000002" },
+
+    { "code": "SS2", "name": "Isegami's Tunnel 1", "kind": "especial", "date": "2026-11-13", "startUtc": "2026-11-12T22:33:00Z", "localStartText": "07:33", "distanceKm": 23.67, "mapUrl": "https://example.org/rally/wrc-japon-ss2.png", "note": "El tramo más largo del rally: angosto, entre cedros y con el túnel que le da nombre.", "sessionId": "7a11000000000003" },
+    { "code": "SS3", "name": "Inabu Dam 1", "kind": "especial", "date": "2026-11-13", "startUtc": "2026-11-12T23:28:00Z", "localStartText": "08:28", "distanceKm": 19.38, "sessionId": "7a11000000000003" },
+    { "code": "SS4", "name": "Shitara Town R 1", "kind": "especial", "date": "2026-11-13", "startUtc": "2026-11-13T00:36:00Z", "localStartText": "09:36", "distanceKm": 22.44, "sessionId": "7a11000000000003" },
+    { "code": "SS5", "name": "Isegami's Tunnel 2", "kind": "especial", "date": "2026-11-13", "startUtc": "2026-11-13T04:19:00Z", "localStartText": "13:19", "distanceKm": 23.67, "sessionId": "7a11000000000003" },
+    { "code": "SS6", "name": "Inabu Dam 2", "kind": "especial", "date": "2026-11-13", "startUtc": "2026-11-13T05:14:00Z", "localStartText": "14:14", "distanceKm": 19.38, "sessionId": "7a11000000000003" },
+    { "code": "SS7", "name": "Shitara Town R 2", "kind": "especial", "date": "2026-11-13", "startUtc": "2026-11-13T06:22:00Z", "localStartText": "15:22", "distanceKm": 22.44, "cancelled": true, "note": "Cancelado por un desprendimiento sobre el camino.", "sessionId": "7a11000000000003" },
+    { "code": "SS8", "name": "Okazaki City 1", "kind": "superespecial", "date": "2026-11-13", "startUtc": "2026-11-13T08:35:00Z", "localStartText": "17:35", "distanceKm": 2.54, "sessionId": "7a11000000000003" },
+
+    { "code": "SS9", "name": "Nukata 1", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-13T22:05:00Z", "localStartText": "07:05", "distanceKm": 20.23, "sessionId": "7a11000000000004" },
+    { "code": "SS10", "name": "Lake Mikawako 1", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-13T23:03:00Z", "localStartText": "08:03", "distanceKm": 13.98, "sessionId": "7a11000000000004" },
+    { "code": "SS11", "name": "Mt. Kasagi 1", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-14T01:15:00Z", "localStartText": "10:15", "distanceKm": 16.47, "sessionId": "7a11000000000004" },
+    { "code": "SS12", "name": "Nenoue Kougen 1", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-14T02:03:00Z", "localStartText": "11:03", "distanceKm": 11.6, "surface": "mixto", "note": "Incluye un sector corto de tierra dentro de un bosque.", "sessionId": "7a11000000000004" },
+    { "code": "SS13", "name": "Ena 1", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-14T02:58:00Z", "localStartText": "11:58", "distanceKm": 22.79, "sessionId": "7a11000000000004" },
+    { "code": "SS14", "name": "Mt. Kasagi 2", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-14T05:45:00Z", "localStartText": "14:45", "distanceKm": 16.47, "sessionId": "7a11000000000004" },
+    { "code": "SS15", "name": "Nenoue Kougen 2", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-14T06:33:00Z", "localStartText": "15:33", "distanceKm": 11.6, "surface": "mixto", "sessionId": "7a11000000000004" },
+    { "code": "SS16", "name": "Ena 2", "kind": "especial", "date": "2026-11-14", "startUtc": "2026-11-14T07:28:00Z", "localStartText": "16:28", "distanceKm": 22.79, "sessionId": "7a11000000000004" },
+    { "code": "SS17", "name": "Okazaki City 2", "kind": "superespecial", "date": "2026-11-14", "startUtc": "2026-11-14T09:50:00Z", "localStartText": "18:50", "distanceKm": 2.54, "sessionId": "7a11000000000004" },
+
+    { "code": "SS18", "name": "Asahi Kougen 1", "kind": "especial", "date": "2026-11-15", "startUtc": "2026-11-14T22:39:00Z", "localStartText": "07:39", "distanceKm": 7.52, "sessionId": "7a11000000000005" },
+    { "code": "SS19", "name": "Obara 1", "kind": "especial", "date": "2026-11-15", "startUtc": "2026-11-14T23:35:00Z", "localStartText": "08:35", "distanceKm": 15.37, "sessionId": "7a11000000000005" },
+    { "code": "SS20", "name": "Asahi Kougen 2", "kind": "especial", "date": "2026-11-15", "startUtc": "2026-11-15T01:17:00Z", "localStartText": "10:17", "distanceKm": 7.52, "sessionId": "7a11000000000005" },
+    { "code": "SS21", "name": "Obara 2", "kind": "power", "date": "2026-11-15", "startUtc": "2026-11-15T05:15:00Z", "localStartText": "14:15", "distanceKm": 15.37, "note": "Reparte puntos extra para los cinco más rápidos.", "sessionId": "7a11000000000006" }
+  ],
+  "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+}

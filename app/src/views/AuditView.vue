@@ -34,9 +34,13 @@
               <span v-if="row.series.checklistItem" class="badge badge-dim">Ítem {{ row.series.checklistItem }}</span>
             </div>
             <div class="small audit-detail">
-              <div v-if="row.state === 'activa'">
+              <div v-if="row.state === 'activa' && row.sessionCount">
                 {{ row.sessionCount }} {{ row.sessionCount === 1 ? 'sesión' : 'sesiones' }} en el período
                 <template v-if="row.eventsInPeriod.length"> · {{ row.eventsInPeriod.map((e) => e.name).join(', ') }}</template>
+              </div>
+              <!-- Rally sin horas de largada (Dakar): el recorrido está publicado, no hay horarios pendientes -->
+              <div v-else-if="row.state === 'activa'">
+                Recorrido publicado, sin horas de largada · {{ row.stageEvents.map((e) => e.name).join(', ') }}
               </div>
               <div v-for="e in row.pendingEvents" :key="e.id">
                 {{ e.name }} ({{ dateRange(e.dateStart, e.dateEnd) }}): horarios a confirmar

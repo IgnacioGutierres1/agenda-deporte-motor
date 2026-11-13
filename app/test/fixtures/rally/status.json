@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-12T12:00:00Z",
+  "series": [
+    { "seriesId": "f1", "state": "ok", "lastAttempt": "2026-11-12T11:58:00Z", "lastSuccess": "2026-11-12T11:58:00Z", "sourceUrl": "https://www.formula1.com/en/racing/2026", "standingsAvailable": false },
+    { "seriesId": "wrc", "state": "ok", "lastAttempt": "2026-11-12T11:50:00Z", "lastSuccess": "2026-11-12T11:50:00Z", "sourceUrl": "https://www.wrc.com/en/championship/calendar", "standingsAvailable": false },
+    { "seriesId": "dakar", "state": "ok", "lastAttempt": "2026-11-12T11:52:00Z", "lastSuccess": "2026-11-12T11:52:00Z", "sourceUrl": "https://www.dakar.com/es/recorrido", "standingsAvailable": false },
+    { "seriesId": "tc", "state": "ok", "lastAttempt": "2026-11-12T11:20:00Z", "lastSuccess": "2026-11-12T11:20:00Z", "standingsAvailable": false },
+    { "seriesId": "tc-pista", "state": "ok", "lastAttempt": "2026-11-12T11:20:00Z", "lastSuccess": "2026-11-12T11:20:00Z", "standingsAvailable": false }
+  ]
+}
