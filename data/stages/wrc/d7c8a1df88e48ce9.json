@@ -1,0 +1,227 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7c8a1df88e48ce9",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "asfalto",
+  "competitiveKm": 302.82,
+  "totalKm": 905.27,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Kuragaike Park",
+      "kind": "shakedown",
+      "date": "2026-05-28",
+      "startUtc": "2026-05-27T23:01:00Z",
+      "localStartText": "08:01",
+      "distanceKm": 2.53,
+      "sessionId": "48a4e9c6b0b1ebc0"
+    },
+    {
+      "code": "SS1",
+      "name": "Asuke 1",
+      "kind": "especial",
+      "date": "2026-05-29",
+      "startUtc": "2026-05-28T23:03:00Z",
+      "localStartText": "08:03",
+      "distanceKm": 12.9,
+      "sessionId": "f30525eaafe903dc"
+    },
+    {
+      "code": "SS2",
+      "name": "Isegami's Tunnel 1",
+      "kind": "especial",
+      "date": "2026-05-29",
+      "startUtc": "2026-05-28T23:46:00Z",
+      "localStartText": "08:46",
+      "distanceKm": 24.29,
+      "sessionId": "f30525eaafe903dc"
+    },
+    {
+      "code": "SS3",
+      "name": "Inabu / Shitara 1",
+      "kind": "especial",
+      "date": "2026-05-29",
+      "startUtc": "2026-05-29T01:09:00Z",
+      "localStartText": "10:09",
+      "distanceKm": 17.08,
+      "sessionId": "f30525eaafe903dc"
+    },
+    {
+      "code": "SS4",
+      "name": "Asuke 2",
+      "kind": "especial",
+      "date": "2026-05-29",
+      "startUtc": "2026-05-29T04:57:00Z",
+      "localStartText": "13:57",
+      "distanceKm": 12.9,
+      "sessionId": "f30525eaafe903dc"
+    },
+    {
+      "code": "SS5",
+      "name": "Isegami's Tunnel 2",
+      "kind": "especial",
+      "date": "2026-05-29",
+      "startUtc": "2026-05-29T05:40:00Z",
+      "localStartText": "14:40",
+      "distanceKm": 24.29,
+      "sessionId": "f30525eaafe903dc"
+    },
+    {
+      "code": "SS6",
+      "name": "Inabu / Shitara 2",
+      "kind": "especial",
+      "date": "2026-05-29",
+      "startUtc": "2026-05-29T07:03:00Z",
+      "localStartText": "16:03",
+      "distanceKm": 17.08,
+      "sessionId": "f30525eaafe903dc"
+    },
+    {
+      "code": "SS7",
+      "name": "Obara 1",
+      "kind": "especial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-29T22:41:00Z",
+      "localStartText": "07:41",
+      "distanceKm": 16.44,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS8",
+      "name": "Ena 1",
+      "kind": "especial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-29T23:54:00Z",
+      "localStartText": "08:54",
+      "distanceKm": 21.16,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS9",
+      "name": "Obara 1",
+      "kind": "especial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-30T01:35:00Z",
+      "localStartText": "10:35",
+      "distanceKm": 19.32,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS10",
+      "name": "Obara 2",
+      "kind": "especial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-30T04:05:00Z",
+      "localStartText": "13:05",
+      "distanceKm": 19.32,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS11",
+      "name": "Ena 2",
+      "kind": "especial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-30T05:38:00Z",
+      "localStartText": "14:38",
+      "distanceKm": 21.16,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS12",
+      "name": "Obara 2",
+      "kind": "especial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-30T06:56:00Z",
+      "localStartText": "15:56",
+      "distanceKm": 16.44,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS13",
+      "name": "Fujioka SSS 1",
+      "kind": "superespecial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-30T08:15:00Z",
+      "localStartText": "17:15",
+      "distanceKm": 3.19,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS14",
+      "name": "Fujioka SSS 2",
+      "kind": "superespecial",
+      "date": "2026-05-30",
+      "startUtc": "2026-05-30T08:38:00Z",
+      "localStartText": "17:38",
+      "distanceKm": 3.19,
+      "sessionId": "8c70ac65d0c488e3"
+    },
+    {
+      "code": "SS15",
+      "name": "Nukata 1",
+      "kind": "especial",
+      "date": "2026-05-31",
+      "startUtc": "2026-05-30T23:14:00Z",
+      "localStartText": "08:14",
+      "distanceKm": 20.49,
+      "sessionId": "24d998c03ff6392f"
+    },
+    {
+      "code": "SS16",
+      "name": "Lake Mikawako 1",
+      "kind": "especial",
+      "date": "2026-05-31",
+      "startUtc": "2026-05-31T00:05:00Z",
+      "localStartText": "09:05",
+      "distanceKm": 13.98,
+      "sessionId": "24d998c03ff6392f"
+    },
+    {
+      "code": "SS17",
+      "name": "Kuragaike SSS 1",
+      "kind": "superespecial",
+      "date": "2026-05-31",
+      "startUtc": "2026-05-31T01:13:00Z",
+      "localStartText": "10:13",
+      "distanceKm": 2.56,
+      "sessionId": "24d998c03ff6392f"
+    },
+    {
+      "code": "SS18",
+      "name": "Kuragaike SSS 2",
+      "kind": "superespecial",
+      "date": "2026-05-31",
+      "startUtc": "2026-05-31T01:32:00Z",
+      "localStartText": "10:32",
+      "distanceKm": 2.56,
+      "sessionId": "24d998c03ff6392f"
+    },
+    {
+      "code": "SS19",
+      "name": "Nukata 2",
+      "kind": "especial",
+      "date": "2026-05-31",
+      "startUtc": "2026-05-31T03:30:00Z",
+      "localStartText": "12:30",
+      "distanceKm": 20.49,
+      "sessionId": "24d998c03ff6392f"
+    },
+    {
+      "code": "SS20",
+      "name": "Lake Mikawako 2",
+      "kind": "power",
+      "date": "2026-05-31",
+      "startUtc": "2026-05-31T05:15:00Z",
+      "localStartText": "14:15",
+      "distanceKm": 13.98,
+      "sessionId": "13a0b726fc473c28"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Rally_Japan",
+    "title": "Wikipedia: 2026 Rally Japan",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

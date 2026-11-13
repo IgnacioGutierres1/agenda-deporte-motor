@@ -1,0 +1,22 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TC Mouras
+BEGIN:VEVENT
+UID:a6ab6f47ac1f357f@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261214
+SUMMARY:TC Mouras (Roberto José Mouras) - Fecha 12 — La Plata (horarios 
+ a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: Motorplay\, Carburando\nFuente: https
+ ://actc.org.ar/tcm/calendario\nDónde verlo:\nMotorplay: https://www.motor
+ play.tv/ar\nCarburando: https://www.carburando.com/
+LOCATION:Roberto José Mouras\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

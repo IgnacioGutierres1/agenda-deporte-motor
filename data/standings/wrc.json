@@ -1,0 +1,574 @@
+{
+  "seriesId": "wrc",
+  "season": 2026,
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "tables": [
+    {
+      "title": "Pilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Elfyn Evans",
+          "points": 243,
+          "wins": 2,
+          "country": "GB"
+        },
+        {
+          "pos": 2,
+          "name": "Oliver Solberg",
+          "points": 238,
+          "wins": 3,
+          "country": "SE"
+        },
+        {
+          "pos": 3,
+          "name": "Sami Pajari",
+          "points": 237,
+          "wins": 3,
+          "country": "FI"
+        },
+        {
+          "pos": 4,
+          "name": "Sébastien Ogier",
+          "points": 189,
+          "wins": 2,
+          "country": "FR"
+        },
+        {
+          "pos": 5,
+          "name": "Adrien Fourmaux",
+          "points": 183,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 6,
+          "name": "Takamoto Katsuta",
+          "points": 175,
+          "wins": 2,
+          "country": "JP"
+        },
+        {
+          "pos": 7,
+          "name": "Thierry Neuville",
+          "points": 134,
+          "wins": 1,
+          "country": "BE"
+        },
+        {
+          "pos": 8,
+          "name": "Hayden Paddon",
+          "points": 38,
+          "wins": 0,
+          "country": "NZ"
+        },
+        {
+          "pos": 9,
+          "name": "Joshua Mcerlean",
+          "points": 35,
+          "wins": 0,
+          "country": "IE"
+        },
+        {
+          "pos": 10,
+          "name": "Esapekka Lappi",
+          "points": 33,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 11,
+          "name": "Yohan Rossel",
+          "points": 24,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 12,
+          "name": "Jon Armstrong",
+          "points": 22,
+          "wins": 0,
+          "country": "IE"
+        },
+        {
+          "pos": 13,
+          "name": "Robert Virves",
+          "points": 19,
+          "wins": 0,
+          "country": "EE"
+        },
+        {
+          "pos": 14,
+          "name": "Léo Rossel",
+          "points": 18,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 15,
+          "name": "Gus Greensmith",
+          "points": 14,
+          "wins": 0,
+          "country": "GB"
+        },
+        {
+          "pos": 16,
+          "name": "Mārtinš Sesks",
+          "points": 12,
+          "wins": 0,
+          "country": "LV"
+        },
+        {
+          "pos": 17,
+          "name": "Nikolay Gryazin",
+          "points": 10,
+          "wins": 0,
+          "country": "BG"
+        },
+        {
+          "pos": 18,
+          "name": "Daniel Sordo",
+          "points": 10,
+          "wins": 0,
+          "country": "ES"
+        },
+        {
+          "pos": 19,
+          "name": "Roope Korhonen",
+          "points": 9,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 20,
+          "name": "Diego Domínguez",
+          "points": 8,
+          "wins": 0,
+          "country": "PY"
+        },
+        {
+          "pos": 21,
+          "name": "Alejandro Cachón",
+          "points": 7,
+          "wins": 0,
+          "country": "ES"
+        },
+        {
+          "pos": 22,
+          "name": "Fabrizio Zaldivar",
+          "points": 6,
+          "wins": 0,
+          "country": "PY"
+        },
+        {
+          "pos": 23,
+          "name": "Roberto Daprà",
+          "points": 6,
+          "wins": 0,
+          "country": "IT"
+        },
+        {
+          "pos": 24,
+          "name": "Andreas Mikkelsen",
+          "points": 5,
+          "wins": 0,
+          "country": "NO"
+        },
+        {
+          "pos": 25,
+          "name": "Jari-Matti Latvala",
+          "points": 4,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 26,
+          "name": "Alejandro Galanti",
+          "points": 2,
+          "wins": 0,
+          "country": "PY"
+        },
+        {
+          "pos": 27,
+          "name": "Arthur Pelamourgues",
+          "points": 2,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 28,
+          "name": "Teemu Suninen",
+          "points": 2,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 29,
+          "name": "Matteo Fontana",
+          "points": 2,
+          "wins": 0,
+          "country": "IT"
+        },
+        {
+          "pos": 30,
+          "name": "Eric Camilli",
+          "points": 1,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 31,
+          "name": "Emil Lindholm",
+          "points": 1,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 32,
+          "name": "Taylor Gill",
+          "points": 1,
+          "wins": 0,
+          "country": "AU"
+        },
+        {
+          "pos": 33,
+          "name": "Grégoire Munster",
+          "points": 0,
+          "wins": 0,
+          "country": "LU"
+        },
+        {
+          "pos": 34,
+          "name": "Jourdan Serderidis",
+          "points": 0,
+          "wins": 0,
+          "country": "GR"
+        },
+        {
+          "pos": 35,
+          "name": "Romet Jürgenson",
+          "points": 0,
+          "wins": 0,
+          "country": "EE"
+        },
+        {
+          "pos": 36,
+          "name": "Lorenzo Bertelli",
+          "points": 0,
+          "wins": 0,
+          "country": "IT"
+        }
+      ]
+    },
+    {
+      "title": "Copilotos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Scott Martin",
+          "points": 243,
+          "wins": 2,
+          "country": "GB"
+        },
+        {
+          "pos": 2,
+          "name": "Elliott Edmondson",
+          "points": 238,
+          "wins": 3,
+          "country": "GB"
+        },
+        {
+          "pos": 3,
+          "name": "Marko Salminen",
+          "points": 237,
+          "wins": 3,
+          "country": "FI"
+        },
+        {
+          "pos": 4,
+          "name": "Vincent Landais",
+          "points": 189,
+          "wins": 2,
+          "country": "FR"
+        },
+        {
+          "pos": 5,
+          "name": "Alexandre Coria",
+          "points": 183,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 6,
+          "name": "Aaron Johnston",
+          "points": 172,
+          "wins": 2,
+          "country": "IE"
+        },
+        {
+          "pos": 7,
+          "name": "Martijn Wydaeghe",
+          "points": 134,
+          "wins": 1,
+          "country": "BE"
+        },
+        {
+          "pos": 8,
+          "name": "John Kennard",
+          "points": 38,
+          "wins": 0,
+          "country": "NZ"
+        },
+        {
+          "pos": 9,
+          "name": "Eoin Treacy",
+          "points": 35,
+          "wins": 0,
+          "country": "IE"
+        },
+        {
+          "pos": 10,
+          "name": "Enni Mälkönen",
+          "points": 33,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 11,
+          "name": "Arnaud Dunand",
+          "points": 24,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 12,
+          "name": "Shane Byrne",
+          "points": 22,
+          "wins": 0,
+          "country": "IE"
+        },
+        {
+          "pos": 13,
+          "name": "Jakko Viilo",
+          "points": 19,
+          "wins": 0,
+          "country": "EE"
+        },
+        {
+          "pos": 14,
+          "name": "Guillaume Mercoiret",
+          "points": 18,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 15,
+          "name": "Jonas Andersson",
+          "points": 14,
+          "wins": 0,
+          "country": "SE"
+        },
+        {
+          "pos": 16,
+          "name": "Renārs Francis",
+          "points": 12,
+          "wins": 0,
+          "country": "LV"
+        },
+        {
+          "pos": 17,
+          "name": "Konstantin Aleksandrov",
+          "points": 10,
+          "wins": 0,
+          "country": "KG"
+        },
+        {
+          "pos": 18,
+          "name": "Cándido Carrera",
+          "points": 10,
+          "wins": 0,
+          "country": "ES"
+        },
+        {
+          "pos": 19,
+          "name": "Anssi Viinikka",
+          "points": 9,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 20,
+          "name": "Rogelio Peñate",
+          "points": 8,
+          "wins": 0,
+          "country": "ES"
+        },
+        {
+          "pos": 21,
+          "name": "Borja Rozada",
+          "points": 7,
+          "wins": 0,
+          "country": "ES"
+        },
+        {
+          "pos": 22,
+          "name": "Marcelo der Ohannesian",
+          "points": 6,
+          "wins": 0,
+          "country": "IT"
+        },
+        {
+          "pos": 23,
+          "name": "Luca Guglielmetti",
+          "points": 6,
+          "wins": 0,
+          "country": "IT"
+        },
+        {
+          "pos": 24,
+          "name": "Jørn Listerud",
+          "points": 5,
+          "wins": 0,
+          "country": "NO"
+        },
+        {
+          "pos": 25,
+          "name": "Juho Hänninen",
+          "points": 4,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 26,
+          "name": "James Fulton",
+          "points": 3,
+          "wins": 0,
+          "country": "IE"
+        },
+        {
+          "pos": 27,
+          "name": "Marcelo Toyotoshi",
+          "points": 2,
+          "wins": 0,
+          "country": "AR"
+        },
+        {
+          "pos": 28,
+          "name": "Bastien Pouget",
+          "points": 2,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 29,
+          "name": "Janni Hussi",
+          "points": 2,
+          "wins": 0,
+          "country": "FI"
+        },
+        {
+          "pos": 30,
+          "name": "Alessandro Arnaboldi",
+          "points": 2,
+          "wins": 0,
+          "country": "IT"
+        },
+        {
+          "pos": 31,
+          "name": "Thibault de la Haye",
+          "points": 1,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 32,
+          "name": "Gabriel Morales",
+          "points": 1,
+          "wins": 0,
+          "country": "BR"
+        },
+        {
+          "pos": 33,
+          "name": "Daniel Brkic",
+          "points": 1,
+          "wins": 0,
+          "country": "AU"
+        },
+        {
+          "pos": 34,
+          "name": "Frédéric Miclotte",
+          "points": 0,
+          "wins": 0,
+          "country": "BE"
+        },
+        {
+          "pos": 35,
+          "name": "Julien Ingrassia",
+          "points": 0,
+          "wins": 0,
+          "country": "FR"
+        },
+        {
+          "pos": 36,
+          "name": "Patricia Sáiz",
+          "points": 0,
+          "wins": 0,
+          "country": "ES"
+        },
+        {
+          "pos": 37,
+          "name": "Simone Scattolin",
+          "points": 0,
+          "wins": 0,
+          "country": "IT"
+        },
+        {
+          "pos": 38,
+          "name": "Siim Oja",
+          "points": 0,
+          "wins": 0,
+          "country": "EE"
+        },
+        {
+          "pos": 39,
+          "name": "Louis Louka",
+          "points": 0,
+          "wins": 0,
+          "country": "BE"
+        }
+      ]
+    },
+    {
+      "title": "Constructores",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "Toyota Gazoo Racing WRT",
+          "points": 662
+        },
+        {
+          "pos": 2,
+          "name": "Hyundai Shell Mobis World Rally Team",
+          "points": 440
+        },
+        {
+          "pos": 3,
+          "name": "Toyota Gazoo Racing WRT2",
+          "points": 251
+        },
+        {
+          "pos": 4,
+          "name": "M-Sport Ford World Rally Team",
+          "points": 168
+        }
+      ]
+    }
+  ],
+  "source": {
+    "url": "https://www.fia.com/events/world-rally-championship/season-2026/standings",
+    "title": "FIA: campeonato del WRC 2026",
+    "kind": "html",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

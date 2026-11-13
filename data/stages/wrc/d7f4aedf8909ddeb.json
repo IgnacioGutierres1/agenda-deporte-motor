@@ -1,0 +1,207 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7f4aedf8909ddeb",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "asfalto",
+  "competitiveKm": 321.92,
+  "totalKm": 1168.63,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Santa Brígida",
+      "kind": "shakedown",
+      "date": "2026-04-23",
+      "startUtc": "2026-04-23T08:01:00Z",
+      "localStartText": "09:01",
+      "distanceKm": 6.26,
+      "sessionId": "bd061b50ec97175c"
+    },
+    {
+      "code": "SS1",
+      "name": "BP Ultimate – Circuito Islas Canarias",
+      "kind": "superespecial",
+      "date": "2026-04-23",
+      "startUtc": "2026-04-23T16:35:00Z",
+      "localStartText": "17:35",
+      "distanceKm": 2.27,
+      "sessionId": "1ee450c236b1f6e2"
+    },
+    {
+      "code": "SS2",
+      "name": "Valleseco – Artenara 1",
+      "kind": "especial",
+      "date": "2026-04-24",
+      "startUtc": "2026-04-24T08:20:00Z",
+      "localStartText": "09:20",
+      "distanceKm": 15.27,
+      "sessionId": "e71ec294b4227f38"
+    },
+    {
+      "code": "SS3",
+      "name": "La Aldea – Mogán 1",
+      "kind": "especial",
+      "date": "2026-04-24",
+      "startUtc": "2026-04-24T09:48:00Z",
+      "localStartText": "10:48",
+      "distanceKm": 21.42,
+      "sessionId": "e71ec294b4227f38"
+    },
+    {
+      "code": "SS4",
+      "name": "Tejeda – San Mateo 1",
+      "kind": "especial",
+      "date": "2026-04-24",
+      "startUtc": "2026-04-24T11:11:00Z",
+      "localStartText": "12:11",
+      "distanceKm": 26.05,
+      "sessionId": "e71ec294b4227f38"
+    },
+    {
+      "code": "SS5",
+      "name": "Valleseco – Artenara 2",
+      "kind": "especial",
+      "date": "2026-04-24",
+      "startUtc": "2026-04-24T14:06:00Z",
+      "localStartText": "15:06",
+      "distanceKm": 15.27,
+      "sessionId": "e71ec294b4227f38"
+    },
+    {
+      "code": "SS6",
+      "name": "La Aldea – Mogán 2",
+      "kind": "especial",
+      "date": "2026-04-24",
+      "startUtc": "2026-04-24T15:34:00Z",
+      "localStartText": "16:34",
+      "distanceKm": 21.42,
+      "sessionId": "e71ec294b4227f38"
+    },
+    {
+      "code": "SS7",
+      "name": "Tejeda – San Mateo 2",
+      "kind": "especial",
+      "date": "2026-04-24",
+      "startUtc": "2026-04-24T16:57:00Z",
+      "localStartText": "17:57",
+      "distanceKm": 26.05,
+      "sessionId": "e71ec294b4227f38"
+    },
+    {
+      "code": "SS8",
+      "name": "Maspalomas 1",
+      "kind": "especial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T07:20:00Z",
+      "localStartText": "08:20",
+      "distanceKm": 13.47,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS9",
+      "name": "Arucas – Teror 1",
+      "kind": "especial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T08:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 13.74,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS10",
+      "name": "Moya – Gáldar 1",
+      "kind": "especial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T09:51:00Z",
+      "localStartText": "10:51",
+      "distanceKm": 28.9,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS11",
+      "name": "Maspalomas 2",
+      "kind": "especial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T13:50:00Z",
+      "localStartText": "14:50",
+      "distanceKm": 13.47,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS12",
+      "name": "Arucas – Teror 2",
+      "kind": "especial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T15:05:00Z",
+      "localStartText": "16:05",
+      "distanceKm": 13.74,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS13",
+      "name": "Moya – Gáldar 2",
+      "kind": "especial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T16:21:00Z",
+      "localStartText": "17:21",
+      "distanceKm": 28.9,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS14",
+      "name": "BP Ultimate – Las Palmas de Gran Canaria",
+      "kind": "superespecial",
+      "date": "2026-04-25",
+      "startUtc": "2026-04-25T18:25:00Z",
+      "localStartText": "19:25",
+      "distanceKm": 2.55,
+      "sessionId": "9a1fab3b7cf7c6bf"
+    },
+    {
+      "code": "SS15",
+      "name": "Ingenio – Valsequillo 1",
+      "kind": "especial",
+      "date": "2026-04-26",
+      "startUtc": "2026-04-26T06:35:00Z",
+      "localStartText": "07:35",
+      "distanceKm": 26.49,
+      "sessionId": "d1ca1ed9391d5eab"
+    },
+    {
+      "code": "SS16",
+      "name": "Santa Lucía – Agüimes 1",
+      "kind": "especial",
+      "date": "2026-04-26",
+      "startUtc": "2026-04-26T08:05:00Z",
+      "localStartText": "09:05",
+      "distanceKm": 13.27,
+      "sessionId": "d1ca1ed9391d5eab"
+    },
+    {
+      "code": "SS17",
+      "name": "Ingenio – Valsequillo 2",
+      "kind": "especial",
+      "date": "2026-04-26",
+      "startUtc": "2026-04-26T09:50:00Z",
+      "localStartText": "10:50",
+      "distanceKm": 26.49,
+      "sessionId": "d1ca1ed9391d5eab"
+    },
+    {
+      "code": "SS18",
+      "name": "Santa Lucía – Agüimes 2",
+      "kind": "power",
+      "date": "2026-04-26",
+      "startUtc": "2026-04-26T12:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 13.15,
+      "sessionId": "dae7a8f5853f6b44"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Rally_Islas_Canarias",
+    "title": "Wikipedia: 2026 Rally Islas Canarias",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

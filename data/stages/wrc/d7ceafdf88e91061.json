@@ -1,0 +1,227 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7ceafdf88e91061",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "asfalto",
+  "competitiveKm": 300.28,
+  "totalKm": 836.32,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "",
+      "kind": "shakedown",
+      "date": "2026-04-09",
+      "startUtc": "2026-04-09T08:01:00Z",
+      "localStartText": "10:01",
+      "distanceKm": 3.65,
+      "sessionId": "ccb2e65a46fa05e2"
+    },
+    {
+      "code": "SS1",
+      "name": "Vodice – Brest 1",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T07:03:00Z",
+      "localStartText": "09:03",
+      "distanceKm": 14.12,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS2",
+      "name": "Lake Butoniga – Motovun 1",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T08:11:00Z",
+      "localStartText": "10:11",
+      "distanceKm": 13.78,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS3",
+      "name": "Beram – Cerovlje 1",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T09:14:00Z",
+      "localStartText": "11:14",
+      "distanceKm": 23.78,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS4",
+      "name": "Učka 1",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T10:02:00Z",
+      "localStartText": "12:02",
+      "distanceKm": 11.75,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS5",
+      "name": "Vodice – Brest 2",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T13:15:00Z",
+      "localStartText": "15:15",
+      "distanceKm": 14.12,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS6",
+      "name": "Lake Butoniga – Motovun 2",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T14:13:00Z",
+      "localStartText": "16:13",
+      "distanceKm": 13.78,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS7",
+      "name": "Beram – Cerovlje 2",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T15:16:00Z",
+      "localStartText": "17:16",
+      "distanceKm": 23.78,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS8",
+      "name": "Učka 2",
+      "kind": "especial",
+      "date": "2026-04-10",
+      "startUtc": "2026-04-10T16:04:00Z",
+      "localStartText": "18:04",
+      "distanceKm": 11.75,
+      "sessionId": "990dcf5f9f7f4172"
+    },
+    {
+      "code": "SS9",
+      "name": "Platak 1",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T06:43:00Z",
+      "localStartText": "08:43",
+      "distanceKm": 16.26,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS10",
+      "name": "Ravna Gora – Skrad 1",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T07:41:00Z",
+      "localStartText": "09:41",
+      "distanceKm": 10.13,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS11",
+      "name": "Generalski Stol – Zdihovo 1",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T09:05:00Z",
+      "localStartText": "11:05",
+      "distanceKm": 22.48,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS12",
+      "name": "Pećurkovo Brdo – Mrežnički Novaki 1",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T10:03:00Z",
+      "localStartText": "12:03",
+      "distanceKm": 9.11,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS13",
+      "name": "Pećurkovo Brdo – Mrežnički Novaki 2",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T12:12:00Z",
+      "localStartText": "14:12",
+      "distanceKm": 9.11,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS14",
+      "name": "Generalski Stol – Zdihovo 2",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T13:05:00Z",
+      "localStartText": "15:05",
+      "distanceKm": 22.48,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS15",
+      "name": "Ravna Gora – Skrad 2",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T14:23:00Z",
+      "localStartText": "16:23",
+      "distanceKm": 10.13,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS16",
+      "name": "Platak 2",
+      "kind": "especial",
+      "date": "2026-04-11",
+      "startUtc": "2026-04-11T15:22:00Z",
+      "localStartText": "17:22",
+      "distanceKm": 16.26,
+      "sessionId": "03240fbf7d57f439"
+    },
+    {
+      "code": "SS17",
+      "name": "Bribir – Novi Vinodolski 1",
+      "kind": "especial",
+      "date": "2026-04-12",
+      "startUtc": "2026-04-12T06:05:00Z",
+      "localStartText": "08:05",
+      "distanceKm": 14.17,
+      "sessionId": "f8853fb607e69bc5"
+    },
+    {
+      "code": "SS18",
+      "name": "Alan – Senj 1",
+      "kind": "especial",
+      "date": "2026-04-12",
+      "startUtc": "2026-04-12T07:05:00Z",
+      "localStartText": "09:05",
+      "distanceKm": 14.56,
+      "sessionId": "f8853fb607e69bc5"
+    },
+    {
+      "code": "SS19",
+      "name": "Bribir – Novi Vinodolski 2",
+      "kind": "especial",
+      "date": "2026-04-12",
+      "startUtc": "2026-04-12T08:38:00Z",
+      "localStartText": "10:38",
+      "distanceKm": 14.17,
+      "sessionId": "f8853fb607e69bc5"
+    },
+    {
+      "code": "SS20",
+      "name": "Alan – Senj 2",
+      "kind": "power",
+      "date": "2026-04-12",
+      "startUtc": "2026-04-12T11:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 14.56,
+      "sessionId": "1cdc6b4f27ba2722"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Croatia_Rally",
+    "title": "Wikipedia: 2026 Croatia Rally",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

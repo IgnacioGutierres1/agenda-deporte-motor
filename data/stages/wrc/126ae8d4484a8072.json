@@ -1,0 +1,207 @@
+{
+  "seriesId": "wrc",
+  "eventId": "126ae8d4484a8072",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "asfalto",
+  "surfaceNote": "Asfalto y nieve",
+  "competitiveKm": 353.57,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Gap",
+      "kind": "shakedown",
+      "date": "2027-01-20",
+      "startUtc": "2027-01-20T13:01:00Z",
+      "localStartText": "14:01",
+      "distanceKm": 4.25,
+      "sessionId": "6fbb46b8d597b945"
+    },
+    {
+      "code": "SS1",
+      "name": "Col de Bleine / Aiglun",
+      "kind": "especial",
+      "date": "2027-01-21",
+      "startUtc": "2027-01-21T14:35:00Z",
+      "localStartText": "15:35",
+      "distanceKm": 25.47,
+      "sessionId": "b35f238313a6517b"
+    },
+    {
+      "code": "SS2",
+      "name": "Clumanc / Lambruisse",
+      "kind": "especial",
+      "date": "2027-01-21",
+      "startUtc": "2027-01-21T17:05:00Z",
+      "localStartText": "18:05",
+      "distanceKm": 20.95,
+      "sessionId": "b35f238313a6517b"
+    },
+    {
+      "code": "SS3",
+      "name": "Esclangon / Seyne-les-Alpes",
+      "kind": "especial",
+      "date": "2027-01-21",
+      "startUtc": "2027-01-21T19:05:00Z",
+      "localStartText": "20:05",
+      "distanceKm": 23.8,
+      "sessionId": "b35f238313a6517b"
+    },
+    {
+      "code": "SS4",
+      "name": "Agnières-en-Dévoluy / Pellafol",
+      "kind": "especial",
+      "date": "2027-01-22",
+      "startUtc": "2027-01-22T08:25:00Z",
+      "localStartText": "09:25",
+      "distanceKm": 17.2,
+      "sessionId": "6755e61b911359ab"
+    },
+    {
+      "code": "SS5",
+      "name": "La Salle-en-Beaumont / Les Côtes-de-Corps",
+      "kind": "especial",
+      "date": "2027-01-22",
+      "startUtc": "2027-01-22T09:25:00Z",
+      "localStartText": "10:25",
+      "distanceKm": 14.4,
+      "sessionId": "6755e61b911359ab"
+    },
+    {
+      "code": "SS6",
+      "name": "Saint-Maurice / Aubessagne",
+      "kind": "especial",
+      "date": "2027-01-22",
+      "startUtc": "2027-01-22T10:25:00Z",
+      "localStartText": "11:25",
+      "distanceKm": 18.68,
+      "sessionId": "6755e61b911359ab"
+    },
+    {
+      "code": "SS7",
+      "name": "Agnières-en-Dévoluy / Pellafo",
+      "kind": "especial",
+      "date": "2027-01-22",
+      "startUtc": "2027-01-22T13:45:00Z",
+      "localStartText": "14:45",
+      "distanceKm": 17.2,
+      "sessionId": "6755e61b911359ab"
+    },
+    {
+      "code": "SS8",
+      "name": "La Salle-en-Beaumont / Les Côtes-de-Corps",
+      "kind": "especial",
+      "date": "2027-01-22",
+      "startUtc": "2027-01-22T14:45:00Z",
+      "localStartText": "15:45",
+      "distanceKm": 14.4,
+      "sessionId": "6755e61b911359ab"
+    },
+    {
+      "code": "SS9",
+      "name": "Saint-Maurice / Aubessagne",
+      "kind": "especial",
+      "date": "2027-01-22",
+      "startUtc": "2027-01-22T15:45:00Z",
+      "localStartText": "16:45",
+      "distanceKm": 18.68,
+      "sessionId": "6755e61b911359ab"
+    },
+    {
+      "code": "SS10",
+      "name": "Laborel / Montauban-sur-l’Ouvèze",
+      "kind": "especial",
+      "date": "2027-01-23",
+      "startUtc": "2027-01-23T07:05:00Z",
+      "localStartText": "08:05",
+      "distanceKm": 18.58,
+      "sessionId": "52679aa1889c3228"
+    },
+    {
+      "code": "SS11",
+      "name": "Saint-Nazaire-le-Désert / La Motte-Chalancon",
+      "kind": "especial",
+      "date": "2027-01-23",
+      "startUtc": "2027-01-23T09:05:00Z",
+      "localStartText": "10:05",
+      "distanceKm": 22,
+      "sessionId": "52679aa1889c3228"
+    },
+    {
+      "code": "SS12",
+      "name": "La Bâtie-des-Fonts / Sigottier",
+      "kind": "especial",
+      "date": "2027-01-23",
+      "startUtc": "2027-01-23T10:15:00Z",
+      "localStartText": "11:15",
+      "distanceKm": 15.88,
+      "sessionId": "52679aa1889c3228"
+    },
+    {
+      "code": "SS13",
+      "name": "Laborel / Montauban-sur-l’Ouvèz",
+      "kind": "especial",
+      "date": "2027-01-23",
+      "startUtc": "2027-01-23T14:05:00Z",
+      "localStartText": "15:05",
+      "distanceKm": 18.58,
+      "sessionId": "52679aa1889c3228"
+    },
+    {
+      "code": "SS14",
+      "name": "Saint-Nazaire-le-Désert / La Motte-Chalancon",
+      "kind": "especial",
+      "date": "2027-01-23",
+      "startUtc": "2027-01-23T16:05:00Z",
+      "localStartText": "17:05",
+      "distanceKm": 22,
+      "sessionId": "52679aa1889c3228"
+    },
+    {
+      "code": "SS15",
+      "name": "La Bâtie-des-Fonts / Sigottier",
+      "kind": "especial",
+      "date": "2027-01-23",
+      "startUtc": "2027-01-23T17:25:00Z",
+      "localStartText": "18:25",
+      "distanceKm": 15.88,
+      "sessionId": "52679aa1889c3228"
+    },
+    {
+      "code": "SS16",
+      "name": "Clumanc / Lambruisse",
+      "kind": "especial",
+      "date": "2027-01-24",
+      "startUtc": "2027-01-24T07:00:00Z",
+      "localStartText": "08:00",
+      "distanceKm": 20.95,
+      "sessionId": "038391b9245aa904"
+    },
+    {
+      "code": "SS17",
+      "name": "Col de Bleine / Aiglun",
+      "kind": "especial",
+      "date": "2027-01-24",
+      "startUtc": "2027-01-24T08:40:00Z",
+      "localStartText": "09:40",
+      "distanceKm": 25.47,
+      "sessionId": "038391b9245aa904"
+    },
+    {
+      "code": "SS18",
+      "name": "La Bollène-Vésubie / Moulinet",
+      "kind": "power",
+      "date": "2027-01-24",
+      "startUtc": "2027-01-24T12:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 23.45,
+      "sessionId": "9dc530fad9197d33"
+    }
+  ],
+  "source": {
+    "url": "https://www.wrc.com/en/events/wrc-rallye-monte-carlo-2027/itinerary-wrc-rallye-monte-carlo-2027",
+    "title": "WRC.com: WRC Rallye Monte-Carlo 2027",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

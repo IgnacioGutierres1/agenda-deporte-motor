@@ -1,0 +1,227 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7c4b0df88e0bd8f",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "tierra",
+  "competitiveKm": 349.77,
+  "totalKm": 1227.86,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Nawisa",
+      "kind": "shakedown",
+      "date": "2026-03-12",
+      "startUtc": "2026-03-12T05:01:00Z",
+      "localStartText": "08:01",
+      "distanceKm": 6.31,
+      "sessionId": "fdfb59c6fa033bbb"
+    },
+    {
+      "code": "SS1",
+      "name": "Camp Moran 1",
+      "kind": "especial",
+      "date": "2026-03-12",
+      "startUtc": "2026-03-12T13:05:00Z",
+      "localStartText": "16:05",
+      "distanceKm": 24.35,
+      "sessionId": "5ddf9739451e334d"
+    },
+    {
+      "code": "SS2",
+      "name": "Mzabibu 1",
+      "kind": "especial",
+      "date": "2026-03-12",
+      "startUtc": "2026-03-12T14:23:00Z",
+      "localStartText": "17:23",
+      "distanceKm": 8.86,
+      "sessionId": "5ddf9739451e334d"
+    },
+    {
+      "code": "SS3",
+      "name": "Camp Moran 2",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T05:03:00Z",
+      "localStartText": "08:03",
+      "distanceKm": 24.35,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS4",
+      "name": "Loldia 1",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T06:06:00Z",
+      "localStartText": "09:06",
+      "distanceKm": 25.04,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS5",
+      "name": "Kengen Geothermal 1",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T07:24:00Z",
+      "localStartText": "10:24",
+      "distanceKm": 13.16,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS6",
+      "name": "Kedong 1",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T08:17:00Z",
+      "localStartText": "11:17",
+      "distanceKm": 13.79,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS7",
+      "name": "Kedong 1",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T11:00:00Z",
+      "localStartText": "14:00",
+      "distanceKm": 13.79,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS8",
+      "name": "Kengen Geothermal 1",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T11:58:00Z",
+      "localStartText": "14:58",
+      "distanceKm": 13.16,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS9",
+      "name": "Loldia 1",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T12:56:00Z",
+      "localStartText": "15:56",
+      "distanceKm": 25.04,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS10",
+      "name": "Mzabibu 2",
+      "kind": "especial",
+      "date": "2026-03-13",
+      "startUtc": "2026-03-13T13:59:00Z",
+      "localStartText": "16:59",
+      "distanceKm": 8.86,
+      "sessionId": "48174b2f0a039d45"
+    },
+    {
+      "code": "SS11",
+      "name": "Soysambu 1",
+      "kind": "especial",
+      "date": "2026-03-14",
+      "startUtc": "2026-03-14T05:35:00Z",
+      "localStartText": "08:35",
+      "distanceKm": 24.94,
+      "sessionId": "6dd7e339fd4d262a"
+    },
+    {
+      "code": "SS12",
+      "name": "Elmenteita 1",
+      "kind": "especial",
+      "date": "2026-03-14",
+      "startUtc": "2026-03-14T06:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 18.01,
+      "sessionId": "6dd7e339fd4d262a"
+    },
+    {
+      "code": "SS13",
+      "name": "Sleeping Warrior 1",
+      "kind": "especial",
+      "date": "2026-03-14",
+      "startUtc": "2026-03-14T07:33:00Z",
+      "localStartText": "10:33",
+      "distanceKm": 18.01,
+      "sessionId": "6dd7e339fd4d262a"
+    },
+    {
+      "code": "SS14",
+      "name": "Soysambu 2",
+      "kind": "especial",
+      "date": "2026-03-14",
+      "startUtc": "2026-03-14T12:05:00Z",
+      "localStartText": "15:05",
+      "distanceKm": 24.94,
+      "sessionId": "6dd7e339fd4d262a"
+    },
+    {
+      "code": "SS15",
+      "name": "Elmenteita 2",
+      "kind": "especial",
+      "date": "2026-03-14",
+      "startUtc": "2026-03-14T13:05:00Z",
+      "localStartText": "16:05",
+      "distanceKm": 18.01,
+      "sessionId": "6dd7e339fd4d262a"
+    },
+    {
+      "code": "SS16",
+      "name": "Sleeping Warrior 2",
+      "kind": "especial",
+      "date": "2026-03-14",
+      "startUtc": "2026-03-14T14:03:00Z",
+      "localStartText": "17:03",
+      "distanceKm": 18.01,
+      "sessionId": "6dd7e339fd4d262a"
+    },
+    {
+      "code": "SS17",
+      "name": "Oserengoni 1",
+      "kind": "especial",
+      "date": "2026-03-15",
+      "startUtc": "2026-03-15T05:09:00Z",
+      "localStartText": "08:09",
+      "distanceKm": 18.22,
+      "sessionId": "c945d9e17d76df8e"
+    },
+    {
+      "code": "SS18",
+      "name": "Hell's Gate 1",
+      "kind": "especial",
+      "date": "2026-03-15",
+      "startUtc": "2026-03-15T06:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 10.48,
+      "sessionId": "c945d9e17d76df8e"
+    },
+    {
+      "code": "SS19",
+      "name": "Oserengoni 2",
+      "kind": "especial",
+      "date": "2026-03-15",
+      "startUtc": "2026-03-15T07:38:00Z",
+      "localStartText": "10:38",
+      "distanceKm": 18.22,
+      "sessionId": "c945d9e17d76df8e"
+    },
+    {
+      "code": "SS20",
+      "name": "Hell's Gate 2",
+      "kind": "power",
+      "date": "2026-03-15",
+      "startUtc": "2026-03-15T10:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 10.53,
+      "sessionId": "d88513133c315f21"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Safari_Rally",
+    "title": "Wikipedia: 2026 Safari Rally",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

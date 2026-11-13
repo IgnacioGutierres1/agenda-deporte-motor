@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "7f3a31fe15da3271",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "f67edc09982bfe6c",
@@ -152,7 +152,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "16",
           "driver": "Charles Leclerc",
           "team": "Ferrari",
@@ -161,7 +161,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "18",
           "driver": "Lance Stroll",
           "team": "Aston Martin",
@@ -170,7 +170,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "1",
           "driver": "Lando Norris",
           "team": "McLaren",
@@ -179,7 +179,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "87",
           "driver": "Oliver Bearman",
           "team": "Haas F1 Team",
@@ -188,7 +188,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "77",
           "driver": "Valtteri Bottas",
           "team": "Cadillac",
@@ -197,7 +197,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "3",
           "driver": "Max Verstappen",
           "team": "Red Bull Racing",
@@ -205,12 +205,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 23.8,
+        "trackC": 37.3,
+        "humidity": 61,
+        "weather": "Sin lluvia",
+        "windKmh": 3,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11299",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1286/monaco/race-result",
-        "title": "Formula 1 — Monaco Grand Prix: Race (resultados)",
+        "title": "Formula 1 — Monaco Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T08:11:28Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

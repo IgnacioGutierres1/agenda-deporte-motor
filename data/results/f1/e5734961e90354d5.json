@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "e5734961e90354d5",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "eb87feab4f34cb23",
@@ -143,7 +143,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "3",
           "driver": "Max Verstappen",
           "team": "Red Bull Racing",
@@ -152,7 +152,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "14",
           "driver": "Fernando Alonso",
           "team": "Aston Martin",
@@ -161,7 +161,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "18",
           "driver": "Lance Stroll",
           "team": "Aston Martin",
@@ -170,7 +170,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "81",
           "driver": "Oscar Piastri",
           "team": "McLaren",
@@ -179,7 +179,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "1",
           "driver": "Lando Norris",
           "team": "McLaren",
@@ -188,7 +188,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "5",
           "driver": "Gabriel Bortoleto",
           "team": "Audi",
@@ -197,7 +197,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "23",
           "driver": "Alexander Albon",
           "team": "Williams",
@@ -205,12 +205,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 15.3,
+        "trackC": 21.6,
+        "humidity": 56,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11245",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1280/china/race-result",
-        "title": "Formula 1 — Chinese Grand Prix: Race (resultados)",
+        "title": "Formula 1 — Chinese Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T08:11:28Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

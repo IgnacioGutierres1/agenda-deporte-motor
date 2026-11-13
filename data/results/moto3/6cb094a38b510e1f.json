@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "6cb094a38b510e1f",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "34e8f31f4c60278f",
@@ -267,6 +267,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 35,
+        "humidity": 58,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto3/rac/classification",
         "title": "MotoGP.com – Resultados JPN Moto3 RAC",

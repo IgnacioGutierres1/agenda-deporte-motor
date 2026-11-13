@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "8d2c390589085af0",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "adf85be8546fa314",
@@ -187,6 +187,13 @@
           "bestLap": "1:37.092"
         }
       ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 24,
+        "humidity": 84,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/moto3/q2/classification",
         "title": "MotoGP.com – Resultados AUS Moto3 Q2",
@@ -319,6 +326,13 @@
           "bestLap": "1:39.046"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 24,
+        "humidity": 83,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/moto3/q1/classification",
         "title": "MotoGP.com – Resultados AUS Moto3 Q1",
@@ -591,6 +605,12 @@
           "bestLap": "1:49.256"
         }
       ],
+      "conditions": {
+        "airC": 15,
+        "trackC": 18,
+        "humidity": 91,
+        "weather": "Lluvia"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados AUS Moto3 FP2",
@@ -863,6 +883,13 @@
           "bestLap": "1:38.347"
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 46,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/moto3/pr/classification",
         "title": "MotoGP.com – Resultados AUS Moto3 PR",
@@ -1135,6 +1162,13 @@
           "bestLap": "1:38.621"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 26,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados AUS Moto3 FP1",

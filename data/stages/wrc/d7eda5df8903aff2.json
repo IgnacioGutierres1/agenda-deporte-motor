@@ -1,0 +1,197 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7eda5df8903aff2",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "tierra",
+  "competitiveKm": 323.31,
+  "totalKm": 1488.63,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "",
+      "kind": "shakedown",
+      "date": "2026-06-25",
+      "startUtc": "2026-06-25T06:01:00Z",
+      "localStartText": "09:01",
+      "distanceKm": 3.34,
+      "sessionId": "eeb1fa44a9e31081"
+    },
+    {
+      "code": "SS1",
+      "name": "EKO SSS",
+      "kind": "superespecial",
+      "date": "2026-06-25",
+      "startUtc": "2026-06-25T16:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 1.86,
+      "sessionId": "58c4d15f1ba811bf"
+    },
+    {
+      "code": "SS2",
+      "name": "Bauxites",
+      "kind": "especial",
+      "date": "2026-06-26",
+      "startUtc": "2026-06-26T05:48:00Z",
+      "localStartText": "08:48",
+      "distanceKm": 22.97,
+      "sessionId": "cc33a61a1f5d4267"
+    },
+    {
+      "code": "SS3",
+      "name": "Parnassos Mt",
+      "kind": "especial",
+      "date": "2026-06-26",
+      "startUtc": "2026-06-26T06:51:00Z",
+      "localStartText": "09:51",
+      "distanceKm": 22.28,
+      "sessionId": "cc33a61a1f5d4267"
+    },
+    {
+      "code": "SS4",
+      "name": "Stiri 1",
+      "kind": "especial",
+      "date": "2026-06-26",
+      "startUtc": "2026-06-26T08:14:00Z",
+      "localStartText": "11:14",
+      "distanceKm": 24.18,
+      "sessionId": "cc33a61a1f5d4267"
+    },
+    {
+      "code": "SS5",
+      "name": "Elikon Mt",
+      "kind": "especial",
+      "date": "2026-06-26",
+      "startUtc": "2026-06-26T10:35:00Z",
+      "localStartText": "13:35",
+      "distanceKm": 17.8,
+      "sessionId": "cc33a61a1f5d4267"
+    },
+    {
+      "code": "SS6",
+      "name": "Stiri 2",
+      "kind": "especial",
+      "date": "2026-06-26",
+      "startUtc": "2026-06-26T11:46:00Z",
+      "localStartText": "14:46",
+      "distanceKm": 24.18,
+      "sessionId": "cc33a61a1f5d4267"
+    },
+    {
+      "code": "SS7",
+      "name": "Thiva",
+      "kind": "especial",
+      "date": "2026-06-26",
+      "startUtc": "2026-06-26T13:56:00Z",
+      "localStartText": "16:56",
+      "distanceKm": 17.81,
+      "sessionId": "cc33a61a1f5d4267"
+    },
+    {
+      "code": "SS8",
+      "name": "Ghymno 1",
+      "kind": "especial",
+      "date": "2026-06-27",
+      "startUtc": "2026-06-27T04:54:00Z",
+      "localStartText": "07:54",
+      "distanceKm": 19.6,
+      "sessionId": "f730c677a7521704"
+    },
+    {
+      "code": "SS9",
+      "name": "Kolines",
+      "kind": "especial",
+      "date": "2026-06-27",
+      "startUtc": "2026-06-27T06:19:00Z",
+      "localStartText": "09:19",
+      "distanceKm": 21.3,
+      "sessionId": "f730c677a7521704"
+    },
+    {
+      "code": "SS10",
+      "name": "Menalo Mt 1",
+      "kind": "especial",
+      "date": "2026-06-27",
+      "startUtc": "2026-06-27T08:05:00Z",
+      "localStartText": "11:05",
+      "distanceKm": 14.78,
+      "sessionId": "f730c677a7521704"
+    },
+    {
+      "code": "SS11",
+      "name": "Kefalari",
+      "kind": "especial",
+      "date": "2026-06-27",
+      "startUtc": "2026-06-27T09:58:00Z",
+      "localStartText": "12:58",
+      "distanceKm": 18.17,
+      "sessionId": "f730c677a7521704"
+    },
+    {
+      "code": "SS12",
+      "name": "Ghymno 2",
+      "kind": "especial",
+      "date": "2026-06-27",
+      "startUtc": "2026-06-27T13:39:00Z",
+      "localStartText": "16:39",
+      "distanceKm": 19.6,
+      "sessionId": "f730c677a7521704"
+    },
+    {
+      "code": "SS13",
+      "name": "Menalo Mt 1",
+      "kind": "especial",
+      "date": "2026-06-27",
+      "startUtc": "2026-06-27T16:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 14.78,
+      "sessionId": "f730c677a7521704"
+    },
+    {
+      "code": "SS14",
+      "name": "Aghii Theodori 1",
+      "kind": "especial",
+      "date": "2026-06-28",
+      "startUtc": "2026-06-28T05:28:00Z",
+      "localStartText": "08:28",
+      "distanceKm": 25.39,
+      "sessionId": "8a530320f226e7f0"
+    },
+    {
+      "code": "SS15",
+      "name": "Loutraki 1",
+      "kind": "especial",
+      "date": "2026-06-28",
+      "startUtc": "2026-06-28T06:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 16.61,
+      "sessionId": "8a530320f226e7f0"
+    },
+    {
+      "code": "SS16",
+      "name": "Aghii Theodori 2",
+      "kind": "especial",
+      "date": "2026-06-28",
+      "startUtc": "2026-06-28T09:10:00Z",
+      "localStartText": "12:10",
+      "distanceKm": 25.39,
+      "sessionId": "8a530320f226e7f0"
+    },
+    {
+      "code": "SS17",
+      "name": "Loutraki 2",
+      "kind": "power",
+      "date": "2026-06-28",
+      "startUtc": "2026-06-28T11:15:00Z",
+      "localStartText": "14:15",
+      "distanceKm": 16.61,
+      "sessionId": "8c7174f066961e9f"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Acropolis_Rally",
+    "title": "Wikipedia: 2026 Acropolis Rally",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

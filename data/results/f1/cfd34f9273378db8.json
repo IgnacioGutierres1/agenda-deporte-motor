@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "cfd34f9273378db8",
-  "updatedAt": "2026-11-10T16:52:55Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "d690728c56b44fa7",
@@ -162,7 +162,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "14",
           "driver": "Fernando Alonso",
           "team": "Aston Martin",
@@ -171,7 +171,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "77",
           "driver": "Valtteri Bottas",
           "team": "Cadillac",
@@ -180,7 +180,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "6",
           "driver": "Isack Hadjar",
           "team": "Red Bull Racing",
@@ -189,7 +189,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "81",
           "driver": "Oscar Piastri",
           "team": "McLaren",
@@ -198,7 +198,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "27",
           "driver": "Nico Hulkenberg",
           "team": "Audi",
@@ -206,12 +206,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 24.8,
+        "trackC": 36.2,
+        "humidity": 53,
+        "weather": "Sin lluvia",
+        "windKmh": 10,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11234",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1279/australia/race-result",
-        "title": "Formula 1 — Australian Grand Prix: Race (resultados)",
+        "title": "Formula 1 — Australian Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T08:11:28Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

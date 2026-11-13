@@ -1,0 +1,38 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TC2000
+BEGIN:VEVENT
+UID:feaf5f72b3ce46c0@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261123
+SUMMARY:TC2000 (Olavarría) - Fecha 11 Olavarría (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: Canal 7 (TV Pública)\, YouTube TC200
+ 0\nFuente: https://tc2000.com.ar/carreras.php?evento=calendario\nDónde ve
+ rlo:\nCanal 7 (TV Pública): https://www.canal7.com.ar/\nYouTube TC2000: h
+ ttps://www.youtube.com/@TC2000ok
+LOCATION:Olavarría\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:feaf6272b3ce4bd9@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261214
+SUMMARY:TC2000 (A confirmar) - Fecha 12 (sede a confirmar) (horarios a conf
+ irmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: Canal 7 (TV Pública)\, YouTube TC200
+ 0\nFuente: https://tc2000.com.ar/carreras.php?evento=calendario\nDónde ve
+ rlo:\nCanal 7 (TV Pública): https://www.canal7.com.ar/\nYouTube TC2000: h
+ ttps://www.youtube.com/@TC2000ok
+LOCATION:A confirmar\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "b907c055569a3718",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "e9f52c83e5aa42e2",
@@ -277,6 +277,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 32,
+        "humidity": 56,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto2/rac/classification",
         "title": "MotoGP.com – Resultados JPN Moto2 RAC",

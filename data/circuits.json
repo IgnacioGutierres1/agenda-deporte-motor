@@ -1,7 +1,16 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-13T04:57:37Z",
+  "generatedAt": "2026-11-13T05:27:41Z",
   "circuits": [
+    {
+      "id": "aberdeen",
+      "name": "Aberdeen",
+      "lat": 57.1437,
+      "lon": -2.0981,
+      "coordsApprox": true,
+      "city": "Aberdeen",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
     {
       "id": "adelaide-final",
       "name": "Circuito callejero de Adelaida",
@@ -38,7 +47,8 @@
         "license": "CC BY-SA 3.0",
         "page": "https://commons.wikimedia.org/wiki/File:Adelaide_(short_route).svg"
       },
-      "checkedAt": "2026-11-13T04:56:42Z"
+      "checkedAt": "2026-11-13T04:56:42Z",
+      "hasTrack": false
     },
     {
       "id": "adelaide-parklands",
@@ -76,7 +86,8 @@
         "license": "CC BY-SA 3.0",
         "page": "https://commons.wikimedia.org/wiki/File:Adelaide_(short_route).svg"
       },
-      "checkedAt": "2026-11-13T04:56:42Z"
+      "checkedAt": "2026-11-13T04:56:42Z",
+      "hasTrack": false
     },
     {
       "id": "albert-park",
@@ -115,7 +126,13 @@
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:Albert_Park_Circuit_2021.svg"
       },
-      "checkedAt": "2026-11-13T04:56:42Z"
+      "checkedAt": "2026-11-13T04:56:42Z",
+      "hasTrack": false
+    },
+    {
+      "id": "alghero",
+      "name": "Alghero",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "americas",
@@ -155,7 +172,8 @@
         "license": "CC BY-SA 4.0",
         "page": "https://commons.wikimedia.org/wiki/File:COTA_NASCAR_Layout.png"
       },
-      "checkedAt": "2026-11-13T04:56:42Z"
+      "checkedAt": "2026-11-13T04:56:42Z",
+      "hasTrack": true
     },
     {
       "id": "arlington",
@@ -918,6 +936,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "concepcion",
+      "name": "Concepción",
+      "lat": -36.827,
+      "lon": -73.0498,
+      "coordsApprox": true,
+      "city": "Concepción",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "concepcion-uruguay",
       "name": "Autódromo de Concepción del Uruguay",
       "wikidata": "Q16941590",
@@ -1342,6 +1369,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "encarnacion",
+      "name": "Encarnación",
+      "lat": -27.3318,
+      "lon": -55.8666,
+      "coordsApprox": true,
+      "city": "Encarnación",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "fuji-speedway",
       "name": "Fuji Speedway",
       "wikidata": "Q171399",
@@ -1380,6 +1416,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:Fuji.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "gap",
+      "name": "Gap (Francia)",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "general-roca-rio-negro",
@@ -1882,6 +1923,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "jeddah",
+      "name": "Jeddah",
+      "lat": 21.4901,
+      "lon": 39.1862,
+      "coordsApprox": true,
+      "city": "Jeddah",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "jerez",
       "name": "Circuito de Jerez-Ángel Nieto",
       "wikidata": "Q172884",
@@ -1998,6 +2048,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "jyvaskyla",
+      "name": "Jyväskylä",
+      "lat": 62.2415,
+      "lon": 25.7209,
+      "coordsApprox": true,
+      "city": "Jyväskylä",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "kansas-speedway",
       "name": "Kansas Speedway",
       "wikidata": "Q1723946",
@@ -2038,6 +2097,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "knoxville",
+      "name": "Knoxville",
+      "lat": 35.9606,
+      "lon": -83.9207,
+      "coordsApprox": true,
+      "city": "Knoxville",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "kyalami",
       "name": "Kyalami",
       "wikidata": "Q171667",
@@ -2076,6 +2144,15 @@
         "page": "https://commons.wikimedia.org/wiki/File:Kyalami_16.png"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "las-palmas",
+      "name": "Las Palmas",
+      "lat": 28.1018,
+      "lon": -15.4157,
+      "coordsApprox": true,
+      "city": "Las Palmas de Gran Canaria",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "las-vegas-motor-speedway",
@@ -2266,6 +2343,20 @@
         "page": "https://commons.wikimedia.org/wiki/File:Long_Beach_Street_Circuit_IndyCar.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "loule-faro-marrakech",
+      "name": "Loulé/Faro > Marrakech",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
+      "id": "loutraki",
+      "name": "Loutraki",
+      "lat": 37.9783,
+      "lon": 22.9778,
+      "coordsApprox": true,
+      "city": "Loutráki",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "lucas-oil-indianapolis-raceway-park",
@@ -2566,6 +2657,15 @@
         "page": "https://commons.wikimedia.org/wiki/File:Martinsville_Speedway_2024.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "matosinhos",
+      "name": "Matosinhos",
+      "lat": 41.1821,
+      "lon": -8.6891,
+      "coordsApprox": true,
+      "city": "Matosinhos",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "miami-autodrome",
@@ -3078,6 +3178,15 @@
         "page": "https://commons.wikimedia.org/wiki/File:Mugello_Racing_Circuit_track_map_15_turns.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "nairobi",
+      "name": "Nairobi",
+      "lat": -1.2833,
+      "lon": 36.8167,
+      "coordsApprox": true,
+      "city": "Nairobi",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "nashville-superspeedway",
@@ -4070,6 +4179,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "rijeka",
+      "name": "Rijeka",
+      "lat": 45.3267,
+      "lon": 14.4424,
+      "coordsApprox": true,
+      "city": "Rijeka",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "rio-cuarto",
       "name": "Autódromo Parque Ciudad de Río Cuarto",
       "wikidata": "Q789430",
@@ -4223,6 +4341,11 @@
         "page": "https://commons.wikimedia.org/wiki/File:Rockingham_Speedway.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "rome",
+      "name": "Rome",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "rosamonte",
@@ -5159,6 +5282,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "talcahuano",
+      "name": "Talcahuano",
+      "lat": -36.7249,
+      "lon": -73.1168,
+      "coordsApprox": true,
+      "city": "Talcahuano",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "talladega-superspeedway",
       "name": "Talladega Superspeedway",
       "wikidata": "Q1547320",
@@ -5197,6 +5329,15 @@
         "page": "https://commons.wikimedia.org/wiki/File:Talladega_Superspeedway_2024.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "tartu",
+      "name": "Tartu",
+      "lat": 58.3806,
+      "lon": 26.7251,
+      "coordsApprox": true,
+      "city": "Tartu",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "taupo-motorsport-park",
@@ -5341,6 +5482,15 @@
       "checkedAt": "2026-11-13T04:56:42Z"
     },
     {
+      "id": "toyota",
+      "name": "Toyota",
+      "lat": 35.0833,
+      "lon": 137.15,
+      "coordsApprox": true,
+      "city": "Toyota",
+      "checkedAt": "2026-11-13T05:27:41Z"
+    },
+    {
       "id": "tt-assen",
       "name": "Circuito de Assen",
       "wikidata": "Q843925",
@@ -5379,6 +5529,15 @@
         "page": "https://commons.wikimedia.org/wiki/File:TT_Assen.svg"
       },
       "checkedAt": "2026-11-13T04:56:42Z"
+    },
+    {
+      "id": "umea",
+      "name": "Umeå",
+      "lat": 63.8284,
+      "lon": 20.2597,
+      "coordsApprox": true,
+      "city": "Umeå",
+      "checkedAt": "2026-11-13T05:27:41Z"
     },
     {
       "id": "viedma",

@@ -1,0 +1,197 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7cba3df88e6c626",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "tierra",
+  "competitiveKm": 306.92,
+  "totalKm": 1626.79,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Monte Baranta",
+      "kind": "shakedown",
+      "date": "2026-10-01",
+      "startUtc": "2026-10-01T07:01:00Z",
+      "localStartText": "09:01",
+      "distanceKm": 3.27,
+      "sessionId": "f84393356e9098bc"
+    },
+    {
+      "code": "SS1",
+      "name": "Ittiri Arena Show",
+      "kind": "superespecial",
+      "date": "2026-10-01",
+      "startUtc": "2026-10-01T14:05:00Z",
+      "localStartText": "16:05",
+      "distanceKm": 2.08,
+      "sessionId": "46b9d142ca07c5c2"
+    },
+    {
+      "code": "SS2",
+      "name": "Tula – Erula 1",
+      "kind": "especial",
+      "date": "2026-10-02",
+      "startUtc": "2026-10-02T06:01:00Z",
+      "localStartText": "08:01",
+      "distanceKm": 18.77,
+      "sessionId": "d4c5ee064a9e5998"
+    },
+    {
+      "code": "SS3",
+      "name": "Su Filigosu – Lerno 1",
+      "kind": "especial",
+      "date": "2026-10-02",
+      "startUtc": "2026-10-02T07:02:00Z",
+      "localStartText": "09:02",
+      "distanceKm": 17.83,
+      "sessionId": "d4c5ee064a9e5998"
+    },
+    {
+      "code": "SS4",
+      "name": "Monti di Ala' – Lerno 1",
+      "kind": "especial",
+      "date": "2026-10-02",
+      "startUtc": "2026-10-02T08:08:00Z",
+      "localStartText": "10:08",
+      "distanceKm": 23.18,
+      "sessionId": "d4c5ee064a9e5998"
+    },
+    {
+      "code": "SS5",
+      "name": "Tula – Erula 2",
+      "kind": "especial",
+      "date": "2026-10-02",
+      "startUtc": "2026-10-02T12:31:00Z",
+      "localStartText": "14:31",
+      "distanceKm": 18.77,
+      "sessionId": "d4c5ee064a9e5998"
+    },
+    {
+      "code": "SS6",
+      "name": "Su Filigosu – Lerno 2",
+      "kind": "especial",
+      "date": "2026-10-02",
+      "startUtc": "2026-10-02T13:32:00Z",
+      "localStartText": "15:32",
+      "distanceKm": 17.83,
+      "sessionId": "d4c5ee064a9e5998"
+    },
+    {
+      "code": "SS7",
+      "name": "Monti di Ala' – Lerno 2",
+      "kind": "especial",
+      "date": "2026-10-02",
+      "startUtc": "2026-10-02T14:38:00Z",
+      "localStartText": "16:38",
+      "distanceKm": 23.18,
+      "sessionId": "d4c5ee064a9e5998"
+    },
+    {
+      "code": "SS8",
+      "name": "Lerno – Monti di Ala' 1",
+      "kind": "especial",
+      "date": "2026-10-03",
+      "startUtc": "2026-10-03T06:01:00Z",
+      "localStartText": "08:01",
+      "distanceKm": 24.14,
+      "sessionId": "deb295837c91f25f"
+    },
+    {
+      "code": "SS9",
+      "name": "Coiluna – Loelle 1",
+      "kind": "especial",
+      "date": "2026-10-03",
+      "startUtc": "2026-10-03T07:10:00Z",
+      "localStartText": "09:10",
+      "distanceKm": 24.83,
+      "sessionId": "deb295837c91f25f"
+    },
+    {
+      "code": "SS10",
+      "name": "Solorche' 1",
+      "kind": "especial",
+      "date": "2026-10-03",
+      "startUtc": "2026-10-03T08:07:00Z",
+      "localStartText": "10:07",
+      "distanceKm": 12.86,
+      "sessionId": "deb295837c91f25f"
+    },
+    {
+      "code": "SS11",
+      "name": "Lerno – Monti di Ala' 2",
+      "kind": "especial",
+      "date": "2026-10-03",
+      "startUtc": "2026-10-03T12:31:00Z",
+      "localStartText": "14:31",
+      "distanceKm": 24.14,
+      "sessionId": "deb295837c91f25f"
+    },
+    {
+      "code": "SS12",
+      "name": "Coiluna – Loelle 2",
+      "kind": "especial",
+      "date": "2026-10-03",
+      "startUtc": "2026-10-03T13:40:00Z",
+      "localStartText": "15:40",
+      "distanceKm": 24.83,
+      "sessionId": "deb295837c91f25f"
+    },
+    {
+      "code": "SS13",
+      "name": "Solorche' 2",
+      "kind": "especial",
+      "date": "2026-10-03",
+      "startUtc": "2026-10-03T14:37:00Z",
+      "localStartText": "16:37",
+      "distanceKm": 12.86,
+      "sessionId": "deb295837c91f25f"
+    },
+    {
+      "code": "SS14",
+      "name": "Osilo – Tergu 1",
+      "kind": "especial",
+      "date": "2026-10-04",
+      "startUtc": "2026-10-04T06:31:00Z",
+      "localStartText": "08:31",
+      "distanceKm": 23.71,
+      "sessionId": "7f931757f5d6080b"
+    },
+    {
+      "code": "SS15",
+      "name": "Sassari – Argentiera 1",
+      "kind": "especial",
+      "date": "2026-10-04",
+      "startUtc": "2026-10-04T08:05:00Z",
+      "localStartText": "10:05",
+      "distanceKm": 7.1,
+      "sessionId": "7f931757f5d6080b"
+    },
+    {
+      "code": "SS16",
+      "name": "Osilo – Tergu 2",
+      "kind": "especial",
+      "date": "2026-10-04",
+      "startUtc": "2026-10-04T09:38:00Z",
+      "localStartText": "11:38",
+      "distanceKm": 23.71,
+      "sessionId": "7f931757f5d6080b"
+    },
+    {
+      "code": "SS17",
+      "name": "Sassari – Argentiera 2",
+      "kind": "power",
+      "date": "2026-10-04",
+      "startUtc": "2026-10-04T12:15:00Z",
+      "localStartText": "14:15",
+      "distanceKm": 7.1,
+      "sessionId": "0c4fb4c5dcbfc7a4"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Rally_Italia_Sardegna",
+    "title": "Wikipedia: 2026 Rally Italia Sardegna",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

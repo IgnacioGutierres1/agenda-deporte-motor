@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "727024616877d0be",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "25f7d46269f64b5b",
@@ -207,6 +207,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 31,
+        "humidity": 80,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/motogp/spr/classification",
         "title": "MotoGP.com – Resultados AUS MotoGP SPR",
@@ -339,6 +346,13 @@
           "bestLap": "1:39.389"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 22,
+        "humidity": 81,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/motogp/q2/classification",
         "title": "MotoGP.com – Resultados AUS MotoGP Q2",
@@ -451,6 +465,13 @@
           "bestLap": "1:37.904"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 23,
+        "humidity": 83,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/motogp/q1/classification",
         "title": "MotoGP.com – Resultados AUS MotoGP Q1",
@@ -663,6 +684,13 @@
           "bestLap": "1:41.430"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 21,
+        "humidity": 87,
+        "track": "Mojada",
+        "weather": "Lluvia"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados AUS MotoGP FP2",
@@ -884,6 +912,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 48,
+        "humidity": 46,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/motogp/pr/classification",
         "title": "MotoGP.com – Resultados AUS MotoGP PR",
@@ -1106,6 +1141,13 @@
           "bestLap": "1:34.033"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 37,
+        "humidity": 54,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aus/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados AUS MotoGP FP1",

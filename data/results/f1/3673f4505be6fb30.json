@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "3673f4505be6fb30",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "a3a67eee94731407",
@@ -152,7 +152,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "11",
           "driver": "Sergio Perez",
           "team": "Cadillac",
@@ -161,7 +161,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "1",
           "driver": "Lando Norris",
           "team": "McLaren",
@@ -170,7 +170,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "63",
           "driver": "George Russell",
           "team": "Mercedes",
@@ -179,7 +179,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "14",
           "driver": "Fernando Alonso",
           "team": "Aston Martin",
@@ -188,7 +188,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "23",
           "driver": "Alexander Albon",
           "team": "Williams",
@@ -197,7 +197,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "41",
           "driver": "Arvid Lindblad",
           "team": "Racing Bulls",
@@ -205,12 +205,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 13.2,
+        "trackC": 18.4,
+        "humidity": 68,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11291",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1285/canada/race-result",
-        "title": "Formula 1 — Canadian Grand Prix: Race (resultados)",
+        "title": "Formula 1 — Canadian Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T08:11:28Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

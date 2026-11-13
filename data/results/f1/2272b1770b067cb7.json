@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "2272b1770b067cb7",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "dea98d34304524ef",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 26.3,
+        "trackC": 42.8,
+        "humidity": 57,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11377",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1295/azerbaijan/race-result",
         "title": "Formula 1 — Azerbaijan Grand Prix: Race (resultados)",

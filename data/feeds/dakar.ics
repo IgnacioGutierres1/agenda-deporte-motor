@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Rally Dakar
+BEGIN:VEVENT
+UID:da1fcd9954cb5c9e@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20270109
+DTEND;VALUE=DATE:20270124
+SUMMARY:Rally Dakar (Loulé/Faro > Marrakech) - Dakar 2027
+DESCRIPTION:Rally por etapas: el organizador publica el recorrido de cada d
+ ía\, no la hora de largada.\nTransmisión habitual: ESPN\nFuente: https:/
+ /www.dakar.com/es/recorrido-general\nDónde verlo:\nESPN: https://www.espn
+ .com.ar/
+LOCATION:Loulé/Faro > Marrakech\, Portugal y Marruecos
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

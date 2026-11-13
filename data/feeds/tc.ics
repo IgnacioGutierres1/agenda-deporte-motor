@@ -1,0 +1,39 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:Turismo Carretera
+BEGIN:VEVENT
+UID:25ead022fb49f2f9@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20261113
+DTEND;VALUE=DATE:20261116
+SUMMARY:Turismo Carretera (Parque Ciudad de Río Cuarto) - Fecha 14 — Rí
+ o Cuarto (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: Canal 7 (TV Pública)\, Motorplay\, C
+ arburando\nFuente: https://actc.org.ar/tc/calendario\nDónde verlo:\nCanal
+  7 (TV Pública): https://www.canal7.com.ar/\nMotorplay: https://www.motor
+ play.tv/ar\nCarburando: https://www.carburando.com/
+LOCATION:Parque Ciudad de Río Cuarto\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:25eacf22fb49f146@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20261204
+DTEND;VALUE=DATE:20261207
+SUMMARY:Turismo Carretera (Roberto José Mouras) - Fecha 15 — La Plata (h
+ orarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: Canal 7 (TV Pública)\, Motorplay\, C
+ arburando\nFuente: https://actc.org.ar/tc/calendario\nDónde verlo:\nCanal
+  7 (TV Pública): https://www.canal7.com.ar/\nMotorplay: https://www.motor
+ play.tv/ar\nCarburando: https://www.carburando.com/
+LOCATION:Roberto José Mouras\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

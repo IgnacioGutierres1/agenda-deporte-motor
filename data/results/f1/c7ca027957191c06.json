@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "c7ca027957191c06",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "d0a43c010d38ba7c",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 27.1,
+        "trackC": 35.6,
+        "humidity": 41,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11396",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/race-result",
         "title": "Formula 1 — United States Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:37.523"
         }
       ],
+      "conditions": {
+        "airC": 29.8,
+        "trackC": 38.3,
+        "humidity": 39,
+        "weather": "Sin lluvia",
+        "windKmh": 12,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11392",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/qualifying",
         "title": "Formula 1 — United States Grand Prix: Qualifying (resultados)",
@@ -581,6 +609,20 @@
           "gap": "+3.872s"
         }
       ],
+      "conditions": {
+        "airC": 27.6,
+        "trackC": 40.3,
+        "humidity": 48,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11391",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/3",
         "title": "Formula 1 — United States Grand Prix: Practice 3 (resultados)",
@@ -769,6 +811,20 @@
           "gap": "+8.135s"
         }
       ],
+      "conditions": {
+        "airC": 29.6,
+        "trackC": 40.7,
+        "humidity": 25,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11390",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/2",
         "title": "Formula 1 — United States Grand Prix: Practice 2 (resultados)",
@@ -957,6 +1013,20 @@
           "gap": "+40.416s"
         }
       ],
+      "conditions": {
+        "airC": 28.1,
+        "trackC": 42.1,
+        "humidity": 29,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11389",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1297/united-states/practice/1",
         "title": "Formula 1 — United States Grand Prix: Practice 1 (resultados)",

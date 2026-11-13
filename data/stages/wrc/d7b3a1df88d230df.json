@@ -1,0 +1,257 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7b3a1df88d230df",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "tierra",
+  "competitiveKm": 347.56,
+  "totalKm": 1861.69,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Baltar",
+      "kind": "shakedown",
+      "date": "2026-05-06",
+      "startUtc": "2026-05-06T07:01:00Z",
+      "localStartText": "08:01",
+      "distanceKm": 5.72,
+      "sessionId": "8c00fd19bd4efa55"
+    },
+    {
+      "code": "SS1",
+      "name": "Águeda / Sever",
+      "kind": "especial",
+      "date": "2026-05-07",
+      "startUtc": "2026-05-07T14:05:00Z",
+      "localStartText": "15:05",
+      "distanceKm": 15.08,
+      "sessionId": "7a3a4fdaaa2da74b"
+    },
+    {
+      "code": "SS2",
+      "name": "Sever / Albergaria",
+      "kind": "especial",
+      "date": "2026-05-07",
+      "startUtc": "2026-05-07T15:05:00Z",
+      "localStartText": "16:05",
+      "distanceKm": 20.24,
+      "sessionId": "7a3a4fdaaa2da74b"
+    },
+    {
+      "code": "SS3",
+      "name": "SSS Figueira da Foz",
+      "kind": "superespecial",
+      "date": "2026-05-07",
+      "startUtc": "2026-05-07T17:05:00Z",
+      "localStartText": "18:05",
+      "distanceKm": 2.1,
+      "sessionId": "7a3a4fdaaa2da74b"
+    },
+    {
+      "code": "SS4",
+      "name": "Mortágua 1",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T06:05:00Z",
+      "localStartText": "07:05",
+      "distanceKm": 14.59,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS5",
+      "name": "Arganil 1",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T07:55:00Z",
+      "localStartText": "08:55",
+      "distanceKm": 20.24,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS6",
+      "name": "Lousã 1",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T09:13:00Z",
+      "localStartText": "10:13",
+      "distanceKm": 7.07,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS7",
+      "name": "Arganil 2",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T11:25:00Z",
+      "localStartText": "12:25",
+      "distanceKm": 20.24,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS8",
+      "name": "Góis",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T12:20:00Z",
+      "localStartText": "13:20",
+      "distanceKm": 15.5,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS9",
+      "name": "Lousã 2",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T13:03:00Z",
+      "localStartText": "14:03",
+      "distanceKm": 7.07,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS10",
+      "name": "Mortágua 2",
+      "kind": "especial",
+      "date": "2026-05-08",
+      "startUtc": "2026-05-08T14:40:00Z",
+      "localStartText": "15:40",
+      "distanceKm": 14.59,
+      "sessionId": "6e489fe7ed8c92db"
+    },
+    {
+      "code": "SS11",
+      "name": "Felgueiras 1",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T06:05:00Z",
+      "localStartText": "07:05",
+      "distanceKm": 8.81,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS12",
+      "name": "Cabeceiras de Basto 1",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T07:05:00Z",
+      "localStartText": "08:05",
+      "distanceKm": 19.91,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS13",
+      "name": "Amarante 1",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T08:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 25.95,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS14",
+      "name": "Paredes 1",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T10:05:00Z",
+      "localStartText": "11:05",
+      "distanceKm": 16.09,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS15",
+      "name": "Felgueiras 2",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T13:05:00Z",
+      "localStartText": "14:05",
+      "distanceKm": 8.81,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS16",
+      "name": "Cabeceiras de Basto 2",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T14:05:00Z",
+      "localStartText": "15:05",
+      "distanceKm": 19.91,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS17",
+      "name": "Amarante 2",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T15:35:00Z",
+      "localStartText": "16:35",
+      "distanceKm": 25.95,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS18",
+      "name": "Paredes 2",
+      "kind": "especial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T17:05:00Z",
+      "localStartText": "18:05",
+      "distanceKm": 16.09,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS19",
+      "name": "SSS Lousada",
+      "kind": "superespecial",
+      "date": "2026-05-09",
+      "startUtc": "2026-05-09T18:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 3.52,
+      "sessionId": "ebd057322a497d98"
+    },
+    {
+      "code": "SS20",
+      "name": "Vieira do Minho 1",
+      "kind": "especial",
+      "date": "2026-05-10",
+      "startUtc": "2026-05-10T07:05:00Z",
+      "localStartText": "08:05",
+      "distanceKm": 21.72,
+      "sessionId": "b7808a271a99a714"
+    },
+    {
+      "code": "SS21",
+      "name": "Fafe 1",
+      "kind": "especial",
+      "date": "2026-05-10",
+      "startUtc": "2026-05-10T08:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 11.18,
+      "sessionId": "b7808a271a99a714"
+    },
+    {
+      "code": "SS22",
+      "name": "Vieira do Minho 2",
+      "kind": "especial",
+      "date": "2026-05-10",
+      "startUtc": "2026-05-10T09:35:00Z",
+      "localStartText": "10:35",
+      "distanceKm": 21.72,
+      "sessionId": "b7808a271a99a714"
+    },
+    {
+      "code": "SS23",
+      "name": "Fafe 2",
+      "kind": "power",
+      "date": "2026-05-10",
+      "startUtc": "2026-05-10T12:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 11.18,
+      "sessionId": "dbb394b9160c7883"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Rally_de_Portugal",
+    "title": "Wikipedia: 2026 Rally de Portugal",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

@@ -1,0 +1,207 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7f4c4df890a034d",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "tierra",
+  "competitiveKm": 301.8,
+  "totalKm": 1022.36,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Kastre",
+      "kind": "shakedown",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T06:01:00Z",
+      "localStartText": "09:01",
+      "distanceKm": 4.08,
+      "sessionId": "ee6cefe966e38ea7"
+    },
+    {
+      "code": "SS1",
+      "name": "Raanitsa 1",
+      "kind": "especial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T10:03:00Z",
+      "localStartText": "13:03",
+      "distanceKm": 21.45,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS2",
+      "name": "Karaski 1",
+      "kind": "especial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T10:56:00Z",
+      "localStartText": "13:56",
+      "distanceKm": 11.97,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS3",
+      "name": "Kanepi 1",
+      "kind": "especial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T11:49:00Z",
+      "localStartText": "14:49",
+      "distanceKm": 17.43,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS4",
+      "name": "Raanitsa 2",
+      "kind": "especial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T13:46:00Z",
+      "localStartText": "16:46",
+      "distanceKm": 21.45,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS5",
+      "name": "Karaski 2",
+      "kind": "especial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T14:39:00Z",
+      "localStartText": "17:39",
+      "distanceKm": 11.97,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS6",
+      "name": "Kanepi 2",
+      "kind": "especial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T15:32:00Z",
+      "localStartText": "18:32",
+      "distanceKm": 17.43,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS7",
+      "name": "Elva Linn",
+      "kind": "superespecial",
+      "date": "2026-07-17",
+      "startUtc": "2026-07-17T16:35:00Z",
+      "localStartText": "19:35",
+      "distanceKm": 1.72,
+      "sessionId": "3dd6d6f8462e27e1"
+    },
+    {
+      "code": "SS8",
+      "name": "Peipsiääre 1",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T06:56:00Z",
+      "localStartText": "09:56",
+      "distanceKm": 24.35,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS9",
+      "name": "Mustvee 1",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T07:49:00Z",
+      "localStartText": "10:49",
+      "distanceKm": 10.67,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS10",
+      "name": "Peipsiääre 2",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T09:10:00Z",
+      "localStartText": "12:10",
+      "distanceKm": 24.35,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS11",
+      "name": "Mustvee 2",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T10:03:00Z",
+      "localStartText": "13:03",
+      "distanceKm": 10.67,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS12",
+      "name": "Kambja 1",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T12:48:00Z",
+      "localStartText": "15:48",
+      "distanceKm": 23.74,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS13",
+      "name": "Otepää 1",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T14:05:00Z",
+      "localStartText": "17:05",
+      "distanceKm": 15.16,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS14",
+      "name": "Kambja 2",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T14:58:00Z",
+      "localStartText": "17:58",
+      "distanceKm": 23.74,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS15",
+      "name": "Otepää 2",
+      "kind": "especial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T16:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 15.16,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS16",
+      "name": "Tartu vald",
+      "kind": "superespecial",
+      "date": "2026-07-18",
+      "startUtc": "2026-07-18T17:35:00Z",
+      "localStartText": "20:35",
+      "distanceKm": 1.76,
+      "sessionId": "ef8156334e51e0e6"
+    },
+    {
+      "code": "SS17",
+      "name": "Kääriku 1",
+      "kind": "especial",
+      "date": "2026-07-19",
+      "startUtc": "2026-07-19T08:05:00Z",
+      "localStartText": "11:05",
+      "distanceKm": 24.39,
+      "sessionId": "3896e7a1f12d660a"
+    },
+    {
+      "code": "SS18",
+      "name": "Kääriku 2",
+      "kind": "power",
+      "date": "2026-07-19",
+      "startUtc": "2026-07-19T10:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 24.39,
+      "sessionId": "882e12f690fb9b1d"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Rally_Estonia",
+    "title": "Wikipedia: 2026 Rally Estonia",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

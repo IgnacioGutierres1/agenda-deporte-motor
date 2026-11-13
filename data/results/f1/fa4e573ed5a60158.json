@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "fa4e573ed5a60158",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "ca6c048ad0e2d2b0",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 30.4,
+        "trackC": 42.2,
+        "humidity": 74,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11388",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1296/singapore/race-result",
         "title": "Formula 1 — Singapore Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "laps": 3
         }
       ],
+      "conditions": {
+        "airC": 29.8,
+        "trackC": 39.8,
+        "humidity": 75,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11384",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1296/singapore/qualifying",
         "title": "Formula 1 — Singapore Grand Prix: Qualifying (resultados)",
@@ -532,7 +560,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "23",
           "driver": "Alexander Albon",
           "team": "Williams",
@@ -541,7 +569,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "5",
           "driver": "Gabriel Bortoleto",
           "team": "Audi",
@@ -550,7 +578,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "77",
           "driver": "Valtteri Bottas",
           "team": "Cadillac",
@@ -559,7 +587,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "6",
           "driver": "Isack Hadjar",
           "team": "Red Bull Racing",
@@ -568,7 +596,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "43",
           "driver": "Franco Colapinto",
           "team": "Alpine",
@@ -577,7 +605,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "63",
           "driver": "George Russell",
           "team": "Mercedes",
@@ -586,7 +614,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "11",
           "driver": "Sergio Perez",
           "team": "Cadillac",
@@ -595,7 +623,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "18",
           "driver": "Lance Stroll",
           "team": "Aston Martin",
@@ -603,12 +631,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 29.5,
+        "trackC": 41.3,
+        "humidity": 81,
+        "weather": "Lluvia por momentos",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11383",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1296/singapore/sprint-results",
         "title": "Formula 1 — Singapore Grand Prix: Sprint (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T06:14:37Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {
@@ -791,6 +833,20 @@
           "time": "1:37.376"
         }
       ],
+      "conditions": {
+        "airC": 30.4,
+        "trackC": 43.1,
+        "humidity": 77,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11379",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1296/singapore/sprint-qualifying",
         "title": "Formula 1 — Singapore Grand Prix: Sprint Qualifying (resultados)",
@@ -979,6 +1035,20 @@
           "gap": "+3.346s"
         }
       ],
+      "conditions": {
+        "airC": 32.1,
+        "trackC": 49.6,
+        "humidity": 64,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11378",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1296/singapore/practice/1",
         "title": "Formula 1 — Singapore Grand Prix: Practice 1 (resultados)",

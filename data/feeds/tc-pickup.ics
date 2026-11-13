@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TC Pick Up
+BEGIN:VEVENT
+UID:b460544302918d9b@agendadeportemotor.local
+DTSTAMP:20261113T052741Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261214
+SUMMARY:TC Pick Up (A confirmar) - Fecha 11 (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: Motorplay\, Carburando\nFuente: https
+ ://actc.org.ar/tcpk/calendario\nDónde verlo:\nMotorplay: https://www.moto
+ rplay.tv/ar\nCarburando: https://www.carburando.com/
+LOCATION:A confirmar\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

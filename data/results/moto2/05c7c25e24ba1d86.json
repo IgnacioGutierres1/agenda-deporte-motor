@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "05c7c25e24ba1d86",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "9f5afc93281f7e05",
@@ -287,6 +287,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 35,
+        "trackC": 53,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/mal/moto2/rac/classification",
         "title": "MotoGP.com – Resultados MAL Moto2 RAC",
@@ -478,6 +485,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 35,
+        "trackC": 50,
+        "humidity": 58,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/mal/moto2/q2/classification",
         "title": "MotoGP.com – Resultados MAL Moto2 Q2",
@@ -630,6 +644,13 @@
           "bestLap": "2:05.947"
         }
       ],
+      "conditions": {
+        "airC": 34,
+        "trackC": 47,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/mal/moto2/q1/classification",
         "title": "MotoGP.com – Resultados MAL Moto2 Q1",
@@ -922,6 +943,13 @@
           "bestLap": "2:06.808"
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 34,
+        "humidity": 76,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/mal/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados MAL Moto2 FP2",
@@ -1214,6 +1242,13 @@
           "bestLap": "2:07.310"
         }
       ],
+      "conditions": {
+        "airC": 33,
+        "trackC": 48,
+        "humidity": 62,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/mal/moto2/pr/classification",
         "title": "MotoGP.com – Resultados MAL Moto2 PR",
@@ -1505,6 +1540,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 32,
+        "humidity": 79,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/mal/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados MAL Moto2 FP1",

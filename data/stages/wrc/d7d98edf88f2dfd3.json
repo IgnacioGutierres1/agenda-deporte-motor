@@ -1,0 +1,198 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7d98edf88f2dfd3",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "asfalto",
+  "surfaceNote": "Asfalto y nieve",
+  "competitiveKm": 339.15,
+  "totalKm": 1553.22,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Gap",
+      "kind": "shakedown",
+      "date": "2026-01-21",
+      "startUtc": "2026-01-21T13:01:00Z",
+      "localStartText": "14:01",
+      "distanceKm": 4.25,
+      "sessionId": "e4938df3e383769c"
+    },
+    {
+      "code": "SS1",
+      "name": "Toudon / Saint-Antonin",
+      "kind": "especial",
+      "date": "2026-01-22",
+      "startUtc": "2026-01-22T15:05:00Z",
+      "localStartText": "16:05",
+      "distanceKm": 21.9,
+      "sessionId": "4e18a516b1305822"
+    },
+    {
+      "code": "SS2",
+      "name": "Esclangon / Seyne-les-Alpes",
+      "kind": "especial",
+      "date": "2026-01-22",
+      "startUtc": "2026-01-22T17:35:00Z",
+      "localStartText": "18:35",
+      "distanceKm": 23.8,
+      "sessionId": "4e18a516b1305822"
+    },
+    {
+      "code": "SS3",
+      "name": "Vaumeilh / Claret 1",
+      "kind": "especial",
+      "date": "2026-01-22",
+      "startUtc": "2026-01-22T19:35:00Z",
+      "localStartText": "20:35",
+      "distanceKm": 15.06,
+      "sessionId": "4e18a516b1305822"
+    },
+    {
+      "code": "SS4",
+      "name": "Laborel / Chauvac-Laux-Montaux 1",
+      "kind": "especial",
+      "date": "2026-01-23",
+      "startUtc": "2026-01-23T08:04:00Z",
+      "localStartText": "09:04",
+      "distanceKm": 17.95,
+      "sessionId": "88e2a9907bfb3778"
+    },
+    {
+      "code": "SS5",
+      "name": "Saint-Nazaire-le-Désert / La Motte-Chalancon 1",
+      "kind": "especial",
+      "date": "2026-01-23",
+      "startUtc": "2026-01-23T09:32:00Z",
+      "localStartText": "10:32",
+      "distanceKm": 28.7,
+      "sessionId": "88e2a9907bfb3778"
+    },
+    {
+      "code": "SS6",
+      "name": "La-Bâtie-des-Fontes / Aspremont 1",
+      "kind": "especial",
+      "date": "2026-01-23",
+      "startUtc": "2026-01-23T10:50:00Z",
+      "localStartText": "11:50",
+      "distanceKm": 17.79,
+      "sessionId": "88e2a9907bfb3778"
+    },
+    {
+      "code": "SS7",
+      "name": "Laborel / Chauvac-Laux-Montaux 2",
+      "kind": "especial",
+      "date": "2026-01-23",
+      "startUtc": "2026-01-23T14:16:00Z",
+      "localStartText": "15:16",
+      "distanceKm": 17.95,
+      "sessionId": "88e2a9907bfb3778"
+    },
+    {
+      "code": "SS8",
+      "name": "Saint-Nazaire-le-Désert / La Motte-Chalancon 2",
+      "kind": "especial",
+      "date": "2026-01-23",
+      "startUtc": "2026-01-23T15:44:00Z",
+      "localStartText": "16:44",
+      "distanceKm": 28.7,
+      "sessionId": "88e2a9907bfb3778"
+    },
+    {
+      "code": "SS9",
+      "name": "La-Bâtie-des-Fontes / Aspremont 2",
+      "kind": "especial",
+      "date": "2026-01-23",
+      "startUtc": "2026-01-23T17:05:00Z",
+      "localStartText": "18:05",
+      "distanceKm": 17.79,
+      "sessionId": "88e2a9907bfb3778"
+    },
+    {
+      "code": "SS10",
+      "name": "La Bréole / Bellaffaire 1",
+      "kind": "especial",
+      "date": "2026-01-24",
+      "startUtc": "2026-01-24T07:31:00Z",
+      "localStartText": "08:31",
+      "distanceKm": 29.93,
+      "sessionId": "43bc45ecc3e3457f"
+    },
+    {
+      "code": "SS11",
+      "name": "Vaumeilh / Claret 2",
+      "kind": "especial",
+      "date": "2026-01-24",
+      "startUtc": "2026-01-24T08:55:00Z",
+      "localStartText": "09:55",
+      "distanceKm": 15.06,
+      "sessionId": "43bc45ecc3e3457f"
+    },
+    {
+      "code": "SS12",
+      "name": "La Bréole / Bellaffaire 2",
+      "kind": "especial",
+      "date": "2026-01-24",
+      "startUtc": "2026-01-24T11:31:00Z",
+      "localStartText": "12:31",
+      "distanceKm": 29.93,
+      "sessionId": "43bc45ecc3e3457f"
+    },
+    {
+      "code": "SS13",
+      "name": "Monaco Circuit",
+      "kind": "superespecial",
+      "date": "2026-01-24",
+      "startUtc": "2026-01-24T17:35:00Z",
+      "localStartText": "18:35",
+      "distanceKm": 2.69,
+      "sessionId": "43bc45ecc3e3457f"
+    },
+    {
+      "code": "SS14",
+      "name": "Col de Braus / La Cabanette 1",
+      "kind": "especial",
+      "date": "2026-01-25",
+      "startUtc": "2026-01-25T07:05:00Z",
+      "localStartText": "08:05",
+      "distanceKm": 12.5,
+      "sessionId": "d9c4d2e70c4e67eb"
+    },
+    {
+      "code": "SS15",
+      "name": "La Bollène-Vésubie / Moulinet 1",
+      "kind": "especial",
+      "date": "2026-01-25",
+      "startUtc": "2026-01-25T08:35:00Z",
+      "localStartText": "09:35",
+      "distanceKm": 23.45,
+      "sessionId": "d9c4d2e70c4e67eb"
+    },
+    {
+      "code": "SS16",
+      "name": "Col de Braus / La Cabanette 2",
+      "kind": "especial",
+      "date": "2026-01-25",
+      "startUtc": "2026-01-25T10:09:00Z",
+      "localStartText": "11:09",
+      "distanceKm": 12.5,
+      "sessionId": "d9c4d2e70c4e67eb"
+    },
+    {
+      "code": "SS17",
+      "name": "La Bollène-Vésubie / Moulinet 2",
+      "kind": "power",
+      "date": "2026-01-25",
+      "startUtc": "2026-01-25T12:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 23.45,
+      "sessionId": "dc7a904b9660dc04"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Monte_Carlo_Rally",
+    "title": "Wikipedia: 2026 Monte Carlo Rally",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

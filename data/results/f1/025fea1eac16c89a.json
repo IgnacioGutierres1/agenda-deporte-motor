@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "025fea1eac16c89a",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "1fa5bbe70b622867",
@@ -161,7 +161,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "77",
           "driver": "Valtteri Bottas",
           "team": "Cadillac",
@@ -170,7 +170,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "31",
           "driver": "Esteban Ocon",
           "team": "Haas F1 Team",
@@ -179,7 +179,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "18",
           "driver": "Lance Stroll",
           "team": "Aston Martin",
@@ -188,7 +188,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "87",
           "driver": "Oliver Bearman",
           "team": "Haas F1 Team",
@@ -197,7 +197,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "3",
           "driver": "Max Verstappen",
           "team": "Red Bull Racing",
@@ -205,12 +205,25 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 19.1,
+        "trackC": 33.8,
+        "humidity": 57,
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11353",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1292/netherlands/race-result",
-        "title": "Formula 1 — Dutch Grand Prix: Race (resultados)",
+        "title": "Formula 1 — Dutch Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T06:21:47Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

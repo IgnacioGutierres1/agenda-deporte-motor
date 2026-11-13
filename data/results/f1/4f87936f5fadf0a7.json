@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "4f87936f5fadf0a7",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "99e151b9c241de87",
@@ -179,7 +179,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "18",
           "driver": "Lance Stroll",
           "team": "Aston Martin",
@@ -188,7 +188,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "11",
           "driver": "Sergio Perez",
           "team": "Cadillac",
@@ -197,7 +197,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "63",
           "driver": "George Russell",
           "team": "Mercedes",
@@ -205,12 +205,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 18.1,
+        "trackC": 30.7,
+        "humidity": 50,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11334",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1290/belgium/race-result",
-        "title": "Formula 1 — Belgian Grand Prix: Race (resultados)",
+        "title": "Formula 1 — Belgian Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T06:21:47Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "4112360104bf9b33",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "b5928c2404d29497",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 26.2,
+        "trackC": 33.7,
+        "humidity": 84,
+        "weather": "Lluvia por momentos",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11731",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1308/bahrain/race-result",
         "title": "Formula 1 — Bahrain Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:38.933"
         }
       ],
+      "conditions": {
+        "airC": 32.8,
+        "trackC": 55.4,
+        "humidity": 50,
+        "weather": "Sin lluvia",
+        "windKmh": 3,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11730",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1308/bahrain/qualifying",
         "title": "Formula 1 — Bahrain Grand Prix: Qualifying (resultados)",
@@ -581,6 +609,20 @@
           "gap": "+3.921s"
         }
       ],
+      "conditions": {
+        "airC": 32.7,
+        "trackC": 54.9,
+        "humidity": 51,
+        "weather": "Sin lluvia",
+        "windKmh": 3,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11729",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1308/bahrain/practice/3",
         "title": "Formula 1 — Bahrain Grand Prix: Practice 3 (resultados)",
@@ -769,6 +811,20 @@
           "gap": "+5.863s"
         }
       ],
+      "conditions": {
+        "airC": 33.1,
+        "trackC": 53.2,
+        "humidity": 48,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11728",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1308/bahrain/practice/2",
         "title": "Formula 1 — Bahrain Grand Prix: Practice 2 (resultados)",
@@ -957,6 +1013,20 @@
           "gap": "+3.300s"
         }
       ],
+      "conditions": {
+        "airC": 32.7,
+        "trackC": 55.5,
+        "humidity": 56,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11727",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1308/bahrain/practice/1",
         "title": "Formula 1 — Bahrain Grand Prix: Practice 1 (resultados)",

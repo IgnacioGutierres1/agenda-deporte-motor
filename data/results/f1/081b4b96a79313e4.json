@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "081b4b96a79313e4",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "aed14d6fca63ffc7",
@@ -188,7 +188,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNF",
           "number": "18",
           "driver": "Lance Stroll",
           "team": "Aston Martin",
@@ -197,7 +197,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "77",
           "driver": "Valtteri Bottas",
           "team": "Cadillac",
@@ -205,12 +205,25 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 16.2,
+        "trackC": 24.5,
+        "humidity": 86,
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11412",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1299/brazil/race-result",
-        "title": "Formula 1 — São Paulo Grand Prix: Race (resultados)",
+        "title": "Formula 1 — São Paulo Grand Prix: Carrera (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T06:14:37Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {
@@ -393,6 +406,20 @@
           "time": "1:41.564"
         }
       ],
+      "conditions": {
+        "airC": 20.6,
+        "trackC": 28.8,
+        "humidity": 92,
+        "weather": "Lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11408",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1299/brazil/qualifying",
         "title": "Formula 1 — São Paulo Grand Prix: Qualifying (resultados)",
@@ -581,6 +608,20 @@
           "gap": "+3.144s"
         }
       ],
+      "conditions": {
+        "airC": 31.8,
+        "trackC": 52.3,
+        "humidity": 50,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11407",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1299/brazil/practice/3",
         "title": "Formula 1 — São Paulo Grand Prix: Practice 3 (resultados)",
@@ -761,6 +802,20 @@
           "gap": "+2.620s"
         }
       ],
+      "conditions": {
+        "airC": 19.9,
+        "trackC": 34.6,
+        "humidity": 88,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11406",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1299/brazil/practice/2",
         "title": "Formula 1 — São Paulo Grand Prix: Practice 2 (resultados)",
@@ -949,6 +1004,20 @@
           "gap": "+3.249s"
         }
       ],
+      "conditions": {
+        "airC": 24.1,
+        "trackC": 45.3,
+        "humidity": 73,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11405",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1299/brazil/practice/1",
         "title": "Formula 1 — São Paulo Grand Prix: Practice 1 (resultados)",

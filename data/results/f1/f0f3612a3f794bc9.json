@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "f0f3612a3f794bc9",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "db73ed78dd89d6be",
@@ -578,7 +578,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "27",
           "driver": "Nico Hulkenberg",
           "team": "Audi",
@@ -587,7 +587,7 @@
         },
         {
           "pos": null,
-          "status": "NC",
+          "status": "DNS",
           "number": "41",
           "driver": "Arvid Lindblad",
           "team": "Racing Bulls",
@@ -603,12 +603,26 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 31.9,
+        "trackC": 50.2,
+        "humidity": 50,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11275",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1284/miami/sprint-results",
         "title": "Formula 1 — Miami Grand Prix: Sprint (resultados)",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-10T08:11:28Z"
+        "fetchedAt": "2026-11-13T05:27:41Z"
       }
     },
     {

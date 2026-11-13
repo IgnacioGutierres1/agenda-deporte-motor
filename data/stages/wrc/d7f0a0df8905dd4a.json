@@ -1,0 +1,227 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7f0a0df8905dd4a",
+  "updatedAt": "2026-11-13T05:27:41Z",
+  "surface": "tierra",
+  "competitiveKm": 316.04,
+  "totalKm": 1278.06,
+  "stages": [
+    {
+      "code": "Shakedown",
+      "name": "Ruuhimäki",
+      "kind": "shakedown",
+      "date": "2026-07-30",
+      "startUtc": "2026-07-30T06:01:00Z",
+      "localStartText": "09:01",
+      "distanceKm": 4.12,
+      "sessionId": "79a7ea000cf9deaf"
+    },
+    {
+      "code": "SS1",
+      "name": "Harju 1",
+      "kind": "superespecial",
+      "date": "2026-07-30",
+      "startUtc": "2026-07-30T16:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 2.58,
+      "sessionId": "d3105bb38dbf55e9"
+    },
+    {
+      "code": "SS2",
+      "name": "Laukaa 1",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T05:44:00Z",
+      "localStartText": "08:44",
+      "distanceKm": 18.16,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS3",
+      "name": "Saarikas 1",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T06:45:00Z",
+      "localStartText": "09:45",
+      "distanceKm": 15.82,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS4",
+      "name": "Sydänmaa 1",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T07:50:00Z",
+      "localStartText": "10:50",
+      "distanceKm": 19.04,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS5",
+      "name": "Hoho 1",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T08:58:00Z",
+      "localStartText": "11:58",
+      "distanceKm": 9.55,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS6",
+      "name": "Laukaa 2",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T11:48:00Z",
+      "localStartText": "14:48",
+      "distanceKm": 18.16,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS7",
+      "name": "Saarikas 2",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T12:49:00Z",
+      "localStartText": "15:49",
+      "distanceKm": 15.82,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS8",
+      "name": "Sydänmaa 2",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T13:54:00Z",
+      "localStartText": "16:54",
+      "distanceKm": 19.04,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS9",
+      "name": "Hoho 2",
+      "kind": "especial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T15:05:00Z",
+      "localStartText": "18:05",
+      "distanceKm": 9.55,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS10",
+      "name": "Harju 2",
+      "kind": "superespecial",
+      "date": "2026-07-31",
+      "startUtc": "2026-07-31T16:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 2.58,
+      "sessionId": "4459b554a4eb1599"
+    },
+    {
+      "code": "SS11",
+      "name": "Parkkola 1",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T05:01:00Z",
+      "localStartText": "08:01",
+      "distanceKm": 16.76,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS12",
+      "name": "Päijälä 1",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T06:42:00Z",
+      "localStartText": "09:42",
+      "distanceKm": 10.55,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS13",
+      "name": "Västilä 1",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T07:36:00Z",
+      "localStartText": "10:36",
+      "distanceKm": 19.1,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS14",
+      "name": "Leustu 1",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T09:05:00Z",
+      "localStartText": "12:05",
+      "distanceKm": 16.44,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS15",
+      "name": "Parkkola 2",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T12:01:00Z",
+      "localStartText": "15:01",
+      "distanceKm": 16.76,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS16",
+      "name": "Päijälä 2",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T13:42:00Z",
+      "localStartText": "16:42",
+      "distanceKm": 10.55,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS17",
+      "name": "Västilä 2",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T14:36:00Z",
+      "localStartText": "17:36",
+      "distanceKm": 19.1,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS18",
+      "name": "Leustu 2",
+      "kind": "especial",
+      "date": "2026-08-01",
+      "startUtc": "2026-08-01T16:05:00Z",
+      "localStartText": "19:05",
+      "distanceKm": 16.44,
+      "sessionId": "437bc730f0caf2ae"
+    },
+    {
+      "code": "SS19",
+      "name": "Himos-Jämsä 1",
+      "kind": "especial",
+      "date": "2026-08-02",
+      "startUtc": "2026-08-02T07:35:00Z",
+      "localStartText": "10:35",
+      "distanceKm": 30.02,
+      "sessionId": "e8b3ac05d6b8ea52"
+    },
+    {
+      "code": "SS20",
+      "name": "Himos-Jämsä 2",
+      "kind": "power",
+      "date": "2026-08-02",
+      "startUtc": "2026-08-02T10:15:00Z",
+      "localStartText": "13:15",
+      "distanceKm": 30.02,
+      "sessionId": "0c5d61d6e6f87a15"
+    }
+  ],
+  "source": {
+    "url": "https://en.wikipedia.org/wiki/2026_Rally_Finland",
+    "title": "Wikipedia: 2026 Rally Finland",
+    "kind": "api",
+    "method": "directo",
+    "fetchedAt": "2026-11-13T05:27:41Z"
+  }
+}

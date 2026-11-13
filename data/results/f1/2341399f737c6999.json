@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "2341399f737c6999",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:27:41Z",
   "sessions": [
     {
       "sessionId": "a4ee42e797d95150",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 24.2,
+        "trackC": 40.8,
+        "humidity": 39,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11404",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1298/mexico/race-result",
         "title": "Formula 1 — Mexico City Grand Prix: Race (resultados)",
@@ -394,6 +408,20 @@
           "time": "1:17.029"
         }
       ],
+      "conditions": {
+        "airC": 26.4,
+        "trackC": 45,
+        "humidity": 30,
+        "weather": "Sin lluvia",
+        "windKmh": 11,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11400",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1298/mexico/qualifying",
         "title": "Formula 1 — Mexico City Grand Prix: Qualifying (resultados)",
@@ -580,6 +608,20 @@
           "laps": 1
         }
       ],
+      "conditions": {
+        "airC": 23.5,
+        "trackC": 47,
+        "humidity": 36,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11399",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1298/mexico/practice/3",
         "title": "Formula 1 — Mexico City Grand Prix: Practice 3 (resultados)",
@@ -768,6 +810,20 @@
           "gap": "+2.347s"
         }
       ],
+      "conditions": {
+        "airC": 24.9,
+        "trackC": 33.5,
+        "humidity": 35,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11398",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1298/mexico/practice/2",
         "title": "Formula 1 — Mexico City Grand Prix: Practice 2 (resultados)",
@@ -956,6 +1012,20 @@
           "gap": "+3.237s"
         }
       ],
+      "conditions": {
+        "airC": 23.1,
+        "trackC": 43.3,
+        "humidity": 49,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11397",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:27:41Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1298/mexico/practice/1",
         "title": "Formula 1 — Mexico City Grand Prix: Practice 1 (resultados)",
