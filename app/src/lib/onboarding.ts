@@ -1,6 +1,6 @@
 /**
  * "Empezá por acá": lo primero para seguir cuando todavía no se sigue nada, pensado para un fan
- * argentino. Categorías fijas (F1, TC, TC2000, MotoGP, TC Pista, TN), Colapinto y Canapino, y los
+ * argentino. Categorías fijas (F1, TC, TC2000, MotoGP, TC Pista, TN, WRC y Dakar), Colapinto y Canapino, y los
  * líderes actuales del TC y del TC2000 sacados de las tablas publicadas (no de nombres fijos).
  * Lógica pura, sin Vue ni Pinia.
  */
@@ -16,6 +16,9 @@ export const STARTER_SERIES: Array<{ ids: string[]; reason: string }> = [
   { ids: ['motogp'], reason: 'El Mundial de motos' },
   { ids: ['tc-pista'], reason: 'La antesala del TC' },
   { ids: ['tn', 'turismo-nacional'], reason: 'Autos de calle preparados, de todo el país' },
+  // Rally y rally raid (solo aparecen si la categoría está publicada).
+  { ids: ['wrc'], reason: 'El Mundial de Rally: asfalto, tierra y nieve' },
+  { ids: ['dakar', 'rally-dakar'], reason: 'El rally raid más duro, con argentinos protagonistas' },
 ];
 
 /** Pilotos fijos del paquete (se resuelven por id, solo si figuran en el índice de pilotos). */

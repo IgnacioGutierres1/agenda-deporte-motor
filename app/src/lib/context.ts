@@ -13,13 +13,16 @@ import {
   type MotorEvent,
   type NewsItem,
   type RosterRow,
+  type SeriesGroup,
   type Session,
   type SessionType,
   type StandingsFile,
   type StandingsRow,
   type StandingsTable,
+  type Surface,
 } from '@dm/shared';
 import { groupRoster, rosterClasses } from './roster.ts';
+import { eventDays, hasStages, itineraryKind } from './stages.ts';
 
 const RACE_TYPES: SessionType[] = ['carrera', 'sprint'];
 
@@ -73,6 +76,8 @@ export function roundInfo(events: MotorEvent[], event: MotorEvent): RoundInfo | 
   const i = season.findIndex((e) => e.id === event.id);
   if (i < 0) return null;
   const byCalendar = event.round === undefined;
+  // Categoría de una sola prueba por año y sin numerar (el Dakar): "Fecha 1 de 1" no dice nada.
+  if (byCalendar && season.length === 1) return null;
   const of = byCalendar ? season.length : Math.max(...season.map((e) => e.round ?? 0), season.length);
   return {
     n: byCalendar ? i + 1 : event.round!,
@@ -138,6 +143,27 @@ export const TIMING_LABELS: Record<StandingsTiming, string> = {
   after: 'Tabla actualizada después de esta carrera',
   unknown: 'Tabla leída durante el fin de semana: puede incluir o no este resultado',
 };
+
+/** Lo mismo para un rally: no es "la carrera" ni dura un fin de semana (el Dakar, dos semanas). */
+export const RALLY_TIMING_LABELS: Record<StandingsTiming, string> = {
+  before: 'Tabla antes del rally',
+  partial: 'Tabla actualizada durante este rally',
+  after: 'Tabla actualizada después de este rally',
+  unknown: 'Tabla leída durante el rally: puede incluir o no este resultado',
+};
+
+export function timingLabel(timing: StandingsTiming, rally = false): string {
+  return (rally ? RALLY_TIMING_LABELS : TIMING_LABELS)[timing];
+}
+
+/** Rally o rally raid: la categoría es del grupo rally, o el evento trae superficie, itinerario o sesiones de etapa. */
+export function isRallyEvent(
+  event: Pick<MotorEvent, 'surface' | 'stageCount'>,
+  sessions: Array<Pick<Session, 'type'>> = [],
+  group?: SeriesGroup,
+): boolean {
+  return group === 'rally' || !!event.surface || hasStages(event) || sessions.some((s) => s.type === 'etapa');
+}
 
 export interface Followed {
   /** Ids de pilotos seguidos (driverId). */
@@ -370,6 +396,38 @@ export function sessionCounts(sessions: Session[]): string {
     .join(' · ');
 }
 
+const SURFACE_PHRASE: Record<Surface, string> = {
+  asfalto: 'sobre asfalto',
+  tierra: 'sobre tierra',
+  nieve: 'sobre nieve y hielo',
+  arena: 'sobre arena y desierto',
+  mixto: 'sobre asfalto y tierra',
+};
+
+/**
+ * Formato de un evento en una línea. Una carrera de circuito: "3 prácticas · 1 clasificación · 1 carrera".
+ * Un rally no tiene ese formato (sus sesiones son el shakedown, un bloque de tramos por día y la Power Stage):
+ * "Rally por tramos cronometrados sobre asfalto · 4 días" o "Rally raid por etapas sobre arena y desierto · 15 días".
+ * Vacío si no hay nada publicado todavía.
+ */
+export function eventFormatText(
+  event: Pick<MotorEvent, 'dateStart' | 'dateEnd' | 'surface' | 'stageCount'>,
+  sessions: Session[],
+  group?: SeriesGroup,
+): string {
+  if (!isRallyEvent(event, sessions, group)) return sessionCounts(sessions);
+  // Sin itinerario ni horarios todavía no se sabe si es por tramos o por etapas.
+  if (!hasStages(event) && !sessions.length) return event.surface ? `Rally ${SURFACE_PHRASE[event.surface]}` : '';
+  const kind = hasStages(event) ? itineraryKind(event) : 'tramos';
+  const days = eventDays(event);
+  return [
+    `${kind === 'tramos' ? 'Rally por tramos cronometrados' : 'Rally raid por etapas'}${event.surface ? ` ${SURFACE_PHRASE[event.surface]}` : ''}`,
+    days > 1 ? `${days} días` : '',
+  ]
+    .filter(Boolean)
+    .join(' · ');
+}
+
 /** Duración en minutos entre inicio y fin. */
 export function durationMinutes(s: Pick<Session, 'startUtc' | 'endUtc'>): number {
   return Math.round((Date.parse(s.endUtc) - Date.parse(s.startUtc)) / 60_000);
@@ -439,6 +497,8 @@ export function highlights(file: EventResultsFile | undefined, eventSessions: Se
     if (!first) continue;
     let label = 'Más rápido';
     if (isRace(session)) label = 'Ganador';
+    // Bloque de tramos o etapa de un rally: el primero de la clasificación publicada (no una vuelta rápida).
+    else if (session.type === 'etapa') label = 'Primero';
     else if (session.type === 'clasificacion') {
       const next = sorted.slice(sorted.indexOf(session) + 1).find((s) => s.type === 'clasificacion' || isRace(s));
       label = next && isRace(next) ? 'Pole' : 'Primero';
@@ -485,6 +545,8 @@ export interface WatchInput {
   /** Ganadores de la fecha anterior. */
   winnersBefore?: SessionHighlight[];
   previousName?: string;
+  /** El evento es un rally: "Ganó este rally" en lugar de "Ganó esta carrera". */
+  rally?: boolean;
   limit?: number;
 }
 
@@ -575,7 +637,7 @@ export function whoToWatch(input: WatchInput): WatchItem[] {
   }
   const here = input.winnersHere ?? [];
   for (const w of here) {
-    add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: here.length > 1 ? `Ganó ${w.sessionName}` : 'Ganó esta carrera', ...(w.team ? { detail: w.team } : {}), followed: false });
+    add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: here.length > 1 ? `Ganó ${w.sessionName}` : input.rally ? 'Ganó este rally' : 'Ganó esta carrera', ...(w.team ? { detail: w.team } : {}), followed: false });
   }
   const before = input.winnersBefore ?? [];
   for (const w of before) {
