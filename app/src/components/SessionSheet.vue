@@ -24,6 +24,8 @@
         <div v-if="changedText" class="changed-note small">{{ changedText }}</div>
       </div>
 
+      <SessionWeather :item="item" :now="now" />
+
       <div>
         <div class="section-title">Transmisión</div>
         <div>{{ broadcast }}</div>
@@ -81,13 +83,14 @@ import { DateTime } from 'luxon';
 import { formatTime } from '@dm/shared';
 import BottomSheet from './BottomSheet.vue';
 import AppIcon from './AppIcon.vue';
+import SessionWeather from './SessionWeather.vue';
 import { seriesColor, type GridItem } from '../lib/grid.ts';
 import { KIND_LABELS, METHOD_LABELS, hostOf } from '../lib/sources.ts';
 import { formatDateTime, timeAgo, zoneLabel } from '../lib/format.ts';
 
 export default defineComponent({
   name: 'SessionSheet',
-  components: { BottomSheet, AppIcon },
+  components: { BottomSheet, AppIcon, SessionWeather },
   props: {
     item: { type: Object as PropType<GridItem | null>, default: null },
     timeZone: { type: String, required: true },
