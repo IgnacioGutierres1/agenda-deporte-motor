@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "25a389c143221cf8",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "819055d399ab50f4",
@@ -227,6 +227,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 48,
+        "humidity": 38,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/rac/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP RAC",
@@ -459,6 +466,13 @@
           "bestLap": "1:40.749"
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 37,
+        "humidity": 55,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/wup/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP WUP",
@@ -691,6 +705,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 44,
+        "humidity": 43,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/spr/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP SPR",

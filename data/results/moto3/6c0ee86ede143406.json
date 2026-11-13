@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "6c0ee86ede143406",
-  "updatedAt": "2026-11-13T06:57:48Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "d80cc71e7b763556",
@@ -464,6 +464,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 44,
+        "humidity": 42,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/moto3/q2/classification",
         "title": "MotoGP.com – Resultados HUN Moto3 Q2",
@@ -596,6 +603,13 @@
           "bestLap": "1:48.622"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 44,
+        "humidity": 40,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/moto3/q1/classification",
         "title": "MotoGP.com – Resultados HUN Moto3 Q1",
@@ -868,6 +882,13 @@
           "bestLap": "1:48.082"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 28,
+        "humidity": 57,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados HUN Moto3 FP2",
@@ -1140,6 +1161,13 @@
           "bestLap": "1:48.766"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 38,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/moto3/pr/classification",
         "title": "MotoGP.com – Resultados HUN Moto3 PR",
@@ -1412,6 +1440,13 @@
           "bestLap": "1:49.169"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 26,
+        "humidity": 65,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados HUN Moto3 FP1",

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "df4543bfa43090df",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "44dc2ab6bd806fc4",
@@ -267,6 +267,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 27,
+        "humidity": 49,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/moto3/rac/classification",
         "title": "MotoGP.com – Resultados SPA Moto3 RAC",

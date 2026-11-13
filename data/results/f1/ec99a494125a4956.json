@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "ec99a494125a4956",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "ccf2ec2c9276131b",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 18.5,
+        "trackC": 32.6,
+        "humidity": 52,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11253",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1281/japan/race-result",
         "title": "Formula 1 — Japanese Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:32.920"
         }
       ],
+      "conditions": {
+        "airC": 16.5,
+        "trackC": 29.3,
+        "humidity": 50,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11249",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1281/japan/qualifying",
         "title": "Formula 1 — Japanese Grand Prix: Qualifying (resultados)",
@@ -581,6 +609,20 @@
           "gap": "+4.167s"
         }
       ],
+      "conditions": {
+        "airC": 16.2,
+        "trackC": 37.2,
+        "humidity": 53,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11248",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1281/japan/practice/3",
         "title": "Formula 1 — Japanese Grand Prix: Practice 3 (resultados)",
@@ -768,6 +810,20 @@
           "laps": 1
         }
       ],
+      "conditions": {
+        "airC": 17.2,
+        "trackC": 26.5,
+        "humidity": 46,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11247",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1281/japan/practice/2",
         "title": "Formula 1 — Japanese Grand Prix: Practice 2 (resultados)",
@@ -956,6 +1012,20 @@
           "gap": "+4.696s"
         }
       ],
+      "conditions": {
+        "airC": 16.4,
+        "trackC": 37.4,
+        "humidity": 50,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11246",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1281/japan/practice/1",
         "title": "Formula 1 — Japanese Grand Prix: Practice 1 (resultados)",

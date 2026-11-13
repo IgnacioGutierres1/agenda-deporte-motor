@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "cfd34f9273378db8",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "d690728c56b44fa7",
@@ -384,6 +384,20 @@
           "time": "1:23.244"
         }
       ],
+      "conditions": {
+        "airC": 20.5,
+        "trackC": 33.6,
+        "humidity": 63,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11230",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1279/australia/qualifying",
         "title": "Formula 1 — Australian Grand Prix: Qualifying (resultados)",
@@ -563,6 +577,20 @@
           "laps": 1
         }
       ],
+      "conditions": {
+        "airC": 20.6,
+        "trackC": 37,
+        "humidity": 64,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11229",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1279/australia/practice/3",
         "title": "Formula 1 — Australian Grand Prix: Practice 3 (resultados)",
@@ -750,6 +778,20 @@
           "laps": 2
         }
       ],
+      "conditions": {
+        "airC": 22.5,
+        "trackC": 33.7,
+        "humidity": 65,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11228",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1279/australia/practice/2",
         "title": "Formula 1 — Australian Grand Prix: Practice 2 (resultados)",
@@ -930,6 +972,20 @@
           "gap": "+30.067s"
         }
       ],
+      "conditions": {
+        "airC": 20.8,
+        "trackC": 35.2,
+        "humidity": 71,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11227",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1279/australia/practice/1",
         "title": "Formula 1 — Australian Grand Prix: Practice 1 (resultados)",

@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "c93c9497c29ba1ab",
-  "updatedAt": "2026-11-13T06:57:48Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "e82688bd9d15b3a3",
@@ -784,6 +784,13 @@
           "bestLap": "1:19.781"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 35,
+        "humidity": 50,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/q2/classification",
         "title": "MotoGP.com – Resultados GER MotoGP Q2",
@@ -906,6 +913,13 @@
           "bestLap": "1:20.953"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 35,
+        "humidity": 53,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/q1/classification",
         "title": "MotoGP.com – Resultados GER MotoGP Q1",
@@ -1128,6 +1142,13 @@
           "bestLap": "1:22.254"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 33,
+        "humidity": 55,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados GER MotoGP FP2",
@@ -1350,6 +1371,13 @@
           "bestLap": "1:21.121"
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 43,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/pr/classification",
         "title": "MotoGP.com – Resultados GER MotoGP PR",
@@ -1572,6 +1600,13 @@
           "bestLap": "1:22.583"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 31,
+        "humidity": 68,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados GER MotoGP FP1",

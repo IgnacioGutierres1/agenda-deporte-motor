@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "e5734961e90354d5",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "eb87feab4f34cb23",
@@ -407,6 +407,20 @@
           "time": "1:36.906"
         }
       ],
+      "conditions": {
+        "airC": 17.8,
+        "trackC": 30.3,
+        "humidity": 34,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11241",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1280/china/qualifying",
         "title": "Formula 1 — Chinese Grand Prix: Qualifying (resultados)",
@@ -617,6 +631,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 15.4,
+        "trackC": 16.6,
+        "humidity": 48,
+        "weather": "Sin lluvia",
+        "windKmh": 16,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11240",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1280/china/sprint-results",
         "title": "Formula 1 — Chinese Grand Prix: Sprint (resultados)",
@@ -797,6 +825,20 @@
           "time": "1:37.378"
         }
       ],
+      "conditions": {
+        "airC": 16.5,
+        "trackC": 28,
+        "humidity": 23,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11236",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1280/china/sprint-qualifying",
         "title": "Formula 1 — Chinese Grand Prix: Sprint Qualifying (resultados)",
@@ -985,6 +1027,20 @@
           "gap": "+6.459s"
         }
       ],
+      "conditions": {
+        "airC": 13.1,
+        "trackC": 23.3,
+        "humidity": 36,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11235",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1280/china/practice/1",
         "title": "Formula 1 — Chinese Grand Prix: Practice 1 (resultados)",

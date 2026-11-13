@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "f0f3612a3f794bc9",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T14:08:10Z",
   "sessions": [
     {
       "sessionId": "db73ed78dd89d6be",
@@ -205,6 +205,19 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 27.7,
+        "trackC": 37.5,
+        "humidity": 68,
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11280",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1284/miami/race-result",
         "title": "Formula 1 — Miami Grand Prix: Race (resultados)",
@@ -394,6 +407,20 @@
           "time": "1:28.789"
         }
       ],
+      "conditions": {
+        "airC": 33.9,
+        "trackC": 52,
+        "humidity": 31,
+        "weather": "Sin lluvia",
+        "windKmh": 13,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11276",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1284/miami/qualifying",
         "title": "Formula 1 — Miami Grand Prix: Qualifying (resultados)",
@@ -798,6 +825,20 @@
           "time": "1:41.311"
         }
       ],
+      "conditions": {
+        "airC": 30.6,
+        "trackC": 52.1,
+        "humidity": 53,
+        "weather": "Sin lluvia",
+        "windKmh": 11,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11271",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1284/miami/sprint-qualifying",
         "title": "Formula 1 — Miami Grand Prix: Sprint Qualifying (resultados)",
@@ -986,6 +1027,20 @@
           "gap": "+3.649s"
         }
       ],
+      "conditions": {
+        "airC": 31.2,
+        "trackC": 52.7,
+        "humidity": 45,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11270",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T14:08:10Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1284/miami/practice/1",
         "title": "Formula 1 — Miami Grand Prix: Practice 1 (resultados)",

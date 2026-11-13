@@ -1,0 +1,2089 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7d98edf88f2dfd3",
+  "updatedAt": "2026-11-13T14:08:10Z",
+  "sessions": [
+    {
+      "sessionId": "dc7a904b9660dc04",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "4:24:59.0"
+        },
+        {
+          "pos": 2,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+51.8s"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+2:02.2"
+        },
+        {
+          "pos": 4,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+5:59.3"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+10:29.8"
+        },
+        {
+          "pos": 6,
+          "number": "28",
+          "driver": "Léo Rossel / Guillaume Mercoiret",
+          "team": "2C Junior Team",
+          "vehicle": "Citroen C3",
+          "gap": "+12:58.4"
+        },
+        {
+          "pos": 7,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+13:05.4"
+        },
+        {
+          "pos": 8,
+          "number": "23",
+          "driver": "Roberto Daprà / Luca Guglielmetti",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+15:07.9"
+        },
+        {
+          "pos": 9,
+          "number": "35",
+          "driver": "Arthur Pelamourgues / Bastien Pouget",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+18:09.4"
+        },
+        {
+          "pos": 10,
+          "number": "26",
+          "driver": "Eric Camilli / Thibault de la Haye",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+18:36.4"
+        },
+        {
+          "pos": 11,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+18:47.5"
+        },
+        {
+          "pos": 12,
+          "number": "31",
+          "driver": "Christopher Ingram / Alexander Kihurani",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+21:42.7"
+        },
+        {
+          "pos": 13,
+          "number": "22",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+31:56.2"
+        },
+        {
+          "pos": 14,
+          "number": "54",
+          "driver": "Cédric Cherain / Jasper Vermeulen",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+31:59.3"
+        },
+        {
+          "pos": 15,
+          "number": "36",
+          "driver": "Jarosław KOŁTUN / Ireneusz Pleskot",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+35:22.1"
+        },
+        {
+          "pos": 16,
+          "number": "24",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+35:45.0"
+        },
+        {
+          "pos": 17,
+          "number": "30",
+          "driver": "Filip Kohn / Ross Whittock",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+40:39.3"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "Yohan Rossel / Arnaud Dunand",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+42:42.1"
+        },
+        {
+          "pos": 19,
+          "number": "39",
+          "driver": "John Wartique / Maxime Andernack",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+46:37.2"
+        },
+        {
+          "pos": 20,
+          "number": "32",
+          "driver": "Mattéo Chatillon / Maxence Cornuau",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+47:02.9"
+        },
+        {
+          "pos": 21,
+          "number": "34",
+          "driver": "Eliott Delecour / Sabrina de Castelli",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+47:07.5"
+        },
+        {
+          "pos": 22,
+          "number": "37",
+          "driver": "Amaury Molle / Alex Dubois",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+51:21.5"
+        },
+        {
+          "pos": 23,
+          "number": "42",
+          "driver": "Johannes Keferböck / Ilka Minor",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+53:04.1"
+        },
+        {
+          "pos": 24,
+          "number": "63",
+          "driver": "Błażej Gazda / Michał JURGAŁA",
+          "vehicle": "Renault Clio Rally3",
+          "gap": "+59:44.8"
+        },
+        {
+          "pos": 25,
+          "number": "64",
+          "driver": "Renaud Dolce / Quentin Giroud",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:00:08.7"
+        },
+        {
+          "pos": 26,
+          "number": "56",
+          "driver": "Albert von Thurn Und Taxis / Jara Hain",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+1:01:00.2"
+        },
+        {
+          "pos": 27,
+          "number": "38",
+          "driver": "Olivier Burri / Stéphane Fellay",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:08:33.1"
+        },
+        {
+          "pos": 28,
+          "number": "51",
+          "driver": "Eric Royère / Alexis Grenier",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:11:48.5"
+        },
+        {
+          "pos": 29,
+          "number": "46",
+          "driver": "Filippo Marchino / Pietro Elia Ometto",
+          "vehicle": "Citroen C3",
+          "gap": "+1:14:11.7"
+        },
+        {
+          "pos": 30,
+          "number": "43",
+          "driver": "Eamonn Boland / M.",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+1:14:39.6"
+        },
+        {
+          "pos": 31,
+          "number": "49",
+          "driver": "Matteo Fontana / Alessandro Arnaboldi",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:15:47.6"
+        },
+        {
+          "pos": 32,
+          "number": "67",
+          "driver": "Andrea Spataro / Alessia Muffolini",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+1:17:35.9"
+        },
+        {
+          "pos": 33,
+          "number": "50",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:30:38.9"
+        },
+        {
+          "pos": 34,
+          "number": "65",
+          "driver": "Paolo Vigo / Matteo Canobbio",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:36:50.3"
+        },
+        {
+          "pos": 35,
+          "number": "77",
+          "driver": "Giacomo Matteuzzi / Juri Frosini",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+1:36:59.8"
+        },
+        {
+          "pos": 36,
+          "number": "70",
+          "driver": "Giancarlo de Matteis / Giulia Bico",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:39:46.3"
+        },
+        {
+          "pos": 37,
+          "number": "41",
+          "driver": "Stefano Mella / Francesco Pezzoli",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+1:40:59.0"
+        },
+        {
+          "pos": 38,
+          "number": "59",
+          "driver": "Andreas Franke / Michael Wenzel",
+          "vehicle": "Skoda Fabia Evo",
+          "gap": "+1:44:11.1"
+        },
+        {
+          "pos": 39,
+          "number": "58",
+          "driver": "Paolo Vallivero / Stefano Cirillo",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:48:04.6"
+        },
+        {
+          "pos": 40,
+          "number": "45",
+          "driver": "Dimitrios Drivakos / Aikaterini Bante",
+          "vehicle": "Hyundai NG i20",
+          "gap": "+1:48:41.1"
+        },
+        {
+          "pos": 41,
+          "number": "40",
+          "driver": "Julien Piguet / Marc Haddad",
+          "vehicle": "Citroen C3",
+          "gap": "+1:51:36.1"
+        },
+        {
+          "pos": 42,
+          "number": "61",
+          "driver": "Christophe Berard / Christophe Bernabo",
+          "vehicle": "Alpine A110",
+          "gap": "+1:53:33.8"
+        },
+        {
+          "pos": 43,
+          "number": "71",
+          "driver": "Emanuele Fiore / Martina Musiari",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:53:38.6"
+        },
+        {
+          "pos": 44,
+          "number": "47",
+          "driver": "Henk Vossen / Saskia Bleijenberg",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+2:01:17.9"
+        },
+        {
+          "pos": 45,
+          "number": "73",
+          "driver": "Jean Paul Palmero / Mattia Pastorino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+2:13:45.5"
+        },
+        {
+          "pos": 46,
+          "number": "62",
+          "driver": "Marc Dessi / Serena Giuliano",
+          "vehicle": "Alpine A110",
+          "gap": "+2:48:04.9"
+        },
+        {
+          "pos": 47,
+          "number": "60",
+          "driver": "Armand Fumal / Jules Escartefigue",
+          "vehicle": "Alpine A110",
+          "gap": "+3:00:04.6"
+        },
+        {
+          "pos": 48,
+          "number": "76",
+          "driver": "Davide Cagni / Alessio Spezzani",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+3:07:37.4"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/94e-rallye-monte-carlo/classifications",
+        "title": "FIA: 94e Rallye Monte-Carlo — clasificación final del rally (general tras SS17) (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T14:08:10Z"
+      }
+    },
+    {
+      "sessionId": "d9c4d2e70c4e67eb",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "4:04:45.8"
+        },
+        {
+          "pos": 2,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+58.3s"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:51.4"
+        },
+        {
+          "pos": 4,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+5:47.7"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+9:51.5"
+        },
+        {
+          "pos": 6,
+          "number": "28",
+          "driver": "Léo Rossel / Guillaume Mercoiret",
+          "team": "2C Junior Team",
+          "vehicle": "Citroen C3",
+          "gap": "+11:34.2"
+        },
+        {
+          "pos": 7,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+12:28.6"
+        },
+        {
+          "pos": 8,
+          "number": "26",
+          "driver": "Eric Camilli / Thibault de la Haye",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+13:31.9"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "Roberto Daprà / Luca Guglielmetti",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+13:36.5"
+        },
+        {
+          "pos": 10,
+          "number": "35",
+          "driver": "Arthur Pelamourgues / Bastien Pouget",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+16:53.3"
+        },
+        {
+          "pos": 11,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+17:07.5"
+        },
+        {
+          "pos": 12,
+          "number": "31",
+          "driver": "Christopher Ingram / Alexander Kihurani",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+20:11.9"
+        },
+        {
+          "pos": 13,
+          "number": "54",
+          "driver": "Cédric Cherain / Jasper Vermeulen",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+31:02.7"
+        },
+        {
+          "pos": 14,
+          "number": "22",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+31:20.1"
+        },
+        {
+          "pos": 15,
+          "number": "36",
+          "driver": "Jarosław KOŁTUN / Ireneusz Pleskot",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+33:50.5"
+        },
+        {
+          "pos": 16,
+          "number": "24",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+35:22.0"
+        },
+        {
+          "pos": 17,
+          "number": "30",
+          "driver": "Filip Kohn / Ross Whittock",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+38:54.4"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "Yohan Rossel / Arnaud Dunand",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+42:28.2"
+        },
+        {
+          "pos": 19,
+          "number": "39",
+          "driver": "John Wartique / Maxime Andernack",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+43:02.7"
+        },
+        {
+          "pos": 20,
+          "number": "34",
+          "driver": "Eliott Delecour / Sabrina de Castelli",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+44:54.5"
+        },
+        {
+          "pos": 21,
+          "number": "32",
+          "driver": "Mattéo Chatillon / Maxence Cornuau",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+45:32.3"
+        },
+        {
+          "pos": 22,
+          "number": "37",
+          "driver": "Amaury Molle / Alex Dubois",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+48:54.9"
+        },
+        {
+          "pos": 23,
+          "number": "42",
+          "driver": "Johannes Keferböck / Ilka Minor",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+50:20.5"
+        },
+        {
+          "pos": 24,
+          "number": "63",
+          "driver": "Błażej Gazda / Michał JURGAŁA",
+          "vehicle": "Renault Clio Rally3",
+          "gap": "+57:15.0"
+        },
+        {
+          "pos": 25,
+          "number": "64",
+          "driver": "Renaud Dolce / Quentin Giroud",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+57:34.7"
+        },
+        {
+          "pos": 26,
+          "number": "56",
+          "driver": "Albert von Thurn Und Taxis / Jara Hain",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+59:45.9"
+        },
+        {
+          "pos": 27,
+          "number": "38",
+          "driver": "Olivier Burri / Stéphane Fellay",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:05:10.6"
+        },
+        {
+          "pos": 28,
+          "number": "51",
+          "driver": "Eric Royère / Alexis Grenier",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:08:09.3"
+        },
+        {
+          "pos": 29,
+          "number": "46",
+          "driver": "Filippo Marchino / Pietro Elia Ometto",
+          "vehicle": "Citroen C3",
+          "gap": "+1:10:24.4"
+        },
+        {
+          "pos": 30,
+          "number": "43",
+          "driver": "Eamonn Boland / M.",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+1:11:01.4"
+        },
+        {
+          "pos": 31,
+          "number": "67",
+          "driver": "Andrea Spataro / Alessia Muffolini",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+1:14:13.4"
+        },
+        {
+          "pos": 32,
+          "number": "49",
+          "driver": "Matteo Fontana / Alessandro Arnaboldi",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:14:58.5"
+        },
+        {
+          "pos": 33,
+          "number": "50",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:28:56.5"
+        },
+        {
+          "pos": 34,
+          "number": "77",
+          "driver": "Giacomo Matteuzzi / Juri Frosini",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+1:31:32.0"
+        },
+        {
+          "pos": 35,
+          "number": "65",
+          "driver": "Paolo Vigo / Matteo Canobbio",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:32:50.8"
+        },
+        {
+          "pos": 36,
+          "number": "66",
+          "driver": "Marco Oldani / Pietro D'Agostino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:34:32.0"
+        },
+        {
+          "pos": 37,
+          "number": "70",
+          "driver": "Giancarlo de Matteis / Giulia Bico",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:35:46.0"
+        },
+        {
+          "pos": 38,
+          "number": "41",
+          "driver": "Stefano Mella / Francesco Pezzoli",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+1:36:45.0"
+        },
+        {
+          "pos": 39,
+          "number": "59",
+          "driver": "Andreas Franke / Michael Wenzel",
+          "vehicle": "Skoda Fabia Evo",
+          "gap": "+1:38:59.1"
+        },
+        {
+          "pos": 40,
+          "number": "45",
+          "driver": "Dimitrios Drivakos / Aikaterini Bante",
+          "vehicle": "Hyundai NG i20",
+          "gap": "+1:43:02.8"
+        },
+        {
+          "pos": 41,
+          "number": "58",
+          "driver": "Paolo Vallivero / Stefano Cirillo",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:43:41.6"
+        },
+        {
+          "pos": 42,
+          "number": "61",
+          "driver": "Christophe Berard / Christophe Bernabo",
+          "vehicle": "Alpine A110",
+          "gap": "+1:46:47.9"
+        },
+        {
+          "pos": 43,
+          "number": "71",
+          "driver": "Emanuele Fiore / Martina Musiari",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:47:01.3"
+        },
+        {
+          "pos": 44,
+          "number": "40",
+          "driver": "Julien Piguet / Marc Haddad",
+          "vehicle": "Citroen C3",
+          "gap": "+1:48:06.1"
+        },
+        {
+          "pos": 45,
+          "number": "47",
+          "driver": "Henk Vossen / Saskia Bleijenberg",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+1:55:04.2"
+        },
+        {
+          "pos": 46,
+          "number": "73",
+          "driver": "Jean Paul Palmero / Mattia Pastorino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+2:07:30.9"
+        },
+        {
+          "pos": 47,
+          "number": "62",
+          "driver": "Marc Dessi / Serena Giuliano",
+          "vehicle": "Alpine A110",
+          "gap": "+2:41:21.7"
+        },
+        {
+          "pos": 48,
+          "number": "60",
+          "driver": "Armand Fumal / Jules Escartefigue",
+          "vehicle": "Alpine A110",
+          "gap": "+2:56:07.0"
+        },
+        {
+          "pos": 49,
+          "number": "76",
+          "driver": "Davide Cagni / Alessio Spezzani",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+3:00:33.9"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/94e-rallye-monte-carlo/classifications",
+        "title": "FIA: 94e Rallye Monte-Carlo — clasificación general tras SS16 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T14:08:10Z"
+      }
+    },
+    {
+      "sessionId": "43bc45ecc3e3457f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "3:16:34.1"
+        },
+        {
+          "pos": 2,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+59.3s"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:25.3"
+        },
+        {
+          "pos": 4,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+6:02.9"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+7:23.0"
+        },
+        {
+          "pos": 6,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+10:03.9"
+        },
+        {
+          "pos": 7,
+          "number": "28",
+          "driver": "Léo Rossel / Guillaume Mercoiret",
+          "team": "2C Junior Team",
+          "vehicle": "Citroen C3",
+          "gap": "+10:57.7"
+        },
+        {
+          "pos": 8,
+          "number": "13",
+          "driver": "Grégoire Munster / Louis Louka",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+11:29.3"
+        },
+        {
+          "pos": 9,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+11:36.9"
+        },
+        {
+          "pos": 10,
+          "number": "23",
+          "driver": "Roberto Daprà / Luca Guglielmetti",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+12:25.6"
+        },
+        {
+          "pos": 11,
+          "number": "26",
+          "driver": "Eric Camilli / Thibault de la Haye",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+12:51.0"
+        },
+        {
+          "pos": 12,
+          "number": "35",
+          "driver": "Arthur Pelamourgues / Bastien Pouget",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+15:44.5"
+        },
+        {
+          "pos": 13,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+15:48.4"
+        },
+        {
+          "pos": 14,
+          "number": "31",
+          "driver": "Christopher Ingram / Alexander Kihurani",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+17:22.7"
+        },
+        {
+          "pos": 15,
+          "number": "25",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+23:57.5"
+        },
+        {
+          "pos": 16,
+          "number": "22",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+30:47.2"
+        },
+        {
+          "pos": 17,
+          "number": "54",
+          "driver": "Cédric Cherain / Jasper Vermeulen",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+31:02.0"
+        },
+        {
+          "pos": 18,
+          "number": "36",
+          "driver": "Jarosław KOŁTUN / Ireneusz Pleskot",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+31:12.9"
+        },
+        {
+          "pos": 19,
+          "number": "30",
+          "driver": "Filip Kohn / Ross Whittock",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+32:30.3"
+        },
+        {
+          "pos": 20,
+          "number": "29",
+          "driver": "Pablo Sarrazin / Yannick Roche",
+          "vehicle": "Citroen C3",
+          "gap": "+34:25.0"
+        },
+        {
+          "pos": 21,
+          "number": "24",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+35:26.0"
+        },
+        {
+          "pos": 22,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+39:09.1"
+        },
+        {
+          "pos": 23,
+          "number": "39",
+          "driver": "John Wartique / Maxime Andernack",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+39:54.1"
+        },
+        {
+          "pos": 24,
+          "number": "34",
+          "driver": "Eliott Delecour / Sabrina de Castelli",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+42:55.6"
+        },
+        {
+          "pos": 25,
+          "number": "21",
+          "driver": "Yohan Rossel / Arnaud Dunand",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+43:12.0"
+        },
+        {
+          "pos": 26,
+          "number": "37",
+          "driver": "Amaury Molle / Alex Dubois",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+44:02.6"
+        },
+        {
+          "pos": 27,
+          "number": "32",
+          "driver": "Mattéo Chatillon / Maxence Cornuau",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+44:50.5"
+        },
+        {
+          "pos": 28,
+          "number": "42",
+          "driver": "Johannes Keferböck / Ilka Minor",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+46:28.3"
+        },
+        {
+          "pos": 29,
+          "number": "63",
+          "driver": "Błażej Gazda / Michał JURGAŁA",
+          "vehicle": "Renault Clio Rally3",
+          "gap": "+54:22.6"
+        },
+        {
+          "pos": 30,
+          "number": "64",
+          "driver": "Renaud Dolce / Quentin Giroud",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+54:57.5"
+        },
+        {
+          "pos": 31,
+          "number": "38",
+          "driver": "Olivier Burri / Stéphane Fellay",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+55:18.3"
+        },
+        {
+          "pos": 32,
+          "number": "56",
+          "driver": "Albert von Thurn Und Taxis / Jara Hain",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+58:35.1"
+        },
+        {
+          "pos": 33,
+          "number": "51",
+          "driver": "Eric Royère / Alexis Grenier",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:03:13.8"
+        },
+        {
+          "pos": 34,
+          "number": "43",
+          "driver": "Eamonn Boland / M.",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+1:03:15.0"
+        },
+        {
+          "pos": 35,
+          "number": "46",
+          "driver": "Filippo Marchino / Pietro Elia Ometto",
+          "vehicle": "Citroen C3",
+          "gap": "+1:04:07.9"
+        },
+        {
+          "pos": 36,
+          "number": "67",
+          "driver": "Andrea Spataro / Alessia Muffolini",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+1:08:43.4"
+        },
+        {
+          "pos": 37,
+          "number": "72",
+          "driver": "Gilles Michellier / Christophe Richard",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+1:10:13.3"
+        },
+        {
+          "pos": 38,
+          "number": "49",
+          "driver": "Matteo Fontana / Alessandro Arnaboldi",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:15:47.8"
+        },
+        {
+          "pos": 39,
+          "number": "77",
+          "driver": "Giacomo Matteuzzi / Juri Frosini",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+1:23:42.4"
+        },
+        {
+          "pos": 40,
+          "number": "65",
+          "driver": "Paolo Vigo / Matteo Canobbio",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:25:21.6"
+        },
+        {
+          "pos": 41,
+          "number": "50",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:27:24.2"
+        },
+        {
+          "pos": 42,
+          "number": "66",
+          "driver": "Marco Oldani / Pietro D'Agostino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:29:20.8"
+        },
+        {
+          "pos": 43,
+          "number": "59",
+          "driver": "Andreas Franke / Michael Wenzel",
+          "vehicle": "Skoda Fabia Evo",
+          "gap": "+1:30:03.8"
+        },
+        {
+          "pos": 44,
+          "number": "41",
+          "driver": "Stefano Mella / Francesco Pezzoli",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+1:30:47.1"
+        },
+        {
+          "pos": 45,
+          "number": "70",
+          "driver": "Giancarlo de Matteis / Giulia Bico",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:30:54.1"
+        },
+        {
+          "pos": 46,
+          "number": "45",
+          "driver": "Dimitrios Drivakos / Aikaterini Bante",
+          "vehicle": "Hyundai NG i20",
+          "gap": "+1:32:40.8"
+        },
+        {
+          "pos": 47,
+          "number": "61",
+          "driver": "Christophe Berard / Christophe Bernabo",
+          "vehicle": "Alpine A110",
+          "gap": "+1:35:10.8"
+        },
+        {
+          "pos": 48,
+          "number": "71",
+          "driver": "Emanuele Fiore / Martina Musiari",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:35:50.1"
+        },
+        {
+          "pos": 49,
+          "number": "58",
+          "driver": "Paolo Vallivero / Stefano Cirillo",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:36:37.3"
+        },
+        {
+          "pos": 50,
+          "number": "47",
+          "driver": "Henk Vossen / Saskia Bleijenberg",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+1:39:40.6"
+        },
+        {
+          "pos": 51,
+          "number": "40",
+          "driver": "Julien Piguet / Marc Haddad",
+          "vehicle": "Citroen C3",
+          "gap": "+1:40:37.3"
+        },
+        {
+          "pos": 52,
+          "number": "73",
+          "driver": "Jean Paul Palmero / Mattia Pastorino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:55:46.3"
+        },
+        {
+          "pos": 53,
+          "number": "62",
+          "driver": "Marc Dessi / Serena Giuliano",
+          "vehicle": "Alpine A110",
+          "gap": "+2:29:40.7"
+        },
+        {
+          "pos": 54,
+          "number": "74",
+          "driver": "Olivier Morini / Stéphane Marquez",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+2:32:16.5"
+        },
+        {
+          "pos": 55,
+          "number": "60",
+          "driver": "Armand Fumal / Jules Escartefigue",
+          "vehicle": "Alpine A110",
+          "gap": "+2:46:41.7"
+        },
+        {
+          "pos": 56,
+          "number": "76",
+          "driver": "Davide Cagni / Alessio Spezzani",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+2:48:35.3"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/94e-rallye-monte-carlo/classifications",
+        "title": "FIA: 94e Rallye Monte-Carlo — clasificación general tras SS13 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T14:08:10Z"
+      }
+    },
+    {
+      "sessionId": "88e2a9907bfb3778",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "2:11:13.1"
+        },
+        {
+          "pos": 2,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:08.4"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:14.9"
+        },
+        {
+          "pos": 4,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+5:05.2"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+6:05.3"
+        },
+        {
+          "pos": 6,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+7:18.8"
+        },
+        {
+          "pos": 7,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+7:42.1"
+        },
+        {
+          "pos": 8,
+          "number": "28",
+          "driver": "Léo Rossel / Guillaume Mercoiret",
+          "team": "2C Junior Team",
+          "vehicle": "Citroen C3",
+          "gap": "+8:27.5"
+        },
+        {
+          "pos": 9,
+          "number": "26",
+          "driver": "Eric Camilli / Thibault de la Haye",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+9:07.1"
+        },
+        {
+          "pos": 10,
+          "number": "22",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+9:08.8"
+        },
+        {
+          "pos": 11,
+          "number": "13",
+          "driver": "Grégoire Munster / Louis Louka",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+9:17.9"
+        },
+        {
+          "pos": 12,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+10:00.8"
+        },
+        {
+          "pos": 13,
+          "number": "23",
+          "driver": "Roberto Daprà / Luca Guglielmetti",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+10:01.3"
+        },
+        {
+          "pos": 14,
+          "number": "29",
+          "driver": "Pablo Sarrazin / Yannick Roche",
+          "vehicle": "Citroen C3",
+          "gap": "+11:20.9"
+        },
+        {
+          "pos": 15,
+          "number": "35",
+          "driver": "Arthur Pelamourgues / Bastien Pouget",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+12:12.2"
+        },
+        {
+          "pos": 16,
+          "number": "24",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+12:31.0"
+        },
+        {
+          "pos": 17,
+          "number": "31",
+          "driver": "Christopher Ingram / Alexander Kihurani",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+13:37.3"
+        },
+        {
+          "pos": 18,
+          "number": "25",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+14:03.6"
+        },
+        {
+          "pos": 19,
+          "number": "36",
+          "driver": "Jarosław KOŁTUN / Ireneusz Pleskot",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+23:39.6"
+        },
+        {
+          "pos": 20,
+          "number": "5",
+          "driver": "Sami Pajari / Marko Salminen",
+          "team": "Toyota Gazoo Racing WRT2",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+24:44.0"
+        },
+        {
+          "pos": 21,
+          "number": "30",
+          "driver": "Filip Kohn / Ross Whittock",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+24:57.5"
+        },
+        {
+          "pos": 22,
+          "number": "34",
+          "driver": "Eliott Delecour / Sabrina de Castelli",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+27:07.3"
+        },
+        {
+          "pos": 23,
+          "number": "54",
+          "driver": "Cédric Cherain / Jasper Vermeulen",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+28:23.6"
+        },
+        {
+          "pos": 24,
+          "number": "39",
+          "driver": "John Wartique / Maxime Andernack",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+32:05.2"
+        },
+        {
+          "pos": 25,
+          "number": "37",
+          "driver": "Amaury Molle / Alex Dubois",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+35:26.1"
+        },
+        {
+          "pos": 26,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+35:57.8"
+        },
+        {
+          "pos": 27,
+          "number": "42",
+          "driver": "Johannes Keferböck / Ilka Minor",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+36:28.9"
+        },
+        {
+          "pos": 28,
+          "number": "32",
+          "driver": "Mattéo Chatillon / Maxence Cornuau",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+39:06.8"
+        },
+        {
+          "pos": 29,
+          "number": "21",
+          "driver": "Yohan Rossel / Arnaud Dunand",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+42:15.9"
+        },
+        {
+          "pos": 30,
+          "number": "63",
+          "driver": "Błażej Gazda / Michał JURGAŁA",
+          "vehicle": "Renault Clio Rally3",
+          "gap": "+42:43.5"
+        },
+        {
+          "pos": 31,
+          "number": "50",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+44:46.2"
+        },
+        {
+          "pos": 32,
+          "number": "64",
+          "driver": "Renaud Dolce / Quentin Giroud",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+45:24.4"
+        },
+        {
+          "pos": 33,
+          "number": "38",
+          "driver": "Olivier Burri / Stéphane Fellay",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+47:32.7"
+        },
+        {
+          "pos": 34,
+          "number": "43",
+          "driver": "Eamonn Boland / M.",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+48:15.9"
+        },
+        {
+          "pos": 35,
+          "number": "75",
+          "driver": "Richard Desbordes / Steven Desbordes",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+51:50.1"
+        },
+        {
+          "pos": 36,
+          "number": "46",
+          "driver": "Filippo Marchino / Pietro Elia Ometto",
+          "vehicle": "Citroen C3",
+          "gap": "+52:54.4"
+        },
+        {
+          "pos": 37,
+          "number": "56",
+          "driver": "Albert von Thurn Und Taxis / Jara Hain",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+53:36.8"
+        },
+        {
+          "pos": 38,
+          "number": "51",
+          "driver": "Eric Royère / Alexis Grenier",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+54:29.2"
+        },
+        {
+          "pos": 39,
+          "number": "67",
+          "driver": "Andrea Spataro / Alessia Muffolini",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+54:49.0"
+        },
+        {
+          "pos": 40,
+          "number": "52",
+          "driver": "Jean Christophe Guibert / Laurent Gracial",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+56:02.6"
+        },
+        {
+          "pos": 41,
+          "number": "72",
+          "driver": "Gilles Michellier / Christophe Richard",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+57:26.6"
+        },
+        {
+          "pos": 42,
+          "number": "40",
+          "driver": "Julien Piguet / Marc Haddad",
+          "vehicle": "Citroen C3",
+          "gap": "+59:56.5"
+        },
+        {
+          "pos": 43,
+          "number": "57",
+          "driver": "Christophe Barneaud / Marc Barneaud",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+1:00:47.0"
+        },
+        {
+          "pos": 44,
+          "number": "68",
+          "driver": "David Berard / Frédéric Lager",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+1:02:43.5"
+        },
+        {
+          "pos": 45,
+          "number": "71",
+          "driver": "Emanuele Fiore / Martina Musiari",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:04:14.9"
+        },
+        {
+          "pos": 46,
+          "number": "77",
+          "driver": "Giacomo Matteuzzi / Juri Frosini",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+1:06:04.5"
+        },
+        {
+          "pos": 47,
+          "number": "59",
+          "driver": "Andreas Franke / Michael Wenzel",
+          "vehicle": "Skoda Fabia Evo",
+          "gap": "+1:09:46.4"
+        },
+        {
+          "pos": 48,
+          "number": "65",
+          "driver": "Paolo Vigo / Matteo Canobbio",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:10:17.9"
+        },
+        {
+          "pos": 49,
+          "number": "47",
+          "driver": "Henk Vossen / Saskia Bleijenberg",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+1:11:33.2"
+        },
+        {
+          "pos": 50,
+          "number": "45",
+          "driver": "Dimitrios Drivakos / Aikaterini Bante",
+          "vehicle": "Hyundai NG i20",
+          "gap": "+1:11:52.4"
+        },
+        {
+          "pos": 51,
+          "number": "49",
+          "driver": "Matteo Fontana / Alessandro Arnaboldi",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+1:13:09.8"
+        },
+        {
+          "pos": 52,
+          "number": "61",
+          "driver": "Christophe Berard / Christophe Bernabo",
+          "vehicle": "Alpine A110",
+          "gap": "+1:13:56.2"
+        },
+        {
+          "pos": 53,
+          "number": "70",
+          "driver": "Giancarlo de Matteis / Giulia Bico",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:14:47.6"
+        },
+        {
+          "pos": 54,
+          "number": "41",
+          "driver": "Stefano Mella / Francesco Pezzoli",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+1:16:05.4"
+        },
+        {
+          "pos": 55,
+          "number": "66",
+          "driver": "Marco Oldani / Pietro D'Agostino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:17:43.3"
+        },
+        {
+          "pos": 56,
+          "number": "58",
+          "driver": "Paolo Vallivero / Stefano Cirillo",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:19:01.7"
+        },
+        {
+          "pos": 57,
+          "number": "60",
+          "driver": "Armand Fumal / Jules Escartefigue",
+          "vehicle": "Alpine A110",
+          "gap": "+1:24:38.5"
+        },
+        {
+          "pos": 58,
+          "number": "73",
+          "driver": "Jean Paul Palmero / Mattia Pastorino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+1:29:36.7"
+        },
+        {
+          "pos": 59,
+          "number": "69",
+          "driver": "Aldo Calabrini / Alfredo Tarquinio",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+1:49:36.3"
+        },
+        {
+          "pos": 60,
+          "number": "76",
+          "driver": "Davide Cagni / Alessio Spezzani",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+1:58:48.3"
+        },
+        {
+          "pos": 61,
+          "number": "62",
+          "driver": "Marc Dessi / Serena Giuliano",
+          "vehicle": "Alpine A110",
+          "gap": "+2:02:10.2"
+        },
+        {
+          "pos": 62,
+          "number": "74",
+          "driver": "Olivier Morini / Stéphane Marquez",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+2:07:14.8"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/94e-rallye-monte-carlo/classifications",
+        "title": "FIA: 94e Rallye Monte-Carlo — clasificación general tras SS9 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T14:08:10Z"
+      }
+    },
+    {
+      "sessionId": "4e18a516b1305822",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "43:10.3"
+        },
+        {
+          "pos": 2,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+44.2s"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:08.6"
+        },
+        {
+          "pos": 4,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+1:25.9"
+        },
+        {
+          "pos": 5,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+1:34.5"
+        },
+        {
+          "pos": 6,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+1:44.8"
+        },
+        {
+          "pos": 7,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+2:24.0"
+        },
+        {
+          "pos": 8,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+2:55.2"
+        },
+        {
+          "pos": 9,
+          "number": "26",
+          "driver": "Eric Camilli / Thibault de la Haye",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+3:31.2"
+        },
+        {
+          "pos": 10,
+          "number": "28",
+          "driver": "Léo Rossel / Guillaume Mercoiret",
+          "team": "2C Junior Team",
+          "vehicle": "Citroen C3",
+          "gap": "+3:46.5"
+        },
+        {
+          "pos": 11,
+          "number": "13",
+          "driver": "Grégoire Munster / Louis Louka",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+3:49.1"
+        },
+        {
+          "pos": 12,
+          "number": "31",
+          "driver": "Christopher Ingram / Alexander Kihurani",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+4:05.6"
+        },
+        {
+          "pos": 13,
+          "number": "22",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+4:13.2"
+        },
+        {
+          "pos": 14,
+          "number": "35",
+          "driver": "Arthur Pelamourgues / Bastien Pouget",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+4:18.5"
+        },
+        {
+          "pos": 15,
+          "number": "54",
+          "driver": "Cédric Cherain / Jasper Vermeulen",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+4:38.3"
+        },
+        {
+          "pos": 16,
+          "number": "24",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+4:38.8"
+        },
+        {
+          "pos": 17,
+          "number": "23",
+          "driver": "Roberto Daprà / Luca Guglielmetti",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+4:44.0"
+        },
+        {
+          "pos": 18,
+          "number": "29",
+          "driver": "Pablo Sarrazin / Yannick Roche",
+          "vehicle": "Citroen C3",
+          "gap": "+4:54.7"
+        },
+        {
+          "pos": 19,
+          "number": "25",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+5:02.2"
+        },
+        {
+          "pos": 20,
+          "number": "27",
+          "driver": "Filip MAREŠ / Radovan Bucha",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+5:11.4"
+        },
+        {
+          "pos": 21,
+          "number": "34",
+          "driver": "Eliott Delecour / Sabrina de Castelli",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+5:16.4"
+        },
+        {
+          "pos": 22,
+          "number": "36",
+          "driver": "Jarosław KOŁTUN / Ireneusz Pleskot",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+6:16.8"
+        },
+        {
+          "pos": 23,
+          "number": "30",
+          "driver": "Filip Kohn / Ross Whittock",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+6:27.2"
+        },
+        {
+          "pos": 24,
+          "number": "50",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+6:59.5"
+        },
+        {
+          "pos": 25,
+          "number": "40",
+          "driver": "Julien Piguet / Marc Haddad",
+          "vehicle": "Citroen C3",
+          "gap": "+7:07.1"
+        },
+        {
+          "pos": 26,
+          "number": "39",
+          "driver": "John Wartique / Maxime Andernack",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+7:13.9"
+        },
+        {
+          "pos": 27,
+          "number": "37",
+          "driver": "Amaury Molle / Alex Dubois",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+7:31.1"
+        },
+        {
+          "pos": 28,
+          "number": "42",
+          "driver": "Johannes Keferböck / Ilka Minor",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+8:01.8"
+        },
+        {
+          "pos": 29,
+          "number": "38",
+          "driver": "Olivier Burri / Stéphane Fellay",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+8:13.4"
+        },
+        {
+          "pos": 30,
+          "number": "63",
+          "driver": "Błażej Gazda / Michał JURGAŁA",
+          "vehicle": "Renault Clio Rally3",
+          "gap": "+8:34.8"
+        },
+        {
+          "pos": 31,
+          "number": "64",
+          "driver": "Renaud Dolce / Quentin Giroud",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+8:53.4"
+        },
+        {
+          "pos": 32,
+          "number": "43",
+          "driver": "Eamonn Boland / M.",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+9:04.3"
+        },
+        {
+          "pos": 33,
+          "number": "67",
+          "driver": "Andrea Spataro / Alessia Muffolini",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+9:15.3"
+        },
+        {
+          "pos": 34,
+          "number": "46",
+          "driver": "Filippo Marchino / Pietro Elia Ometto",
+          "vehicle": "Citroen C3",
+          "gap": "+9:41.9"
+        },
+        {
+          "pos": 35,
+          "number": "75",
+          "driver": "Richard Desbordes / Steven Desbordes",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+9:57.7"
+        },
+        {
+          "pos": 36,
+          "number": "51",
+          "driver": "Eric Royère / Alexis Grenier",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+9:57.8"
+        },
+        {
+          "pos": 37,
+          "number": "71",
+          "driver": "Emanuele Fiore / Martina Musiari",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+10:10.3"
+        },
+        {
+          "pos": 38,
+          "number": "45",
+          "driver": "Dimitrios Drivakos / Aikaterini Bante",
+          "vehicle": "Hyundai NG i20",
+          "gap": "+11:11.2"
+        },
+        {
+          "pos": 39,
+          "number": "65",
+          "driver": "Paolo Vigo / Matteo Canobbio",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+11:24.5"
+        },
+        {
+          "pos": 40,
+          "number": "52",
+          "driver": "Jean Christophe Guibert / Laurent Gracial",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+11:37.2"
+        },
+        {
+          "pos": 41,
+          "number": "72",
+          "driver": "Gilles Michellier / Christophe Richard",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+11:44.8"
+        },
+        {
+          "pos": 42,
+          "number": "68",
+          "driver": "David Berard / Frédéric Lager",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+12:18.8"
+        },
+        {
+          "pos": 43,
+          "number": "77",
+          "driver": "Giacomo Matteuzzi / Juri Frosini",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+12:23.3"
+        },
+        {
+          "pos": 44,
+          "number": "61",
+          "driver": "Christophe Berard / Christophe Bernabo",
+          "vehicle": "Alpine A110",
+          "gap": "+12:57.3"
+        },
+        {
+          "pos": 45,
+          "number": "41",
+          "driver": "Stefano Mella / Francesco Pezzoli",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+13:54.1"
+        },
+        {
+          "pos": 46,
+          "number": "59",
+          "driver": "Andreas Franke / Michael Wenzel",
+          "vehicle": "Skoda Fabia Evo",
+          "gap": "+14:11.3"
+        },
+        {
+          "pos": 47,
+          "number": "73",
+          "driver": "Jean Paul Palmero / Mattia Pastorino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+16:01.7"
+        },
+        {
+          "pos": 48,
+          "number": "56",
+          "driver": "Albert von Thurn Und Taxis / Jara Hain",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+16:12.9"
+        },
+        {
+          "pos": 49,
+          "number": "47",
+          "driver": "Henk Vossen / Saskia Bleijenberg",
+          "vehicle": "Hyundai i20 N",
+          "gap": "+16:15.4"
+        },
+        {
+          "pos": 50,
+          "number": "57",
+          "driver": "Christophe Barneaud / Marc Barneaud",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+17:02.4"
+        },
+        {
+          "pos": 51,
+          "number": "5",
+          "driver": "Sami Pajari / Marko Salminen",
+          "team": "Toyota Gazoo Racing WRT2",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+20:31.9"
+        },
+        {
+          "pos": 52,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+20:36.8"
+        },
+        {
+          "pos": 53,
+          "number": "62",
+          "driver": "Marc Dessi / Serena Giuliano",
+          "vehicle": "Alpine A110",
+          "gap": "+20:50.2"
+        },
+        {
+          "pos": 54,
+          "number": "74",
+          "driver": "Olivier Morini / Stéphane Marquez",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+24:00.2"
+        },
+        {
+          "pos": 55,
+          "number": "32",
+          "driver": "Mattéo Chatillon / Maxence Cornuau",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+24:41.9"
+        },
+        {
+          "pos": 56,
+          "number": "58",
+          "driver": "Paolo Vallivero / Stefano Cirillo",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+26:00.7"
+        },
+        {
+          "pos": 57,
+          "number": "44",
+          "driver": "Luciano Cobbe / Roberto Mometti",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+26:02.1"
+        },
+        {
+          "pos": 58,
+          "number": "49",
+          "driver": "Matteo Fontana / Alessandro Arnaboldi",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+26:47.6"
+        },
+        {
+          "pos": 59,
+          "number": "70",
+          "driver": "Giancarlo de Matteis / Giulia Bico",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+29:13.7"
+        },
+        {
+          "pos": 60,
+          "number": "66",
+          "driver": "Marco Oldani / Pietro D'Agostino",
+          "vehicle": "Lancia Ypsilon",
+          "gap": "+29:14.6"
+        },
+        {
+          "pos": 61,
+          "number": "60",
+          "driver": "Armand Fumal / Jules Escartefigue",
+          "vehicle": "Alpine A110",
+          "gap": "+31:43.8"
+        },
+        {
+          "pos": 62,
+          "number": "76",
+          "driver": "Davide Cagni / Alessio Spezzani",
+          "vehicle": "Renault Clio RS Line",
+          "gap": "+32:30.9"
+        },
+        {
+          "pos": 63,
+          "number": "21",
+          "driver": "Yohan Rossel / Arnaud Dunand",
+          "team": "Lancia Corse HF",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+33:26.6"
+        },
+        {
+          "pos": 64,
+          "number": "69",
+          "driver": "Aldo Calabrini / Alfredo Tarquinio",
+          "vehicle": "Peugeot 208 Rally4",
+          "gap": "+44:56.9"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/94e-rallye-monte-carlo/classifications",
+        "title": "FIA: 94e Rallye Monte-Carlo — clasificación general tras SS3 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T14:08:10Z"
+      }
+    }
+  ]
+}
