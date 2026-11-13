@@ -129,6 +129,12 @@ suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias hor
 próximos 60 días que todavía no tienen cronograma aparecen como evento de día completo "(horarios a confirmar)";
 cuando se publican los horarios, ese evento desaparece y quedan las sesiones.
 
+Además del calendario general hay **uno por categoría** (`data/feeds/{id}.ics`, p. ej. `feeds/f1.ics`, con el nombre
+de la categoría): el enlace está en la página de cada categoría («Suscribirme al calendario de esta categoría») y, para
+las categorías seguidas, en **Exportar**. El pipeline los genera para las categorías habilitadas y borra los de las
+que se deshabilitan o se eliminan. La descripción de cada evento lleva la transmisión y, cuando hay un sitio o canal
+oficial verificado (`shared/src/broadcast.ts`), su enlace.
+
 ### 7. Avisos y tiempos en vivo (Cloudflare Worker, gratis)
 
 `worker/` es un Cloudflare Worker (plan gratuito) que:
