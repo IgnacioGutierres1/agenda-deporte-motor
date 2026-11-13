@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "25a389c143221cf8",
-  "updatedAt": "2026-11-13T14:08:10Z",
+  "updatedAt": "2026-11-13T17:00:49Z",
   "sessions": [
     {
       "sessionId": "819055d399ab50f4",
@@ -844,6 +844,13 @@
           "bestLap": "1:38.241"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 39,
+        "humidity": 46,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/q2/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP Q2",
@@ -976,6 +983,13 @@
           "bestLap": "1:39.284"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 37,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/q1/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP Q1",
@@ -1208,6 +1222,13 @@
           "bestLap": "1:40.327"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 35,
+        "humidity": 54,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP FP2",
@@ -1440,6 +1461,13 @@
           "bestLap": "1:39.734"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 29,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/motogp/pr/classification",
         "title": "MotoGP.com – Resultados HUN MotoGP PR",

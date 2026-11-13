@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "d751318590464704",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T17:00:49Z",
   "sessions": [
     {
       "sessionId": "e4a85d6ab956096f",
@@ -257,6 +257,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 50,
+        "humidity": 56,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto3/rac2/classification",
         "title": "MotoGP.com – Resultados BRA Moto3 RAC2",
@@ -449,6 +456,13 @@
           "bestLap": "1:28.502"
         }
       ],
+      "conditions": {
+        "airC": 31,
+        "trackC": 40,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto3/q2/classification",
         "title": "MotoGP.com – Resultados BRA Moto3 Q2",
@@ -571,6 +585,13 @@
           "bestLap": "1:28.825"
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 40,
+        "humidity": 49,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto3/q1/classification",
         "title": "MotoGP.com – Resultados BRA Moto3 Q1",
@@ -833,6 +854,13 @@
           "bestLap": "1:29.436"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 29,
+        "humidity": 78,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados BRA Moto3 FP2",
@@ -1095,6 +1123,13 @@
           "bestLap": "1:33.157"
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 41,
+        "humidity": 65,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto3/pr/classification",
         "title": "MotoGP.com – Resultados BRA Moto3 PR",
@@ -1357,6 +1392,13 @@
           "bestLap": "1:40.074"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 24,
+        "humidity": 94,
+        "track": "Mojada",
+        "weather": "Lluvia"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados BRA Moto3 FP1",

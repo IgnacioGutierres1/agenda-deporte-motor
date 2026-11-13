@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "235bc8d0b2e81a1f",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T17:00:49Z",
   "sessions": [
     {
       "sessionId": "93d1a9a1b88b4802",
@@ -287,6 +287,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 51,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto2/rac/classification",
         "title": "MotoGP.com – Resultados BRA Moto2 RAC",
@@ -631,6 +638,13 @@
           "bestLap": "1:22.049"
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 34,
+        "humidity": 85,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto2/q1/classification",
         "title": "MotoGP.com – Resultados BRA Moto2 Q1",
@@ -923,6 +937,13 @@
           "bestLap": "1:22.801"
         }
       ],
+      "conditions": {
+        "airC": 27,
+        "trackC": 36,
+        "humidity": 62,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados BRA Moto2 FP2",
@@ -1215,6 +1236,13 @@
           "bestLap": "1:26.516"
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 35,
+        "humidity": 75,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto2/pr/classification",
         "title": "MotoGP.com – Resultados BRA Moto2 PR",
@@ -1507,6 +1535,13 @@
           "bestLap": "1:32.642"
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 35,
+        "humidity": 88,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/bra/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados BRA Moto2 FP1",

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "df4543bfa43090df",
-  "updatedAt": "2026-11-13T14:08:10Z",
+  "updatedAt": "2026-11-13T17:00:49Z",
   "sessions": [
     {
       "sessionId": "44dc2ab6bd806fc4",
@@ -466,6 +466,13 @@
           "bestLap": "1:45.767"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 31,
+        "humidity": 64,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/moto3/q2/classification",
         "title": "MotoGP.com – Resultados SPA Moto3 Q2",
@@ -598,6 +605,13 @@
           "bestLap": "1:47.816"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 31,
+        "humidity": 70,
+        "track": "Mojada",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/moto3/q1/classification",
         "title": "MotoGP.com – Resultados SPA Moto3 Q1",
@@ -870,6 +884,13 @@
           "bestLap": "2:01.460"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 17,
+        "humidity": 92,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados SPA Moto3 FP2",
@@ -1142,6 +1163,13 @@
           "bestLap": "1:46.085"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 24,
+        "humidity": 69,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/moto3/pr/classification",
         "title": "MotoGP.com – Resultados SPA Moto3 PR",
@@ -1414,6 +1442,13 @@
           "bestLap": "1:47.757"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 18,
+        "humidity": 80,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados SPA Moto3 FP1",

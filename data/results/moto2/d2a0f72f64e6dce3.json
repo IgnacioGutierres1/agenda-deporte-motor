@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "d2a0f72f64e6dce3",
-  "updatedAt": "2026-11-13T14:08:10Z",
+  "updatedAt": "2026-11-13T17:00:49Z",
   "sessions": [
     {
       "sessionId": "49c9d496ede19f73",
@@ -944,6 +944,13 @@
           "bestLap": "1:37.479"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 12,
+        "humidity": 63,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados FRA Moto2 FP2",
@@ -1236,6 +1243,13 @@
           "bestLap": "1:36.333"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 35,
+        "humidity": 42,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/moto2/pr/classification",
         "title": "MotoGP.com – Resultados FRA Moto2 PR",
@@ -1527,6 +1541,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 12,
+        "humidity": 56,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados FRA Moto2 FP1",

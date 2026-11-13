@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "945265df3a663b96",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T17:00:49Z",
   "sessions": [
     {
       "sessionId": "738b906749306d76",
@@ -227,6 +227,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 50,
+        "humidity": 42,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/rac/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP RAC",
@@ -691,6 +698,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 49,
+        "humidity": 30,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/spr/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP SPR",
@@ -823,6 +837,13 @@
           "bestLap": "1:45.049"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 40,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/q2/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP Q2",
@@ -955,6 +976,13 @@
           "bestLap": "1:47.092"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 40,
+        "humidity": 62,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/q1/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP Q1",
@@ -1187,6 +1215,13 @@
           "bestLap": "1:48.550"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 34,
+        "humidity": 69,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP FP2",
@@ -1419,6 +1454,13 @@
           "bestLap": "1:48.088"
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 37,
+        "humidity": 50,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/pr/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP PR",
@@ -1651,6 +1693,13 @@
           "bestLap": "1:49.913"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 25,
+        "humidity": 70,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ita/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados ITA MotoGP FP1",
