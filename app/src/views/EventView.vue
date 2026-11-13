@@ -79,6 +79,7 @@
                     </span>
                   </span>
                   <span class="session-flags">
+                    <SessionWeatherMark :item="item" />
                     <span v-if="item.session.source.kind === 'image'" class="badge badge-dim">Imagen</span>
                     <span v-if="item.finished && item.session.hasResults" class="results-dot" title="Con resultados" />
                   </span>
@@ -86,6 +87,7 @@
               </li>
             </ul>
           </div>
+          <EventWeather :event="event" />
           <div class="card source-box">
             <div class="small dim">Fuente del calendario</div>
             <SourceLink :source="event.source" />
@@ -121,9 +123,11 @@ import ContextPanel from '../components/ContextPanel.vue';
 import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import EventResults from '../components/EventResults.vue';
+import EventWeather from '../components/EventWeather.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import SessionSheet from '../components/SessionSheet.vue';
+import SessionWeatherMark from '../components/SessionWeatherMark.vue';
 import SourceLink from '../components/SourceLink.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
@@ -141,7 +145,7 @@ type Tab = 'horarios' | 'contexto' | 'resultados' | 'tabla';
 /** Página de un evento (como la de un partido en FotMob). */
 export default defineComponent({
   name: 'EventView',
-  components: { AppIcon, ContextPanel, CountdownBadge, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
+  components: { AppIcon, ContextPanel, CountdownBadge, DataState, EventResults, EventWeather, FollowButton, SeriesCrest, SessionSheet, SessionWeatherMark, SourceLink, StandingsPanel },
   directives: { tabStrip },
   data() {
     return { selected: null as GridItem | null };
