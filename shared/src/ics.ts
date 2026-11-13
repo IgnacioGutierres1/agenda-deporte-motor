@@ -8,7 +8,11 @@
  * Eventos sin cronograma todavía (solo se conocen las fechas): un evento de día completo con
  * DTSTART;VALUE=DATE / DTEND;VALUE=DATE (fin exclusivo, RFC 5545 §3.6.1), con el mismo formato de SUMMARY y
  * "(horarios a confirmar)". Son los únicos valores sin hora en UTC: una fecha no tiene zona horaria.
+ *
+ * Descripción: "Transmisión: X, Y" y "Fuente: URL" (formato del gem) y, al final, "Dónde verlo:" con un renglón
+ * "Canal: URL" por cada canal que tiene sitio o canal oficial verificado (shared/src/broadcast.ts).
  */
+import { broadcastLinkLines } from './broadcast.ts';
 
 export const ICS_FILENAME = 'carreras_finde.ics';
 const CRLF = '\r\n';
@@ -129,6 +133,15 @@ export function icsBroadcastLine(broadcast: string[], isDefault = false): string
   return `${isDefault ? 'Transmisión habitual' : 'Transmisión'}: ${broadcast.join(', ')}`;
 }
 
+/**
+ * Suma a la descripción los enlaces de los canales con sitio o canal oficial verificado. Van al final, después
+ * de "Fuente:", para no tocar los dos primeros renglones (los que fija el gem).
+ */
+function withBroadcastLinks(description: string, broadcast: string[]): string {
+  const lines = broadcastLinkLines(broadcast);
+  return lines.length ? `${description}\nDónde verlo:\n${lines.join('\n')}` : description;
+}
+
 const isAllDay = (e: IcsEventInput | IcsAllDayEventInput): e is IcsAllDayEventInput => 'allDay' in e && e.allDay === true;
 
 /** Orden: por inicio; un evento de día completo va antes que las sesiones de ese mismo día. */
@@ -149,6 +162,7 @@ export function buildIcs(events: Array<IcsEventInput | IcsAllDayEventInput>, opt
     if (isAllDay(e)) {
       let description = `Horarios a confirmar: la fuente oficial todavía no publicó el cronograma.\n${icsBroadcastLine(e.broadcast, e.broadcastIsDefault)}`;
       if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}`;
+      description = withBroadcastLinks(description, e.broadcast);
       lines.push(
         'BEGIN:VEVENT',
         `UID:${e.id}@agendadeportemotor.local`,
@@ -167,6 +181,7 @@ export function buildIcs(events: Array<IcsEventInput | IcsAllDayEventInput>, opt
     }
     let description = icsBroadcastLine(e.broadcast, e.broadcastIsDefault);
     if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}${e.fromImage ? ' (leído de imagen)' : ''}`;
+    description = withBroadcastLinks(description, e.broadcast);
     lines.push(
       'BEGIN:VEVENT',
       `UID:${e.id}@agendadeportemotor.local`,
