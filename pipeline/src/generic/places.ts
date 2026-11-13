@@ -143,6 +143,11 @@ export function countryEs(country: string, tz?: string): string {
   return c?.es ?? country.trim();
 }
 
+/** Código ISO 3166-1 alfa-2 del país ("Argentina" -> "AR", "Reino Unido" -> "GB"), o null si no se conoce. */
+export function countryCode(country: string): string | null {
+  return findCountry(country)?.codes[0] ?? null;
+}
+
 /** Nombre del país en inglés a partir de un nombre, ISO2 o ISO3 (o el texto original si no se conoce). */
 export function countryName(country: string): string {
   return findCountry(country)?.name ?? country.trim();

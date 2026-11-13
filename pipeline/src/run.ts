@@ -7,9 +7,11 @@
  *   5. Lee las listas oficiales de inscriptos vencidas (data/rosters/**, sin IA; si fallan se conservan).
  *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/stages/**,
  *      data/drivers.json, data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
- *   7. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
+ *   7. Completa las fichas de circuitos nuevos o vencidos en data/circuits.json (si falla, no afecta al resto).
+ *   8. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
- * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-news] [--dry-run]
+ * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-circuits] [--skip-news]
+ *      [--dry-run]
  */
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
@@ -41,6 +43,7 @@ import { collectExistingResults, runResultsForSeries, type AttemptsLog } from '.
 import { runRosters } from './core/rosters.ts';
 import { hasSeasonToken, scheduleWithNextSeason, seriesForSeason } from './core/season.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
+import { runCircuits } from './circuits/index.ts';
 import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
 import { validateSessions } from './validate.ts';
@@ -50,6 +53,7 @@ export interface RunOptions {
   skipResults?: boolean;
   skipNews?: boolean;
   skipRosters?: boolean;
+  skipCircuits?: boolean;
   dryRun?: boolean;
   now?: Date;
   dataDir?: string;
@@ -233,6 +237,19 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     );
   }
 
+  // Fichas de circuitos: independiente del resto; ante cualquier error se conserva data/circuits.json.
+  if (!opts.skipCircuits) {
+    await runCircuits({
+      events: schedule.events,
+      series: published,
+      log: log.child('circuitos'),
+      now,
+      dataDir,
+      configDir: opts.configDir,
+      dryRun: opts.dryRun,
+    });
+  }
+
   // Noticias: independiente del resto; ante cualquier error se conserva data/news.json.
   if (!opts.skipNews) {
     await runNews({
@@ -275,6 +292,7 @@ function parseArgs(argv: string[]): RunOptions {
     else if (arg === '--skip-results') opts.skipResults = true;
     else if (arg === '--skip-news') opts.skipNews = true;
     else if (arg === '--skip-rosters') opts.skipRosters = true;
+    else if (arg === '--skip-circuits') opts.skipCircuits = true;
     else if (arg === '--dry-run') opts.dryRun = true;
   }
   return opts;
