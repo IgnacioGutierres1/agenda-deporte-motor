@@ -49,6 +49,15 @@ const ICONS: Record<string, string[]> = {
   grid: ['M4 4h7v7H4z', 'M13 4h7v7h-7z', 'M4 13h7v7H4z', 'M13 13h7v7h-7z'],
   moon: ['M20 14.5A8 8 0 1 1 9.5 4a6.5 6.5 0 0 0 10.5 10.5z'],
   clock: ['M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z', 'M12 7v5l3 2'],
+  // Rally y rally raid: superficies (asfalto, tierra, nieve, arena, mixto) y recorrido.
+  road: ['M8 21L10.5 3', 'M16 21L13.5 3', 'M12 5v2', 'M12 11v2.5', 'M12 17.5V20'],
+  terrain: ['M2.5 19l6.5-11 4 6.5 2.5-3.5 6 8h-19z'],
+  snow: ['M12 3v18', 'M4.2 7.5l15.6 9', 'M19.8 7.5l-15.6 9', 'M9.5 4.5L12 7l2.5-2.5', 'M9.5 19.5L12 17l2.5 2.5'],
+  dunes: ['M2 19c3-6 6.5-6 9.5 0', 'M8 19c3.5-9 9-9 14 0', 'M19 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z'],
+  layers: ['M12 4l9 4.5-9 4.5-9-4.5L12 4z', 'M3 13l9 4.5 9-4.5'],
+  route: ['M6 20a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', 'M18 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z', 'M8 18h7.5a3 3 0 0 0 0-6h-7a3 3 0 0 1 0-6H16'],
+  expand: ['M15 3h6v6', 'M9 21H3v-6', 'M21 3l-7 7', 'M3 21l7-7'],
+  bolt: ['M13 2L4.5 13.5H11L10 22l8.5-11.5H12L13 2z'],
 };
 
 export default defineComponent({
