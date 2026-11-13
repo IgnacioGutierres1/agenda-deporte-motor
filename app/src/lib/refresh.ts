@@ -2,6 +2,7 @@
  * "Actualizar": vuelve a pedir todos los datos que la app tiene abiertos (sin caché) y busca una
  * versión nueva de la app. Lo usan el menú y Ajustes.
  */
+import { useCircuitInfoStore } from '../stores/circuitInfo.ts';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useResultsStore } from '../stores/results.ts';
@@ -34,6 +35,8 @@ export async function refreshEverything(): Promise<RefreshResult> {
     // Fichas de pilotos ya abiertas (data/drivers/*.json).
     drivers.reloadDetails(),
     teams.status !== 'idle' ? teams.load(true) : Promise.resolve(),
+    // Fichas de circuitos y trazados ya abiertos.
+    useCircuitInfoStore().reloadLoaded(),
   ]);
   return { app, error: schedule.error };
 }
