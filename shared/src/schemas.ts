@@ -22,7 +22,7 @@ export const seriesSchema = z.object({
   id: z.string().regex(/^[a-z0-9]+(-[a-z0-9]+)*$/),
   name: z.string().min(1),
   shortName: z.string().min(1),
-  group: z.enum(['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'argentina', 'otros']),
+  group: z.enum(['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'rally', 'argentina', 'otros']),
   checklistItem: z.number().int().min(1).optional(),
   officialUrls: z.array(z.string().url()),
   strategy: z.enum(['adapter', 'generic']),
@@ -45,6 +45,8 @@ export const eventSchema = z.object({
   dateEnd: isoDate,
   sessionsStatus: z.enum(['published', 'pending']),
   kind: z.enum(['test']).optional(),
+  surface: z.enum(['asfalto', 'tierra', 'nieve', 'arena', 'mixto']).optional(),
+  stageCount: z.number().int().nonnegative().optional(),
   source: sourceSchema,
 });
 
@@ -53,7 +55,7 @@ export const sessionSchema = z
     id: z.string(),
     eventId: z.string(),
     seriesId: z.string(),
-    type: z.enum(['practica', 'clasificacion', 'sprint', 'serie', 'carrera', 'warmup', 'otro']),
+    type: z.enum(['practica', 'clasificacion', 'sprint', 'serie', 'carrera', 'warmup', 'etapa', 'otro']),
     name: z.string(),
     originalName: z.string().optional(),
     startUtc: isoUtc,
@@ -113,7 +115,22 @@ export const eventResultsFileSchema = z.object({
   eventId: z.string(),
   updatedAt: isoUtc,
   sessions: z.array(
-    z.object({ sessionId: z.string(), rows: z.array(resultRowSchema), source: sourceSchema }),
+    z.object({
+      sessionId: z.string(),
+      rows: z.array(resultRowSchema),
+      conditions: z
+        .object({
+          airC: z.number().optional(),
+          trackC: z.number().optional(),
+          humidity: z.number().optional(),
+          track: z.string().optional(),
+          weather: z.string().optional(),
+          windKmh: z.number().optional(),
+          source: sourceSchema.optional(),
+        })
+        .optional(),
+      source: sourceSchema,
+    }),
   ),
 });
 
@@ -197,7 +214,24 @@ const driverSummarySchema = z.object({
     .optional(),
 });
 
+const driverStatsSchema = z.object({
+  seriesId: z.string(),
+  season: z.number().int().optional(),
+  races: z.number().int().nonnegative(),
+  wins: z.number().int().nonnegative(),
+  podiums: z.number().int().nonnegative(),
+  top5: z.number().int().nonnegative(),
+  top10: z.number().int().nonnegative(),
+  dnfs: z.number().int().nonnegative(),
+  bestPos: z.number().int().positive().optional(),
+  avgPos: z.number().positive().optional(),
+  poles: z.number().int().nonnegative().optional(),
+  sprintWins: z.number().int().positive().optional(),
+  overall: z.literal(true).optional(),
+});
+
 const driverDetailSchema = driverSummarySchema.extend({
+  stats: z.array(driverStatsSchema).optional(),
   recent: z.array(
     z.object({
       seriesId: z.string(),
@@ -269,6 +303,22 @@ export const teamsFileSchema = z.object({
       drivers: z.array(
         z.object({ id: slugId, name: z.string().min(1), seriesId: z.string(), number: z.string().optional() }),
       ),
+      stats: z
+        .array(
+          z.object({
+            seriesId: z.string(),
+            season: z.number().int().optional(),
+            races: z.number().int().positive(),
+            wins: z.number().int().nonnegative(),
+            podiums: z.number().int().nonnegative(),
+            dnfs: z.number().int().nonnegative(),
+            bestPos: z.number().int().positive().optional(),
+            poles: z.number().int().nonnegative().optional(),
+            sprintWins: z.number().int().positive().optional(),
+            overall: z.literal(true).optional(),
+          }),
+        )
+        .optional(),
     }),
   ),
 });
@@ -293,4 +343,107 @@ export const newsFileSchema = z.object({
         .optional(),
     }),
   ),
+});
+
+const surfaceSchema = z.enum(['asfalto', 'tierra', 'nieve', 'arena', 'mixto']);
+
+/** data/stages/{seriesId}/{eventId}.json */
+export const eventStagesFileSchema = z.object({
+  seriesId: z.string(),
+  eventId: z.string(),
+  updatedAt: isoUtc,
+  surface: surfaceSchema.optional(),
+  surfaceNote: z.string().optional(),
+  competitiveKm: z.number().nonnegative().optional(),
+  totalKm: z.number().nonnegative().optional(),
+  routeMapUrl: z.string().url().optional(),
+  routeMapCredit: z.string().optional(),
+  stages: z.array(
+    z.object({
+      code: z.string().min(1),
+      name: z.string(),
+      kind: z.enum(['shakedown', 'prologo', 'especial', 'superespecial', 'power', 'enlace', 'descanso']),
+      date: isoDate,
+      startUtc: isoUtc.optional(),
+      localStartText: z.string().optional(),
+      distanceKm: z.number().nonnegative().optional(),
+      liaisonKm: z.number().nonnegative().optional(),
+      totalKm: z.number().nonnegative().optional(),
+      surface: surfaceSchema.optional(),
+      terrain: z
+        .array(z.object({ label: z.string().min(1), percent: z.number().optional(), km: z.number().optional() }))
+        .optional(),
+      mapUrl: z.string().url().optional(),
+      note: z.string().optional(),
+      cancelled: z.boolean().optional(),
+      sessionId: z.string().optional(),
+    }),
+  ),
+  source: sourceSchema,
+});
+
+const circuitImageSchema = z.object({
+  url: z.string().url(),
+  width: z.number().int().positive().optional(),
+  height: z.number().int().positive().optional(),
+  credit: z.string(),
+  license: z.string(),
+  page: z.string().url(),
+});
+
+/** data/circuits.json */
+export const circuitsFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  circuits: z.array(
+    z.object({
+      id: slugId,
+      name: z.string().min(1),
+      wikidata: z
+        .string()
+        .regex(/^Q\d+$/)
+        .optional(),
+      lat: z.number().min(-90).max(90).optional(),
+      lon: z.number().min(-180).max(180).optional(),
+      coordsApprox: z.boolean().optional(),
+      city: z.string().optional(),
+      lengthM: z.number().positive().optional(),
+      turns: z.number().int().positive().optional(),
+      opened: z.number().int().optional(),
+      capacity: z.number().int().positive().optional(),
+      elevationM: z.number().optional(),
+      direction: z.string().optional(),
+      lapRecord: z
+        .object({
+          time: z.string().min(1),
+          driver: z.string().optional(),
+          vehicle: z.string().optional(),
+          year: z.number().int().optional(),
+          series: z.string().optional(),
+        })
+        .optional(),
+      summary: z.string().optional(),
+      summaryLang: z.string().optional(),
+      website: z.string().url().optional(),
+      wikipediaUrl: z.string().url().optional(),
+      photo: circuitImageSchema.optional(),
+      map: circuitImageSchema.optional(),
+      hasTrack: z.boolean().optional(),
+      checkedAt: isoUtc,
+    }),
+  ),
+});
+
+/** data/tracks/{circuitId}.json */
+export const circuitTrackFileSchema = z.object({
+  id: slugId,
+  updatedAt: isoUtc,
+  width: z.number().positive(),
+  height: z.number().positive(),
+  paths: z.array(z.string().min(1)).min(1),
+  secondary: z.array(z.string().min(1)).optional(),
+  metersPerUnit: z.number().positive().optional(),
+  credit: z.string(),
+  license: z.string(),
+  source: sourceSchema,
 });

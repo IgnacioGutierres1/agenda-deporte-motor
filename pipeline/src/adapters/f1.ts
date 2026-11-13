@@ -7,9 +7,11 @@
  * - Resultados: https://www.formula1.com/en/results/{season}/races/{meetingKey}/{slug}/{sesión}
  *   (tabla HTML).
  * - Campeonato: https://www.formula1.com/en/results/{season}/drivers y …/team (tablas HTML).
+ * - Condiciones medidas en pista (aire, asfalto, humedad, lluvia, viento): formula1.com no las publica; se leen
+ *   de OpenF1 después de cada sesión (ver openf1.ts, que explica la elección y lo que se descartó).
  */
 import type { EventResultsFile, Series, SessionResult, StandingsRow, StandingsTable } from '@dm/shared';
-import type { Adapter, AdapterContext, ResultsChunk, ScheduleChunk } from '../core/types.ts';
+import type { Adapter, AdapterContext, ConditionsChunk, ResultsChunk, ScheduleChunk } from '../core/types.ts';
 import {
   buildMeeting,
   calendarSlugs,
@@ -25,6 +27,7 @@ import {
   type FomSession,
   type MeetingBuild,
 } from './fom.ts';
+import { openF1Conditions } from './openf1.ts';
 
 export const F1_BASE = 'https://www.formula1.com';
 /** Tope de páginas por corrida para resultados y campeonato. */
@@ -122,6 +125,15 @@ export function parseF1Standings(html: string, title: string): StandingsTable {
 export const f1Adapter: Adapter = {
   name: 'f1',
 
+  // Hasta este arreglo, el que no largó y el que abandonó en la primera vuelta se publicaban igual ("NC", 0 vueltas):
+  // esas carreras y sprints se releen una vez para saber cuál es cuál (lo usan las estadísticas de la temporada).
+  resultsReread: {
+    before: '2026-12-01T00:00:00Z',
+    matches: (session, published) =>
+      (session.type === 'carrera' || session.type === 'sprint') &&
+      published.rows.some((r) => r.pos === null && r.status === 'NC' && r.laps === 0),
+  },
+
   async schedule(series, ctx): Promise<ScheduleChunk> {
     const calUrl = f1CalendarUrl(ctx.season);
     const html = (await ctx.http.text(calUrl)).body;
@@ -183,6 +195,22 @@ export const f1Adapter: Adapter = {
       files.set(event.id, file);
     }
 
+    // Clima medido en pista de las sesiones recién leídas (OpenF1). Es un agregado: si falla, el resultado se
+    // publica igual y las condiciones se completan en una corrida posterior (core/conditions.ts).
+    const fresh = [...files.values()].flatMap((f) => f.sessions);
+    if (fresh.length > 0) {
+      try {
+        const byId = new Map(req.pendingSessions.map((s) => [s.id, s]));
+        const read = await openF1Conditions(ctx, fresh.flatMap((r) => byId.get(r.sessionId) ?? []));
+        for (const r of fresh) {
+          const conditions = read.conditions.get(r.sessionId);
+          if (conditions) r.conditions = conditions;
+        }
+      } catch (err) {
+        ctx.log.warn(`Condiciones de pista (OpenF1): ${err instanceof Error ? err.message : String(err)}`);
+      }
+    }
+
     const chunk: ResultsChunk = { results: [...files.values()] };
     if (req.standingsStale) {
       const driversUrl = `${F1_BASE}/en/results/${ctx.season}/drivers`;
@@ -197,5 +225,10 @@ export const f1Adapter: Adapter = {
       };
     }
     return chunk;
+  },
+
+  /** Sesiones con resultado guardado y sin condiciones: 1 pedido por año + 1 por fin de semana (ver openf1.ts). */
+  conditions(_series, ctx, req): Promise<ConditionsChunk> {
+    return openF1Conditions(ctx, req.sessions);
   },
 };

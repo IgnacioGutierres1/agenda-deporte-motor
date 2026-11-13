@@ -6,6 +6,7 @@
         <span class="grow">
           <span class="event-card-series">{{ series.shortName || series.name }}</span>
           <span v-if="event" class="event-card-event"> · {{ event.name }}</span>
+          <SurfaceBadge v-if="event?.surface" :surface="event.surface" class="event-card-surface" />
         </span>
         <span v-if="live" class="badge badge-live">En vivo</span>
       </RouterLink>
@@ -16,7 +17,7 @@
         :aria-label="collapsed ? 'Mostrar sesiones' : 'Ocultar sesiones'"
         @click="$emit('toggle')"
       >
-        <span v-if="collapsed" class="small dim">{{ items.length }}</span>
+        <span v-if="collapsed" class="small dim">{{ items.length + stageDays.length }}</span>
         <AppIcon name="chevron" :size="18" class="chev" :class="{ open: !collapsed }" />
       </button>
     </header>
@@ -54,6 +55,28 @@
           </span>
         </button>
       </li>
+      <!-- Rally sin horas de largada: la etapa del día, como renglón de día completo que lleva al recorrido -->
+      <li
+        v-for="row in g.stages"
+        :key="`etapa-${row.date}`"
+        class="session-line stage-day-line"
+        :class="{ next: row.state === 'today', finished: row.state === 'past', cancelled: row.cancelled }"
+      >
+        <RouterLink :to="stagesLink" class="session-line-btn">
+          <span class="session-time" :class="{ 'all-day': !row.time }">
+            <strong v-if="row.time">{{ row.time }}</strong>
+            <template v-else>Todo el día</template>
+          </span>
+          <span class="session-info grow">
+            <span class="session-name">{{ row.title }}</span>
+            <span v-if="row.detail" class="small dim">{{ row.detail }}</span>
+          </span>
+          <span class="session-flags">
+            <span v-if="row.cancelled" class="badge badge-error">Cancelada</span>
+            <AppIcon name="chevron" :size="16" class="dim" />
+          </span>
+        </RouterLink>
+      </li>
       </template>
     </ul>
   </section>
@@ -67,18 +90,27 @@ import type { MotorEvent, Series } from '@dm/shared';
 import AppIcon from './AppIcon.vue';
 import CountdownBadge from './CountdownBadge.vue';
 import SeriesCrest from './SeriesCrest.vue';
+import SurfaceBadge from './SurfaceBadge.vue';
 import { useSettingsStore } from '../stores/settings.ts';
 import type { GridItem } from '../lib/grid.ts';
-import { groupSessionsByDay, isLateNight, type SessionDayGroup } from '../lib/agenda.ts';
+import { groupSessionsByDay, isLateNight, shortDayLabel, type SessionDayGroup } from '../lib/agenda.ts';
+import type { StageDayRow } from '../lib/stages.ts';
+
+/** Un día de la tarjeta: sus sesiones con horario y, en un rally sin horas de largada, la etapa de ese día. */
+interface CardDayGroup extends SessionDayGroup {
+  stages: StageDayRow[];
+}
 
 /** Tarjeta de un evento en la Agenda (como una competencia en FotMob). */
 export default defineComponent({
   name: 'EventCard',
-  components: { AppIcon, CountdownBadge, SeriesCrest },
+  components: { AppIcon, CountdownBadge, SeriesCrest, SurfaceBadge },
   props: {
     series: { type: Object as PropType<Series>, required: true },
     event: { type: Object as PropType<MotorEvent>, default: undefined },
     items: { type: Array as PropType<GridItem[]>, required: true },
+    /** Rally o rally raid sin horas de largada: la etapa de cada día (renglones de día completo). */
+    stageDays: { type: Array as PropType<StageDayRow[]>, default: () => [] },
     live: { type: Boolean, default: false },
     collapsed: { type: Boolean, default: false },
     /** Separar las sesiones por día con subtítulos "Viernes 13" (vista "Finde"). */
@@ -89,8 +121,17 @@ export default defineComponent({
   emits: ['toggle', 'select'],
   computed: {
     ...mapState(useSettingsStore, ['timeZone']),
-    dayGroups(): SessionDayGroup[] {
-      return groupSessionsByDay(this.items, this.timeZone);
+    dayGroups(): CardDayGroup[] {
+      const groups: CardDayGroup[] = groupSessionsByDay(this.items, this.timeZone).map((g) => ({ ...g, stages: [] }));
+      for (const row of this.stageDays) {
+        let group = groups.find((g) => g.date === row.date);
+        if (!group) {
+          group = { date: row.date, label: shortDayLabel(row.date, this.timeZone), items: [], stages: [] };
+          groups.push(group);
+        }
+        group.stages.push(row);
+      }
+      return groups.sort((a, b) => a.date.localeCompare(b.date));
     },
     /** Subtítulos por día en "Finde" o si la tarjeta cruza la medianoche. */
     showDayHeaders(): boolean {
@@ -98,6 +139,10 @@ export default defineComponent({
     },
     eventLink(): string {
       return this.event ? `/evento/${this.event.id}` : `/categoria/${this.series.id}`;
+    },
+    /** Pestaña Tramos / Etapas del evento. */
+    stagesLink(): string {
+      return this.event ? `/evento/${this.event.id}?tab=etapas` : this.eventLink;
     },
   },
   methods: {
@@ -153,6 +198,10 @@ export default defineComponent({
 .event-card-event {
   color: var(--text-dim);
   font-weight: 600;
+}
+
+.event-card-surface {
+  margin-left: 0.4rem;
 }
 
 .collapse-btn {
@@ -263,6 +312,24 @@ export default defineComponent({
 
 .session-line.finished .session-name {
   color: var(--text-dim);
+}
+
+/* Renglón de día completo (etapa de un rally sin hora de largada). */
+a.session-line-btn:hover {
+  text-decoration: none;
+}
+
+.session-time.all-day {
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  font-weight: 700;
+  line-height: 1.2;
+  text-align: center;
+}
+
+.session-line.cancelled .session-name {
+  color: var(--text-dim);
+  text-decoration: line-through;
 }
 
 .session-info {

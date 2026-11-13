@@ -46,6 +46,8 @@
           </ul>
         </section>
 
+        <SeasonStatsCard v-if="team.stats?.length" :stats="team.stats" kind="equipo" />
+
         <UpcomingList :series-ids="seriesIds" />
 
         <section v-if="rosterGroups.length" class="card flush team-roster">
@@ -104,6 +106,7 @@ import DriverAvatar from '../components/DriverAvatar.vue';
 import FollowButton from '../components/FollowButton.vue';
 import NewsList from '../components/NewsList.vue';
 import NotFoundCard from '../components/NotFoundCard.vue';
+import SeasonStatsCard from '../components/SeasonStatsCard.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import UpcomingList from '../components/UpcomingList.vue';
 import { useDriversStore } from '../stores/drivers.ts';
@@ -131,7 +134,7 @@ interface RosterGroupView {
 /** Ficha de un equipo: categorías en las que corre, pilotos, próximas carreras y noticias. */
 export default defineComponent({
   name: 'TeamView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeasonStatsCard, SeriesCrest, UpcomingList },
   data() {
     return {
       /** Categorías del plantel abiertas a mano; null = la predeterminada (solo la primera). */

@@ -28,6 +28,7 @@ import {
   type RosterFile,
   type Series,
   type Session,
+  type SessionType,
   type StandingsFile,
   type StandingsTable,
   type Team,
@@ -35,11 +36,12 @@ import {
   type TeamEntry,
   type TeamsFile,
 } from '@dm/shared';
+import { applyOfficialWins, buildSeasonStats, buildTeamSeasonStats, distinctSessions } from './season-stats.ts';
 import { readJson } from './store.ts';
 
 /** Resultados recientes que se guardan por piloto. */
 export const RECENT_RESULTS = 6;
-const RACE_TYPES = new Set(['carrera', 'sprint']);
+const RACE_TYPES: ReadonlySet<SessionType> = new Set<SessionType>(['carrera', 'sprint']);
 
 interface Building extends DriverDetail {
   /** Calidad de la variante del nombre que se está mostrando. */
@@ -52,6 +54,8 @@ export interface IndexInput {
   standings: StandingsFile[];
   results: EventResultsFile[];
   sessions: Session[];
+  /** Eventos del cronograma: las estadísticas de la temporada los usan para descartar ensayos y exhibiciones. */
+  events?: MotorEvent[];
   /** Listas oficiales de inscriptos (data/rosters). */
   rosters?: RosterFile[];
   generatedAt: string;
@@ -150,9 +154,8 @@ export function buildDrivers(input: IndexInput): DriversFile {
 
   const sessions = new Map(input.sessions.map((s) => [s.id, s]));
   for (const file of input.results) {
-    for (const sr of file.sessions) {
-      const session = sessions.get(sr.sessionId);
-      if (!session || !RACE_TYPES.has(session.type)) continue;
+    // Sin repetidas: una carrera postergada figura con cada horario que tuvo y el mismo resultado.
+    for (const { session, result: sr } of distinctSessions(file, sessions, RACE_TYPES)) {
       for (const row of sr.rows) {
         // Solo pilotos que figuran en algún campeonato o lista de inscriptos (evita fichas sueltas de resultados parciales).
         for (const name of splitDriverNames(row.driver)) {
@@ -178,14 +181,26 @@ export function buildDrivers(input: IndexInput): DriversFile {
     }
   }
 
+  // La temporada en números (reglas en season-stats.ts). Igual que arriba: solo pilotos que ya tienen ficha.
+  const stats = buildSeasonStats(input, (name, seriesId) =>
+    isBrokenDriverName(name) ? null : (drivers.get(driverId(name, seriesId))?.id ?? null),
+  );
+  const standingsSeasons = new Map(input.standings.map((f) => [f.seriesId, f.season]));
+  const statsOf = (d: Building) => applyOfficialWins(stats.get(d.id) ?? [], d.entries, (seriesId) => standingsSeasons.get(seriesId));
+
   const list: DriverDetail[] = [...drivers.values()]
     .filter((d) => d.entries.length > 0 || d.lineups.length > 0)
-    .map(({ quality: _q, lineups, ...d }) => ({
-      ...d,
-      entries: d.entries.sort((a, b) => rank(a.seriesId) - rank(b.seriesId) || a.pos - b.pos),
-      ...(lineups.length ? { lineups: lineups.sort((a, b) => rank(a.seriesId) - rank(b.seriesId)) } : {}),
-      recent: d.recent.sort((a, b) => b.startUtc.localeCompare(a.startUtc)).slice(0, RECENT_RESULTS),
-    }))
+    .map((built) => {
+      const { quality: _q, lineups, ...d } = built;
+      const seasonStats = statsOf(built);
+      return {
+        ...d,
+        entries: d.entries.sort((a, b) => rank(a.seriesId) - rank(b.seriesId) || a.pos - b.pos),
+        ...(lineups.length ? { lineups: lineups.sort((a, b) => rank(a.seriesId) - rank(b.seriesId)) } : {}),
+        recent: d.recent.sort((a, b) => b.startUtc.localeCompare(a.startUtc)).slice(0, RECENT_RESULTS),
+        ...(seasonStats.length ? { stats: seasonStats } : {}),
+      };
+    })
     .sort((a, b) => a.name.localeCompare(b.name, 'es'));
   return { version: 1, generatedAt: input.generatedAt, drivers: list };
 }
@@ -327,6 +342,9 @@ export function buildTeams(input: IndexInput & { drivers: DriversFile }): TeamsF
     }
   }
 
+  // La temporada en números de cada equipo: lo que hicieron sus autos según el equipo que trae cada resultado.
+  const stats = buildTeamSeasonStats(input);
+
   const byNumber = (a: string, b: string) => a.localeCompare(b, 'en', { numeric: true });
   const list: Team[] = [...teams.values()]
     .map(({ quality: _q, ...t }) => ({
@@ -335,6 +353,7 @@ export function buildTeams(input: IndexInput & { drivers: DriversFile }): TeamsF
         .map((e) => ({ ...e, ...(e.numbers ? { numbers: e.numbers.sort(byNumber) } : {}) }))
         .sort((a, b) => rank(a.seriesId) - rank(b.seriesId)),
       drivers: t.drivers.sort((a, b) => rank(a.seriesId) - rank(b.seriesId) || byNumber(a.number ?? '', b.number ?? '') || a.name.localeCompare(b.name, 'es')),
+      ...(stats.has(t.id) ? { stats: stats.get(t.id)! } : {}),
     }))
     .sort((a, b) => a.name.localeCompare(b.name, 'es'));
   return { version: 1, generatedAt: input.generatedAt, teams: list };
@@ -368,7 +387,7 @@ export async function buildIndexFromData(
     const file = await readJson<EventResultsFile>(path.join(dataDir, 'results', e.seriesId, `${e.id}.json`));
     if (file) results.push(file);
   }
-  const input: IndexInput = { series, standings, results, sessions, rosters, generatedAt };
+  const input: IndexInput = { series, standings, results, sessions, events, rosters, generatedAt };
   const drivers = buildDrivers(input);
   return { drivers, teams: buildTeams({ ...input, drivers }) };
 }

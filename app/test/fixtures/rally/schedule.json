@@ -1,0 +1,145 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-12T12:00:00Z",
+  "series": [
+    { "id": "f1", "name": "Fórmula 1", "shortName": "F1", "group": "f1-fia", "checklistItem": 1, "officialUrls": ["https://www.formula1.com/en/racing/2026"], "strategy": "adapter", "adapter": "f1", "origin": "default", "enabled": true, "color": "#e10600" },
+    { "id": "wrc", "name": "Campeonato Mundial de Rally (WRC)", "shortName": "WRC", "group": "rally", "officialUrls": ["https://www.wrc.com/en/calendar"], "strategy": "adapter", "adapter": "wrc", "origin": "default", "enabled": true, "color": "#001e3c" },
+    { "id": "dakar", "name": "Rally Dakar", "shortName": "Dakar", "group": "rally", "officialUrls": ["https://www.dakar.com/es/recorrido-general"], "strategy": "adapter", "adapter": "dakar", "origin": "default", "enabled": true, "color": "#c4390e" },
+    { "id": "tc", "name": "Turismo Carretera", "shortName": "TC", "group": "argentina", "checklistItem": 15, "officialUrls": ["https://www.actc.org.ar/tc/calendario.html"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#1f6feb" },
+    { "id": "tc-pista", "name": "TC Pista", "shortName": "TC Pista", "group": "argentina", "checklistItem": 15, "officialUrls": ["https://www.actc.org.ar/tcp/calendario.html"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#58a6ff" }
+  ],
+  "events": [
+    {
+      "id": "ev-wrc-montecarlo", "seriesId": "wrc", "name": "Rally de Montecarlo", "round": 1, "circuit": "Gap", "country": "Mónaco", "tz": "Europe/Monaco",
+      "dateStart": "2026-01-22", "dateEnd": "2026-01-25", "sessionsStatus": "pending", "surface": "asfalto",
+      "source": { "url": "https://www.wrc.com/en/championship/calendar", "title": "WRC – Calendario 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+    },
+    {
+      "id": "ev-wrc-suecia", "seriesId": "wrc", "name": "Rally de Suecia", "round": 2, "circuit": "Umeå", "country": "Suecia", "tz": "Europe/Stockholm",
+      "dateStart": "2026-02-12", "dateEnd": "2026-02-15", "sessionsStatus": "pending", "surface": "nieve",
+      "source": { "url": "https://www.wrc.com/en/championship/calendar", "title": "WRC – Calendario 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+    },
+    {
+      "id": "ev-wrc-kenia", "seriesId": "wrc", "name": "Rally Safari de Kenia", "round": 3, "circuit": "Naivasha", "country": "Kenia", "tz": "Africa/Nairobi",
+      "dateStart": "2026-03-12", "dateEnd": "2026-03-15", "sessionsStatus": "pending", "surface": "tierra",
+      "source": { "url": "https://www.wrc.com/en/championship/calendar", "title": "WRC – Calendario 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+    },
+    {
+      "id": "ev-wrc-cataluna", "seriesId": "wrc", "name": "Rally de Cataluña", "round": 12, "circuit": "Salou", "country": "España", "tz": "Europe/Madrid",
+      "dateStart": "2026-10-15", "dateEnd": "2026-10-18", "sessionsStatus": "pending", "surface": "mixto",
+      "source": { "url": "https://www.wrc.com/en/championship/calendar", "title": "WRC – Calendario 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+    },
+    {
+      "id": "ev-wrc-japon", "seriesId": "wrc", "name": "Rally de Japón", "round": 13, "circuit": "Toyota", "country": "Japón", "tz": "Asia/Tokyo",
+      "dateStart": "2026-11-12", "dateEnd": "2026-11-15", "sessionsStatus": "published", "surface": "asfalto", "stageCount": 21,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar", "title": "WRC – Calendario 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+    },
+    {
+      "id": "ev-wrc-arabia", "seriesId": "wrc", "name": "Rally de Arabia Saudita", "round": 14, "circuit": "Yeda", "country": "Arabia Saudita", "tz": "Asia/Riyadh",
+      "dateStart": "2026-11-26", "dateEnd": "2026-11-29", "sessionsStatus": "pending", "surface": "tierra",
+      "source": { "url": "https://www.wrc.com/en/championship/calendar", "title": "WRC – Calendario 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" }
+    },
+    {
+      "id": "ev-dakar-2026", "seriesId": "dakar", "name": "Dakar 2026", "circuit": "Arabia Saudita", "country": "Arabia Saudita", "tz": "Asia/Riyadh",
+      "dateStart": "2026-01-03", "dateEnd": "2026-01-17", "sessionsStatus": "pending", "surface": "arena",
+      "source": { "url": "https://www.dakar.com/es/recorrido", "title": "Dakar – Recorrido", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:52:00Z" }
+    },
+    {
+      "id": "ev-dakar-2027", "seriesId": "dakar", "name": "Dakar 2027", "circuit": "Arabia Saudita", "country": "Arabia Saudita", "tz": "Asia/Riyadh",
+      "dateStart": "2027-01-02", "dateEnd": "2027-01-16", "sessionsStatus": "pending", "surface": "arena", "stageCount": 13,
+      "source": { "url": "https://www.dakar.com/es/recorrido", "title": "Dakar – Recorrido", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:52:00Z" }
+    },
+    {
+      "id": "ev-tc-sannicolas", "seriesId": "tc", "name": "Fecha 14 – San Nicolás", "round": 14, "circuit": "San Nicolás", "country": "Argentina", "tz": "America/Argentina/Buenos_Aires",
+      "dateStart": "2026-11-13", "dateEnd": "2026-11-15", "sessionsStatus": "published",
+      "source": { "url": "https://www.actc.org.ar/tc/cronograma-san-nicolas.pdf", "title": "ACTC – Cronograma San Nicolás", "kind": "pdf", "method": "ia", "fetchedAt": "2026-11-12T11:20:00Z" }
+    },
+    {
+      "id": "ev-tcp-sannicolas", "seriesId": "tc-pista", "name": "Fecha 14 – San Nicolás", "round": 14, "circuit": "San Nicolás", "country": "Argentina", "tz": "America/Argentina/Buenos_Aires",
+      "dateStart": "2026-11-13", "dateEnd": "2026-11-15", "sessionsStatus": "pending",
+      "source": { "url": "https://www.actc.org.ar/tcp/calendario.html", "title": "ACTC – Calendario TC Pista", "kind": "html", "method": "ia", "fetchedAt": "2026-11-12T11:20:00Z" }
+    },
+    {
+      "id": "ev-tc-laplata", "seriesId": "tc", "name": "Fecha 1 – La Plata", "round": 1, "circuit": "La Plata", "country": "Argentina", "tz": "America/Argentina/Buenos_Aires",
+      "dateStart": "2027-01-08", "dateEnd": "2027-01-10", "sessionsStatus": "pending",
+      "source": { "url": "https://www.actc.org.ar/tc/calendario.html", "title": "ACTC – Calendario TC", "kind": "html", "method": "ia", "fetchedAt": "2026-11-12T11:20:00Z" }
+    },
+    {
+      "id": "ev-f1-lasvegas", "seriesId": "f1", "name": "Gran Premio de Las Vegas", "round": 22, "circuit": "Las Vegas", "country": "Estados Unidos", "tz": "America/Los_Angeles",
+      "dateStart": "2026-11-19", "dateEnd": "2026-11-21", "sessionsStatus": "published",
+      "source": { "url": "https://www.formula1.com/en/racing/2026/las-vegas", "title": "F1 – Las Vegas 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:58:00Z" }
+    }
+  ],
+  "sessions": [
+    {
+      "id": "7a11000000000001", "eventId": "ev-wrc-japon", "seriesId": "wrc", "type": "practica", "name": "Shakedown",
+      "startUtc": "2026-11-12T00:01:00Z", "endUtc": "2026-11-12T02:31:00Z", "endEstimated": true, "localStartText": "09:01",
+      "broadcast": ["Rally.TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "7a11000000000002", "eventId": "ev-wrc-japon", "seriesId": "wrc", "type": "etapa", "name": "Etapa del jueves: SS1",
+      "startUtc": "2026-11-12T10:05:00Z", "endUtc": "2026-11-12T11:35:00Z", "endEstimated": true, "localStartText": "19:05",
+      "broadcast": ["Rally.TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "7a11000000000003", "eventId": "ev-wrc-japon", "seriesId": "wrc", "type": "etapa", "name": "Etapa del viernes: SS2 a SS8",
+      "startUtc": "2026-11-12T22:33:00Z", "endUtc": "2026-11-13T10:05:00Z", "endEstimated": true, "localStartText": "07:33",
+      "broadcast": ["Rally.TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "7a11000000000004", "eventId": "ev-wrc-japon", "seriesId": "wrc", "type": "etapa", "name": "Etapa del sábado: SS9 a SS17",
+      "startUtc": "2026-11-13T22:05:00Z", "endUtc": "2026-11-14T11:20:00Z", "endEstimated": true, "localStartText": "07:05",
+      "broadcast": ["Rally.TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "7a11000000000005", "eventId": "ev-wrc-japon", "seriesId": "wrc", "type": "etapa", "name": "Etapa del domingo: SS18 a SS20",
+      "startUtc": "2026-11-14T22:39:00Z", "endUtc": "2026-11-15T02:47:00Z", "endEstimated": true, "localStartText": "07:39",
+      "broadcast": ["Rally.TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "7a11000000000006", "eventId": "ev-wrc-japon", "seriesId": "wrc", "type": "carrera", "name": "Power Stage (SS21)",
+      "startUtc": "2026-11-15T05:15:00Z", "endUtc": "2026-11-15T06:45:00Z", "endEstimated": true, "localStartText": "14:15",
+      "broadcast": ["Rally.TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.wrc.com/en/championship/calendar/wrc/rally-japan/itinerary", "title": "WRC – Itinerario Rally de Japón", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:50:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "a1b2c3d4e5f60001", "eventId": "ev-tc-sannicolas", "seriesId": "tc", "type": "practica", "name": "Entrenamiento 1",
+      "startUtc": "2026-11-13T17:00:00Z", "endUtc": "2026-11-13T17:40:00Z", "endEstimated": false, "localStartText": "14:00",
+      "broadcast": ["TV Pública", "Carburando"], "broadcastIsDefault": false,
+      "source": { "url": "https://www.actc.org.ar/tc/cronograma-san-nicolas.pdf", "title": "ACTC – Cronograma San Nicolás", "kind": "pdf", "method": "ia", "fetchedAt": "2026-11-12T11:20:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "a1b2c3d4e5f60002", "eventId": "ev-tc-sannicolas", "seriesId": "tc", "type": "clasificacion", "name": "Clasificación",
+      "startUtc": "2026-11-14T15:00:00Z", "endUtc": "2026-11-14T16:00:00Z", "endEstimated": true, "localStartText": "12:00",
+      "broadcast": ["TV Pública"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.actc.org.ar/tc/cronograma-san-nicolas.pdf", "title": "ACTC – Cronograma San Nicolás", "kind": "pdf", "method": "ia", "fetchedAt": "2026-11-12T11:20:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "a1b2c3d4e5f60003", "eventId": "ev-tc-sannicolas", "seriesId": "tc", "type": "carrera", "name": "Final",
+      "startUtc": "2026-11-15T16:00:00Z", "endUtc": "2026-11-15T17:15:00Z", "endEstimated": true, "localStartText": "13:00",
+      "broadcast": ["TV Pública"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.actc.org.ar/tc/cronograma-san-nicolas.pdf", "title": "ACTC – Cronograma San Nicolás", "kind": "pdf", "method": "ia", "fetchedAt": "2026-11-12T11:20:00Z" },
+      "hasResults": false
+    },
+    {
+      "id": "d1b2c3d4e5f60001", "eventId": "ev-f1-lasvegas", "seriesId": "f1", "type": "carrera", "name": "Carrera",
+      "startUtc": "2026-11-22T04:00:00Z", "endUtc": "2026-11-22T06:00:00Z", "endEstimated": true, "localStartText": "20:00",
+      "broadcast": ["Fox Sports", "F1 TV"], "broadcastIsDefault": true,
+      "source": { "url": "https://www.formula1.com/en/racing/2026/las-vegas", "title": "F1 – Las Vegas 2026", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:58:00Z" },
+      "hasResults": false
+    }
+  ]
+}

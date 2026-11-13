@@ -36,12 +36,12 @@ export function stringifyList(head: Record<string, unknown>, key: string, items:
   return `${prefix}[\n${items.map((i) => JSON.stringify(i)).join(',\n')}\n]}\n`;
 }
 
-/** Índice liviano: cada piloto sin sus últimas carreras. */
+/** Índice liviano: cada piloto sin sus últimas carreras ni los números de la temporada. */
 export function driversIndex(file: DriversFile): DriversIndexFile {
   return {
     version: 1,
     generatedAt: file.generatedAt,
-    drivers: file.drivers.map(({ recent: _r, ...d }): Driver => d),
+    drivers: file.drivers.map(({ recent: _r, stats: _s, ...d }): Driver => d),
   };
 }
 

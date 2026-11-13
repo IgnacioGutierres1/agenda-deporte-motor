@@ -1,0 +1,53 @@
+{
+ "data": {
+  "uuid": "4c811b3f-81cf-45d4-8991-80ac8934f723",
+  "domain": "www.wrc.com",
+  "status": "published",
+  "locale": "en",
+  "footerProjectId": "61ea3cd5-80a5-40ee-a325-3e71319a3ba8",
+  "isDefaultPage": false,
+  "prerenderedPanelLimit": 5,
+  "panels": [
+   {
+    "uuid": "6bbd683b-c4bc-4258-a7ba-adf93a7be371",
+    "panelModule": "rbgemc-rb3/page-tabs-navigation/subpage-tabs-panel",
+    "config": {
+     "tabs": [
+      {
+       "url": "/en/calendar",
+       "label": "WRC 2027"
+      },
+      {
+       "label": "JUNIOR WRC 2027",
+       "url": "/en/calendar/juniorwrc"
+      },
+      {
+       "label": "SEASON ARCHIVE",
+       "url": "/en/misc/wrc-season-archive"
+      }
+     ]
+    }
+   },
+   {
+    "uuid": "0f11448f-6cd4-4a26-8270-ddf736094c18",
+    "panelModule": "rbgemc-rb3/feed-tabs-panel/feed-tabs-panel",
+    "config": {
+     "caption": "Grid",
+     "tabs": [
+      {
+       "id": "upcoming",
+       "label": "Upcoming",
+       "endpoint": "/v3/feed/en-INT?filter[type]=event-profiles&filter[endDate][gte]=0d&filter[relationships.season]=rrn:content:event-seasons:a2afb291-1ee4-4950-bef3-71b3c67597b7:en-INT"
+      }
+     ],
+     "themeClasses": [
+      "light-theme"
+     ],
+     "id": "grid",
+     "contentType": "card"
+    }
+   }
+  ],
+  "isNotFoundPage": false
+ }
+}

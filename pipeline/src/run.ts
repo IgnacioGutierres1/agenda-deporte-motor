@@ -5,19 +5,24 @@
  *   3. Valida, fusiona con la corrida anterior y detecta cambios de horario.
  *   4. Busca resultados de sesiones terminadas y actualiza campeonatos.
  *   5. Lee las listas oficiales de inscriptos vencidas (data/rosters/**, sin IA; si fallan se conservan).
- *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/drivers.json,
- *      data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
- *   7. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
+ *   6. Escribe data/schedule.json, data/status.json, data/results/**, data/standings/**, data/stages/**,
+ *      data/drivers.json, data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
+ *   7. Completa las fichas de circuitos nuevos o vencidos en data/circuits.json (si falla, no afecta al resto).
+ *   8. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
  *
- * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-news] [--dry-run]
+ * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-circuits] [--skip-tracks] [--skip-news]
+ *      [--dry-run]
  */
+import { setDefaultAutoSelectFamilyAttemptTimeout } from 'node:net';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import {
   driversFileSchema,
+  eventStagesFileSchema,
   scheduleFileSchema,
   statusFileSchema,
   teamsFileSchema,
+  type EventStagesFile,
   type RosterFile,
   type ScheduleFile,
   type Series,
@@ -29,7 +34,7 @@ import { genericAdapter, withSeriesSeason } from './generic/index.ts';
 import { loadConfig } from './core/config.ts';
 import { createContext } from './core/context.ts';
 import { normalizeEvent, normalizeSession } from './core/builders.ts';
-import { buildFeed } from './core/feed.ts';
+import { buildFeed, writeSeriesFeeds } from './core/feed.ts';
 import { duplicateCandidates, ignoredPairs } from './core/driver-candidates.ts';
 import { buildIndexFromData } from './core/drivers.ts';
 import { writeDriverFiles } from './core/driver-files.ts';
@@ -40,6 +45,8 @@ import { collectExistingResults, runResultsForSeries, type AttemptsLog } from '.
 import { runRosters } from './core/rosters.ts';
 import { hasSeasonToken, scheduleWithNextSeason, seriesForSeason } from './core/season.ts';
 import { readJson, writeJson, writeText } from './core/store.ts';
+import { runCircuits } from './circuits/index.ts';
+import { createOverpassHttp, runTracks } from './circuits/tracks-run.ts';
 import { runNews } from './news/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
 import { validateSessions } from './validate.ts';
@@ -49,12 +56,17 @@ export interface RunOptions {
   skipResults?: boolean;
   skipNews?: boolean;
   skipRosters?: boolean;
+  skipCircuits?: boolean;
+  skipTracks?: boolean;
   dryRun?: boolean;
   now?: Date;
   dataDir?: string;
   configDir?: string;
   concurrency?: number;
 }
+
+/** Trazados nuevos por corrida (cada consulta a Overpass tarda ~40 s). */
+const TRACKS_PER_RUN = 4;
 
 export function resolveAdapter(series: Series): Adapter {
   if (series.strategy === 'adapter') {
@@ -218,10 +230,48 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     const files = await writeDriverFiles(dataDir, drivers, teams);
     log.info(`Fichas de pilotos: ${files.written} grupos escritos, ${files.unchanged} sin cambios, ${files.removed} borrados`);
     await writeJson(attemptsFile, attempts);
+    // Itinerarios de rally y rally raid (los de series con error se conservan: no se tocan).
+    for (const [seriesId, outcome] of outcomes) {
+      if (outcome.kind !== 'ok') continue;
+      for (const file of outcome.chunk.stages ?? []) {
+        eventStagesFileSchema.parse(file);
+        const target = path.join(dataDir, 'stages', seriesId, `${file.eventId}.json`);
+        // Sin cambios (salvo las fechas de lectura) no se reescribe: el commit de datos queda limpio.
+        if (sameStages(await readJson<EventStagesFile>(target).catch(() => null), file)) continue;
+        await writeJson(target, file);
+      }
+    }
     await writeText(
       path.join(dataDir, 'feeds', 'deporte-motor.ics'),
       buildFeed(published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast }),
     );
+    // Un calendario por categoría habilitada (data/feeds/{seriesId}.ics); borra los de las que ya no están.
+    const feeds = await writeSeriesFeeds(path.join(dataDir, 'feeds'), published, schedule.events, schedule.sessions, now, { broadcast: config.broadcast });
+    log.info(`Calendarios por categoría: ${feeds.written.length} escritos, ${feeds.unchanged.length} sin cambios, ${feeds.removed.length} borrados`);
+  }
+
+  // Fichas de circuitos: independiente del resto; ante cualquier error se conserva data/circuits.json.
+  if (!opts.skipCircuits) {
+    await runCircuits({
+      events: schedule.events,
+      series: published,
+      log: log.child('circuitos'),
+      now,
+      dataDir,
+      configDir: opts.configDir,
+      dryRun: opts.dryRun,
+    });
+  }
+
+  // Trazados (OpenStreetMap): pocos por corrida, porque cada consulta a Overpass tarda ~40 s. Los ya dibujados no se
+  // vuelven a pedir. Ante cualquier error se sigue sin trazados nuevos.
+  if (!opts.skipTracks) {
+    try {
+      const tracks = await runTracks({ http: createOverpassHttp(), log: log.child('trazados'), dataDir, now, limit: TRACKS_PER_RUN, dryRun: opts.dryRun });
+      log.info(`Trazados: ${tracks.written.length} nuevos, ${tracks.without.length} sin trazado, ${tracks.failed.length} con error, ${tracks.pending} pendientes`);
+    } catch (err) {
+      log.warn(`Trazados: ${err instanceof Error ? err.message : String(err)}`);
+    }
   }
 
   // Noticias: independiente del resto; ante cualquier error se conserva data/news.json.
@@ -246,6 +296,13 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
   return { schedule, status };
 }
 
+/** true si dos itinerarios son iguales sin contar cuándo se leyeron (updatedAt y source.fetchedAt). */
+export function sameStages(a: EventStagesFile | null, b: EventStagesFile): boolean {
+  if (!a) return false;
+  const strip = ({ updatedAt: _u, source: { fetchedAt: _f, ...source }, ...rest }: EventStagesFile) => JSON.stringify({ ...rest, source });
+  return strip(a) === strip(b);
+}
+
 function sortStatuses(statuses: SeriesStatus[], series: Series[]): SeriesStatus[] {
   const order = new Map(series.map((s, i) => [s.id, i]));
   return [...statuses].sort((a, b) => (order.get(a.seriesId) ?? 999) - (order.get(b.seriesId) ?? 999));
@@ -266,12 +323,17 @@ function parseArgs(argv: string[]): RunOptions {
     else if (arg === '--skip-results') opts.skipResults = true;
     else if (arg === '--skip-news') opts.skipNews = true;
     else if (arg === '--skip-rosters') opts.skipRosters = true;
+    else if (arg === '--skip-circuits') opts.skipCircuits = true;
+    else if (arg === '--skip-tracks') opts.skipTracks = true;
     else if (arg === '--dry-run') opts.dryRun = true;
   }
   return opts;
 }
 
 if (import.meta.url === pathToFileURL(process.argv[1] ?? '').href) {
+  // Algunos sitios (Overpass) tardan en aceptar la conexión y Node le da 250 ms a cada dirección: sin esto, en una
+  // red sin salida IPv6 se cortan antes de probar la IPv4.
+  setDefaultAutoSelectFamilyAttemptTimeout(2000);
   run(parseArgs(process.argv.slice(2))).catch((err) => {
     console.error(err);
     process.exit(1);

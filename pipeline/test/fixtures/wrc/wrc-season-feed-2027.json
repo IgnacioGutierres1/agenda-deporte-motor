@@ -1,0 +1,369 @@
+{
+ "data": [
+  {
+   "id": "rrn:content:event-profiles:f9fe583d-463c-40b7-abf7-4401faa11b71:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rallye-monte-carlo-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rallye Monte-Carlo 2027",
+    "standfirst": "Round 1 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-01-21T08:00:00+01:00",
+    "endDate": "2027-01-24T20:00:00+01:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Monaco",
+    "city": null,
+    "countryCode": "MC",
+    "countryName": "Monaco",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:128b0c7a-7af6-434d-9900-47fd520a554e:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-sweden-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally Sweden 2027",
+    "standfirst": "Round 2 of the 2027 FIA World Rally Championship season"
+   },
+   "event": {
+    "startDate": "2027-02-18T09:00:00+01:00",
+    "endDate": "2027-02-21T19:45:00+01:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Sweden",
+    "city": null,
+    "countryCode": "SE",
+    "countryName": "Sweden",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:f4fe98d3-ef38-4cd3-bb1f-e72ff2158a93:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-safari-rally-kenya-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Safari Rally Kenya 2027",
+    "standfirst": "Round 3 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-03-18T09:00:00+03:00",
+    "endDate": "2027-03-21T20:00:00+03:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Kenya",
+    "city": null,
+    "countryCode": "KE",
+    "countryName": "Kenya",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:925b58f9-f93b-43f9-963e-759318a581a6:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-croatia-rally-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Croatia Rally 2027",
+    "standfirst": "Round 4 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-04-08T09:00:00+02:00",
+    "endDate": "2027-04-11T20:00:00+02:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Croatia",
+    "city": null,
+    "countryCode": "HR",
+    "countryName": "Croatia",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:08858f60-81a1-4ac8-af8b-f65e3e40e4a7:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-islas-canarias-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally Islas Canarias 2027",
+    "standfirst": "Round 5 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-05-06T09:00:00+02:00",
+    "endDate": "2027-05-09T20:00:00+02:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Spain",
+    "city": null,
+    "countryCode": "ES",
+    "countryName": "Spain",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:f576cbbe-867c-4225-b3bf-8fc2c8773a1b:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-forum8-rally-japan-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC FORUM8 Rally Japan 2027",
+    "standfirst": "Round 6 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-06-03T09:00:00+09:00",
+    "endDate": "2027-06-06T20:00:00+09:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Japan",
+    "city": null,
+    "countryCode": "JP",
+    "countryName": "Japan",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:f8f139f8-82a6-47f8-b338-5c3de10889bd:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-eko-acropolis-rally-greece-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC EKO Acropolis Rally Greece 2027",
+    "standfirst": "Round 7 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-06-24T09:00:00+03:00",
+    "endDate": "2027-06-27T20:00:00+03:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Greece",
+    "city": null,
+    "countryCode": "GR",
+    "countryName": "Greece",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:6053e5af-7a93-4b8f-bfee-40fd36dff988:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-italia-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally d'Italia 2027",
+    "standfirst": "Round 8 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-07-08T09:00:00+02:00",
+    "endDate": "2027-07-11T20:00:00+02:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Italy",
+    "city": null,
+    "countryCode": "IT",
+    "countryName": "Italy",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:7f913fea-be9c-47f9-a6d4-7d5478ecdd25:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-delfi-rally-estonia-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Delfi Rally Estonia 2027",
+    "standfirst": "Round 9 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-07-22T09:00:00+03:00",
+    "endDate": "2027-07-25T20:00:00+02:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Estonia",
+    "city": null,
+    "countryCode": "EE",
+    "countryName": "Estonia",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:f6218dd9-a4c3-4d07-8dc7-9a86c496e07e:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-secto-rally-finland-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Secto Rally Finland 2027",
+    "standfirst": "Round 10 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-07-29T09:00:00+03:00",
+    "endDate": "2027-08-01T20:00:00+03:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Finland",
+    "city": null,
+    "countryCode": "FI",
+    "countryName": "Finland",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:2eaf07d0-8228-4e75-b967-d971506bff2c:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-hankook-rally-us-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Hankook Rally US 2027",
+    "standfirst": "Round 11 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-08-26T09:00:00-05:00",
+    "endDate": "2027-08-29T08:00:00-05:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "United States",
+    "city": null,
+    "countryCode": "US",
+    "countryName": "United States",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:4b14155a-b925-415d-b2fe-030c9d880857:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-scotland-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally Scotland 2027",
+    "standfirst": "Round 12 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-09-30T07:00:00+01:00",
+    "endDate": "2027-10-03T18:00:00+01:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "United Kingdom",
+    "city": null,
+    "countryCode": "GB",
+    "countryName": "United Kingdom",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:929e81b4-a744-4c5a-a890-6b81875b97b1:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-del-paraguay-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally del Paraguay 2027",
+    "standfirst": "Round 13 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-10-21T09:00:00-03:00",
+    "endDate": "2027-10-24T20:00:00-03:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Paraguay",
+    "city": null,
+    "countryCode": "PY",
+    "countryName": "Paraguay",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:38dee054-f6e0-45d3-bb56-d964d88d4e9f:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-chile-bio-bio-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally Chile Biobío 2027",
+    "standfirst": "Round 14 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-11-04T09:00:00-03:00",
+    "endDate": "2027-11-07T20:00:00-03:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Chile",
+    "city": null,
+    "countryCode": "CL",
+    "countryName": "Chile",
+    "precision": "country"
+   }
+  },
+  {
+   "id": "rrn:content:event-profiles:4639ecbc-7cd9-4530-bd65-632b477e0c6f:en-INT",
+   "type": "event",
+   "reference": {
+    "uriSlug": "wrc-rally-saudi-arabia-2027",
+    "type": "event"
+   },
+   "content": {
+    "title": "WRC Rally Saudi Arabia 2027",
+    "standfirst": "Round 15 of the 2027 FIA World Rally Championship Season"
+   },
+   "event": {
+    "startDate": "2027-11-25T09:00:00+03:00",
+    "endDate": "2027-11-28T20:00:00+03:00"
+   },
+   "status": "confirmed",
+   "location": {
+    "place": "Saudi Arabia",
+    "city": null,
+    "countryCode": "SA",
+    "countryName": "Saudi Arabia",
+    "precision": "country"
+   }
+  }
+ ],
+ "meta": {
+  "docCount": 15,
+  "requestedPageSize": 30,
+  "hasNext": false
+ }
+}

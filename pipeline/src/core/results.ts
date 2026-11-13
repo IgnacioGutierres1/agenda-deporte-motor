@@ -8,8 +8,10 @@ import {
   type Session,
   type StandingsFile,
 } from '@dm/shared';
+import { fillConditionsForSeries } from './conditions.ts';
 import { readJson, writeJson } from './store.ts';
 import type { Adapter, AdapterContext } from './types.ts';
+import { sessionsToReread } from './reread.ts';
 
 /** Una sesión se considera terminada 30 minutos después de su fin publicado/estimado. */
 const FINISH_GRACE_MS = 30 * 60_000;
@@ -104,7 +106,12 @@ export function mergeEventResults(
   incoming: EventResultsFile,
 ): EventResultsFile {
   const bySession = new Map((existing?.sessions ?? []).map((s) => [s.sessionId, s]));
-  for (const s of incoming.sessions) if (s.rows.length > 0) bySession.set(s.sessionId, s);
+  for (const s of incoming.sessions) {
+    if (s.rows.length === 0) continue;
+    // Una relectura del resultado que llega sin condiciones medidas no pisa las que ya estaban guardadas.
+    const kept = s.conditions ? undefined : bySession.get(s.sessionId)?.conditions;
+    bySession.set(s.sessionId, kept ? { ...s, conditions: kept } : s);
+  }
   return { ...incoming, sessions: [...bySession.values()] };
 }
 
@@ -114,7 +121,11 @@ export interface ResultsPhaseOutput {
   standingsAvailable: boolean;
 }
 
-/** Ejecuta adapter.results para una serie y escribe data/results y data/standings. */
+/**
+ * Ejecuta adapter.results para una serie y escribe data/results y data/standings. Después, si el lector sabe leer
+ * las condiciones medidas en pista, completa las de sesiones que ya tenían resultado (core/conditions.ts): ese paso
+ * no usa ni modifica `attempts` y, si falla, no afecta a los resultados.
+ */
 export async function runResultsForSeries(
   series: Series,
   adapter: Adapter,
@@ -124,6 +135,24 @@ export async function runResultsForSeries(
   attempts: AttemptsLog,
   dataDir: string,
   dryRun: boolean,
+): Promise<ResultsPhaseOutput> {
+  // Sesiones cuyo resultado se leyó en esta corrida: el lector ya intentó sus condiciones, no se repite el pedido.
+  const fresh = new Set<string>();
+  const out = await readResultsForSeries(series, adapter, ctx, events, sessions, attempts, dataDir, dryRun, fresh);
+  await fillConditionsForSeries(series, adapter, ctx, events, sessions, dataDir, dryRun, fresh);
+  return out;
+}
+
+async function readResultsForSeries(
+  series: Series,
+  adapter: Adapter,
+  ctx: AdapterContext,
+  events: MotorEvent[],
+  sessions: Session[],
+  attempts: AttemptsLog,
+  dataDir: string,
+  dryRun: boolean,
+  fresh: Set<string>,
 ): Promise<ResultsPhaseOutput> {
   const standingsFile = path.join(dataDir, 'standings', `${series.id}.json`);
   const existingStandings = await readJson<StandingsFile>(standingsFile, standingsFileSchema);
@@ -141,11 +170,15 @@ export async function runResultsForSeries(
   // Año nuevo sin fechas corridas todavía: se conserva la tabla de la temporada terminada sin buscar otra.
   const waiting = !!existingStandings && existingStandings.season < ctx.season && !seasonStarted(events, ctx.season, ctx.now);
   const stale = !waiting && (upgrade || standingsStale(existingStandings, sessions, events, ctx.now));
-  if (pending.length === 0 && !stale) return out;
+  // Resultados publicados que el lector actual lee mejor (core/reread.ts): van después de los pendientes.
+  const reread = adapter.resultsReread ? await sessionsToReread(dataDir, series.id, events, sessions, adapter.resultsReread) : [];
+  if (reread.length > 0) ctx.log.info(`${reread.length} resultado(s) publicados se vuelven a leer con el lector actualizado`);
+  if (pending.length === 0 && reread.length === 0 && !stale) return out;
 
-  const chunk = await adapter.results(series, ctx, { events, pendingSessions: pending, sessions, standingsStale: stale });
+  const chunk = await adapter.results(series, ctx, { events, pendingSessions: [...pending, ...reread], sessions, standingsStale: stale });
 
   for (const file of chunk.results) {
+    for (const s of file.sessions) fresh.add(s.sessionId);
     const target = path.join(dataDir, 'results', series.id, `${file.eventId}.json`);
     const merged = mergeEventResults(await readJson(target, eventResultsFileSchema), file);
     for (const s of merged.sessions) if (s.rows.length > 0) out.withResults.add(s.sessionId);

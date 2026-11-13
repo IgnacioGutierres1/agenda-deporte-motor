@@ -8,8 +8,11 @@ import type { Session } from '@dm/shared';
 /**
  * Carrera principal de un evento: la última sesión de tipo "carrera" (en los findes con dos carreras, la final;
  * la "Feature Race" de F2/F3). Si el evento no tiene ninguna, la última "sprint". Si tampoco, undefined.
+ * Un rally (sesiones de tipo "etapa") no tiene carrera principal: la Power Stage es su último tramo, y lo que
+ * importa es cuándo larga cada día.
  */
 export function mainRaceOf(sessions: Session[]): Session | undefined {
+  if (sessions.some((s) => s.type === 'etapa')) return undefined;
   const byStart = [...sessions].sort((a, b) => a.startUtc.localeCompare(b.startUtc));
   const last = (type: Session['type']) => byStart.filter((s) => s.type === type).at(-1);
   return last('carrera') ?? last('sprint');

@@ -9,6 +9,7 @@ export type SeriesGroup =
   | 'usa'
   | 'gt-endurance'
   | 'asia'
+  | 'rally'
   | 'argentina'
   | 'otros';
 
@@ -70,6 +71,8 @@ export type SessionType =
   | 'serie'
   | 'carrera'
   | 'warmup'
+  /** Rally y rally raid: bloque de tramos de un día (WRC) o etapa (Dakar). El detalle va en data/stages. */
+  | 'etapa'
   | 'otro';
 
 export interface MotorEvent {
@@ -96,6 +99,13 @@ export interface MotorEvent {
    * Ausente = fecha normal del campeonato. Opcional: los datos viejos no lo traen.
    */
   kind?: EventKind;
+  /** Solo rally y rally raid: superficie predominante de la prueba. */
+  surface?: Surface;
+  /**
+   * Solo rally y rally raid: cantidad de tramos o etapas publicados en data/stages/{seriesId}/{eventId}.json.
+   * Su presencia le avisa a la app que ese archivo existe (pestaña "Etapas").
+   */
+  stageCount?: number;
   source: Source;
 }
 
@@ -150,7 +160,29 @@ export interface ResultRow {
 export interface SessionResult {
   sessionId: string;
   rows: ResultRow[];
+  /** Condiciones medidas por la organización durante la sesión, si la fuente de resultados las publica. */
+  conditions?: SessionConditions;
   source: Source;
+}
+
+/** Condiciones medidas en pista durante una sesión (dato oficial, no pronóstico). */
+export interface SessionConditions {
+  /** Temperatura del aire, °C. */
+  airC?: number;
+  /** Temperatura del asfalto, °C. */
+  trackC?: number;
+  /** Humedad relativa, %. */
+  humidity?: number;
+  /** Estado de la pista en español: "Seca", "Mojada", "Húmeda". */
+  track?: string;
+  /** Estado del cielo en español: "Despejado", "Nublado", "Lluvia". */
+  weather?: string;
+  windKmh?: number;
+  /**
+   * De dónde salen las condiciones cuando NO es la misma fuente que la de los resultados (p. ej. Fórmula 1: los
+   * resultados son de formula1.com y el clima medido en pista se lee de OpenF1). Ausente = `SessionResult.source`.
+   */
+  source?: Source;
 }
 
 /** Contenido de data/results/{seriesId}/{eventId}.json */
@@ -324,4 +356,163 @@ export interface NewsFile {
   version: 1;
   generatedAt: string;
   items: NewsItem[];
+}
+
+// ── Rally y rally raid ──
+
+/** Superficie de un rally o de un tramo. 'mixto' = asfalto y tierra; 'arena' = desierto (rally raid). */
+export type Surface = 'asfalto' | 'tierra' | 'nieve' | 'arena' | 'mixto';
+
+/** Qué es cada renglón del itinerario de un rally. */
+export type StageKind = 'shakedown' | 'prologo' | 'especial' | 'superespecial' | 'power' | 'enlace' | 'descanso';
+
+/** Porción de una etapa por tipo de terreno (Dakar: "Arena 45 %", "Dunas 10 %"…). */
+export interface StageTerrain {
+  /** En español: "Arena", "Dunas", "Tierra", "Piedras", "Asfalto"… */
+  label: string;
+  percent?: number;
+  km?: number;
+}
+
+/** Un tramo cronometrado (WRC) o una etapa (Dakar). */
+export interface RallyStage {
+  /** "SS1", "Shakedown", "Prólogo", "Etapa 3". */
+  code: string;
+  /** Nombre del tramo ("Col de Turini") o recorrido de la etapa ("Loulé > Loulé"). */
+  name: string;
+  kind: StageKind;
+  /** Fecha local YYYY-MM-DD. */
+  date: string;
+  /** Largada del primer auto, ISO UTC, si la fuente la publica. */
+  startUtc?: string;
+  /** Hora local tal como figura en la fuente ("08:03"). */
+  localStartText?: string;
+  /** Kilómetros cronometrados (especial). */
+  distanceKm?: number;
+  /** Kilómetros de enlace. */
+  liaisonKm?: number;
+  /** Total del día (especial + enlace), si la fuente lo da. */
+  totalKm?: number;
+  surface?: Surface;
+  terrain?: StageTerrain[];
+  /** Imagen oficial del mapa del tramo o la etapa (link, no se copia). */
+  mapUrl?: string;
+  /** Descripción corta de la fuente. */
+  note?: string;
+  cancelled?: boolean;
+  /** Sesión de la agenda a la que pertenece (bloque del día o etapa). */
+  sessionId?: string;
+}
+
+/** Contenido de data/stages/{seriesId}/{eventId}.json */
+export interface EventStagesFile {
+  seriesId: string;
+  eventId: string;
+  updatedAt: string;
+  surface?: Surface;
+  /** Aclaración de la superficie: "Asfalto con nieve y hielo". */
+  surfaceNote?: string;
+  /** Kilómetros cronometrados de toda la prueba. */
+  competitiveKm?: number;
+  /** Kilómetros totales (con enlaces). */
+  totalKm?: number;
+  /** Mapa general del recorrido (link a la imagen oficial). */
+  routeMapUrl?: string;
+  /** Crédito del mapa, si hace falta. */
+  routeMapCredit?: string;
+  stages: RallyStage[];
+  source: Source;
+}
+
+// ── Circuitos ──
+
+/** Imagen de Wikimedia Commons (se enlaza, no se copia) con su atribución. */
+export interface CircuitImage {
+  /** URL de la imagen a un ancho razonable para la app (~960 px). */
+  url: string;
+  width?: number;
+  height?: number;
+  /** Autor ("Will Pittenger"). */
+  credit: string;
+  /** Licencia corta ("CC BY-SA 4.0", "Dominio público"). */
+  license: string;
+  /** Página del archivo en Commons (para la atribución). */
+  page: string;
+}
+
+export interface CircuitLapRecord {
+  /** "1:27.097" */
+  time: string;
+  driver?: string;
+  vehicle?: string;
+  year?: number;
+  /** Categoría del récord ("F1", "MotoGP"). */
+  series?: string;
+}
+
+/** Ficha de un circuito del calendario (data/circuits.json), armada con Wikidata/Wikipedia. */
+export interface CircuitInfo {
+  /** Id del circuito en la app: slug de circuitKey(nombre). */
+  id: string;
+  /** Nombre oficial o más conocido, en español si existe. */
+  name: string;
+  /** Id de Wikidata ("Q171424"), si se identificó. */
+  wikidata?: string;
+  lat?: number;
+  lon?: number;
+  /** true si las coordenadas son las de la ciudad (no se identificó el circuito): alcanzan para el clima. */
+  coordsApprox?: boolean;
+  /** Ciudad o localidad. */
+  city?: string;
+  /** Longitud del trazado principal, en metros. */
+  lengthM?: number;
+  turns?: number;
+  /** Año de inauguración. */
+  opened?: number;
+  capacity?: number;
+  /** Altitud, metros sobre el nivel del mar. */
+  elevationM?: number;
+  /** "Horario" o "Antihorario". */
+  direction?: string;
+  lapRecord?: CircuitLapRecord;
+  /** Extracto corto en español (o inglés si no hay), texto plano. */
+  summary?: string;
+  /** Idioma del extracto ('es' | 'en'). */
+  summaryLang?: string;
+  website?: string;
+  wikipediaUrl?: string;
+  photo?: CircuitImage;
+  /** Plano del trazado (imagen de Commons). */
+  map?: CircuitImage;
+  /** true si existe data/tracks/{id}.json con el trazado dibujable (OpenStreetMap). */
+  hasTrack?: boolean;
+  /** ISO UTC de la última consulta (para no volver a consultar en cada corrida). */
+  checkedAt: string;
+}
+
+/** Contenido de data/circuits.json */
+export interface CircuitsFile {
+  version: 1;
+  generatedAt: string;
+  circuits: CircuitInfo[];
+}
+
+/** Contenido de data/tracks/{circuitId}.json: trazado dibujable del circuito (OpenStreetMap). */
+export interface CircuitTrackFile {
+  id: string;
+  updatedAt: string;
+  /** Tamaño del lienzo en unidades del path (norte arriba). */
+  width: number;
+  height: number;
+  /** Paths SVG ("M x y L x y …") de la pista; el primero es el trazado principal. */
+  paths: string[];
+  /** Calle de boxes y variantes secundarias, si se distinguen. */
+  secondary?: string[];
+  /** Metros por unidad del lienzo (para dibujar la escala). */
+  metersPerUnit?: number;
+  /** "© Colaboradores de OpenStreetMap" */
+  credit: string;
+  /** "ODbL" */
+  license: string;
+  source: Source;
 }

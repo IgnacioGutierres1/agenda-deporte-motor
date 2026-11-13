@@ -70,6 +70,18 @@ export default defineConfig(({ command, mode }) => {
               },
             },
             {
+              // Trazados de circuitos (data/tracks/{id}.json): casi no cambian, así que se muestra la copia
+              // guardada y se actualiza de fondo. Caché aparte, para que recorrer la lista de circuitos
+              // (un archivo por circuito) no desplace de la caché general a la agenda y los resultados.
+              urlPattern: ({ url }) => /\/data\/tracks\/[^/]+\.json$/.test(url.pathname),
+              handler: 'StaleWhileRevalidate',
+              options: {
+                cacheName: 'dm-tracks',
+                expiration: { maxEntries: 256, maxAgeSeconds: 60 * 60 * 24 * 90 },
+                cacheableResponse: { statuses: [200] },
+              },
+            },
+            {
               // Datos del pipeline: siempre intenta la red y, sin conexión, usa la última copia.
               urlPattern: ({ url }) => /\/data\/.+\.json$/.test(url.pathname),
               handler: 'NetworkFirst',

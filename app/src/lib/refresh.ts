@@ -2,11 +2,13 @@
  * "Actualizar": vuelve a pedir todos los datos que la app tiene abiertos (sin caché) y busca una
  * versión nueva de la app. Lo usan el menú y Ajustes.
  */
+import { useCircuitInfoStore } from '../stores/circuitInfo.ts';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useResultsStore } from '../stores/results.ts';
 import { useRostersStore } from '../stores/rosters.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
+import { useStagesStore } from '../stores/stages.ts';
 import { useTeamsStore } from '../stores/teams.ts';
 import { checkForAppUpdate, type UpdateCheck } from './appUpdate.ts';
 
@@ -22,18 +24,23 @@ export async function refreshEverything(): Promise<RefreshResult> {
   const drivers = useDriversStore();
   const results = useResultsStore();
   const rosters = useRostersStore();
+  const stages = useStagesStore();
   const teams = useTeamsStore();
   const [app] = await Promise.all([
     checkForAppUpdate(true),
     schedule.load({ force: true }),
     results.reloadLoaded(),
     rosters.reloadLoaded(),
+    // Itinerarios de rally ya abiertos (data/stages/**).
+    stages.reloadLoaded(),
     // Solo lo que ya se abrió (si nunca se abrió, se descarga al entrar).
     news.status !== 'idle' ? news.load(true) : Promise.resolve(),
     drivers.status !== 'idle' ? drivers.load(true) : Promise.resolve(),
     // Fichas de pilotos ya abiertas (data/drivers/*.json).
     drivers.reloadDetails(),
     teams.status !== 'idle' ? teams.load(true) : Promise.resolve(),
+    // Fichas de circuitos y trazados ya abiertos.
+    useCircuitInfoStore().reloadLoaded(),
   ]);
   return { app, error: schedule.error };
 }

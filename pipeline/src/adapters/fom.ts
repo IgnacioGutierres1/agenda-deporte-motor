@@ -379,7 +379,9 @@ export function htmlResultRows(table: HtmlTable): ResultRow[] {
     }
     if (timeText) {
       if (timeText.startsWith('+')) row.gap = timeText;
-      else if (STATUS_RE.test(timeText)) row.status = row.status ?? timeText.toUpperCase();
+      // formula1.com pone "NC" en la posición tanto del que abandonó como del que no largó; cuál de los dos está en
+      // la columna del tiempo ("DNF", "DNS"). Ese dato más preciso reemplaza al "NC" (no a un "DQ").
+      else if (STATUS_RE.test(timeText)) row.status = row.status && row.status !== 'NC' ? row.status : timeText.toUpperCase();
       else row.time = timeText;
     }
     if (iPts >= 0 && r[iPts] && !Number.isNaN(Number(r[iPts]))) row.points = Number(r[iPts]);

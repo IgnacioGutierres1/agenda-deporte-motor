@@ -1,6 +1,6 @@
 {
   "$comment": "Duración estimada en minutos cuando la fuente solo publica la hora de inicio. Clave: seriesId (o 'default') -> tipo de sesión. La app lo muestra como 'fin aprox.'.",
-  "default": { "practica": 60, "clasificacion": 60, "sprint": 45, "serie": 30, "carrera": 120, "warmup": 20, "otro": 60 },
+  "default": { "practica": 60, "clasificacion": 60, "sprint": 45, "serie": 30, "carrera": 120, "warmup": 20, "etapa": 240, "otro": 60 },
   "f1": { "practica": 60, "clasificacion": 60, "sprint": 60, "carrera": 120 },
   "f2": { "practica": 45, "clasificacion": 30, "sprint": 45, "carrera": 60 },
   "f3": { "practica": 45, "clasificacion": 30, "sprint": 45, "carrera": 50 },
@@ -26,6 +26,7 @@
   "super-taikyu": { "practica": 90, "clasificacion": 20, "carrera": 300 },
   "macau-gp": { "practica": 40, "clasificacion": 40, "carrera": 45, "warmup": 20 },
   "supercars": { "practica": 30, "clasificacion": 20, "carrera": 90 },
+  "wrc": { "practica": 180, "etapa": 60, "carrera": 75 },
   "tc": { "practica": 30, "clasificacion": 20, "serie": 25, "carrera": 50 },
   "tc-pista": { "practica": 30, "clasificacion": 20, "serie": 20, "carrera": 40 },
   "tc-pickup": { "practica": 30, "clasificacion": 20, "serie": 20, "carrera": 35 },

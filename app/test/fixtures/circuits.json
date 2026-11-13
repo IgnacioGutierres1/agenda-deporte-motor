@@ -1,0 +1,121 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-12T12:00:00Z",
+  "circuits": [
+    {
+      "id": "lusail",
+      "name": "Circuito Internacional de Losail",
+      "wikidata": "Q174016",
+      "lat": 25.49,
+      "lon": 51.4542,
+      "city": "Lusail",
+      "lengthM": 5419,
+      "turns": 16,
+      "opened": 2004,
+      "capacity": 52000,
+      "elevationM": 12,
+      "direction": "Horario",
+      "lapRecord": {
+        "time": "1:22.384",
+        "driver": "Lando Norris",
+        "vehicle": "McLaren MCL38",
+        "year": 2024,
+        "series": "F1"
+      },
+      "summary": "El Circuito Internacional de Losail es un autódromo situado en las afueras de la ciudad de Lusail, al norte de Doha, Catar. Fue inaugurado en 2004 para recibir al Campeonato Mundial de Motociclismo y desde 2008 su carrera se disputa de noche, con iluminación artificial. La Fórmula 1 corre allí el Gran Premio de Catar desde 2021.",
+      "summaryLang": "es",
+      "website": "https://www.lcsc.qa/",
+      "wikipediaUrl": "https://es.wikipedia.org/wiki/Circuito_Internacional_de_Losail",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9e/WTCC_2016%2C_Qatar.jpg/960px-WTCC_2016%2C_Qatar.jpg",
+        "width": 960,
+        "height": 540,
+        "credit": "Dmitry Racer",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:WTCC_2016,_Qatar.jpg"
+      },
+      "map": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Lusail_International_Circuit_2023.svg/960px-Lusail_International_Circuit_2023.svg.png",
+        "width": 960,
+        "height": 714,
+        "credit": "Will Pittenger, Gpmat",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Lusail_International_Circuit_2023.svg"
+      },
+      "hasTrack": true,
+      "checkedAt": "2026-11-12T12:00:00Z"
+    },
+    {
+      "id": "ricardo-tormo",
+      "name": "Circuito Ricardo Tormo",
+      "wikidata": "Q847593",
+      "lat": 39.4861,
+      "lon": -0.6306,
+      "city": "Cheste",
+      "lengthM": 4005,
+      "turns": 14,
+      "opened": 1999,
+      "capacity": 120000,
+      "direction": "Antihorario",
+      "lapRecord": {
+        "time": "1:28.931",
+        "driver": "Francesco Bagnaia",
+        "vehicle": "Ducati Desmosedici GP23",
+        "year": 2023,
+        "series": "MotoGP"
+      },
+      "summary": "El Circuito de la Comunidad Valenciana Ricardo Tormo es un autódromo ubicado en Cheste, a unos 20 km de Valencia, España. Se inauguró en 1999 y lleva el nombre del piloto valenciano Ricardo Tormo, bicampeón del mundo de 50 cc. Su forma de estadio permite ver casi todo el trazado desde las tribunas.",
+      "summaryLang": "es",
+      "website": "https://www.circuitricardotormo.com/",
+      "wikipediaUrl": "https://es.wikipedia.org/wiki/Circuito_Ricardo_Tormo",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/8c/Circuit_de_la_Comunitat_Valenciana_Ricardo_Tormo_2011_001.jpg",
+        "width": 960,
+        "height": 639,
+        "credit": "Veronidae",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Circuit_de_la_Comunitat_Valenciana_Ricardo_Tormo_2011_001.jpg"
+      },
+      "map": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/a/a2/Valencia_%28Ricardo_Tormo%29_track_map.svg/960px-Valencia_%28Ricardo_Tormo%29_track_map.svg.png",
+        "width": 960,
+        "height": 452,
+        "credit": "Will Pittenger",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Valencia_(Ricardo_Tormo)_track_map.svg"
+      },
+      "checkedAt": "2026-11-12T12:00:00Z"
+    },
+    {
+      "id": "san-nicolas",
+      "name": "Autódromo San Nicolás Ciudad",
+      "lat": -33.3745,
+      "lon": -60.2622,
+      "city": "San Nicolás de los Arroyos",
+      "lengthM": 4000,
+      "opened": 2018,
+      "direction": "Horario",
+      "summary": "San Nicolás Ciudad is a motor racing circuit in San Nicolás de los Arroyos, Buenos Aires Province, Argentina. It opened in 2018 and hosts rounds of the main Argentine touring car championships.",
+      "summaryLang": "en",
+      "wikipediaUrl": "https://en.wikipedia.org/wiki/Aut%C3%B3dromo_San_Nicol%C3%A1s_Ciudad",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/0/00/Esta_foto_no_existe_fixture_dm.jpg",
+        "width": 960,
+        "height": 640,
+        "credit": "Nadie",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Esta_foto_no_existe_fixture_dm.jpg"
+      },
+      "checkedAt": "2026-11-12T12:00:00Z"
+    },
+    {
+      "id": "goiania",
+      "name": "Autódromo Internacional Ayrton Senna",
+      "lat": -16.6869,
+      "lon": -49.2648,
+      "coordsApprox": true,
+      "city": "Goiânia",
+      "checkedAt": "2026-11-12T12:00:00Z"
+    }
+  ]
+}

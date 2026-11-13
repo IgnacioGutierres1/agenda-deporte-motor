@@ -154,7 +154,7 @@ export function matchText(text: string, query: string): TextMatch | null {
 // ---------------------------------------------------------------------------
 
 /** Categorías principales: van antes que el resto en los resultados y las sugerencias. */
-export const MAJOR_SERIES = ['f1', 'motogp', 'tc', 'tc2000', 'wec', 'nascar-cup', 'indycar'];
+export const MAJOR_SERIES = ['f1', 'motogp', 'tc', 'tc2000', 'wec', 'nascar-cup', 'indycar', 'wrc', 'dakar'];
 
 export interface SearchContext {
   /** Categorías seguidas (también las de los pilotos y equipos seguidos). */

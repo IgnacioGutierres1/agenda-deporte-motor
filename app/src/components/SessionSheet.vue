@@ -24,9 +24,11 @@
         <div v-if="changedText" class="changed-note small">{{ changedText }}</div>
       </div>
 
+      <SessionWeather :item="item" :now="now" />
+
       <div>
         <div class="section-title">Transmisión</div>
-        <div>{{ broadcast }}</div>
+        <BroadcastLinks :names="item.session.broadcast" :series-name="item.series.name" />
         <div v-if="item.session.broadcastIsDefault" class="small dim">
           Canal habitual de la categoría en Argentina: el cronograma oficial no lo informa.
         </div>
@@ -80,14 +82,16 @@ import { defineComponent, type PropType } from 'vue';
 import { DateTime } from 'luxon';
 import { formatTime } from '@dm/shared';
 import BottomSheet from './BottomSheet.vue';
+import BroadcastLinks from './BroadcastLinks.vue';
 import AppIcon from './AppIcon.vue';
+import SessionWeather from './SessionWeather.vue';
 import { seriesColor, type GridItem } from '../lib/grid.ts';
 import { KIND_LABELS, METHOD_LABELS, hostOf } from '../lib/sources.ts';
 import { formatDateTime, timeAgo, zoneLabel } from '../lib/format.ts';
 
 export default defineComponent({
   name: 'SessionSheet',
-  components: { BottomSheet, AppIcon },
+  components: { BottomSheet, BroadcastLinks, AppIcon, SessionWeather },
   props: {
     item: { type: Object as PropType<GridItem | null>, default: null },
     timeZone: { type: String, required: true },
@@ -134,10 +138,6 @@ export default defineComponent({
       if (!s?.changedAt) return null;
       const prev = s.previousStartUtc ? ` Antes: ${formatDateTime(s.previousStartUtc, this.timeZone)}.` : '';
       return `Horario modificado ${timeAgo(s.changedAt, this.now)}.${prev}`;
-    },
-    broadcast(): string {
-      const b = this.item?.session.broadcast ?? [];
-      return b.length ? b.join(', ') : 'A confirmar';
     },
     host(): string {
       return this.item ? hostOf(this.item.session.source.url) : '';

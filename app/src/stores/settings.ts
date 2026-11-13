@@ -51,6 +51,7 @@ export const PERSISTED_SETTINGS = [
   'notifyLead',
   'theme',
   'themeChosen',
+  'showWeather',
   'googleClientId',
   'githubRepo',
   'githubToken',
@@ -62,6 +63,8 @@ export const PERSISTED_SETTINGS = [
  * "dark" sin themeChosen no distingue "lo eligió" de "nunca tocó el tema". Quien ya usaba la app la conoce oscura:
  * se le conserva así (no cambia de golpe a claro si el sistema está en claro). "Según el sistema" es el predeterminado
  * solo para instalaciones nuevas. Lo guardado se marca como elegido para no volver a migrarlo.
+ * Clima: lo guardado por versiones anteriores no trae `showWeather`; no hace falta migrarlo, porque al restaurar
+ * solo se aplican los campos guardados y el resto queda con su valor predeterminado (clima activado).
  */
 export function migrateSettings(saved: Record<string, unknown>): Record<string, unknown> {
   if ('themeChosen' in saved || !('theme' in saved)) return saved;
@@ -89,6 +92,11 @@ export const useSettingsStore = defineStore('settings', {
     theme: 'system' as ThemeChoice,
     /** true cuando el usuario eligió el tema a mano (ver migrateSettings). */
     themeChosen: false,
+    /**
+     * Mostrar el clima y la temperatura de pista estimada (Open-Meteo) en eventos, sesiones y circuitos.
+     * Apagado, la app no le pide nada a Open-Meteo.
+     */
+    showWeather: true,
     /** Client ID OAuth de Google; vacío = el de VITE_GOOGLE_CLIENT_ID. */
     googleClientId: '',
     /** "owner/repo"; vacío = VITE_GITHUB_REPO. */
@@ -132,6 +140,9 @@ export const useSettingsStore = defineStore('settings', {
     setTheme(theme: ThemeChoice) {
       this.theme = theme;
       this.themeChosen = true;
+    },
+    setShowWeather(on: boolean) {
+      this.showWeather = on;
     },
     isFollowed(seriesId: string): boolean {
       return this.followedSeries.includes(seriesId);

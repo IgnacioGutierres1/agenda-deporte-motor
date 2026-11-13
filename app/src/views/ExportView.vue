@@ -70,6 +70,27 @@
         <RouterLink to="/ajustes" class="btn btn-block btn-ghost btn-small">Cómo agregarlo en Google Calendar</RouterLink>
       </section>
 
+      <!-- Un calendario por categoría (data/feeds/{seriesId}.ics): acá, los de las categorías seguidas. -->
+      <section class="card flush series-feeds" data-test="series-feeds">
+        <h2 class="card-title">Calendario por categoría</h2>
+        <p class="card-foot small series-feeds-intro">
+          Si no querés todas las categorías, suscribite solo al calendario de las que te interesan.
+          <template v-if="followedFeeds.length">Estas son las que seguís:</template>
+          <template v-else>Todavía no seguís ninguna: tocá ★ en una categoría y aparece acá.</template>
+        </p>
+        <ul v-if="followedFeeds.length" class="list-card inset">
+          <li v-for="s in followedFeeds" :key="s.id" class="list-row">
+            <span class="chip" :style="{ background: seriesColorOf(s) }" />
+            <span class="grow">{{ s.name }}</span>
+            <CalendarSubscribe :series="s" compact />
+          </li>
+        </ul>
+        <p class="card-foot small dim series-feeds-foot">
+          El calendario de cualquier otra categoría está en su página:
+          <RouterLink to="/categorias">Categorías</RouterLink> → la categoría → «Suscribirme al calendario de esta categoría».
+        </p>
+      </section>
+
       <section v-if="gcalLog.length || audit" class="gcal-section">
         <h2 class="section-title">Google Calendar</h2>
         <div v-if="gcalLog.length" class="notice" :class="gcalError ? 'notice-error' : ''">
@@ -135,8 +156,9 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
-import { AR_TZ, ICS_FILENAME, buildIcs, formatTime, type IcsEventInput } from '@dm/shared';
+import { AR_TZ, ICS_FILENAME, buildIcs, formatTime, type IcsEventInput, type Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import CalendarSubscribe from '../components/CalendarSubscribe.vue';
 import DataState from '../components/DataState.vue';
 import PeriodPicker from '../components/PeriodPicker.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
@@ -153,7 +175,7 @@ import { applyFixes, auditCalendarRemote, deleteExtras, uploadEvents } from '../
 
 export default defineComponent({
   name: 'ExportView',
-  components: { AppIcon, DataState, PeriodPicker },
+  components: { AppIcon, CalendarSubscribe, DataState, PeriodPicker },
   data() {
     return {
       icsNote: '',
@@ -167,8 +189,14 @@ export default defineComponent({
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['items', 'days', 'exportItems', 'excludedIds', 'hasData', 'period']),
-    ...mapState(useSettingsStore, ['timeZone', 'effectiveClientId']),
+    ...mapState(useScheduleStore, ['items', 'days', 'exportItems', 'excludedIds', 'hasData', 'period', 'seriesById']),
+    ...mapState(useSettingsStore, ['timeZone', 'effectiveClientId', 'followedSeries']),
+    /** Categorías seguidas que tienen calendario propio (las deshabilitadas no se publican), en el orden en que se siguieron. */
+    followedFeeds(): Series[] {
+      return this.followedSeries
+        .map((id) => this.seriesById.get(id))
+        .filter((s): s is Series => !!s && s.enabled);
+    },
     expected(): ExpectedEvent[] {
       return this.exportItems.map((i) => toExpectedEvent(i));
     },
@@ -193,6 +221,9 @@ export default defineComponent({
     ...mapActions(useScheduleStore, ['setExcluded', 'setAllExcluded']),
     color(item: GridItem): string {
       return seriesColor(item.series);
+    },
+    seriesColorOf(series: Series): string {
+      return seriesColor(series);
     },
     time(iso: string): string {
       return formatTime(iso, this.timeZone);
@@ -353,6 +384,29 @@ export default defineComponent({
 
 .subscribe-card .btn + .btn {
   margin-top: 0.4rem;
+}
+
+.series-feeds .card-title {
+  font-size: 1.05rem;
+}
+
+.series-feeds .series-feeds-intro {
+  margin: 0;
+  padding-top: 0;
+}
+
+.series-feeds .list-card {
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+}
+
+.series-feeds .list-row {
+  padding-right: 0.85rem;
+}
+
+.series-feeds .series-feeds-foot {
+  margin: 0;
+  padding-top: 0.6rem;
 }
 
 .ok-text {

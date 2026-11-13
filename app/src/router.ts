@@ -47,6 +47,12 @@ export const routes: RouteRecordRaw[] = [
     meta: { title: 'Circuito' },
   },
   {
+    path: '/circuitos',
+    name: 'circuitos',
+    component: () => import('./views/CircuitsView.vue'),
+    meta: { title: 'Circuitos' },
+  },
+  {
     path: '/siguiendo',
     name: 'siguiendo',
     component: () => import('./views/FollowingView.vue'),

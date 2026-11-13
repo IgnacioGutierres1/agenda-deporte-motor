@@ -50,6 +50,21 @@
       <p class="small dim">La carga en Google Calendar siempre usa la hora de Argentina.</p>
     </section>
 
+    <!-- Clima -->
+    <section class="card">
+      <h2>Clima</h2>
+      <button type="button" role="switch" class="switch-row" :aria-checked="showWeather" data-test="weather-switch" @click="toggleWeather">
+        <span class="grow">Mostrar clima</span>
+        <span class="switch" :class="{ on: showWeather }" aria-hidden="true" />
+      </button>
+      <p class="small dim">
+        Pronóstico de
+        <a :href="weatherSource.url" target="_blank" rel="noopener noreferrer" class="tap-inline">Open-Meteo.com</a>
+        y temperatura de pista estimada, al abrir un evento, una sesión o un circuito. La app lo pide directo desde este
+        dispositivo y solo envía las coordenadas del circuito: nunca tu ubicación ni tus datos.
+      </p>
+    </section>
+
     <!-- Categorías visibles -->
     <section class="card">
       <h2>Categorías visibles en la agenda</h2>
@@ -312,6 +327,8 @@ import AppIcon from '../components/AppIcon.vue';
 import NotificationsCard from '../components/NotificationsCard.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
+import { useWeatherStore } from '../stores/weather.ts';
+import { WEATHER_SOURCE } from '../lib/weather.ts';
 import { refreshEverything } from '../lib/refresh.ts';
 import { groupSeries, seriesColor, seriesSort } from '../lib/grid.ts';
 import { ZONE_OPTIONS, deviceZone, timeAgo, zoneLabel } from '../lib/format.ts';
@@ -364,11 +381,12 @@ export default defineComponent({
       advancedOpen: false,
       envClientId: import.meta.env.VITE_GOOGLE_CLIENT_ID ?? '',
       envRepo: import.meta.env.VITE_GITHUB_REPO ?? '',
+      weatherSource: WEATHER_SOURCE,
     };
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'generatedAt', 'fetchedAt', 'loading', 'now']),
-    ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef', 'theme']),
+    ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef', 'theme', 'showWeather']),
     ...mapWritableState(useSettingsStore, ['timeZone', 'googleClientId', 'githubRepo', 'githubToken']),
     zoneOptions(): Array<{ value: string; label: string }> {
       const list = [...ZONE_OPTIONS];
@@ -402,7 +420,14 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['load']),
-    ...mapActions(useSettingsStore, ['setSeriesVisible', 'setManyVisible', 'setTheme']),
+    ...mapActions(useSettingsStore, ['setSeriesVisible', 'setManyVisible', 'setTheme', 'setShowWeather']),
+    ...mapActions(useWeatherStore, { clearWeather: 'clear' }),
+    /** Interruptor "Mostrar clima". Al apagarlo se borran los pronósticos guardados en el dispositivo. */
+    toggleWeather() {
+      const on = !this.showWeather;
+      this.setShowWeather(on);
+      if (!on) this.clearWeather();
+    },
     isGroupOpen(group: SeriesGroup): boolean {
       return this.openGroups.includes(group);
     },
@@ -553,6 +578,63 @@ export default defineComponent({
 
 .settings-group .section-title {
   margin-top: 0.9rem;
+}
+
+/* Interruptor (Mostrar clima): toda la fila responde al toque. */
+.switch-row {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  width: 100%;
+  min-height: var(--tap);
+  padding: 0;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  color: var(--text);
+}
+
+.switch {
+  position: relative;
+  flex: none;
+  width: 46px;
+  height: 28px;
+  border-radius: 999px;
+  background: var(--bg-elev-2);
+  box-shadow: inset 0 0 0 1px var(--border);
+  transition: background 0.15s;
+}
+
+.switch::after {
+  content: '';
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--text-dim);
+  transition:
+    transform 0.15s,
+    background 0.15s;
+}
+
+.switch.on {
+  background: var(--accent);
+  box-shadow: none;
+}
+
+.switch.on::after {
+  transform: translateX(18px);
+  background: #fff;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .switch,
+  .switch::after {
+    transition: none;
+  }
 }
 
 .settings-group-head {

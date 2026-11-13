@@ -21,6 +21,8 @@
     "discovery": "tsx pipeline/src/discovery/cli.ts",
     "drivers:candidates": "tsx pipeline/src/drivers-candidates.ts",
     "news": "tsx pipeline/src/news/cli.ts",
+    "circuits": "tsx pipeline/src/circuits/cli.ts",
+    "circuits:tracks": "tsx pipeline/src/circuits/tracks-run.ts",
     "test": "vitest run",
     "test:watch": "vitest",
     "typecheck": "npm run typecheck --workspaces --if-present"

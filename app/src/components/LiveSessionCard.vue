@@ -17,6 +17,13 @@
       <span class="grow small dim context-link-hint">qué se juega, a quién mirar</span>
       <AppIcon name="chevron" :size="14" class="dim" />
     </RouterLink>
+    <!-- Rally: el tramo que se está corriendo ahora, con acceso al recorrido -->
+    <RouterLink v-if="hasItinerary" :to="`/evento/${item.session.eventId}?tab=etapas`" class="context-link stage-live-link">
+      <AppIcon name="route" :size="16" />
+      <span class="context-link-label">{{ stageNow ? `En curso: ${stageNowTitle}` : 'Ver el recorrido' }}</span>
+      <span class="grow small dim context-link-hint">{{ stageNowKm }}</span>
+      <AppIcon name="chevron" :size="14" class="dim" />
+    </RouterLink>
 
     <template v-if="target.load">
       <p v-if="loading && !board" class="small dim live-empty">Conectando con el cronometraje oficial…</p>
@@ -43,12 +50,15 @@
 
 <script lang="ts">
 import { defineComponent, type PropType } from 'vue';
-import type { LiveBoard } from '@dm/shared';
+import { mapActions, mapState } from 'pinia';
+import type { LiveBoard, RallyStage } from '@dm/shared';
 import AppIcon from './AppIcon.vue';
 import LiveBoardTable from './LiveBoardTable.vue';
 import SeriesCrest from './SeriesCrest.vue';
+import { stagesKey, useStagesStore } from '../stores/stages.ts';
 import { liveTargetFor, type LiveTarget } from '../lib/live.ts';
 import type { GridItem } from '../lib/grid.ts';
+import { formatKm, hasStages, liveStage, stageTitle } from '../lib/stages.ts';
 
 /** Una sesión en curso: tabla en vivo si la fuente lo permite, si no link al cronometraje oficial. */
 export default defineComponent({
@@ -68,11 +78,31 @@ export default defineComponent({
     };
   },
   computed: {
+    ...mapState(useStagesStore, { stageFiles: 'files' }),
     target(): LiveTarget {
       return liveTargetFor(this.item.series.id);
     },
+    /** Rally o rally raid con el recorrido publicado. */
+    hasItinerary(): boolean {
+      return hasStages(this.item.event);
+    },
+    /** Tramo en curso según las horas de largada del itinerario (si ya se descargó). */
+    stageNow(): RallyStage | undefined {
+      const ev = this.item.event;
+      const stages = ev ? this.stageFiles[stagesKey(ev.seriesId, ev.id)]?.data?.stages : undefined;
+      return stages ? liveStage(stages, this.now) : undefined;
+    },
+    stageNowTitle(): string {
+      return this.stageNow ? stageTitle(this.stageNow) : '';
+    },
+    stageNowKm(): string {
+      const km = this.stageNow?.distanceKm;
+      return km !== undefined ? formatKm(km) : this.stageNow ? '' : 'tramos y horarios';
+    },
   },
   mounted() {
+    const ev = this.item.event;
+    if (ev && this.hasItinerary) void this.loadStages(ev.seriesId, ev.id);
     if (this.target.load) {
       void this.poll();
       document.addEventListener('visibilitychange', this.onVisibility);
@@ -83,6 +113,7 @@ export default defineComponent({
     document.removeEventListener('visibilitychange', this.onVisibility);
   },
   methods: {
+    ...mapActions(useStagesStore, { loadStages: 'load' }),
     async poll() {
       window.clearTimeout(this.timer);
       const { load, intervalMs } = this.target;
@@ -142,6 +173,21 @@ a.context-link {
 
 a.context-link:hover {
   text-decoration: none;
+}
+
+/* Segundo acceso (tramo en curso de un rally): sin doble borde y con el nombre recortado si no entra. */
+a.context-link + a.context-link {
+  border-top: none;
+}
+
+.stage-live-link .context-link-label {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.stage-live-link .context-link-hint {
+  flex: none;
 }
 
 .live-card {

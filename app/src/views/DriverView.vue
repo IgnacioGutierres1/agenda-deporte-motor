@@ -70,6 +70,9 @@
           </ul>
         </section>
 
+        <!-- Viene solo en la ficha completa: mientras llega no se reserva lugar (la mayoría de los pilotos no tiene). -->
+        <SeasonStatsCard v-if="seasonStats.length" :stats="seasonStats" />
+
         <section v-if="lineups.length" class="card flush">
           <h3 class="card-title">Inscripto en</h3>
           <ul class="list-card inset">
@@ -143,7 +146,7 @@ import { fixMonthAbbr } from '../lib/format.ts';
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import { teamId, type Driver, type DriverDetail, type DriverEntry, type DriverLineup, type Series } from '@dm/shared';
+import { teamId, type Driver, type DriverDetail, type DriverEntry, type DriverLineup, type DriverSeasonStats, type Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
@@ -151,6 +154,7 @@ import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import NewsList from '../components/NewsList.vue';
 import NotFoundCard from '../components/NotFoundCard.vue';
+import SeasonStatsCard from '../components/SeasonStatsCard.vue';
 import UpcomingList from '../components/UpcomingList.vue';
 import { newsForDriver, useNewsStore } from '../stores/news.ts';
 import { useDriversStore } from '../stores/drivers.ts';
@@ -165,7 +169,7 @@ import { useResultsStore } from '../stores/results.ts';
 /** Ficha de un piloto (como la de un jugador en FotMob). */
 export default defineComponent({
   name: 'DriverView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeasonStatsCard, SeriesCrest, UpcomingList },
   computed: {
     ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', details: 'details', detailStatus: 'detailStatus' }),
     ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
@@ -221,6 +225,10 @@ export default defineComponent({
         series: this.seriesById.get(e.seriesId),
         season: standingsSeason(this.schedule, e.seriesId, this.now, this.standings[e.seriesId]?.data?.season),
       }));
+    },
+    /** La temporada en números, por categoría (solo en la ficha completa; el índice no la trae). */
+    seasonStats(): DriverSeasonStats[] {
+      return (this.driver as DriverDetail | undefined)?.stats ?? [];
     },
     lineups(): Array<DriverLineup & { series?: Series }> {
       return (this.driver?.lineups ?? []).map((l) => ({ ...l, series: this.seriesById.get(l.seriesId) }));

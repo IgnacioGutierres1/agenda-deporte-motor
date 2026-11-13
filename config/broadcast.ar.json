@@ -1,5 +1,5 @@
 {
-  "$comment": "Transmisión habitual en Argentina por categoría. Se muestra como 'transmisión habitual' (no confirmada por la fuente). Editar a mano cuando cambien los derechos.",
+  "$comment": "Transmisión habitual en Argentina por categoría. Se muestra como 'transmisión habitual' (no confirmada por la fuente). Editar a mano cuando cambien los derechos. dakar: ESPN figura (Pan Latin America) en la página oficial de difusión en TV de la edición 2026 (dakar.com/es/universo-dakar/lacarrera/difusion-tv); la de 2027 todavía no se publicó.",
   "f1": ["Disney+", "F1 TV Pro"],
   "f2": ["Disney+", "F1 TV Pro"],
   "f3": ["Disney+", "F1 TV Pro"],
@@ -20,7 +20,7 @@
   "dtm": ["YouTube DTM"],
   "nls": ["YouTube NLS"],
   "imsa": ["IMSA TV", "YouTube IMSA"],
-  "wec": ["Disney+", "FIA WEC TV"],
+  "wec": ["Disney+", "FIAWEC+"],
   "elms": ["YouTube ELMS"],
   "alms": ["YouTube Asian Le Mans Series"],
   "super-gt": ["YouTube SUPER GT"],
@@ -29,11 +29,13 @@
   "24h-series": ["YouTube 24H Series"],
   "gt-open": ["YouTube GT Open"],
   "igtc": ["YouTube GT World"],
-  "tc": ["TV Pública", "Motorplay", "Carburando"],
+  "wrc": ["Rally.TV"],
+  "dakar": ["ESPN"],
+  "tc": ["Canal 7 (TV Pública)", "Motorplay", "Carburando"],
   "tc-pista": ["Motorplay", "Carburando"],
   "tc-pickup": ["Motorplay", "Carburando"],
   "tc-mouras": ["Motorplay", "Carburando"],
-  "tn": ["TV Pública", "Campeones"],
-  "tc2000": ["TV Pública", "YouTube TC2000"],
+  "tn": ["Canal 7 (TV Pública)", "Campeones"],
+  "tc2000": ["Canal 7 (TV Pública)", "YouTube TC2000"],
   "turismo-pista": ["Campeones"]
 }

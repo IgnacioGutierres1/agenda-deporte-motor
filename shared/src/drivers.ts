@@ -56,9 +56,48 @@ export interface Driver {
   recent?: DriverResult[];
 }
 
-/** Ficha completa de un piloto: lo del índice más sus últimas carreras. */
+/**
+ * Números de la temporada de un piloto en una categoría, calculados con los resultados publicados
+ * (las reglas están en pipeline/src/core/season-stats.ts).
+ */
+export interface DriverSeasonStats {
+  seriesId: string;
+  season?: number;
+  /**
+   * Carreras con resultado publicado que largó (sesiones tipo carrera y sprint; en F1 y MotoGP solo los Grandes
+   * Premios). No cuentan las que no largó (DNS), las exhibiciones ni las series clasificatorias.
+   */
+  races: number;
+  /** Si la tabla oficial del campeonato publica las victorias y difieren de las calculadas, van las oficiales. */
+  wins: number;
+  podiums: number;
+  top5: number;
+  top10: number;
+  /** Abandonos y carreras que largó sin quedar clasificado. No cuentan las descalificaciones ni las que no largó. */
+  dnfs: number;
+  bestPos?: number;
+  /** Promedio de llegada entre las carreras con posición, con un decimal. */
+  avgPos?: number;
+  /**
+   * Primeros puestos en la clasificación que define la pole (la última ronda si hay Q1/Q2, el mejor tiempo si se
+   * clasifica por grupos; no la del sprint). Ausente si la categoría no tiene clasificaciones con resultado.
+   */
+  poles?: number;
+  /** Sprints ganados, solo donde el sprint no cuenta como carrera en la estadística oficial (F1, MotoGP). */
+  sprintWins?: number;
+  /**
+   * true en categorías con clases (WEC, IMSA, GT World Challenge…): los resultados traen la posición en la general,
+   * no en la clase. `wins`, `podiums`, `top5` y `top10` son entonces de la general (no dicen nada de la clase: la app
+   * no los muestra), `bestPos` es el mejor puesto en la general y no van `avgPos` ni `poles`.
+   */
+  overall?: true;
+}
+
+/** Ficha completa de un piloto: lo del índice más sus últimas carreras y los números de la temporada. */
 export interface DriverDetail extends Driver {
   recent: DriverResult[];
+  /** Una entrada por categoría con carreras disputadas. Solo en la ficha completa. */
+  stats?: DriverSeasonStats[];
 }
 
 /** Una línea de un equipo en una categoría (tabla de equipos y/o lista de inscriptos). */
@@ -81,12 +120,38 @@ export interface TeamDriver {
   number?: string;
 }
 
+/**
+ * Números de la temporada de un equipo en una categoría: lo que hicieron sus autos en cada carrera con resultado
+ * publicado (no la suma de la temporada de sus pilotos, que pueden haber corrido para otro equipo). Mismas reglas
+ * que DriverSeasonStats.
+ */
+export interface TeamSeasonStats {
+  seriesId: string;
+  season?: number;
+  /** Carreras con resultado publicado en las que largó algún auto del equipo. */
+  races: number;
+  /** Carreras ganadas por un auto del equipo. */
+  wins: number;
+  /** Autos en el podio (un 1-2 son dos podios). */
+  podiums: number;
+  /** Abandonos de sus autos. */
+  dnfs: number;
+  bestPos?: number;
+  poles?: number;
+  /** Sprints ganados, solo donde el sprint no cuenta como carrera (F1, MotoGP). */
+  sprintWins?: number;
+  /** Categoría con clases: ver DriverSeasonStats.overall. */
+  overall?: true;
+}
+
 export interface Team {
   /** Id estable a partir del nombre (ver teamId). */
   id: string;
   name: string;
   entries: TeamEntry[];
   drivers: TeamDriver[];
+  /** Una entrada por categoría con carreras disputadas (si los resultados publicados traen el equipo). */
+  stats?: TeamSeasonStats[];
 }
 
 /** Contenido de data/teams.json */

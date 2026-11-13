@@ -14,18 +14,18 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 | **Siguiendo** | Categorías, pilotos y equipos seguidos (se guardan en el dispositivo; las categorías de pilotos y equipos seguidos también van primero en la Agenda y en "Para ti") y recomendaciones "Para vos". Ficha de piloto con país, campeonatos, inscripciones, próximas y últimas carreras. |
 | **Buscar** | Categorías, pilotos, equipos, circuitos, eventos y noticias; sin texto muestra "Te puede interesar". |
 | Evento → **Contexto** | "Ponerme en contexto" (desde el evento, En vivo o la hoja de cada sesión): fecha N de M, qué se juega (tabla con diferencias, fechas que quedan y, en F1, MotoGP, Moto2/3, F2/F3 e IndyCar, quién puede salir campeón), formato y clases, a quién mirar, qué ya pasó en el finde y en la fecha anterior, notas recientes y fuentes. Solo datos oficiales, sin IA. |
-| Equipo / Circuito | Ficha de equipo (categorías, posiciones, autos, pilotos, próximas carreras y notas) y de circuito (todas las categorías que corren ahí). |
+| Equipo / Circuito | Ficha de equipo (categorías, posiciones, autos, pilotos, próximas carreras y notas) y de circuito (trazado dibujado con datos de OpenStreetMap o plano de Wikimedia Commons, ficha técnica, foto, extracto de Wikipedia, cómo llegar y todas las categorías que corren ahí). Lista de todos los circuitos por país en `/circuitos` (desde Categorías, el menú o Buscar). |
 | Menú ☰ | Actualizar datos, Exportar, Auditoría de fuentes y Ajustes (tema oscuro/claro, zona horaria, cuentas). |
 
 Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `standings/*.json`, `results/**`,
-`rosters/*.json` (listas oficiales de inscriptos), `drivers.json` (índice de pilotos armado desde tablas, resultados e inscriptos), `teams.json` (índice de equipos), `news.json` y `feeds/deporte-motor.ics`.
+`rosters/*.json` (listas oficiales de inscriptos), `drivers.json` (índice de pilotos armado desde tablas, resultados e inscriptos), `teams.json` (índice de equipos), `circuits.json` (ficha de cada circuito: coordenadas, datos del trazado, foto y plano, de Wikidata, Wikipedia y Wikimedia Commons), `news.json` y `feeds/deporte-motor.ics`.
 
 ## Estructura
 
 | Carpeta | Contenido |
 |---|---|
 | `shared/` | Tipos, esquemas zod, horas/períodos y generador `.ics` (lo usan app y pipeline). |
-| `config/` | Categorías (`series.default.json` = las 22 del gem; `series.user.json` = altas/bajas desde la app), duraciones estimadas, transmisión habitual, fuentes de descubrimiento, feeds de noticias (`news.json`) y pilotos con variantes del nombre u homónimos (`driver-aliases.json`). |
+| `config/` | Categorías (`series.default.json` = las 22 del gem; `series.user.json` = altas/bajas desde la app), duraciones estimadas, transmisión habitual, fuentes de descubrimiento, feeds de noticias (`news.json`), pilotos con variantes del nombre u homónimos (`driver-aliases.json`) y correcciones manuales de las fichas de circuitos (`circuits.json`: qué elemento de Wikidata es cada circuito, o `null` para no buscarlo). |
 | `pipeline/` | Recolector Node + TypeScript: lectores directos (`src/adapters`), flujo genérico con IA (`src/generic`), resultados, descubrimiento. |
 | `app/` | PWA en Vue 3 (Options API) + Vite. |
 | `data/` | Archivos generados por el pipeline. **No editar a mano.** |
@@ -36,9 +36,11 @@ Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `stand
 npm install
 npm test              # Vitest en shared, pipeline y app
 npm run typecheck
-npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --skip-news --dry-run)
+npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --skip-news --skip-circuits --dry-run)
 npm run discovery     # descubrimiento de competencias nuevas
 npm run news          # solo noticias: lee los feeds RSS/Atom y escribe data/news.json (--dry-run)
+npm run circuits      # fichas de circuitos: completa data/circuits.json sin tope por corrida (--force, --only=monza, --table)
+npm run circuits:tracks  # trazados de los circuitos desde OpenStreetMap: data/tracks/{id}.json (--limit=30 --only=id --force --dry-run)
 npm run drivers:candidates  # posibles pilotos duplicados por variantes del nombre (para config/driver-aliases.json)
 npm run dev           # app en modo desarrollo (sirve data/ en /data/)
 npm run build         # build de producción en app/dist (incluye data/)
@@ -128,6 +130,12 @@ En **Ajustes** está el link `webcal://…/data/feeds/deporte-motor.ics`. Agrega
 suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias horas. Los eventos de los
 próximos 60 días que todavía no tienen cronograma aparecen como evento de día completo "(horarios a confirmar)";
 cuando se publican los horarios, ese evento desaparece y quedan las sesiones.
+
+Además del calendario general hay **uno por categoría** (`data/feeds/{id}.ics`, p. ej. `feeds/f1.ics`, con el nombre
+de la categoría): el enlace está en la página de cada categoría («Suscribirme al calendario de esta categoría») y, para
+las categorías seguidas, en **Exportar**. El pipeline los genera para las categorías habilitadas y borra los de las
+que se deshabilitan o se eliminan. La descripción de cada evento lleva la transmisión y, cuando hay un sitio o canal
+oficial verificado (`shared/src/broadcast.ts`), su enlace.
 
 ### 7. Avisos y tiempos en vivo (Cloudflare Worker, gratis)
 

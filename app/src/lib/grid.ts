@@ -17,6 +17,7 @@ import {
   type Session,
   type StatusFile,
 } from '@dm/shared';
+import { hasStages } from './stages.ts';
 
 export interface GridItem {
   session: Session;
@@ -41,7 +42,7 @@ export interface PendingItem {
   series: Series;
 }
 
-export const GROUP_ORDER: SeriesGroup[] = ['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'argentina', 'otros'];
+export const GROUP_ORDER: SeriesGroup[] = ['f1-fia', 'moto', 'usa', 'gt-endurance', 'asia', 'rally', 'argentina', 'otros'];
 
 export function seriesSort(a: Series, b: Series): number {
   const ga = GROUP_ORDER.indexOf(a.group);
@@ -149,7 +150,10 @@ export interface AuditRow {
   /** La fuente falló en la última corrida y se muestran datos anteriores. */
   stale: boolean;
   sessionCount: number;
+  /** Eventos del período sin cronograma (los rallies con el recorrido publicado no cuentan: ver stageEvents). */
   pendingEvents: MotorEvent[];
+  /** Rally o rally raid del período con el recorrido publicado (tramos o etapas), tenga o no horas de largada. */
+  stageEvents: MotorEvent[];
   /** Eventos del período (con o sin horarios). */
   eventsInPeriod: MotorEvent[];
   /** Próximo evento después del período (para "en receso"). */
@@ -175,14 +179,16 @@ export function buildAuditRows(
       .filter((e) => e.seriesId === series.id)
       .sort((a, b) => a.dateStart.localeCompare(b.dateStart));
     const eventsInPeriod = seriesEvents.filter((e) => eventInPeriod(period, e.dateStart, e.dateEnd, e.tz));
-    const pendingEvents = eventsInPeriod.filter((e) => e.sessionsStatus === 'pending');
+    // Un rally con el recorrido publicado no está "pendiente" aunque el organizador no dé horas de largada (Dakar).
+    const stageEvents = eventsInPeriod.filter((e) => hasStages(e));
+    const pendingEvents = eventsInPeriod.filter((e) => e.sessionsStatus === 'pending' && !hasStages(e));
     const periodEndDate = period.endUtc.slice(0, 10);
     const nextEvent = seriesEvents.find((e) => e.dateEnd >= periodEndDate && !eventsInPeriod.includes(e));
 
     let state: AuditState;
     if (!series.enabled || st?.state === 'disabled') state = 'desactivada';
     else if (st?.state === 'error' && sessionCount === 0 && eventsInPeriod.length === 0) state = 'error';
-    else if (sessionCount > 0) state = 'activa';
+    else if (sessionCount > 0 || stageEvents.length > 0) state = 'activa';
     else if (eventsInPeriod.length > 0) state = 'pendiente';
     else state = 'receso';
 
@@ -192,6 +198,7 @@ export function buildAuditRows(
       stale: st?.state === 'stale' || (st?.state === 'error' && state !== 'error'),
       sessionCount,
       pendingEvents,
+      stageEvents,
       eventsInPeriod,
       nextEvent,
       status: st,

@@ -69,7 +69,14 @@ export function acceptNextSeason(
     };
   }
   const keep = new Set(fresh.map((e) => e.id));
-  return { chunk: { events: fresh, sessions: next.sessions.filter((s) => keep.has(s.eventId)) } };
+  const stages = (next.stages ?? []).filter((f) => keep.has(f.eventId));
+  return {
+    chunk: {
+      events: fresh,
+      sessions: next.sessions.filter((s) => keep.has(s.eventId)),
+      ...(stages.length ? { stages } : {}),
+    },
+  };
 }
 
 /**
@@ -99,5 +106,12 @@ export async function scheduleWithNextSeason(adapter: Adapter, series: Series, c
     const first = chunk.events.reduce((a, b) => (b.dateStart < a.dateStart ? b : a));
     ctx.log.info(`Temporada ${season}: ${chunk.events.length} eventos (desde el ${first.dateStart}); la ${ctx.season} ya terminó`);
   }
-  return { events: [...current.events, ...chunk.events], sessions: [...current.sessions, ...chunk.sessions] };
+  const stages = [...(current.stages ?? []), ...(chunk.stages ?? [])];
+  return {
+    // Se conserva lo demás de la temporada en curso (cronogramas faltantes) y se suman los itinerarios de rally.
+    ...current,
+    events: [...current.events, ...chunk.events],
+    sessions: [...current.sessions, ...chunk.sessions],
+    ...(stages.length ? { stages } : {}),
+  };
 }

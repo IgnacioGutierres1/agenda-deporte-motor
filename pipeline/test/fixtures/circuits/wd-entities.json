@@ -1,0 +1,796 @@
+{
+ "entities": {
+  "Q171417": {
+   "type": "item",
+   "id": "Q171417",
+   "labels": {
+    "fr": {
+     "language": "fr",
+     "value": "Autodromo Nazionale di Monza"
+    },
+    "es": {
+     "language": "es",
+     "value": "Autodromo Nazionale di Monza"
+    },
+    "it": {
+     "language": "it",
+     "value": "autodromo nazionale di Monza"
+    },
+    "de": {
+     "language": "de",
+     "value": "Autodromo Nazionale Monza"
+    },
+    "en": {
+     "language": "en",
+     "value": "Monza Circuit"
+    },
+    "pt": {
+     "language": "pt",
+     "value": "Circuito de Monza"
+    }
+   },
+   "descriptions": {
+    "it": {
+     "language": "it",
+     "value": "circuito automobilistico"
+    },
+    "en": {
+     "language": "en",
+     "value": "motorsport racetrack in Monza, Italy"
+    },
+    "es": {
+     "language": "es",
+     "value": "circuito de carreras de Italia"
+    },
+    "de": {
+     "language": "de",
+     "value": "Motorsport-Rennstrecke in Italien"
+    },
+    "fr": {
+     "language": "fr",
+     "value": "circuit automobile italien"
+    },
+    "pt": {
+     "language": "pt",
+     "value": "Autódromo Italiano"
+    }
+   },
+   "aliases": {
+    "fr": [
+     {
+      "language": "fr",
+      "value": "Autodromo Nazionale Monza"
+     },
+     {
+      "language": "fr",
+      "value": "Circuit de Monza"
+     }
+    ],
+    "es": [
+     {
+      "language": "es",
+      "value": "Autodromo nazionale monza"
+     },
+     {
+      "language": "es",
+      "value": "Circuito de Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autodromo Nacional Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autódromo Nazionale Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autodromo Nacional de Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autódromo Nacional de Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autodromo de Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autódromo de Monza"
+     },
+     {
+      "language": "es",
+      "value": "Autódromo Nacional Monza"
+     }
+    ],
+    "it": [
+     {
+      "language": "it",
+      "value": "Autodromo Nazionale Monza"
+     },
+     {
+      "language": "it",
+      "value": "Autodromo di Monza"
+     },
+     {
+      "language": "it",
+      "value": "Circuito di Monza"
+     },
+     {
+      "language": "it",
+      "value": "Pista di Monza"
+     }
+    ],
+    "pt": [
+     {
+      "language": "pt",
+      "value": "Autodromo Nazionale Monza"
+     },
+     {
+      "language": "pt",
+      "value": "Autódromo Nazionale Monza"
+     },
+     {
+      "language": "pt",
+      "value": "Autódromo de Monza"
+     }
+    ],
+    "de": [
+     {
+      "language": "de",
+      "value": "Autodromo Nazionale di Monza"
+     },
+     {
+      "language": "de",
+      "value": "autodromo nazionale di Monza"
+     }
+    ],
+    "en": [
+     {
+      "language": "en",
+      "value": "Autodromo Nazionale di Monza"
+     },
+     {
+      "language": "en",
+      "value": "Autodromo Nazionale Monza"
+     }
+    ]
+   },
+   "claims": {
+    "P31": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 2338524,
+         "id": "Q2338524"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     },
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 1497375,
+         "id": "Q1497375"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P17": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P17",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 38,
+         "id": "Q38"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P625": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P625",
+       "datavalue": {
+        "value": {
+         "latitude": 45.620555555556,
+         "longitude": 9.2894444444444,
+         "altitude": null,
+         "precision": null,
+         "globe": "http://www.wikidata.org/entity/Q2"
+        },
+        "type": "globecoordinate"
+       },
+       "datatype": "globe-coordinate"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P2043": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P2043",
+       "datavalue": {
+        "value": {
+         "amount": "+5793",
+         "unit": "http://www.wikidata.org/entity/Q11573"
+        },
+        "type": "quantity"
+       },
+       "datatype": "quantity"
+      },
+      "type": "statement",
+      "qualifiers": {
+       "P580": [
+        {
+         "snaktype": "value",
+         "property": "P580",
+         "datavalue": {
+          "value": {
+           "time": "+2000-00-00T00:00:00Z",
+           "timezone": 0,
+           "before": 0,
+           "after": 0,
+           "precision": 9,
+           "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+          },
+          "type": "time"
+         }
+        }
+       ]
+      },
+      "rank": "normal"
+     }
+    ],
+    "P1619": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P1619",
+       "datavalue": {
+        "value": {
+         "time": "+1922-00-00T00:00:00Z",
+         "timezone": 0,
+         "before": 0,
+         "after": 0,
+         "precision": 9,
+         "calendarmodel": "http://www.wikidata.org/entity/Q1985727"
+        },
+        "type": "time"
+       },
+       "datatype": "time"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P856": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P856",
+       "datavalue": {
+        "value": "https://www.monzanet.it",
+        "type": "string"
+       },
+       "datatype": "url"
+      },
+      "type": "statement",
+      "qualifiers": {},
+      "rank": "normal"
+     }
+    ],
+    "P18": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P18",
+       "datavalue": {
+        "value": "1975 Italian GP race start - Niki Lauda & Clay Regazzoni (Ferrari 312T).jpg",
+        "type": "string"
+       },
+       "datatype": "commonsMedia"
+      },
+      "type": "statement",
+      "qualifiers": {},
+      "rank": "normal"
+     }
+    ],
+    "P131": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P131",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 6252,
+         "id": "Q6252"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ]
+   },
+   "sitelinks": {
+    "afwiki": {
+     "site": "afwiki",
+     "title": "Autodromo Nazionale di Monza"
+    },
+    "arwiki": {
+     "site": "arwiki",
+     "title": "حلبة مونزا"
+    },
+    "astwiki": {
+     "site": "astwiki",
+     "title": "Circuitu de Monza"
+    },
+    "bgwiki": {
+     "site": "bgwiki",
+     "title": "Монца (писта)"
+    },
+    "cawiki": {
+     "site": "cawiki",
+     "title": "Circuit de Monza"
+    },
+    "cswiki": {
+     "site": "cswiki",
+     "title": "Autodromo Nazionale Monza"
+    },
+    "dawiki": {
+     "site": "dawiki",
+     "title": "Autodromo Nazionale Monza"
+    },
+    "dewiki": {
+     "site": "dewiki",
+     "title": "Autodromo Nazionale di Monza"
+    },
+    "elwiki": {
+     "site": "elwiki",
+     "title": "Πίστα της Μόντσα"
+    },
+    "enwiki": {
+     "site": "enwiki",
+     "title": "Monza Circuit"
+    },
+    "eowiki": {
+     "site": "eowiki",
+     "title": "Autodromo Nazionale di Monza"
+    },
+    "eswiki": {
+     "site": "eswiki",
+     "title": "Autodromo Nazionale di Monza"
+    }
+   }
+  },
+  "Q24940439": {
+   "type": "item",
+   "id": "Q24940439",
+   "labels": {
+    "it": {
+     "language": "it",
+     "value": "Anello alta velocità"
+    }
+   },
+   "descriptions": {
+    "it": {
+     "language": "it",
+     "value": "parte storica dell'Autodromo di Monza"
+    }
+   },
+   "aliases": {},
+   "claims": {
+    "P31": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 2338524,
+         "id": "Q2338524"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P17": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P17",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 38,
+         "id": "Q38"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P2043": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P2043",
+       "datavalue": {
+        "value": {
+         "amount": "+4250",
+         "unit": "http://www.wikidata.org/entity/Q11573",
+         "upperBound": "+4251",
+         "lowerBound": "+4249"
+        },
+        "type": "quantity"
+       },
+       "datatype": "quantity"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ]
+   },
+   "sitelinks": {
+    "itwiki": {
+     "site": "itwiki",
+     "title": "Anello alta velocità"
+    }
+   }
+  },
+  "Q15194186": {
+   "type": "item",
+   "id": "Q15194186",
+   "labels": {
+    "en": {
+     "language": "en",
+     "value": "Autódromo Sudamericano de Olavarría"
+    },
+    "es": {
+     "language": "es",
+     "value": "Autódromo Hermanos Emiliozzi"
+    }
+   },
+   "descriptions": {
+    "en": {
+     "language": "en",
+     "value": "motorsport track in Olavarría, Argentina"
+    },
+    "es": {
+     "language": "es",
+     "value": "autódromo en Olavarría, Argentina"
+    }
+   },
+   "aliases": {
+    "es": [
+     {
+      "language": "es",
+      "value": "Autodromo Hermanos Emiliozzi"
+     }
+    ]
+   },
+   "claims": {
+    "P31": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 2338524,
+         "id": "Q2338524"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P17": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P17",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 414,
+         "id": "Q414"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P625": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P625",
+       "datavalue": {
+        "value": {
+         "latitude": -36.85955556,
+         "longitude": -60.25163889,
+         "altitude": null,
+         "precision": 0.00002777777777778,
+         "globe": "http://www.wikidata.org/entity/Q2"
+        },
+        "type": "globecoordinate"
+       },
+       "datatype": "globe-coordinate"
+      },
+      "type": "statement",
+      "rank": "normal"
+     },
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P625",
+       "datavalue": {
+        "value": {
+         "latitude": -36.85943889,
+         "longitude": -60.25412222,
+         "altitude": null,
+         "precision": 0.00001,
+         "globe": "http://www.wikidata.org/entity/Q2"
+        },
+        "type": "globecoordinate"
+       },
+       "datatype": "globe-coordinate"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P131": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P131",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 1004149,
+         "id": "Q1004149"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ]
+   },
+   "sitelinks": {
+    "commonswiki": {
+     "site": "commonswiki",
+     "title": "Category:Autódromo Hermanos Emiliozzi"
+    },
+    "enwiki": {
+     "site": "enwiki",
+     "title": "Autódromo Hermanos Emiliozzi"
+    },
+    "eswiki": {
+     "site": "eswiki",
+     "title": "Autódromo Hermanos Emiliozzi"
+    }
+   }
+  },
+  "Q5712988": {
+   "type": "item",
+   "id": "Q5712988",
+   "labels": {
+    "es": {
+     "language": "es",
+     "value": "Autódromo Eusebio Marcilla"
+    },
+    "it": {
+     "language": "it",
+     "value": "Autódromo Eusebio Marcilla"
+    },
+    "de": {
+     "language": "de",
+     "value": "Autódromo Eusebio Marcilla"
+    },
+    "en": {
+     "language": "en",
+     "value": "Autódromo Eusebio Marcilla"
+    },
+    "pt": {
+     "language": "pt",
+     "value": "Autódromo Eusebio Marcilla"
+    }
+   },
+   "descriptions": {
+    "it": {
+     "language": "it",
+     "value": "autodromo argentino"
+    },
+    "es": {
+     "language": "es",
+     "value": "autódromo en Argentina"
+    }
+   },
+   "aliases": {
+    "it": [
+     {
+      "language": "it",
+      "value": "Autódromo Regional del Oeste Eusebio Marcilla"
+     }
+    ],
+    "es": [
+     {
+      "language": "es",
+      "value": "Autodromo Eusebio Marcilla"
+     }
+    ]
+   },
+   "claims": {
+    "P31": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P31",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 2338524,
+         "id": "Q2338524"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P17": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P17",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 414,
+         "id": "Q414"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P625": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P625",
+       "datavalue": {
+        "value": {
+         "latitude": -34.64987222,
+         "longitude": -61.01736111,
+         "altitude": null,
+         "precision": 0.00001,
+         "globe": "http://www.wikidata.org/entity/Q2"
+        },
+        "type": "globecoordinate"
+       },
+       "datatype": "globe-coordinate"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P18": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P18",
+       "datavalue": {
+        "value": "Autódromo Eusebio Marcilla.jpg",
+        "type": "string"
+       },
+       "datatype": "commonsMedia"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ],
+    "P131": [
+     {
+      "mainsnak": {
+       "snaktype": "value",
+       "property": "P131",
+       "datavalue": {
+        "value": {
+         "entity-type": "item",
+         "numeric-id": 1020277,
+         "id": "Q1020277"
+        },
+        "type": "wikibase-entityid"
+       },
+       "datatype": "wikibase-item"
+      },
+      "type": "statement",
+      "rank": "normal"
+     }
+    ]
+   },
+   "sitelinks": {
+    "commonswiki": {
+     "site": "commonswiki",
+     "title": "Category:Autódromo Eusebio Marcilla"
+    },
+    "dewiki": {
+     "site": "dewiki",
+     "title": "Autódromo Eusebio Marcilla"
+    },
+    "enwiki": {
+     "site": "enwiki",
+     "title": "Autódromo Eusebio Marcilla"
+    },
+    "eswiki": {
+     "site": "eswiki",
+     "title": "Autódromo Eusebio Marcilla"
+    },
+    "ptwiki": {
+     "site": "ptwiki",
+     "title": "Autódromo Eusebio Marcilla"
+    }
+   }
+  }
+ },
+ "success": 1
+}
