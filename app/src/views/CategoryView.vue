@@ -69,6 +69,8 @@
             </div>
           </section>
 
+          <CalendarSubscribe :series="series" />
+
           <section v-if="recent.length" class="card flush">
             <h3 class="card-title">Últimos eventos</h3>
             <ul class="list-card inset">
@@ -103,6 +105,7 @@
 
         <!-- Calendario -->
         <template v-else-if="tab === 'calendario'">
+          <CalendarSubscribe :series="series" />
           <SourceProblem v-if="sourceFailing" :status="seriesStatus" :series="series" :has-events="events.length > 0" />
           <ul v-if="events.length || !sourceFailing" class="list-card">
             <li v-if="!events.length" class="list-row dim">Sin eventos publicados.</li>
@@ -164,6 +167,7 @@ import { mapState } from 'pinia';
 import { DateTime } from 'luxon';
 import { GROUP_LABELS, type MotorEvent, type Series, type SeriesStatus } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import CalendarSubscribe from '../components/CalendarSubscribe.vue';
 import CountdownBadge from '../components/CountdownBadge.vue';
 import DataState from '../components/DataState.vue';
 import FollowButton from '../components/FollowButton.vue';
@@ -186,7 +190,7 @@ type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noti
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
+  components: { AppIcon, CalendarSubscribe, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
   directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),

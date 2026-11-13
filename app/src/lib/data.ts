@@ -56,12 +56,34 @@ export async function fetchData<T>(relPath: string, opts: FetchDataOptions = {})
   }
 }
 
-/** URL absoluta (con host) de un archivo de data/. */
-export function absoluteDataUrl(relPath: string, origin: string = window.location.origin): string {
-  return new URL(dataUrl(relPath), origin).toString();
+/** URL absoluta (con host) de un archivo de data/. `base` solo se pasa en pruebas (por defecto, la de la app). */
+export function absoluteDataUrl(relPath: string, origin: string = window.location.origin, base?: string): string {
+  return new URL(dataUrl(relPath, base), origin).toString();
 }
 
 /** webcal://host/base/data/feeds/deporte-motor.ics */
-export function webcalUrl(relPath = 'feeds/deporte-motor.ics', origin: string = window.location.origin): string {
-  return absoluteDataUrl(relPath, origin).replace(/^https?:\/\//, 'webcal://');
+export function webcalUrl(relPath = 'feeds/deporte-motor.ics', origin: string = window.location.origin, base?: string): string {
+  return absoluteDataUrl(relPath, origin, base).replace(/^https?:\/\//, 'webcal://');
+}
+
+/** Calendario de suscripción de una categoría (lo publica el pipeline): "feeds/f1.ics". */
+export function seriesFeedPath(seriesId: string): string {
+  return `feeds/${encodeURIComponent(seriesId)}.ics`;
+}
+
+/**
+ * ¿Está publicado este archivo de data/? Sirve para no ofrecer una suscripción que daría 404: el calendario de
+ * una categoría recién agregada aparece recién con la corrida siguiente del pipeline.
+ * Devuelve null si no se pudo saber (sin conexión, error del servidor).
+ */
+export async function dataFileExists(relPath: string, fetchFn: typeof fetch = fetch): Promise<boolean | null> {
+  try {
+    const res = await fetchFn(dataUrl(relPath), { method: 'HEAD', cache: 'no-store' });
+    if (res.status === 404) return false;
+    if (!res.ok) return null;
+    // Un servidor estático puede devolver index.html (200) para rutas que no existen.
+    return !(res.headers.get('content-type') ?? '').includes('text/html');
+  } catch {
+    return null;
+  }
 }
