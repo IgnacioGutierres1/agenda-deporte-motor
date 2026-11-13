@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "6e4297c5755420d9",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "52a11c63f92b7496",
@@ -267,6 +267,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 13,
+        "humidity": 64,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto3/rac/classification",
         "title": "MotoGP.com – Resultados AUT Moto3 RAC",
@@ -459,6 +466,13 @@
           "bestLap": "1:41.232"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 16,
+        "humidity": 50,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto3/q2/classification",
         "title": "MotoGP.com – Resultados AUT Moto3 Q2",
@@ -591,6 +605,13 @@
           "bestLap": "1:42.211"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 16,
+        "humidity": 60,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto3/q1/classification",
         "title": "MotoGP.com – Resultados AUT Moto3 Q1",
@@ -856,6 +877,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 14,
+        "trackC": 16,
+        "humidity": 86,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados AUT Moto3 FP2",
@@ -1128,6 +1156,13 @@
           "bestLap": "1:42.789"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 18,
+        "humidity": 72,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto3/pr/classification",
         "title": "MotoGP.com – Resultados AUT Moto3 PR",
@@ -1400,6 +1435,13 @@
           "bestLap": "1:44.156"
         }
       ],
+      "conditions": {
+        "airC": 10,
+        "trackC": 14,
+        "humidity": 89,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados AUT Moto3 FP1",

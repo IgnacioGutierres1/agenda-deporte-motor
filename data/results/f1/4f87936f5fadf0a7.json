@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "4f87936f5fadf0a7",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "99e151b9c241de87",
@@ -407,6 +407,20 @@
           "time": "1:50.177"
         }
       ],
+      "conditions": {
+        "airC": 20.8,
+        "trackC": 35.1,
+        "humidity": 56,
+        "weather": "Sin lluvia",
+        "windKmh": 10,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11330",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1290/belgium/qualifying",
         "title": "Formula 1 — Belgian Grand Prix: Qualifying (resultados)",

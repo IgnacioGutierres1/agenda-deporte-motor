@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "79de18f726cdfa48",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "861b74ce0fe395d3",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 31.1,
+        "trackC": 50.3,
+        "humidity": 26,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11342",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1291/hungary/race-result",
         "title": "Formula 1 — Hungarian Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:21.322"
         }
       ],
+      "conditions": {
+        "airC": 26.8,
+        "trackC": 46.6,
+        "humidity": 23,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11338",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1291/hungary/qualifying",
         "title": "Formula 1 — Hungarian Grand Prix: Qualifying (resultados)",
@@ -580,6 +608,20 @@
           "laps": 1
         }
       ],
+      "conditions": {
+        "airC": 25.1,
+        "trackC": 52.6,
+        "humidity": 28,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11337",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1291/hungary/practice/3",
         "title": "Formula 1 — Hungarian Grand Prix: Practice 3 (resultados)",
@@ -760,6 +802,20 @@
           "gap": "+3.802s"
         }
       ],
+      "conditions": {
+        "airC": 23.6,
+        "trackC": 30.1,
+        "humidity": 31,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11336",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1291/hungary/practice/2",
         "title": "Formula 1 — Hungarian Grand Prix: Practice 2 (resultados)",
@@ -948,6 +1004,20 @@
           "gap": "+4.659s"
         }
       ],
+      "conditions": {
+        "airC": 23.4,
+        "trackC": 43.1,
+        "humidity": 29,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11335",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1291/hungary/practice/1",
         "title": "Formula 1 — Hungarian Grand Prix: Practice 1 (resultados)",

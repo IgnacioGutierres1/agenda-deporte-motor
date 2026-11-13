@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "025fea1eac16c89a",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "1fa5bbe70b622867",
@@ -406,6 +406,19 @@
           "time": "1:14.600"
         }
       ],
+      "conditions": {
+        "airC": 18.2,
+        "trackC": 32.2,
+        "humidity": 57,
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11349",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1292/netherlands/qualifying",
         "title": "Formula 1 — Dutch Grand Prix: Qualifying (resultados)",
@@ -617,6 +630,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 26.6,
+        "humidity": 63,
+        "weather": "Lluvia por momentos",
+        "windKmh": 10,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11348",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1292/netherlands/sprint-results",
         "title": "Formula 1 — Dutch Grand Prix: Sprint (resultados)",
@@ -805,6 +832,19 @@
           "time": "1:16.014"
         }
       ],
+      "conditions": {
+        "airC": 19.3,
+        "trackC": 32.5,
+        "humidity": 57,
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11344",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1292/netherlands/sprint-qualifying",
         "title": "Formula 1 — Dutch Grand Prix: Sprint Qualifying (resultados)",
@@ -993,6 +1033,20 @@
           "gap": "+3.396s"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 27.9,
+        "humidity": 63,
+        "weather": "Lluvia por momentos",
+        "windKmh": 10,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11343",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1292/netherlands/practice/1",
         "title": "Formula 1 — Dutch Grand Prix: Practice 1 (resultados)",

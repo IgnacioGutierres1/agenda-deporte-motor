@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "f430e1d5a6a85bb9",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "85469ecab9fe257f",
@@ -227,6 +227,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 28,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/rac/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP RAC",
@@ -459,6 +466,13 @@
           "bestLap": "1:44.905"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 29,
+        "humidity": 60,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/wup/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP WUP",
@@ -691,6 +705,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 38,
+        "humidity": 46,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/spr/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP SPR",
@@ -823,6 +844,13 @@
           "bestLap": "1:43.059"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 40,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/q2/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP Q2",
@@ -955,6 +983,13 @@
           "bestLap": "1:44.031"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 35,
+        "humidity": 52,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/q1/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP Q1",
@@ -1187,6 +1222,13 @@
           "bestLap": "1:44.910"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 32,
+        "humidity": 56,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP FP2",
@@ -1419,6 +1461,13 @@
           "bestLap": "1:44.836"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 34,
+        "humidity": 58,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/pr/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP PR",
@@ -1660,6 +1709,12 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 23,
+        "humidity": 67,
+        "weather": "Lluvia leve"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados JPN MotoGP FP1",

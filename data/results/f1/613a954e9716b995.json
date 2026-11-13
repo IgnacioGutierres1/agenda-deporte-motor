@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "613a954e9716b995",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "f2059c92449674b8",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 32.5,
+        "trackC": 54.8,
+        "humidity": 37,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11361",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1293/italy/race-result",
         "title": "Formula 1 — Italian Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:25.222"
         }
       ],
+      "conditions": {
+        "airC": 34,
+        "trackC": 53.2,
+        "humidity": 34,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11357",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1293/italy/qualifying",
         "title": "Formula 1 — Italian Grand Prix: Qualifying (resultados)",
@@ -581,6 +609,20 @@
           "gap": "+3.336s"
         }
       ],
+      "conditions": {
+        "airC": 31.5,
+        "trackC": 52,
+        "humidity": 41,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11356",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1293/italy/practice/3",
         "title": "Formula 1 — Italian Grand Prix: Practice 3 (resultados)",
@@ -769,6 +811,20 @@
           "gap": "+2.694s"
         }
       ],
+      "conditions": {
+        "airC": 33.7,
+        "trackC": 54.9,
+        "humidity": 31,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11355",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1293/italy/practice/2",
         "title": "Formula 1 — Italian Grand Prix: Practice 2 (resultados)",
@@ -957,6 +1013,20 @@
           "gap": "+6.914s"
         }
       ],
+      "conditions": {
+        "airC": 31.1,
+        "trackC": 51.9,
+        "humidity": 38,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11354",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1293/italy/practice/1",
         "title": "Formula 1 — Italian Grand Prix: Practice 1 (resultados)",

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "b907c055569a3718",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "e9f52c83e5aa42e2",
@@ -475,6 +475,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 37,
+        "humidity": 49,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto2/q2/classification",
         "title": "MotoGP.com – Resultados JPN Moto2 Q2",
@@ -617,6 +624,13 @@
           "bestLap": "1:49.697"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 38,
+        "humidity": 49,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto2/q1/classification",
         "title": "MotoGP.com – Resultados JPN Moto2 Q1",
@@ -899,6 +913,13 @@
           "bestLap": "1:48.899"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 29,
+        "humidity": 58,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados JPN Moto2 FP2",
@@ -1181,6 +1202,13 @@
           "bestLap": "1:49.894"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 35,
+        "humidity": 53,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto2/pr/classification",
         "title": "MotoGP.com – Resultados JPN Moto2 PR",
@@ -1463,6 +1491,13 @@
           "bestLap": "1:49.754"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 22,
+        "humidity": 67,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/jpn/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados JPN Moto2 FP1",

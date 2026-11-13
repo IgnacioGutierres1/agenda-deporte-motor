@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "2272b1770b067cb7",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "dea98d34304524ef",
@@ -407,6 +407,20 @@
           "time": "1:48.290"
         }
       ],
+      "conditions": {
+        "airC": 24.4,
+        "trackC": 37.2,
+        "humidity": 69,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11373",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1295/azerbaijan/qualifying",
         "title": "Formula 1 — Azerbaijan Grand Prix: Qualifying (resultados)",
@@ -595,6 +609,20 @@
           "gap": "+5.357s"
         }
       ],
+      "conditions": {
+        "airC": 25.4,
+        "trackC": 44.8,
+        "humidity": 65,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11372",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1295/azerbaijan/practice/3",
         "title": "Formula 1 — Azerbaijan Grand Prix: Practice 3 (resultados)",
@@ -783,6 +811,20 @@
           "gap": "+4.542s"
         }
       ],
+      "conditions": {
+        "airC": 29.3,
+        "trackC": 44.5,
+        "humidity": 55,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11371",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1295/azerbaijan/practice/2",
         "title": "Formula 1 — Azerbaijan Grand Prix: Practice 2 (resultados)",
@@ -971,6 +1013,20 @@
           "gap": "+3.928s"
         }
       ],
+      "conditions": {
+        "airC": 29.3,
+        "trackC": 50.7,
+        "humidity": 62,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11370",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1295/azerbaijan/practice/1",
         "title": "Formula 1 — Azerbaijan Grand Prix: Practice 1 (resultados)",

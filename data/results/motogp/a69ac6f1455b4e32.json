@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "a69ac6f1455b4e32",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "8f5e30f33eb83e76",
@@ -595,6 +595,13 @@
           "bestLap": "1:29.837"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 59,
+        "humidity": 72,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ina/motogp/q2/classification",
         "title": "MotoGP.com – Resultados INA MotoGP Q2",
@@ -727,6 +734,13 @@
           "bestLap": "1:31.067"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 57,
+        "humidity": 71,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ina/motogp/q1/classification",
         "title": "MotoGP.com – Resultados INA MotoGP Q1",
@@ -959,6 +973,13 @@
           "bestLap": "1:31.380"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 53,
+        "humidity": 71,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ina/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados INA MotoGP FP2",
@@ -1191,6 +1212,13 @@
           "bestLap": "1:31.694"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 59,
+        "humidity": 71,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ina/motogp/pr/classification",
         "title": "MotoGP.com – Resultados INA MotoGP PR",
@@ -1423,6 +1451,13 @@
           "bestLap": "1:32.909"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 58,
+        "humidity": 72,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ina/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados INA MotoGP FP1",

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "c679ee2745ed6b0a",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "3dcfc254fef4c3a8",
@@ -287,6 +287,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 26,
+        "trackC": 37,
+        "humidity": 34,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto2/rac/classification",
         "title": "MotoGP.com – Resultados GBR Moto2 RAC",

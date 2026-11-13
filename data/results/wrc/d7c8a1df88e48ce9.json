@@ -1,0 +1,995 @@
+{
+  "seriesId": "wrc",
+  "eventId": "d7c8a1df88e48ce9",
+  "updatedAt": "2026-11-13T05:37:59Z",
+  "sessions": [
+    {
+      "sessionId": "13a0b726fc473c28",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "3:17:08.0"
+        },
+        {
+          "pos": 2,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+12.8s"
+        },
+        {
+          "pos": 3,
+          "number": "5",
+          "driver": "Sami Pajari / Marko Salminen",
+          "team": "Toyota Gazoo Racing WRT2",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+51.4s"
+        },
+        {
+          "pos": 4,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:03.5"
+        },
+        {
+          "pos": 5,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+2:34.8"
+        },
+        {
+          "pos": 6,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+3:13.6"
+        },
+        {
+          "pos": 7,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+4:44.8"
+        },
+        {
+          "pos": 8,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+5:45.2"
+        },
+        {
+          "pos": 9,
+          "number": "21",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+9:21.3"
+        },
+        {
+          "pos": 10,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+9:23.0"
+        },
+        {
+          "pos": 11,
+          "number": "22",
+          "driver": "Alejandro Cachón / Borja Rozada",
+          "team": "Toyota España",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+9:39.6"
+        },
+        {
+          "pos": 12,
+          "number": "27",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+12:15.7"
+        },
+        {
+          "pos": 13,
+          "number": "23",
+          "driver": "Emil Lindholm / Gabriel Morales",
+          "team": "Toksport WRT",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+13:11.6"
+        },
+        {
+          "pos": 14,
+          "number": "25",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+13:38.1"
+        },
+        {
+          "pos": 15,
+          "number": "28",
+          "driver": "Hiroki Arai / Hiroki Tachikui",
+          "team": "R2RX Yahagi Racing Team",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+16:58.9"
+        },
+        {
+          "pos": 16,
+          "number": "29",
+          "driver": "Norihiko Katsuta / Takahiro Yasui",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+23:33.4"
+        },
+        {
+          "pos": 17,
+          "number": "30",
+          "driver": "Fumio Nutahara / Shungo Azuma",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+27:38.3"
+        },
+        {
+          "pos": 18,
+          "number": "35",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+28:44.5"
+        },
+        {
+          "pos": 19,
+          "number": "26",
+          "driver": "Andrea Lafarja / Andrés Blanco",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+43:27.3"
+        },
+        {
+          "pos": 20,
+          "number": "32",
+          "driver": "Satoshi Imai / Yuki Ogawa",
+          "vehicle": "Citroen C3",
+          "gap": "+44:48.2"
+        },
+        {
+          "pos": 21,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+49:43.6"
+        },
+        {
+          "pos": 22,
+          "number": "36",
+          "driver": "Nicolas Otto / Hugo Magalhães",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+51:12.9"
+        },
+        {
+          "pos": 23,
+          "number": "37",
+          "driver": "Yuta Yamamoto / Shizuka Takehara",
+          "team": "K-ONE Racing Team",
+          "vehicle": "Toyota 86",
+          "gap": "+52:10.9"
+        },
+        {
+          "pos": 24,
+          "number": "31",
+          "driver": "Osamu Fukunaga / Misako Saida",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+52:53.6"
+        },
+        {
+          "pos": 25,
+          "number": "40",
+          "driver": "Yasuyuki Sasaki / Yuki Ohtsuka",
+          "team": "Team Bride",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:09:30.2"
+        },
+        {
+          "pos": 26,
+          "number": "43",
+          "driver": "Yoshinobu Mitsuyama / Masahiko Shimazu",
+          "team": "Sngc Rally Team",
+          "vehicle": "Suzuki Swift",
+          "gap": "+1:12:21.2"
+        },
+        {
+          "pos": 27,
+          "number": "39",
+          "driver": "Tsuyoshi Ogawa / Yuya Yamamoto",
+          "team": "Tokuo Works Racing",
+          "vehicle": "Toyota Yaris",
+          "gap": "+1:20:06.9"
+        },
+        {
+          "pos": 28,
+          "number": "42",
+          "driver": "Taisuke Aihara / Azumi Uehara",
+          "team": "D-Sport Racing",
+          "vehicle": "Daihatsu Copen",
+          "gap": "+1:28:23.4"
+        },
+        {
+          "pos": 29,
+          "number": "41",
+          "driver": "Yoshikazu Ino / Kazuki Sakai",
+          "team": "Team Bride",
+          "vehicle": "Toyota Yaris",
+          "gap": "+1:34:07.3"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/rally-japan-2026/classifications",
+        "title": "FIA: Rally Japan — clasificación final del rally (general tras SS20) (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T05:37:59Z"
+      }
+    },
+    {
+      "sessionId": "24d998c03ff6392f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "3:08:29.0"
+        },
+        {
+          "pos": 2,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+13.3s"
+        },
+        {
+          "pos": 3,
+          "number": "5",
+          "driver": "Sami Pajari / Marko Salminen",
+          "team": "Toyota Gazoo Racing WRT2",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+51.5s"
+        },
+        {
+          "pos": 4,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:05.2"
+        },
+        {
+          "pos": 5,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+2:30.5"
+        },
+        {
+          "pos": 6,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+3:09.5"
+        },
+        {
+          "pos": 7,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+4:34.7"
+        },
+        {
+          "pos": 8,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+5:28.5"
+        },
+        {
+          "pos": 9,
+          "number": "21",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+9:00.2"
+        },
+        {
+          "pos": 10,
+          "number": "22",
+          "driver": "Alejandro Cachón / Borja Rozada",
+          "team": "Toyota España",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+9:03.0"
+        },
+        {
+          "pos": 11,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+9:07.3"
+        },
+        {
+          "pos": 12,
+          "number": "27",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+11:37.8"
+        },
+        {
+          "pos": 13,
+          "number": "23",
+          "driver": "Emil Lindholm / Gabriel Morales",
+          "team": "Toksport WRT",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+12:31.5"
+        },
+        {
+          "pos": 14,
+          "number": "25",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+13:09.1"
+        },
+        {
+          "pos": 15,
+          "number": "28",
+          "driver": "Hiroki Arai / Hiroki Tachikui",
+          "team": "R2RX Yahagi Racing Team",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+16:15.9"
+        },
+        {
+          "pos": 16,
+          "number": "29",
+          "driver": "Norihiko Katsuta / Takahiro Yasui",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+22:39.4"
+        },
+        {
+          "pos": 17,
+          "number": "30",
+          "driver": "Fumio Nutahara / Shungo Azuma",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+26:38.5"
+        },
+        {
+          "pos": 18,
+          "number": "35",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+27:34.8"
+        },
+        {
+          "pos": 19,
+          "number": "26",
+          "driver": "Andrea Lafarja / Andrés Blanco",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+41:34.0"
+        },
+        {
+          "pos": 20,
+          "number": "32",
+          "driver": "Satoshi Imai / Yuki Ogawa",
+          "vehicle": "Citroen C3",
+          "gap": "+42:00.7"
+        },
+        {
+          "pos": 21,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+49:46.4"
+        },
+        {
+          "pos": 22,
+          "number": "36",
+          "driver": "Nicolas Otto / Hugo Magalhães",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+49:55.1"
+        },
+        {
+          "pos": 23,
+          "number": "37",
+          "driver": "Yuta Yamamoto / Shizuka Takehara",
+          "team": "K-ONE Racing Team",
+          "vehicle": "Toyota 86",
+          "gap": "+50:07.5"
+        },
+        {
+          "pos": 24,
+          "number": "31",
+          "driver": "Osamu Fukunaga / Misako Saida",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+51:47.3"
+        },
+        {
+          "pos": 25,
+          "number": "40",
+          "driver": "Yasuyuki Sasaki / Yuki Ohtsuka",
+          "team": "Team Bride",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+1:06:11.7"
+        },
+        {
+          "pos": 26,
+          "number": "39",
+          "driver": "Tsuyoshi Ogawa / Yuya Yamamoto",
+          "team": "Tokuo Works Racing",
+          "vehicle": "Toyota Yaris",
+          "gap": "+1:06:33.0"
+        },
+        {
+          "pos": 27,
+          "number": "43",
+          "driver": "Yoshinobu Mitsuyama / Masahiko Shimazu",
+          "team": "Sngc Rally Team",
+          "vehicle": "Suzuki Swift",
+          "gap": "+1:09:21.7"
+        },
+        {
+          "pos": 28,
+          "number": "42",
+          "driver": "Taisuke Aihara / Azumi Uehara",
+          "team": "D-Sport Racing",
+          "vehicle": "Daihatsu Copen",
+          "gap": "+1:24:44.1"
+        },
+        {
+          "pos": 29,
+          "number": "41",
+          "driver": "Yoshikazu Ino / Kazuki Sakai",
+          "team": "Team Bride",
+          "vehicle": "Toyota Yaris",
+          "gap": "+1:30:19.9"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/rally-japan-2026/classifications",
+        "title": "FIA: Rally Japan — clasificación general tras SS19 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T05:37:59Z"
+      }
+    },
+    {
+      "sessionId": "8c70ac65d0c488e3",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "2:32:05.6"
+        },
+        {
+          "pos": 2,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+17.8s"
+        },
+        {
+          "pos": 3,
+          "number": "5",
+          "driver": "Sami Pajari / Marko Salminen",
+          "team": "Toyota Gazoo Racing WRT2",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+44.4s"
+        },
+        {
+          "pos": 4,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:11.3"
+        },
+        {
+          "pos": 5,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+2:05.2"
+        },
+        {
+          "pos": 6,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+2:17.0"
+        },
+        {
+          "pos": 7,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+3:41.8"
+        },
+        {
+          "pos": 8,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+4:33.7"
+        },
+        {
+          "pos": 9,
+          "number": "21",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+7:17.7"
+        },
+        {
+          "pos": 10,
+          "number": "22",
+          "driver": "Alejandro Cachón / Borja Rozada",
+          "team": "Toyota España",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+7:23.4"
+        },
+        {
+          "pos": 11,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+7:58.3"
+        },
+        {
+          "pos": 12,
+          "number": "27",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+9:06.0"
+        },
+        {
+          "pos": 13,
+          "number": "23",
+          "driver": "Emil Lindholm / Gabriel Morales",
+          "team": "Toksport WRT",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+9:53.2"
+        },
+        {
+          "pos": 14,
+          "number": "25",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+11:08.8"
+        },
+        {
+          "pos": 15,
+          "number": "28",
+          "driver": "Hiroki Arai / Hiroki Tachikui",
+          "team": "R2RX Yahagi Racing Team",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+13:10.5"
+        },
+        {
+          "pos": 16,
+          "number": "29",
+          "driver": "Norihiko Katsuta / Takahiro Yasui",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+18:29.1"
+        },
+        {
+          "pos": 17,
+          "number": "30",
+          "driver": "Fumio Nutahara / Shungo Azuma",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+21:53.0"
+        },
+        {
+          "pos": 18,
+          "number": "35",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+21:58.5"
+        },
+        {
+          "pos": 19,
+          "number": "32",
+          "driver": "Satoshi Imai / Yuki Ogawa",
+          "vehicle": "Citroen C3",
+          "gap": "+29:48.3"
+        },
+        {
+          "pos": 20,
+          "number": "26",
+          "driver": "Andrea Lafarja / Andrés Blanco",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+32:51.9"
+        },
+        {
+          "pos": 21,
+          "number": "37",
+          "driver": "Yuta Yamamoto / Shizuka Takehara",
+          "team": "K-ONE Racing Team",
+          "vehicle": "Toyota 86",
+          "gap": "+40:30.6"
+        },
+        {
+          "pos": 22,
+          "number": "34",
+          "driver": "Georgios Vasilakis / Allan Harryman",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+42:09.0"
+        },
+        {
+          "pos": 23,
+          "number": "36",
+          "driver": "Nicolas Otto / Hugo Magalhães",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+43:51.0"
+        },
+        {
+          "pos": 24,
+          "number": "31",
+          "driver": "Osamu Fukunaga / Misako Saida",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+47:01.3"
+        },
+        {
+          "pos": 25,
+          "number": "38",
+          "driver": "Katsuhiko Tsutsui / Takashi Motohashi",
+          "team": "Tokuo Works Racing",
+          "vehicle": "Suzuki Swift",
+          "gap": "+48:19.0"
+        },
+        {
+          "pos": 26,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+50:00.0"
+        },
+        {
+          "pos": 27,
+          "number": "40",
+          "driver": "Yasuyuki Sasaki / Yuki Ohtsuka",
+          "team": "Team Bride",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+53:43.9"
+        },
+        {
+          "pos": 28,
+          "number": "39",
+          "driver": "Tsuyoshi Ogawa / Yuya Yamamoto",
+          "team": "Tokuo Works Racing",
+          "vehicle": "Toyota Yaris",
+          "gap": "+54:15.6"
+        },
+        {
+          "pos": 29,
+          "number": "43",
+          "driver": "Yoshinobu Mitsuyama / Masahiko Shimazu",
+          "team": "Sngc Rally Team",
+          "vehicle": "Suzuki Swift",
+          "gap": "+56:30.1"
+        },
+        {
+          "pos": 30,
+          "number": "24",
+          "driver": "Diego Domínguez / Rogelio Peñate",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+59:00.7"
+        },
+        {
+          "pos": 31,
+          "number": "42",
+          "driver": "Taisuke Aihara / Azumi Uehara",
+          "team": "D-Sport Racing",
+          "vehicle": "Daihatsu Copen",
+          "gap": "+1:08:59.0"
+        },
+        {
+          "pos": 32,
+          "number": "41",
+          "driver": "Yoshikazu Ino / Kazuki Sakai",
+          "team": "Team Bride",
+          "vehicle": "Toyota Yaris",
+          "gap": "+1:13:59.0"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/rally-japan-2026/classifications",
+        "title": "FIA: Rally Japan — clasificación general tras SS14 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T05:37:59Z"
+      }
+    },
+    {
+      "sessionId": "f30525eaafe903dc",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "33",
+          "driver": "Elfyn Evans / Scott Martin",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "time": "1:13:07.0"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Oliver Solberg / Elliott Edmondson",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+15.7s"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Sébastien Ogier / Vincent Landais",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+17.1s"
+        },
+        {
+          "pos": 4,
+          "number": "5",
+          "driver": "Sami Pajari / Marko Salminen",
+          "team": "Toyota Gazoo Racing WRT2",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+41.5s"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Thierry Neuville / Martijn Wydaeghe",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+58.2s"
+        },
+        {
+          "pos": 6,
+          "number": "18",
+          "driver": "Takamoto Katsuta / Aaron Johnston",
+          "team": "Toyota Gazoo Racing WRT",
+          "vehicle": "Toyota GR Yaris Rally1",
+          "gap": "+1:03.8"
+        },
+        {
+          "pos": 7,
+          "number": "16",
+          "driver": "Adrien Fourmaux / Alexandre Coria",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+1:16.3"
+        },
+        {
+          "pos": 8,
+          "number": "20",
+          "driver": "Hayden Paddon / John Kennard",
+          "team": "Hyundai Shell Mobis World Rally Team",
+          "vehicle": "Hyundai i20 N Rally1",
+          "gap": "+2:17.0"
+        },
+        {
+          "pos": 9,
+          "number": "95",
+          "driver": "Jon Armstrong / Shane Byrne",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+2:40.9"
+        },
+        {
+          "pos": 10,
+          "number": "22",
+          "driver": "Alejandro Cachón / Borja Rozada",
+          "team": "Toyota España",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+3:26.6"
+        },
+        {
+          "pos": 11,
+          "number": "21",
+          "driver": "Nikolay Gryazin / Konstantin Aleksandrov",
+          "vehicle": "Lancia Ypsilon HF",
+          "gap": "+3:34.9"
+        },
+        {
+          "pos": 12,
+          "number": "25",
+          "driver": "Romet Jürgenson / Siim Oja",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Fiesta Mk II",
+          "gap": "+4:25.2"
+        },
+        {
+          "pos": 13,
+          "number": "27",
+          "driver": "Yuki Yamamoto / James Fulton",
+          "team": "Printsport",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+4:47.6"
+        },
+        {
+          "pos": 14,
+          "number": "24",
+          "driver": "Diego Domínguez / Rogelio Peñate",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+4:57.4"
+        },
+        {
+          "pos": 15,
+          "number": "55",
+          "driver": "Joshua Mcerlean / Eoin Treacy",
+          "team": "M-Sport Ford World Rally Team",
+          "vehicle": "Ford Puma Rally1",
+          "gap": "+5:03.3"
+        },
+        {
+          "pos": 16,
+          "number": "23",
+          "driver": "Emil Lindholm / Gabriel Morales",
+          "team": "Toksport WRT",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+5:09.3"
+        },
+        {
+          "pos": 17,
+          "number": "28",
+          "driver": "Hiroki Arai / Hiroki Tachikui",
+          "team": "R2RX Yahagi Racing Team",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+6:49.0"
+        },
+        {
+          "pos": 18,
+          "number": "29",
+          "driver": "Norihiko Katsuta / Takahiro Yasui",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+8:47.9"
+        },
+        {
+          "pos": 19,
+          "number": "30",
+          "driver": "Fumio Nutahara / Shungo Azuma",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+9:23.1"
+        },
+        {
+          "pos": 20,
+          "number": "35",
+          "driver": "Ghjuvanni Rossi / Kylian Sarmezan",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+10:13.7"
+        },
+        {
+          "pos": 21,
+          "number": "31",
+          "driver": "Osamu Fukunaga / Misako Saida",
+          "vehicle": "Skoda Fabia RS",
+          "gap": "+10:17.5"
+        },
+        {
+          "pos": 22,
+          "number": "32",
+          "driver": "Satoshi Imai / Yuki Ogawa",
+          "vehicle": "Citroen C3",
+          "gap": "+14:11.2"
+        },
+        {
+          "pos": 23,
+          "number": "26",
+          "driver": "Andrea Lafarja / Andrés Blanco",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+16:35.9"
+        },
+        {
+          "pos": 24,
+          "number": "34",
+          "driver": "Georgios Vasilakis / Allan Harryman",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+20:14.0"
+        },
+        {
+          "pos": 25,
+          "number": "37",
+          "driver": "Yuta Yamamoto / Shizuka Takehara",
+          "team": "K-ONE Racing Team",
+          "vehicle": "Toyota 86",
+          "gap": "+20:19.8"
+        },
+        {
+          "pos": 26,
+          "number": "38",
+          "driver": "Katsuhiko Tsutsui / Takashi Motohashi",
+          "team": "Tokuo Works Racing",
+          "vehicle": "Suzuki Swift",
+          "gap": "+22:29.1"
+        },
+        {
+          "pos": 27,
+          "number": "40",
+          "driver": "Yasuyuki Sasaki / Yuki Ohtsuka",
+          "team": "Team Bride",
+          "vehicle": "Toyota GR Yaris",
+          "gap": "+26:40.3"
+        },
+        {
+          "pos": 28,
+          "number": "39",
+          "driver": "Tsuyoshi Ogawa / Yuya Yamamoto",
+          "team": "Tokuo Works Racing",
+          "vehicle": "Toyota Yaris",
+          "gap": "+27:07.4"
+        },
+        {
+          "pos": 29,
+          "number": "43",
+          "driver": "Yoshinobu Mitsuyama / Masahiko Shimazu",
+          "team": "Sngc Rally Team",
+          "vehicle": "Suzuki Swift",
+          "gap": "+27:29.0"
+        },
+        {
+          "pos": 30,
+          "number": "36",
+          "driver": "Nicolas Otto / Hugo Magalhães",
+          "vehicle": "Ford Fiesta Rally3",
+          "gap": "+30:33.3"
+        },
+        {
+          "pos": 31,
+          "number": "42",
+          "driver": "Taisuke Aihara / Azumi Uehara",
+          "team": "D-Sport Racing",
+          "vehicle": "Daihatsu Copen",
+          "gap": "+35:09.6"
+        },
+        {
+          "pos": 32,
+          "number": "41",
+          "driver": "Yoshikazu Ino / Kazuki Sakai",
+          "team": "Team Bride",
+          "vehicle": "Toyota Yaris",
+          "gap": "+38:44.3"
+        }
+      ],
+      "source": {
+        "url": "https://www.fia.com/events/world-rally-championship/season-2026/rally-japan-2026/classifications",
+        "title": "FIA: Rally Japan — clasificación general tras SS6 (tiempos no oficiales)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-13T05:37:59Z"
+      }
+    }
+  ]
+}

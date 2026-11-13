@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "ea4897de01dd3033",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "7637dc27a98d029e",
@@ -227,6 +227,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 16,
+        "humidity": 39,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/rac/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP RAC",
@@ -458,6 +465,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 12,
+        "trackC": 13,
+        "humidity": 84,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/wup/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP WUP",
@@ -690,6 +704,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 19,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/spr/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP SPR",
@@ -822,6 +843,13 @@
           "bestLap": "1:28.862"
         }
       ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 16,
+        "humidity": 74,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/q2/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP Q2",
@@ -953,6 +981,13 @@
           "bestLap": "1:30.056"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 16,
+        "humidity": 79,
+        "track": "Mojada",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/q1/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP Q1",
@@ -1185,6 +1220,13 @@
           "bestLap": "1:31.564"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 16,
+        "humidity": 79,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP FP2",
@@ -1417,6 +1459,13 @@
           "bestLap": "1:29.982"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 19,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/pr/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP PR",
@@ -1649,6 +1698,13 @@
           "bestLap": "1:32.363"
         }
       ],
+      "conditions": {
+        "airC": 12,
+        "trackC": 15,
+        "humidity": 82,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados AUT MotoGP FP1",

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "e581c5dfb94b5a6a",
-  "updatedAt": "2026-11-10T06:14:37Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "10588038a493ee0a",
@@ -267,6 +267,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 14,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto2/rac/classification",
         "title": "MotoGP.com – Resultados AUT Moto2 RAC",
@@ -459,6 +466,13 @@
           "bestLap": "1:33.439"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 17,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto2/q2/classification",
         "title": "MotoGP.com – Resultados AUT Moto2 Q2",
@@ -601,6 +615,13 @@
           "bestLap": "1:34.279"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 16,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto2/q1/classification",
         "title": "MotoGP.com – Resultados AUT Moto2 Q1",
@@ -869,6 +890,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 14,
+        "trackC": 16,
+        "humidity": 85,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados AUT Moto2 FP2",
@@ -1151,6 +1179,13 @@
           "bestLap": "1:33.807"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 17,
+        "humidity": 52,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto2/pr/classification",
         "title": "MotoGP.com – Resultados AUT Moto2 PR",
@@ -1453,6 +1488,13 @@
           "bestLap": "1:36.536"
         }
       ],
+      "conditions": {
+        "airC": 11,
+        "trackC": 14,
+        "humidity": 85,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/aut/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados AUT Moto2 FP1",

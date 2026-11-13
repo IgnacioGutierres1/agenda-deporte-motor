@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "0d6decc496b51e23",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T05:37:59Z",
   "sessions": [
     {
       "sessionId": "fbd9e4fdce93cb4a",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 31.1,
+        "trackC": 53.9,
+        "humidity": 22,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11369",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1294/spain/race-result",
         "title": "Formula 1 — Spanish Grand Prix: Race (resultados)",
@@ -377,6 +391,20 @@
           "time": "1:38.011"
         }
       ],
+      "conditions": {
+        "airC": 30.9,
+        "trackC": 53.7,
+        "humidity": 18,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11365",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1294/spain/qualifying",
         "title": "Formula 1 — Spanish Grand Prix: Qualifying (resultados)",
@@ -564,6 +592,20 @@
           "laps": 2
         }
       ],
+      "conditions": {
+        "airC": 25.6,
+        "trackC": 47.5,
+        "humidity": 38,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11364",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1294/spain/practice/3",
         "title": "Formula 1 — Spanish Grand Prix: Practice 3 (resultados)",
@@ -751,6 +793,20 @@
           "laps": 2
         }
       ],
+      "conditions": {
+        "airC": 30.3,
+        "trackC": 50.8,
+        "humidity": 12,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11363",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1294/spain/practice/2",
         "title": "Formula 1 — Spanish Grand Prix: Practice 2 (resultados)",
@@ -939,6 +995,20 @@
           "gap": "+4.741s"
         }
       ],
+      "conditions": {
+        "airC": 27.3,
+        "trackC": 50.2,
+        "humidity": 15,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11362",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T05:37:59Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1294/spain/practice/1",
         "title": "Formula 1 — Spanish Grand Prix: Practice 1 (resultados)",
