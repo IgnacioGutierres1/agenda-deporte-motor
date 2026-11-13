@@ -52,7 +52,7 @@
           </section>
         </div>
 
-        <!-- CLIMA -->
+        <WeatherCard v-if="weather" :lat="weather.lat" :lon="weather.lon" :tz="weather.tz" :approx="weather.approx" />
 
         <section class="card flush">
           <h3 class="card-title">Próximos eventos</h3>
@@ -163,6 +163,7 @@ import AppIcon from '../components/AppIcon.vue';
 import CircuitFigure from '../components/CircuitFigure.vue';
 import DataState from '../components/DataState.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
+import WeatherCard from '../components/WeatherCard.vue';
 import { useCircuitInfoStore } from '../stores/circuitInfo.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import type { Circuit } from '../lib/circuits.ts';
@@ -170,6 +171,7 @@ import { circuitFacts, httpUrl, imageCredit, mapLinks, type CircuitFact, type Ci
 import { formatDateRange, monthShort } from '../lib/format.ts';
 import { seriesColor, seriesSort } from '../lib/grid.ts';
 import { todayIn } from '../lib/agenda.ts';
+import { circuitCoords } from '../lib/weather.ts';
 
 interface Row {
   event: MotorEvent;
@@ -183,7 +185,7 @@ interface Row {
  */
 export default defineComponent({
   name: 'CircuitView',
-  components: { AppIcon, CircuitFigure, DataState, SeriesCrest },
+  components: { AppIcon, CircuitFigure, DataState, SeriesCrest, WeatherCard },
   data() {
     return {
       /** Qué terminó mostrando el dibujo (trazado, plano o nada): lo avisa CircuitFigure. */
@@ -198,6 +200,12 @@ export default defineComponent({
     circuit(): Circuit | undefined {
       const id = String(this.$route.params.circuitId);
       return this.circuits.find((c) => c.id === id);
+    },
+    /** Coordenadas y zona del circuito para el pronóstico (null si la ficha no tiene ubicación). */
+    weather(): { lat: number; lon: number; approx: boolean; tz: string } | null {
+      const coords = circuitCoords(this.info);
+      const tz = this.circuit?.events[0]?.tz;
+      return coords && tz ? { ...coords, tz } : null;
     },
     info(): CircuitInfo | undefined {
       return this.circuit ? this.infoById.get(this.circuit.id) : undefined;
