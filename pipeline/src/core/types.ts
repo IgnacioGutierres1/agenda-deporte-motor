@@ -10,6 +10,7 @@ import type {
 import type { Http } from './http.ts';
 import type { Logger } from './log.ts';
 import type { Builders } from './builders.ts';
+import type { ResultsReread } from './reread.ts';
 
 export interface AdapterContext {
   now: Date;
@@ -96,4 +97,6 @@ export interface Adapter {
    * resultados viejos sin borrar a mano data/_cache/results-attempts.json.
    */
   resultsReaderSince?: string;
+  /** Resultados ya publicados que este lector lee mejor que su versión anterior (ver core/reread.ts). */
+  resultsReread?: ResultsReread;
 }

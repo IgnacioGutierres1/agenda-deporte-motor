@@ -122,6 +122,15 @@ export function parseF1Standings(html: string, title: string): StandingsTable {
 export const f1Adapter: Adapter = {
   name: 'f1',
 
+  // Hasta este arreglo, el que no largó y el que abandonó en la primera vuelta se publicaban igual ("NC", 0 vueltas):
+  // esas carreras y sprints se releen una vez para saber cuál es cuál (lo usan las estadísticas de la temporada).
+  resultsReread: {
+    before: '2026-12-01T00:00:00Z',
+    matches: (session, published) =>
+      (session.type === 'carrera' || session.type === 'sprint') &&
+      published.rows.some((r) => r.pos === null && r.status === 'NC' && r.laps === 0),
+  },
+
   async schedule(series, ctx): Promise<ScheduleChunk> {
     const calUrl = f1CalendarUrl(ctx.season);
     const html = (await ctx.http.text(calUrl)).body;

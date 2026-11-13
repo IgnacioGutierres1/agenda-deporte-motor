@@ -10,6 +10,7 @@ import {
 } from '@dm/shared';
 import { readJson, writeJson } from './store.ts';
 import type { Adapter, AdapterContext } from './types.ts';
+import { sessionsToReread } from './reread.ts';
 
 /** Una sesión se considera terminada 30 minutos después de su fin publicado/estimado. */
 const FINISH_GRACE_MS = 30 * 60_000;
@@ -141,9 +142,12 @@ export async function runResultsForSeries(
   // Año nuevo sin fechas corridas todavía: se conserva la tabla de la temporada terminada sin buscar otra.
   const waiting = !!existingStandings && existingStandings.season < ctx.season && !seasonStarted(events, ctx.season, ctx.now);
   const stale = !waiting && (upgrade || standingsStale(existingStandings, sessions, events, ctx.now));
-  if (pending.length === 0 && !stale) return out;
+  // Resultados publicados que el lector actual lee mejor (core/reread.ts): van después de los pendientes.
+  const reread = adapter.resultsReread ? await sessionsToReread(dataDir, series.id, events, sessions, adapter.resultsReread) : [];
+  if (reread.length > 0) ctx.log.info(`${reread.length} resultado(s) publicados se vuelven a leer con el lector actualizado`);
+  if (pending.length === 0 && reread.length === 0 && !stale) return out;
 
-  const chunk = await adapter.results(series, ctx, { events, pendingSessions: pending, sessions, standingsStale: stale });
+  const chunk = await adapter.results(series, ctx, { events, pendingSessions: [...pending, ...reread], sessions, standingsStale: stale });
 
   for (const file of chunk.results) {
     const target = path.join(dataDir, 'results', series.id, `${file.eventId}.json`);

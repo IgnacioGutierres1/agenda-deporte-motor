@@ -155,7 +155,8 @@ describe('lector F1 (formula1.com)', () => {
       points: 25,
     });
     expect(race.rows[1]).toMatchObject({ pos: 2, driver: 'Max Verstappen', gap: '+14.602s', points: 18 });
-    expect(race.rows.at(-1)).toMatchObject({ pos: null, status: 'NC', driver: 'Valtteri Bottas' });
+    // "NC" en la posición y "DNS" en la columna del tiempo: no largó (no es un abandono).
+    expect(race.rows.at(-1)).toMatchObject({ pos: null, status: 'DNS', driver: 'Valtteri Bottas', laps: 0 });
 
     const quali = file.sessions[1]!;
     expect(quali.rows[0]).toMatchObject({ pos: 1, driver: 'Lando Norris', time: '1:27.470', laps: 24 });
