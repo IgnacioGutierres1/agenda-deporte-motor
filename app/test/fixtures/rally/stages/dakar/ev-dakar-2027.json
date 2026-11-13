@@ -1,0 +1,28 @@
+{
+  "seriesId": "dakar",
+  "eventId": "ev-dakar-2027",
+  "updatedAt": "2026-11-12T11:52:00Z",
+  "surface": "arena",
+  "surfaceNote": "Arena, dunas, piedras y pistas de tierra",
+  "competitiveKm": 4429,
+  "routeMapUrl": "https://example.org/rally/dakar-2027-recorrido.png",
+  "routeMapCredit": "A.S.O.",
+  "stages": [
+    { "code": "Prólogo", "name": "Yanbu > Yanbu", "kind": "prologo", "date": "2027-01-02", "distanceKm": 23, "liaisonKm": 75, "totalKm": 98, "terrain": [{ "label": "Tierra", "percent": 55 }, { "label": "Arena", "percent": 45 }], "note": "Define el orden de largada de la primera etapa." },
+    { "code": "Etapa 1", "name": "Yanbu > Yanbu", "kind": "especial", "date": "2027-01-03", "distanceKm": 305, "liaisonKm": 213, "totalKm": 518, "terrain": [{ "label": "Tierra", "percent": 48 }, { "label": "Piedras", "percent": 31 }, { "label": "Arena", "percent": 21 }], "mapUrl": "https://example.org/rally/dakar-2027-etapa-1.png" },
+    { "code": "Etapa 2", "name": "Yanbu > Al Ula", "kind": "especial", "date": "2027-01-04", "distanceKm": 400, "liaisonKm": 104, "totalKm": 504, "terrain": [{ "label": "Piedras", "km": 168 }, { "label": "Tierra", "km": 152 }, { "label": "Arena", "km": 80 }] },
+    { "code": "Etapa 3", "name": "Al Ula > Al Ula", "kind": "especial", "date": "2027-01-05", "distanceKm": 422, "liaisonKm": 244, "totalKm": 666, "terrain": [{ "label": "Arena", "percent": 52 }, { "label": "Tierra", "percent": 30 }, { "label": "Piedras", "percent": 18 }] },
+    { "code": "Etapa 4", "name": "Al Ula > Campamento maratón", "kind": "especial", "date": "2027-01-06", "distanceKm": 451, "liaisonKm": 75, "totalKm": 526, "terrain": [{ "label": "Arena", "percent": 40 }, { "label": "Tierra", "percent": 28 }, { "label": "Dunas", "percent": 22 }, { "label": "Piedras", "percent": 10 }], "note": "Primera parte de la etapa maratón: los pilotos duermen en el campamento, sin la asistencia de los equipos." },
+    { "code": "Etapa 5", "name": "Campamento maratón > Hail", "kind": "especial", "date": "2027-01-07", "distanceKm": 372, "liaisonKm": 61, "totalKm": 433, "note": "Segunda parte de la etapa maratón." },
+    { "code": "Etapa 6", "name": "Hail > Riad", "kind": "especial", "date": "2027-01-08", "distanceKm": 331, "liaisonKm": 589, "totalKm": 920, "terrain": [{ "label": "Arena", "percent": 64 }, { "label": "Dunas", "percent": 21 }, { "label": "Tierra", "percent": 15 }], "mapUrl": "https://example.org/rally/dakar-2027-etapa-6.png", "note": "La jornada más larga: casi 600 km de enlace hasta el campamento de Riad." },
+    { "code": "Descanso", "name": "Riad", "kind": "descanso", "date": "2027-01-09", "note": "Día de descanso en el campamento de Riad." },
+    { "code": "Etapa 7", "name": "Riad > Wadi Ad-Dawasir", "kind": "especial", "date": "2027-01-10", "distanceKm": 462, "liaisonKm": 414, "totalKm": 876, "terrain": [{ "label": "Arena", "percent": 58 }, { "label": "Tierra", "percent": 27 }, { "label": "Dunas", "percent": 15 }] },
+    { "code": "Etapa 8", "name": "Wadi Ad-Dawasir > Wadi Ad-Dawasir", "kind": "especial", "date": "2027-01-11", "distanceKm": 481, "liaisonKm": 236, "totalKm": 717, "terrain": [{ "label": "Arena", "percent": 49 }, { "label": "Dunas", "percent": 37 }, { "label": "Tierra", "percent": 14 }] },
+    { "code": "Etapa 9", "name": "Wadi Ad-Dawasir > Bisha", "kind": "especial", "date": "2027-01-12", "distanceKm": 346, "liaisonKm": 191, "totalKm": 537 },
+    { "code": "Traslado", "name": "Bisha > Al Henakiyah", "kind": "enlace", "date": "2027-01-13", "note": "Jornada de enlace: no hay sector cronometrado." },
+    { "code": "Etapa 10", "name": "Al Henakiyah > Al Henakiyah", "kind": "especial", "date": "2027-01-14", "distanceKm": 420, "liaisonKm": 153, "totalKm": 573, "surface": "tierra", "terrain": [{ "label": "Tierra", "percent": 50 }, { "label": "Piedras", "percent": 35 }, { "label": "Arena", "percent": 15 }] },
+    { "code": "Etapa 11", "name": "Al Henakiyah > Yanbu", "kind": "especial", "date": "2027-01-15", "distanceKm": 311, "liaisonKm": 410, "totalKm": 721, "terrain": [{ "label": "Tierra", "percent": 44 }, { "label": "Arena", "percent": 38 }, { "label": "Piedras", "percent": 18 }] },
+    { "code": "Etapa 12", "name": "Yanbu > Yanbu", "kind": "especial", "date": "2027-01-16", "distanceKm": 105, "liaisonKm": 36, "totalKm": 141, "terrain": [{ "label": "Arena", "percent": 70 }, { "label": "Tierra", "percent": 30 }], "note": "Etapa final, con llegada a orillas del mar Rojo." }
+  ],
+  "source": { "url": "https://www.dakar.com/es/recorrido", "title": "Dakar – Recorrido", "kind": "html", "method": "directo", "fetchedAt": "2026-11-12T11:52:00Z" }
+}

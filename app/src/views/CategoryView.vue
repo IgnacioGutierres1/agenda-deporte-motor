@@ -52,7 +52,7 @@
               <span class="grow">
                 <strong>{{ next.event.name }}</strong>
                 <span class="block small dim">{{ next.event.circuit }}</span>
-                <span class="block small" :class="next.live ? 'live-text' : next.nextSession ? 'accent-text' : 'warn-text'">
+                <span class="block small" :class="next.live ? 'live-text' : next.nextSession || next.event.stageCount ? 'accent-text' : 'warn-text'">
                   {{ nextText }}
                 </span>
                 <span v-if="next.nextSession && !next.live" class="block countdown-line">
@@ -114,10 +114,10 @@
                 </span>
                 <span class="grow">
                   <span v-if="showRound(ev)" class="dim small">Fecha {{ ev.round }} · </span>{{ ev.name }}
-                  <span class="block small dim">{{ ev.circuit }}</span>
+                  <span class="block small dim">{{ ev.circuit }}<SurfaceBadge v-if="ev.surface" :surface="ev.surface" class="cal-surface" /></span>
                 </span>
                 <span v-if="isPast(ev)" class="small dim">Final</span>
-                <span v-else-if="ev.sessionsStatus === 'pending'" class="small warn-text">A confirmar</span>
+                <span v-else-if="ev.sessionsStatus === 'pending' && !ev.stageCount" class="small warn-text">A confirmar</span>
                 <AppIcon name="chevron" :size="16" class="dim" />
               </RouterLink>
             </li>
@@ -173,6 +173,8 @@ import StandingsPanel from '../components/StandingsPanel.vue';
 import RosterPanel from '../components/RosterPanel.vue';
 import NewsList from '../components/NewsList.vue';
 import PodiumLine from '../components/PodiumLine.vue';
+import SurfaceBadge from '../components/SurfaceBadge.vue';
+import { hasStages, stagesEventStatus } from '../lib/stages.ts';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
@@ -186,7 +188,7 @@ type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noti
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel },
+  components: { AppIcon, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel, SurfaceBadge },
   directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
@@ -232,6 +234,8 @@ export default defineComponent({
     nextText(): string {
       const n = this.next;
       if (!n) return '';
+      // Rally con el recorrido publicado pero sin horas de largada (Dakar): no es "a confirmar".
+      if (!n.nextSession && hasStages(n.event)) return stagesEventStatus(n.event, todayIn(this.now, this.timeZone)).text;
       if (!n.nextSession) return 'Horarios a confirmar';
       const when = DateTime.fromISO(n.nextSession.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR');
       return `${n.live ? 'En vivo' : 'Próxima'}: ${n.nextSession.name} · ${when.toFormat("ccc d, HH:mm")}`;
@@ -299,5 +303,9 @@ export default defineComponent({
 <style>
 .countdown-line {
   margin-top: 0.3rem;
+}
+
+.cal-surface {
+  margin-left: 0.4rem;
 }
 </style>

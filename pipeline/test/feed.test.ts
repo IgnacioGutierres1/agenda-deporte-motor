@@ -93,6 +93,19 @@ describe('feed de suscripción (.ics)', () => {
     expect(uids(buildFeed(all, [withTimes], [session('s-ensayo', withTimes, '2026-11-17T13:00:00Z')], NOW))).toEqual(['s-ensayo']);
   });
 
+  it('un rally con el recorrido publicado y sin horas de largada va de día completo, sin "(horarios a confirmar)"', () => {
+    const dakar: MotorEvent = { ...event('dakar', 'tc', '2026-12-05', '2026-12-19'), name: 'Rally Dakar', surface: 'arena', stageCount: 15 };
+    const ics = buildFeed(all, [dakar, rioCuarto], [], NOW).replace(/\r\n /g, '');
+    const v = vevents(ics).find((x) => x.includes('UID:dakar@'))!;
+    expect(v).toContain('DTSTART;VALUE=DATE:20261205');
+    expect(v).toContain('DTEND;VALUE=DATE:20261220');
+    expect(v).toContain('SUMMARY:Turismo Carretera (Circuito dakar) - Rally Dakar\r\n');
+    expect(v).not.toMatch(/horarios a confirmar/i);
+    expect(v).toContain('Rally por etapas');
+    // Un evento sin recorrido sigue igual.
+    expect(vevents(ics).find((x) => x.includes('UID:rio-cuarto@'))).toContain('(horarios a confirmar)');
+  });
+
   it('respeta onlySeries y mantiene CRLF', () => {
     const ics = buildFeed(all, events, sessions, NOW, { onlySeries: ['tn'] });
     expect(uids(ics).sort()).toEqual(['hoy', 's-parcial']);

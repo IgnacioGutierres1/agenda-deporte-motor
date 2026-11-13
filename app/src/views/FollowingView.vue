@@ -183,6 +183,7 @@ import { useTeamsStore } from '../stores/teams.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { driverSeriesIds, isGenericTeamTable, teamMainEntry, teamNumbers, teamSeriesIds } from '../lib/teams.ts';
 import { nextEventOf, type NextEvent } from '../lib/agenda.ts';
+import { hasStages } from '../lib/stages.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 
 type Tab = 'categorias' | 'pilotos' | 'equipos';
@@ -348,7 +349,7 @@ export default defineComponent({
             .replace(/\./g, ''),
         );
       }
-      return fixMonthAbbr(DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat('ccc d LLL').replace(/\./g, '')) + ' · a confirmar';
+      return fixMonthAbbr(DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat('ccc d LLL').replace(/\./g, '')) + (hasStages(next.event) ? '' : ' · a confirmar');
     },
   },
 });

@@ -28,6 +28,7 @@ import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { nextEventOf } from '../lib/agenda.ts';
 import { upcomingWhen } from '../lib/upcoming.ts';
+import { noTimesNote } from '../lib/stages.ts';
 
 interface Upcoming {
   event: MotorEvent;
@@ -57,7 +58,7 @@ export default defineComponent({
         const sessions = (this.schedule?.sessions ?? []).filter((x) => x.eventId === next.event.id);
         const w = upcomingWhen(sessions, this.now, this.timeZone);
         const live = w?.live ?? false;
-        const when = w?.text ?? fixMonthAbbr(DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat("ccc d 'de' LLL")) + ' · horarios a confirmar';
+        const when = w?.text ?? fixMonthAbbr(DateTime.fromISO(next.event.dateStart).setLocale('es-AR').toFormat("ccc d 'de' LLL")) + ` · ${noTimesNote(next.event)}`;
         out.push({ event: next.event, series, live, when });
       }
       return out.sort((a, b) => a.event.dateStart.localeCompare(b.event.dateStart));

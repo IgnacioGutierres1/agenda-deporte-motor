@@ -15,6 +15,7 @@
         <h1 class="hero-title">{{ event.name }}</h1>
         <p class="hero-sub">
           <span v-if="event.round" class="pill pill-small">Fecha {{ event.round }}</span>
+          <SurfaceBadge v-if="event.surface" :surface="event.surface" class="hero-surface" />
           {{ dateRange(event.dateStart, event.dateEnd) }} ·
           <RouterLink v-if="circuitLink" :to="circuitLink" class="circuit-link tap-inline">{{ event.circuit }}</RouterLink><template v-else>{{ event.circuit }}</template><template v-if="event.country">, {{ event.country }}</template>
         </p>
@@ -46,7 +47,11 @@
       <div class="page">
         <!-- Horarios -->
         <section v-if="tab === 'horarios'">
-          <div v-if="!items.length" class="card empty">
+          <div v-if="!items.length && showStages" class="card empty">
+            <p><strong>Sin horarios de largada.</strong> El organizador publica el recorrido de cada día, no la hora.</p>
+            <RouterLink :to="{ query: { ...$route.query, tab: 'etapas' } }" class="btn">Ver {{ stagesLabel.toLowerCase() }}</RouterLink>
+          </div>
+          <div v-else-if="!items.length" class="card empty">
             <p><strong>Horarios a confirmar.</strong> El organizador todavía no publicó el cronograma.</p>
             <p class="small dim">Se revisa cada 3 horas de jueves a lunes y aparece acá apenas se publica.</p>
           </div>
@@ -96,6 +101,9 @@
           </div>
         </section>
 
+        <!-- Tramos (rally) o Etapas (rally raid) -->
+        <StagesPanel v-else-if="tab === 'etapas'" :event="event" />
+
         <!-- Contexto -->
         <ContextPanel v-else-if="tab === 'contexto'" :event="event" :series="series" />
 
@@ -125,10 +133,14 @@ import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import SessionSheet from '../components/SessionSheet.vue';
 import SourceLink from '../components/SourceLink.vue';
+import StagesPanel from '../components/StagesPanel.vue';
 import StandingsPanel from '../components/StandingsPanel.vue';
+import SurfaceBadge from '../components/SurfaceBadge.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
+import { stagesKey, useStagesStore } from '../stores/stages.ts';
+import { ITINERARY_LABELS, hasStages, itineraryKind, stagesEventStatus } from '../lib/stages.ts';
 import { eventWinner } from '../lib/podium.ts';
 import { formatDateRange, zoneDisplayName, fixMonthAbbr } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
@@ -136,12 +148,12 @@ import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/gri
 import { isLateNight, todayIn } from '../lib/agenda.ts';
 import { circuitId } from '../lib/circuits.ts';
 
-type Tab = 'horarios' | 'contexto' | 'resultados' | 'tabla';
+type Tab = 'horarios' | 'etapas' | 'contexto' | 'resultados' | 'tabla';
 
 /** Página de un evento (como la de un partido en FotMob). */
 export default defineComponent({
   name: 'EventView',
-  components: { AppIcon, ContextPanel, CountdownBadge, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StandingsPanel },
+  components: { AppIcon, ContextPanel, CountdownBadge, DataState, EventResults, FollowButton, SeriesCrest, SessionSheet, SourceLink, StagesPanel, StandingsPanel, SurfaceBadge },
   directives: { tabStrip },
   data() {
     return { selected: null as GridItem | null };
@@ -150,6 +162,7 @@ export default defineComponent({
     ...mapState(useScheduleStore, ['schedule', 'hasData', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
     ...mapState(useResultsStore, { resultsMap: 'results' }),
+    ...mapState(useStagesStore, { stageFiles: 'files' }),
     event(): MotorEvent | undefined {
       return this.schedule?.events.find((e) => e.id === this.$route.params.eventId);
     },
@@ -191,9 +204,22 @@ export default defineComponent({
     hasResults(): boolean {
       return this.items.some((i) => i.session.hasResults);
     },
+    /** Rally o rally raid con itinerario publicado: suma la pestaña Tramos / Etapas. */
+    showStages(): boolean {
+      return hasStages(this.event);
+    },
+    /** "Tramos" (varios por día, WRC) o "Etapas" (una por día, Dakar). */
+    stagesLabel(): string {
+      const ev = this.event;
+      if (!ev) return '';
+      return ITINERARY_LABELS[itineraryKind(ev, this.stageFiles[stagesKey(ev.seriesId, ev.id)]?.data?.stages)];
+    },
     tabs(): Array<{ id: Tab; label: string }> {
+      const stages: Array<{ id: Tab; label: string }> = this.showStages ? [{ id: 'etapas', label: this.stagesLabel }] : [];
+      const horarios: Array<{ id: Tab; label: string }> = [{ id: 'horarios', label: 'Horarios' }];
       return [
-        { id: 'horarios', label: 'Horarios' },
+        // Sin horarios (Dakar), el recorrido va primero.
+        ...(this.items.length ? [...horarios, ...stages] : [...stages, ...horarios]),
         { id: 'contexto', label: 'Contexto' },
         { id: 'resultados', label: 'Resultados' },
         { id: 'tabla', label: 'Tabla' },
@@ -201,8 +227,11 @@ export default defineComponent({
     },
     tab(): Tab {
       const q = this.$route.query.tab;
+      if (q === 'etapas' && this.showStages) return 'etapas';
+      if (q === 'contexto' || q === 'resultados' || q === 'tabla') return q;
       // Horarios queda por defecto; "Ponerme en contexto" (En vivo, ficha de la sesión) abre ?tab=contexto.
-      return q === 'contexto' || q === 'resultados' || q === 'tabla' ? q : 'horarios';
+      // En un rally sin horarios de largada, por defecto va el recorrido.
+      return this.showStages && !this.items.length && q !== 'horarios' ? 'etapas' : 'horarios';
     },
     focusSession(): string {
       return (this.$route.query.session as string | undefined) ?? '';
@@ -241,6 +270,8 @@ export default defineComponent({
         return { kind: 'next', text: `Próxima: ${next.session.name} · ${fixMonthAbbr(when.toFormat("ccc d 'de' LLL, HH:mm"))}` };
       }
       if (ev.dateEnd < todayIn(this.now, ev.tz)) return { kind: 'done', text: 'Finalizado' };
+      // Rally con el recorrido publicado pero sin horas de largada: no es "a confirmar".
+      if (!this.items.length && this.showStages) return stagesEventStatus(ev, todayIn(this.now, this.timeZone));
       if (!this.items.length) return { kind: 'pending', text: 'Horarios a confirmar' };
       return { kind: 'done', text: 'Sesiones terminadas' };
     },
@@ -287,6 +318,10 @@ a.circuit-link {
 
 .hero-countdown {
   margin: 0.35rem 0 0;
+}
+
+.hero-surface {
+  margin-right: 0.3rem;
 }
 
 a.hero-winner {

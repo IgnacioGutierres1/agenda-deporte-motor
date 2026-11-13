@@ -13,8 +13,12 @@ import {
  * 3. Hadjar"), sesión que se muestra primero en la pestaña Resultados y vuelta rápida.
  */
 
-/** Sesiones de carrera, de la más importante a la menos: la "principal" de un evento es la última del primer tipo presente. */
-const RACE_PRIORITY: SessionType[] = ['carrera', 'sprint', 'serie'];
+/**
+ * Sesiones de carrera, de la más importante a la menos: la "principal" de un evento es la última del primer tipo presente.
+ * En un rally cuentan también los bloques de tramos o etapas ("etapa"): mientras no esté el resultado final, la
+ * clasificación más reciente es la del último bloque (y no la del shakedown).
+ */
+const RACE_PRIORITY: SessionType[] = ['carrera', 'sprint', 'serie', 'etapa'];
 
 export function isRaceType(type: SessionType | undefined): boolean {
   return !!type && RACE_PRIORITY.includes(type);

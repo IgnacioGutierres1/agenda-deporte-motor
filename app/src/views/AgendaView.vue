@@ -36,7 +36,7 @@
         </p>
 
         <!-- Día sin sesiones: que quede claro, con la próxima sesión -->
-        <section v-if="!agendaCards.length" class="card flush empty-day" role="status">
+        <section v-if="!agendaCards.length && !stageCards.length && !stagesLoading" class="card flush empty-day" role="status">
           <p class="empty-day-title">{{ emptyText }}</p>
           <RouterLink v-if="agendaNext" :to="nextLink" class="list-row empty-day-next">
             <SeriesCrest :series="agendaNext.series" :size="26" />
@@ -62,7 +62,7 @@
               Tocá ★ en una categoría, un piloto o un equipo para verlo primero acá.
             </p>
           </template>
-          <template v-else-if="followedCards.length === 0 && followedPending.length === 0">
+          <template v-else-if="followedCards.length === 0 && followedStageCards.length === 0 && followedPending.length === 0">
             <p class="center dim">{{ dayIsToday ? 'Hoy' : 'Este día' }} no corren tus categorías</p>
             <RouterLink v-if="nextFollowed" :to="`/evento/${nextFollowed.event.id}`" class="next-pill">
               <SeriesCrest :series="nextFollowed.series" :size="22" />
@@ -86,6 +86,18 @@
             @toggle="toggle(c.key, false)"
             @select="selected = $event"
           />
+          <!-- Rally sin horas de largada (Dakar): la etapa de cada día -->
+          <EventCard
+            v-for="c in followedStageCards"
+            :key="c.key"
+            :series="c.series"
+            :event="c.event"
+            :items="[]"
+            :stage-days="c.rows"
+            :show-day="isWeekend"
+            :collapsed="isCollapsed(c.key, false)"
+            @toggle="toggle(c.key, false)"
+          />
           <PendingList v-if="followedPending.length" :items="followedPending" :title="pendingTitle" />
           <StarterPack variant="chips" />
           <p v-if="followedIds.length === 0" class="center">
@@ -94,13 +106,13 @@
         </section>
 
         <div class="center">
-          <button v-if="otherCards.length || otherPending.length" type="button" class="pill toggle-all" @click="toggleAll">
+          <button v-if="otherCards.length || otherStageCards.length || otherPending.length" type="button" class="pill toggle-all" @click="toggleAll">
             {{ allCollapsed ? 'Mostrar todas' : 'Ocultar todas' }}
             <AppIcon name="chevron" :size="16" class="chev" :class="{ up: !allCollapsed, down: allCollapsed }" />
           </button>
         </div>
 
-        <p v-if="allCollapsed && otherCards.length" class="center small dim">
+        <p v-if="allCollapsed && (otherCards.length || otherStageCards.length)" class="center small dim">
           {{ summary }}
         </p>
 
@@ -117,6 +129,17 @@
             :collapsed="isCollapsed(c.key, true)"
             @toggle="toggle(c.key, true)"
             @select="selected = $event"
+          />
+          <EventCard
+            v-for="c in otherStageCards"
+            :key="c.key"
+            :series="c.series"
+            :event="c.event"
+            :items="[]"
+            :stage-days="c.rows"
+            :show-day="isWeekend"
+            :collapsed="isCollapsed(c.key, true)"
+            @toggle="toggle(c.key, true)"
           />
           <PendingList v-if="otherPending.length" :items="otherPending" :title="pendingTitle" />
         </template>
@@ -144,6 +167,8 @@ import SessionSheet from '../components/SessionSheet.vue';
 import StarterPack from '../components/StarterPack.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore } from '../stores/settings.ts';
+import { stagesKey, useStagesStore } from '../stores/stages.ts';
+import { noTimesNote, periodDates, stageAgendaCard, stageEventsOn, type StageAgendaCard, type StageEventItem } from '../lib/stages.ts';
 import {
   WEEKEND,
   emptyDayText,
@@ -174,8 +199,9 @@ export default defineComponent({
     };
   },
   computed: {
-    ...mapState(useScheduleStore, ['hasData', 'strip', 'selectedDay', 'today', 'agendaCards', 'agendaPending', 'agendaNext', 'schedule', 'now', 'seriesById']),
+    ...mapState(useScheduleStore, ['hasData', 'strip', 'selectedDay', 'today', 'agendaCards', 'agendaPending', 'agendaNext', 'schedule', 'now', 'seriesById', 'agendaPeriod', 'visibleSeriesPredicate']),
     ...mapState(useSettingsStore, { followedIds: 'followedSeriesIds', timeZone: 'timeZone' }),
+    ...mapState(useStagesStore, { stageFiles: 'files' }),
     /** Días de la franja (el "Finde" va fijo a la izquierda). */
     days() {
       return this.strip.filter((d) => d.value !== WEEKEND);
@@ -230,8 +256,61 @@ export default defineComponent({
     cardsSplit(): { followed: AgendaCard[]; rest: AgendaCard[] } {
       return splitFollowed(this.agendaCards, this.followedIds);
     },
+    // ── Rally y rally raid sin horas de largada: la etapa de cada día en lugar de "horarios a confirmar" ──
+    /** Fechas (del usuario) del día o del finde elegido. */
+    agendaDates(): string[] {
+      return periodDates(this.agendaPeriod, this.timeZone);
+    },
+    /** Eventos con itinerario que caen en esas fechas y no tienen sesiones con horario en ellas. */
+    stageEvents(): StageEventItem[] {
+      return stageEventsOn(this.schedule, this.agendaDates, this.agendaPeriod, this.visibleSeriesPredicate);
+    },
+    /** Itinerarios a descargar (se piden una sola vez por evento). */
+    stageKeys(): string {
+      return this.stageEvents.map((x) => stagesKey(x.event.seriesId, x.event.id)).join(' ');
+    },
+    stageCards(): StageAgendaCard[] {
+      const out: StageAgendaCard[] = [];
+      for (const item of this.stageEvents) {
+        const file = this.stageFiles[stagesKey(item.event.seriesId, item.event.id)]?.data;
+        const card = file ? stageAgendaCard(item, file, this.agendaDates, this.today, this.timeZone) : null;
+        if (card) out.push(card);
+      }
+      return out;
+    },
+    /** Algún itinerario del día todavía se está descargando (para no mostrar "no hay sesiones" de más). */
+    stagesLoading(): boolean {
+      return this.stageEvents.some((x) => {
+        const status = this.stageFiles[stagesKey(x.event.seriesId, x.event.id)]?.status;
+        return !status || status === 'loading';
+      });
+    },
+    /**
+     * Eventos que no van en "Horarios a confirmar" porque su itinerario está (o se está descargando). Si el
+     * archivo falta o falla, el evento sigue en esa lista como hasta ahora.
+     */
+    stageEventIds(): Set<string> {
+      const ids = new Set<string>();
+      for (const x of this.stageEvents) {
+        const status = this.stageFiles[stagesKey(x.event.seriesId, x.event.id)]?.status;
+        if (status !== 'missing' && status !== 'error') ids.add(x.event.id);
+      }
+      return ids;
+    },
+    stageSplit(): { followed: StageAgendaCard[]; rest: StageAgendaCard[] } {
+      return splitFollowed(this.stageCards, this.followedIds);
+    },
+    followedStageCards(): StageAgendaCard[] {
+      return this.stageSplit.followed;
+    },
+    otherStageCards(): StageAgendaCard[] {
+      return this.stageSplit.rest;
+    },
     pendingSplit(): { followed: PendingItem[]; rest: PendingItem[] } {
-      return splitFollowed(this.agendaPending, this.followedIds);
+      return splitFollowed(
+        this.agendaPending.filter((p) => !this.stageEventIds.has(p.event.id)),
+        this.followedIds,
+      );
     },
     followedCards(): AgendaCard[] {
       return this.cardsSplit.followed;
@@ -264,10 +343,10 @@ export default defineComponent({
       if (n.startUtc) {
         return fixMonthAbbr(DateTime.fromISO(n.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat("cccc d 'de' LLL · HH:mm"));
       }
-      return fixMonthAbbr(DateTime.fromISO(n.event.dateStart).setLocale('es-AR').toFormat("cccc d 'de' LLL")) + ' · horarios a confirmar';
+      return fixMonthAbbr(DateTime.fromISO(n.event.dateStart).setLocale('es-AR').toFormat("cccc d 'de' LLL")) + ` · ${noTimesNote(n.event)}`;
     },
     summary(): string {
-      const names = [...new Set(this.otherCards.map((c) => c.series.shortName || c.series.name))];
+      const names = [...new Set([...this.otherCards, ...this.otherStageCards].map((c) => c.series.shortName || c.series.name))];
       const when = this.isWeekend ? 'Este finde corren' : this.dayIsToday ? 'Hoy corren' : 'Ese día corren';
       if (names.length <= 2) return `${when} ${names.join(' y ')}`;
       return `${when} ${names.slice(0, 2).join(', ')} y ${names.length - 2} categorías más`;
@@ -277,6 +356,13 @@ export default defineComponent({
     selectedDay() {
       this.toggled = [];
       this.scrollStrip(true);
+    },
+    /** Descarga los itinerarios de los rallies del día elegido (el store no repite pedidos). */
+    stageKeys: {
+      immediate: true,
+      handler() {
+        for (const x of this.stageEvents) void this.loadStages(x.event.seriesId, x.event.id);
+      },
     },
   },
   mounted() {
@@ -288,6 +374,7 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['setAgendaDay']),
+    ...mapActions(useStagesStore, { loadStages: 'load' }),
     isCollapsed(key: string, _other: boolean): boolean {
       return this.toggled.includes(key);
     },

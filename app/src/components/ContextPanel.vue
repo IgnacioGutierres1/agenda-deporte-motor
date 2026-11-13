@@ -94,10 +94,10 @@
     </section>
 
     <!-- Formato -->
-    <section v-if="eventSessions.length || roster" class="card flush">
+    <section v-if="counts || roster" class="card flush">
       <h3 class="card-title">Formato</h3>
       <div class="ctx-pad">
-        <p v-if="eventSessions.length">{{ counts }}</p>
+        <p v-if="counts">{{ counts }}</p>
         <p v-else class="small dim">El organizador todavía no publicó el cronograma.</p>
       </div>
       <ul v-if="raceRows.length" class="list-card inset">
@@ -166,7 +166,7 @@
     <section v-if="doneHere.length || previous" class="card flush">
       <h3 class="card-title">Ya pasó</h3>
       <template v-if="doneHere.length">
-        <p class="ctx-subtitle small dim">Este fin de semana</p>
+        <p class="ctx-subtitle small dim">{{ rally ? 'En este rally' : 'Este fin de semana' }}</p>
         <ul class="list-card inset">
           <li v-for="h in doneHere" :key="h.sessionId">
             <RouterLink :to="{ query: { ...$route.query, tab: 'resultados', session: h.sessionId } }" class="list-row">
@@ -255,14 +255,15 @@ import { formatDateRange, timeAgo, zoneLabel } from '../lib/format.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { teamNeedles } from '../lib/teams.ts';
 import {
-  TIMING_LABELS,
   driverTables,
   durationMinutes,
   durationText,
+  eventFormatText,
   eventNeedles,
   gapTable,
   highlights,
   isRace,
+  isRallyEvent,
   marginText,
   newsReference,
   pickNews,
@@ -271,9 +272,9 @@ import {
   remainingText,
   rosterSummary,
   roundInfo,
-  sessionCounts,
   standingsTiming,
   surnameNeedles,
+  timingLabel,
   titleMath,
   whoToWatch,
   type ChampionshipTable,
@@ -397,8 +398,12 @@ export default defineComponent({
     timing(): StandingsTiming {
       return this.standings ? standingsTiming(this.standings.updatedAt, this.event, this.eventSessions) : 'before';
     },
+    /** Rally o rally raid: cambian algunos textos ("el rally" en lugar de "la carrera" o "el fin de semana"). */
+    rally(): boolean {
+      return isRallyEvent(this.event, this.eventSessions, this.series.group);
+    },
     timingLabel(): string {
-      return TIMING_LABELS[this.timing];
+      return timingLabel(this.timing, this.rally);
     },
     driverTablesList(): StandingsTable[] {
       return this.standings ? driverTables(this.standings) : [];
@@ -419,7 +424,7 @@ export default defineComponent({
 
     // ── Formato ──
     counts(): string {
-      return sessionCounts(this.eventSessions);
+      return eventFormatText(this.event, this.eventSessions, this.series.group);
     },
     zoneText(): string {
       return zoneLabel(this.timeZone);
@@ -479,6 +484,7 @@ export default defineComponent({
         winnersHere: this.doneHere.filter((h) => h.label === 'Ganador'),
         winnersBefore: this.winnersBefore,
         ...(this.previous ? { previousName: this.previous.name } : {}),
+        rally: this.rally,
       });
     },
 

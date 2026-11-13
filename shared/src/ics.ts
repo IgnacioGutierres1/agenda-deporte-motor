@@ -8,6 +8,8 @@
  * Eventos sin cronograma todavía (solo se conocen las fechas): un evento de día completo con
  * DTSTART;VALUE=DATE / DTEND;VALUE=DATE (fin exclusivo, RFC 5545 §3.6.1), con el mismo formato de SUMMARY y
  * "(horarios a confirmar)". Son los únicos valores sin hora en UTC: una fecha no tiene zona horaria.
+ * Un rally con el recorrido publicado y sin horas de largada (Dakar) va igual, de día completo, pero sin
+ * "(horarios a confirmar)". Las sesiones de tipo "etapa" (bloque de tramos de un día) son sesiones como cualquier otra.
  */
 
 export const ICS_FILENAME = 'carreras_finde.ics';
@@ -49,6 +51,11 @@ export interface IcsAllDayEventInput {
   broadcast: string[];
   broadcastIsDefault?: boolean;
   sourceUrl?: string;
+  /**
+   * true si es un rally o rally raid con el recorrido publicado (MotorEvent.stageCount) que no da horas de
+   * largada, como el Dakar: no lleva "(horarios a confirmar)", porque no hay horarios que esperar.
+   */
+  itinerary?: boolean;
 }
 
 export interface IcsOptions {
@@ -147,7 +154,10 @@ export function buildIcs(events: Array<IcsEventInput | IcsAllDayEventInput>, opt
   const sorted = [...events].sort((a, b) => sortKey(a).localeCompare(sortKey(b)));
   for (const e of sorted) {
     if (isAllDay(e)) {
-      let description = `Horarios a confirmar: la fuente oficial todavía no publicó el cronograma.\n${icsBroadcastLine(e.broadcast, e.broadcastIsDefault)}`;
+      const intro = e.itinerary
+        ? 'Rally por etapas: el organizador publica el recorrido de cada día, no la hora de largada.'
+        : 'Horarios a confirmar: la fuente oficial todavía no publicó el cronograma.';
+      let description = `${intro}\n${icsBroadcastLine(e.broadcast, e.broadcastIsDefault)}`;
       if (e.sourceUrl) description += `\nFuente: ${e.sourceUrl}`;
       lines.push(
         'BEGIN:VEVENT',
@@ -155,7 +165,7 @@ export function buildIcs(events: Array<IcsEventInput | IcsAllDayEventInput>, opt
         `DTSTAMP:${stamp}`,
         `DTSTART;VALUE=DATE:${toIcsDate(e.dateStart)}`,
         `DTEND;VALUE=DATE:${toIcsDate(nextIsoDate(e.dateEnd < e.dateStart ? e.dateStart : e.dateEnd))}`,
-        `SUMMARY:${escapeIcsText(icsSummary({ seriesName: e.seriesName, circuit: e.circuit, sessionName: `${e.eventName} (horarios a confirmar)` }))}`,
+        `SUMMARY:${escapeIcsText(icsSummary({ seriesName: e.seriesName, circuit: e.circuit, sessionName: e.itinerary ? e.eventName : `${e.eventName} (horarios a confirmar)` }))}`,
         `DESCRIPTION:${escapeIcsText(description)}`,
         `LOCATION:${escapeIcsText(`${e.circuit}, ${e.country}`)}`,
         'STATUS:CONFIRMED',
