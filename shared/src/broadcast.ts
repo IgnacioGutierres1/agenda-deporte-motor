@@ -44,6 +44,8 @@ const ENTRIES: BroadcastEntry[] = [
   { names: ['F1 TV Pro', 'F1 TV', 'F1TV', 'F1 TV Premium', 'F1 TV Access'], url: 'https://f1tv.formula1.com/' },
   // "ESPN Argentina" (og:site_name ESPN.com.ar).
   { names: ['ESPN'], url: 'https://www.espn.com.ar/' },
+  // "Home | Watch WRC & ERC Live Online | Rally.TV" (og:site_name Rally.TV): plataforma oficial del WRC.
+  { names: ['Rally.TV', 'Rally TV', 'RallyTV'], url: 'https://www.rally.tv/en' },
   // Enlazado desde motogp.com como "VideoPass".
   { names: ['MotoGP VideoPass', 'VideoPass'], url: 'https://www.motogp.com/es/videopass' },
   // Enlazado desde indycar.com/how-to-follow/international como "INDYCAR LIVE".
