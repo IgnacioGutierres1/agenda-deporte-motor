@@ -35,6 +35,7 @@
   { "id": "macau-gp", "name": "Gran Premio de Macao", "shortName": "GP Macao", "group": "asia", "officialUrls": ["https://www.macau.grandprix.gov.mo/en/info/schedule"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#00843d" },
   { "id": "supercars", "name": "Repco Supercars Championship", "shortName": "Supercars", "group": "asia", "officialUrls": ["https://www.supercars.com/calendar", "https://www.supercars.com/standings"], "rosterUrls": ["https://www.supercars.com/drivers"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#e4002b" },
 
+  { "id": "wrc", "name": "Campeonato Mundial de Rally (WRC)", "shortName": "WRC", "group": "rally", "officialUrls": ["https://www.wrc.com/en/calendar", "https://www.fia.com/events/world-rally-championship/season-{season}/events-calendar"], "strategy": "adapter", "adapter": "wrc", "origin": "default", "enabled": true, "color": "#001e3c" },
   { "id": "dakar", "name": "Rally Dakar", "shortName": "Dakar", "group": "rally", "officialUrls": ["https://www.dakar.com/es/recorrido-general", "https://www.dakar.com/es/clasificaciones"], "strategy": "adapter", "adapter": "dakar", "origin": "default", "enabled": true, "color": "#c4390e" },
 
   { "id": "tc", "name": "Turismo Carretera", "shortName": "TC", "group": "argentina", "checklistItem": 18, "officialUrls": ["https://actc.org.ar/tc/calendario", "https://actc.org.ar/tc/campeonato"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#0033a0" },

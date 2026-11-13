@@ -19,6 +19,7 @@ import {
   scheduleFileSchema,
   statusFileSchema,
   teamsFileSchema,
+  type EventStagesFile,
   type RosterFile,
   type ScheduleFile,
   type Series,
@@ -224,7 +225,10 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
       if (outcome.kind !== 'ok') continue;
       for (const file of outcome.chunk.stages ?? []) {
         eventStagesFileSchema.parse(file);
-        await writeJson(path.join(dataDir, 'stages', seriesId, `${file.eventId}.json`), file);
+        const target = path.join(dataDir, 'stages', seriesId, `${file.eventId}.json`);
+        // Sin cambios (salvo las fechas de lectura) no se reescribe: el commit de datos queda limpio.
+        if (sameStages(await readJson<EventStagesFile>(target).catch(() => null), file)) continue;
+        await writeJson(target, file);
       }
     }
     await writeText(
@@ -253,6 +257,13 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     `Listo: ${schedule.events.length} eventos, ${schedule.sessions.length} sesiones, ${drivers.drivers.length} pilotos, ${teams.teams.length} equipos. Estados: ${JSON.stringify(counts)}`,
   );
   return { schedule, status };
+}
+
+/** true si dos itinerarios son iguales sin contar cuándo se leyeron (updatedAt y source.fetchedAt). */
+export function sameStages(a: EventStagesFile | null, b: EventStagesFile): boolean {
+  if (!a) return false;
+  const strip = ({ updatedAt: _u, source: { fetchedAt: _f, ...source }, ...rest }: EventStagesFile) => JSON.stringify({ ...rest, source });
+  return strip(a) === strip(b);
 }
 
 function sortStatuses(statuses: SeriesStatus[], series: Series[]): SeriesStatus[] {
