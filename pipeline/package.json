@@ -7,6 +7,7 @@
     "start": "tsx src/run.ts",
     "discovery": "tsx src/discovery/cli.ts",
     "news": "tsx src/news/cli.ts",
+    "circuits": "tsx src/circuits/cli.ts",
     "typecheck": "tsc -p tsconfig.json"
   },
   "dependencies": {
