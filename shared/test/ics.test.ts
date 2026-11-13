@@ -114,6 +114,48 @@ describe('ics: eventos sin horarios (día completo)', () => {
     for (const line of ics.split('\r\n')) expect(new TextEncoder().encode(line).length).toBeLessThanOrEqual(75);
   });
 
+  it('un rally con el recorrido publicado y sin horas de largada no lleva "(horarios a confirmar)"', () => {
+    const dakar: IcsAllDayEventInput = {
+      ...pending,
+      id: 'dakar27',
+      dateStart: '2027-01-02',
+      dateEnd: '2027-01-16',
+      seriesName: 'Rally Dakar',
+      circuit: 'Arabia Saudita',
+      eventName: 'Rally Dakar 2027',
+      country: 'Arabia Saudita',
+      broadcast: [],
+      broadcastIsDefault: false,
+      sourceUrl: 'https://www.dakar.com/es/recorrido',
+      itinerary: true,
+    };
+    const unfolded = buildIcs([dakar]).replace(/\r\n /g, '');
+    expect(unfolded).toContain('SUMMARY:Rally Dakar (Arabia Saudita) - Rally Dakar 2027\r\n');
+    expect(unfolded).not.toContain('horarios a confirmar');
+    expect(unfolded).not.toContain('Horarios a confirmar');
+    expect(unfolded).toContain('DESCRIPTION:Rally por etapas: el organizador publica el recorrido de cada día\\, no la hora de largada.\\nTransmisión: A confirmar\\nFuente: https://www.dakar.com/es/recorrido');
+    // Dos semanas de día completo: del 2 al 16 inclusive.
+    expect(unfolded).toContain('DTSTART;VALUE=DATE:20270102');
+    expect(unfolded).toContain('DTEND;VALUE=DATE:20270117');
+  });
+
+  it('una sesión de tipo etapa (bloque de tramos de un día) se exporta con su horario, como cualquier sesión', () => {
+    const block: IcsEventInput = {
+      ...base,
+      id: '7a11000000000003',
+      startUtc: '2026-11-12T22:33:00Z',
+      endUtc: '2026-11-13T10:05:00Z',
+      seriesName: 'Campeonato Mundial de Rally',
+      circuit: 'Toyota',
+      country: 'Japón',
+      sessionName: 'Etapa del viernes: SS2 a SS8',
+    };
+    const unfolded = buildIcs([block]).replace(/\r\n /g, '');
+    expect(unfolded).toContain('DTSTART:20261112T223300Z');
+    expect(unfolded).toContain('DTEND:20261113T100500Z');
+    expect(unfolded).toContain('SUMMARY:Campeonato Mundial de Rally (Toyota) - Etapa del viernes: SS2 a SS8');
+  });
+
   it('un evento de un solo día termina al día siguiente; ordena antes que las sesiones del mismo día', () => {
     const oneDay = { ...pending, id: 'gala', dateStart: '2026-12-31', dateEnd: '2026-12-31' };
     const session = { ...base, id: 'ses', startUtc: '2026-12-31T10:00:00Z', endUtc: '2026-12-31T11:00:00Z' };

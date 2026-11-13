@@ -87,6 +87,8 @@ export function buildFeed(
         broadcast,
         broadcastIsDefault: broadcast.length > 0,
         sourceUrl: e.source.url,
+        // Rally con el recorrido publicado y sin horas de largada (Dakar): no es "horarios a confirmar".
+        ...(e.stageCount ? { itinerary: true } : {}),
       };
     });
 
