@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "b49fdcbcb456c35a",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "19ee827b75c0a8a9",
@@ -287,6 +287,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 38,
+        "humidity": 62,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ned/moto2/rac/classification",
         "title": "MotoGP.com – Resultados NED Moto2 RAC",
@@ -480,6 +487,13 @@
           "bestLap": "1:35.429"
         }
       ],
+      "conditions": {
+        "airC": 33,
+        "trackC": 46,
+        "humidity": 39,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ned/moto2/q2/classification",
         "title": "MotoGP.com – Resultados NED Moto2 Q2",
@@ -631,6 +645,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 33,
+        "trackC": 46,
+        "humidity": 50,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ned/moto2/q1/classification",
         "title": "MotoGP.com – Resultados NED Moto2 Q1",
@@ -923,6 +944,13 @@
           "bestLap": "1:36.691"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 36,
+        "humidity": 60,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ned/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados NED Moto2 FP2",
@@ -1214,6 +1242,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 34,
+        "trackC": 49,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ned/moto2/pr/classification",
         "title": "MotoGP.com – Resultados NED Moto2 PR",
@@ -1506,6 +1541,13 @@
           "bestLap": "1:37.967"
         }
       ],
+      "conditions": {
+        "airC": 26,
+        "trackC": 34,
+        "humidity": 63,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ned/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados NED Moto2 FP1",

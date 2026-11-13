@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "c679ee2745ed6b0a",
-  "updatedAt": "2026-11-13T05:37:59Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "3dcfc254fef4c3a8",
@@ -636,6 +636,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 42,
+        "humidity": 31,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto2/q1/classification",
         "title": "MotoGP.com – Resultados GBR Moto2 Q1",
@@ -928,6 +935,13 @@
           "bestLap": "2:04.312"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 25,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto2/fp2/classification",
         "title": "MotoGP.com – Resultados GBR Moto2 FP2",
@@ -1220,6 +1234,13 @@
           "bestLap": "2:04.470"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 46,
+        "humidity": 34,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto2/pr/classification",
         "title": "MotoGP.com – Resultados GBR Moto2 PR",
@@ -1512,6 +1533,13 @@
           "bestLap": "2:08.155"
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 28,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto2/fp1/classification",
         "title": "MotoGP.com – Resultados GBR Moto2 FP1",

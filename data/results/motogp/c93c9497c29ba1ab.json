@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "c93c9497c29ba1ab",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "e82688bd9d15b3a3",
@@ -207,6 +207,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 42,
+        "humidity": 40,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/rac/classification",
         "title": "MotoGP.com – Resultados GER MotoGP RAC",
@@ -419,6 +426,13 @@
           "bestLap": "1:22.152"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 32,
+        "humidity": 56,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/wup/classification",
         "title": "MotoGP.com – Resultados GER MotoGP WUP",
@@ -631,6 +645,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 42,
+        "humidity": 42,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/ger/motogp/spr/classification",
         "title": "MotoGP.com – Resultados GER MotoGP SPR",

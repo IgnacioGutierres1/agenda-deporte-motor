@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "d403a5275f7e3dad",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "a5396c0cedc910c1",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 25.4,
+        "trackC": 39.8,
+        "humidity": 48,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11326",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1289/great-britain/race-result",
         "title": "Formula 1 — British Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:33.025"
         }
       ],
+      "conditions": {
+        "airC": 25.2,
+        "trackC": 41.2,
+        "humidity": 48,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11322",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1289/great-britain/qualifying",
         "title": "Formula 1 — British Grand Prix: Qualifying (resultados)",
@@ -603,6 +631,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 38.9,
+        "humidity": 54,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11321",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1289/great-britain/sprint-results",
         "title": "Formula 1 — British Grand Prix: Sprint (resultados)",
@@ -791,6 +833,20 @@
           "time": "1:32.988"
         }
       ],
+      "conditions": {
+        "airC": 24.9,
+        "trackC": 40.4,
+        "humidity": 35,
+        "weather": "Sin lluvia",
+        "windKmh": 13,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11317",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1289/great-britain/sprint-qualifying",
         "title": "Formula 1 — British Grand Prix: Sprint Qualifying (resultados)",
@@ -979,6 +1035,20 @@
           "gap": "+3.870s"
         }
       ],
+      "conditions": {
+        "airC": 22.3,
+        "trackC": 40.4,
+        "humidity": 48,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11316",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1289/great-britain/practice/1",
         "title": "Formula 1 — British Grand Prix: Practice 1 (resultados)",

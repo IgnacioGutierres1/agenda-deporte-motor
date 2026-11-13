@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "f5ba12056cc27011",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "846c4f40a43b2bc7",
@@ -205,6 +205,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 34.5,
+        "trackC": 51.1,
+        "humidity": 31,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11315",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1288/austria/race-result",
         "title": "Formula 1 — Austrian Grand Prix: Race (resultados)",
@@ -393,6 +407,20 @@
           "time": "1:10.363"
         }
       ],
+      "conditions": {
+        "airC": 33.4,
+        "trackC": 51.7,
+        "humidity": 25,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11311",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1288/austria/qualifying",
         "title": "Formula 1 — Austrian Grand Prix: Qualifying (resultados)",
@@ -581,6 +609,20 @@
           "gap": "+3.471s"
         }
       ],
+      "conditions": {
+        "airC": 31.5,
+        "trackC": 51.2,
+        "humidity": 29,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11310",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1288/austria/practice/3",
         "title": "Formula 1 — Austrian Grand Prix: Practice 3 (resultados)",
@@ -768,6 +810,20 @@
           "laps": 2
         }
       ],
+      "conditions": {
+        "airC": 31.9,
+        "trackC": 47,
+        "humidity": 27,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11309",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1288/austria/practice/2",
         "title": "Formula 1 — Austrian Grand Prix: Practice 2 (resultados)",
@@ -956,6 +1012,20 @@
           "gap": "+3.537s"
         }
       ],
+      "conditions": {
+        "airC": 30.7,
+        "trackC": 50.4,
+        "humidity": 28,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11308",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1288/austria/practice/1",
         "title": "Formula 1 — Austrian Grand Prix: Practice 1 (resultados)",

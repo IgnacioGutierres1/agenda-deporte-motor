@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "b80bec4572ee5a65",
-  "updatedAt": "2026-11-13T05:37:59Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "0884217f7b78304a",
@@ -456,6 +456,13 @@
           "bestLap": "2:11.121"
         }
       ],
+      "conditions": {
+        "airC": 26,
+        "trackC": 42,
+        "humidity": 30,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto3/q2/classification",
         "title": "MotoGP.com – Resultados GBR Moto3 Q2",
@@ -588,6 +595,13 @@
           "bestLap": "2:13.553"
         }
       ],
+      "conditions": {
+        "airC": 24,
+        "trackC": 41,
+        "humidity": 32,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto3/q1/classification",
         "title": "MotoGP.com – Resultados GBR Moto3 Q1",
@@ -860,6 +874,13 @@
           "bestLap": "2:12.764"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 19,
+        "humidity": 55,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados GBR Moto3 FP2",
@@ -1132,6 +1153,13 @@
           "bestLap": "2:13.496"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 45,
+        "humidity": 37,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto3/pr/classification",
         "title": "MotoGP.com – Resultados GBR Moto3 PR",
@@ -1404,6 +1432,13 @@
           "bestLap": "2:14.599"
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 26,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/gbr/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados GBR Moto3 FP1",

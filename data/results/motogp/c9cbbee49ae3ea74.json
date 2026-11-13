@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "c9cbbee49ae3ea74",
-  "updatedAt": "2026-11-13T05:37:59Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "f217068d6c4e47bd",
@@ -814,6 +814,13 @@
           "bestLap": "1:31.180"
         }
       ],
+      "conditions": {
+        "airC": 26,
+        "trackC": 30,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/rsm/motogp/q2/classification",
         "title": "MotoGP.com – Resultados RSM MotoGP Q2",
@@ -936,6 +943,13 @@
           "bestLap": "1:32.264"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 26,
+        "humidity": 53,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/rsm/motogp/q1/classification",
         "title": "MotoGP.com – Resultados RSM MotoGP Q1",
@@ -1158,6 +1172,13 @@
           "bestLap": "1:32.830"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 23,
+        "humidity": 76,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/rsm/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados RSM MotoGP FP2",
@@ -1380,6 +1401,13 @@
           "bestLap": "1:32.071"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 36,
+        "humidity": 60,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/rsm/motogp/pr/classification",
         "title": "MotoGP.com – Resultados RSM MotoGP PR",
@@ -1602,6 +1630,13 @@
           "bestLap": "1:33.322"
         }
       ],
+      "conditions": {
+        "airC": 22,
+        "trackC": 26,
+        "humidity": 75,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/rsm/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados RSM MotoGP FP1",

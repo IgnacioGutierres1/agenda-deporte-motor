@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "7f3a31fe15da3271",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "f67edc09982bfe6c",
@@ -407,6 +407,20 @@
           "time": "1:16.061"
         }
       ],
+      "conditions": {
+        "airC": 23.6,
+        "trackC": 35.2,
+        "humidity": 55,
+        "weather": "Sin lluvia",
+        "windKmh": 3,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11295",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1286/monaco/qualifying",
         "title": "Formula 1 — Monaco Grand Prix: Qualifying (resultados)",
@@ -595,6 +609,19 @@
           "gap": "+3.201s"
         }
       ],
+      "conditions": {
+        "airC": 23.1,
+        "trackC": 30.2,
+        "humidity": 56,
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11294",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1286/monaco/practice/3",
         "title": "Formula 1 — Monaco Grand Prix: Practice 3 (resultados)",
@@ -783,6 +810,19 @@
           "gap": "+3.148s"
         }
       ],
+      "conditions": {
+        "airC": 23.1,
+        "trackC": 30.3,
+        "humidity": 61,
+        "windKmh": 3,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11293",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1286/monaco/practice/2",
         "title": "Formula 1 — Monaco Grand Prix: Practice 2 (resultados)",
@@ -971,6 +1011,19 @@
           "gap": "+3.578s"
         }
       ],
+      "conditions": {
+        "airC": 23.9,
+        "trackC": 32.2,
+        "humidity": 61,
+        "windKmh": 3,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11292",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1286/monaco/practice/1",
         "title": "Formula 1 — Monaco Grand Prix: Practice 1 (resultados)",

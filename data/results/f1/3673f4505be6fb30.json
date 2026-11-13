@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "3673f4505be6fb30",
-  "updatedAt": "2026-11-13T05:27:41Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "a3a67eee94731407",
@@ -407,6 +407,19 @@
           "time": "1:16.272"
         }
       ],
+      "conditions": {
+        "airC": 21.3,
+        "trackC": 30.8,
+        "humidity": 24,
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11287",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1285/canada/qualifying",
         "title": "Formula 1 — Canadian Grand Prix: Qualifying (resultados)",
@@ -617,6 +630,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 20.4,
+        "trackC": 32.4,
+        "humidity": 25,
+        "weather": "Sin lluvia",
+        "windKmh": 4,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11286",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1285/canada/sprint-results",
         "title": "Formula 1 — Canadian Grand Prix: Sprint (resultados)",

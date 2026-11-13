@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "593513a96cde0962",
-  "updatedAt": "2026-11-10T08:11:28Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "451a5288bf7ab427",
@@ -206,6 +206,20 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 30.4,
+        "trackC": 49.9,
+        "humidity": 28,
+        "weather": "Sin lluvia",
+        "windKmh": 9,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11307",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/race-result",
         "title": "Formula 1 — Barcelona Grand Prix: Race (resultados)",
@@ -394,6 +408,20 @@
           "time": "1:18.815"
         }
       ],
+      "conditions": {
+        "airC": 30.8,
+        "trackC": 50.1,
+        "humidity": 27,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11303",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/qualifying",
         "title": "Formula 1 — Barcelona Grand Prix: Qualifying (resultados)",
@@ -582,6 +610,20 @@
           "gap": "+4.424s"
         }
       ],
+      "conditions": {
+        "airC": 31.5,
+        "trackC": 48.5,
+        "humidity": 30,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11302",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/practice/3",
         "title": "Formula 1 — Barcelona Grand Prix: Practice 3 (resultados)",
@@ -770,6 +812,20 @@
           "gap": "+4.033s"
         }
       ],
+      "conditions": {
+        "airC": 29.5,
+        "trackC": 47.1,
+        "humidity": 32,
+        "weather": "Sin lluvia",
+        "windKmh": 7,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11301",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/practice/2",
         "title": "Formula 1 — Barcelona Grand Prix: Practice 2 (resultados)",
@@ -950,6 +1006,20 @@
           "gap": "+4.334s"
         }
       ],
+      "conditions": {
+        "airC": 29.4,
+        "trackC": 48.8,
+        "humidity": 32,
+        "weather": "Sin lluvia",
+        "windKmh": 8,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11300",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1287/barcelona-catalunya/practice/1",
         "title": "Formula 1 — Barcelona Grand Prix: Practice 1 (resultados)",

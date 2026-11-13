@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "eventId": "4f87936f5fadf0a7",
-  "updatedAt": "2026-11-13T05:37:59Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "99e151b9c241de87",
@@ -609,6 +609,20 @@
           "gap": "+4.641s"
         }
       ],
+      "conditions": {
+        "airC": 20.6,
+        "trackC": 34.3,
+        "humidity": 58,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11329",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1290/belgium/practice/3",
         "title": "Formula 1 — Belgian Grand Prix: Practice 3 (resultados)",
@@ -797,6 +811,20 @@
           "gap": "+5.474s"
         }
       ],
+      "conditions": {
+        "airC": 24.3,
+        "trackC": 32.6,
+        "humidity": 40,
+        "weather": "Sin lluvia",
+        "windKmh": 5,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11328",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1290/belgium/practice/2",
         "title": "Formula 1 — Belgian Grand Prix: Practice 2 (resultados)",
@@ -985,6 +1013,20 @@
           "gap": "+6.129s"
         }
       ],
+      "conditions": {
+        "airC": 24.1,
+        "trackC": 39.2,
+        "humidity": 42,
+        "weather": "Sin lluvia",
+        "windKmh": 6,
+        "source": {
+          "url": "https://api.openf1.org/v1/weather?session_key=11327",
+          "title": "OpenF1 — clima medido en pista (estación del live timing de F1; valor típico de la sesión)",
+          "kind": "api",
+          "method": "directo",
+          "fetchedAt": "2026-11-13T06:57:48Z"
+        }
+      },
       "source": {
         "url": "https://www.formula1.com/en/results/2026/races/1290/belgium/practice/1",
         "title": "Formula 1 — Belgian Grand Prix: Practice 1 (resultados)",

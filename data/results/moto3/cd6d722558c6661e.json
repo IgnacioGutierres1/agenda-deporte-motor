@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "cd6d722558c6661e",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "7f0f766bf0eb5f5e",
@@ -267,6 +267,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 43,
+        "humidity": 44,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/cze/moto3/rac/classification",
         "title": "MotoGP.com – Resultados CZE Moto3 RAC",
@@ -459,6 +466,13 @@
           "bestLap": "2:06.097"
         }
       ],
+      "conditions": {
+        "airC": 31,
+        "trackC": 49,
+        "humidity": 43,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/cze/moto3/q2/classification",
         "title": "MotoGP.com – Resultados CZE Moto3 Q2",
@@ -591,6 +605,13 @@
           "bestLap": "2:06.896"
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 48,
+        "humidity": 46,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/cze/moto3/q1/classification",
         "title": "MotoGP.com – Resultados CZE Moto3 Q1",
@@ -863,6 +884,13 @@
           "bestLap": "2:07.364"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 31,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/cze/moto3/fp2/classification",
         "title": "MotoGP.com – Resultados CZE Moto3 FP2",
@@ -1136,6 +1164,13 @@
           "bestLap": "2:05.795"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 47,
+        "humidity": 40,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/cze/moto3/pr/classification",
         "title": "MotoGP.com – Resultados CZE Moto3 PR",
@@ -1408,6 +1443,13 @@
           "bestLap": "2:07.888"
         }
       ],
+      "conditions": {
+        "airC": 25,
+        "trackC": 31,
+        "humidity": 57,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/cze/moto3/fp1/classification",
         "title": "MotoGP.com – Resultados CZE Moto3 FP1",

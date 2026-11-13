@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "eventId": "6c0ee86ede143406",
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-13T06:57:48Z",
   "sessions": [
     {
       "sessionId": "d80cc71e7b763556",
@@ -267,6 +267,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 26,
+        "trackC": 40,
+        "humidity": 46,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/hun/moto3/rac/classification",
         "title": "MotoGP.com – Resultados HUN Moto3 RAC",
