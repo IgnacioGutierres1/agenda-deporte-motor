@@ -226,6 +226,8 @@ const driverStatsSchema = z.object({
   bestPos: z.number().int().positive().optional(),
   avgPos: z.number().positive().optional(),
   poles: z.number().int().nonnegative().optional(),
+  sprintWins: z.number().int().positive().optional(),
+  overall: z.literal(true).optional(),
 });
 
 const driverDetailSchema = driverSummarySchema.extend({
@@ -301,6 +303,22 @@ export const teamsFileSchema = z.object({
       drivers: z.array(
         z.object({ id: slugId, name: z.string().min(1), seriesId: z.string(), number: z.string().optional() }),
       ),
+      stats: z
+        .array(
+          z.object({
+            seriesId: z.string(),
+            season: z.number().int().optional(),
+            races: z.number().int().positive(),
+            wins: z.number().int().nonnegative(),
+            podiums: z.number().int().nonnegative(),
+            dnfs: z.number().int().nonnegative(),
+            bestPos: z.number().int().positive().optional(),
+            poles: z.number().int().nonnegative().optional(),
+            sprintWins: z.number().int().positive().optional(),
+            overall: z.literal(true).optional(),
+          }),
+        )
+        .optional(),
     }),
   ),
 });
