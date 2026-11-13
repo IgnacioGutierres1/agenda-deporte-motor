@@ -50,6 +50,20 @@
             </li>
           </ul>
         </div>
+
+        <h2 class="section-title">Circuitos</h2>
+        <ul class="list-card">
+          <li>
+            <RouterLink to="/circuitos" class="list-row">
+              <span class="circuits-entry-icon" aria-hidden="true"><AppIcon name="flag" :size="18" /></span>
+              <span class="grow">
+                Todos los circuitos
+                <span class="block small dim">Los del calendario, por país, con su trazado y ficha</span>
+              </span>
+              <AppIcon name="chevron" :size="16" class="dim" />
+            </RouterLink>
+          </li>
+        </ul>
       </template>
     </template>
   </div>
@@ -130,5 +144,18 @@ export default defineComponent({
 
 .group-list {
   margin-top: 0.35rem;
+}
+
+/* Acceso a la lista de circuitos: mismo tamaño que el escudo de una categoría. */
+.circuits-entry-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  border-radius: 50%;
+  background: var(--bg-elev-2);
+  color: var(--text-dim);
 }
 </style>

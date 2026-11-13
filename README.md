@@ -14,7 +14,7 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 | **Siguiendo** | Categorías, pilotos y equipos seguidos (se guardan en el dispositivo; las categorías de pilotos y equipos seguidos también van primero en la Agenda y en "Para ti") y recomendaciones "Para vos". Ficha de piloto con país, campeonatos, inscripciones, próximas y últimas carreras. |
 | **Buscar** | Categorías, pilotos, equipos, circuitos, eventos y noticias; sin texto muestra "Te puede interesar". |
 | Evento → **Contexto** | "Ponerme en contexto" (desde el evento, En vivo o la hoja de cada sesión): fecha N de M, qué se juega (tabla con diferencias, fechas que quedan y, en F1, MotoGP, Moto2/3, F2/F3 e IndyCar, quién puede salir campeón), formato y clases, a quién mirar, qué ya pasó en el finde y en la fecha anterior, notas recientes y fuentes. Solo datos oficiales, sin IA. |
-| Equipo / Circuito | Ficha de equipo (categorías, posiciones, autos, pilotos, próximas carreras y notas) y de circuito (todas las categorías que corren ahí). |
+| Equipo / Circuito | Ficha de equipo (categorías, posiciones, autos, pilotos, próximas carreras y notas) y de circuito (trazado dibujado con datos de OpenStreetMap o plano de Wikimedia Commons, ficha técnica, foto, extracto de Wikipedia, cómo llegar y todas las categorías que corren ahí). Lista de todos los circuitos por país en `/circuitos` (desde Categorías, el menú o Buscar). |
 | Menú ☰ | Actualizar datos, Exportar, Auditoría de fuentes y Ajustes (tema oscuro/claro, zona horaria, cuentas). |
 
 Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `standings/*.json`, `results/**`,

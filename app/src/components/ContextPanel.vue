@@ -128,6 +128,22 @@
       </div>
     </section>
 
+    <!-- El circuito (solo si tiene ficha con algo para mostrar) -->
+    <section v-if="circuitInfo" class="card flush ctx-circuit">
+      <h3 class="card-title">El circuito</h3>
+      <RouterLink :to="circuitLink" class="list-row ctx-circuit-row">
+        <CircuitFigure :info="circuitInfo" :name="event.circuit" mini :img-width="250" class="ctx-circuit-fig" @kind="circuitFigureKind = $event" />
+        <span class="grow">
+          {{ circuitInfo.name }}
+          <span v-if="circuitFacts" class="block small dim">{{ circuitFacts }}</span>
+          <span v-if="circuitRecord" class="block small dim">Récord: {{ circuitRecord }}</span>
+          <span class="block small ctx-circuit-go">Ver el circuito</span>
+        </span>
+        <AppIcon name="chevron" :size="16" class="dim" />
+      </RouterLink>
+      <p v-if="circuitCredit" class="card-foot small dim ctx-circuit-credit">{{ circuitCredit }}</p>
+    </section>
+
     <!-- A quién mirar -->
     <section v-if="watch.length" class="card flush">
       <h3 class="card-title">A quién mirar</h3>
@@ -210,6 +226,7 @@ import { DateTime } from 'luxon';
 import {
   AR_TZ,
   isDriverTable,
+  type CircuitInfo,
   type EventResultsFile,
   type MotorEvent,
   type NewsItem,
@@ -221,16 +238,19 @@ import {
   type StandingsTable,
 } from '@dm/shared';
 import AppIcon from './AppIcon.vue';
+import CircuitFigure from './CircuitFigure.vue';
 import DriverAvatar from './DriverAvatar.vue';
 import NewsList from './NewsList.vue';
 import SeriesCrest from './SeriesCrest.vue';
 import SourceLink from './SourceLink.vue';
+import { useCircuitInfoStore } from '../stores/circuitInfo.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useResultsStore } from '../stores/results.ts';
 import { useRostersStore } from '../stores/rosters.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useSettingsStore, type FollowedTeam } from '../stores/settings.ts';
 import { circuitId } from '../lib/circuits.ts';
+import { circuitShortFacts, hasCircuitHighlights, imageCredit, lapRecordShort, type CircuitFigureKind } from '../lib/circuitInfo.ts';
 import { formatDateRange, timeAgo, zoneLabel } from '../lib/format.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { teamNeedles } from '../lib/teams.ts';
@@ -282,12 +302,18 @@ interface RaceRow {
 /** Ficha "Contexto" de un evento: todo lo que hace falta saber para engancharse con una carrera. */
 export default defineComponent({
   name: 'ContextPanel',
-  components: { AppIcon, DriverAvatar, NewsList, SeriesCrest, SourceLink },
+  components: { AppIcon, CircuitFigure, DriverAvatar, NewsList, SeriesCrest, SourceLink },
   props: {
     event: { type: Object as PropType<MotorEvent>, required: true },
     series: { type: Object as PropType<Series>, required: true },
     /** Equipos seguidos; si no se pasan, los de Ajustes. */
     teamsOverride: { type: Array as PropType<FollowedTeamRef[] | null>, default: null },
+  },
+  data() {
+    return {
+      /** Qué muestra la miniatura del circuito (trazado, plano o nada): lo avisa CircuitFigure. */
+      circuitFigureKind: 'none' as CircuitFigureKind,
+    };
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'now', 'status']),
@@ -295,12 +321,35 @@ export default defineComponent({
     ...mapState(useResultsStore, { standingsMap: 'standings', resultsMap: 'results' }),
     ...mapState(useRostersStore, { rostersMap: 'rosters' }),
     ...mapState(useNewsStore, { newsItems: 'items', newsStatus: 'status' }),
+    ...mapState(useCircuitInfoStore, { circuitInfoById: 'byId', circuitTracks: 'tracks' }),
     color(): string {
       return seriesColor(this.series);
     },
     circuitLink(): string {
       const id = circuitId(this.event.circuit);
       return id ? `/circuito/${id}` : '';
+    },
+
+    // ── El circuito ──
+    /** Ficha del circuito, si existe y tiene algo para este bloque (dibujo, longitud, curvas o récord). */
+    circuitInfo(): CircuitInfo | null {
+      const info = this.circuitInfoById.get(circuitId(this.event.circuit));
+      return info && hasCircuitHighlights(info) ? info : null;
+    },
+    circuitFacts(): string {
+      return this.circuitInfo ? circuitShortFacts(this.circuitInfo) : '';
+    },
+    circuitRecord(): string {
+      const record = this.circuitInfo?.lapRecord;
+      return record?.time ? lapRecordShort(record) : '';
+    },
+    /** Atribución de la miniatura (el trazado es de OpenStreetMap; el plano, de Commons). */
+    circuitCredit(): string {
+      const info = this.circuitInfo;
+      if (!info) return '';
+      if (this.circuitFigureKind === 'track') return `Trazado: ${this.circuitTracks[info.id]?.data?.credit || '© Colaboradores de OpenStreetMap'}`;
+      if (this.circuitFigureKind === 'map' && info.map) return `Plano: ${imageCredit(info.map)} · Wikimedia Commons`;
+      return '';
     },
     seriesFollowed(): boolean {
       return this.followedSeries.includes(this.series.id);
@@ -471,8 +520,10 @@ export default defineComponent({
     ...mapActions(useResultsStore, ['loadStandings', 'loadResults']),
     ...mapActions(useRostersStore, ['loadRoster']),
     ...mapActions(useNewsStore, { loadNews: 'load' }),
+    ...mapActions(useCircuitInfoStore, { loadCircuitInfo: 'load' }),
     async loadAll() {
-      const jobs: Array<Promise<unknown>> = [this.loadNews()];
+      // Las fichas de circuito son opcionales: si el archivo no existe, el bloque "El circuito" no aparece.
+      const jobs: Array<Promise<unknown>> = [this.loadNews(), this.loadCircuitInfo()];
       if (this.standingsAvailable) jobs.push(this.loadStandings(this.series.id));
       if (this.series.rosterUrls?.length) jobs.push(this.loadRoster(this.series.id));
       if (this.eventSessions.some((s) => s.hasResults)) jobs.push(this.loadResults(this.series.id, this.event.id));
@@ -611,6 +662,34 @@ a.ctx-more {
 
 .ctx-classes .pill-small {
   margin: 0;
+}
+
+/* Miniatura del trazado (o del plano) a la izquierda; sin dibujo, queda solo el texto. */
+.ctx-circuit-row {
+  align-items: center;
+  padding-bottom: 0.7rem;
+}
+
+.ctx-circuit-fig {
+  flex: none;
+  width: 104px;
+  height: 78px;
+}
+
+.ctx-circuit-fig.is-none {
+  display: none;
+}
+
+.ctx-circuit-go {
+  margin-top: 0.15rem;
+  color: var(--link);
+  font-weight: 700;
+}
+
+.ctx-circuit-credit {
+  margin: 0;
+  padding-top: 0;
+  overflow-wrap: anywhere;
 }
 
 .ctx-news-title {
