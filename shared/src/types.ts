@@ -178,6 +178,11 @@ export interface SessionConditions {
   /** Estado del cielo en español: "Despejado", "Nublado", "Lluvia". */
   weather?: string;
   windKmh?: number;
+  /**
+   * De dónde salen las condiciones cuando NO es la misma fuente que la de los resultados (p. ej. Fórmula 1: los
+   * resultados son de formula1.com y el clima medido en pista se lee de OpenF1). Ausente = `SessionResult.source`.
+   */
+  source?: Source;
 }
 
 /** Contenido de data/results/{seriesId}/{eventId}.json */

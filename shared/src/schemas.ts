@@ -126,6 +126,7 @@ export const eventResultsFileSchema = z.object({
           track: z.string().optional(),
           weather: z.string().optional(),
           windKmh: z.number().optional(),
+          source: sourceSchema.optional(),
         })
         .optional(),
       source: sourceSchema,

@@ -5,6 +5,7 @@ import type {
   ScheduleFile,
   Series,
   Session,
+  SessionConditions,
   StandingsFile,
 } from '@dm/shared';
 import type { Http } from './http.ts';
@@ -76,6 +77,26 @@ export interface ResultsChunk {
   deferred?: string[];
 }
 
+export interface ConditionsRequest {
+  /** Eventos de la temporada de esta serie (de la corrida actual). */
+  events: MotorEvent[];
+  /**
+   * Sesiones con resultado ya guardado y sin condiciones medidas, de la más reciente a la más vieja y ya
+   * acotadas al tope de la corrida (ver core/conditions.ts).
+   */
+  sessions: Session[];
+}
+
+export interface ConditionsChunk {
+  /** Condiciones halladas, por id de sesión (solo las que traen alguna medición). */
+  conditions: Map<string, SessionConditions>;
+  /**
+   * Sesiones que no se llegaron a consultar de verdad (la fuente pidió esperar, no respondió o rechazó el pedido):
+   * no cuentan como intento y se vuelven a buscar en la próxima corrida.
+   */
+  deferred?: string[];
+}
+
 /**
  * Lector de una fuente oficial. Se invoca una vez por serie; si varias series comparten
  * la misma fuente (p. ej. MotoGP/Moto2/Moto3), usar ctx.http, que memoiza por URL en cada corrida.
@@ -96,4 +117,11 @@ export interface Adapter {
    * resultados viejos sin borrar a mano data/_cache/results-attempts.json.
    */
   resultsReaderSince?: string;
+  /**
+   * Condiciones medidas en pista (aire, asfalto, humedad…) de sesiones que YA tienen resultado guardado sin ellas
+   * (las anteriores a que el lector las supiera leer, o las que la fuente publicó más tarde). No vuelve a pedir
+   * resultados ni toca sus intentos: lo invoca core/conditions.ts con un tope de sesiones por corrida. Las sesiones
+   * nuevas no pasan por acá: `results` ya devuelve `SessionResult.conditions` cuando la fuente las trae.
+   */
+  conditions?(series: Series, ctx: AdapterContext, req: ConditionsRequest): Promise<ConditionsChunk>;
 }

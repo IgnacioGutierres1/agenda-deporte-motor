@@ -46,6 +46,47 @@
         </section>
         <div v-if="current" :id="`res-${current.sessionId}`" class="card flush">
           <h3 class="card-title">{{ sessionName(current.sessionId) }}</h3>
+          <!-- Condiciones que midió la organización durante la sesión (no es el pronóstico) -->
+          <p v-if="conditionsLine && current.conditions" class="session-conditions small">
+            <svg
+              class="session-conditions-icon"
+              width="15"
+              height="15"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M14 14.8V5a2 2 0 0 0-4 0v9.8a4 4 0 1 0 4 0z" />
+              <path d="M12 9v7" />
+            </svg>
+            <span class="session-conditions-text">
+              <!-- Cada dato no se parte y el "·" queda al final del renglón, nunca al principio del siguiente -->
+              <span class="session-conditions-values">
+                <template v-for="(part, i) in conditionsItems" :key="i">
+                  <span class="session-conditions-part">{{ part }}<template v-if="i < conditionsItems.length - 1"> ·</template></span>{{ ' ' }}
+                </template>
+              </span>
+              <span class="session-conditions-label dim">
+                {{ conditionsLabel }}
+                <template v-if="current.conditions.source">
+                  ·
+                  <a
+                    :href="current.conditions.source.url"
+                    :title="current.conditions.source.title"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="tap-inline"
+                  >
+                    {{ conditionsSourceName }}
+                  </a>
+                </template>
+              </span>
+            </span>
+          </p>
           <table class="data results">
             <thead>
               <tr>
@@ -110,6 +151,7 @@ import SourceLink from './SourceLink.vue';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
+import { conditionsLabel, conditionsParts, conditionsSourceName, conditionsText } from '../lib/conditions.ts';
 import { fastestLap, isRaceType, mainResultSession, orderResultSessions, podium } from '../lib/podium.ts';
 
 /** Resultados de las sesiones de un evento, una tabla por vez (chips por sesión). */
@@ -165,6 +207,19 @@ export default defineComponent({
     fastest(): { row: ResultRow; time: string } | null {
       return this.currentIsRace ? fastestLap(this.current?.rows ?? []) : null;
     },
+    /** "Aire 24° · Pista 38° · Humedad 45 % · Pista seca": solo con lo que la fuente midió; vacío si no hay nada. */
+    conditionsLine(): string {
+      return conditionsText(this.current?.conditions);
+    },
+    conditionsItems(): string[] {
+      return conditionsParts(this.current?.conditions);
+    },
+    conditionsLabel(): string {
+      return this.current?.conditions ? conditionsLabel(this.current.conditions) : '';
+    },
+    conditionsSourceName(): string {
+      return this.current?.conditions ? conditionsSourceName(this.current.conditions) : '';
+    },
   },
   watch: {
     'event.id': {
@@ -203,6 +258,38 @@ export default defineComponent({
 table.data.results tr.podium td.pos {
   color: var(--accent);
   font-weight: 800;
+}
+
+/* Línea de condiciones medidas, bajo el título de la sesión */
+.session-conditions {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.4rem;
+  margin: 0;
+  padding: 0 0.85rem 0.6rem;
+  line-height: 1.35;
+}
+
+.session-conditions-icon {
+  flex: none;
+  margin-top: 0.12em;
+  color: var(--text-dim);
+}
+
+.session-conditions-text {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+  min-width: 0;
+}
+
+.session-conditions-values {
+  color: var(--text);
+  font-variant-numeric: tabular-nums;
+}
+
+.session-conditions-part {
+  white-space: nowrap;
 }
 
 .podium-card {

@@ -7,7 +7,9 @@
  * Resultados: GET {API}/results/seasons
  *             GET {API}/results/events?seasonUuid=…&isFinished=true   (`toad_api_uuid` = id del calendario)
  *             GET {API}/results/categories?eventUuid=…               (`legacy_id` 3/2/1)
- *             GET {API}/results/sessions?eventUuid=…&categoryUuid=…   (`type` + `number`, p. ej. FP+1, Q+2, RAC)
+ *             GET {API}/results/sessions?eventUuid=…&categoryUuid=…   (`type` + `number`, p. ej. FP+1, Q+2, RAC;
+ *                 cada sesión trae `condition`: aire, asfalto, humedad, pista y cielo medidos por la organización,
+ *                 los mismos que encabezan los PDF oficiales de resultados)
  *             GET {API}/results/session/{id}/classification?test=false
  * Campeonato: GET {API}/results/standings?seasonUuid=…&categoryUuid=… (pilotos, JSON)
  *             + el XML oficial `xmlFile` que trae esa respuesta (equipos y constructores).
@@ -22,13 +24,23 @@ import {
   type ResultRow,
   type Series,
   type Session,
+  type SessionConditions,
   type SessionType,
   type StandingsFile,
   type StandingsRow,
   type StandingsTable,
 } from '@dm/shared';
 import { classifySession } from '../core/builders.ts';
-import type { Adapter, AdapterContext, ResultsChunk, ResultsRequest, ScheduleChunk } from '../core/types.ts';
+import { sourceUnavailable } from '../core/conditions.ts';
+import type {
+  Adapter,
+  AdapterContext,
+  ConditionsChunk,
+  ConditionsRequest,
+  ResultsChunk,
+  ResultsRequest,
+  ScheduleChunk,
+} from '../core/types.ts';
 import { canonicalZone, countryName, directSource, lapsLabel, trimLapTime } from './util.ts';
 
 export const MOTOGP_API = 'https://api.motogp.pulselive.com/motogp/v1';
@@ -105,11 +117,21 @@ interface ApiResultsCategory {
   legacy_id: number;
 }
 
+/** Condiciones que la organización mide en cada sesión: "34º", "51%", "Dry", "Clear" (vacías: "º", "%", ""). */
+export interface ApiCondition {
+  track?: string | null;
+  air?: string | null;
+  humidity?: string | null;
+  ground?: string | null;
+  weather?: string | null;
+}
+
 interface ApiResultsSession {
   id: string;
   type: string;
   number: number | null;
   status?: string;
+  condition?: ApiCondition | null;
 }
 
 interface ApiRider {
@@ -377,6 +399,73 @@ export function sessionCode(s: { type: string; number: number | null }): string 
   return `${s.type}${s.number ?? ''}`.toUpperCase();
 }
 
+// ---------- Condiciones medidas ----------
+
+// Valores vistos en la API (temporadas 2022, 2025 y 2026) más alguna variante obvia. Uno desconocido no se
+// publica: mejor callar que mostrar un texto en inglés o mal traducido.
+const TRACK_ES: Record<string, string> = {
+  dry: 'Seca',
+  wet: 'Mojada',
+  // Ni seca ni mojada del todo (se va secando o mojando durante la sesión).
+  'wet-dry': 'Húmeda',
+  'dry-wet': 'Húmeda',
+  damp: 'Húmeda',
+};
+
+const WEATHER_ES: Record<string, string> = {
+  clear: 'Despejado',
+  sunny: 'Soleado',
+  'partly-cloudy': 'Parcialmente nublado',
+  cloudy: 'Nublado',
+  overcast: 'Nublado',
+  'light-rain': 'Lluvia leve',
+  raining: 'Lluvia',
+  rain: 'Lluvia',
+  rainy: 'Lluvia',
+  'heavy-rain': 'Lluvia intensa',
+};
+
+function conditionKey(text: string | null | undefined): string {
+  return (text ?? '').trim().toLowerCase().replace(/[\s_]+/g, '-');
+}
+
+/** "34º" -> 34, "51%" -> 51; undefined si viene vacío ("º") o fuera de un rango creíble. */
+function measured(text: string | null | undefined, min: number, max: number): number | undefined {
+  const m = String(text ?? '').match(/-?\d+(?:[.,]\d+)?/);
+  if (!m) return undefined;
+  const n = Number(m[0].replace(',', '.'));
+  return Number.isFinite(n) && n >= min && n <= max ? n : undefined;
+}
+
+/**
+ * Condiciones de una sesión tal como las publica la API de resultados (objeto `condition` de
+ * /results/sessions), en español y con números. Devuelve undefined si no hay ninguna medición ("º", "%"): en esas
+ * sesiones (unas pocas por temporada; p. ej. la carrera de Brasil 2026, cuyo PDF oficial sí trae 31º/45%/51º) la
+ * API igual dice "Dry"/"Clear", y en las 12 que se revisaron (2022, 2025 y 2026) nunca dice otra cosa: son valores
+ * por defecto, no un dato. Por eso el estado de la pista y del cielo solo se publican junto con algún número medido.
+ */
+export function mapConditions(c: ApiCondition | null | undefined): SessionConditions | undefined {
+  if (!c || typeof c !== 'object') return undefined;
+  const airC = measured(c.air, -20, 60);
+  const trackC = measured(c.ground, -20, 90);
+  const humidity = measured(c.humidity, 0, 100);
+  if (airC === undefined && trackC === undefined && humidity === undefined) return undefined;
+  const weather = WEATHER_ES[conditionKey(c.weather)];
+  let track = TRACK_ES[conditionKey(c.track)];
+  // "Dry" con lluvia no se afirma. A veces es cierto (la pista es la que declara Dirección de Carrera: el sprint de
+  // España 2026 figura "Dry" con "Heavy-Rain" también en el PDF oficial), pero no siempre: en la FP2 de Moto3 de
+  // Australia 2026 la API dice Dry + Raining y el PDF, con los mismos números, "Practice condition: Wet". Y aun
+  // cuando es cierto, "pista seca · lluvia" se lee como un error: queda el cielo y se calla el estado de la pista.
+  if (track === 'Seca' && weather?.startsWith('Lluvia')) track = undefined;
+  return {
+    ...(airC !== undefined ? { airC } : {}),
+    ...(trackC !== undefined ? { trackC } : {}),
+    ...(humidity !== undefined ? { humidity } : {}),
+    ...(track ? { track } : {}),
+    ...(weather ? { weather } : {}),
+  };
+}
+
 /** Atributos de las etiquetas de apertura `<tag …>` de un XML plano. */
 function xmlTags(xml: string, tag: string): Array<Record<string, string>> {
   const out: Array<Record<string, string>> = [];
@@ -502,12 +591,15 @@ async function results(series: Series, ctx: AdapterContext, req: ResultsRequest)
       const rows = mapClassification(body.classification ?? [], meta.code);
       if (rows.length === 0) continue;
       const short = rEvent.short_name || meta.eventShort;
+      // Las condiciones vienen en el mismo listado de sesiones que ya se pidió: no cuestan otro pedido.
+      const conditions = mapConditions(rs.condition);
       const file =
         files.get(s.eventId) ??
         ({ seriesId: series.id, eventId: s.eventId, updatedAt, sessions: [] } satisfies EventResultsFile);
       file.sessions.push({
         sessionId: s.id,
         rows,
+        ...(conditions ? { conditions } : {}),
         source: directSource(
           ctx,
           sessionResultsWebUrl(ctx.season, short, cat.slug, meta.code),
@@ -528,6 +620,47 @@ async function results(series: Series, ctx: AdapterContext, req: ResultsRequest)
   return chunk;
 }
 
+/**
+ * Condiciones de sesiones que ya tienen resultado guardado (ver core/conditions.ts). Un pedido por evento y
+ * categoría (el listado de sesiones, que trae las condiciones de todas), más los índices de temporada, eventos
+ * terminados y categorías, que las tres series comparten gracias a la memoización de ctx.http.
+ */
+async function conditions(series: Series, ctx: AdapterContext, req: ConditionsRequest): Promise<ConditionsChunk> {
+  const cat = categoryFor(series);
+  const out: ConditionsChunk = { conditions: new Map(), deferred: [] };
+  const sched = await buildSchedule(series, ctx);
+  const wanted = req.sessions.filter((s) => sched.meta.has(s.id));
+  if (wanted.length === 0) return out;
+
+  const season = await seasonUuid(ctx);
+  const finished = await resultsEvents(ctx, season);
+  const byCalendarId = new Map(finished.filter((e) => e.toad_api_uuid).map((e) => [e.toad_api_uuid!, e]));
+
+  for (let i = 0; i < wanted.length; i++) {
+    const s = wanted[i]!;
+    const meta = sched.meta.get(s.id)!;
+    const rEvent = byCalendarId.get(meta.calendarEventId);
+    if (!rEvent) continue;
+    try {
+      const catUuid = await categoryUuid(ctx, rEvent.id, cat);
+      if (!catUuid) continue;
+      const rs = (await resultsSessions(ctx, rEvent.id, catUuid)).find((x) => sessionCode(x) === meta.code);
+      const found = mapConditions(rs?.condition);
+      if (found) out.conditions.set(s.id, found);
+    } catch (err) {
+      const message = err instanceof Error ? err.message : String(err);
+      if (sourceUnavailable(err)) {
+        // La API no está respondiendo: no se insiste en esta corrida y lo que falta no gasta intento.
+        ctx.log.warn(`Condiciones de ${meta.eventShort}: ${message}; lo que falta queda para la próxima corrida`);
+        out.deferred!.push(...wanted.slice(i).map((x) => x.id));
+        break;
+      }
+      ctx.log.warn(`Condiciones de ${meta.eventShort} ${meta.code}: ${message}`);
+    }
+  }
+  return out;
+}
+
 export const motogpAdapter: Adapter = {
   name: 'motogp',
   async schedule(series, ctx) {
@@ -535,4 +668,5 @@ export const motogpAdapter: Adapter = {
     return { events, sessions };
   },
   results,
+  conditions,
 };
