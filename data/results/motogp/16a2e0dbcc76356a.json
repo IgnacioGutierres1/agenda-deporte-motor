@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "16a2e0dbcc76356a",
-  "updatedAt": "2026-11-13T17:00:49Z",
+  "updatedAt": "2026-11-13T21:14:59Z",
   "sessions": [
     {
       "sessionId": "b8d1910a0f86ec44",
@@ -824,6 +824,13 @@
           "bestLap": "1:30.616"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 22,
+        "humidity": 52,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/motogp/q2/classification",
         "title": "MotoGP.com – Resultados FRA MotoGP Q2",
@@ -956,6 +963,13 @@
           "bestLap": "1:31.826"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 14,
+        "humidity": 56,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/motogp/q1/classification",
         "title": "MotoGP.com – Resultados FRA MotoGP Q1",
@@ -1188,6 +1202,13 @@
           "bestLap": "1:33.005"
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 13,
+        "humidity": 59,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados FRA MotoGP FP2",
@@ -1420,6 +1441,13 @@
           "bestLap": "1:32.450"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 35,
+        "humidity": 42,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/motogp/pr/classification",
         "title": "MotoGP.com – Resultados FRA MotoGP PR",
@@ -1652,6 +1680,13 @@
           "bestLap": "1:34.098"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 26,
+        "humidity": 47,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/fra/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados FRA MotoGP FP1",

@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "3be450a21a05b9f8",
-  "updatedAt": "2026-11-10T16:52:55Z",
+  "updatedAt": "2026-11-13T21:14:59Z",
   "sessions": [
     {
       "sessionId": "ace969b0b655876f",
@@ -217,6 +217,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 26,
+        "trackC": 43,
+        "humidity": 46,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/rac/classification",
         "title": "MotoGP.com – Resultados USA MotoGP RAC",
@@ -439,6 +446,13 @@
           "bestLap": "2:03.947"
         }
       ],
+      "conditions": {
+        "airC": 21,
+        "trackC": 30,
+        "humidity": 60,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/wup/classification",
         "title": "MotoGP.com – Resultados USA MotoGP WUP",
@@ -661,6 +675,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 37,
+        "humidity": 40,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/spr/classification",
         "title": "MotoGP.com – Resultados USA MotoGP SPR",
@@ -793,6 +814,13 @@
           "bestLap": "2:01.477"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 27,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/q2/classification",
         "title": "MotoGP.com – Resultados USA MotoGP Q2",
@@ -915,6 +943,13 @@
           "bestLap": "2:02.366"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 26,
+        "humidity": 48,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/q1/classification",
         "title": "MotoGP.com – Resultados USA MotoGP Q1",
@@ -1137,6 +1172,13 @@
           "bestLap": "2:03.460"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 23,
+        "humidity": 51,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados USA MotoGP FP2",
@@ -1359,6 +1401,13 @@
           "bestLap": "2:03.038"
         }
       ],
+      "conditions": {
+        "airC": 29,
+        "trackC": 49,
+        "humidity": 44,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/pr/classification",
         "title": "MotoGP.com – Resultados USA MotoGP PR",
@@ -1591,6 +1640,13 @@
           "bestLap": "2:03.324"
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 30,
+        "humidity": 66,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/usa/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados USA MotoGP FP1",

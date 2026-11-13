@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "e2c63cdcbc9054c1",
-  "updatedAt": "2026-11-10T16:52:55Z",
+  "updatedAt": "2026-11-13T21:14:59Z",
   "sessions": [
     {
       "sessionId": "b8a9006d0465b879",
@@ -237,6 +237,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 23,
+        "trackC": 36,
+        "humidity": 44,
+        "track": "Seca",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/rac/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP RAC",
@@ -479,6 +486,13 @@
           "bestLap": "1:39.038"
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 19,
+        "humidity": 56,
+        "track": "Mojada",
+        "weather": "Despejado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/wup/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP WUP",
@@ -721,6 +735,12 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 23,
+        "humidity": 77,
+        "weather": "Lluvia intensa"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/spr/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP SPR",
@@ -853,6 +873,13 @@
           "bestLap": "1:51.444"
         }
       ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 22,
+        "humidity": 83,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/q2/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP Q2",
@@ -994,6 +1021,13 @@
           "laps": 0
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 18,
+        "humidity": 89,
+        "track": "Mojada",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/q1/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP Q1",
@@ -1236,6 +1270,13 @@
           "bestLap": "1:51.722"
         }
       ],
+      "conditions": {
+        "airC": 16,
+        "trackC": 17,
+        "humidity": 92,
+        "track": "Mojada",
+        "weather": "Lluvia leve"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP FP2",
@@ -1478,6 +1519,13 @@
           "bestLap": "1:37.619"
         }
       ],
+      "conditions": {
+        "airC": 20,
+        "trackC": 26,
+        "humidity": 66,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/pr/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP PR",
@@ -1720,6 +1768,13 @@
           "bestLap": "1:38.579"
         }
       ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 21,
+        "humidity": 72,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/spa/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados SPA MotoGP FP1",

@@ -1,12 +1,12 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-13T17:00:49Z",
+  "generatedAt": "2026-11-13T21:14:59Z",
   "series": [
     {
       "seriesId": "f1",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.formula1.com/en/racing/2026",
       "standingsAvailable": true,
       "timetables": {
@@ -17,8 +17,8 @@
     {
       "seriesId": "f2",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.fiaformula2.com/Calendar",
       "standingsAvailable": true,
       "timetables": {
@@ -29,24 +29,24 @@
     {
       "seriesId": "f3",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.fiaformula3.com/Calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "porsche-supercup",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://racing.porsche.com/series/mobil-1-supercup",
       "standingsAvailable": false
     },
     {
       "seriesId": "f1-academy",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.f1academy.com/Racing-Series/Calendar",
       "standingsAvailable": true,
       "timetables": {
@@ -57,8 +57,8 @@
     {
       "seriesId": "motogp",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.motogp.com/en/calendar",
       "standingsAvailable": true,
       "timetables": {
@@ -69,8 +69,8 @@
     {
       "seriesId": "moto2",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.motogp.com/en/calendar",
       "standingsAvailable": true,
       "timetables": {
@@ -81,8 +81,8 @@
     {
       "seriesId": "moto3",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.motogp.com/en/calendar",
       "standingsAvailable": true,
       "timetables": {
@@ -93,72 +93,72 @@
     {
       "seriesId": "indycar",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.indycar.com/Schedule",
       "standingsAvailable": true
     },
     {
       "seriesId": "indy-nxt",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.indynxt.com/schedule",
       "standingsAvailable": true
     },
     {
       "seriesId": "nascar-cup",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.nascar.com/nascar-cup-series/schedule/",
       "standingsAvailable": true
     },
     {
       "seriesId": "nascar-xfinity",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.nascar.com/nascar-oreilly-auto-parts-series/schedule/",
       "standingsAvailable": true
     },
     {
       "seriesId": "nascar-truck",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.nascar.com/nascar-craftsman-truck-series/schedule/",
       "standingsAvailable": true
     },
     {
       "seriesId": "gtwc-europe",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.gt-world-challenge-europe.com/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "gtwc-asia",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.gt-world-challenge-asia.com/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "gtwc-america",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.gt-world-challenge-america.com/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "gtwc-australia",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "message": "El organizador todavía no publicó el cronograma de Adelaide Grand Final.",
       "sourceUrl": "https://www.gt-world-challenge-australia.com/calendar",
       "standingsAvailable": true,
@@ -170,72 +170,72 @@
     {
       "seriesId": "dtm",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.dtm.com/en/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "nls",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.nuerburgring-langstrecken-serie.de/language/de/termine-adac-ravenol-nuerburgring-langstrecken-serie-2026/",
       "standingsAvailable": false
     },
     {
       "seriesId": "imsa",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.imsa.com/schedule?series=weathertech",
       "standingsAvailable": true
     },
     {
       "seriesId": "wec",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.fiawec.com/en/season/2026",
       "standingsAvailable": true
     },
     {
       "seriesId": "elms",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.europeanlemansseries.com/en/season/2026",
       "standingsAvailable": true
     },
     {
       "seriesId": "24h-series",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.24hseries.com/races",
       "standingsAvailable": true
     },
     {
       "seriesId": "gt-open",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://gtopen.gtsport.es/calendario",
       "standingsAvailable": false
     },
     {
       "seriesId": "igtc",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.intercontinentalgtchallenge.com/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "alms",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.asianlemansseries.com/en/season/2026",
       "standingsAvailable": false,
       "timetables": {
@@ -246,16 +246,16 @@
     {
       "seriesId": "super-gt",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://supergt.net/en/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "super-formula",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://superformula.net/sf3/race_taxonomy/2026",
       "standingsAvailable": true,
       "timetables": {
@@ -266,8 +266,8 @@
     {
       "seriesId": "super-taikyu",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://supertaikyu.com/race/index.html",
       "standingsAvailable": true,
       "timetables": {
@@ -278,8 +278,8 @@
     {
       "seriesId": "macau-gp",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.macau.grandprix.gov.mo/en/info/schedule",
       "standingsAvailable": false,
       "timetables": {
@@ -290,8 +290,8 @@
     {
       "seriesId": "supercars",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.supercars.com/calendar",
       "standingsAvailable": true,
       "timetables": {
@@ -302,24 +302,24 @@
     {
       "seriesId": "wrc",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.wrc.com/en/calendar",
       "standingsAvailable": true
     },
     {
       "seriesId": "dakar",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://www.dakar.com/es/recorrido-general",
       "standingsAvailable": false
     },
     {
       "seriesId": "tc",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "message": "No se pudo leer el cronograma de Fecha 14 — Río Cuarto y Fecha 15 — La Plata.",
       "sourceUrl": "https://actc.org.ar/tc/calendario",
       "standingsAvailable": true,
@@ -331,8 +331,8 @@
     {
       "seriesId": "tc-pista",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "message": "No se pudo leer el cronograma de Fecha 14 — Río Cuarto y Fecha 15 — La Plata.",
       "sourceUrl": "https://actc.org.ar/tcp/calendario",
       "standingsAvailable": true,
@@ -344,24 +344,24 @@
     {
       "seriesId": "tc-pickup",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://actc.org.ar/tcpk/calendario",
       "standingsAvailable": true
     },
     {
       "seriesId": "tc-mouras",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "sourceUrl": "https://actc.org.ar/tcm/calendario",
       "standingsAvailable": true
     },
     {
       "seriesId": "tn",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "message": "El organizador todavía no publicó el cronograma de Autódromo Ciudad de Viedma (Viedma, Río Negro).",
       "sourceUrl": "https://apat.org.ar/carreras",
       "standingsAvailable": true,
@@ -372,18 +372,22 @@
     },
     {
       "seriesId": "tc2000",
-      "state": "stale",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T06:57:48Z",
-      "message": "HTTP 403 en https://tc2000.com.ar/carreras.php?evento=calendario",
+      "state": "ok",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
+      "message": "El organizador todavía no publicó el cronograma de Fecha 11 Olavarría.",
       "sourceUrl": "https://tc2000.com.ar/carreras.php?evento=calendario",
-      "standingsAvailable": true
+      "standingsAvailable": true,
+      "timetables": {
+        "found": 0,
+        "due": 1
+      }
     },
     {
       "seriesId": "turismo-pista",
       "state": "ok",
-      "lastAttempt": "2026-11-13T17:00:49Z",
-      "lastSuccess": "2026-11-13T17:00:49Z",
+      "lastAttempt": "2026-11-13T21:14:59Z",
+      "lastSuccess": "2026-11-13T21:14:59Z",
       "message": "El organizador todavía no publicó el cronograma de Fecha 10 Rafaela.",
       "sourceUrl": "https://aptpweb.com.ar/calendario-2026/",
       "standingsAvailable": true,
