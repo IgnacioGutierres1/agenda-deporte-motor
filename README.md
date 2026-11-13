@@ -39,6 +39,7 @@ npm run typecheck
 npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --skip-news --dry-run)
 npm run discovery     # descubrimiento de competencias nuevas
 npm run news          # solo noticias: lee los feeds RSS/Atom y escribe data/news.json (--dry-run)
+npm run circuits:tracks  # trazados de los circuitos desde OpenStreetMap: data/tracks/{id}.json (--limit=30 --only=id --force --dry-run)
 npm run drivers:candidates  # posibles pilotos duplicados por variantes del nombre (para config/driver-aliases.json)
 npm run dev           # app en modo desarrollo (sirve data/ en /data/)
 npm run build         # build de producción en app/dist (incluye data/)
