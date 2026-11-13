@@ -90,6 +90,7 @@ export const LIVE_SOURCES: Record<string, LiveSource> = {
   supercars: { officialUrl: 'https://www.supercars.com/live-timing' },
   '24h-series': { officialUrl: 'https://livetiming.getraceresults.com/24hseries' },
   'gt-open': { officialUrl: 'https://gtopen.gtsport.es/resultados', officialNote: 'Sin tiempos en vivo públicos: resultados.' },
+  wrc: { officialUrl: 'https://www.wrc.com/live-timing', officialNote: 'Live Centre oficial: lleva a los tiempos del rally en curso o del último corrido.' },
   tc: {
     officialUrl: 'https://tiempos.actc.org.ar/live/tc',
     officialNote: ACTC_NOTE,
