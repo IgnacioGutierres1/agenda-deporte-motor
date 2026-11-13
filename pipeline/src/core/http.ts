@@ -13,10 +13,16 @@ export interface HttpResponse<T> {
   body: T;
 }
 
+/**
+ * Opciones de un pedido. `noProxy`: si el sitio responde 403, no reintentar por el proxy de Google (para sitios que
+ * se leen solo de forma directa: si rechazan al cliente, el lector sigue con otra fuente).
+ */
+export type HttpInit = RequestInit & { noProxy?: boolean };
+
 export interface Http {
-  text(url: string, init?: RequestInit): Promise<HttpResponse<string>>;
-  json<T = unknown>(url: string, init?: RequestInit): Promise<HttpResponse<T>>;
-  bytes(url: string, init?: RequestInit): Promise<HttpResponse<Uint8Array>>;
+  text(url: string, init?: HttpInit): Promise<HttpResponse<string>>;
+  json<T = unknown>(url: string, init?: HttpInit): Promise<HttpResponse<T>>;
+  bytes(url: string, init?: HttpInit): Promise<HttpResponse<Uint8Array>>;
 }
 
 export interface HttpOptions {
@@ -46,7 +52,8 @@ export function createHttp(opts: HttpOptions = {}): Http {
   const doFetch = opts.fetchImpl ?? fetch;
   const memo = new Map<string, Promise<HttpResponse<unknown>>>();
 
-  async function request(url: string, init: RequestInit | undefined): Promise<Response> {
+  async function request(url: string, options: HttpInit | undefined): Promise<Response> {
+    const { noProxy: _noProxy, ...init } = options ?? {};
     let lastError: unknown;
     for (let attempt = 0; attempt <= retries; attempt++) {
       try {
@@ -55,7 +62,7 @@ export function createHttp(opts: HttpOptions = {}): Http {
           headers: {
             'User-Agent': USER_AGENT,
             'Accept-Language': 'es-AR,es;q=0.9,en;q=0.8',
-            ...(init?.headers ?? {}),
+            ...(init.headers ?? {}),
           },
           signal: AbortSignal.timeout(timeoutMs),
         });
@@ -77,7 +84,7 @@ export function createHttp(opts: HttpOptions = {}): Http {
   function memoized<T>(
     kind: string,
     url: string,
-    init: RequestInit | undefined,
+    init: HttpInit | undefined,
     read: (res: Response) => Promise<T>,
   ): Promise<HttpResponse<T>> {
     const key = `${kind} ${init?.method ?? 'GET'} ${url} ${init?.body ? String(init.body) : ''}`;
@@ -99,7 +106,7 @@ export function createHttp(opts: HttpOptions = {}): Http {
   async function withFallback<T>(
     kind: string,
     url: string,
-    init: RequestInit | undefined,
+    init: HttpInit | undefined,
     read: (res: Response) => Promise<T>,
     unproxy: (body: T) => T,
   ): Promise<HttpResponse<T>> {
@@ -107,7 +114,8 @@ export function createHttp(opts: HttpOptions = {}): Http {
       return await memoized(kind, url, init, read);
     } catch (err) {
       const isGet = !init?.method || init.method.toUpperCase() === 'GET';
-      const proxied = err instanceof HttpError && err.status === 403 && isGet && !init?.body ? googleProxyUrl(url) : null;
+      const proxied =
+        err instanceof HttpError && err.status === 403 && isGet && !init?.body && !init?.noProxy ? googleProxyUrl(url) : null;
       if (!proxied) throw err;
       try {
         const res = await memoized(kind, proxied, init, read);
@@ -120,7 +128,7 @@ export function createHttp(opts: HttpOptions = {}): Http {
 
   return {
     text: (url, init) => withFallback('text', url, init, (r) => r.text(), unproxyHtml),
-    json: <T>(url: string, init?: RequestInit) =>
+    json: <T>(url: string, init?: HttpInit) =>
       memoized('json', url, init, async (r) => (await r.json()) as T),
     // Imágenes y PDF (p. ej. el cronograma de TC2000, publicado como imagen): el proxy los devuelve tal cual.
     bytes: (url, init) => withFallback('bytes', url, init, async (r) => new Uint8Array(await r.arrayBuffer()), (b) => b),
