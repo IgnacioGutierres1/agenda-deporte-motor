@@ -35,6 +35,8 @@
   { "id": "macau-gp", "name": "Gran Premio de Macao", "shortName": "GP Macao", "group": "asia", "officialUrls": ["https://www.macau.grandprix.gov.mo/en/info/schedule"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#00843d" },
   { "id": "supercars", "name": "Repco Supercars Championship", "shortName": "Supercars", "group": "asia", "officialUrls": ["https://www.supercars.com/calendar", "https://www.supercars.com/standings"], "rosterUrls": ["https://www.supercars.com/drivers"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#e4002b" },
 
+  { "id": "dakar", "name": "Rally Dakar", "shortName": "Dakar", "group": "rally", "officialUrls": ["https://www.dakar.com/es/recorrido-general", "https://www.dakar.com/es/clasificaciones"], "strategy": "adapter", "adapter": "dakar", "origin": "default", "enabled": true, "color": "#c4390e" },
+
   { "id": "tc", "name": "Turismo Carretera", "shortName": "TC", "group": "argentina", "checklistItem": 18, "officialUrls": ["https://actc.org.ar/tc/calendario", "https://actc.org.ar/tc/campeonato"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#0033a0" },
   { "id": "tc-pista", "name": "TC Pista", "shortName": "TC Pista", "group": "argentina", "checklistItem": 18, "officialUrls": ["https://actc.org.ar/tcp/calendario", "https://actc.org.ar/tcp/campeonato"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#3366cc" },
   { "id": "tc-pickup", "name": "TC Pick Up", "shortName": "TC Pick Up", "group": "argentina", "checklistItem": 19, "officialUrls": ["https://actc.org.ar/tcpk/calendario", "https://actc.org.ar/tcpk/campeonato"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#ff6f00" },

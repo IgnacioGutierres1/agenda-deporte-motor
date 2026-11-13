@@ -90,6 +90,7 @@ export const LIVE_SOURCES: Record<string, LiveSource> = {
   supercars: { officialUrl: 'https://www.supercars.com/live-timing' },
   '24h-series': { officialUrl: 'https://livetiming.getraceresults.com/24hseries' },
   'gt-open': { officialUrl: 'https://gtopen.gtsport.es/resultados', officialNote: 'Sin tiempos en vivo públicos: resultados.' },
+  dakar: { officialUrl: 'https://www.dakar.com/es/clasificaciones', officialNote: 'Clasificación de cada etapa y general en el sitio oficial.' },
   tc: {
     officialUrl: 'https://tiempos.actc.org.ar/live/tc',
     officialNote: ACTC_NOTE,
