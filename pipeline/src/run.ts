@@ -9,8 +9,8 @@
  *      data/drivers.json, data/drivers-index.json, data/drivers/*.json, data/teams.json y data/feeds/*.ics.
  *   7. Completa las fichas de circuitos nuevos o vencidos en data/circuits.json (si falla, no afecta al resto).
  *   8. Lee los feeds de noticias y escribe data/news.json (si falla, no afecta al resto).
- *   9. Completa el historial de equipos y categorías nuevos o vencidos en data/bios/teams.json y
- *      data/bios/series.json (Wikidata y Wikipedia; si falla, no afecta al resto).
+ *   9. Completa de a poco el historial: pilotos en data/bios/drivers/*.json (Wikidata, Wikipedia, Commons y fotos
+ *      oficiales) y equipos y categorías en data/bios/teams.json y data/bios/series.json. Si falla, no afecta al resto.
  *
  * Uso: npm run pipeline -- [--only=f1,motogp] [--skip-results] [--skip-rosters] [--skip-circuits] [--skip-tracks] [--skip-news]
  *      [--skip-bios] [--dry-run]
@@ -51,6 +51,7 @@ import { runCircuits } from './circuits/index.ts';
 import { createOverpassHttp, runTracks } from './circuits/tracks-run.ts';
 import { runNews } from './news/index.ts';
 import { runTeamBios } from './bios/teams-run.ts';
+import { BIOS_PER_RUN, runDriverBios } from './bios/index.ts';
 import type { Adapter, AdapterContext } from './core/types.ts';
 import { validateSessions } from './validate.ts';
 
@@ -291,8 +292,14 @@ export async function run(opts: RunOptions = {}): Promise<{ schedule: ScheduleFi
     });
   }
 
-  // Historial de equipos y categorías: pocos por corrida y solo lo nuevo o vencido. Nunca lanza.
+  // Historial de pilotos, equipos y categorías: pocos por corrida (Wikimedia limita las consultas) y solo lo nuevo o
+  // vencido. Nunca hace fallar la corrida: ante un error se conservan las fichas anteriores.
   if (!opts.skipBios) {
+    try {
+      await runDriverBios({ log: log.child('historial'), dataDir, configDir: opts.configDir, now, limit: BIOS_PER_RUN, http: ctx.http, series: published, dryRun: opts.dryRun });
+    } catch (err) {
+      log.warn(`Historial de pilotos: ${err instanceof Error ? err.message : String(err)}`);
+    }
     await runTeamBios({
       log: log.child('historial-equipos'),
       now,

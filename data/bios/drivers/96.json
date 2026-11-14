@@ -1,0 +1,1271 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "adrian-percaz",
+      "wikidata": "Q111423506",
+      "summary": {
+        "text": "Adrián Percaz (Villalonga; 3 de febrero de 1986) es un piloto de automovilismo argentino. Fue campeón en dos ocasiones de la Clase 2 del Turismo Nacional. Hijo del expiloto y campeón Néstor Percaz.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Adri%C3%A1n_Percaz"
+      },
+      "birthDate": "1986-02-03",
+      "birthPlace": "Villalonga, Argentina",
+      "nationality": "Argentina",
+      "career": [
+        {
+          "season": 2026,
+          "series": "Turismo Nacional (Clase 3)",
+          "seriesId": "tn",
+          "team": "Percaz Competicion",
+          "pos": 31,
+          "points": 32,
+          "source": "app"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "daniil-kvyat",
+      "wikidata": "Q979668",
+      "summary": {
+        "text": "Daniil Viacheslavovich Kvyat (Ufá, Baskortostán, Rusia; 26 de abril de 1994) es un piloto de automovilismo ruso. Fue campeón de la Fórmula Renault 2.0 en 2012 y al año siguiente se proclamó campeón de la GP3 Series como debutante, y a su vez corrió como piloto invitado en la Fórmula 3 Europea. Debutó en la Fórmula 1 con la Scuderia Toro Rosso en 2014. En este campeonato, ha competido también con el equipo Red Bull, y en total ha sumado tres podios y una vuelta rápida. En 2019 volvió a competir con Toro Rosso hasta 2020, renombrado como AlphaTauri.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Daniil_Kvyat"
+      },
+      "birthDate": "1994-04-26",
+      "birthPlace": "Ufá, Rusia",
+      "nationality": "Rusia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/43/Daniil_Kvyat_2015_Malaysia.jpg/500px-Daniil_Kvyat_2015_Malaysia.jpg",
+        "width": 480,
+        "height": 720,
+        "credit": "Morio",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Daniil_Kvyat_2015_Malaysia.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 4,
+          "points": 70,
+          "races": 8,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship – GTP",
+          "seriesId": "imsa",
+          "team": "Automobili Lamborghini Squadra Corse",
+          "pos": 17,
+          "points": 976,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA World Endurance Championship – Hypercar",
+          "seriesId": "wec",
+          "team": "Lamborghini Iron Lynx",
+          "pos": 31,
+          "points": 2,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "24 Hours of Le Mans – Hypercar",
+          "team": "Lamborghini Iron Lynx",
+          "pos": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "SS-Green Light Racing",
+          "pos": 66,
+          "points": 16,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "FIA World Endurance Championship – LMP2",
+          "seriesId": "wec",
+          "team": "Prema Racing",
+          "pos": 9,
+          "points": 63,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Le Mans – LMP2",
+          "team": "Prema Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Team Hezeberg by Reaume Brothers Racing",
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Sam Hunt Racing",
+          "pos": 59,
+          "points": 22,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Russian Endurance Challenge",
+          "team": "G-Drive Racing",
+          "pos": 1,
+          "points": 100,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Alpine F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia AlphaTauri Honda",
+          "pos": 14,
+          "points": 32,
+          "races": 17,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Red Bull Toro Rosso Honda",
+          "pos": 13,
+          "points": 37,
+          "races": 21,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Toro Rosso",
+          "pos": 19,
+          "points": 5,
+          "races": 15,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Red Bull Racing",
+          "pos": 14,
+          "points": 25,
+          "races": 4,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Toro Rosso",
+          "pos": 14,
+          "points": 25,
+          "races": 17,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Red Bull Racing",
+          "pos": 7,
+          "points": 95,
+          "races": 19,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Toro Rosso",
+          "pos": 15,
+          "points": 8,
+          "races": 19,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "GP3 Series",
+          "team": "MW Arden",
+          "pos": 1,
+          "points": 168,
+          "races": 16,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "FIA Formula 3 European Championship",
+          "team": "Carlin",
+          "races": 21,
+          "wins": 1,
+          "podiums": 7,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Toro Rosso",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Eurocup Formula Renault 2.0",
+          "team": "Koiranen Motorsport",
+          "pos": 2,
+          "points": 234,
+          "races": 14,
+          "wins": 7,
+          "podiums": 9,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Formula Renault 2.0 Alps",
+          "team": "Koiranen Motorsport",
+          "pos": 1,
+          "points": 217,
+          "races": 14,
+          "wins": 7,
+          "podiums": 8,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Eurocup Formula Renault 2.0",
+          "team": "Koiranen Motorsport",
+          "pos": 3,
+          "points": 155,
+          "races": 14,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Formula Renault 2.0 NEC",
+          "team": "Koiranen Motorsport",
+          "pos": 2,
+          "points": 431,
+          "races": 20,
+          "wins": 7,
+          "podiums": 13,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Formula Renault UK Finals Series",
+          "team": "Koiranen Motorsport",
+          "pos": 3,
+          "points": 111,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Toyota Racing Series",
+          "team": "Victory Motor Racing",
+          "pos": 5,
+          "points": 138,
+          "races": 12,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula BMW Europe",
+          "team": "EuroInternational",
+          "pos": 10,
+          "points": 138,
+          "races": 16,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula BMW Pacific",
+          "team": "EuroInternational",
+          "races": 8,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula Renault UK Winter Series",
+          "team": "Koiranen Bros. Motorsport",
+          "pos": 4,
+          "points": 109,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Eurocup Formula Renault 2.0",
+          "team": "Koiranen Bros. Motorsport",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2022,
+          "series": "Russian Endurance Challenge"
+        },
+        {
+          "season": 2013,
+          "series": "GP3 Series"
+        },
+        {
+          "season": 2012,
+          "series": "Formula Renault 2.0 Alps"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://en.kvyat.com"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/danydk1/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/kvyatofficial"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/daniil.kvyat.1"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "reddick-tyler",
+      "wikidata": "Q16239757",
+      "summary": {
+        "text": "Tyler George Reddick (Corning, California, 11 de enero de 1996) es un piloto de automovilismo estadounidense. Compite a tiempo completo en la NASCAR Cup Series desde 2020, conduciendo para 23XI Racing. Es bicampeón en la NASCAR Xfinity Series, habiendo ganado los títulos de 2018 y 2019.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Tyler_Reddick"
+      },
+      "birthDate": "1996-01-11",
+      "birthPlace": "Corning, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/52/Tyler_Reddick_Sonoma_2024.jpg/500px-Tyler_Reddick_Sonoma_2024.jpg",
+        "width": 480,
+        "height": 658,
+        "credit": "TaurusEmerald",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Tyler_Reddick_Sonoma_2024.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "23XI Racing",
+          "pos": 2,
+          "points": 802,
+          "races": 22,
+          "wins": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "23XI Racing",
+          "pos": 9,
+          "points": 2309,
+          "races": 36,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "23XI Racing",
+          "pos": 4,
+          "points": 5031,
+          "races": 36,
+          "wins": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Sam Hunt Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "23XI Racing",
+          "pos": 6,
+          "points": 2344,
+          "races": 36,
+          "wins": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Sam Hunt Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Richard Childress Racing",
+          "pos": 14,
+          "points": 2215,
+          "races": 36,
+          "wins": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Big Machine Racing",
+          "points": 0,
+          "races": 5,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Richard Childress Racing",
+          "pos": 13,
+          "points": 2250,
+          "races": 36,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Our Motorsports",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing with Reaume Brothers Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Jordan Anderson Racing",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Richard Childress Racing",
+          "pos": 19,
+          "points": 780,
+          "races": 36,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Richard Childress Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Richard Childress Racing",
+          "pos": 1,
+          "points": 4040,
+          "races": 33,
+          "wins": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "JR Motorsports",
+          "pos": 1,
+          "points": 4040,
+          "races": 33,
+          "wins": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Chip Ganassi Racing",
+          "pos": 18,
+          "points": 484,
+          "races": 18,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Brad Keselowski Racing",
+          "pos": 9,
+          "points": 511,
+          "races": 23,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Brad Keselowski Racing",
+          "pos": 2,
+          "points": 884,
+          "races": 23,
+          "wins": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Brad Keselowski Racing",
+          "pos": 12,
+          "points": 539,
+          "races": 16,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "ARCA Racing Series",
+          "team": "Cunningham Motorsports",
+          "pos": 78,
+          "points": 205,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Ken Schrader Racing",
+          "pos": 77,
+          "points": 14,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "NASCAR K&N Pro Series East",
+          "team": "Ken Schrader Racing",
+          "pos": 62,
+          "points": 25,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "ARCA Racing Series",
+          "team": "Cunningham Motorsports",
+          "pos": 111,
+          "points": 160,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "NASCAR K&N Pro Series East",
+          "team": "Curb Racing",
+          "pos": 47,
+          "points": 47,
+          "races": 1,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "ARCA Racing Series",
+          "team": "Ken Schrader Racing",
+          "pos": 63,
+          "points": 345,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2019,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity"
+        },
+        {
+          "season": 2018,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.tylerreddick.com/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/TylerReddick"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "thierry-vermeulen",
+      "wikidata": "Q117210352",
+      "summary": {
+        "text": "Thierry Egidius Gerardus Vermeulen (born 29 July 2002) is a Dutch racing driver currently competing for Emil Frey Racing in the Deutsche Tourenwagen Masters. He is supported by four-time Formula One World Drivers' Champion Max Verstappen. He previously competed in the ADAC GT Masters, scoring a podium alongside Mattia Drudi.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Thierry_Vermeulen"
+      },
+      "birthDate": "2002-07-29",
+      "birthPlace": "Venlo, Países Bajos",
+      "nationality": "Reino de los Países Bajos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/40/Vermeulen_2023.jpg/500px-Vermeulen_2023.jpg",
+        "width": 480,
+        "height": 645,
+        "credit": "KVYTICAL",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Vermeulen_2023.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Conquest Racing",
+          "pos": 75,
+          "points": 188,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Deutsche Tourenwagen Masters",
+          "seriesId": "dtm",
+          "team": "Emil Frey Racing",
+          "pos": 11,
+          "points": 107,
+          "races": 16,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Emil Frey Racing",
+          "pos": 4,
+          "points": 56.5,
+          "races": 10,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Realize Kondo Racing with Rinaldi",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Realize Kondo Racing with Rinaldi",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Asia",
+          "seriesId": "gtwc-asia",
+          "team": "Absolute Corse",
+          "pos": 35,
+          "points": 8,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "JMW Motorsport",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24H Series (Creventic)",
+          "seriesId": "24h-series",
+          "team": "Razoon - More Than Racing",
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Middle East Trophy - GT3",
+          "team": "Team Motopark",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Deutsche Tourenwagen Masters",
+          "seriesId": "dtm",
+          "team": "Emil Frey Racing",
+          "pos": 10,
+          "points": 102,
+          "races": 16,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Emil Frey Racing",
+          "pos": 7,
+          "points": 23,
+          "races": 10,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Sprint Cup - Gold Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Emil Frey Racing",
+          "pos": 1,
+          "points": 118.5,
+          "races": 10,
+          "wins": 4,
+          "podiums": 7,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Verstappen.com Racing",
+          "pos": 21,
+          "points": 8,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup - Gold",
+          "seriesId": "gtwc-europe",
+          "team": "Verstappen.com Racing",
+          "pos": 1,
+          "points": 121,
+          "races": 5,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Asia",
+          "seriesId": "gtwc-asia",
+          "team": "Absolute Corse",
+          "pos": 34,
+          "points": 11,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Gulf 12 Hours - Pro-Am",
+          "team": "Razoon – more than racing",
+          "pos": 5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24H Series Middle East - GT3",
+          "team": "Razoon – more than racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Deutsche Tourenwagen Masters",
+          "seriesId": "dtm",
+          "team": "Emil Frey Racing",
+          "pos": 15,
+          "points": 71,
+          "races": 16,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Emil Frey Racing",
+          "pos": 4,
+          "points": 43.5,
+          "races": 10,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Nürburgring Langstrecken-Serie - Cup3",
+          "seriesId": "nls",
+          "team": "Lionspeed GP",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Konrad Motorsport",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24H GT Series - GT3",
+          "seriesId": "24h-series",
+          "team": "Team GP Elite",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Deutsche Tourenwagen Masters",
+          "seriesId": "dtm",
+          "team": "Emil Frey Racing",
+          "pos": 16,
+          "points": 58,
+          "races": 16,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Emil Frey Racing",
+          "pos": 4,
+          "points": 62.5,
+          "races": 10,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Middle East Trophy - GT3",
+          "team": "racing one",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "ADAC GT Masters",
+          "team": "Car Collection Motorsport",
+          "pos": 23,
+          "points": 51,
+          "races": 14,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Tresor by Car Collection",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup - Silver",
+          "seriesId": "gtwc-europe",
+          "team": "Tresor by Car Collection",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24H GT Series - 992",
+          "seriesId": "24h-series",
+          "team": "Team GP-Elite",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24H GT Series - 992",
+          "seriesId": "24h-series",
+          "team": "RABDAN Motorsports by ID Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "24H GT Series - 991",
+          "seriesId": "24h-series",
+          "team": "MRS GT-Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "24H GT Series - GTX",
+          "seriesId": "24h-series",
+          "team": "Red Camel-Jordans.nl",
+          "pos": 13,
+          "points": 24,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Porsche Carrera Cup Benelux",
+          "team": "Team GP Elite",
+          "pos": 6,
+          "points": 114,
+          "races": 12,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Porsche Carrera Cup Germany",
+          "team": "Team GP Elite",
+          "pos": 24,
+          "points": 5,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "High Class Racing with WRT",
+          "pos": 26,
+          "points": 8,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Porsche Sprint Challenge Middle East",
+          "team": "GP Elite",
+          "pos": 12,
+          "points": 71,
+          "races": 10,
+          "wins": 0,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Porsche Sprint Challenge Benelux - GT4 CS",
+          "team": "Team GP Elite",
+          "pos": 1,
+          "races": 12,
+          "wins": 11,
+          "podiums": 12,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT4 European Series - Silver",
+          "team": "Selleslagh Racing Team",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Sprint Cup - Gold Cup",
+          "seriesId": "gtwc-europe"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup - Gold",
+          "seriesId": "gtwc-europe"
+        },
+        {
+          "season": 2020,
+          "series": "Porsche Sprint Challenge Benelux - GT4 CS"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://www.thierryvermeulen.com/"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

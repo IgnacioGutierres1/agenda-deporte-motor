@@ -43,6 +43,7 @@ npm run news          # solo noticias: lee los feeds RSS/Atom y escribe data/new
 npm run circuits      # fichas de circuitos: completa data/circuits.json sin tope por corrida (--force, --only=monza, --table)
 npm run circuits:tracks  # trazados de los circuitos desde OpenStreetMap: data/tracks/{id}.json (--limit=30 --only=id --force --dry-run)
 npx tsx pipeline/src/bios/teams-run.ts  # historial de equipos y categorías sin tope por corrida (--force, --only=f1,ferrari, --series-only, --teams-only, --dry-run)
+npm run bios:drivers  # historial de pilotos (Wikidata, Wikipedia, Commons y fotos oficiales): data/bios/drivers/*.json (--limit=200 --only=id --force --dry-run); el pipeline hace 40 por corrida (--skip-bios para saltearlo)
 npm run drivers:candidates  # posibles pilotos duplicados por variantes del nombre (para config/driver-aliases.json)
 npm run dev           # app en modo desarrollo (sirve data/ en /data/)
 npm run build         # build de producción en app/dist (incluye data/)

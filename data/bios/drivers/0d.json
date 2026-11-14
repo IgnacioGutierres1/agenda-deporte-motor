@@ -1,0 +1,852 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "gamou-naoya",
+      "wikidata": "Q30931968",
+      "summary": {
+        "text": "Naoya Gamou (蒲生尚弥, Gamō Naoya; born 11 November 1989) is a Japanese professional racing driver who currently competes in Super GT for K2 R&D LEON Racing in the GT300 class. He has won the Super GT championship twice, in 2018 and 2025, in the GT300 class.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Naoya_Gamou"
+      },
+      "nationality": "Japón",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/6/65/Gamou_Sepang_25.png",
+        "width": 480,
+        "height": 629,
+        "credit": "Thfeeder",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Gamou_Sepang_25.png"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "apr",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "KCMG",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Hyōgo Racing Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "SUPER GT (GT300)",
+          "seriesId": "super-gt",
+          "team": "K2 R&D Leon Racing",
+          "pos": 5,
+          "points": 65,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 1,
+          "points": 86,
+          "races": 8,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Asia",
+          "seriesId": "gtwc-asia",
+          "team": "Porsche Centre Okazaki",
+          "pos": 44,
+          "points": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "apr",
+          "pos": 3,
+          "points": 114,
+          "races": 6,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Nürburgring Langstrecken-Serie - SP8T",
+          "seriesId": "nls",
+          "team": "TOYOTA GAZOO ROOKIE Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Hyōgo Racing Team",
+          "pos": 5,
+          "points": 48,
+          "races": 6,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 2,
+          "points": 92,
+          "races": 8,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "Zhongsheng ROOKIE Racing",
+          "pos": 1,
+          "points": 134.4,
+          "races": 7,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Hyōgo Racing Team",
+          "pos": 7,
+          "points": 45,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 4,
+          "points": 44,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "Zhongsheng ROOKIE Racing",
+          "pos": 1,
+          "points": 136,
+          "races": 7,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Hyōgo Racing Team",
+          "pos": 11,
+          "points": 21,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 9,
+          "points": 33,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyū - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "ORC ROOKIE Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 6,
+          "points": 43,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyū - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "ROOKIE Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 3,
+          "points": 59,
+          "races": 8,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-1",
+          "seriesId": "super-taikyu",
+          "team": "ROOKIE Racing",
+          "pos": 1,
+          "points": 121,
+          "races": 4,
+          "wins": 4,
+          "podiums": 4,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 5,
+          "points": 46.5,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 4,
+          "points": 89,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 1,
+          "points": 68,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 1,
+          "points": 159,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 2,
+          "points": 72,
+          "races": 8,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 1,
+          "points": 135,
+          "races": 6,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 12,
+          "points": 26,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Toyota Team TOM'S Spirit",
+          "pos": 2,
+          "points": 96,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "24 Hours of Nürburgring - SP3T",
+          "team": "Toyota Gazoo Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LEON Racing",
+          "pos": 9,
+          "points": 41,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Toyota Team TOM'S Spirit",
+          "pos": 6,
+          "points": 55.5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "24 Hours of Nürburgring - SP3T",
+          "team": "Team Toyota Gazoo Racing",
+          "pos": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LEON Racing",
+          "pos": 29,
+          "points": 5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "GAZOO Racing Spirit",
+          "pos": 4,
+          "points": 61.5,
+          "races": 5,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "24 Hours of Nürburgring - SP3",
+          "team": "Toyota Gazoo Racing",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Okinawa-IMP Racing with SHIFT",
+          "pos": 16,
+          "points": 18,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "GAZOO Racing Spirit",
+          "pos": 6,
+          "points": 49.5,
+          "races": 4,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "24 Hours of Nürburgring - SP3",
+          "team": "Toyota Gazoo Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Japanese Formula 3 Championship - National",
+          "team": "SGC by KCMG",
+          "pos": 7,
+          "points": 7,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "GAZOO Racing Spirit",
+          "pos": 10,
+          "points": 16,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Japanese Formula 3 Championship",
+          "team": "Petronas Team TOM'S",
+          "pos": 4,
+          "points": 71,
+          "races": 14,
+          "wins": 1,
+          "podiums": 10,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hankook KTR",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Japanese Formula 3 Championship - National",
+          "team": "TOM'S Spirit",
+          "pos": 2,
+          "points": 121,
+          "races": 16,
+          "wins": 8,
+          "podiums": 12,
+          "poles": 7,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Formula Challenge Japan",
+          "team": "FTRS FCJ",
+          "pos": 3,
+          "points": 36,
+          "races": 10,
+          "wins": 3,
+          "podiums": 7,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Super Taikyū - ST2",
+          "seriesId": "super-taikyu",
+          "team": "T'Z Racing Varis",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-1",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2018,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "ito-reimei",
+      "wikidata": "Q130189993",
+      "summary": {
+        "text": "Reimei Ito (伊東 黎明, Itou Reimei; born 30 July 2000) is a Japanese racing driver currently competing in Super GT as a third driver, and also in Super Formula Lights with LM corsa. He was the 2024 Porsche Carrera Cup Japan champion.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Reimei_Ito"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Porsche Carrera Cup Japan",
+          "team": "Showa Auto with Bingo Racing",
+          "pos": 3,
+          "points": 165,
+          "races": 11,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super GT – GT300",
+          "seriesId": "super-gt",
+          "team": "CarGuy MKS Racing",
+          "pos": 30,
+          "points": 17,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-2",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Porsche Carrera Cup Japan",
+          "team": "Showa Auto with Bingo Racing",
+          "pos": 2,
+          "points": 204,
+          "races": 11,
+          "wins": 2,
+          "podiums": 9,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Formula Lights",
+          "team": "LM corsa",
+          "pos": 11,
+          "points": 1,
+          "races": 18,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT – GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 32,
+          "points": 1,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu – ST-2",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup Japan",
+          "team": "Showa Auto with Bingo Racing",
+          "pos": 1,
+          "points": 257.5,
+          "races": 11,
+          "wins": 10,
+          "podiums": 11,
+          "poles": 11,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Formula Lights",
+          "team": "LM corsa",
+          "pos": 9,
+          "points": 1,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT – GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu – ST-2",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 2,
+          "points": 120.5,
+          "races": 5,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu – ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 1,
+          "points": 134,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "OTG Motor Sports",
+          "pos": 10,
+          "points": 29,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Yogibo Racing",
+          "pos": 20,
+          "points": 10,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyu - ST-2",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 2,
+          "points": 130.5,
+          "races": 6,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "F4 Japanese Championship",
+          "team": "OTG Motor Sports",
+          "pos": 7,
+          "points": 68,
+          "races": 14,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyu - ST-2",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 2,
+          "points": 140,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "F4 Japanese Championship",
+          "team": "OTG Motor Sports",
+          "pos": 4,
+          "points": 160,
+          "races": 14,
+          "wins": 0,
+          "podiums": 6,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "F4 Japanese Championship",
+          "team": "OTG Motor Sports",
+          "pos": 5,
+          "points": 89,
+          "races": 12,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup Japan"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu – ST-4",
+          "seriesId": "super-taikyu"
+        }
+      ],
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/reimei_ito/"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

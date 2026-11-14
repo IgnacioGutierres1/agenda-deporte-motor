@@ -1,0 +1,950 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "aguirre-valentin",
+      "wikidata": "Q47493817",
+      "summary": {
+        "text": "Valentín Aguirre (Arrecifes, Provincia de Buenos Aires, 25 de noviembre de 1996) es un piloto de automovilismo argentino. Fue campeón de TC Pista en 2017 y compite en Turismo Carretera desde el año siguiente.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Valent%C3%ADn_Aguirre"
+      },
+      "birthDate": "1996-11-25",
+      "birthPlace": "Arrecifes, Argentina",
+      "nationality": "Argentina",
+      "career": [
+        {
+          "season": 2026,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "pos": 17,
+          "points": 248.5,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Turismo Nacional (Clase 3)",
+          "seriesId": "tn",
+          "team": "Ale Bucci Racing",
+          "pos": 32,
+          "points": 31,
+          "source": "app"
+        },
+        {
+          "season": 2023,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera",
+          "pos": 10,
+          "points": 331,
+          "races": 15,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "DTA Racing / JP Carrera",
+          "pos": 26,
+          "points": 207.75,
+          "races": 15,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "TC Pick Up",
+          "seriesId": "tc-pickup",
+          "team": "JP Carrera",
+          "pos": 5,
+          "points": 295,
+          "races": 11,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "DTA Racing",
+          "pos": 26,
+          "points": 197.25,
+          "races": 14,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera",
+          "pos": 12,
+          "points": 280,
+          "races": 11,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Súper TC2000",
+          "seriesId": "tc2000",
+          "team": "Midas Carrera Team",
+          "pos": 17,
+          "points": 18,
+          "races": 15,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera",
+          "pos": 5,
+          "points": 426,
+          "races": 15,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "TC Pick Up",
+          "seriesId": "tc-pickup",
+          "team": "JP Carrera",
+          "pos": 2,
+          "points": 177,
+          "races": 10,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Porsche GT3 Cup Trophy Argentina - Torneo Jóvenes Talentos",
+          "pos": 2,
+          "points": 100,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera",
+          "pos": 23,
+          "points": 263.75,
+          "races": 14,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "TC Mouras - Torneo de Invitados",
+          "seriesId": "tc-mouras",
+          "team": "JP Carrera",
+          "pos": 6,
+          "points": 62,
+          "races": 4,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "TC Pick Up",
+          "seriesId": "tc-pickup",
+          "team": "JP Carrera",
+          "pos": 9,
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "TC Pista",
+          "seriesId": "tc-pista",
+          "team": "JP Carrera",
+          "pos": 1,
+          "points": 495,
+          "races": 14,
+          "wins": 4,
+          "podiums": 7,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Top Race V6",
+          "team": "JP Carrera",
+          "pos": 18,
+          "points": 16,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera",
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "TC Mouras - Torneo de Invitados",
+          "seriesId": "tc-mouras",
+          "team": "JP Carrera",
+          "pos": 26,
+          "points": 17,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "TC Pista",
+          "seriesId": "tc-pista",
+          "team": "JP Racing",
+          "pos": 9,
+          "points": 436.5,
+          "races": 16,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "TC Mouras",
+          "seriesId": "tc-mouras",
+          "team": "Dole Racing",
+          "pos": 2,
+          "points": 525.25,
+          "races": 14,
+          "wins": 1,
+          "podiums": 7,
+          "poles": 1,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2017,
+          "series": "TC Pista",
+          "seriesId": "tc-pista"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "david-russell",
+      "wikidata": "Q5239312",
+      "summary": {
+        "text": "David Russell (born 4 January 1982) is an Australian racing driver. Russell has competed in the Supercars Championship intermittently since 2003. As of 2024, he signed with PremiAir Nulon Racing to co-drive with Jimmy Golding, after a successful stint with Erebus Motorsport.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/David_Russell_(racing_driver)"
+      },
+      "birthDate": "1982-01-04",
+      "birthPlace": "Casino, Australia",
+      "nationality": "Australia",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/b2/David_Russell%2C_April_2017.jpg",
+        "width": 480,
+        "height": 580,
+        "credit": "In Pit Lane",
+        "license": "CC BY 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:David_Russell,_April_2017.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Supabarn Supermarkets/Tigani Motorsport",
+          "source": "app"
+        },
+        {
+          "season": 2023,
+          "series": "Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Erebus Motorsport",
+          "pos": 27,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Porsche Carrera Cup Australia",
+          "team": "EMA Motorsport",
+          "pos": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Erebus Motorsport",
+          "pos": 31,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Erebus Motorsport",
+          "pos": 30,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Porsche Carrera Cup Australia",
+          "team": "Lago Racing",
+          "pos": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Virgin Australia Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Matt Stone Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Dunlop Super2 Series",
+          "team": "Matt Stone Racing",
+          "pos": 22,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Virgin Australia Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Tickford Racing",
+          "pos": 41,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Virgin Australia Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport",
+          "pos": 52,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Australian Endurance Championship",
+          "team": "Lago Racing",
+          "pos": 11,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Bentley Team M-Sport",
+          "pos": 13,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport",
+          "pos": 40,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Finance EZI",
+          "pos": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport",
+          "pos": 34,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "ADAC GT Masters",
+          "team": "Reiter Engineering",
+          "pos": 20,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Australian Carrera Cup Championship",
+          "team": "JBS Australia",
+          "pos": 19,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport",
+          "pos": 36,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Australian GT Championship",
+          "team": "Interlloy M Motorsport",
+          "pos": 13,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport",
+          "pos": 54,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Australian GT Championship",
+          "team": "Lago Racing",
+          "pos": 34,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Dunlop V8 Supercar Series",
+          "team": "Kelly Racing",
+          "pos": 18,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Kelly Racing",
+          "pos": 40,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Australian GT Championship",
+          "team": "JBS",
+          "pos": 23,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Fujitsu V8 Supercar Series",
+          "team": "MW Motorsport",
+          "pos": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Kelly Racing",
+          "pos": 51,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Commodore Cup",
+          "team": "Sports Alive",
+          "pos": 20,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Fujitsu V8 Supercar Series",
+          "team": "MW Motorsport",
+          "pos": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "V8 Supercar Championship Series",
+          "seriesId": "supercars",
+          "team": "Dick Johnson Racing",
+          "pos": 42,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Fujitsu V8 Supercar Series",
+          "team": "Howard Racing",
+          "pos": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Sherrin Motorsport",
+          "pos": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Sherrin Motorsport",
+          "pos": 8,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Sherrin Motorsport",
+          "pos": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2004,
+          "series": "Australian Production Car Championship",
+          "team": "Team Satria Racing",
+          "pos": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2004,
+          "series": "Australian Production Car Championship Class D",
+          "team": "Team Satria Racing",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "Australian Production Car Championship",
+          "team": "Team Satria Racing",
+          "pos": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "Australian Production Car Championship Class D",
+          "team": "Team Satria Racing",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "Konica V8 Supercar Series",
+          "team": "MoPro",
+          "pos": 12,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2002,
+          "series": "Australian GT Production Car Championship",
+          "team": "Caltex",
+          "pos": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2002,
+          "series": "Australian GT Production Car Championship Class E",
+          "team": "Caltex",
+          "pos": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2001,
+          "series": "Australian GT Production Car Championship Class E",
+          "team": "Mycar",
+          "pos": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2000,
+          "series": "Australian GT Production Car Championship Class E",
+          "team": "John Dickinson",
+          "pos": 6,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2004,
+          "series": "Australian Production Car Championship Class D"
+        },
+        {
+          "season": 2003,
+          "series": "Australian Production Car Championship Class D"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "hiroaki-ishiura",
+      "wikidata": "Q1620218",
+      "summary": {
+        "text": "Hiroaki Ishiura (石浦 宏明, Ishiura Hiroaki; born April 23, 1981) is a Japanese racing driver from Tokyo. He currently drives in the Super GT series for Rookie Racing. He was the 2015 and 2017 Super Formula champion, and is known as a fast and strong driver.\n\nIshiura made his Super GT debut in 2006. In 2007, he won the GT300 championship, in the apr MR-S with Kazuya Oshima. In 2008, he started racing in the GT500 class as part of Team Tsuchiya. He went on to join Cerumo after driving for SARD. In 2025, he ended his 18-year run in the GT500 class, finishing third in his final race. However, he is not retiring.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Hiroaki_Ishiura"
+      },
+      "birthDate": "1981-04-23",
+      "birthPlace": "Tokio, Japón",
+      "nationality": "Japón",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/8/82/Ishiura_at_Super_GT_Malaysia_Round_in_2025.png",
+        "width": 480,
+        "height": 716,
+        "credit": "Thfeeder",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ishiura_at_Super_GT_Malaysia_Round_in_2025.png"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "GT300",
+          "team": "Team ENEOS Rookie",
+          "points": 42,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT300",
+          "team": "Team ENEOS Rookie",
+          "points": 42,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "SUPER GT (GT300)",
+          "seriesId": "super-gt",
+          "team": "Team ENEOS Rookie",
+          "pos": 15,
+          "points": 42,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "GT500",
+          "team": "TGR Team KeePer Cerumo",
+          "points": 56,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT500",
+          "team": "TGR Team KeePer Cerumo",
+          "points": 54,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT500",
+          "team": "TGR Team ZENT Cerumo",
+          "points": 26,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT500",
+          "team": "TGR Team ZENT Cerumo",
+          "points": 16.5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT500",
+          "team": "TGR Team ZENT Cerumo",
+          "points": 34,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT500",
+          "team": "TGR Team ZENT Cerumo",
+          "points": 40,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "GT500",
+          "team": "Lexus Team ZENT Cerumo",
+          "points": 46.5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "GT500",
+          "team": "Lexus Team ZENT Cerumo",
+          "points": 59,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "GT500",
+          "team": "Lexus Team Cerumo",
+          "points": 62,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "GT500",
+          "team": "Lexus Team Cerumo",
+          "points": 52,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GT500",
+          "team": "Lexus Team Zent Cerumo",
+          "points": 59,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GT500",
+          "team": "Lexus Team SARD",
+          "points": 24,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "GT500",
+          "team": "Lexus Team SARD",
+          "points": 49,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "GT500",
+          "team": "Lexus Team SARD",
+          "points": 57,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "GT500",
+          "team": "Lexus Team SARD",
+          "points": 40,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "GT500",
+          "team": "Lexus Team Kraft",
+          "points": 45,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "GT500",
+          "team": "Lexus Team Kraft",
+          "points": 44,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "GT500",
+          "team": "Team Tsuchiya",
+          "points": 23,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "GT300",
+          "team": "apr",
+          "points": 89,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "GT300",
+          "team": "DHG Racing",
+          "points": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "X",
+          "url": "https://x.com/Hiroaki_Ishiura"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/hiroaki.ishiura"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "lucas-yerobi",
+      "wikidata": "Q28502167",
+      "summary": {
+        "text": "Lucas Ariel Yerobi (n. 31 de enero de 1984, Ushuaia, Tierra del Fuego) es un piloto argentino de automovilismo de velocidad. Desarrolló su carrera compitiendo en distintas categorías de nivel nacional, llegando a proclamarse campeón en el año 2012 de la Clase 3 del Turismo Pista, al comando de una unidad Volkswagen Gol. Debutó profesionalmente en el año 2007, compitiendo en la categoría Fórmula 4 Nueva Generación, pasando luego a competir en forma sucesiva en el Turismo Pista, Turismo Nacional, Desafío Focus y el TC 2000.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Lucas_Yerobi"
+      },
+      "birthDate": "1984-01-31",
+      "birthPlace": "Ushuaia, Argentina",
+      "nationality": "Argentina",
+      "career": [
+        {
+          "season": 2026,
+          "series": "Turismo Pista (Clase 2)",
+          "seriesId": "turismo-pista",
+          "pos": 13,
+          "points": 116,
+          "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2018,
+          "series": "Clase 3 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Top Race Junior, 2 carreras",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Subcampeón Clase 3 del Turismo Pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "TC 2000, 3 fechas",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Clase 3 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Clase 3 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "TC 2000, 4 fechas",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Clase 2 del Turismo Pista, 2 carreras",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Clase 3 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "la Clase 2 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Clase 2 del Turismo Nacional",
+          "seriesId": "tn",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Clase 3 del Turismo Pista, 1 carrera",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Campeón Clase 3 del Turismo Pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "TC Pista Mouras, 2 carreras",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "la Clase 3 del Turismo Nacional, 3 carreras",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Clase 3 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "la Clase 3 del Turismo Pista",
+          "seriesId": "turismo-pista",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Clase 2 del Turismo Nacional, 2 carreras",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Desafío Focus",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "TC Pista Mouras, 1 carrera",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "la Clase 2 del Turismo Nacional, 6 carreras",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Fórmula 4 Argentina",
+          "source": "wikipedia"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}
