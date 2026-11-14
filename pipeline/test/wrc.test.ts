@@ -704,8 +704,8 @@ describe('itinerarios sin cambios', () => {
   });
 });
 
-describe('cliente HTTP: noProxy', () => {
-  it('con noProxy un 403 no se reintenta por el proxy de Google', async () => {
+describe('cliente HTTP: 403', () => {
+  it('un 403 no se reintenta por ningún otro camino, con noProxy o sin él', async () => {
     const asked: string[] = [];
     const fetchImpl = (async (url: string | URL | Request) => {
       asked.push(String(url));
@@ -715,6 +715,6 @@ describe('cliente HTTP: noProxy', () => {
     await expect(http.text('https://www.wrc.com/en/calendar', { noProxy: true })).rejects.toMatchObject({ status: 403 });
     expect(asked).toEqual(['https://www.wrc.com/en/calendar']);
     await expect(http.text('https://www.example.org/x')).rejects.toMatchObject({ status: 403 });
-    expect(asked.at(-1)).toMatch(/translate\.goog/);
+    expect(asked).toEqual(['https://www.wrc.com/en/calendar', 'https://www.example.org/x']);
   });
 });
