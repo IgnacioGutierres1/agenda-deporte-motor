@@ -1,0 +1,194 @@
+{
+ "seasons": [],
+ "series": [],
+ "events": [
+  {
+   "id": 335,
+   "season_id": 2026,
+   "name": "Motul Petit Le Mans",
+   "track": {
+    "id": 12,
+    "name": "Road Atlanta",
+    "short_name": "Road Atlanta"
+   }
+  },
+  {
+   "id": 334,
+   "season_id": 2026,
+   "name": "TireRack.com Battle on the Bricks",
+   "track": {
+    "id": 8,
+    "name": "Indianapolis Motor Speedway",
+    "short_name": "Indy"
+   }
+  },
+  {
+   "id": 332,
+   "season_id": 2026,
+   "name": "Michelin GT Challenge at VIR",
+   "track": {
+    "id": 10,
+    "name": "VIRginia International Raceway",
+    "short_name": "VIR"
+   }
+  },
+  {
+   "id": 330,
+   "season_id": 2026,
+   "name": "Motul SportsCar Endurance Grand Prix",
+   "track": {
+    "id": 9,
+    "name": "Road America",
+    "short_name": "Road America"
+   }
+  },
+  {
+   "id": 329,
+   "season_id": 2026,
+   "name": "Chevrolet Grand Prix",
+   "track": {
+    "id": 7,
+    "name": "Canadian Tire Motorsport Park",
+    "short_name": "CTMP"
+   }
+  },
+  {
+   "id": 328,
+   "season_id": 2026,
+   "name": "Sahlen's Six Hours of the Glen",
+   "track": {
+    "id": 6,
+    "name": "Watkins Glen International",
+    "short_name": "Watkins Glen"
+   }
+  },
+  {
+   "id": 326,
+   "season_id": 2026,
+   "name": "Chevrolet Sports Car Classic",
+   "track": {
+    "id": 48,
+    "name": "Detroit Grand Prix",
+    "short_name": "Detroit Grand Prix"
+   }
+  },
+  {
+   "id": 325,
+   "season_id": 2026,
+   "name": "StubHub Monterey SportsCar Championship",
+   "track": {
+    "id": 3,
+    "name": "WeatherTech Raceway Laguna Seca",
+    "short_name": "WeatherTech Raceway"
+   }
+  },
+  {
+   "id": 324,
+   "season_id": 2026,
+   "name": "ACURA Grand Prix of Long Beach",
+   "track": {
+    "id": 14,
+    "name": "Long Beach Street Course",
+    "short_name": "Long Beach"
+   }
+  },
+  {
+   "id": 323,
+   "season_id": 2026,
+   "name": "Mobil 1 12 Hours of Sebring",
+   "track": {
+    "id": 2,
+    "name": "Sebring International Raceway",
+    "short_name": "Sebring"
+   }
+  },
+  {
+   "id": 322,
+   "season_id": 2026,
+   "name": "The Rolex 24 at Daytona",
+   "track": {
+    "id": 1,
+    "name": "Daytona International Speedway",
+    "short_name": "Daytona Intl"
+   }
+  },
+  {
+   "id": 321,
+   "season_id": 2026,
+   "name": "The Roar Before the Rolex 24",
+   "track": {
+    "id": 1,
+    "name": "Daytona International Speedway",
+    "short_name": "Daytona Intl"
+   }
+  },
+  {
+   "id": 346,
+   "season_id": 2026,
+   "name": "2026 Pre Season Test",
+   "track": {
+    "id": 1,
+    "name": "Daytona International Speedway",
+    "short_name": "Daytona Intl"
+   }
+  }
+ ],
+ "sessions": [
+  {
+   "id": 3345,
+   "event_id": 335,
+   "name": "Practice 3",
+   "start_time": "Thursday October 01, 2026",
+   "type": "P",
+   "series_id": 111,
+   "victory_margin": "+0.392",
+   "order": 1
+  },
+  {
+   "id": 3335,
+   "event_id": 335,
+   "name": "Practice 1",
+   "start_time": "Thursday October 01, 2026",
+   "type": "P",
+   "series_id": 111,
+   "victory_margin": "+0.003",
+   "order": 2
+  },
+  {
+   "id": 3340,
+   "event_id": 335,
+   "name": "Practice 2",
+   "start_time": "Thursday October 01, 2026",
+   "type": "P",
+   "series_id": 111,
+   "victory_margin": "+0.044",
+   "order": 3
+  },
+  {
+   "id": 3352,
+   "event_id": 335,
+   "name": "Qualifying",
+   "start_time": "Friday October 02, 2026",
+   "type": "Q",
+   "series_id": 111,
+   "victory_margin": "+0.222",
+   "order": 4
+  },
+  {
+   "id": 3367,
+   "event_id": 335,
+   "name": "Race",
+   "start_time": "Saturday October 03, 2026",
+   "type": "R",
+   "series_id": 111,
+   "victory_margin": "+1.205",
+   "time_of_race": "10:00:50.625",
+   "order": 5
+  }
+ ],
+ "classes": [],
+ "default_season_id": 2026,
+ "default_series_id": 1,
+ "default_event_id": 335,
+ "default_session_id": 3367
+}
