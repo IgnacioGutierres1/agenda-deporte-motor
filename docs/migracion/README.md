@@ -18,8 +18,8 @@ pipeline y en los tipos compartidos (`shared/`), no en la interfaz.** Eso define
    propio. La "API" de la fase 1 es ese conjunto de archivos, con un contrato versionado (ver [api.md](api.md)).
 4. **Cloudflare Worker (+ Hono cuando crezca)** para avisos push y proxy de tiempos en vivo. Se le suma
    **Expo Push** (Android) sin perder Web Push (la web).
-5. **Base de datos recién cuando haya cuentas de usuario.** Recomendada: **Supabase (Postgres + Auth + RLS)**. Antes
-   de eso, una base no aporta nada que los JSON no den, y suma costo y mantenimiento. Para los dispositivos de
+5. **Base de datos con las cuentas de usuario (fase 3, decidida).** Recomendada: **Supabase (Postgres + Auth + RLS)**.
+   Antes de eso, una base no aporta nada que los JSON no den, y suma costo y mantenimiento. Para los dispositivos de
    avisos sin cuentas alcanza con **Cloudflare D1** (o seguir con KV mientras sean pocos).
 6. **Atajo barato y válido:** empaquetar la PWA actual como **TWA** para Play Store (una semana de trabajo) mientras
    se construye la app nativa, o en lugar de ella si lo nativo no hace falta.
@@ -48,47 +48,22 @@ en detalles importantes:
 | [api.md](api.md) | Contrato de los datos estáticos (versionado, manifiesto, caché/ETag) y de la API del Worker; cómo lee la app y cómo funciona sin conexión. |
 | [app-react-native.md](app-react-native.md) | Stack concreto de la app Expo, inventario de `app/src` archivo por archivo, equivalencias de pantallas, orden de porteo y tareas previas en el código actual. |
 | [publicacion-y-legal.md](publicacion-y-legal.md) | Play Store (cuenta, pruebas cerradas, privacidad, firma, EAS), dominio y web propia, riesgos legales de una app pública y qué cambia si es de uso propio. |
-| [plan-por-fases.md](plan-por-fases.md) | Fases 0 a 4 con checklist, criterios de "terminado", esfuerzo relativo, costos mensuales y riesgos. |
+| [cuentas-y-monetizacion.md](cuentas-y-monetizacion.md) | Decisiones tomadas; métodos de inicio de sesión y su configuración; modelo gratis + Pro; suscripciones (Play Billing + RevenueCat), publicidad (AdMob) y requisitos para monetizar. |
+| [plan-por-fases.md](plan-por-fases.md) | Fases 0 a 5 con checklist, criterios de "terminado", esfuerzo relativo, costos mensuales y riesgos. |
 
 Orden de lectura sugerido: este README → `plan-por-fases.md` → el documento de la fase en la que estés.
 
-## Preguntas que tenés que contestar antes de arrancar
+## Decisiones tomadas (2026-11-14)
 
-Las respuestas cambian la recomendación. Para cada pregunta va la opción que recomiendo si no sabés qué elegir.
+Detalle completo en [cuentas-y-monetizacion.md](cuentas-y-monetizacion.md).
 
-### 1. ¿Uso propio (vos y algunos conocidos) o app pública en Play Store?
+| Pregunta | Respuesta | Qué implica |
+|---|---|---|
+| ¿Uso propio o app pública? | **Uso propio por ahora** | Fases 0 a 3 sin trámites de producción en Play ni revisión legal. Se diseña todo "listo para ser público": dominio propio y contrato versionado desde el día uno. Distribución: Play con prueba interna, o APK con cuenta de "distribución limitada" (hasta 20 dispositivos; desde 2027 Google exige verificar al desarrollador también fuera de Play). |
+| ¿Cuentas de usuario? | **Sí: email y Google, más otro método** | La fase 3 (Supabase Auth + Postgres + RLS) deja de ser opcional. Métodos: **Google** (selector nativo de Android), **email con código de 6 dígitos** (sin contraseña) y, como tercero, **llaves de acceso (passkeys)** cuando Supabase las saque de beta. Por debajo, usuario **anónimo** desde el primer uso que se convierte en cuenta sin perder nada. Las cuentas son opcionales: la agenda nunca pide registrarse. |
+| ¿Monetización? | **En el futuro: publicidad y suscripción** | Nueva **fase 5**, después de publicar: gratis con banner (AdMob) + **Pro** sin publicidad y con funciones propias (avisos avanzados, `.ics` personal, temas), cobrado con Play Billing vía RevenueCat. Lo que se cobra nunca son los datos de terceros. Antes de monetizar: revisión legal, Open-Meteo comercial, datos fuera de GitHub Pages, Supabase Pro y contador. Desde la fase 1 se dejan los "enchufes" vacíos (un solo `useEntitlements()`, espacios de anuncio, banderas de funciones). |
 
-| Respuesta | Qué cambia |
-|---|---|
-| **Uso propio** | Se puede quedar todo en el plan gratis y en GitHub Pages. No hacen falta política de privacidad formal, formulario de seguridad de datos ni cuidado extremo con logos y fotos. Distribución: APK directo o Play Store con prueba interna/cerrada. Ojo: desde 2027 Google exige verificar al desarrollador también para instalar APK fuera de Play en teléfonos certificados; para pocos dispositivos hay una cuenta de "distribución limitada" (hasta 20 dispositivos, sin documento ni arancel). **Hasta podría alcanzar con la TWA** de la PWA actual. |
-| **App pública** | Dominio propio obligatorio, datos fuera de GitHub Pages (sus términos no permiten un "negocio en línea"), política de privacidad, formulario de seguridad de datos, prueba cerrada de 12 testers durante 14 días (cuentas personales nuevas), revisión legal de logos, fotos y del proxy en vivo (ver [publicacion-y-legal.md](publicacion-y-legal.md)). |
-
-**Recomendado:** empezar como uso propio "preparado para ser público" (dominio propio y contrato versionado
-desde el día uno) y decidir la publicación cuando la app nativa esté andando.
-
-### 2. ¿Cuentas de usuario?
-
-| Respuesta | Qué cambia |
-|---|---|
-| **No** (todo queda en el dispositivo, como hoy) | No hace falta base de datos. Los avisos se guardan por dispositivo en D1/KV. No aplica la obligación de borrado de cuenta de Play Store. |
-| **Sí, opcionales** ("iniciá sesión para sincronizar lo que seguís") | Supabase Auth + Postgres + RLS (fase 3). Hay que ofrecer borrado de cuenta dentro de la app **y** desde una página web. Opción intermedia: usuarios anónimos de Supabase (cada instalación tiene un id sin pedir email) y "convertir" a cuenta con Google cuando el usuario quiera. |
-| **Sí, obligatorias** | No lo recomiendo: es una barrera de entrada para una agenda que hoy funciona sin registrarse. |
-
-**Recomendado:** sin cuentas en las fases 1 y 2; cuentas **opcionales** en la fase 3, solo si de verdad querés
-sincronizar entre dispositivos o mandar avisos por piloto o equipo calculados en el servidor.
-
-### 3. ¿Monetización (publicidad, suscripción, donaciones)?
-
-| Respuesta | Qué cambia |
-|---|---|
-| **Ninguna** | Open-Meteo gratis sigue valiendo (uso no comercial). Riesgo legal bajo. |
-| **Donaciones voluntarias** | Open-Meteo las permite expresamente ("tip jar"). Sin cambios grandes. |
-| **Publicidad o suscripción** | Open-Meteo pasa a ser comercial (plan pago) o hay que cambiar de proveedor del clima. GitHub Pages queda descartado. Los términos de las fuentes oficiales (F1, MotoGP, etc.) pesan mucho más: datos, fotos y tiempos en vivo de terceros en un producto comercial. Conviene consultar con un abogado. Con publicidad, el formulario de seguridad de datos declara el SDK de anuncios y su identificador. |
-
-**Recomendado:** sin monetización o, a lo sumo, donaciones. Una app de agenda de nicho difícilmente cubra con
-publicidad el riesgo legal y los planes pagos que dispara.
-
-### 4. Otras preguntas (menos urgentes)
+### Otras preguntas (menos urgentes)
 
 | Pregunta | Recomendado | Si la respuesta es otra |
 |---|---|---|

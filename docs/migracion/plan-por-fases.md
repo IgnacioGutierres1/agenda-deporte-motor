@@ -12,14 +12,16 @@ Volver al [README](README.md). Costos consultados el **2026-11-14** (fuentes en
 | **0.5 TWA (opcional)** | La PWA actual en Play Store / instalada como app | **S** | USD 0 (+ USD 25 una vez si va a Play) | No |
 | **1. App Expo leyendo los JSON** | Android + web nuevas con las funciones de hoy, sin base | **XL** (la más grande: toda la interfaz) | ~USD 1 (dominio) | Sí |
 | **2. Avisos push nativos** | Expo Push + Web Push desde el Worker, dispositivos en D1 | **M** | USD 0 (USD 5 si hace falta Workers Paid) | No |
-| **3. Base de datos y cuentas** | Supabase: cuentas opcionales, seguidos sincronizados, espejo del catálogo | **L** | USD 0 → USD 25 (Pro) con usuarios reales | No |
-| **4. Publicación** | Play Store producción + web propia como sitio principal | **M** (mucho trámite, poco código) | Igual que la fase anterior | — |
+| **3. Base de datos y cuentas** | Supabase: cuentas (anónimo + Google + email con código), seguidos sincronizados, espejo del catálogo | **L** | USD 0 → USD 25 (Pro) con usuarios reales | No |
+| **4. Publicación** | Play Store producción + web propia como sitio principal, gratis y sin anuncios | **M** (mucho trámite, poco código) | Igual que la fase anterior | Sí (para la 5) |
+| **5. Monetización** | "Pro" por suscripción (Play Billing + RevenueCat) y publicidad (AdMob) | **M** | ~USD 26–50 + plan comercial del clima; Google retiene 15 % | — |
 
 Escala: S ≈ unos días · M ≈ 1–2 semanas · L ≈ 3–4 semanas · XL ≈ 6–10 semanas, con tu ritmo actual de
 tandas con agentes y revisión. Son relativas entre sí, no promesas.
 
-Las fases 2 y 3 son independientes: si no querés cuentas, la 3 no se hace nunca. La 4 se puede hacer después de
-la 1 o de la 2.
+Las fases 2 y 3 son independientes entre sí; las dos se hacen (las cuentas ya están decididas). Mientras sea de
+uso propio, el plan termina en la 3; la 4 se hace cuando decidas publicar, y la 5 solo después de la 4. Decisiones
+y detalle de cuentas y monetización en [cuentas-y-monetizacion.md](cuentas-y-monetizacion.md).
 
 ---
 
@@ -31,7 +33,8 @@ Todo en ramas `feat/…` como siempre; ningún cambio visible para el usuario.
 ### Checklist
 
 **0.1 Decisiones**
-- [ ] Contestar las preguntas del [README](README.md#preguntas-que-tenés-que-contestar-antes-de-arrancar).
+- [x] Contestar las preguntas del README: uso propio por ahora; cuentas con Google, email y passkeys; publicidad y
+      suscripción a futuro ([decisiones](README.md#decisiones-tomadas-2026-11-14)).
 - [ ] Elegir y comprar el dominio; poner `data.<dominio>` delante de GitHub Pages y `api.<dominio>` delante del
       Worker. La PWA actual pasa a usar esas URLs (variable `VITE_DATA_BASE` nueva y `WORKER_URL`).
 
@@ -95,6 +98,9 @@ Orden de pantallas en [app-react-native.md, sección 4](app-react-native.md#4-or
 - [ ] EAS: perfiles `development`, `preview` (APK para probar) y `production` (AAB); EAS Update en el canal `preview`.
 - [ ] Web: `output: "static"`, `generateStaticParams` para eventos y categorías, publicación en Cloudflare Pages
       desde Actions (`npx expo export -p web`).
+- [ ] "Enchufes" para la monetización futura, sin integrar nada: `useEntitlements()` que hoy devuelve "gratis",
+      espacio de anuncio opcional en las listas, banderas en `features.ts`, Ajustes → Cuenta "Próximamente"
+      ([detalle](cuentas-y-monetizacion.md#3-qué-dejar-preparado-desde-la-fase-1-sin-integrar-nada)).
 - [ ] Importar lo seguido desde la PWA: en Ajustes de la PWA, "Exportar mis preferencias" (código o QR con el JSON
       de `settings`) → "Importar" en la app nueva. Simple y sin servidor.
 
@@ -154,7 +160,10 @@ Diseño completo en [base-de-datos.md](base-de-datos.md).
 - [ ] Esquema de catálogo + vistas; RLS en todas las tablas; *Security Advisor* sin alertas.
 - [ ] `npm run db:load` en el pipeline (upsert por serie, transacción, borrado acotado) por el pooler; paso en
       `update.yml` con `continue-on-error`.
-- [ ] Auth: usuarios anónimos al primer uso + vincular Google ("Iniciar sesión para sincronizar").
+- [ ] Auth: usuarios anónimos al primer uso + "Continuar con Google" (selector nativo) y "Continuar con email"
+      (código de 6 dígitos); *Manual linking*; SMTP propio con SPF/DKIM; CAPTCHA (Turnstile). Configuración completa
+      en [cuentas-y-monetizacion.md, 1.3](cuentas-y-monetizacion.md#13-configuración-de-supabase-auth-checklist-de-la-fase-3).
+- [ ] (Cuando salgan de beta) llaves de acceso (passkeys) como tercer método.
 - [ ] Tablas de usuario (`profiles`, `follows`, `notification_prefs`, `devices`) y sincronización en la app
       (local primero; al iniciar sesión se suben y fusionan).
 - [ ] Worker: dispositivos desde Postgres; categorías de cada dispositivo calculadas desde `follows` (incluye pilotos
@@ -204,19 +213,63 @@ USD 25 una vez (Play). Mensual: el de la fase anterior. iPhone, si algún día: 
 
 ---
 
+## Fase 5: monetización
+
+Diseño completo en [cuentas-y-monetizacion.md, sección 2](cuentas-y-monetizacion.md#2-monetización-fase-5-después-de-publicar).
+
+### Antes de empezar (bloqueantes)
+
+- [ ] Fase 4 terminada, con la revisión legal hecha (fotos oficiales y logos fuera, en vivo resuelto).
+- [ ] Open-Meteo con plan comercial u otro proveedor del clima.
+- [ ] Datos servidos desde R2 o Workers Static Assets (no GitHub Pages).
+- [ ] Supabase Pro (copias diarias, sin pausas).
+- [ ] Contador consultado (exportación de servicios, facturación tipo E) y perfil de pagos de Play con cuenta bancaria.
+
+### Checklist
+
+- [ ] Productos en Play Console (Pro mensual y anual, 7 días de prueba) y "testers de licencias".
+- [ ] RevenueCat: proyecto, entitlement `pro`, `react-native-purchases` en la app con el id de Supabase como
+      `app_user_id`; pantalla de suscripción y "Restaurar compras".
+- [ ] Webhook de RevenueCat → Worker → tabla `entitlements` en Supabase; `useEntitlements()` lee de ahí.
+- [ ] Funciones Pro activadas por `entitlements` (avisos avanzados, `.ics` personal, temas).
+- [ ] AdMob: cuenta, unidades de banner, formulario de consentimiento UMP, `app-ads.txt` en el dominio; con Pro no se
+      inicializa el SDK.
+- [ ] Play Console: "contiene anuncios", formulario de seguridad de datos (ID de publicidad, compras), público objetivo
+      13+ o 18+.
+- [ ] Política de privacidad y términos actualizados (anuncios, renovación, cancelación, reembolsos).
+- [ ] Borrado de cuenta: avisa que hay que cancelar la suscripción en Play y borra el cliente en RevenueCat.
+
+### Terminado cuando
+
+- Un tester de licencias compra Pro en el teléfono, deja de ver anuncios y aparece como Pro en la web con la misma
+  cuenta.
+- Cancelar en Play quita el Pro al vencer el periodo (verificado en `entitlements`).
+- Un usuario de la UE ve el formulario de consentimiento antes del primer anuncio.
+
+### Costo
+
+Supabase Pro USD 25 + Open-Meteo comercial + RevenueCat gratis por debajo de USD 2.500 de facturación mensual + AdMob
+gratis. Google retiene el 15 % de cada suscripción.
+
+---
+
 ## Costos mensuales estimados (resumen)
 
-| Concepto | Fase 0–1 | Fase 2 | Fase 3 (uso propio) | Fase 3–4 (pública, con usuarios) |
-|---|---|---|---|---|
-| Dominio | ~USD 1 | ~USD 1 | ~USD 1 | ~USD 1 |
-| GitHub (repo público, Actions, Pages) | 0 | 0 | 0 | 0 (los datos salen de Pages) |
-| Cloudflare (Workers, D1, R2, Pages, DNS) | 0 | 0 – 5 | 0 – 5 | 0 – 5 |
-| Expo/EAS (plan Free) | 0 | 0 | 0 | 0 – 19 |
-| Supabase | — | — | 0 | 25 |
-| Open-Meteo | 0 | 0 | 0 | 0 (sin anuncios) / plan comercial (con anuncios) |
-| IA del pipeline (Gemini/Groq gratis) | 0 | 0 | 0 | 0 (si la cuota no alcanza, revisar) |
-| **Total mensual** | **~USD 1** | **~USD 1–6** | **~USD 1–6** | **~USD 26–50** |
-| Pagos únicos | — | — | — | Play USD 25 |
+| Concepto | Fase 0–1 | Fase 2 | Fase 3 (uso propio) | Fase 3–4 (pública, con usuarios) | Fase 5 (con anuncios y Pro) |
+|---|---|---|---|---|---|
+| Dominio | ~USD 1 | ~USD 1 | ~USD 1 | ~USD 1 | ~USD 1 |
+| GitHub (repo público, Actions, Pages) | 0 | 0 | 0 | 0 (los datos salen de Pages) | 0 |
+| Cloudflare (Workers, D1, R2, Pages, DNS) | 0 | 0 – 5 | 0 – 5 | 0 – 5 | 5 |
+| Expo/EAS (plan Free) | 0 | 0 | 0 | 0 – 19 | 0 – 19 |
+| Supabase | — | — | 0 | 25 | 25 |
+| SMTP para los códigos por email | — | — | 0 (plan gratis) | 0 (plan gratis) | 0 – 20 |
+| RevenueCat | — | — | — | — | 0 (hasta USD 2.500 de facturación mensual) |
+| AdMob | — | — | — | — | 0 (pagan ellos) |
+| Open-Meteo | 0 | 0 | 0 | 0 (sin anuncios) | Plan comercial |
+| IA del pipeline (Gemini/Groq gratis) | 0 | 0 | 0 | 0 (si la cuota no alcanza, revisar) | Ídem |
+| **Total mensual** | **~USD 1** | **~USD 1–6** | **~USD 1–6** | **~USD 26–50** | **~USD 31–70 + clima comercial** |
+| Pagos únicos | — | — | — | Play USD 25 | — |
+| Comisiones | — | — | — | — | Google retiene 15 % de cada suscripción |
 
 ## Riesgos generales
 
