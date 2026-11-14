@@ -7,11 +7,15 @@ import { validateSessions } from '../src/validate.ts';
 import {
   apiDateToUtc,
   describeSession,
+  mapClassification,
+  mapConditions,
+  pdfClassification,
   MOTOGP_API,
   motogpAdapter,
   parseStandingsXml,
   titleCase,
 } from '../src/adapters/motogp.ts';
+import { readFileSync } from 'node:fs';
 import { fixtureHttp } from './fixtures-http.ts';
 
 const R = `${MOTOGP_API}/results`;
@@ -224,5 +228,26 @@ describe('MotoGP: resultados y campeonato', () => {
     });
     expect(res).toEqual({ results: [] });
     expect(http.calls.some((u) => u.includes('/results/'))).toBe(false);
+  });
+});
+
+describe('MotoGP: clasificación desde el PDF oficial', () => {
+  // Warm Up de MotoGP en Indonesia 2026: la API lo da por terminado con la tabla vacía; el PDF la tiene.
+  const text = readFileSync(new URL('./fixtures/motogp/wup-ina-classification.txt', import.meta.url), 'utf8');
+
+  it('separa velocidad y puesto, y vueltas y equipo, que el texto del PDF pega', () => {
+    const read = pdfClassification(text, new Map([['49', { name: 'Fabio Di Giannantonio', maker: 'Ducati' }]]));
+    const rows = mapClassification(read.rows, 'WUP');
+    expect(rows).toHaveLength(21);
+    expect(rows[0]).toEqual({ pos: 1, driver: 'Marco Bezzecchi', number: '72', team: 'Aprilia Racing', vehicle: 'Aprilia', laps: 7, bestLap: '1:29.617', time: '1:29.617' });
+    expect(rows[1]).toMatchObject({ pos: 2, driver: 'Raul Fernandez', number: '25', team: 'SuperFile Trackhouse MotoGP Team', laps: 6, gap: '+0.043' });
+    expect(rows[5]).toMatchObject({ pos: 6, driver: 'Fabio Di Giannantonio', team: 'Pertamina Enduro VR46 Racing Team' });
+    expect(rows[9]).toMatchObject({ pos: 10, number: '79', driver: 'Ai Ogura' });
+    expect(rows[16]).toMatchObject({ pos: 17, driver: 'Maverick Viñales', vehicle: 'KTM' });
+    expect(rows[20]).toMatchObject({ pos: 21, driver: 'Johann Zarco', gap: '+2.256' });
+  });
+
+  it('lee las condiciones del pie del PDF', () => {
+    expect(mapConditions(pdfClassification(text).condition)).toEqual({ airC: 29, trackC: 55, humidity: 68, track: 'Seca' });
   });
 });

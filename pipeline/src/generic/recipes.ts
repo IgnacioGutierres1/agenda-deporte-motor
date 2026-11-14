@@ -15,6 +15,7 @@ import {
   textOf,
 } from '../extract/html.ts';
 import { jsonLdSessions } from './locate.ts';
+import { indycarResults, indycarSessions } from './results-indycar.ts';
 import { f1AcademyUtc, f1AcademyWeekendSessions, PLANNED_SESSIONS } from './f1academy.ts';
 import {
   countryName,
@@ -274,6 +275,8 @@ const indycar: SiteRecipe = {
       const prev = out.find((e) => e.circuit === track && Math.abs(Date.parse(e.dateEnd) - Date.parse(day.start)) <= 2 * 86_400_000);
       if (prev) {
         if (day.start > prev.dateEnd) prev.dateEnd = day.start;
+        // Cada carrera tiene su página (con su parte del cronograma y sus links de resultados).
+        if (url && prev.meta && !prev.meta.pages!.split(' ').includes(url)) prev.meta.pages += ` ${url}`;
         continue;
       }
       // Las fechas en Canadá (Toronto, desde 2026 Markham) figuran en el mismo calendario.
@@ -283,9 +286,12 @@ const indycar: SiteRecipe = {
         circuit: track,
         country,
         tz: tzFor(country, `${location} ${track}`),
-        dateStart: shiftDate(day.start, -2),
+        // El Indy 500 tiene dos semanas de actividad (prácticas desde el martes de la semana anterior y la
+        // clasificación del fin de semana previo); el resto de las fechas, viernes a domingo.
+        dateStart: shiftDate(day.start, /indianapolis\s+500|indy\s*500/i.test(title) ? -12 : -2),
         dateEnd: day.start,
         url,
+        ...(url ? { meta: { pages: url } } : {}),
         // Desde 2027 la clave es el slug de la URL (/Schedule/2027/St-Petersburg): las fechas futuras figuran primero
         // con el nombre del circuito y después con el nombre comercial, y el id no tiene que cambiar por eso. (2026
         // sigue con el nombre para no cambiar los ids ya publicados, con sus resultados.)
@@ -294,6 +300,9 @@ const indycar: SiteRecipe = {
     }
     return dedupe(out);
   },
+  sessions: (entry, ctx) => indycarSessions(entry, ctx),
+  pastSessions: (entry, ctx) => indycarSessions(entry, ctx),
+  results: (entry, sessions, ctx) => indycarResults(entry, sessions, ctx),
 };
 
 // ─── FIA WEC / ELMS / Asian Le Mans Series (misma plataforma del ACO) ─────────────────────────
