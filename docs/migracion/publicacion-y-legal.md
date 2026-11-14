@@ -75,6 +75,10 @@ librerías de terceros). Para esta app:
 | Cifrado en tránsito | Sí (HTTPS) | Sí | Sí |
 | Borrado | — | "Desactivar avisos" borra el dispositivo | Borrado de cuenta en la app y por web |
 
+Con la **fase 5** (ver [cuentas-y-monetizacion.md](cuentas-y-monetizacion.md#23-publicidad)) se suman: **ID de
+publicidad** y datos de uso compartidos con Google para anuncios (AdMob), **historial de compras** (Play Billing /
+RevenueCat), y la declaración "contiene anuncios" en la ficha.
+
 ### 2.5 Borrado de cuenta (si hay cuentas)
 
 - Opción **dentro de la app** para borrar la cuenta y sus datos.
@@ -205,7 +209,8 @@ funciona en el WebView: hay que usar su plugin de push con FCM.
 - Contenido mínimo de la política: quién sos y contacto; qué datos (token, preferencias, email), para qué (avisos,
   sincronizar), dónde se guardan (Cloudflare, Supabase; países), por cuánto tiempo, con quién se comparten (Expo y
   Google para entregar los avisos), cómo borrar, que no hay publicidad ni venta de datos, que el clima se pide con
-  coordenadas del circuito y no del usuario.
+  coordenadas del circuito y no del usuario. (Con la fase 5 deja de valer "no hay publicidad": hay que describir
+  AdMob, el ID de publicidad, el consentimiento y las compras.)
 
 ### 4.8 Términos de la propia app
 
@@ -221,6 +226,8 @@ la fuente oficial (la app ya enlaza la fuente de cada dato), sin garantía.
       visibles.
 - [ ] Tiempos en vivo de MotoGP fuera; resto por proxy con caché.
 - [ ] Open-Meteo: sin publicidad ni suscripción, o plan comercial / otro proveedor.
+- [ ] (Fase 5) Anuncios y suscripciones: requisitos en
+      [cuentas-y-monetizacion.md, 2.4](cuentas-y-monetizacion.md#24-requisitos-antes-de-monetizar-bloqueantes).
 - [ ] Cuenta de Play verificada; prueba cerrada con 12 testers × 14 días cumplida.
 - [ ] Formulario de seguridad de datos, clasificación de contenido, público objetivo, declaración de anuncios.
 - [ ] AAB firmado (API objetivo 36+), primera subida manual, `eas submit` configurado.

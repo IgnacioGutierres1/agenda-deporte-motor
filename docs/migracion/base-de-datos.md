@@ -19,8 +19,10 @@ datos solo se justifica cuando aparece alguna de estas necesidades:
 | Historial multi-temporada consultable ("todas las victorias de X desde 2026") | Difícil (archivos por temporada) | Sí, a mediano plazo |
 | Panel de administración para corregir datos a mano | No (hoy se corrige en `config/`) | Opcional |
 
-**Regla:** se crea la base en la fase 3, cuando se decida tener cuentas. Hasta entonces, este documento es el
-diseño de referencia para que ese día sea un trabajo de días y no de semanas.
+**Regla:** se crea la base en la fase 3, con las cuentas. **Decidido el 2026-11-14: va a haber cuentas** (Google,
+email con código y, más adelante, passkeys) y, a futuro, suscripción (tabla `entitlements`); ver
+[cuentas-y-monetizacion.md](cuentas-y-monetizacion.md). Hasta la fase 3, este documento es el diseño de referencia
+para que ese día sea un trabajo de días y no de semanas.
 
 ## 2. Principios del modelo
 
@@ -583,6 +585,17 @@ create table notifications_sent (
 );
 -- Limpieza: borrar filas de más de 7 días (pg_cron o el mismo Worker).
 
+-- Fase 5: estado "Pro". La escribe solo el Worker (clave de servicio) al recibir el webhook de RevenueCat
+-- (o, más adelante, de Mercado Pago / Paddle para la web). El usuario solo puede leer la suya.
+create table entitlements (
+  user_id      uuid primary key references profiles(id) on delete cascade,
+  pro_until    timestamptz,                           -- null = sin Pro; se compara con now()
+  source       text check (source in ('play','web','promo')),
+  product_id   text,                                  -- p. ej. pro_mensual, pro_anual
+  will_renew   boolean,
+  updated_at   timestamptz not null default now()
+);
+
 -- Pedidos de borrado de cuenta hechos desde la web (requisito de Play Store).
 create table account_deletion_requests (
   id            bigint generated always as identity primary key,
@@ -632,6 +645,8 @@ create policy "avisos propios" on notification_prefs for all to authenticated
 
 -- Dispositivos: el usuario ve y borra los suyos; el alta la hace el Worker (valida el token) con service_role.
 alter table devices enable row level security;
+create policy "pro propio (leer)" on entitlements for select to authenticated
+  using (user_id = (select auth.uid()));
 create policy "dispositivos propios (leer)"  on devices for select to authenticated using (user_id = (select auth.uid()));
 create policy "dispositivos propios (borrar)" on devices for delete to authenticated using (user_id = (select auth.uid()));
 
