@@ -29,6 +29,7 @@ Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `stand
 | `pipeline/` | Recolector Node + TypeScript: lectores directos (`src/adapters`), flujo genérico con IA (`src/generic`), resultados, descubrimiento. |
 | `app/` | PWA en Vue 3 (Options API) + Vite. |
 | `data/` | Archivos generados por el pipeline. **No editar a mano.** |
+| `docs/` | Notas técnicas (`en-vivo.md`) y el plan de migración a app Android + web propia (`migracion/`, solo planificación). |
 
 ## Comandos
 
