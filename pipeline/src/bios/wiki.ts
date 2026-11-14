@@ -93,6 +93,8 @@ const MAX = 1100;
 export function summaryOf(page: WikiPage): BioSummary | undefined {
   if (!page.extract) return undefined;
   const paragraphs = page.extract
+    // Espacios de ancho cero que dejan las referencias quitadas.
+    .replace(/[​-‍⁠﻿]/g, '')
     .replace(/\s*\((?:[^()]*?)(?:pronunciation|pronunciación)[^()]*?\)/gi, (m) => {
       // "(Spanish pronunciation: [ˈfɾaŋko]; born 27 May 2003)" → "(born 27 May 2003)"
       const rest = m.replace(/^\s*\(/, '').replace(/\)$/, '').split(/;\s*/).filter((p) => !/pronunciation|pronunciación|\[/i.test(p));

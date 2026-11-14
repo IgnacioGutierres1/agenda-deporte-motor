@@ -227,6 +227,13 @@ function evidenceOf(pages: WikiPage[], seriesIds: string[], teams: string[]): Ca
   return { careerSeries: [...careerSeries], mentions };
 }
 
+/** El nombre tal cual y con la primera o la última palabra pasada al otro extremo ("Lynn Alex" → "Alex Lynn"). */
+export function nameVariants(name: string): string[] {
+  const w = name.trim().split(/\s+/);
+  if (w.length < 2) return [name];
+  return [...new Set([name, [...w.slice(1), w[0]].join(' '), [w[w.length - 1], ...w.slice(0, -1)].join(' ')])];
+}
+
 /** Otro piloto al que ya se le asignó el ítem (en la caché o en este lote). */
 function ownerOf(qid: string, id: string, cache: BioCache, accepted: Map<string, Candidate>): string | undefined {
   for (const [other, c] of accepted) if (other !== id && c.qid === qid) return other;
@@ -256,6 +263,18 @@ async function processChunk(
   }
   const toSearch = drivers.filter((d) => !known.has(d.id));
   const found = toSearch.length ? await searchNames(api, toSearch.map((d) => d.name)) : new Map<string, string[]>();
+  // Los que no trajeron nada se buscan otra vez (la búsqueda dentro de WDQS a veces pierde nombres sin avisar) y
+  // con el apellido en el otro extremo: varias listas publican "Lynn Alex" o "Mortensen Martin Vedel".
+  const variants = new Map<string, string>();
+  for (const name of toSearch.map((d) => d.name).filter((n) => !found.has(n))) {
+    for (const v of nameVariants(name)) if (!variants.has(v)) variants.set(v, name);
+  }
+  if (variants.size) {
+    for (const [variant, qids] of await searchNames(api, [...variants.keys()])) {
+      const name = variants.get(variant)!;
+      found.set(name, [...new Set([...(found.get(name) ?? []), ...qids])]);
+    }
+  }
   const allQids = [...known.values(), ...[...found.values()].flat()];
   const info = allQids.length ? await candidateInfo(api, allQids) : new Map<string, Candidate>();
 

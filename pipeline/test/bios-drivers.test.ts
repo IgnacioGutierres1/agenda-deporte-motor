@@ -10,7 +10,7 @@ import { driverBiosShardFileSchema, driverShard, type Driver, type DriverBio, ty
 import { createApi } from '../src/circuits/api.ts';
 import { careerFromWikitext, seriesIdFor, titlesOf } from '../src/bios/career.ts';
 import { nationalityOf, pickImage, readDetails } from '../src/bios/details.ts';
-import { appCareer, countryIso, runDriverBios, searchableName, selectDue, withAppSeason } from '../src/bios/drivers.ts';
+import { appCareer, countryIso, nameVariants, runDriverBios, searchableName, selectDue, withAppSeason } from '../src/bios/drivers.ts';
 import { chooseCandidate, type Candidate, type CandidateEvidence } from '../src/bios/identify.ts';
 import { parseF1Drivers, parseMotoGpRiders, parseNascarDrivers } from '../src/bios/official-photos.ts';
 import { summaryOf } from '../src/bios/wiki.ts';
@@ -148,6 +148,8 @@ describe('identificación en Wikidata', () => {
     expect(searchableName('- Bankcy')).toBe(false);
     expect(searchableName('Juan B. de Benedictis')).toBe(false);
     expect(searchableName('Agustín Canapino')).toBe(true);
+    expect(nameVariants('Lynn Alex')).toEqual(['Lynn Alex', 'Alex Lynn']);
+    expect(nameVariants('Mortensen Martin Vedel')).toContain('Martin Vedel Mortensen');
     expect(countryIso('Great Britain')).toBe('GB');
     expect(countryIso('GB-ENG')).toBe('GB');
     expect(countryIso('IE')).toBe('IE');
