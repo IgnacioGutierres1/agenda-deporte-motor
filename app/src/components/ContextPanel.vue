@@ -168,10 +168,10 @@
       <template v-if="doneHere.length">
         <p class="ctx-subtitle small dim">{{ rally ? 'En este rally' : 'Este fin de semana' }}</p>
         <ul class="list-card inset">
-          <li v-for="h in doneHere" :key="h.sessionId">
+          <li v-for="h in doneHere" :key="`${h.sessionId}-${h.class ?? ''}`">
             <RouterLink :to="{ query: { ...$route.query, tab: 'resultados', session: h.sessionId } }" class="list-row">
               <span class="grow">
-                <span class="small dim">{{ h.sessionName }} · {{ h.label }}</span>
+                <span class="small dim">{{ h.sessionName }} · {{ h.label }}{{ h.class ? ` en ${h.class}` : '' }}</span>
                 <span class="block">{{ h.driver }}<span v-if="h.team" class="small dim"> · {{ h.team }}</span></span>
               </span>
               <AppIcon name="chevron" :size="16" class="dim" />
@@ -189,9 +189,9 @@
                 <span class="block small dim">
                   <template v-if="previous.round">Fecha {{ previous.round }} · </template>{{ dateRange(previous.dateStart, previous.dateEnd) }} · {{ previous.circuit }}
                 </span>
-                <span v-for="w in winnersBefore" :key="w.sessionId" class="block small">
+                <span v-for="w in winnersBefore" :key="`${w.sessionId}-${w.class ?? ''}`" class="block small">
                   <AppIcon name="trophy" :size="13" class="accent-text" />
-                  {{ winnersBefore.length > 1 ? `${w.sessionName}: ` : '' }}{{ w.driver }}<span v-if="w.team" class="dim"> · {{ w.team }}</span>
+                  {{ winnerPrefix(w) }}{{ w.driver }}<span v-if="w.team" class="dim"> · {{ w.team }}</span>
                 </span>
                 <span v-if="!winnersBefore.length" class="block small dim">Sin resultados publicados en la app.</span>
               </span>
@@ -470,6 +470,10 @@ export default defineComponent({
     winnersBefore(): SessionHighlight[] {
       return highlights(this.previousResults, this.previousSessions, true);
     },
+    /** Carreras distintas de la fecha anterior con ganador (con clases hay un ganador por clase). */
+    racesBefore(): number {
+      return new Set(this.winnersBefore.map((w) => w.sessionId)).size;
+    },
     watch(): WatchItem[] {
       const names = new Map<string, string>([
         ...this.followedDrivers.map((d) => [d.id, d.name] as [string, string]),
@@ -523,6 +527,11 @@ export default defineComponent({
     },
   },
   methods: {
+    /** "Carrera 1 · LMP2: ", "LMP2: ", "Carrera 1: " o nada. */
+    winnerPrefix(w: SessionHighlight): string {
+      const parts = [this.racesBefore > 1 ? w.sessionName : '', w.class ?? ''].filter(Boolean);
+      return parts.length ? `${parts.join(' · ')}: ` : '';
+    },
     ...mapActions(useResultsStore, ['loadStandings', 'loadResults']),
     ...mapActions(useRostersStore, ['loadRoster']),
     ...mapActions(useNewsStore, { loadNews: 'load' }),

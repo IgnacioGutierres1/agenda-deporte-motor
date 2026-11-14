@@ -31,7 +31,7 @@
       <section class="hero" :style="{ '--series-color': color }">
         <div class="hero-top">
           <div class="hero-series big">
-            <DriverAvatar :name="driver.name" :color="color" :number="mainNumber" :size="58" />
+            <DriverAvatar :name="driver.name" :color="color" :number="mainNumber" :size="58" :photo="bio?.photo?.url ?? ''" />
             <div>
               <h1 class="hero-title tight">{{ driver.name }}</h1>
               <p class="hero-sub">
@@ -50,6 +50,9 @@
       </section>
 
       <div class="page">
+        <!-- Historial (data/bios): opcional; sin archivo o sin ficha, la sección no aparece. -->
+        <DriverProfile v-if="bio && hasProfile" :bio="bio" :name="driver.name" />
+
         <section v-if="entries.length" class="card flush">
           <h3 class="card-title">{{ season ? `Campeonato ${season}` : 'Campeonato' }}</h3>
           <ul class="list-card inset">
@@ -119,14 +122,24 @@
                 <span class="grow">
                   {{ r.eventName }}
                   <span class="block small dim">{{ r.sessionName }} · {{ r.date }}</span>
+                  <span v-if="r.classResult" class="block small dim">
+                    <span class="class-chip">{{ r.classResult.class }}</span>
+                    {{ r.pos !== null ? `P${r.pos} en la general` : '' }}
+                  </span>
                 </span>
-                <span class="pos-badge" :class="{ top: r.pos !== null && r.pos <= 3, out: r.pos === null }">
+                <!-- En categorías con clases, el puesto que importa es el de la clase. -->
+                <span v-if="r.classResult?.classPos" class="pos-badge" :class="{ top: r.classResult.classPos <= 3 }" :title="`Puesto en ${r.classResult.class}`">
+                  P{{ r.classResult.classPos }}
+                </span>
+                <span v-else class="pos-badge" :class="{ top: r.pos !== null && r.pos <= 3 && !r.classResult, out: r.pos === null }">
                   {{ r.pos !== null ? `P${r.pos}` : r.status ?? '—' }}
                 </span>
               </RouterLink>
             </li>
           </ul>
         </section>
+
+        <CareerTable v-if="bio?.career?.length" :career="bio.career" />
 
         <section v-if="driverNews.length" class="card">
           <h3>Noticias</h3>
@@ -135,6 +148,7 @@
 
         <p class="small dim center">
           Datos de las tablas de campeonato, listas de inscriptos y resultados oficiales de cada categoría.
+          <template v-if="bio"> Historial: Wikidata, Wikipedia y sitios oficiales.</template>
         </p>
       </div>
     </template>
@@ -146,10 +160,12 @@ import { fixMonthAbbr } from '../lib/format.ts';
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import { teamId, type Driver, type DriverDetail, type DriverEntry, type DriverLineup, type DriverSeasonStats, type Series } from '@dm/shared';
+import { teamId, type Driver, type DriverDetail, type DriverBio, type DriverEntry, type DriverLineup, type DriverSeasonStats, type Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
+import CareerTable from '../components/CareerTable.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
+import DriverProfile from '../components/DriverProfile.vue';
 import FollowButton from '../components/FollowButton.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
 import NewsList from '../components/NewsList.vue';
@@ -165,23 +181,45 @@ import { countryFlag, countryName } from '../lib/roster.ts';
 import { driverSeriesIds } from '../lib/teams.ts';
 import { commonSeason, standingsSeason } from '../lib/season.ts';
 import { useResultsStore } from '../stores/results.ts';
+import { useBiosStore } from '../stores/bios.ts';
+import { driverClassResult } from '../lib/classes.ts';
 
 /** Ficha de un piloto (como la de un jugador en FotMob). */
 export default defineComponent({
   name: 'DriverView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeasonStatsCard, SeriesCrest, UpcomingList },
+  components: { AppIcon, CareerTable, DataState, DriverAvatar, DriverProfile, FollowButton, NewsList, NotFoundCard, SeasonStatsCard, SeriesCrest, UpcomingList },
   computed: {
     ...mapState(useDriversStore, { driversStatus: 'status', driversError: 'error', driversById: 'byId', details: 'details', detailStatus: 'detailStatus' }),
     ...mapState(useScheduleStore, ['schedule', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
     ...mapState(useNewsStore, { newsItems: 'items' }),
-    ...mapState(useResultsStore, ['standings']),
+    ...mapState(useResultsStore, { standings: 'standings', resultsMap: 'results' }),
+    ...mapState(useBiosStore, { bios: 'drivers' }),
     driverNews() {
       if (!this.driver) return [];
       return newsForDriver(this.newsItems, this.driver.name, this.seriesIds).slice(0, 5);
     },
     driverId(): string {
       return String(this.$route.params.driverId);
+    },
+    /** Historial (foto, trayectoria, títulos): llega aparte y puede no estar. */
+    bio(): DriverBio | undefined {
+      return this.bios[this.driverId];
+    },
+    hasProfile(): boolean {
+      const b = this.bio;
+      return !!b && !!(b.photo || b.summary || b.birthDate || b.birthPlace || b.nationality || b.titles?.length || b.links?.length);
+    },
+    /**
+     * Carreras recientes en categorías con clases (la ficha trae el puesto en la general): resultados a pedir para
+     * mostrar la clase y el puesto en la clase. Son pocos archivos (a lo sumo las últimas 6 carreras).
+     */
+    classedRecent(): Array<{ seriesId: string; eventId: string }> {
+      const classed = new Set([
+        ...this.seasonStats.filter((s) => s.overall).map((s) => s.seriesId),
+        ...this.lineups.filter((l) => l.class).map((l) => l.seriesId),
+      ]);
+      return (this.driver?.recent ?? []).filter((r) => classed.has(r.seriesId)).map((r) => ({ seriesId: r.seriesId, eventId: r.eventId }));
     },
     /** Ficha completa si ya llegó; si no, la línea del índice (si ya se había descargado, p. ej. desde Buscar). */
     driver(): DriverDetail | Driver | undefined {
@@ -267,6 +305,7 @@ export default defineComponent({
         series: this.seriesById.get(r.seriesId),
         eventName: events.find((e) => e.id === r.eventId)?.name ?? 'Evento',
         sessionName: sessions.find((x) => x.id === r.sessionId)?.name ?? 'Carrera',
+        classResult: this.classResultOf(r.seriesId, r.eventId, r.sessionId),
         date: fixMonthAbbr(DateTime.fromISO(r.startUtc, { zone: 'utc' }).setZone(this.timeZone).setLocale('es-AR').toFormat('d LLL yyyy')),
       }));
     },
@@ -282,7 +321,14 @@ export default defineComponent({
       handler(id: unknown) {
         if (typeof id !== 'string' || !id) return;
         void this.loadDetail(id);
+        void this.loadBio(id);
         void this.loadNews();
+      },
+    },
+    classedRecent: {
+      immediate: true,
+      handler(list: Array<{ seriesId: string; eventId: string }>) {
+        for (const r of list) void this.loadResults(r.seriesId, r.eventId);
       },
     },
   },
@@ -292,6 +338,14 @@ export default defineComponent({
       void this.loadDetail(this.driverId, true);
     },
     ...mapActions(useNewsStore, { loadNews: 'load' }),
+    ...mapActions(useBiosStore, { loadBio: 'loadDriver' }),
+    ...mapActions(useResultsStore, ['loadResults']),
+    /** Clase y puesto en la clase del piloto en una sesión (si la categoría tiene clases y el resultado ya llegó). */
+    classResultOf(seriesId: string, eventId: string, sessionId: string) {
+      const file = this.resultsMap[`${seriesId}/${eventId}`]?.data;
+      const rows = file?.sessions.find((s) => s.sessionId === sessionId)?.rows;
+      return rows ? driverClassResult(rows, this.driverId, seriesId) : null;
+    },
     fmt(n: number): string {
       return n.toLocaleString('es-AR');
     },

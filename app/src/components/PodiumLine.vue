@@ -11,6 +11,7 @@ import type { EventResultsFile, SessionResult } from '@dm/shared';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
 import { mainResultSession, podiumLine } from '../lib/podium.ts';
+import { hasClasses } from '../lib/classes.ts';
 
 /**
  * Podio en una línea ("1. Norris · 2. Verstappen · 3. Hadjar") de la sesión principal de un evento, para las
@@ -46,7 +47,8 @@ export default defineComponent({
     },
     title(): string {
       const name = this.eventSessions.find((s) => s.id === this.main?.sessionId)?.name;
-      return name ? `Podio · ${name}` : 'Podio';
+      const what = this.main && hasClasses(this.main.rows) ? 'Ganadores por clase' : 'Podio';
+      return name ? `${what} · ${name}` : what;
     },
   },
   watch: {

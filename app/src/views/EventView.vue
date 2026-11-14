@@ -25,7 +25,7 @@
         </p>
         <RouterLink v-else-if="winner && tab === 'horarios'" :to="{ query: { ...$route.query, tab: 'resultados' } }" class="hero-winner">
           <AppIcon name="trophy" :size="15" />
-          <span>Ganador: <strong>{{ winnerName }}</strong><template v-if="winner.team || winner.vehicle"> · {{ winner.team ?? winner.vehicle }}</template></span>
+          <span>Ganador: <strong>{{ winnerName }}</strong><template v-if="winner.team || winner.vehicle"> · {{ winner.team ?? winner.vehicle }}</template><template v-if="winner.class"> · {{ winner.class }}</template></span>
         </RouterLink>
       </section>
 
@@ -125,7 +125,7 @@
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import { driverDisplayName, type EventResultsFile, type MotorEvent, type ResultRow, type Series, type Source } from '@dm/shared';
+import { driverDisplayName, isSingleDriverName, type EventResultsFile, type MotorEvent, type ResultRow, type Series, type Source } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import ContextPanel from '../components/ContextPanel.vue';
 import CountdownBadge from '../components/CountdownBadge.vue';
@@ -145,7 +145,7 @@ import { useSettingsStore } from '../stores/settings.ts';
 import { useResultsStore, type Loaded } from '../stores/results.ts';
 import { stagesKey, useStagesStore } from '../stores/stages.ts';
 import { ITINERARY_LABELS, hasStages, itineraryKind, stagesEventStatus } from '../lib/stages.ts';
-import { eventWinner } from '../lib/podium.ts';
+import { eventWinner, shortDriverName } from '../lib/podium.ts';
 import { formatDateRange, zoneDisplayName, fixMonthAbbr } from '../lib/format.ts';
 import { tabStrip } from '../lib/tabStrip.ts';
 import { groupByDay, seriesColor, type GridDay, type GridItem } from '../lib/grid.ts';
@@ -261,7 +261,9 @@ export default defineComponent({
       return eventWinner(this.resultsState.data.sessions, this.items.map((i) => i.session));
     },
     winnerName(): string {
-      return this.winner ? driverDisplayName(this.winner.driver) : '';
+      if (!this.winner) return '';
+      // Tripulación de resistencia: los apellidos ("Estre/Vanthoor/Lotterer").
+      return isSingleDriverName(this.winner.driver) ? driverDisplayName(this.winner.driver) : shortDriverName(this.winner.driver);
     },
     /** Estado del evento: en vivo, próxima sesión, finalizado o a confirmar. */
     state(): { kind: string; text: string } {
