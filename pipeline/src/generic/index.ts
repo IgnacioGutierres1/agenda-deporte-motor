@@ -81,6 +81,13 @@ const MAX_DIRECT_RESULT_EVENTS = 8;
  * oficiales (SiteRecipe.pastSessions), de la más reciente a la más vieja.
  */
 const MAX_PAST_SESSION_EVENTS = 6;
+/**
+ * Una fecha ya corrida cuya receta no devolvió sesiones (resultados todavía no publicados, o error) no se vuelve a
+ * probar hasta pasado este lapso, así el tope de la corrida pasa a las siguientes (registro en
+ * data/_cache/past-sessions.json).
+ */
+const PAST_SESSIONS_RETRY_MS = 24 * 3600_000;
+type PastSessionsLog = Record<string, string>;
 export const GENERIC_RESULTS_READER_SINCE = '2026-11-14T00:00:00Z';
 /** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
 const MAX_CALENDAR_IMAGES = 16;
@@ -307,17 +314,8 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       // Fechas ya terminadas sin sesiones guardadas (el cronograma solo se lee dentro del horizonte): la receta puede
       // reconstruirlas desde los resultados oficiales para que la fase de resultados tenga a qué asignarlos.
       const recipe = findRecipe(url);
-      const pastBudget = { left: recipe?.pastSessions ? MAX_PAST_SESSION_EVENTS : 0 };
-      const pastOrder = new Map(
-        cal.entries
-          .map((e, i) => ({ e, i }))
-          .filter(({ e }) => e.dateEnd < from)
-          .sort((a, b) => b.e.dateEnd.localeCompare(a.e.dateEnd))
-          .map(({ i }, rank) => [i, rank]),
-      );
-
-      for (const [i, entry] of cal.entries.entries()) {
-        const draft = ctx.build.event({
+      const drafts = cal.entries.map((entry, i) =>
+        ctx.build.event({
           series,
           season: ctx.season,
           key: keys[i]!,
@@ -330,26 +328,45 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
           dateEnd: entry.dateEnd,
           sessionsStatus: 'pending',
           source: cal.source,
-        });
+        }),
+      );
+      // Las MAX_PAST_SESSION_EVENTS más recientes que califican, sin las probadas sin éxito hace poco.
+      const pastLogFile = path.join(ctx.cacheDir, 'past-sessions.json');
+      const pastLog: PastSessionsLog = recipe?.pastSessions ? ((await readJson<PastSessionsLog>(pastLogFile).catch(() => null)) ?? {}) : {};
+      const pastKey = (i: number) => `${series.id}|${drafts[i]!.id}`;
+      const pastTargets = new Set(
+        recipe?.pastSessions
+          ? cal.entries
+              .map((e, i) => ({ e, i }))
+              .filter(({ e, i }) => {
+                if (e.dateEnd >= from || isNonRaceEvent(e.name)) return false;
+                if (prevSessions.some((s) => s.eventId === drafts[i]!.id)) return false;
+                const last = Date.parse(pastLog[pastKey(i)] ?? '');
+                return !(Number.isFinite(last) && ctx.now.getTime() - last < PAST_SESSIONS_RETRY_MS);
+              })
+              .sort((a, b) => b.e.dateEnd.localeCompare(a.e.dateEnd))
+              .slice(0, MAX_PAST_SESSION_EVENTS)
+              .map(({ i }) => i)
+          : [],
+      );
+      let pastLogChanged = false;
+
+      for (const [i, entry] of cal.entries.entries()) {
+        const draft = drafts[i]!;
         let found: SessionsFound | null = null;
         // Un error al buscar o leer el cronograma (o la falta de IA) no es lo mismo que "todavía no publicado".
         let unreadable = false;
         const inHorizon = entry.dateEnd >= from && entry.dateStart <= to;
-        const pastRank = pastOrder.get(i);
-        if (
-          pastRank !== undefined &&
-          recipe?.pastSessions &&
-          pastBudget.left > 0 &&
-          !isNonRaceEvent(entry.name) &&
-          !prevSessions.some((s) => s.eventId === draft.id)
-        ) {
-          pastBudget.left--;
+        if (pastTargets.has(i) && recipe?.pastSessions) {
           try {
             found = await recipe.pastSessions(entry, recipeCtx(series, ctx));
             if (found?.sessions.length) ctx.log.info(`${entry.name}: ${found.sessions.length} sesión(es) reconstruidas desde los resultados oficiales`);
           } catch (err) {
             ctx.log.warn(`${entry.name}: sesiones de la fecha ya corrida ilegibles (${err instanceof Error ? err.message : String(err)})`);
           }
+          if (found?.sessions.length) delete pastLog[pastKey(i)];
+          else pastLog[pastKey(i)] = isoNow(ctx.now);
+          pastLogChanged = true;
         }
         if (inHorizon) {
           try {
@@ -394,6 +411,7 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       if (needsKey > 0) {
         ctx.log.warn(`${unavailable}: ${needsKey} cronograma(s) dentro del horizonte quedan "a confirmar"`);
       }
+      if (pastLogChanged) await writeJson(pastLogFile, pastLog).catch(() => undefined);
       return { events, sessions, ...(missing.length ? { missingTimetables: missing } : {}) };
     },
 
