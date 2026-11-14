@@ -88,7 +88,7 @@ type PastSessionsLog = Record<string, string>;
  * Último cambio de los lectores de resultados por receta (SiteRecipe.results). Las sesiones que se habían dado por
  * perdidas antes de esta fecha (porque solo había IA) se vuelven a intentar (ver Adapter.resultsReaderSince).
  */
-export const GENERIC_RESULTS_READER_SINCE = '2026-11-14T00:00:00Z';
+export const GENERIC_RESULTS_READER_SINCE = '2026-11-14T07:30:00Z';
 /** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
 const MAX_CALENDAR_IMAGES = 16;
 const MAX_TIMETABLE_IMAGES = 3;
