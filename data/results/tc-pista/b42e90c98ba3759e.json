@@ -1,0 +1,704 @@
+{
+  "seriesId": "tc-pista",
+  "eventId": "b42e90c98ba3759e",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "da4bce60d926de68",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "bestLap": "1:25.907"
+        },
+        {
+          "pos": 2,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "bestLap": "0.384"
+        },
+        {
+          "pos": 3,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.671"
+        },
+        {
+          "pos": 4,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "bestLap": "1.152"
+        },
+        {
+          "pos": 5,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "bestLap": "1.259"
+        },
+        {
+          "pos": 6,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.539"
+        },
+        {
+          "pos": 7,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "bestLap": "1.577"
+        },
+        {
+          "pos": 8,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.691"
+        },
+        {
+          "pos": 9,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "bestLap": "2.063"
+        },
+        {
+          "pos": 10,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "bestLap": "2.171"
+        },
+        {
+          "pos": 11,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "bestLap": "2.213"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "bestLap": "2.325"
+        },
+        {
+          "pos": 13,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "bestLap": "2.459"
+        },
+        {
+          "pos": 14,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "bestLap": "2.545"
+        },
+        {
+          "pos": 15,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "bestLap": "2.583"
+        },
+        {
+          "pos": 16,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "bestLap": "3.725"
+        },
+        {
+          "pos": 17,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "bestLap": "4.158"
+        },
+        {
+          "pos": 18,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "bestLap": "6.953"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260418_105853_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 4 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "0f42ee67ca0df4ab",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "bestLap": "1:26.450"
+        },
+        {
+          "pos": 2,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "bestLap": "0.284"
+        },
+        {
+          "pos": 3,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "bestLap": "0.354"
+        },
+        {
+          "pos": 4,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.445"
+        },
+        {
+          "pos": 5,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "bestLap": "0.556"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.605"
+        },
+        {
+          "pos": 7,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "bestLap": "0.626"
+        },
+        {
+          "pos": 8,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.756"
+        },
+        {
+          "pos": 9,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.180"
+        },
+        {
+          "pos": 10,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "bestLap": "1.226"
+        },
+        {
+          "pos": 11,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.322"
+        },
+        {
+          "pos": 12,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.549"
+        },
+        {
+          "pos": 13,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.598"
+        },
+        {
+          "pos": 14,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "bestLap": "1.713"
+        },
+        {
+          "pos": 15,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "bestLap": "1.917"
+        },
+        {
+          "pos": 16,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "bestLap": "2.750"
+        },
+        {
+          "pos": 17,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "bestLap": "3.689"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260418_132012_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 4 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "88dfb8398ba50752",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "bestLap": "1:26.456"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "bestLap": "0.010"
+        },
+        {
+          "pos": 3,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "bestLap": "0.114"
+        },
+        {
+          "pos": 4,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "bestLap": "0.372"
+        },
+        {
+          "pos": 5,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "bestLap": "0.461"
+        },
+        {
+          "pos": 6,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.518"
+        },
+        {
+          "pos": 7,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "bestLap": "0.608"
+        },
+        {
+          "pos": 8,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.612"
+        },
+        {
+          "pos": 9,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "bestLap": "0.757"
+        },
+        {
+          "pos": 10,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "bestLap": "1.268"
+        },
+        {
+          "pos": 11,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.292"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "bestLap": "1.338"
+        },
+        {
+          "pos": 13,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.356"
+        },
+        {
+          "pos": 14,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.394"
+        },
+        {
+          "pos": 15,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "bestLap": "1.456"
+        },
+        {
+          "pos": 16,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "bestLap": "2.061"
+        },
+        {
+          "pos": 17,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "bestLap": "2.942"
+        },
+        {
+          "pos": 18,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "bestLap": "3.414"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260418_165549_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 4 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "9b4518ff6a119962",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 5,
+          "time": "7:15.162"
+        },
+        {
+          "pos": 2,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+5.023"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 5,
+          "gap": "+5.695"
+        },
+        {
+          "pos": 4,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+7.778"
+        },
+        {
+          "pos": 5,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+11.795"
+        },
+        {
+          "pos": 6,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 5,
+          "gap": "+13.643"
+        },
+        {
+          "pos": 7,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+15.337"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+15.570"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260419_112548_1ERA_SERIE.pdf",
+        "title": "1ERA SERIE — Fecha 4 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "70e3e5494d0d127d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 5,
+          "time": "7:16.765"
+        },
+        {
+          "pos": 2,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 5,
+          "gap": "+4.021"
+        },
+        {
+          "pos": 3,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+6.224"
+        },
+        {
+          "pos": 4,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+9.298"
+        },
+        {
+          "pos": 5,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 5,
+          "gap": "+10.196"
+        },
+        {
+          "pos": 6,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+10.816"
+        },
+        {
+          "pos": 7,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+16.578"
+        },
+        {
+          "pos": 8,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 5,
+          "gap": "+32.455"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260419_112611_2DA_SERIE.pdf",
+        "title": "2DA SERIE — Fecha 4 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "2761895ea66cb0bb",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 20,
+          "time": "36:46.772"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+2.675"
+        },
+        {
+          "pos": 3,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 20,
+          "gap": "+4.781"
+        },
+        {
+          "pos": 4,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+10.516"
+        },
+        {
+          "pos": 5,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+11.242"
+        },
+        {
+          "pos": 6,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+11.897"
+        },
+        {
+          "pos": 7,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 20,
+          "gap": "+12.050"
+        },
+        {
+          "pos": 8,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+18.696"
+        },
+        {
+          "pos": 9,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+19.079"
+        },
+        {
+          "pos": 10,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+25.474"
+        },
+        {
+          "pos": 11,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 20,
+          "gap": "+26.244"
+        },
+        {
+          "pos": 12,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 8,
+          "gap": "+12 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+16 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 1,
+          "gap": "+19 vueltas"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260419_140959_FINAL.pdf",
+        "title": "FINAL — Fecha 4 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

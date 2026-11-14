@@ -1,0 +1,645 @@
+{
+  "seriesId": "tc-pickup",
+  "eventId": "91030908fb4c48c7",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "55d2a7cca401cdad",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 3,
+          "bestLap": "1:29.459"
+        },
+        {
+          "pos": 2,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.420",
+          "bestLap": "1:29.879"
+        },
+        {
+          "pos": 3,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+0.534",
+          "bestLap": "1:29.993"
+        },
+        {
+          "pos": 4,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 5,
+          "gap": "+0.714",
+          "bestLap": "1:30.173"
+        },
+        {
+          "pos": 5,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.898",
+          "bestLap": "1:30.357"
+        },
+        {
+          "pos": 6,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+0.904",
+          "bestLap": "1:30.363"
+        },
+        {
+          "pos": 7,
+          "number": "122",
+          "driver": "Andres JAKOS",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+0.972",
+          "bestLap": "1:30.431"
+        },
+        {
+          "pos": 8,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+1.041",
+          "bestLap": "1:30.500"
+        },
+        {
+          "pos": 9,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+1.182",
+          "bestLap": "1:30.641"
+        },
+        {
+          "pos": 10,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "vehicle": "FORD",
+          "laps": 3,
+          "gap": "+1.209",
+          "bestLap": "1:30.668"
+        },
+        {
+          "pos": 11,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "FIAT",
+          "laps": 5,
+          "gap": "+1.259",
+          "bestLap": "1:30.718"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+2.377",
+          "bestLap": "1:31.836"
+        },
+        {
+          "pos": 13,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "laps": 2,
+          "gap": "+10.461",
+          "bestLap": "1:39.920"
+        },
+        {
+          "pos": 14,
+          "number": "68",
+          "driver": "Julian SANTERO",
+          "vehicle": "TOYOTA",
+          "laps": 1,
+          "gap": "+12.384",
+          "bestLap": "1:41.843"
+        },
+        {
+          "pos": 15,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 2,
+          "gap": "+29.851",
+          "bestLap": "1:59.310"
+        },
+        {
+          "pos": 16,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 1,
+          "gap": "+2:56.862",
+          "bestLap": "4:26.321"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260516_094220_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 4 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "49913f79087a760e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 4,
+          "bestLap": "1:27.928"
+        },
+        {
+          "pos": 2,
+          "number": "68",
+          "driver": "Julian SANTERO",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "gap": "+1.223",
+          "bestLap": "1:29.151"
+        },
+        {
+          "pos": 3,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "gap": "+1.308",
+          "bestLap": "1:29.236"
+        },
+        {
+          "pos": 4,
+          "number": "122",
+          "driver": "Andres JAKOS",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "gap": "+1.477",
+          "bestLap": "1:29.405"
+        },
+        {
+          "pos": 5,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 7,
+          "gap": "+1.590",
+          "bestLap": "1:29.518"
+        },
+        {
+          "pos": 6,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 7,
+          "gap": "+1.809",
+          "bestLap": "1:29.737"
+        },
+        {
+          "pos": 7,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 7,
+          "gap": "+1.850",
+          "bestLap": "1:29.778"
+        },
+        {
+          "pos": 8,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+3.028",
+          "bestLap": "1:30.956"
+        },
+        {
+          "pos": 9,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+17.882",
+          "bestLap": "1:45.810"
+        },
+        {
+          "pos": 10,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "FIAT",
+          "laps": 5,
+          "gap": "+18.483",
+          "bestLap": "1:46.411"
+        },
+        {
+          "pos": 11,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 3,
+          "gap": "+19.405",
+          "bestLap": "1:47.333"
+        },
+        {
+          "pos": 12,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 1,
+          "gap": "+5:06.382",
+          "bestLap": "6:34.310"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "vehicle": "TOYOTA"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260516_115137_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 4 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "abd3f68df6f3b497",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "bestLap": "1:28.353"
+        },
+        {
+          "pos": 2,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "gap": "+0.210",
+          "bestLap": "1:28.563"
+        },
+        {
+          "pos": 3,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "gap": "+0.527",
+          "bestLap": "1:28.880"
+        },
+        {
+          "pos": 5,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "gap": "+0.644",
+          "bestLap": "1:28.997"
+        },
+        {
+          "pos": 6,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "gap": "+0.420",
+          "bestLap": "1:28.773"
+        },
+        {
+          "pos": 7,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "gap": "+0.549",
+          "bestLap": "1:28.902"
+        },
+        {
+          "pos": 9,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "gap": "+0.689",
+          "bestLap": "1:29.042"
+        },
+        {
+          "pos": 10,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "gap": "+0.748",
+          "bestLap": "1:29.101"
+        },
+        {
+          "pos": 11,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "gap": "+0.972",
+          "bestLap": "1:29.325"
+        },
+        {
+          "pos": 12,
+          "number": "68",
+          "driver": "Julian SANTERO",
+          "vehicle": "TOYOTA",
+          "gap": "+1.041",
+          "bestLap": "1:29.394"
+        },
+        {
+          "pos": 13,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "vehicle": "TOYOTA",
+          "gap": "+1.115",
+          "bestLap": "1:29.468"
+        },
+        {
+          "pos": 14,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "FIAT",
+          "gap": "+1.227",
+          "bestLap": "1:29.580"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260516_172926_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 4 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "7826232b7064f7e1",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "time": "1:30.040"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "10:54:26.012",
+          "driver": "1:30.040"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "10:55:56.891",
+          "driver": "1:30.879"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "10:57:27.755",
+          "driver": "1:30.864"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "10:59:00.591",
+          "driver": "1:32.836"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "11:00:33.037",
+          "driver": "1:32.446"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/609/ver",
+        "title": "1ERA SERIE — Fecha 4 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "21be440aaf56a1c6",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "time": "1:29.804"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "11:16:42.086",
+          "driver": "1:29.804"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "11:18:12.283",
+          "driver": "1:30.197"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "11:19:42.356",
+          "driver": "1:30.073"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "11:21:12.820",
+          "driver": "1:30.464"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "11:22:43.388",
+          "driver": "1:30.568"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/613/ver",
+        "title": "2DA SERIE TC PICK UP — Fecha 4 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "b7ab36bf3e79a12c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 20,
+          "time": "30:25.454"
+        },
+        {
+          "pos": 2,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 20,
+          "gap": "+0.281"
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "laps": 20,
+          "gap": "+5.035"
+        },
+        {
+          "pos": 4,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 20,
+          "gap": "+7.579"
+        },
+        {
+          "pos": 5,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 20,
+          "gap": "+7.821"
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "vehicle": "FORD",
+          "laps": 20,
+          "gap": "+8.231"
+        },
+        {
+          "pos": 7,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+8.819"
+        },
+        {
+          "pos": 8,
+          "number": "68",
+          "driver": "Julian SANTERO",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+9.578"
+        },
+        {
+          "pos": 9,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 20,
+          "gap": "+12.538"
+        },
+        {
+          "pos": 10,
+          "number": "122",
+          "driver": "Andres JAKOS",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+12.974"
+        },
+        {
+          "pos": 11,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 20,
+          "gap": "+19.282"
+        },
+        {
+          "pos": 12,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "FIAT",
+          "laps": 20,
+          "gap": "+24.307"
+        },
+        {
+          "pos": 13,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+49.666"
+        },
+        {
+          "pos": 14,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 17,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+10 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+16 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260517_145121_FINAL_RECTIFICADA.pdf",
+        "title": "FINAL RECTIFICADA — Fecha 4 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

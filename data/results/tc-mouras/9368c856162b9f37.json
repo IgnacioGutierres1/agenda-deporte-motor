@@ -1,0 +1,498 @@
+{
+  "seriesId": "tc-mouras",
+  "eventId": "9368c856162b9f37",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "261af0c837a1bf0d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "bestLap": "01:26.505"
+        },
+        {
+          "pos": 2,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 9,
+          "gap": "+0.075",
+          "bestLap": "01:26.580"
+        },
+        {
+          "pos": 3,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+0.524",
+          "bestLap": "01:27.029"
+        },
+        {
+          "pos": 4,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+0.642",
+          "bestLap": "01:27.147"
+        },
+        {
+          "pos": 5,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+0.913",
+          "bestLap": "01:27.418"
+        },
+        {
+          "pos": 6,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 9,
+          "gap": "+1.347",
+          "bestLap": "01:27.852"
+        },
+        {
+          "pos": 7,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.350",
+          "bestLap": "01:27.855"
+        },
+        {
+          "pos": 8,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+1.687",
+          "bestLap": "01:28.192"
+        },
+        {
+          "pos": 9,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.842",
+          "bestLap": "01:28.347"
+        },
+        {
+          "pos": 10,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 6,
+          "gap": "+2.195",
+          "bestLap": "01:28.700"
+        },
+        {
+          "pos": 11,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+2.265",
+          "bestLap": "01:28.770"
+        },
+        {
+          "pos": 12,
+          "number": "88",
+          "driver": "MANCUSO, ESTEBAN",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+2.627",
+          "bestLap": "01:29.132"
+        },
+        {
+          "pos": 13,
+          "number": "177",
+          "driver": "NICOLÁS VILLAMAYOR",
+          "vehicle": "TORINO",
+          "laps": 7,
+          "gap": "+2.960",
+          "bestLap": "01:29.465"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260124_103357_2do_Entrenamientos_TC_mouras.pdf",
+        "title": "2do Entrenamientos TC mouras — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "2be6448c0e537451",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 6,
+          "bestLap": "01:26.567"
+        },
+        {
+          "pos": 2,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 7,
+          "gap": "+0.382",
+          "bestLap": "01:26.949"
+        },
+        {
+          "pos": 3,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+0.481",
+          "bestLap": "01:27.048"
+        },
+        {
+          "pos": 4,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 8,
+          "gap": "+0.929",
+          "bestLap": "01:27.496"
+        },
+        {
+          "pos": 5,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+0.985",
+          "bestLap": "01:27.552"
+        },
+        {
+          "pos": 6,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+1.311",
+          "bestLap": "01:27.878"
+        },
+        {
+          "pos": 7,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 6,
+          "gap": "+1.322",
+          "bestLap": "01:27.889"
+        },
+        {
+          "pos": 8,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.358",
+          "bestLap": "01:27.925"
+        },
+        {
+          "pos": 9,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+1.686",
+          "bestLap": "01:28.253"
+        },
+        {
+          "pos": 10,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.809",
+          "bestLap": "01:28.376"
+        },
+        {
+          "pos": 11,
+          "number": "88",
+          "driver": "MANCUSO, ESTEBAN",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+1.880",
+          "bestLap": "01:28.447"
+        },
+        {
+          "pos": 12,
+          "number": "177",
+          "driver": "NICOLÁS VILLAMAYOR",
+          "vehicle": "TORINO",
+          "laps": 8,
+          "gap": "+3.902",
+          "bestLap": "01:30.469"
+        },
+        {
+          "pos": 13,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 6,
+          "gap": "+10.234",
+          "bestLap": "01:36.801"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260124_131407_ENTRENAMIENTOS_TC_MOURA.pdf",
+        "title": "ENTRENAMIENTOS TC MOURA — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "cc403e7af17b8b08",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "bestLap": "01:26.411"
+        },
+        {
+          "pos": 2,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 3,
+          "gap": "+0.028",
+          "bestLap": "01:26.439"
+        },
+        {
+          "pos": 3,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.346",
+          "bestLap": "01:26.757"
+        },
+        {
+          "pos": 4,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.764",
+          "bestLap": "01:27.175"
+        },
+        {
+          "pos": 5,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.783",
+          "bestLap": "01:27.194"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1.144",
+          "bestLap": "01:27.555"
+        },
+        {
+          "pos": 7,
+          "number": "88",
+          "driver": "MANCUSO, ESTEBAN",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1.155",
+          "bestLap": "01:27.566"
+        },
+        {
+          "pos": 8,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.374",
+          "bestLap": "01:27.785"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+1.405",
+          "bestLap": "01:27.816"
+        },
+        {
+          "pos": 10,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.667",
+          "bestLap": "01:28.078"
+        },
+        {
+          "pos": 11,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+2.068",
+          "bestLap": "01:28.479"
+        },
+        {
+          "pos": 12,
+          "number": "177",
+          "driver": "NICOLÁS VILLAMAYOR",
+          "vehicle": "TORINO",
+          "laps": 4,
+          "gap": "+2.462",
+          "bestLap": "01:28.873"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260124_185402_CLASIFICACION_TC_MOURAS_RECTIFICADA.pdf",
+        "title": "CLASIFICACION TC MOURAS RECTIFICADA — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "0f098c7547e730c9",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 16,
+          "time": "24:07.699"
+        },
+        {
+          "pos": 2,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 16,
+          "gap": "+0.548"
+        },
+        {
+          "pos": 3,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 16,
+          "gap": "+1.895"
+        },
+        {
+          "pos": 4,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 16,
+          "gap": "+7.638"
+        },
+        {
+          "pos": 5,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 16,
+          "gap": "+21.099"
+        },
+        {
+          "pos": 6,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 16,
+          "gap": "+21.455"
+        },
+        {
+          "pos": 7,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 16,
+          "gap": "+21.764"
+        },
+        {
+          "pos": 8,
+          "number": "177",
+          "driver": "NICOLÁS VILLAMAYOR",
+          "vehicle": "TORINO",
+          "laps": 16,
+          "gap": "+22.157"
+        },
+        {
+          "pos": 9,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 16,
+          "gap": "+27.316"
+        },
+        {
+          "pos": 10,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 11,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 12,
+          "gap": "+4 vueltas"
+        },
+        {
+          "pos": 12,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 11,
+          "gap": "+5 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "88",
+          "driver": "MANCUSO, ESTEBAN",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+12 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260125_191443_FINAL_TC_MOURAS.pdf",
+        "title": "FINAL TC MOURAS — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

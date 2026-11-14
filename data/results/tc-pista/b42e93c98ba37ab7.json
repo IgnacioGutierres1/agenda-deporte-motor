@@ -1,0 +1,653 @@
+{
+  "seriesId": "tc-pista",
+  "eventId": "b42e93c98ba37ab7",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "4904a3365c8dd958",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 8,
+          "bestLap": "1:28.939"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 11,
+          "gap": "+0.066",
+          "bestLap": "1:29.005"
+        },
+        {
+          "pos": 3,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+0.351",
+          "bestLap": "1:29.290"
+        },
+        {
+          "pos": 4,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+0.518",
+          "bestLap": "1:29.457"
+        },
+        {
+          "pos": 5,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 11,
+          "gap": "+0.607",
+          "bestLap": "1:29.546"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 11,
+          "gap": "+0.903",
+          "bestLap": "1:29.842"
+        },
+        {
+          "pos": 7,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 8,
+          "gap": "+1.089",
+          "bestLap": "1:30.028"
+        },
+        {
+          "pos": 8,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 11,
+          "gap": "+1.122",
+          "bestLap": "1:30.061"
+        },
+        {
+          "pos": 9,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 10,
+          "gap": "+1.259",
+          "bestLap": "1:30.198"
+        },
+        {
+          "pos": 10,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 9,
+          "gap": "+1.302",
+          "bestLap": "1:30.241"
+        },
+        {
+          "pos": 11,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "gap": "+1.954",
+          "bestLap": "1:30.893"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 9,
+          "gap": "+2.063",
+          "bestLap": "1:31.002"
+        },
+        {
+          "pos": 13,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 2,
+          "gap": "+3.834",
+          "bestLap": "1:32.773"
+        },
+        {
+          "pos": 14,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 3,
+          "gap": "+4.413",
+          "bestLap": "1:33.352"
+        },
+        {
+          "pos": 15,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 1
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260328_102034_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 3 — CENTENARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "0ca0fd1318cb955b",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 11,
+          "bestLap": "1:28.489"
+        },
+        {
+          "pos": 2,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 13,
+          "gap": "+0.331",
+          "bestLap": "1:28.820"
+        },
+        {
+          "pos": 3,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 14,
+          "gap": "+0.510",
+          "bestLap": "1:28.999"
+        },
+        {
+          "pos": 4,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 9,
+          "gap": "+0.577",
+          "bestLap": "1:29.066"
+        },
+        {
+          "pos": 5,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 9,
+          "gap": "+0.767",
+          "bestLap": "1:29.256"
+        },
+        {
+          "pos": 6,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 9,
+          "gap": "+0.948",
+          "bestLap": "1:29.437"
+        },
+        {
+          "pos": 7,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+1.089",
+          "bestLap": "1:29.578"
+        },
+        {
+          "pos": 8,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 11,
+          "gap": "+1.098",
+          "bestLap": "1:29.587"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+1.331",
+          "bestLap": "1:29.820"
+        },
+        {
+          "pos": 10,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 11,
+          "gap": "+1.333",
+          "bestLap": "1:29.822"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 9,
+          "gap": "+1.350",
+          "bestLap": "1:29.839"
+        },
+        {
+          "pos": 12,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "gap": "+1.484",
+          "bestLap": "1:29.973"
+        },
+        {
+          "pos": 13,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+1.513",
+          "bestLap": "1:30.002"
+        },
+        {
+          "pos": 14,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 11,
+          "gap": "+1.690",
+          "bestLap": "1:30.179"
+        },
+        {
+          "pos": 15,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 11,
+          "gap": "+2.871",
+          "bestLap": "1:31.360"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260328_131219_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 3 — CENTENARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "da0d0b895ec43b62",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "bestLap": "1:29.414"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "gap": "+0.190",
+          "bestLap": "1:29.604"
+        },
+        {
+          "pos": 3,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "gap": "+0.231",
+          "bestLap": "1:29.645"
+        },
+        {
+          "pos": 4,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "gap": "+0.265",
+          "bestLap": "1:29.679"
+        },
+        {
+          "pos": 5,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "gap": "+0.293",
+          "bestLap": "1:29.707"
+        },
+        {
+          "pos": 6,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "gap": "+0.447",
+          "bestLap": "1:29.861"
+        },
+        {
+          "pos": 7,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "gap": "+0.577",
+          "bestLap": "1:29.991"
+        },
+        {
+          "pos": 8,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "gap": "+0.616",
+          "bestLap": "1:30.030"
+        },
+        {
+          "pos": 9,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "gap": "+1.195",
+          "bestLap": "1:30.609"
+        },
+        {
+          "pos": 10,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "gap": "+1.323",
+          "bestLap": "1:30.737"
+        },
+        {
+          "pos": 11,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "gap": "+1.440",
+          "bestLap": "1:30.854"
+        },
+        {
+          "pos": 13,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "gap": "+1.913",
+          "bestLap": "1:31.327"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260328_173922_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 3 — CENTENARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "55d3cd6f896d0272",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "laps": 5,
+          "time": "7:29.774"
+        },
+        {
+          "pos": 2,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "laps": 5,
+          "gap": "+2.435"
+        },
+        {
+          "pos": 3,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "laps": 5,
+          "gap": "+3.669"
+        },
+        {
+          "pos": 4,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "laps": 5,
+          "gap": "+5.290"
+        },
+        {
+          "pos": 5,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "laps": 5,
+          "gap": "+6.836"
+        },
+        {
+          "pos": 6,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "laps": 5,
+          "gap": "+8.164"
+        },
+        {
+          "pos": 7,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "laps": 5,
+          "gap": "+8.627"
+        },
+        {
+          "pos": 8,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "laps": 5,
+          "gap": "+9.351"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260329_102315_1ERA_SERIE.pdf",
+        "title": "1ERA SERIE — Fecha 3 — CENTENARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "5343986baac8b14d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "laps": 5,
+          "time": "7:26.901"
+        },
+        {
+          "pos": 2,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "laps": 5,
+          "gap": "+4.837"
+        },
+        {
+          "pos": 3,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "laps": 5,
+          "gap": "+6.665"
+        },
+        {
+          "pos": 4,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "laps": 5,
+          "gap": "+8.974"
+        },
+        {
+          "pos": 5,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "laps": 5,
+          "gap": "+9.074"
+        },
+        {
+          "pos": 6,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "laps": 5,
+          "gap": "+12.914"
+        },
+        {
+          "pos": 7,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "laps": 2,
+          "gap": "+3 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260329_102342_2DA_SERIE.pdf",
+        "title": "2DA SERIE — Fecha 3 — CENTENARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "7c2313fcc1425fab",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 20,
+          "time": "30:06.701"
+        },
+        {
+          "pos": 2,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 20,
+          "gap": "+0.561"
+        },
+        {
+          "pos": 3,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 20,
+          "gap": "+1.947"
+        },
+        {
+          "pos": 4,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+22.397"
+        },
+        {
+          "pos": 5,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 20,
+          "gap": "+22.396"
+        },
+        {
+          "pos": 6,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 20,
+          "gap": "+22.932"
+        },
+        {
+          "pos": 7,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+23.446"
+        },
+        {
+          "pos": 8,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+24.377"
+        },
+        {
+          "pos": 9,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+27.939"
+        },
+        {
+          "pos": 10,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+28.300"
+        },
+        {
+          "pos": 11,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+41.228"
+        },
+        {
+          "pos": 12,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 16,
+          "gap": "+4 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 16,
+          "gap": "+4 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 2,
+          "gap": "+18 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 1,
+          "gap": "+19 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260401_135700_FINAL_TC_PISTA.pdf",
+        "title": "FINAL TC PISTA — Fecha 3 — CENTENARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

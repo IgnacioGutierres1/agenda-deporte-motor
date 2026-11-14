@@ -1,0 +1,1296 @@
+{
+  "seriesId": "dtm",
+  "eventId": "541c4a367df4cb42",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "62d97da19c46af7b",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "14",
+          "driver": "Matteo Cairoli",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 19,
+          "time": "1:34.289"
+        },
+        {
+          "pos": 2,
+          "number": "25",
+          "driver": "Ben Dörr",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 22,
+          "time": "1:34.521"
+        },
+        {
+          "pos": 3,
+          "number": "91",
+          "driver": "Thomas Preining",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 26,
+          "time": "1:34.604"
+        },
+        {
+          "pos": 4,
+          "number": "22",
+          "driver": "Lucas Auer",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 21,
+          "time": "1:34.683"
+        },
+        {
+          "pos": 5,
+          "number": "69",
+          "driver": "Thierry Vermeulen",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 21,
+          "time": "1:34.695"
+        },
+        {
+          "pos": 6,
+          "number": "48",
+          "driver": "Jules Gounon",
+          "team": "Mercedes-AMG Team MANN-FILTER",
+          "vehicle": "Mercedes-AMG",
+          "laps": 21,
+          "time": "1:34.700"
+        },
+        {
+          "pos": 7,
+          "number": "3",
+          "driver": "Kelvin van der Linde",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 23,
+          "time": "1:34.710"
+        },
+        {
+          "pos": 8,
+          "number": "63",
+          "driver": "Mirko Bortolotti",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 23,
+          "time": "1:34.735"
+        },
+        {
+          "pos": 9,
+          "number": "90",
+          "driver": "Ricardo Feller",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 24,
+          "time": "1:34.752"
+        },
+        {
+          "pos": 10,
+          "number": "80",
+          "driver": "Maro Engel",
+          "team": "Mercedes-AMG Team RAVENOL",
+          "vehicle": "Mercedes-AMG",
+          "laps": 21,
+          "time": "1:34.762"
+        },
+        {
+          "pos": 11,
+          "number": "19",
+          "driver": "Maximilian Paul",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 23,
+          "time": "1:34.872"
+        },
+        {
+          "pos": 12,
+          "number": "130",
+          "driver": "Luca Engstler",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 22,
+          "time": "1:34.934"
+        },
+        {
+          "pos": 13,
+          "number": "11",
+          "driver": "Marco Wittmann",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 20,
+          "time": "1:34.944"
+        },
+        {
+          "pos": 14,
+          "number": "16",
+          "driver": "Timo Glock",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 23,
+          "time": "1:34.965"
+        },
+        {
+          "pos": 15,
+          "number": "7",
+          "driver": "Nicki Thiim",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 22,
+          "time": "1:35.168"
+        },
+        {
+          "pos": 16,
+          "number": "29",
+          "driver": "Bastian Buus",
+          "team": "Land Motorsport",
+          "vehicle": "Porsche",
+          "laps": 24,
+          "time": "1:35.229"
+        },
+        {
+          "pos": 17,
+          "number": "84",
+          "driver": "Tom Kalender",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 23,
+          "time": "1:35.660"
+        },
+        {
+          "pos": 18,
+          "number": "8",
+          "driver": "Nicolas Baert",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 22,
+          "time": "1:35.761"
+        },
+        {
+          "pos": 19,
+          "number": "36",
+          "driver": "Arjun Maini",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 21,
+          "time": "1:35.889"
+        },
+        {
+          "pos": 20,
+          "number": "10",
+          "driver": "Marco Mapelli",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 24,
+          "time": "1:36.054"
+        },
+        {
+          "pos": 21,
+          "number": "64",
+          "driver": "Finn Wiebelhaus",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 19,
+          "time": "1:36.195"
+        }
+      ],
+      "source": {
+        "url": "https://www.dtm.com/en/results",
+        "title": "Resultados DTM — Circuit Zandvoort",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "62cf7ba19c3e5790",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "14",
+          "driver": "Matteo Cairoli",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 17,
+          "time": "1:33.803"
+        },
+        {
+          "pos": 2,
+          "number": "25",
+          "driver": "Ben Dörr",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 20,
+          "time": "1:34.160"
+        },
+        {
+          "pos": 3,
+          "number": "91",
+          "driver": "Thomas Preining",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 18,
+          "time": "1:34.259"
+        },
+        {
+          "pos": 4,
+          "number": "63",
+          "driver": "Mirko Bortolotti",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 22,
+          "time": "1:34.363"
+        },
+        {
+          "pos": 5,
+          "number": "90",
+          "driver": "Ricardo Feller",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 18,
+          "time": "1:34.371"
+        },
+        {
+          "pos": 6,
+          "number": "80",
+          "driver": "Maro Engel",
+          "team": "Mercedes-AMG Team RAVENOL",
+          "vehicle": "Mercedes-AMG",
+          "laps": 16,
+          "time": "1:34.412"
+        },
+        {
+          "pos": 7,
+          "number": "22",
+          "driver": "Lucas Auer",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 19,
+          "time": "1:34.443"
+        },
+        {
+          "pos": 8,
+          "number": "16",
+          "driver": "Timo Glock",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 19,
+          "time": "1:34.450"
+        },
+        {
+          "pos": 9,
+          "number": "69",
+          "driver": "Thierry Vermeulen",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 18,
+          "time": "1:34.506"
+        },
+        {
+          "pos": 10,
+          "number": "48",
+          "driver": "Jules Gounon",
+          "team": "Mercedes-AMG Team MANN-FILTER",
+          "vehicle": "Mercedes-AMG",
+          "laps": 17,
+          "time": "1:34.603"
+        },
+        {
+          "pos": 11,
+          "number": "7",
+          "driver": "Nicki Thiim",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 18,
+          "time": "1:34.700"
+        },
+        {
+          "pos": 12,
+          "number": "10",
+          "driver": "Marco Mapelli",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 15,
+          "time": "1:34.752"
+        },
+        {
+          "pos": 13,
+          "number": "130",
+          "driver": "Luca Engstler",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 19,
+          "time": "1:34.832"
+        },
+        {
+          "pos": 14,
+          "number": "64",
+          "driver": "Finn Wiebelhaus",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 20,
+          "time": "1:34.908"
+        },
+        {
+          "pos": 15,
+          "number": "84",
+          "driver": "Tom Kalender",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 19,
+          "time": "1:34.917"
+        },
+        {
+          "pos": 16,
+          "number": "3",
+          "driver": "Kelvin van der Linde",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 24,
+          "time": "1:34.953"
+        },
+        {
+          "pos": 17,
+          "number": "29",
+          "driver": "Bastian Buus",
+          "team": "Land Motorsport",
+          "vehicle": "Porsche",
+          "laps": 18,
+          "time": "1:35.040"
+        },
+        {
+          "pos": 18,
+          "number": "36",
+          "driver": "Arjun Maini",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 19,
+          "time": "1:35.055"
+        },
+        {
+          "pos": 19,
+          "number": "11",
+          "driver": "Marco Wittmann",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 17,
+          "time": "1:35.138"
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "Nicolas Baert",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 18,
+          "time": "1:35.701"
+        },
+        {
+          "pos": 21,
+          "number": "19",
+          "driver": "Maximilian Paul",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 13,
+          "time": "1:35.754"
+        }
+      ],
+      "source": {
+        "url": "https://www.dtm.com/en/results",
+        "title": "Resultados DTM — Circuit Zandvoort",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "f9037ba7f95871bc",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "14",
+          "driver": "Matteo Cairoli",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 7,
+          "time": "1:32.974"
+        },
+        {
+          "pos": 2,
+          "number": "69",
+          "driver": "Thierry Vermeulen",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 7,
+          "time": "1:33.145"
+        },
+        {
+          "pos": 3,
+          "number": "22",
+          "driver": "Lucas Auer",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 6,
+          "time": "1:33.391"
+        },
+        {
+          "pos": 4,
+          "number": "29",
+          "driver": "Bastian Buus",
+          "team": "Land Motorsport",
+          "vehicle": "Porsche",
+          "laps": 7,
+          "time": "1:33.402"
+        },
+        {
+          "pos": 5,
+          "number": "25",
+          "driver": "Ben Dörr",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 7,
+          "time": "1:33.409"
+        },
+        {
+          "pos": 6,
+          "number": "48",
+          "driver": "Jules Gounon",
+          "team": "Mercedes-AMG Team MANN-FILTER",
+          "vehicle": "Mercedes-AMG",
+          "laps": 6,
+          "time": "1:33.438"
+        },
+        {
+          "pos": 7,
+          "number": "130",
+          "driver": "Luca Engstler",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 7,
+          "time": "1:33.541"
+        },
+        {
+          "pos": 8,
+          "number": "80",
+          "driver": "Maro Engel",
+          "team": "Mercedes-AMG Team RAVENOL",
+          "vehicle": "Mercedes-AMG",
+          "laps": 6,
+          "time": "1:33.547"
+        },
+        {
+          "pos": 9,
+          "number": "7",
+          "driver": "Nicki Thiim",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 6,
+          "time": "1:33.590"
+        },
+        {
+          "pos": 10,
+          "number": "91",
+          "driver": "Thomas Preining",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 8,
+          "time": "1:33.782"
+        },
+        {
+          "pos": 11,
+          "number": "90",
+          "driver": "Ricardo Feller",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 7,
+          "time": "1:33.844"
+        },
+        {
+          "pos": 12,
+          "number": "11",
+          "driver": "Marco Wittmann",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 6,
+          "time": "1:34.048"
+        },
+        {
+          "pos": 13,
+          "number": "10",
+          "driver": "Marco Mapelli",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 7,
+          "time": "1:34.055"
+        },
+        {
+          "pos": 14,
+          "number": "84",
+          "driver": "Tom Kalender",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 7,
+          "time": "1:34.078"
+        },
+        {
+          "pos": 15,
+          "number": "19",
+          "driver": "Maximilian Paul",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 6,
+          "time": "1:34.206"
+        },
+        {
+          "pos": 16,
+          "number": "36",
+          "driver": "Arjun Maini",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 5,
+          "time": "1:34.260"
+        },
+        {
+          "pos": 17,
+          "number": "63",
+          "driver": "Mirko Bortolotti",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 6,
+          "time": "1:34.319"
+        },
+        {
+          "pos": 18,
+          "number": "64",
+          "driver": "Finn Wiebelhaus",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 5,
+          "time": "1:34.371"
+        },
+        {
+          "pos": 19,
+          "number": "8",
+          "driver": "Nicolas Baert",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 6,
+          "time": "1:34.537"
+        },
+        {
+          "pos": 20,
+          "number": "16",
+          "driver": "Timo Glock",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 5,
+          "time": "1:39.806"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "3",
+          "driver": "Kelvin van der Linde",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 3
+        }
+      ],
+      "source": {
+        "url": "https://www.dtm.com/en/results",
+        "title": "Resultados DTM — Circuit Zandvoort",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "d378fbae404a5804",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "14",
+          "driver": "Matteo Cairoli",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 36,
+          "time": "58:09.644",
+          "bestLap": "1:34.749",
+          "points": 28
+        },
+        {
+          "pos": 2,
+          "number": "22",
+          "driver": "Lucas Auer",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 36,
+          "gap": "+3.622s",
+          "bestLap": "1:34.673",
+          "points": 21
+        },
+        {
+          "pos": 3,
+          "number": "69",
+          "driver": "Thierry Vermeulen",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 36,
+          "gap": "+4.786s",
+          "bestLap": "1:34.988",
+          "points": 18
+        },
+        {
+          "pos": 4,
+          "number": "48",
+          "driver": "Jules Gounon",
+          "team": "Mercedes-AMG Team MANN-FILTER",
+          "vehicle": "Mercedes-AMG",
+          "laps": 36,
+          "gap": "+7.187s",
+          "bestLap": "1:34.726",
+          "points": 13
+        },
+        {
+          "pos": 5,
+          "number": "25",
+          "driver": "Ben Dörr",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 36,
+          "gap": "+8.290s",
+          "bestLap": "1:34.980",
+          "points": 11
+        },
+        {
+          "pos": 6,
+          "number": "80",
+          "driver": "Maro Engel",
+          "team": "Mercedes-AMG Team RAVENOL",
+          "vehicle": "Mercedes-AMG",
+          "laps": 36,
+          "gap": "+8.701s",
+          "bestLap": "1:35.041",
+          "points": 10
+        },
+        {
+          "pos": 7,
+          "number": "91",
+          "driver": "Thomas Preining",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 36,
+          "gap": "+9.444s",
+          "bestLap": "1:34.840",
+          "points": 9
+        },
+        {
+          "pos": 8,
+          "number": "130",
+          "driver": "Luca Engstler",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 36,
+          "gap": "+13.774s",
+          "bestLap": "1:35.261",
+          "points": 8
+        },
+        {
+          "pos": 9,
+          "number": "7",
+          "driver": "Nicki Thiim",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 36,
+          "gap": "+15.949s",
+          "bestLap": "1:34.951",
+          "points": 7
+        },
+        {
+          "pos": 10,
+          "number": "90",
+          "driver": "Ricardo Feller",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 36,
+          "gap": "+21.857s",
+          "bestLap": "1:34.600",
+          "points": 6
+        },
+        {
+          "pos": 11,
+          "number": "11",
+          "driver": "Marco Wittmann",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 36,
+          "gap": "+35.942s",
+          "bestLap": "1:35.767",
+          "points": 5
+        },
+        {
+          "pos": 12,
+          "number": "36",
+          "driver": "Arjun Maini",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 36,
+          "gap": "+42.857s",
+          "bestLap": "1:35.626",
+          "points": 4
+        },
+        {
+          "pos": 13,
+          "number": "19",
+          "driver": "Maximilian Paul",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 36,
+          "gap": "+44.373s",
+          "bestLap": "1:35.837",
+          "points": 3
+        },
+        {
+          "pos": 14,
+          "number": "63",
+          "driver": "Mirko Bortolotti",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 36,
+          "gap": "+46.166s",
+          "bestLap": "1:35.677",
+          "points": 2
+        },
+        {
+          "pos": 15,
+          "number": "10",
+          "driver": "Marco Mapelli",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 36,
+          "gap": "+49.146s",
+          "bestLap": "1:35.577",
+          "points": 1
+        },
+        {
+          "pos": 16,
+          "number": "64",
+          "driver": "Finn Wiebelhaus",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 36,
+          "gap": "+50.566s",
+          "bestLap": "1:35.718",
+          "points": 0
+        },
+        {
+          "pos": 17,
+          "number": "8",
+          "driver": "Nicolas Baert",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 36,
+          "gap": "+51.131s",
+          "bestLap": "1:35.094",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "3",
+          "driver": "Kelvin van der Linde",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 25,
+          "bestLap": "1:36.248",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "84",
+          "driver": "Tom Kalender",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 21,
+          "bestLap": "1:36.605",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "16",
+          "driver": "Timo Glock",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 18,
+          "bestLap": "1:35.429",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "29",
+          "driver": "Bastian Buus",
+          "team": "Land Motorsport",
+          "vehicle": "Porsche",
+          "bestLap": "1:34.972",
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.dtm.com/en/results",
+        "title": "Resultados DTM — Circuit Zandvoort",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "f90d7da7f960c9a7",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "3",
+          "driver": "Kelvin van der Linde",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 5,
+          "time": "1:32.831"
+        },
+        {
+          "pos": 2,
+          "number": "69",
+          "driver": "Thierry Vermeulen",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 6,
+          "time": "1:33.008"
+        },
+        {
+          "pos": 3,
+          "number": "130",
+          "driver": "Luca Engstler",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 6,
+          "time": "1:33.171"
+        },
+        {
+          "pos": 4,
+          "number": "63",
+          "driver": "Mirko Bortolotti",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 5,
+          "time": "1:33.205"
+        },
+        {
+          "pos": 5,
+          "number": "25",
+          "driver": "Ben Dörr",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 7,
+          "time": "1:33.243"
+        },
+        {
+          "pos": 6,
+          "number": "14",
+          "driver": "Matteo Cairoli",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 6,
+          "time": "1:33.248"
+        },
+        {
+          "pos": 7,
+          "number": "91",
+          "driver": "Thomas Preining",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 7,
+          "time": "1:33.373"
+        },
+        {
+          "pos": 8,
+          "number": "22",
+          "driver": "Lucas Auer",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 5,
+          "time": "1:33.390"
+        },
+        {
+          "pos": 9,
+          "number": "7",
+          "driver": "Nicki Thiim",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 6,
+          "time": "1:33.407"
+        },
+        {
+          "pos": 10,
+          "number": "48",
+          "driver": "Jules Gounon",
+          "team": "Mercedes-AMG Team MANN-FILTER",
+          "vehicle": "Mercedes-AMG",
+          "laps": 5,
+          "time": "1:33.518"
+        },
+        {
+          "pos": 11,
+          "number": "80",
+          "driver": "Maro Engel",
+          "team": "Mercedes-AMG Team RAVENOL",
+          "vehicle": "Mercedes-AMG",
+          "laps": 6,
+          "time": "1:33.602"
+        },
+        {
+          "pos": 12,
+          "number": "10",
+          "driver": "Marco Mapelli",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 6,
+          "time": "1:33.721"
+        },
+        {
+          "pos": 13,
+          "number": "11",
+          "driver": "Marco Wittmann",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 7,
+          "time": "1:33.735"
+        },
+        {
+          "pos": 14,
+          "number": "19",
+          "driver": "Maximilian Paul",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 6,
+          "time": "1:33.793"
+        },
+        {
+          "pos": 15,
+          "number": "29",
+          "driver": "Bastian Buus",
+          "team": "Land Motorsport",
+          "vehicle": "Porsche",
+          "laps": 6,
+          "time": "1:33.932"
+        },
+        {
+          "pos": 16,
+          "number": "90",
+          "driver": "Ricardo Feller",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 6,
+          "time": "1:33.951"
+        },
+        {
+          "pos": 17,
+          "number": "8",
+          "driver": "Nicolas Baert",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 6,
+          "time": "1:34.048"
+        },
+        {
+          "pos": 18,
+          "number": "36",
+          "driver": "Arjun Maini",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 5,
+          "time": "1:34.122"
+        },
+        {
+          "pos": 19,
+          "number": "16",
+          "driver": "Timo Glock",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 7,
+          "time": "1:34.210"
+        },
+        {
+          "pos": 20,
+          "number": "84",
+          "driver": "Tom Kalender",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 7,
+          "time": "1:34.510"
+        },
+        {
+          "pos": 21,
+          "number": "64",
+          "driver": "Finn Wiebelhaus",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 5,
+          "time": "1:34.581"
+        }
+      ],
+      "source": {
+        "url": "https://www.dtm.com/en/results",
+        "title": "Resultados DTM — Circuit Zandvoort",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "d382fdae4052afef",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "3",
+          "driver": "Kelvin van der Linde",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 35,
+          "time": "58:14.005",
+          "bestLap": "1:35.055",
+          "points": 28
+        },
+        {
+          "pos": 2,
+          "number": "25",
+          "driver": "Ben Dörr",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 35,
+          "gap": "+6.377s",
+          "bestLap": "1:34.758",
+          "points": 20
+        },
+        {
+          "pos": 3,
+          "number": "11",
+          "driver": "Marco Wittmann",
+          "team": "Schubert Motorsport",
+          "vehicle": "BMW",
+          "laps": 35,
+          "gap": "+7.046s",
+          "bestLap": "1:34.917",
+          "points": 16
+        },
+        {
+          "pos": 4,
+          "number": "80",
+          "driver": "Maro Engel",
+          "team": "Mercedes-AMG Team RAVENOL",
+          "vehicle": "Mercedes-AMG",
+          "laps": 35,
+          "gap": "+7.510s",
+          "bestLap": "1:35.283",
+          "points": 13
+        },
+        {
+          "pos": 5,
+          "number": "69",
+          "driver": "Thierry Vermeulen",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 35,
+          "gap": "+11.053s",
+          "bestLap": "1:34.846",
+          "points": 13
+        },
+        {
+          "pos": 6,
+          "number": "130",
+          "driver": "Luca Engstler",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 35,
+          "gap": "+12.205s",
+          "bestLap": "1:35.059",
+          "points": 11
+        },
+        {
+          "pos": 7,
+          "number": "10",
+          "driver": "Marco Mapelli",
+          "team": "Red Bull Team ABT",
+          "vehicle": "Lamborghini",
+          "laps": 35,
+          "gap": "+17.021s",
+          "bestLap": "1:34.920",
+          "points": 9
+        },
+        {
+          "pos": 8,
+          "number": "91",
+          "driver": "Thomas Preining",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 35,
+          "gap": "+17.348s",
+          "bestLap": "1:34.862",
+          "points": 8
+        },
+        {
+          "pos": 9,
+          "number": "63",
+          "driver": "Mirko Bortolotti",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 35,
+          "gap": "+17.641s",
+          "bestLap": "1:34.952",
+          "points": 7
+        },
+        {
+          "pos": 10,
+          "number": "90",
+          "driver": "Ricardo Feller",
+          "team": "Manthey",
+          "vehicle": "Porsche",
+          "laps": 35,
+          "gap": "+18.156s",
+          "bestLap": "1:34.739",
+          "points": 6
+        },
+        {
+          "pos": 11,
+          "number": "14",
+          "driver": "Matteo Cairoli",
+          "team": "EMIL FREY RACING",
+          "vehicle": "Ferrari",
+          "laps": 35,
+          "gap": "+18.890s",
+          "bestLap": "1:35.660",
+          "points": 5
+        },
+        {
+          "pos": 12,
+          "number": "48",
+          "driver": "Jules Gounon",
+          "team": "Mercedes-AMG Team MANN-FILTER",
+          "vehicle": "Mercedes-AMG",
+          "laps": 35,
+          "gap": "+19.104s",
+          "bestLap": "1:35.796",
+          "points": 4
+        },
+        {
+          "pos": 13,
+          "number": "22",
+          "driver": "Lucas Auer",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 35,
+          "gap": "+19.677s",
+          "bestLap": "1:35.331",
+          "points": 3
+        },
+        {
+          "pos": 14,
+          "number": "16",
+          "driver": "Timo Glock",
+          "team": "Doerr Motorsport",
+          "vehicle": "McLaren",
+          "laps": 35,
+          "gap": "+20.345s",
+          "bestLap": "1:34.493",
+          "points": 2
+        },
+        {
+          "pos": 15,
+          "number": "84",
+          "driver": "Tom Kalender",
+          "team": "Mercedes-AMG Team Landgraf",
+          "vehicle": "Mercedes-AMG",
+          "laps": 35,
+          "gap": "+21.804s",
+          "bestLap": "1:35.003",
+          "points": 1
+        },
+        {
+          "pos": 16,
+          "number": "36",
+          "driver": "Arjun Maini",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 35,
+          "gap": "+25.658s",
+          "bestLap": "1:35.231",
+          "points": 0
+        },
+        {
+          "pos": 17,
+          "number": "8",
+          "driver": "Nicolas Baert",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 35,
+          "gap": "+26.558s",
+          "bestLap": "1:35.688",
+          "points": 0
+        },
+        {
+          "pos": 18,
+          "number": "7",
+          "driver": "Nicki Thiim",
+          "team": "Comtoyou Racing",
+          "vehicle": "Aston Martin",
+          "laps": 35,
+          "gap": "+27.606s",
+          "bestLap": "1:35.109",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "19",
+          "driver": "Maximilian Paul",
+          "team": "TGI Team by GRT",
+          "vehicle": "Lamborghini",
+          "laps": 19,
+          "bestLap": "1:35.234",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "64",
+          "driver": "Finn Wiebelhaus",
+          "team": "HRT Ford Racing",
+          "vehicle": "Ford",
+          "laps": 19,
+          "bestLap": "1:34.860",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "29",
+          "driver": "Bastian Buus",
+          "team": "Land Motorsport",
+          "vehicle": "Porsche",
+          "laps": 14,
+          "bestLap": "1:36.395",
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.dtm.com/en/results",
+        "title": "Resultados DTM — Circuit Zandvoort",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,269 @@
+{
+  "seriesId": "tc-mouras",
+  "eventId": "9368c956162ba0ea",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "54b8ebf0792120c4",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "time": "9:00.377"
+        },
+        {
+          "pos": 2,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+0.377"
+        },
+        {
+          "pos": 3,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+2.027"
+        },
+        {
+          "pos": 4,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+2.160"
+        },
+        {
+          "pos": 5,
+          "number": "88",
+          "driver": "MANCUSO ESTEBAN",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+2.474"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+2.876"
+        },
+        {
+          "pos": 7,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+3.073"
+        },
+        {
+          "pos": 8,
+          "number": "124",
+          "driver": "SIMON VOLPI",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+4.489"
+        },
+        {
+          "pos": 9,
+          "number": "178",
+          "driver": "RAMIRO DE BONIS",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 10,
+          "number": "177",
+          "driver": "NICOLÁS VILLAMAYOR",
+          "vehicle": "TORINO",
+          "laps": 4,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 11,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 12,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 3,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "78",
+          "driver": "ALAN DENIS CIFRE",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "gap": "+5 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "gap": "+5 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260301_120025_SERIE_UNICA_TC_MOURAS.pdf",
+        "title": "SERIE UNICA TC MOURAS — Fecha 2 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "08f33e0caeb510ba",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "time": "22:58.093"
+        },
+        {
+          "pos": 2,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+5.690"
+        },
+        {
+          "pos": 3,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+8.407"
+        },
+        {
+          "pos": 4,
+          "number": "178",
+          "driver": "RAMIRO DE BONIS",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+8.892"
+        },
+        {
+          "pos": 5,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+24.411"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+24.412"
+        },
+        {
+          "pos": 7,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+28.656"
+        },
+        {
+          "pos": 8,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+40.096"
+        },
+        {
+          "pos": 9,
+          "number": "78",
+          "driver": "ALAN DENIS CIFRE",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+46.166"
+        },
+        {
+          "pos": 10,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+55.567"
+        },
+        {
+          "pos": 11,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 13,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 12,
+          "number": "124",
+          "driver": "SIMON VOLPI",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "laps": 9,
+          "gap": "+5 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 7,
+          "gap": "+7 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "88",
+          "driver": "MANCUSO ESTEBAN",
+          "vehicle": "CHEVROLET",
+          "laps": 6,
+          "gap": "+8 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260428_175925_final_tc_mouras_rectificada.pdf",
+        "title": "final tc mouras rectificada — Fecha 2 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

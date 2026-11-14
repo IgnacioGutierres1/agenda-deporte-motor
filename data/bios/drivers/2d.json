@@ -52,6 +52,10 @@
           "seriesId": "tc",
           "pos": 57,
           "points": 18,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
           "source": "app"
         },
         {
@@ -61,6 +65,10 @@
           "team": "Scuderia Philagro JT",
           "pos": 34,
           "points": 22,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
           "source": "app"
         },
         {
@@ -837,7 +845,7 @@
           "seriesId": "wec",
           "pos": 9,
           "points": 72,
-          "races": 6,
+          "races": 8,
           "wins": 1,
           "source": "app"
         },

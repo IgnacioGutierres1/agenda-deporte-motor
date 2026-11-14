@@ -1,0 +1,584 @@
+{
+  "seriesId": "tc-pista",
+  "eventId": "b42e92c98ba37904",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "2db8b23980e5b200",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 6,
+          "bestLap": "1:30.061"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 13,
+          "gap": "+0.149",
+          "bestLap": "1:30.210"
+        },
+        {
+          "pos": 3,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 11,
+          "gap": "+0.261",
+          "bestLap": "1:30.322"
+        },
+        {
+          "pos": 4,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 13,
+          "gap": "+0.352",
+          "bestLap": "1:30.413"
+        },
+        {
+          "pos": 5,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 11,
+          "gap": "+0.463",
+          "bestLap": "1:30.524"
+        },
+        {
+          "pos": 6,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 14,
+          "gap": "+0.528",
+          "bestLap": "1:30.589"
+        },
+        {
+          "pos": 7,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 10,
+          "gap": "+0.901",
+          "bestLap": "1:30.962"
+        },
+        {
+          "pos": 8,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 10,
+          "gap": "+0.903",
+          "bestLap": "1:30.964"
+        },
+        {
+          "pos": 9,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+0.980",
+          "bestLap": "1:31.041"
+        },
+        {
+          "pos": 10,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.051",
+          "bestLap": "1:31.112"
+        },
+        {
+          "pos": 11,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 12,
+          "gap": "+1.643",
+          "bestLap": "1:31.704"
+        },
+        {
+          "pos": 12,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 6,
+          "gap": "+2.000",
+          "bestLap": "1:32.061"
+        },
+        {
+          "pos": 13,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 8,
+          "gap": "+2.039",
+          "bestLap": "1:32.100"
+        },
+        {
+          "pos": 14,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 13,
+          "gap": "+2.481",
+          "bestLap": "1:32.542"
+        },
+        {
+          "pos": 15,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 7,
+          "gap": "+2.835",
+          "bestLap": "1:32.896"
+        },
+        {
+          "pos": 16,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 3,
+          "gap": "+4.865",
+          "bestLap": "1:34.926"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260307_104524_1ER_ENTRENAMIENTO_TC_PISTA.pdf",
+        "title": "1ER ENTRENAMIENTO TC PISTA — Fecha 2 — VIEDMA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "5100928d7aff12ca",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 3,
+          "bestLap": "1:28.941"
+        },
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 3,
+          "bestLap": "1:28.941"
+        },
+        {
+          "pos": 2,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.475",
+          "bestLap": "1:29.416"
+        },
+        {
+          "pos": 2,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.475",
+          "bestLap": "1:29.416"
+        },
+        {
+          "pos": 3,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 3,
+          "gap": "+0.625",
+          "bestLap": "1:29.566"
+        },
+        {
+          "pos": 3,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 3,
+          "gap": "+0.625",
+          "bestLap": "1:29.566"
+        },
+        {
+          "pos": 4,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 3,
+          "gap": "+0.870",
+          "bestLap": "1:29.811"
+        },
+        {
+          "pos": 4,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 3,
+          "gap": "+0.870",
+          "bestLap": "1:29.811"
+        },
+        {
+          "pos": 5,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 4,
+          "gap": "+1.316",
+          "bestLap": "1:30.257"
+        },
+        {
+          "pos": 5,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 4,
+          "gap": "+1.316",
+          "bestLap": "1:30.257"
+        },
+        {
+          "pos": 6,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.795",
+          "bestLap": "1:30.736"
+        },
+        {
+          "pos": 6,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.795",
+          "bestLap": "1:30.736"
+        },
+        {
+          "pos": 7,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.805",
+          "bestLap": "1:30.746"
+        },
+        {
+          "pos": 7,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.805",
+          "bestLap": "1:30.746"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+2.106",
+          "bestLap": "1:31.047"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+2.106",
+          "bestLap": "1:31.047"
+        },
+        {
+          "pos": 9,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 4,
+          "gap": "+2.252",
+          "bestLap": "1:31.193"
+        },
+        {
+          "pos": 9,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 4,
+          "gap": "+2.252",
+          "bestLap": "1:31.193"
+        },
+        {
+          "pos": 10,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+10.297",
+          "bestLap": "1:39.238"
+        },
+        {
+          "pos": 10,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+10.297",
+          "bestLap": "1:39.238"
+        },
+        {
+          "pos": 11,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 3,
+          "gap": "+15.613",
+          "bestLap": "1:44.554"
+        },
+        {
+          "pos": 11,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 3,
+          "gap": "+15.613",
+          "bestLap": "1:44.554"
+        },
+        {
+          "pos": 12,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+15.613",
+          "bestLap": "1:44.554"
+        },
+        {
+          "pos": 12,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+15.613",
+          "bestLap": "1:44.554"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260307_172816_CLASIFICACION_TC_PISTA.pdf",
+        "title": "CLASIFICACION TC PISTA — Fecha 2 — VIEDMA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "31b9bd3d8d709223",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "time": "31:07.957"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+1.497"
+        },
+        {
+          "pos": 3,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+3.435"
+        },
+        {
+          "pos": 4,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOYA",
+          "laps": 20,
+          "gap": "+3.558"
+        },
+        {
+          "pos": 5,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+8.625"
+        },
+        {
+          "pos": 6,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+9.510"
+        },
+        {
+          "pos": 7,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 20,
+          "gap": "+10.148"
+        },
+        {
+          "pos": 8,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+14.742"
+        },
+        {
+          "pos": 9,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 20,
+          "gap": "+15.161"
+        },
+        {
+          "pos": 10,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOYA",
+          "laps": 20,
+          "gap": "+18.839"
+        },
+        {
+          "pos": 11,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+19.114"
+        },
+        {
+          "pos": 12,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO",
+          "laps": 20,
+          "gap": "+45.625"
+        },
+        {
+          "pos": 13,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "laps": 17,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 3,
+          "gap": "+17 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 2,
+          "gap": "+18 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 2,
+          "gap": "+18 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260308_141426_FINAL_TC_PISTA.pdf",
+        "title": "FINAL TC PISTA — Fecha 2 — VIEDMA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

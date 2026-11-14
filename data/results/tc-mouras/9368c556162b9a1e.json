@@ -1,0 +1,373 @@
+{
+  "seriesId": "tc-mouras",
+  "eventId": "9368c556162b9a1e",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "aac0d93e6590206f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "bestLap": "1:27.217"
+        },
+        {
+          "pos": 2,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 8,
+          "gap": "+0.043",
+          "bestLap": "1:27.260"
+        },
+        {
+          "pos": 3,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 9,
+          "gap": "+0.126",
+          "bestLap": "1:27.343"
+        },
+        {
+          "pos": 4,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+0.199",
+          "bestLap": "1:27.416"
+        },
+        {
+          "pos": 5,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+0.207",
+          "bestLap": "1:27.424"
+        },
+        {
+          "pos": 6,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+0.533",
+          "bestLap": "1:27.750"
+        },
+        {
+          "pos": 7,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+0.736",
+          "bestLap": "1:27.953"
+        },
+        {
+          "pos": 8,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+1.028",
+          "bestLap": "1:28.245"
+        },
+        {
+          "pos": 9,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.504",
+          "bestLap": "1:28.721"
+        },
+        {
+          "pos": 10,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+2.348",
+          "bestLap": "1:29.565"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260606_175620_2DO_ENTRENAMIENTO.html",
+        "title": "2DO ENTRENAMIENTO — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "c92c66b4537af046",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 4,
+          "bestLap": "1:26.176"
+        },
+        {
+          "pos": 2,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+0.199",
+          "bestLap": "1:26.375"
+        },
+        {
+          "pos": 3,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.700",
+          "bestLap": "1:26.876"
+        },
+        {
+          "pos": 4,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.784",
+          "bestLap": "1:26.960"
+        },
+        {
+          "pos": 5,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.788",
+          "bestLap": "1:26.964"
+        },
+        {
+          "pos": 6,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.789",
+          "bestLap": "1:26.965"
+        },
+        {
+          "pos": 7,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1.187",
+          "bestLap": "1:27.363"
+        },
+        {
+          "pos": 8,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.566",
+          "bestLap": "1:27.742"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1.785",
+          "bestLap": "1:27.961"
+        },
+        {
+          "pos": 10,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+2.168",
+          "bestLap": "1:28.344"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260606_175817_CLASIFICACION.html",
+        "title": "CLASIFICACION — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "609176da1e1c9333",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "laps": 5,
+          "time": "7:20.116"
+        },
+        {
+          "pos": 2,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "laps": 5,
+          "gap": "+2.620"
+        },
+        {
+          "pos": 3,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "laps": 5,
+          "gap": "+3.100"
+        },
+        {
+          "pos": 4,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "laps": 5,
+          "gap": "+4.302"
+        },
+        {
+          "pos": 5,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "laps": 5,
+          "gap": "+4.705"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "laps": 5,
+          "gap": "+11.562"
+        },
+        {
+          "pos": 7,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "laps": 5,
+          "gap": "+11.764"
+        },
+        {
+          "pos": 8,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "laps": 5,
+          "gap": "+12.097"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "laps": 5,
+          "gap": "+14.863"
+        },
+        {
+          "pos": 10,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "laps": 5,
+          "gap": "+15.549"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260607_151904_SERIE_UNICA.html",
+        "title": "SERIE UNICA — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "41feb4173dd7dc4f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "laps": 16,
+          "time": "23:38.226"
+        },
+        {
+          "pos": 2,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "laps": 16,
+          "gap": "+6.151"
+        },
+        {
+          "pos": 3,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "laps": 16,
+          "gap": "+9.768"
+        },
+        {
+          "pos": 4,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "laps": 16,
+          "gap": "+16.695"
+        },
+        {
+          "pos": 5,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "laps": 16,
+          "gap": "+32.968"
+        },
+        {
+          "pos": 6,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "laps": 16,
+          "gap": "+38.520"
+        },
+        {
+          "pos": 7,
+          "number": "77",
+          "driver": "SANTINO ORTIZ",
+          "laps": 16,
+          "gap": "+38.521"
+        },
+        {
+          "pos": 8,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "laps": 16,
+          "gap": "+38.660"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "laps": 12,
+          "gap": "+4 vueltas"
+        },
+        {
+          "pos": 10,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "laps": 7,
+          "gap": "+9 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260607_172055_FINAL.html",
+        "title": "FINAL — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

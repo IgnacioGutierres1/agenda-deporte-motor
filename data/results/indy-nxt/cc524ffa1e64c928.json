@@ -1,0 +1,1275 @@
+{
+  "seriesId": "indy-nxt",
+  "eventId": "cc524ffa1e64c928",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "2a1c18b139cd6202",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "20",
+          "driver": "Matteo Nannini",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 18,
+          "time": "38:58.3084",
+          "bestLap": "1:54.5601",
+          "points": 50
+        },
+        {
+          "pos": 2,
+          "number": "71",
+          "driver": "Tymek Kucharczyk",
+          "team": "HMD Motorsports",
+          "laps": 18,
+          "gap": "+0.1334",
+          "bestLap": "1:53.7318",
+          "points": 40
+        },
+        {
+          "pos": 3,
+          "number": "21",
+          "driver": "Nikita Johnson",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 18,
+          "gap": "+1.8479",
+          "bestLap": "1:54.9753",
+          "points": 36
+        },
+        {
+          "pos": 4,
+          "number": "67",
+          "driver": "Enzo Fittipaldi",
+          "team": "HMD Motorsports",
+          "laps": 18,
+          "gap": "+4.3952",
+          "bestLap": "1:55.4759",
+          "points": 32
+        },
+        {
+          "pos": 5,
+          "number": "99",
+          "driver": "Myles Rowe",
+          "team": "Abel Motorsports",
+          "laps": 18,
+          "gap": "+4.5822",
+          "bestLap": "1:55.9467",
+          "points": 30
+        },
+        {
+          "pos": 6,
+          "number": "45",
+          "driver": "Jack Beeton",
+          "team": "HMD Motorsports",
+          "laps": 18,
+          "gap": "+4.9322",
+          "bestLap": "1:55.1567",
+          "points": 28
+        },
+        {
+          "pos": 7,
+          "number": "68",
+          "driver": "JM Correa",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 18,
+          "gap": "+4.9797",
+          "bestLap": "1:55.7283",
+          "points": 26
+        },
+        {
+          "pos": 8,
+          "number": "17",
+          "driver": "Salvador de Alba",
+          "team": "HMD Motorsports",
+          "laps": 18,
+          "gap": "+5.0590",
+          "bestLap": "1:54.6980",
+          "points": 24
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Niels Koolen",
+          "team": "Chip Ganassi Racing",
+          "laps": 18,
+          "gap": "+5.4398",
+          "bestLap": "1:55.4311",
+          "points": 22
+        },
+        {
+          "pos": 10,
+          "number": "9",
+          "driver": "Bryce Aron",
+          "team": "Chip Ganassi Racing",
+          "laps": 18,
+          "gap": "+5.5425",
+          "bestLap": "1:55.4879",
+          "points": 20
+        },
+        {
+          "pos": 11,
+          "number": "76",
+          "driver": "Ricardo Escotto",
+          "team": "Juncos Hollinger Racing",
+          "laps": 18,
+          "gap": "+6.6486",
+          "bestLap": "1:56.2995",
+          "points": 19
+        },
+        {
+          "pos": 12,
+          "number": "15",
+          "driver": "Nicolas Stati",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 18,
+          "gap": "+6.7577",
+          "bestLap": "1:56.1920",
+          "points": 18
+        },
+        {
+          "pos": 13,
+          "number": "11",
+          "driver": "Carson Etter",
+          "team": "Chip Ganassi Racing",
+          "laps": 18,
+          "gap": "+7.6754",
+          "bestLap": "1:55.0225",
+          "points": 17
+        },
+        {
+          "pos": 14,
+          "number": "75",
+          "driver": "Alexander Koreiba",
+          "team": "Juncos Hollinger Racing",
+          "laps": 18,
+          "gap": "+8.8300",
+          "bestLap": "1:56.0413",
+          "points": 16
+        },
+        {
+          "pos": 15,
+          "number": "27",
+          "driver": "Seb Murray",
+          "team": "Andretti Global",
+          "laps": 18,
+          "gap": "+8.8333",
+          "bestLap": "1:55.5470",
+          "points": 15
+        },
+        {
+          "pos": 16,
+          "number": "48",
+          "driver": "Jordan Missig",
+          "team": "Abel Motorsports",
+          "laps": 18,
+          "gap": "+11.8462",
+          "bestLap": "1:56.0568",
+          "points": 14
+        },
+        {
+          "pos": 17,
+          "number": "28",
+          "driver": "Max Taylor",
+          "team": "Andretti Global",
+          "laps": 18,
+          "gap": "+22.9874",
+          "bestLap": "1:54.9904",
+          "points": 13
+        },
+        {
+          "pos": 18,
+          "number": "12",
+          "driver": "Max Garcia",
+          "team": "Abel Motorsports",
+          "laps": 17,
+          "gap": "+1 vuelta",
+          "bestLap": "1:54.8300",
+          "points": 12
+        },
+        {
+          "pos": 19,
+          "number": "8",
+          "driver": "James Roe",
+          "team": "Chip Ganassi Racing",
+          "laps": 17,
+          "gap": "+1 vuelta",
+          "bestLap": "1:56.7135",
+          "points": 11
+        },
+        {
+          "pos": 20,
+          "number": "26",
+          "driver": "Lochie Hughes",
+          "team": "Andretti Global",
+          "laps": 15,
+          "gap": "+3 vueltas",
+          "bestLap": "1:54.9198",
+          "points": 10
+        },
+        {
+          "pos": 21,
+          "status": "Contact",
+          "number": "57",
+          "driver": "Colin Kaminsky",
+          "team": "Abel Motorsports",
+          "laps": 14,
+          "gap": "+4 vueltas",
+          "bestLap": "1:54.8920",
+          "points": 9
+        },
+        {
+          "pos": 22,
+          "status": "Retired",
+          "number": "29",
+          "driver": "Josh Pierson",
+          "team": "Andretti Global",
+          "laps": 9,
+          "gap": "+9 vueltas",
+          "bestLap": "1:54.7478",
+          "points": 8
+        },
+        {
+          "pos": 23,
+          "number": "14",
+          "driver": "Alessandro de Tullio",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 0,
+          "gap": "+18 vueltas",
+          "points": 1
+        },
+        {
+          "pos": 24,
+          "number": "4",
+          "driver": "Nicholas Monteiro",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 0,
+          "gap": "+18 vueltas",
+          "points": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.indynxt.com/results/indy-nxt/2026/grand-prix-at-road-america-race-2/race",
+        "title": "Resultados — Grand Prix at Road America Race 2 — Race",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "2a181ab139c97c91",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "Lochie Hughes",
+          "team": "Andretti Global",
+          "laps": 20,
+          "time": "48:00.4176",
+          "bestLap": "1:53.2701",
+          "points": 53
+        },
+        {
+          "pos": 2,
+          "number": "29",
+          "driver": "Josh Pierson",
+          "team": "Andretti Global",
+          "laps": 20,
+          "gap": "+0.7827",
+          "bestLap": "1:53.3512",
+          "points": 40
+        },
+        {
+          "pos": 3,
+          "number": "14",
+          "driver": "Alessandro de Tullio",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 20,
+          "gap": "+0.9900",
+          "bestLap": "1:53.3252",
+          "points": 37
+        },
+        {
+          "pos": 4,
+          "number": "45",
+          "driver": "Jack Beeton",
+          "team": "HMD Motorsports",
+          "laps": 20,
+          "gap": "+2.1668",
+          "bestLap": "1:52.9714",
+          "points": 32
+        },
+        {
+          "pos": 5,
+          "number": "20",
+          "driver": "Matteo Nannini",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 20,
+          "gap": "+3.4541",
+          "bestLap": "1:53.3075",
+          "points": 30
+        },
+        {
+          "pos": 6,
+          "number": "21",
+          "driver": "Nikita Johnson",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 20,
+          "gap": "+4.1797",
+          "bestLap": "1:53.2268",
+          "points": 29
+        },
+        {
+          "pos": 7,
+          "number": "68",
+          "driver": "JM Correa",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 20,
+          "gap": "+4.7496",
+          "bestLap": "1:53.2288",
+          "points": 26
+        },
+        {
+          "pos": 8,
+          "number": "71",
+          "driver": "Tymek Kucharczyk",
+          "team": "HMD Motorsports",
+          "laps": 20,
+          "gap": "+5.2951",
+          "bestLap": "1:53.5338",
+          "points": 24
+        },
+        {
+          "pos": 9,
+          "number": "99",
+          "driver": "Myles Rowe",
+          "team": "Abel Motorsports",
+          "laps": 20,
+          "gap": "+7.0501",
+          "bestLap": "1:53.4209",
+          "points": 22
+        },
+        {
+          "pos": 10,
+          "number": "12",
+          "driver": "Max Garcia",
+          "team": "Abel Motorsports",
+          "laps": 20,
+          "gap": "+7.6401",
+          "bestLap": "1:53.3167",
+          "points": 20
+        },
+        {
+          "pos": 11,
+          "number": "10",
+          "driver": "Niels Koolen",
+          "team": "Chip Ganassi Racing",
+          "laps": 20,
+          "gap": "+8.3181",
+          "bestLap": "1:53.4647",
+          "points": 19
+        },
+        {
+          "pos": 12,
+          "number": "28",
+          "driver": "Max Taylor",
+          "team": "Andretti Global",
+          "laps": 20,
+          "gap": "+8.9669",
+          "bestLap": "1:53.3471",
+          "points": 18
+        },
+        {
+          "pos": 13,
+          "number": "27",
+          "driver": "Seb Murray",
+          "team": "Andretti Global",
+          "laps": 20,
+          "gap": "+14.6781",
+          "bestLap": "1:53.9882",
+          "points": 17
+        },
+        {
+          "pos": 14,
+          "number": "76",
+          "driver": "Ricardo Escotto",
+          "team": "Juncos Hollinger Racing",
+          "laps": 20,
+          "gap": "+17.5728",
+          "bestLap": "1:53.9306",
+          "points": 16
+        },
+        {
+          "pos": 15,
+          "number": "8",
+          "driver": "James Roe",
+          "team": "Chip Ganassi Racing",
+          "laps": 20,
+          "gap": "+18.0166",
+          "bestLap": "1:54.2858",
+          "points": 15
+        },
+        {
+          "pos": 16,
+          "number": "11",
+          "driver": "Carson Etter",
+          "team": "Chip Ganassi Racing",
+          "laps": 20,
+          "gap": "+18.9739",
+          "bestLap": "1:54.1691",
+          "points": 14
+        },
+        {
+          "pos": 17,
+          "number": "15",
+          "driver": "Nicolas Stati",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 20,
+          "gap": "+22.6344",
+          "bestLap": "1:54.5757",
+          "points": 13
+        },
+        {
+          "pos": 18,
+          "number": "17",
+          "driver": "Salvador de Alba",
+          "team": "HMD Motorsports",
+          "laps": 20,
+          "gap": "+22.8304",
+          "bestLap": "1:54.6629",
+          "points": 12
+        },
+        {
+          "pos": 19,
+          "number": "4",
+          "driver": "Nicholas Monteiro",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 20,
+          "gap": "+23.5262",
+          "bestLap": "1:54.1614",
+          "points": 11
+        },
+        {
+          "pos": 20,
+          "number": "57",
+          "driver": "Colin Kaminsky",
+          "team": "Abel Motorsports",
+          "laps": 20,
+          "gap": "+29.8982",
+          "bestLap": "1:55.4122",
+          "points": 10
+        },
+        {
+          "pos": 21,
+          "number": "9",
+          "driver": "Bryce Aron",
+          "team": "Chip Ganassi Racing",
+          "laps": 20,
+          "gap": "+48.4312",
+          "bestLap": "1:52.6679",
+          "points": 9
+        },
+        {
+          "pos": 22,
+          "number": "67",
+          "driver": "Enzo Fittipaldi",
+          "team": "HMD Motorsports",
+          "laps": 9,
+          "gap": "+11 vueltas",
+          "bestLap": "1:53.4680",
+          "points": 8
+        },
+        {
+          "pos": 23,
+          "status": "Contact",
+          "number": "75",
+          "driver": "Alexander Koreiba",
+          "team": "Juncos Hollinger Racing",
+          "laps": 4,
+          "gap": "+16 vueltas",
+          "bestLap": "2:13.6243",
+          "points": 7
+        },
+        {
+          "pos": 24,
+          "status": "Contact",
+          "number": "48",
+          "driver": "Jordan Missig",
+          "team": "Abel Motorsports",
+          "laps": 0,
+          "gap": "+20 vueltas",
+          "points": 6
+        }
+      ],
+      "source": {
+        "url": "https://www.indynxt.com/results/indy-nxt/2026/grand-prix-at-road-america-race-1/race",
+        "title": "Resultados — Grand Prix at Road America Race 1 — Race",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "b3c626e6f732b514",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "14",
+          "driver": "Alessandro de Tullio",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 6,
+          "bestLap": "1:50.9975",
+          "class": "Carrera 1",
+          "classPos": 1
+        },
+        {
+          "pos": 2,
+          "number": "21",
+          "driver": "Nikita Johnson",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 7,
+          "bestLap": "1:51.4233",
+          "class": "Carrera 1",
+          "classPos": 2
+        },
+        {
+          "pos": 3,
+          "number": "20",
+          "driver": "Matteo Nannini",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 7,
+          "gap": "+0.3444",
+          "bestLap": "1:51.3419",
+          "class": "Carrera 1",
+          "classPos": 3
+        },
+        {
+          "pos": 4,
+          "number": "26",
+          "driver": "Lochie Hughes",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.1114",
+          "bestLap": "1:51.5347",
+          "class": "Carrera 1",
+          "classPos": 4
+        },
+        {
+          "pos": 5,
+          "number": "29",
+          "driver": "Josh Pierson",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.3457",
+          "bestLap": "1:51.3432",
+          "class": "Carrera 1",
+          "classPos": 5
+        },
+        {
+          "pos": 6,
+          "number": "45",
+          "driver": "Jack Beeton",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+0.1787",
+          "bestLap": "1:51.6020",
+          "class": "Carrera 1",
+          "classPos": 6
+        },
+        {
+          "pos": 7,
+          "number": "28",
+          "driver": "Max Taylor",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.4201",
+          "bestLap": "1:51.4176",
+          "class": "Carrera 1",
+          "classPos": 7
+        },
+        {
+          "pos": 8,
+          "number": "67",
+          "driver": "Enzo Fittipaldi",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+0.3102",
+          "bestLap": "1:51.7335",
+          "class": "Carrera 1",
+          "classPos": 8
+        },
+        {
+          "pos": 9,
+          "number": "68",
+          "driver": "JM Correa",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 7,
+          "gap": "+0.7023",
+          "bestLap": "1:51.6998",
+          "class": "Carrera 1",
+          "classPos": 9
+        },
+        {
+          "pos": 10,
+          "number": "12",
+          "driver": "Max Garcia",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+0.4785",
+          "bestLap": "1:51.9018",
+          "class": "Carrera 1",
+          "classPos": 10
+        },
+        {
+          "pos": 11,
+          "number": "27",
+          "driver": "Seb Murray",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+1.0148",
+          "bestLap": "1:52.0123",
+          "class": "Carrera 1",
+          "classPos": 11
+        },
+        {
+          "pos": 12,
+          "number": "99",
+          "driver": "Myles Rowe",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+0.5522",
+          "bestLap": "1:51.9755",
+          "class": "Carrera 1",
+          "classPos": 12
+        },
+        {
+          "pos": 13,
+          "number": "10",
+          "driver": "Niels Koolen",
+          "team": "Chip Ganassi Racing",
+          "laps": 7,
+          "gap": "+1.0574",
+          "bestLap": "1:52.0549",
+          "class": "Carrera 1",
+          "classPos": 13
+        },
+        {
+          "pos": 14,
+          "number": "71",
+          "driver": "Tymek Kucharczyk",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+0.7976",
+          "bestLap": "1:52.2209",
+          "class": "Carrera 1",
+          "classPos": 14
+        },
+        {
+          "pos": 15,
+          "number": "9",
+          "driver": "Bryce Aron",
+          "team": "Chip Ganassi Racing",
+          "laps": 7,
+          "gap": "+1.0615",
+          "bestLap": "1:52.0590",
+          "class": "Carrera 1",
+          "classPos": 15
+        },
+        {
+          "pos": 16,
+          "number": "48",
+          "driver": "Jordan Missig",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+0.9370",
+          "bestLap": "1:52.3603",
+          "class": "Carrera 1",
+          "classPos": 16
+        },
+        {
+          "pos": 17,
+          "number": "15",
+          "driver": "Nicolas Stati",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 7,
+          "gap": "+1.0714",
+          "bestLap": "1:52.0689",
+          "class": "Carrera 1",
+          "classPos": 17
+        },
+        {
+          "pos": 18,
+          "number": "57",
+          "driver": "Colin Kaminsky",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+1.3299",
+          "bestLap": "1:52.7532",
+          "class": "Carrera 1",
+          "classPos": 18
+        },
+        {
+          "pos": 19,
+          "number": "17",
+          "driver": "Salvador de Alba",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+1.1280",
+          "bestLap": "1:52.1255",
+          "class": "Carrera 1",
+          "classPos": 19
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "James Roe",
+          "team": "Chip Ganassi Racing",
+          "laps": 7,
+          "gap": "+1.5137",
+          "bestLap": "1:52.9370",
+          "class": "Carrera 1",
+          "classPos": 20
+        },
+        {
+          "pos": 21,
+          "number": "76",
+          "driver": "Ricardo Escotto",
+          "team": "Juncos Hollinger Racing",
+          "laps": 7,
+          "gap": "+1.5748",
+          "bestLap": "1:52.5723",
+          "class": "Carrera 1",
+          "classPos": 21
+        },
+        {
+          "pos": 22,
+          "number": "4",
+          "driver": "Nicholas Monteiro",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 7,
+          "gap": "+1.6780",
+          "bestLap": "1:53.1013",
+          "class": "Carrera 1",
+          "classPos": 22
+        },
+        {
+          "pos": 23,
+          "number": "75",
+          "driver": "Alexander Koreiba",
+          "team": "Juncos Hollinger Racing",
+          "laps": 6,
+          "gap": "+2.2029",
+          "bestLap": "1:53.2004",
+          "class": "Carrera 1",
+          "classPos": 23
+        },
+        {
+          "pos": 24,
+          "number": "11",
+          "driver": "Carson Etter",
+          "team": "Chip Ganassi Racing",
+          "laps": 6,
+          "gap": "+1.8622",
+          "bestLap": "1:53.2855",
+          "class": "Carrera 1",
+          "classPos": 24
+        },
+        {
+          "pos": 1,
+          "number": "14",
+          "driver": "Alessandro de Tullio",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 6,
+          "bestLap": "1:51.0477",
+          "class": "Carrera 2",
+          "classPos": 1
+        },
+        {
+          "pos": 2,
+          "number": "21",
+          "driver": "Nikita Johnson",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 7,
+          "bestLap": "1:51.5695",
+          "class": "Carrera 2",
+          "classPos": 2
+        },
+        {
+          "pos": 3,
+          "number": "28",
+          "driver": "Max Taylor",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.3703",
+          "bestLap": "1:51.4180",
+          "class": "Carrera 2",
+          "classPos": 3
+        },
+        {
+          "pos": 4,
+          "number": "45",
+          "driver": "Jack Beeton",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+0.0458",
+          "bestLap": "1:51.6153",
+          "class": "Carrera 2",
+          "classPos": 4
+        },
+        {
+          "pos": 5,
+          "number": "20",
+          "driver": "Matteo Nannini",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 7,
+          "gap": "+0.3708",
+          "bestLap": "1:51.4185",
+          "class": "Carrera 2",
+          "classPos": 5
+        },
+        {
+          "pos": 6,
+          "number": "26",
+          "driver": "Lochie Hughes",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.1660",
+          "bestLap": "1:51.7355",
+          "class": "Carrera 2",
+          "classPos": 6
+        },
+        {
+          "pos": 7,
+          "number": "29",
+          "driver": "Josh Pierson",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.4842",
+          "bestLap": "1:51.5319",
+          "class": "Carrera 2",
+          "classPos": 7
+        },
+        {
+          "pos": 8,
+          "number": "67",
+          "driver": "Enzo Fittipaldi",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+0.2288",
+          "bestLap": "1:51.7983",
+          "class": "Carrera 2",
+          "classPos": 8
+        },
+        {
+          "pos": 9,
+          "number": "68",
+          "driver": "JM Correa",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 7,
+          "gap": "+0.8228",
+          "bestLap": "1:51.8705",
+          "class": "Carrera 2",
+          "classPos": 9
+        },
+        {
+          "pos": 10,
+          "number": "99",
+          "driver": "Myles Rowe",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+0.5038",
+          "bestLap": "1:52.0733",
+          "class": "Carrera 2",
+          "classPos": 10
+        },
+        {
+          "pos": 11,
+          "number": "27",
+          "driver": "Seb Murray",
+          "team": "Andretti Global",
+          "laps": 7,
+          "gap": "+0.9782",
+          "bestLap": "1:52.0259",
+          "class": "Carrera 2",
+          "classPos": 11
+        },
+        {
+          "pos": 12,
+          "number": "12",
+          "driver": "Max Garcia",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+0.5339",
+          "bestLap": "1:52.1034",
+          "class": "Carrera 2",
+          "classPos": 12
+        },
+        {
+          "pos": 13,
+          "number": "10",
+          "driver": "Niels Koolen",
+          "team": "Chip Ganassi Racing",
+          "laps": 7,
+          "gap": "+1.0135",
+          "bestLap": "1:52.0612",
+          "class": "Carrera 2",
+          "classPos": 13
+        },
+        {
+          "pos": 14,
+          "number": "48",
+          "driver": "Jordan Missig",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+0.8737",
+          "bestLap": "1:52.4432",
+          "class": "Carrera 2",
+          "classPos": 14
+        },
+        {
+          "pos": 15,
+          "number": "9",
+          "driver": "Bryce Aron",
+          "team": "Chip Ganassi Racing",
+          "laps": 7,
+          "gap": "+1.0258",
+          "bestLap": "1:52.0735",
+          "class": "Carrera 2",
+          "classPos": 15
+        },
+        {
+          "pos": 16,
+          "number": "71",
+          "driver": "Tymek Kucharczyk",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+1.0620",
+          "bestLap": "1:52.6315",
+          "class": "Carrera 2",
+          "classPos": 16
+        },
+        {
+          "pos": 17,
+          "number": "17",
+          "driver": "Salvador de Alba",
+          "team": "HMD Motorsports",
+          "laps": 7,
+          "gap": "+1.2175",
+          "bestLap": "1:52.2652",
+          "class": "Carrera 2",
+          "classPos": 17
+        },
+        {
+          "pos": 18,
+          "number": "57",
+          "driver": "Colin Kaminsky",
+          "team": "Abel Motorsports",
+          "laps": 7,
+          "gap": "+1.3036",
+          "bestLap": "1:52.8731",
+          "class": "Carrera 2",
+          "classPos": 18
+        },
+        {
+          "pos": 19,
+          "number": "76",
+          "driver": "Ricardo Escotto",
+          "team": "Juncos Hollinger Racing",
+          "laps": 7,
+          "gap": "+1.5531",
+          "bestLap": "1:52.6008",
+          "class": "Carrera 2",
+          "classPos": 19
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "James Roe",
+          "team": "Chip Ganassi Racing",
+          "laps": 7,
+          "gap": "+1.3881",
+          "bestLap": "1:52.9576",
+          "class": "Carrera 2",
+          "classPos": 20
+        },
+        {
+          "pos": 21,
+          "number": "15",
+          "driver": "Nicolas Stati",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 7,
+          "gap": "+1.5886",
+          "bestLap": "1:52.6363",
+          "class": "Carrera 2",
+          "classPos": 21
+        },
+        {
+          "pos": 22,
+          "number": "4",
+          "driver": "Nicholas Monteiro",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 7,
+          "gap": "+1.6778",
+          "bestLap": "1:53.2473",
+          "class": "Carrera 2",
+          "classPos": 22
+        },
+        {
+          "pos": 23,
+          "number": "75",
+          "driver": "Alexander Koreiba",
+          "team": "Juncos Hollinger Racing",
+          "laps": 6,
+          "gap": "+3.1369",
+          "bestLap": "1:54.1846",
+          "class": "Carrera 2",
+          "classPos": 23
+        },
+        {
+          "pos": 24,
+          "number": "11",
+          "driver": "Carson Etter",
+          "team": "Chip Ganassi Racing",
+          "laps": 6,
+          "gap": "+1.7492",
+          "bestLap": "1:53.3187",
+          "class": "Carrera 2",
+          "classPos": 24
+        }
+      ],
+      "source": {
+        "url": "https://www.indynxt.com/results/indy-nxt/2026/grand-prix-at-road-america-race-1/qualifying---race-1-group-2",
+        "title": "Resultados — Grand Prix at Road America Race 2 — Qualifying",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "bef084b1fd664451",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "28",
+          "driver": "Max Taylor",
+          "team": "Andretti Global",
+          "laps": 16,
+          "bestLap": "1:53.1419"
+        },
+        {
+          "pos": 2,
+          "number": "26",
+          "driver": "Lochie Hughes",
+          "team": "Andretti Global",
+          "laps": 19,
+          "gap": "+0.1313",
+          "bestLap": "1:53.2732"
+        },
+        {
+          "pos": 3,
+          "number": "29",
+          "driver": "Josh Pierson",
+          "team": "Andretti Global",
+          "laps": 18,
+          "gap": "+0.1785",
+          "bestLap": "1:53.3204"
+        },
+        {
+          "pos": 4,
+          "number": "21",
+          "driver": "Nikita Johnson",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 16,
+          "gap": "+0.2233",
+          "bestLap": "1:53.3652"
+        },
+        {
+          "pos": 5,
+          "number": "20",
+          "driver": "Matteo Nannini",
+          "team": "Cape Motorsports powered by ECR",
+          "laps": 18,
+          "gap": "+0.5139",
+          "bestLap": "1:53.6558"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "Myles Rowe",
+          "team": "Abel Motorsports",
+          "laps": 15,
+          "gap": "+0.9936",
+          "bestLap": "1:54.1355"
+        },
+        {
+          "pos": 7,
+          "number": "27",
+          "driver": "Seb Murray",
+          "team": "Andretti Global",
+          "laps": 16,
+          "gap": "+1.1036",
+          "bestLap": "1:54.2455"
+        },
+        {
+          "pos": 8,
+          "number": "12",
+          "driver": "Max Garcia",
+          "team": "Abel Motorsports",
+          "laps": 19,
+          "gap": "+1.1076",
+          "bestLap": "1:54.2495"
+        },
+        {
+          "pos": 9,
+          "number": "14",
+          "driver": "Alessandro de Tullio",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 15,
+          "gap": "+1.1379",
+          "bestLap": "1:54.2798"
+        },
+        {
+          "pos": 10,
+          "number": "67",
+          "driver": "Enzo Fittipaldi",
+          "team": "HMD Motorsports",
+          "laps": 19,
+          "gap": "+1.3041",
+          "bestLap": "1:54.4460"
+        },
+        {
+          "pos": 11,
+          "number": "68",
+          "driver": "JM Correa",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 17,
+          "gap": "+1.3757",
+          "bestLap": "1:54.5176"
+        },
+        {
+          "pos": 12,
+          "number": "45",
+          "driver": "Jack Beeton",
+          "team": "HMD Motorsports",
+          "laps": 18,
+          "gap": "+1.4187",
+          "bestLap": "1:54.5606"
+        },
+        {
+          "pos": 13,
+          "number": "76",
+          "driver": "Ricardo Escotto",
+          "team": "Juncos Hollinger Racing",
+          "laps": 15,
+          "gap": "+1.4701",
+          "bestLap": "1:54.6120"
+        },
+        {
+          "pos": 14,
+          "number": "57",
+          "driver": "Colin Kaminsky",
+          "team": "Abel Motorsports",
+          "laps": 15,
+          "gap": "+1.4841",
+          "bestLap": "1:54.6260"
+        },
+        {
+          "pos": 15,
+          "number": "17",
+          "driver": "Salvador de Alba",
+          "team": "HMD Motorsports",
+          "laps": 15,
+          "gap": "+1.5041",
+          "bestLap": "1:54.6460"
+        },
+        {
+          "pos": 16,
+          "number": "71",
+          "driver": "Tymek Kucharczyk",
+          "team": "HMD Motorsports",
+          "laps": 17,
+          "gap": "+1.6377",
+          "bestLap": "1:54.7796"
+        },
+        {
+          "pos": 17,
+          "number": "75",
+          "driver": "Alexander Koreiba",
+          "team": "Juncos Hollinger Racing",
+          "laps": 13,
+          "gap": "+1.8263",
+          "bestLap": "1:54.9682"
+        },
+        {
+          "pos": 18,
+          "number": "48",
+          "driver": "Jordan Missig",
+          "team": "Abel Motorsports",
+          "laps": 17,
+          "gap": "+1.8382",
+          "bestLap": "1:54.9801"
+        },
+        {
+          "pos": 19,
+          "number": "9",
+          "driver": "Bryce Aron",
+          "team": "Chip Ganassi Racing",
+          "laps": 17,
+          "gap": "+1.8735",
+          "bestLap": "1:55.0154"
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "James Roe",
+          "team": "Chip Ganassi Racing",
+          "laps": 17,
+          "gap": "+2.2495",
+          "bestLap": "1:55.3914"
+        },
+        {
+          "pos": 21,
+          "number": "15",
+          "driver": "Nicolas Stati",
+          "team": "Cusick Morgan Motorsports",
+          "laps": 17,
+          "gap": "+2.4320",
+          "bestLap": "1:55.5739"
+        },
+        {
+          "pos": 22,
+          "number": "4",
+          "driver": "Nicholas Monteiro",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 18,
+          "gap": "+2.6203",
+          "bestLap": "1:55.7622"
+        },
+        {
+          "pos": 23,
+          "number": "10",
+          "driver": "Niels Koolen",
+          "team": "Chip Ganassi Racing",
+          "laps": 15,
+          "gap": "+2.8615",
+          "bestLap": "1:56.0034"
+        },
+        {
+          "pos": 24,
+          "number": "11",
+          "driver": "Carson Etter",
+          "team": "Chip Ganassi Racing",
+          "laps": 17,
+          "gap": "+3.6620",
+          "bestLap": "1:56.8039"
+        }
+      ],
+      "source": {
+        "url": "https://www.indynxt.com/results/indy-nxt/2026/grand-prix-at-road-america-race-1/practice",
+        "title": "Resultados — Grand Prix at Road America Race 1 — Practice",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}

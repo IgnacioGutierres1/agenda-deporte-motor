@@ -1,0 +1,575 @@
+{
+  "seriesId": "tc-pickup",
+  "eventId": "91030408fb4c4048",
+  "updatedAt": "2026-11-14T10:17:05Z",
+  "sessions": [
+    {
+      "sessionId": "2118a1219676a464",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 3,
+          "bestLap": "1:28.986"
+        },
+        {
+          "pos": 2,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+0.170",
+          "bestLap": "1:29.156"
+        },
+        {
+          "pos": 3,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.256",
+          "bestLap": "1:29.242"
+        },
+        {
+          "pos": 4,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "VW",
+          "laps": 4,
+          "gap": "+0.368",
+          "bestLap": "1:29.354"
+        },
+        {
+          "pos": 5,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.595",
+          "bestLap": "1:29.581"
+        },
+        {
+          "pos": 6,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.609",
+          "bestLap": "1:29.595"
+        },
+        {
+          "pos": 7,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.646",
+          "bestLap": "1:29.632"
+        },
+        {
+          "pos": 8,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FOTON",
+          "laps": 4,
+          "gap": "+0.968",
+          "bestLap": "1:29.954"
+        },
+        {
+          "pos": 9,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FIAT",
+          "laps": 3,
+          "gap": "+1.000",
+          "bestLap": "1:29.986"
+        },
+        {
+          "pos": 10,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+1.073",
+          "bestLap": "1:30.059"
+        },
+        {
+          "pos": 11,
+          "number": "154",
+          "driver": "Joaquín Ochoa",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+1.350",
+          "bestLap": "1:30.336"
+        },
+        {
+          "pos": 12,
+          "number": "55",
+          "driver": "IANSA GASTON",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+1.914",
+          "bestLap": "1:30.900"
+        },
+        {
+          "pos": 13,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "TOYOTA",
+          "laps": 3,
+          "gap": "+8.935",
+          "bestLap": "1:37.921"
+        },
+        {
+          "pos": 14,
+          "number": "100",
+          "driver": "Ian Reutemann",
+          "vehicle": "TOYOTA",
+          "laps": 3,
+          "gap": "+11.217",
+          "bestLap": "1:40.203"
+        },
+        {
+          "pos": 15,
+          "number": "112",
+          "driver": "Lucas Valle",
+          "vehicle": "VW",
+          "laps": 2,
+          "gap": "+16.626",
+          "bestLap": "1:45.612"
+        },
+        {
+          "pos": 16,
+          "number": "140",
+          "driver": "Gaspar Chansard",
+          "laps": 3,
+          "gap": "+22.021",
+          "bestLap": "1:51.007"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260221_093927_1ER_ENTRENAMIENTO_TC_PICK_UP.pdf",
+        "title": "1ER ENTRENAMIENTO TC PICK UP — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "268f83d55d6a4df7",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "bestLap": "1:28.591"
+        },
+        {
+          "pos": 2,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.352",
+          "bestLap": "1:28.943"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "TOYOTA",
+          "laps": 7,
+          "gap": "+0.537",
+          "bestLap": "1:29.128"
+        },
+        {
+          "pos": 4,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+0.562",
+          "bestLap": "1:29.153"
+        },
+        {
+          "pos": 5,
+          "number": "154",
+          "driver": "Joaquín Ochoa",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+0.652",
+          "bestLap": "1:29.243"
+        },
+        {
+          "pos": 6,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.138",
+          "bestLap": "1:29.729"
+        },
+        {
+          "pos": 7,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FOTON",
+          "laps": 7,
+          "gap": "+1.197",
+          "bestLap": "1:29.788"
+        },
+        {
+          "pos": 8,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FIAT",
+          "laps": 6,
+          "gap": "+1.726",
+          "bestLap": "1:30.317"
+        },
+        {
+          "pos": 9,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "TOYOTA",
+          "laps": 8,
+          "gap": "+2.165",
+          "bestLap": "1:30.756"
+        },
+        {
+          "pos": 10,
+          "number": "100",
+          "driver": "Ian Reutemann",
+          "vehicle": "TOYOTA",
+          "laps": 7,
+          "gap": "+2.231",
+          "bestLap": "1:30.822"
+        },
+        {
+          "pos": 11,
+          "number": "55",
+          "driver": "IANSA GASTON",
+          "vehicle": "TOYOTA",
+          "laps": 7,
+          "gap": "+2.386",
+          "bestLap": "1:30.977"
+        },
+        {
+          "pos": 12,
+          "number": "112",
+          "driver": "Lucas Valle",
+          "vehicle": "VW",
+          "laps": 12,
+          "gap": "+2.540",
+          "bestLap": "1:31.131"
+        },
+        {
+          "pos": 13,
+          "number": "140",
+          "driver": "Gaspar Chansard",
+          "vehicle": "VW",
+          "laps": 1,
+          "gap": "+3.539",
+          "bestLap": "1:32.130"
+        },
+        {
+          "pos": 14,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "FOTON",
+          "laps": 8,
+          "gap": "+4.039",
+          "bestLap": "1:32.630"
+        },
+        {
+          "pos": 15,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+8.063",
+          "bestLap": "1:36.654"
+        },
+        {
+          "pos": 16,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "laps": 7,
+          "gap": "+9.846",
+          "bestLap": "1:38.437"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260221_130000_2DO_ENTRENAMIENTO_TC_PICK_UP_SABADO.pdf",
+        "title": "2DO ENTRENAMIENTO TC PICK UP SABADO — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "da1ad0e3ef47715e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "laps": 5,
+          "time": "7:34.743"
+        },
+        {
+          "pos": 2,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "laps": 5,
+          "gap": "+1.225"
+        },
+        {
+          "pos": 3,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "laps": 5,
+          "gap": "+1.467"
+        },
+        {
+          "pos": 4,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "laps": 5,
+          "gap": "+12.964"
+        },
+        {
+          "pos": 5,
+          "number": "154",
+          "driver": "Joaquín Ochoa",
+          "laps": 5,
+          "gap": "+14.197"
+        },
+        {
+          "pos": 6,
+          "number": "140",
+          "driver": "Gaspar Chansard",
+          "laps": 5,
+          "gap": "+14.198"
+        },
+        {
+          "pos": 7,
+          "number": "100",
+          "driver": "Ian Reutemann",
+          "laps": 5,
+          "gap": "+15.443"
+        },
+        {
+          "pos": 8,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "laps": 3,
+          "gap": "+2 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260222_121318_1ERA_SERIE_TC_PICK_UP.pdf",
+        "title": "1ERA SERIE TC PICK UP — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "5143778fd3d29619",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "110",
+          "driver": "Diego Azar",
+          "laps": 5,
+          "time": "7:37.430"
+        },
+        {
+          "pos": 2,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "laps": 5,
+          "gap": "+0.453"
+        },
+        {
+          "pos": 3,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "laps": 5,
+          "gap": "+0.850"
+        },
+        {
+          "pos": 4,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "laps": 5,
+          "gap": "+1.047"
+        },
+        {
+          "pos": 5,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "laps": 5,
+          "gap": "+6.831"
+        },
+        {
+          "pos": 6,
+          "number": "55",
+          "driver": "IANSA GASTON",
+          "laps": 5,
+          "gap": "+8.358"
+        },
+        {
+          "pos": 7,
+          "number": "112",
+          "driver": "Lucas Valle",
+          "laps": 5,
+          "gap": "+13.697"
+        },
+        {
+          "pos": 8,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "laps": 5,
+          "gap": "+36.640"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260222_121346_2DA_SERIE_TC_PICK_UP.pdf",
+        "title": "2DA SERIE TC PICK UP — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "d467878bb3e159a7",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "110",
+          "driver": "Diego Azar",
+          "laps": 20,
+          "time": "31:01.681"
+        },
+        {
+          "pos": 2,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "laps": 20,
+          "gap": "+0.365"
+        },
+        {
+          "pos": 3,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "laps": 20,
+          "gap": "+0.827"
+        },
+        {
+          "pos": 4,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "laps": 20,
+          "gap": "+1.068"
+        },
+        {
+          "pos": 5,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "laps": 20,
+          "gap": "+1.499"
+        },
+        {
+          "pos": 6,
+          "number": "154",
+          "driver": "Joaquín Ochoa",
+          "laps": 20,
+          "gap": "+1.782"
+        },
+        {
+          "pos": 7,
+          "number": "12",
+          "driver": "Tomás Abdala",
+          "laps": 20,
+          "gap": "+4.411"
+        },
+        {
+          "pos": 8,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "laps": 20,
+          "gap": "+9.656"
+        },
+        {
+          "pos": 9,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "laps": 20,
+          "gap": "+22.274"
+        },
+        {
+          "pos": 10,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "laps": 20,
+          "gap": "+25.534"
+        },
+        {
+          "pos": 11,
+          "number": "112",
+          "driver": "Lucas Valle",
+          "laps": 20,
+          "gap": "+25.991"
+        },
+        {
+          "pos": 12,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "laps": 20,
+          "gap": "+27.382"
+        },
+        {
+          "pos": 13,
+          "number": "100",
+          "driver": "Ian Reutemann",
+          "laps": 18,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "140",
+          "driver": "Gaspar Chansard",
+          "laps": 16,
+          "gap": "+4 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "55",
+          "driver": "IANSA GASTON",
+          "laps": 11,
+          "gap": "+9 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "2",
+          "driver": "Juan José Ebarlín",
+          "laps": 5,
+          "gap": "+15 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260222_145502_FINAL_TC_PICK_UP.pdf",
+        "title": "FINAL TC PICK UP — Fecha 1 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    }
+  ]
+}
