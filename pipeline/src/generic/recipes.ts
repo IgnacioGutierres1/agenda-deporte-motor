@@ -56,6 +56,7 @@ import { superformula } from './superformula.ts';
 import { supergt } from './supergt.ts';
 import { supertaikyu } from './supertaikyu.ts';
 import { tc2000TimetableImages } from './tc2000.ts';
+import { sroCalendarPage, sroResults, sroSessions } from './results-sro.ts';
 
 export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
@@ -64,68 +65,13 @@ export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber
 const sro: SiteRecipe = {
   name: 'sro',
   match: (url) => /(gt-world-challenge-[a-z]+\.com|intercontinentalgtchallenge\.com|sro-motorsports\.com)$/.test(host(url)),
-  calendar(doc, ctx) {
-    const html = stripComments(doc.raw);
-    const out: CalendarEntry[] = [];
-    for (const b of blocksByClass(html, 'calendar__list-item')) {
-      const part = (cls: string) => {
-        const block = b.match(new RegExp(`class="${cls}"[\\s\\S]*?</div>`))?.[0] ?? '';
-        return {
-          d: textByClass(block, 'calendar__date-number'),
-          m: textByClass(block, 'calendar__date-month'),
-          y: textByClass(block, 'calendar__date-year'),
-        };
-      };
-      const s = part('calendar__date-start');
-      const e = part('calendar__date-end');
-      const name = textByClass(b, 'calendar__race-header');
-      if (!s.d || !name) continue;
-      const start = isoDate(Number(s.y) || ctx.season, monthNumber(s.m) ?? 0, Number(s.d));
-      const end = e.d ? isoDate(Number(e.y) || Number(s.y) || ctx.season, monthNumber(e.m) ?? 0, Number(e.d)) : start;
-      if (!start || !end) continue;
-      const country = textByClass(b, 'calendar__race-subheading-text');
-      const texts = [...b.matchAll(/class="calendar__race-text"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => textOf(m[1] ?? '')).filter(Boolean);
-      const roundText = texts.find((t) => /round/i.test(t)) ?? '';
-      const championship = texts.find((t) => !/round/i.test(t));
-      const href = [...b.matchAll(/href="([^"]*\/event\/\d+[^"]*)"/g)][0]?.[1];
-      const url = href ? (absoluteUrl(href, doc.url) ?? undefined) : undefined;
-      out.push({
-        name,
-        circuit: name,
-        country: countryName(country),
-        tz: tzFor(country, name),
-        dateStart: start,
-        dateEnd: end < start ? start : end,
-        round: roundOf(roundText),
-        url,
-        ...(championship ? { championship, ...(url ? { championshipUrl: `${new URL(url).origin}/calendar` } : {}) } : {}),
-      });
-    }
-    // Eventos pasados (sin año en el texto): nunca son de una temporada futura (lectura de la temporada siguiente).
-    const pastBlocks = ctx.season > ctx.now.getUTCFullYear() ? [] : blocksByClass(html, 'past-events__list-item');
-    for (const b of pastBlocks) {
-      const spans = [...b.matchAll(/class="past-events__piped-list-span"[^>]*>([\s\S]*?)<\/span>\s*<\/li>/g)].map((m) => m[1] ?? '');
-      if (spans.length < 2) continue;
-      const dates = parseDateRangeText(textOf(spans[0]!), ctx.season);
-      const venue = textOf(spans[1]!.match(/<strong>([\s\S]*?)<\/strong>/)?.[1] ?? '');
-      const country = textOf(spans[1]!.replace(/<strong>[\s\S]*?<\/strong>/, ''));
-      const href = b.match(/href="([^"]*\/event\/\d+[^"]*)"/)?.[1];
-      if (!dates || !venue) continue;
-      out.push({
-        name: venue,
-        circuit: venue,
-        country: countryName(country),
-        tz: tzFor(country, venue),
-        dateStart: dates.start,
-        dateEnd: dates.end,
-        round: roundOf(textOf(spans[2] ?? '')),
-        url: href ? (absoluteUrl(href, doc.url) ?? undefined) : undefined,
-      });
-    }
-    return dedupe(out).sort((a, b) => a.dateStart.localeCompare(b.dateStart));
-  },
+  // Calendario, cronograma y resultados: results-sro.ts.
+  calendar: (doc, ctx) => sroCalendarPage(doc.raw, doc.url, ctx),
   standings: (url, ctx) => sroStandings(url, ctx),
   roster: (url, ctx) => sroRoster(url, ctx),
+  sessions: (entry, ctx) => sroSessions(entry, ctx),
+  pastSessions: (entry, ctx) => sroSessions(entry, ctx),
+  results: (entry, sessions, ctx) => sroResults(entry, sessions, ctx),
 };
 
 interface SelectOption {
