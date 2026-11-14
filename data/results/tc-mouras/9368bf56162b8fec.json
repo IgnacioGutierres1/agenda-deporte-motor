@@ -1,0 +1,584 @@
+{
+  "seriesId": "tc-mouras",
+  "eventId": "9368bf56162b8fec",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "sessions": [
+    {
+      "sessionId": "74831589759fcd7e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "bestLap": "1:26.460"
+        },
+        {
+          "pos": 2,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "gap": "+0.660",
+          "bestLap": "1:27.120"
+        },
+        {
+          "pos": 3,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "gap": "+0.891",
+          "bestLap": "1:27.351"
+        },
+        {
+          "pos": 4,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "gap": "+1.051",
+          "bestLap": "1:27.511"
+        },
+        {
+          "pos": 5,
+          "number": "88",
+          "driver": "Mancuso, Esteban",
+          "vehicle": "DODGE",
+          "gap": "+1.250",
+          "bestLap": "1:27.710"
+        },
+        {
+          "pos": 6,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "gap": "+1.333",
+          "bestLap": "1:27.793"
+        },
+        {
+          "pos": 7,
+          "number": "75",
+          "driver": "MATÍAS FRANO",
+          "vehicle": "FORD",
+          "gap": "+1.452",
+          "bestLap": "1:27.912"
+        },
+        {
+          "pos": 8,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "gap": "+1.780",
+          "bestLap": "1:28.240"
+        },
+        {
+          "pos": 9,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "gap": "+1.860",
+          "bestLap": "1:28.320"
+        },
+        {
+          "pos": 10,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "gap": "+2.006",
+          "bestLap": "1:28.466"
+        },
+        {
+          "pos": 11,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "gap": "+2.528",
+          "bestLap": "1:28.988"
+        },
+        {
+          "pos": 12,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "gap": "+2.620",
+          "bestLap": "1:29.080"
+        },
+        {
+          "pos": 13,
+          "number": "58",
+          "driver": "ALDO ORTIZ",
+          "vehicle": "DODGE",
+          "gap": "+2.757",
+          "bestLap": "1:29.217"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/816/ver",
+        "title": "1ER ENTRENAMIENTO — Fecha 8 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "d674aead9e58a01d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "bestLap": "1:26.735"
+        },
+        {
+          "pos": 2,
+          "number": "75",
+          "driver": "MATÍAS FRANO",
+          "vehicle": "FORD",
+          "gap": "+0.331",
+          "bestLap": "1:27.066"
+        },
+        {
+          "pos": 3,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "gap": "+0.738",
+          "bestLap": "1:27.473"
+        },
+        {
+          "pos": 4,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "gap": "+1.064",
+          "bestLap": "1:27.799"
+        },
+        {
+          "pos": 5,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "gap": "+1.068",
+          "bestLap": "1:27.803"
+        },
+        {
+          "pos": 6,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "gap": "+1.132",
+          "bestLap": "1:27.867"
+        },
+        {
+          "pos": 7,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "gap": "+1.144",
+          "bestLap": "1:27.879"
+        },
+        {
+          "pos": 8,
+          "number": "88",
+          "driver": "Mancuso, Esteban",
+          "vehicle": "DODGE",
+          "gap": "+1.175",
+          "bestLap": "1:27.910"
+        },
+        {
+          "pos": 9,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "gap": "+1.192",
+          "bestLap": "1:27.927"
+        },
+        {
+          "pos": 10,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "gap": "+1.248",
+          "bestLap": "1:27.983"
+        },
+        {
+          "pos": 11,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "gap": "+1.421",
+          "bestLap": "1:28.156"
+        },
+        {
+          "pos": 12,
+          "number": "58",
+          "driver": "ALDO ORTIZ",
+          "vehicle": "DODGE",
+          "gap": "+1.684",
+          "bestLap": "1:28.419"
+        },
+        {
+          "pos": 13,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "gap": "+1.689",
+          "bestLap": "1:28.424"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/820/ver",
+        "title": "2DO ENTRENAMIENTO — Fecha 8 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "cc44d836b2577478",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "bestLap": "1:26.154"
+        },
+        {
+          "pos": 2,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "gap": "+0.388",
+          "bestLap": "1:26.542"
+        },
+        {
+          "pos": 3,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "gap": "+0.457",
+          "bestLap": "1:26.611"
+        },
+        {
+          "pos": 4,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "gap": "+0.476",
+          "bestLap": "1:26.630"
+        },
+        {
+          "pos": 5,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "gap": "+0.531",
+          "bestLap": "1:26.685"
+        },
+        {
+          "pos": 6,
+          "number": "75",
+          "driver": "MATÍAS FRANO",
+          "vehicle": "FORD",
+          "gap": "+0.948",
+          "bestLap": "1:27.102"
+        },
+        {
+          "pos": 7,
+          "number": "88",
+          "driver": "Mancuso, Esteban",
+          "vehicle": "DODGE",
+          "gap": "+1.125",
+          "bestLap": "1:27.279"
+        },
+        {
+          "pos": 8,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "gap": "+1.346",
+          "bestLap": "1:27.500"
+        },
+        {
+          "pos": 9,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "gap": "+1.425",
+          "bestLap": "1:27.579"
+        },
+        {
+          "pos": 10,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "gap": "+1.682",
+          "bestLap": "1:27.836"
+        },
+        {
+          "pos": 11,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "gap": "+1.805",
+          "bestLap": "1:27.959"
+        },
+        {
+          "pos": 12,
+          "number": "58",
+          "driver": "ALDO ORTIZ",
+          "vehicle": "DODGE",
+          "gap": "+1.868",
+          "bestLap": "1:28.022"
+        },
+        {
+          "pos": 13,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "gap": "+9.620",
+          "bestLap": "1:35.774"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/827/ver",
+        "title": "CLASIFICACION — Fecha 8 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "69faae4d7a2c7f91",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "time": "8:40.011"
+        },
+        {
+          "pos": 2,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+2.559"
+        },
+        {
+          "pos": 3,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+2.714"
+        },
+        {
+          "pos": 4,
+          "number": "75",
+          "driver": "MATÍAS FRANO",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+8.669"
+        },
+        {
+          "pos": 5,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+9.165"
+        },
+        {
+          "pos": 6,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+11.325"
+        },
+        {
+          "pos": 7,
+          "number": "88",
+          "driver": "Mancuso, Esteban",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+12.527"
+        },
+        {
+          "pos": 8,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+13.092"
+        },
+        {
+          "pos": 9,
+          "number": "58",
+          "driver": "ALDO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+17.170"
+        },
+        {
+          "pos": 10,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+19.036"
+        },
+        {
+          "pos": 11,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+27.978"
+        },
+        {
+          "pos": 12,
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+34.119"
+        },
+        {
+          "pos": 13,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+34.120"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/843/ver",
+        "title": "SERIE UNICA — Fecha 8 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "a503c9a7440c0159",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "VALENTINO ALAUX",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "time": "20:43.609"
+        },
+        {
+          "pos": 2,
+          "number": "141",
+          "driver": "FRANCISCO LUENGO",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "gap": "+2.017"
+        },
+        {
+          "pos": 3,
+          "number": "176",
+          "driver": "NICOLÁS JAIME",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+3.434"
+        },
+        {
+          "pos": 4,
+          "number": "46",
+          "driver": "THIAGO FALIVENE",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "gap": "+20.536"
+        },
+        {
+          "pos": 5,
+          "number": "88",
+          "driver": "Mancuso, Esteban",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+20.752"
+        },
+        {
+          "pos": 6,
+          "number": "23",
+          "driver": "ALEJANDRO MARTÍNEZ",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+21.232"
+        },
+        {
+          "pos": 7,
+          "number": "58",
+          "driver": "ALDO ORTIZ",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+21.902"
+        },
+        {
+          "pos": 8,
+          "number": "25",
+          "driver": "JUAN TARTAGLINO",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+23.093"
+        },
+        {
+          "pos": 9,
+          "number": "221",
+          "driver": "ESTEBAN LUNA",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+26.692"
+        },
+        {
+          "pos": 10,
+          "number": "222",
+          "driver": "MARCELO BERALDI",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+1:17.404"
+        },
+        {
+          "pos": 11,
+          "number": "118",
+          "driver": "FABRIZIO MAGGINI",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+1:17.405"
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "75",
+          "driver": "MATÍAS FRANO",
+          "vehicle": "FORD",
+          "laps": 7
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "139",
+          "driver": "SANTIAGO ARRIGONI",
+          "vehicle": "DODGE",
+          "laps": 6
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/853/ver",
+        "title": "FINAL — Fecha 8 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    }
+  ]
+}

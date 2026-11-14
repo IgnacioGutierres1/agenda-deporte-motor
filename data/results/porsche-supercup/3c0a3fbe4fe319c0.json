@@ -1,0 +1,714 @@
+{
+  "seriesId": "porsche-supercup",
+  "eventId": "3c0a3fbe4fe319c0",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "sessions": [
+    {
+      "sessionId": "0dd7b33c23ced1eb",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "28",
+          "driver": "Aldo Festante",
+          "team": "Target SRL",
+          "laps": 16,
+          "time": "1:47.196"
+        },
+        {
+          "pos": 2,
+          "number": "7",
+          "driver": "Andrea Bristot",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 16,
+          "time": "1:47.415"
+        },
+        {
+          "pos": 3,
+          "number": "16",
+          "driver": "Paul Cauhaupe",
+          "team": "Martinet by Almeras",
+          "laps": 16,
+          "time": "1:47.665"
+        },
+        {
+          "pos": 4,
+          "number": "12",
+          "driver": "Flynt Schuring",
+          "team": "Schumacher CLRT",
+          "laps": 18,
+          "time": "1:47.693"
+        },
+        {
+          "pos": 5,
+          "number": "2",
+          "driver": "Marcus Amand",
+          "team": "BWT Lechner Racing",
+          "laps": 17,
+          "time": "1:47.737"
+        },
+        {
+          "pos": 6,
+          "number": "18",
+          "driver": "Liam Mcneilly",
+          "team": "Ombra Racing",
+          "laps": 16,
+          "time": "1:47.833"
+        },
+        {
+          "pos": 7,
+          "number": "3",
+          "driver": "Caleb Sumich",
+          "team": "BWT Lechner Racing",
+          "laps": 15,
+          "time": "1:47.924"
+        },
+        {
+          "pos": 8,
+          "number": "1",
+          "driver": "Robert de Haan",
+          "team": "BWT Lechner Racing",
+          "laps": 16,
+          "time": "1:47.982"
+        },
+        {
+          "pos": 9,
+          "number": "25",
+          "driver": "Wouter Boerekamps",
+          "team": "Team GP Elite",
+          "laps": 17,
+          "time": "1:47.993"
+        },
+        {
+          "pos": 10,
+          "number": "22",
+          "driver": "Dirk Schouten",
+          "team": "Looping by CarTech",
+          "laps": 16,
+          "time": "1:48.066"
+        },
+        {
+          "pos": 11,
+          "number": "26",
+          "driver": "Gustav Burton",
+          "team": "Team GP Elite",
+          "laps": 17,
+          "time": "1:48.077"
+        },
+        {
+          "pos": 12,
+          "number": "29",
+          "driver": "Jack Young",
+          "team": "Target SRL",
+          "laps": 15,
+          "time": "1:48.082"
+        },
+        {
+          "pos": 13,
+          "number": "4",
+          "driver": "Keagan Masters",
+          "team": "Proton Competition",
+          "laps": 16,
+          "time": "1:48.112"
+        },
+        {
+          "pos": 14,
+          "number": "11",
+          "driver": "Chester Kieffer",
+          "team": "Schumacher CLRT",
+          "laps": 18,
+          "time": "1:48.154"
+        },
+        {
+          "pos": 15,
+          "number": "21",
+          "driver": "Jukka Honkavuori",
+          "team": "Looping by CarTech",
+          "laps": 15,
+          "time": "1:48.166"
+        },
+        {
+          "pos": 16,
+          "number": "15",
+          "driver": "Theo Oeverhaus",
+          "team": "Martinet by Almeras",
+          "laps": 16,
+          "time": "1:48.194"
+        },
+        {
+          "pos": 17,
+          "number": "27",
+          "driver": "Matheus Ferreira",
+          "team": "Team GP Elite",
+          "laps": 17,
+          "time": "1:48.356"
+        },
+        {
+          "pos": 18,
+          "number": "20",
+          "driver": "Henry Wheeler",
+          "team": "Ombra Racing",
+          "laps": 17,
+          "time": "1:48.423"
+        },
+        {
+          "pos": 19,
+          "number": "19",
+          "driver": "L. Martinez",
+          "team": "Ombra Racing",
+          "laps": 15,
+          "time": "1:48.485"
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "William Mezzetti",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 17,
+          "time": "1:48.610"
+        },
+        {
+          "pos": 21,
+          "number": "17",
+          "driver": "Jaap van Lagen",
+          "team": "Martinet by Almeras",
+          "laps": 16,
+          "time": "1:48.831"
+        },
+        {
+          "pos": 22,
+          "number": "9",
+          "driver": "Gianmarco Quaresmini",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 16,
+          "time": "1:48.865"
+        },
+        {
+          "pos": 23,
+          "number": "24",
+          "driver": "Jonas Greif",
+          "team": "GP Elite",
+          "laps": 17,
+          "time": "1:48.914"
+        },
+        {
+          "pos": 24,
+          "number": "23",
+          "driver": "Samer Shahin",
+          "team": "GP Elite",
+          "laps": 18,
+          "time": "1:49.429"
+        },
+        {
+          "pos": 25,
+          "number": "5",
+          "driver": "Kai Pfister",
+          "team": "Proton Competition",
+          "laps": 15,
+          "time": "1:50.863"
+        },
+        {
+          "pos": 26,
+          "number": "6",
+          "driver": "Andrea Galli",
+          "team": "Proton Competition",
+          "laps": 15,
+          "time": "1:51.221"
+        },
+        {
+          "pos": 27,
+          "number": "14",
+          "driver": "Juan Pablo Vega Dieppa",
+          "team": "RGB Racing Team",
+          "laps": 16,
+          "time": "1:51.945"
+        },
+        {
+          "pos": 28,
+          "number": "13",
+          "driver": "Jorge E. Ramirez Fernandez",
+          "team": "RGB Racing Team",
+          "laps": 8,
+          "time": "1:56.228"
+        }
+      ],
+      "source": {
+        "url": "https://res.cloudinary.com/dmwcbhehi/image/upload/v1788590186/PMSC-2026-R8-Monza-Practice-FinalClassification_lpix9y.pdf?_s=public-apps",
+        "title": "Porsche Mobil 1 Supercup — Monza: Practice",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "3a8f18887eb5a70a",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "7",
+          "driver": "Andrea Bristot",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 13,
+          "time": "1:46.253"
+        },
+        {
+          "pos": 2,
+          "number": "12",
+          "driver": "Flynt Schuring",
+          "team": "Schumacher CLRT",
+          "laps": 13,
+          "time": "1:46.341"
+        },
+        {
+          "pos": 3,
+          "number": "2",
+          "driver": "Marcus Amand",
+          "team": "BWT Lechner Racing",
+          "laps": 14,
+          "time": "1:46.462"
+        },
+        {
+          "pos": 4,
+          "number": "1",
+          "driver": "Robert de Haan",
+          "team": "BWT Lechner Racing",
+          "laps": 12,
+          "time": "1:46.545"
+        },
+        {
+          "pos": 5,
+          "number": "11",
+          "driver": "Chester Kieffer",
+          "team": "Schumacher CLRT",
+          "laps": 13,
+          "time": "1:46.612"
+        },
+        {
+          "pos": 6,
+          "number": "16",
+          "driver": "Paul Cauhaupe",
+          "team": "Martinet by Almeras",
+          "laps": 12,
+          "time": "1:46.662"
+        },
+        {
+          "pos": 7,
+          "number": "28",
+          "driver": "Aldo Festante",
+          "team": "Target SRL",
+          "laps": 12,
+          "time": "1:46.833"
+        },
+        {
+          "pos": 8,
+          "number": "15",
+          "driver": "Theo Oeverhaus",
+          "team": "Martinet by Almeras",
+          "laps": 13,
+          "time": "1:46.866"
+        },
+        {
+          "pos": 9,
+          "number": "25",
+          "driver": "Wouter Boerekamps",
+          "team": "Team GP Elite",
+          "laps": 14,
+          "time": "1:46.897"
+        },
+        {
+          "pos": 10,
+          "number": "9",
+          "driver": "Gianmarco Quaresmini",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 14,
+          "time": "1:46.930"
+        },
+        {
+          "pos": 11,
+          "number": "22",
+          "driver": "Dirk Schouten",
+          "team": "Looping by CarTech",
+          "laps": 13,
+          "time": "1:46.942"
+        },
+        {
+          "pos": 12,
+          "number": "18",
+          "driver": "Liam Mcneilly",
+          "team": "Ombra Racing",
+          "laps": 15,
+          "time": "1:47.008"
+        },
+        {
+          "pos": 13,
+          "number": "26",
+          "driver": "Gustav Burton",
+          "team": "Team GP Elite",
+          "laps": 14,
+          "time": "1:47.030"
+        },
+        {
+          "pos": 14,
+          "number": "3",
+          "driver": "Caleb Sumich",
+          "team": "BWT Lechner Racing",
+          "laps": 12,
+          "time": "1:47.031"
+        },
+        {
+          "pos": 15,
+          "number": "17",
+          "driver": "Jaap van Lagen",
+          "team": "Martinet by Almeras",
+          "laps": 12,
+          "time": "1:47.042"
+        },
+        {
+          "pos": 16,
+          "number": "29",
+          "driver": "Jack Young",
+          "team": "Target SRL",
+          "laps": 12,
+          "time": "1:47.047"
+        },
+        {
+          "pos": 17,
+          "number": "27",
+          "driver": "Matheus Ferreira",
+          "team": "Team GP Elite",
+          "laps": 14,
+          "time": "1:47.101"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "Jukka Honkavuori",
+          "team": "Looping by CarTech",
+          "laps": 13,
+          "time": "1:47.290"
+        },
+        {
+          "pos": 19,
+          "number": "4",
+          "driver": "Keagan Masters",
+          "team": "Proton Competition",
+          "laps": 6,
+          "time": "1:47.344"
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "William Mezzetti",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 13,
+          "time": "1:47.357"
+        },
+        {
+          "pos": 21,
+          "number": "24",
+          "driver": "Jonas Greif",
+          "team": "GP Elite",
+          "laps": 14,
+          "time": "1:47.491"
+        },
+        {
+          "pos": 22,
+          "number": "19",
+          "driver": "L. Martinez",
+          "team": "Ombra Racing",
+          "laps": 15,
+          "time": "1:47.782"
+        },
+        {
+          "pos": 23,
+          "number": "20",
+          "driver": "Henry Wheeler",
+          "team": "Ombra Racing",
+          "laps": 14,
+          "time": "1:47.804"
+        },
+        {
+          "pos": 24,
+          "number": "23",
+          "driver": "Samer Shahin",
+          "team": "GP Elite",
+          "laps": 14,
+          "time": "1:48.618"
+        },
+        {
+          "pos": 25,
+          "number": "14",
+          "driver": "J. Vega Dieppa",
+          "team": "RGB Racing Team",
+          "laps": 14,
+          "time": "1:49.039"
+        },
+        {
+          "pos": 26,
+          "number": "13",
+          "driver": "J. Ramirez Fernandez",
+          "team": "RGB Racing Team",
+          "laps": 13,
+          "time": "1:49.441"
+        },
+        {
+          "pos": 27,
+          "number": "6",
+          "driver": "Andrea Galli",
+          "team": "Proton Competition",
+          "laps": 14,
+          "time": "1:49.462"
+        },
+        {
+          "pos": 28,
+          "number": "5",
+          "driver": "Kai Pfister",
+          "team": "Proton Competition",
+          "laps": 14,
+          "time": "1:49.605"
+        }
+      ],
+      "source": {
+        "url": "https://res.cloudinary.com/dmwcbhehi/image/upload/v1788614811/PMSC-2026-R8-Monza-Qualifying-FinalClassification_xncsgg.pdf?_s=public-apps",
+        "title": "Porsche Mobil 1 Supercup — Monza: Qualifying",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "975d1e59e9371bd6",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "7",
+          "driver": "Andrea Bristot",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 1,
+          "time": "1:51.434"
+        },
+        {
+          "pos": 2,
+          "number": "1",
+          "driver": "Robert de Haan",
+          "team": "BWT Lechner Racing",
+          "laps": 1,
+          "gap": "+0.520s"
+        },
+        {
+          "pos": 3,
+          "number": "12",
+          "driver": "Flynt Schuring",
+          "team": "Schumacher CLRT",
+          "laps": 1,
+          "gap": "+0.781s"
+        },
+        {
+          "pos": 4,
+          "number": "2",
+          "driver": "Marcus Amand",
+          "team": "BWT Lechner Racing",
+          "laps": 1,
+          "gap": "+1.658s"
+        },
+        {
+          "pos": 5,
+          "number": "28",
+          "driver": "Aldo Festante",
+          "team": "Target SRL",
+          "laps": 1,
+          "gap": "+1.944s"
+        },
+        {
+          "pos": 6,
+          "number": "11",
+          "driver": "Chester Kieffer",
+          "team": "Schumacher CLRT",
+          "laps": 1,
+          "gap": "+2.375s"
+        },
+        {
+          "pos": 7,
+          "number": "25",
+          "driver": "Wouter Boerekamps",
+          "team": "Team GP Elite",
+          "laps": 1,
+          "gap": "+3.071s"
+        },
+        {
+          "pos": 8,
+          "number": "15",
+          "driver": "Theo Oeverhaus",
+          "team": "Martinet by Almeras",
+          "laps": 1,
+          "gap": "+3.089s"
+        },
+        {
+          "pos": 9,
+          "number": "9",
+          "driver": "Gianmarco Quaresmini",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 1,
+          "gap": "+3.679s"
+        },
+        {
+          "pos": 10,
+          "number": "22",
+          "driver": "Dirk Schouten",
+          "team": "Looping by CarTech",
+          "laps": 1,
+          "gap": "+4.619s"
+        },
+        {
+          "pos": 11,
+          "number": "16",
+          "driver": "Paul Cauhaupe",
+          "team": "Martinet by Almeras",
+          "laps": 1,
+          "gap": "+4.706s"
+        },
+        {
+          "pos": 12,
+          "number": "18",
+          "driver": "Liam Mcneilly",
+          "team": "Ombra Racing",
+          "laps": 1,
+          "gap": "+5.037s"
+        },
+        {
+          "pos": 13,
+          "number": "3",
+          "driver": "Caleb Sumich",
+          "team": "BWT Lechner Racing",
+          "laps": 1,
+          "gap": "+5.269s"
+        },
+        {
+          "pos": 14,
+          "number": "29",
+          "driver": "Jack Young",
+          "team": "Target SRL",
+          "laps": 1,
+          "gap": "+5.490s"
+        },
+        {
+          "pos": 15,
+          "number": "27",
+          "driver": "Matheus Ferreira",
+          "team": "Team GP Elite",
+          "laps": 1,
+          "gap": "+5.834s"
+        },
+        {
+          "pos": 16,
+          "number": "21",
+          "driver": "Jukka Honkavuori",
+          "team": "Looping by CarTech",
+          "laps": 1,
+          "gap": "+5.842s"
+        },
+        {
+          "pos": 17,
+          "number": "8",
+          "driver": "William Mezzetti",
+          "team": "Dinamic Motorsport SRL",
+          "laps": 1,
+          "gap": "+6.158s"
+        },
+        {
+          "pos": 18,
+          "number": "4",
+          "driver": "Keagan Masters",
+          "team": "Proton Competition",
+          "laps": 1,
+          "gap": "+6.185s"
+        },
+        {
+          "pos": 19,
+          "number": "24",
+          "driver": "Jonas Greif",
+          "team": "GP Elite",
+          "laps": 1,
+          "gap": "+7.348s"
+        },
+        {
+          "pos": 20,
+          "number": "19",
+          "driver": "L. Martinez",
+          "team": "Ombra Racing",
+          "laps": 1,
+          "gap": "+7.461s"
+        },
+        {
+          "pos": 21,
+          "number": "23",
+          "driver": "Samer Shahin",
+          "team": "GP Elite",
+          "laps": 1,
+          "gap": "+8.212s"
+        },
+        {
+          "pos": 22,
+          "number": "20",
+          "driver": "Henry Wheeler",
+          "team": "Ombra Racing",
+          "laps": 1,
+          "gap": "+8.413s"
+        },
+        {
+          "pos": 23,
+          "number": "13",
+          "driver": "J. Ramirez Fernandez",
+          "team": "RGB Racing Team",
+          "laps": 1,
+          "gap": "+9.703s"
+        },
+        {
+          "pos": 24,
+          "number": "5",
+          "driver": "Kai Pfister",
+          "team": "Proton Competition",
+          "laps": 1,
+          "gap": "+10.005s"
+        },
+        {
+          "pos": 25,
+          "number": "14",
+          "driver": "J. Vega Dieppa",
+          "team": "RGB Racing Team",
+          "laps": 1,
+          "gap": "+16.602s"
+        },
+        {
+          "pos": 26,
+          "number": "26",
+          "driver": "Gustav Burton",
+          "team": "Team GP Elite",
+          "laps": 1,
+          "gap": "+36.050s"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "17",
+          "driver": "Jaap van Lagen",
+          "team": "Martinet by Almeras",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "6",
+          "driver": "Andrea Galli",
+          "team": "Proton Competition"
+        }
+      ],
+      "source": {
+        "url": "https://res.cloudinary.com/dmwcbhehi/image/upload/v1788719592/PMSC-2026-R8-Monza-Race-FinalClassification_j6ghou.pdf?_s=public-apps",
+        "title": "Porsche Mobil 1 Supercup — Monza: Race 8",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    }
+  ]
+}

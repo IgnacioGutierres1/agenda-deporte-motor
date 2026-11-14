@@ -1,0 +1,848 @@
+{
+  "seriesId": "tc-pista",
+  "eventId": "cea6b47846cf69dd",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "sessions": [
+    {
+      "sessionId": "abd1cb7b06b0dc4e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 9,
+          "bestLap": "1:40.193"
+        },
+        {
+          "pos": 2,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 9,
+          "gap": "+0.845",
+          "bestLap": "1:41.038"
+        },
+        {
+          "pos": 3,
+          "number": "139",
+          "driver": "ARRIGONI SANTIAGO",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "gap": "+2.834",
+          "bestLap": "1:43.027"
+        },
+        {
+          "pos": 4,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+4.035",
+          "bestLap": "1:44.228"
+        },
+        {
+          "pos": 5,
+          "number": "23",
+          "driver": "MARTINEZ ALEJANDRO",
+          "vehicle": "CAMARO",
+          "laps": 6,
+          "gap": "+4.604",
+          "bestLap": "1:44.797"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 1,
+          "gap": "+5.619",
+          "bestLap": "1:45.812"
+        },
+        {
+          "pos": 7,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 2,
+          "gap": "+7.606",
+          "bestLap": "1:47.799"
+        },
+        {
+          "pos": 8,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOTA",
+          "laps": 3,
+          "gap": "+8.357",
+          "bestLap": "1:48.550"
+        },
+        {
+          "pos": 9,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 2,
+          "gap": "+8.705",
+          "bestLap": "1:48.898"
+        },
+        {
+          "pos": 10,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "laps": 3,
+          "gap": "+10.520",
+          "bestLap": "1:50.713"
+        },
+        {
+          "pos": 11,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 1,
+          "gap": "+11.126",
+          "bestLap": "1:51.319"
+        },
+        {
+          "pos": 12,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 3,
+          "gap": "+35.299",
+          "bestLap": "2:15.492"
+        },
+        {
+          "pos": 13,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 1,
+          "gap": "+46.173",
+          "bestLap": "2:26.366"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261003_120237_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 12 — SAN NICOLAS",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "0e1ed0d5d24cdeed",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 10,
+          "bestLap": "1:27.469"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 10,
+          "gap": "+0.084",
+          "bestLap": "1:27.553"
+        },
+        {
+          "pos": 3,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+0.148",
+          "bestLap": "1:27.617"
+        },
+        {
+          "pos": 4,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 9,
+          "gap": "+0.201",
+          "bestLap": "1:27.670"
+        },
+        {
+          "pos": 5,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+0.213",
+          "bestLap": "1:27.682"
+        },
+        {
+          "pos": 6,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+0.390",
+          "bestLap": "1:27.859"
+        },
+        {
+          "pos": 7,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOTA",
+          "laps": 13,
+          "gap": "+0.512",
+          "bestLap": "1:27.981"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 13,
+          "gap": "+0.607",
+          "bestLap": "1:28.076"
+        },
+        {
+          "pos": 9,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 11,
+          "gap": "+0.889",
+          "bestLap": "1:28.358"
+        },
+        {
+          "pos": 10,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 10,
+          "gap": "+1.057",
+          "bestLap": "1:28.526"
+        },
+        {
+          "pos": 11,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "laps": 9,
+          "gap": "+1.069",
+          "bestLap": "1:28.538"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 13,
+          "gap": "+1.287",
+          "bestLap": "1:28.756"
+        },
+        {
+          "pos": 13,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 13,
+          "gap": "+1.368",
+          "bestLap": "1:28.837"
+        },
+        {
+          "pos": 14,
+          "number": "23",
+          "driver": "MARTINEZ ALEJANDRO",
+          "vehicle": "CAMARO",
+          "laps": 13,
+          "gap": "+2.273",
+          "bestLap": "1:29.742"
+        },
+        {
+          "pos": 15,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "laps": 10,
+          "gap": "+2.460",
+          "bestLap": "1:29.929"
+        },
+        {
+          "pos": 16,
+          "number": "176",
+          "driver": "JAIME NICOLAS",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+2.705",
+          "bestLap": "1:30.174"
+        },
+        {
+          "pos": 17,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 8,
+          "gap": "+3.470",
+          "bestLap": "1:30.939"
+        },
+        {
+          "pos": 18,
+          "number": "139",
+          "driver": "ARRIGONI SANTIAGO",
+          "vehicle": "TOYOTA",
+          "laps": 12,
+          "gap": "+3.591",
+          "bestLap": "1:31.060"
+        },
+        {
+          "pos": 19,
+          "number": "32",
+          "driver": "Juan Antonio SANDIN",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "gap": "+4.505",
+          "bestLap": "1:31.974"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261003_141405_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 12 — SAN NICOLAS",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "7d63b47c72ad3de8",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 2,
+          "bestLap": "1:27.718"
+        },
+        {
+          "pos": 2,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 4,
+          "gap": "+0.020",
+          "bestLap": "1:27.738"
+        },
+        {
+          "pos": 3,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.145",
+          "bestLap": "1:27.863"
+        },
+        {
+          "pos": 4,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.393",
+          "bestLap": "1:28.111"
+        },
+        {
+          "pos": 5,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.527",
+          "bestLap": "1:28.245"
+        },
+        {
+          "pos": 6,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 3,
+          "gap": "+0.559",
+          "bestLap": "1:28.277"
+        },
+        {
+          "pos": 7,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.580",
+          "bestLap": "1:28.298"
+        },
+        {
+          "pos": 8,
+          "number": "176",
+          "driver": "JAIME NICOLAS",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.686",
+          "bestLap": "1:28.404"
+        },
+        {
+          "pos": 9,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.713",
+          "bestLap": "1:28.431"
+        },
+        {
+          "pos": 10,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+0.777",
+          "bestLap": "1:28.495"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 3,
+          "gap": "+0.781",
+          "bestLap": "1:28.499"
+        },
+        {
+          "pos": 12,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 4,
+          "gap": "+0.992",
+          "bestLap": "1:28.710"
+        },
+        {
+          "pos": 13,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+1.041",
+          "bestLap": "1:28.759"
+        },
+        {
+          "pos": 14,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.254",
+          "bestLap": "1:28.972"
+        },
+        {
+          "pos": 15,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 4,
+          "gap": "+1.513",
+          "bestLap": "1:29.231"
+        },
+        {
+          "pos": 16,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+2.097",
+          "bestLap": "1:29.815"
+        },
+        {
+          "pos": 17,
+          "number": "32",
+          "driver": "Juan Antonio SANDIN",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+2.144",
+          "bestLap": "1:29.862"
+        },
+        {
+          "pos": 18,
+          "number": "23",
+          "driver": "MARTINEZ ALEJANDRO",
+          "vehicle": "CAMARO",
+          "laps": 4,
+          "gap": "+2.273",
+          "bestLap": "1:29.991"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "139",
+          "driver": "ARRIGONI SANTIAGO",
+          "vehicle": "TOYOTA"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261003_165744_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 12 — SAN NICOLAS",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "06c95b353e8e5844",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER",
+          "laps": 5,
+          "time": "7:26.030"
+        },
+        {
+          "pos": 2,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+1.496"
+        },
+        {
+          "pos": 3,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+5.115"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+5.554"
+        },
+        {
+          "pos": 5,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 5,
+          "gap": "+8.838"
+        },
+        {
+          "pos": 6,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+8.839"
+        },
+        {
+          "pos": 7,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+9.074"
+        },
+        {
+          "pos": 8,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+10.212"
+        },
+        {
+          "pos": 9,
+          "number": "139",
+          "driver": "ARRIGONI SANTIAGO",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+11.452"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "32",
+          "driver": "Juan Antonio SANDIN",
+          "vehicle": "TOYOTA"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261004_105904_1ERA_SERIE.pdf",
+        "title": "1ERA SERIE — Fecha 12 — SAN NICOLAS",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "02838b11cf63b3ab",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "time": "7:29.612"
+        },
+        {
+          "pos": 2,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+4.353"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 5,
+          "gap": "+5.652"
+        },
+        {
+          "pos": 4,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+6.137"
+        },
+        {
+          "pos": 5,
+          "number": "69",
+          "driver": "Eddy MIÓN",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+10.334"
+        },
+        {
+          "pos": 6,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+12.616"
+        },
+        {
+          "pos": 7,
+          "number": "176",
+          "driver": "JAIME NICOLAS",
+          "vehicle": "MUSTANG",
+          "laps": 5,
+          "gap": "+12.617"
+        },
+        {
+          "pos": 8,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 5,
+          "gap": "+12.875"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "MARTINEZ ALEJANDRO",
+          "vehicle": "CAMARO",
+          "laps": 5,
+          "gap": "+28.287"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261004_110214_2DA_SERIE.pdf",
+        "title": "2DA SERIE — Fecha 12 — SAN NICOLAS",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "332fa3f5d3e4fc69",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "time": "30:32.425"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+1.813"
+        },
+        {
+          "pos": 3,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+2.191"
+        },
+        {
+          "pos": 4,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+2.844"
+        },
+        {
+          "pos": 5,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+3.541"
+        },
+        {
+          "pos": 6,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+8.896"
+        },
+        {
+          "pos": 7,
+          "number": "168",
+          "driver": "Juan Sebastian GALLO",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+9.339"
+        },
+        {
+          "pos": 8,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+15.457"
+        },
+        {
+          "pos": 9,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+17.502"
+        },
+        {
+          "pos": 10,
+          "number": "139",
+          "driver": "ARRIGONI SANTIAGO",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+25.954"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+27.887"
+        },
+        {
+          "pos": 12,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "MUSTANG",
+          "laps": 20,
+          "gap": "+29.218"
+        },
+        {
+          "pos": 13,
+          "number": "23",
+          "driver": "MARTINEZ ALEJANDRO",
+          "vehicle": "CAMARO",
+          "laps": 20,
+          "gap": "+41.259"
+        },
+        {
+          "pos": 14,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "MUSTANG",
+          "laps": 19,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 15,
+          "number": "32",
+          "driver": "Juan Antonio SANDIN",
+          "vehicle": "TOYOTA",
+          "laps": 17,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "176",
+          "driver": "JAIME NICOLAS",
+          "vehicle": "MUSTANG",
+          "laps": 12,
+          "gap": "+8 vueltas"
+        },
+        {
+          "pos": 17,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "CHALLENGER",
+          "laps": 8,
+          "gap": "+12 vueltas"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "CHALLENGER"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261004_144639_FINAL_TCP.pdf",
+        "title": "FINAL TCP — Fecha 12 — SAN NICOLAS",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    }
+  ]
+}

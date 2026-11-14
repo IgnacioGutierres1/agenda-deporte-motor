@@ -1,0 +1,580 @@
+{
+  "seriesId": "tc-pickup",
+  "eventId": "91030a08fb4c4a7a",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "sessions": [
+    {
+      "sessionId": "abd68b16d08c1a0c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "laps": 3,
+          "bestLap": "1:55.396"
+        },
+        {
+          "pos": 2,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 12,
+          "gap": "+1.172",
+          "bestLap": "1:56.568"
+        },
+        {
+          "pos": 3,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+1.516",
+          "bestLap": "1:56.912"
+        },
+        {
+          "pos": 4,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "gap": "+1.626",
+          "bestLap": "1:57.022"
+        },
+        {
+          "pos": 5,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+1.671",
+          "bestLap": "1:57.067"
+        },
+        {
+          "pos": 6,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+2.292",
+          "bestLap": "1:57.688"
+        },
+        {
+          "pos": 7,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+2.525",
+          "bestLap": "1:57.921"
+        },
+        {
+          "pos": 8,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+4.062",
+          "bestLap": "1:59.458"
+        },
+        {
+          "pos": 9,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "TOYOTA",
+          "laps": 10,
+          "gap": "+4.561",
+          "bestLap": "1:59.957"
+        },
+        {
+          "pos": 10,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 2,
+          "gap": "+4.904",
+          "bestLap": "2:00.300"
+        },
+        {
+          "pos": 11,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 11,
+          "gap": "+6.652",
+          "bestLap": "2:02.048"
+        },
+        {
+          "pos": 12,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 1,
+          "gap": "+15.096",
+          "bestLap": "2:10.492"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260815_101827_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "82a92dfadbdb0cdf",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "bestLap": "1:54.004"
+        },
+        {
+          "pos": 2,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+0.007",
+          "bestLap": "1:54.011"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 10,
+          "gap": "+0.130",
+          "bestLap": "1:54.134"
+        },
+        {
+          "pos": 4,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+0.570",
+          "bestLap": "1:54.574"
+        },
+        {
+          "pos": 5,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 11,
+          "gap": "+0.616",
+          "bestLap": "1:54.620"
+        },
+        {
+          "pos": 6,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+0.928",
+          "bestLap": "1:54.932"
+        },
+        {
+          "pos": 7,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+1.001",
+          "bestLap": "1:55.005"
+        },
+        {
+          "pos": 8,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 7,
+          "gap": "+1.112",
+          "bestLap": "1:55.116"
+        },
+        {
+          "pos": 9,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "TOYOTA",
+          "laps": 10,
+          "gap": "+2.078",
+          "bestLap": "1:56.082"
+        },
+        {
+          "pos": 10,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 10,
+          "gap": "+2.354",
+          "bestLap": "1:56.358"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "TOYOTA",
+          "laps": 10,
+          "gap": "+2.468",
+          "bestLap": "1:56.472"
+        },
+        {
+          "pos": 12,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 4,
+          "gap": "+8.280",
+          "bestLap": "2:02.284"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260815_123031_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "6f7383c8d552f756",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "bestLap": "1:51.150"
+        },
+        {
+          "pos": 2,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "gap": "+0.265",
+          "bestLap": "1:51.415"
+        },
+        {
+          "pos": 3,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "gap": "+0.448",
+          "bestLap": "1:51.598"
+        },
+        {
+          "pos": 4,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "gap": "+0.614",
+          "bestLap": "1:51.764"
+        },
+        {
+          "pos": 5,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "gap": "+1.053",
+          "bestLap": "1:52.203"
+        },
+        {
+          "pos": 6,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "gap": "+2.522",
+          "bestLap": "1:53.672"
+        },
+        {
+          "pos": 7,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "gap": "+2.723",
+          "bestLap": "1:53.873"
+        },
+        {
+          "pos": 8,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "gap": "+2.785",
+          "bestLap": "1:53.935"
+        },
+        {
+          "pos": 9,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "gap": "+3.141",
+          "bestLap": "1:54.291"
+        },
+        {
+          "pos": 10,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "gap": "+5.701",
+          "bestLap": "1:56.851"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "TOYOTA",
+          "gap": "+4.247",
+          "bestLap": "1:55.397"
+        },
+        {
+          "pos": 12,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "TOYOTA",
+          "gap": "+5.404",
+          "bestLap": "1:56.554"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260815_172826_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "6c665bbe7dd3f5c6",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "time": "8:33.038"
+        },
+        {
+          "pos": 2,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+4.026"
+        },
+        {
+          "pos": 3,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+5.926"
+        },
+        {
+          "pos": 4,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+6.051"
+        },
+        {
+          "pos": 5,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+12.386"
+        },
+        {
+          "pos": 6,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+13.043"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260816_120647_1ERA_SERIE.pdf",
+        "title": "1ERA SERIE — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "c2ce3adf3ee24be1",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "8:38.379"
+        },
+        {
+          "pos": 2,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+0.876"
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+2.213"
+        },
+        {
+          "pos": 4,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+4.772"
+        },
+        {
+          "pos": 5,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 5,
+          "gap": "+14.966"
+        },
+        {
+          "pos": 6,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+20.577"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260816_120726_2DA_SERIE.pdf",
+        "title": "2DA SERIE — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "0a83f445601f0cbf",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "1",
+          "driver": "Agustín Canapino",
+          "vehicle": "CHEVROLET",
+          "laps": 20,
+          "time": "34:29.665"
+        },
+        {
+          "pos": 2,
+          "number": "83",
+          "driver": "Facundo ARDUSSO",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+1.092"
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Mariano Werner",
+          "vehicle": "FOTON",
+          "laps": 20,
+          "gap": "+2.808"
+        },
+        {
+          "pos": 4,
+          "number": "256",
+          "driver": "Otto Fritzler",
+          "vehicle": "FORD",
+          "laps": 20,
+          "gap": "+5.422"
+        },
+        {
+          "pos": 5,
+          "number": "110",
+          "driver": "Diego Azar",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+10.144"
+        },
+        {
+          "pos": 6,
+          "number": "147",
+          "driver": "Marco Dianda",
+          "vehicle": "FORD",
+          "laps": 20,
+          "gap": "+18.686"
+        },
+        {
+          "pos": 7,
+          "number": "66",
+          "driver": "Gustavo (h) Tadei",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+27.040"
+        },
+        {
+          "pos": 8,
+          "number": "13",
+          "driver": "Diego De Carlo",
+          "vehicle": "VW",
+          "laps": 20,
+          "gap": "+43.083"
+        },
+        {
+          "pos": 9,
+          "number": "11",
+          "driver": "Gastón Mazzacane",
+          "vehicle": "FOTON",
+          "laps": 18,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 10,
+          "number": "119",
+          "driver": "Hernán Palazzo",
+          "vehicle": "TOYOTA",
+          "laps": 15,
+          "gap": "+5 vueltas"
+        },
+        {
+          "pos": 11,
+          "number": "86",
+          "driver": "Ignacio Faín",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+6 vueltas"
+        },
+        {
+          "pos": 12,
+          "number": "107",
+          "driver": "Tobias Martinez",
+          "vehicle": "CHEVROLET",
+          "laps": 9,
+          "gap": "+11 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260816_144726_FINAL.pdf",
+        "title": "FINAL — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    }
+  ]
+}

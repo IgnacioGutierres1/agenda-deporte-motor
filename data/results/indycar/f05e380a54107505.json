@@ -1,0 +1,1268 @@
+{
+  "seriesId": "indycar",
+  "eventId": "f05e380a54107505",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "sessions": [
+    {
+      "sessionId": "4ff64f64de3ca287",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "27",
+          "driver": "Kyle Kirkwood",
+          "team": "Andretti Global w/ Curb-Agajanian",
+          "laps": 147,
+          "time": "2:40:42.9548",
+          "bestLap": "58.2879",
+          "points": 53
+        },
+        {
+          "pos": 2,
+          "number": "7",
+          "driver": "Christian Lundgaard",
+          "team": "Arrow McLaren",
+          "laps": 147,
+          "gap": "+3.0906",
+          "bestLap": "58.4052",
+          "points": 40
+        },
+        {
+          "pos": 3,
+          "number": "26",
+          "driver": "Will Power",
+          "team": "Andretti Global",
+          "laps": 147,
+          "gap": "+4.1842",
+          "bestLap": "57.9495",
+          "points": 36
+        },
+        {
+          "pos": 4,
+          "number": "28",
+          "driver": "Marcus Ericsson",
+          "team": "Andretti Global",
+          "laps": 147,
+          "gap": "+12.4637",
+          "bestLap": "59.0114",
+          "points": 32
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Kyffin Simpson",
+          "team": "Chip Ganassi Racing",
+          "laps": 147,
+          "gap": "+13.8628",
+          "bestLap": "58.8042",
+          "points": 30
+        },
+        {
+          "pos": 6,
+          "number": "6",
+          "driver": "Nolan Siegel",
+          "team": "Arrow McLaren",
+          "laps": 147,
+          "gap": "+15.6513",
+          "bestLap": "58.9947",
+          "points": 28
+        },
+        {
+          "pos": 7,
+          "number": "9",
+          "driver": "Scott Dixon",
+          "team": "Chip Ganassi Racing",
+          "laps": 147,
+          "gap": "+18.5866",
+          "bestLap": "58.8756",
+          "points": 26
+        },
+        {
+          "pos": 8,
+          "number": "2",
+          "driver": "Josef Newgarden",
+          "team": "Team Penske",
+          "laps": 147,
+          "gap": "+19.4761",
+          "bestLap": "59.1804",
+          "points": 24
+        },
+        {
+          "pos": 9,
+          "number": "4",
+          "driver": "Caio Collet",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 147,
+          "gap": "+20.1903",
+          "bestLap": "59.2109",
+          "points": 22
+        },
+        {
+          "pos": 10,
+          "number": "18",
+          "driver": "Romain Grosjean",
+          "team": "Dale Coyne Racing",
+          "laps": 147,
+          "gap": "+22.2182",
+          "bestLap": "59.1661",
+          "points": 20
+        },
+        {
+          "pos": 11,
+          "number": "47",
+          "driver": "Mick Schumacher",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 147,
+          "gap": "+26.6443",
+          "bestLap": "58.8516",
+          "points": 19
+        },
+        {
+          "pos": 12,
+          "number": "20",
+          "driver": "Alexander Rossi",
+          "team": "ECR",
+          "laps": 147,
+          "gap": "+30.9341",
+          "bestLap": "59.0011",
+          "points": 18
+        },
+        {
+          "pos": 13,
+          "number": "15",
+          "driver": "Graham Rahal",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 147,
+          "gap": "+32.0496",
+          "bestLap": "58.8872",
+          "points": 18
+        },
+        {
+          "pos": 14,
+          "number": "21",
+          "driver": "Christian Rasmussen",
+          "team": "ECR",
+          "laps": 146,
+          "gap": "+1 vuelta",
+          "bestLap": "59.1282",
+          "points": 16
+        },
+        {
+          "pos": 15,
+          "number": "19",
+          "driver": "Dennis Hauger",
+          "team": "Dale Coyne Racing",
+          "laps": 146,
+          "gap": "+1 vuelta",
+          "bestLap": "59.0191",
+          "points": 15
+        },
+        {
+          "pos": 16,
+          "number": "5",
+          "driver": "Pato O'Ward",
+          "team": "Arrow McLaren",
+          "laps": 146,
+          "gap": "+1 vuelta",
+          "bestLap": "59.3916",
+          "points": 14
+        },
+        {
+          "pos": 17,
+          "number": "66",
+          "driver": "Marcus Armstrong",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 146,
+          "gap": "+1 vuelta",
+          "bestLap": "59.1687",
+          "points": 13
+        },
+        {
+          "pos": 18,
+          "number": "45",
+          "driver": "Louis Foster",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 146,
+          "gap": "+1 vuelta",
+          "bestLap": "59.2556",
+          "points": 12
+        },
+        {
+          "pos": 19,
+          "number": "60",
+          "driver": "Felix Rosenqvist",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 146,
+          "gap": "+1 vuelta",
+          "bestLap": "59.1886",
+          "points": 11
+        },
+        {
+          "pos": 20,
+          "number": "10",
+          "driver": "Alex Palou",
+          "team": "Chip Ganassi Racing",
+          "laps": 144,
+          "gap": "+3 vueltas",
+          "bestLap": "58.5175",
+          "points": 11
+        },
+        {
+          "pos": 21,
+          "status": "Retired",
+          "number": "14",
+          "driver": "Santino Ferrucci",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 132,
+          "gap": "+15 vueltas",
+          "bestLap": "59.3017",
+          "points": 9
+        },
+        {
+          "pos": 22,
+          "status": "Contact",
+          "number": "3",
+          "driver": "Scott McLaughlin",
+          "team": "Team Penske",
+          "laps": 128,
+          "gap": "+19 vueltas",
+          "bestLap": "58.7462",
+          "points": 9
+        },
+        {
+          "pos": 23,
+          "status": "Contact",
+          "number": "76",
+          "driver": "Rinus VeeKay",
+          "team": "Juncos Hollinger Racing",
+          "laps": 43,
+          "gap": "+104 vueltas",
+          "bestLap": "59.5898",
+          "points": 7
+        },
+        {
+          "pos": 24,
+          "status": "Contact",
+          "number": "12",
+          "driver": "David Malukas",
+          "team": "Team Penske",
+          "laps": 35,
+          "gap": "+112 vueltas",
+          "bestLap": "59.4677",
+          "points": 6
+        },
+        {
+          "pos": 25,
+          "status": "Contact",
+          "number": "77",
+          "driver": "Sting Ray Robb",
+          "team": "Juncos Hollinger Racing",
+          "laps": 35,
+          "gap": "+112 vueltas",
+          "bestLap": "59.9331",
+          "points": 5
+        }
+      ],
+      "source": {
+        "url": "https://www.indycar.com/results/ntt-indycar-series/2026/freedom-250-grand-prix-of-washington-dc/race",
+        "title": "Resultados — Freedom 250 Grand Prix of Washington DC — Race",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "00eb1a57a4278dfe",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "2",
+          "driver": "Josef Newgarden",
+          "team": "Team Penske",
+          "laps": 15,
+          "bestLap": "57.6076"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Alex Palou",
+          "team": "Chip Ganassi Racing",
+          "laps": 24,
+          "gap": "+0.0782",
+          "bestLap": "57.6858"
+        },
+        {
+          "pos": 3,
+          "number": "12",
+          "driver": "David Malukas",
+          "team": "Team Penske",
+          "laps": 28,
+          "gap": "+0.2288",
+          "bestLap": "57.8364"
+        },
+        {
+          "pos": 4,
+          "number": "27",
+          "driver": "Kyle Kirkwood",
+          "team": "Andretti Global w/ Curb-Agajanian",
+          "laps": 23,
+          "gap": "+0.2692",
+          "bestLap": "57.8768"
+        },
+        {
+          "pos": 5,
+          "number": "5",
+          "driver": "Pato O'Ward",
+          "team": "Arrow McLaren",
+          "laps": 23,
+          "gap": "+0.3613",
+          "bestLap": "57.9689"
+        },
+        {
+          "pos": 6,
+          "number": "60",
+          "driver": "Felix Rosenqvist",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 27,
+          "gap": "+0.5138",
+          "bestLap": "58.1214"
+        },
+        {
+          "pos": 7,
+          "number": "9",
+          "driver": "Scott Dixon",
+          "team": "Chip Ganassi Racing",
+          "laps": 28,
+          "gap": "+0.6396",
+          "bestLap": "58.2472"
+        },
+        {
+          "pos": 8,
+          "number": "4",
+          "driver": "Caio Collet",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 27,
+          "gap": "+0.6503",
+          "bestLap": "58.2579"
+        },
+        {
+          "pos": 9,
+          "number": "20",
+          "driver": "Alexander Rossi",
+          "team": "ECR",
+          "laps": 24,
+          "gap": "+0.7101",
+          "bestLap": "58.3177"
+        },
+        {
+          "pos": 10,
+          "number": "76",
+          "driver": "Rinus VeeKay",
+          "team": "Juncos Hollinger Racing",
+          "laps": 28,
+          "gap": "+0.7705",
+          "bestLap": "58.3781"
+        },
+        {
+          "pos": 11,
+          "number": "47",
+          "driver": "Mick Schumacher",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 24,
+          "gap": "+0.8406",
+          "bestLap": "58.4482"
+        },
+        {
+          "pos": 12,
+          "number": "7",
+          "driver": "Christian Lundgaard",
+          "team": "Arrow McLaren",
+          "laps": 26,
+          "gap": "+0.9554",
+          "bestLap": "58.5630"
+        },
+        {
+          "pos": 13,
+          "number": "3",
+          "driver": "Scott McLaughlin",
+          "team": "Team Penske",
+          "laps": 28,
+          "gap": "+0.9651",
+          "bestLap": "58.5727"
+        },
+        {
+          "pos": 14,
+          "number": "15",
+          "driver": "Graham Rahal",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 24,
+          "gap": "+0.9922",
+          "bestLap": "58.5998"
+        },
+        {
+          "pos": 15,
+          "number": "28",
+          "driver": "Marcus Ericsson",
+          "team": "Andretti Global",
+          "laps": 25,
+          "gap": "+1.0062",
+          "bestLap": "58.6138"
+        },
+        {
+          "pos": 16,
+          "number": "77",
+          "driver": "Sting Ray Robb",
+          "team": "Juncos Hollinger Racing",
+          "laps": 28,
+          "gap": "+1.0213",
+          "bestLap": "58.6289"
+        },
+        {
+          "pos": 17,
+          "number": "6",
+          "driver": "Nolan Siegel",
+          "team": "Arrow McLaren",
+          "laps": 24,
+          "gap": "+1.0711",
+          "bestLap": "58.6787"
+        },
+        {
+          "pos": 18,
+          "number": "18",
+          "driver": "Romain Grosjean",
+          "team": "Dale Coyne Racing",
+          "laps": 22,
+          "gap": "+1.0800",
+          "bestLap": "58.6876"
+        },
+        {
+          "pos": 19,
+          "number": "66",
+          "driver": "Marcus Armstrong",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 27,
+          "gap": "+1.1530",
+          "bestLap": "58.7606"
+        },
+        {
+          "pos": 20,
+          "number": "19",
+          "driver": "Dennis Hauger",
+          "team": "Dale Coyne Racing",
+          "laps": 23,
+          "gap": "+1.1800",
+          "bestLap": "58.7876"
+        },
+        {
+          "pos": 21,
+          "number": "14",
+          "driver": "Santino Ferrucci",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 19,
+          "gap": "+1.2075",
+          "bestLap": "58.8151"
+        },
+        {
+          "pos": 22,
+          "number": "8",
+          "driver": "Kyffin Simpson",
+          "team": "Chip Ganassi Racing",
+          "laps": 21,
+          "gap": "+1.2166",
+          "bestLap": "58.8242"
+        },
+        {
+          "pos": 23,
+          "number": "21",
+          "driver": "Christian Rasmussen",
+          "team": "ECR",
+          "laps": 16,
+          "gap": "+1.2921",
+          "bestLap": "58.8997"
+        },
+        {
+          "pos": 24,
+          "number": "26",
+          "driver": "Will Power",
+          "team": "Andretti Global",
+          "laps": 13,
+          "gap": "+1.5631",
+          "bestLap": "59.1707"
+        },
+        {
+          "pos": 25,
+          "number": "45",
+          "driver": "Louis Foster",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 22,
+          "gap": "+1.6183",
+          "bestLap": "59.2259"
+        }
+      ],
+      "source": {
+        "url": "https://www.indycar.com/results/ntt-indycar-series/2026/freedom-250-grand-prix-of-washington-dc/warmup",
+        "title": "Resultados — Freedom 250 Grand Prix of Washington DC — Warmup",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "573b85f77344627f",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "10",
+          "driver": "Alex Palou",
+          "team": "Chip Ganassi Racing",
+          "laps": 1,
+          "bestLap": "56.8993",
+          "class": "Firestone Fast 6",
+          "classPos": 1
+        },
+        {
+          "pos": 2,
+          "number": "27",
+          "driver": "Kyle Kirkwood",
+          "team": "Andretti Global w/ Curb-Agajanian",
+          "laps": 1,
+          "gap": "+0.5668",
+          "bestLap": "57.4661",
+          "class": "Firestone Fast 6",
+          "classPos": 2
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Scott McLaughlin",
+          "team": "Team Penske",
+          "laps": 1,
+          "gap": "+0.7207",
+          "bestLap": "57.6200",
+          "class": "Firestone Fast 6",
+          "classPos": 3
+        },
+        {
+          "pos": 4,
+          "number": "21",
+          "driver": "Christian Rasmussen",
+          "team": "ECR",
+          "laps": 1,
+          "gap": "+0.9899",
+          "bestLap": "57.8892",
+          "class": "Firestone Fast 6",
+          "classPos": 4
+        },
+        {
+          "pos": 5,
+          "number": "66",
+          "driver": "Marcus Armstrong",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 1,
+          "gap": "+1.9152",
+          "bestLap": "58.8145",
+          "class": "Firestone Fast 6",
+          "classPos": 5
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "David Malukas",
+          "team": "Team Penske",
+          "laps": 1,
+          "gap": "+13.7716",
+          "bestLap": "1:10.6709",
+          "class": "Firestone Fast 6",
+          "classPos": 6
+        },
+        {
+          "pos": 7,
+          "number": "5",
+          "driver": "Pato O'Ward",
+          "team": "Arrow McLaren",
+          "laps": 8,
+          "gap": "+0.4773",
+          "bestLap": "57.3064",
+          "class": "Ronda 2 (Fast 12)",
+          "classPos": 7
+        },
+        {
+          "pos": 8,
+          "number": "19",
+          "driver": "Dennis Hauger",
+          "team": "Dale Coyne Racing",
+          "laps": 10,
+          "gap": "+0.5911",
+          "bestLap": "57.4202",
+          "class": "Ronda 2 (Fast 12)",
+          "classPos": 8
+        },
+        {
+          "pos": 9,
+          "number": "7",
+          "driver": "Christian Lundgaard",
+          "team": "Arrow McLaren",
+          "laps": 7,
+          "gap": "+0.6129",
+          "bestLap": "57.4420",
+          "class": "Ronda 2 (Fast 12)",
+          "classPos": 9
+        },
+        {
+          "pos": 10,
+          "number": "60",
+          "driver": "Felix Rosenqvist",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 9,
+          "gap": "+0.6829",
+          "bestLap": "57.5120",
+          "class": "Ronda 2 (Fast 12)",
+          "classPos": 10
+        },
+        {
+          "pos": 11,
+          "number": "4",
+          "driver": "Caio Collet",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 8,
+          "gap": "+0.9116",
+          "bestLap": "57.7407",
+          "class": "Ronda 2 (Fast 12)",
+          "classPos": 11
+        },
+        {
+          "pos": 12,
+          "number": "6",
+          "driver": "Nolan Siegel",
+          "team": "Arrow McLaren",
+          "laps": 9,
+          "gap": "+1.2410",
+          "bestLap": "58.0701",
+          "class": "Ronda 2 (Fast 12)",
+          "classPos": 12
+        },
+        {
+          "pos": 13,
+          "number": "26",
+          "driver": "Will Power",
+          "team": "Andretti Global",
+          "laps": 8,
+          "gap": "+0.3187",
+          "bestLap": "57.0916",
+          "class": "Ronda 1 · Grupo 1",
+          "classPos": 7
+        },
+        {
+          "pos": 14,
+          "number": "9",
+          "driver": "Scott Dixon",
+          "team": "Chip Ganassi Racing",
+          "laps": 9,
+          "gap": "+0.3492",
+          "bestLap": "57.5785",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 7
+        },
+        {
+          "pos": 15,
+          "number": "28",
+          "driver": "Marcus Ericsson",
+          "team": "Andretti Global",
+          "laps": 8,
+          "gap": "+0.5070",
+          "bestLap": "57.2799",
+          "class": "Ronda 1 · Grupo 1",
+          "classPos": 8
+        },
+        {
+          "pos": 16,
+          "number": "2",
+          "driver": "Josef Newgarden",
+          "team": "Team Penske",
+          "laps": 7,
+          "gap": "+0.4036",
+          "bestLap": "57.6329",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 8
+        },
+        {
+          "pos": 17,
+          "number": "20",
+          "driver": "Alexander Rossi",
+          "team": "ECR",
+          "laps": 8,
+          "gap": "+0.7064",
+          "bestLap": "57.4793",
+          "class": "Ronda 1 · Grupo 1",
+          "classPos": 9
+        },
+        {
+          "pos": 18,
+          "number": "45",
+          "driver": "Louis Foster",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 9,
+          "gap": "+0.5164",
+          "bestLap": "57.7457",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 9
+        },
+        {
+          "pos": 19,
+          "number": "76",
+          "driver": "Rinus VeeKay",
+          "team": "Juncos Hollinger Racing",
+          "laps": 3,
+          "gap": "+0.7217",
+          "bestLap": "57.4946",
+          "class": "Ronda 1 · Grupo 1",
+          "classPos": 10
+        },
+        {
+          "pos": 20,
+          "number": "47",
+          "driver": "Mick Schumacher",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 8,
+          "gap": "+0.6112",
+          "bestLap": "57.8405",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 10
+        },
+        {
+          "pos": 21,
+          "number": "18",
+          "driver": "Romain Grosjean",
+          "team": "Dale Coyne Racing",
+          "laps": 9,
+          "gap": "+0.7351",
+          "bestLap": "57.5080",
+          "class": "Ronda 1 · Grupo 1",
+          "classPos": 11
+        },
+        {
+          "pos": 22,
+          "number": "14",
+          "driver": "Santino Ferrucci",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 9,
+          "gap": "+0.7322",
+          "bestLap": "57.9615",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 11
+        },
+        {
+          "pos": 23,
+          "number": "15",
+          "driver": "Graham Rahal",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 9,
+          "gap": "+1.0968",
+          "bestLap": "57.8697",
+          "class": "Ronda 1 · Grupo 1",
+          "classPos": 12
+        },
+        {
+          "pos": 24,
+          "number": "77",
+          "driver": "Sting Ray Robb",
+          "team": "Juncos Hollinger Racing",
+          "laps": 9,
+          "gap": "+1.2534",
+          "bestLap": "58.4827",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 12
+        },
+        {
+          "pos": 25,
+          "number": "8",
+          "driver": "Kyffin Simpson",
+          "team": "Chip Ganassi Racing",
+          "laps": 8,
+          "gap": "+1.9361",
+          "bestLap": "59.1654",
+          "class": "Ronda 1 · Grupo 2",
+          "classPos": 13
+        }
+      ],
+      "source": {
+        "url": "https://www.indycar.com/results/ntt-indycar-series/2026/freedom-250-grand-prix-of-washington-dc/qualifying---firestone-fast-6",
+        "title": "Resultados — Freedom 250 Grand Prix of Washington DC — Qualifying",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "79a90b54134a4d6a",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "10",
+          "driver": "Alex Palou",
+          "team": "Chip Ganassi Racing",
+          "laps": 21,
+          "bestLap": "56.6145"
+        },
+        {
+          "pos": 2,
+          "number": "27",
+          "driver": "Kyle Kirkwood",
+          "team": "Andretti Global w/ Curb-Agajanian",
+          "laps": 32,
+          "gap": "+0.0766",
+          "bestLap": "56.6911"
+        },
+        {
+          "pos": 3,
+          "number": "9",
+          "driver": "Scott Dixon",
+          "team": "Chip Ganassi Racing",
+          "laps": 35,
+          "gap": "+0.2035",
+          "bestLap": "56.8180"
+        },
+        {
+          "pos": 4,
+          "number": "6",
+          "driver": "Nolan Siegel",
+          "team": "Arrow McLaren",
+          "laps": 30,
+          "gap": "+0.2252",
+          "bestLap": "56.8397"
+        },
+        {
+          "pos": 5,
+          "number": "5",
+          "driver": "Pato O'Ward",
+          "team": "Arrow McLaren",
+          "laps": 32,
+          "gap": "+0.2591",
+          "bestLap": "56.8736"
+        },
+        {
+          "pos": 6,
+          "number": "7",
+          "driver": "Christian Lundgaard",
+          "team": "Arrow McLaren",
+          "laps": 37,
+          "gap": "+0.2612",
+          "bestLap": "56.8757"
+        },
+        {
+          "pos": 7,
+          "number": "3",
+          "driver": "Scott McLaughlin",
+          "team": "Team Penske",
+          "laps": 37,
+          "gap": "+0.2802",
+          "bestLap": "56.8947"
+        },
+        {
+          "pos": 8,
+          "number": "20",
+          "driver": "Alexander Rossi",
+          "team": "ECR",
+          "laps": 34,
+          "gap": "+0.3223",
+          "bestLap": "56.9368"
+        },
+        {
+          "pos": 9,
+          "number": "28",
+          "driver": "Marcus Ericsson",
+          "team": "Andretti Global",
+          "laps": 31,
+          "gap": "+0.4812",
+          "bestLap": "57.0957"
+        },
+        {
+          "pos": 10,
+          "number": "21",
+          "driver": "Christian Rasmussen",
+          "team": "ECR",
+          "laps": 33,
+          "gap": "+0.5178",
+          "bestLap": "57.1323"
+        },
+        {
+          "pos": 11,
+          "number": "12",
+          "driver": "David Malukas",
+          "team": "Team Penske",
+          "laps": 30,
+          "gap": "+0.5876",
+          "bestLap": "57.2021"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Marcus Armstrong",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 34,
+          "gap": "+0.5931",
+          "bestLap": "57.2076"
+        },
+        {
+          "pos": 13,
+          "number": "26",
+          "driver": "Will Power",
+          "team": "Andretti Global",
+          "laps": 33,
+          "gap": "+0.6169",
+          "bestLap": "57.2314"
+        },
+        {
+          "pos": 14,
+          "number": "4",
+          "driver": "Caio Collet",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 23,
+          "gap": "+0.6667",
+          "bestLap": "57.2812"
+        },
+        {
+          "pos": 15,
+          "number": "47",
+          "driver": "Mick Schumacher",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 29,
+          "gap": "+0.7831",
+          "bestLap": "57.3976"
+        },
+        {
+          "pos": 16,
+          "number": "60",
+          "driver": "Felix Rosenqvist",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 31,
+          "gap": "+0.8559",
+          "bestLap": "57.4704"
+        },
+        {
+          "pos": 17,
+          "number": "76",
+          "driver": "Rinus VeeKay",
+          "team": "Juncos Hollinger Racing",
+          "laps": 32,
+          "gap": "+0.9044",
+          "bestLap": "57.5189"
+        },
+        {
+          "pos": 18,
+          "number": "19",
+          "driver": "Dennis Hauger",
+          "team": "Dale Coyne Racing",
+          "laps": 30,
+          "gap": "+0.9352",
+          "bestLap": "57.5497"
+        },
+        {
+          "pos": 19,
+          "number": "2",
+          "driver": "Josef Newgarden",
+          "team": "Team Penske",
+          "laps": 32,
+          "gap": "+0.9655",
+          "bestLap": "57.5800"
+        },
+        {
+          "pos": 20,
+          "number": "14",
+          "driver": "Santino Ferrucci",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 34,
+          "gap": "+0.9656",
+          "bestLap": "57.5801"
+        },
+        {
+          "pos": 21,
+          "number": "8",
+          "driver": "Kyffin Simpson",
+          "team": "Chip Ganassi Racing",
+          "laps": 30,
+          "gap": "+0.9711",
+          "bestLap": "57.5856"
+        },
+        {
+          "pos": 22,
+          "number": "18",
+          "driver": "Romain Grosjean",
+          "team": "Dale Coyne Racing",
+          "laps": 31,
+          "gap": "+1.2692",
+          "bestLap": "57.8837"
+        },
+        {
+          "pos": 23,
+          "number": "77",
+          "driver": "Sting Ray Robb",
+          "team": "Juncos Hollinger Racing",
+          "laps": 28,
+          "gap": "+1.8579",
+          "bestLap": "58.4724"
+        },
+        {
+          "pos": 24,
+          "number": "45",
+          "driver": "Louis Foster",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 29,
+          "gap": "+2.3770",
+          "bestLap": "58.9915"
+        },
+        {
+          "pos": 25,
+          "number": "15",
+          "driver": "Graham Rahal",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 7,
+          "gap": "+3.1493",
+          "bestLap": "59.7638"
+        }
+      ],
+      "source": {
+        "url": "https://www.indycar.com/results/ntt-indycar-series/2026/freedom-250-grand-prix-of-washington-dc/practice-2",
+        "title": "Resultados — Freedom 250 Grand Prix of Washington DC — Practice 2",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "79a50d54134667f9",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "27",
+          "driver": "Kyle Kirkwood",
+          "team": "Andretti Global w/ Curb-Agajanian",
+          "laps": 28,
+          "bestLap": "57.3744"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Alex Palou",
+          "team": "Chip Ganassi Racing",
+          "laps": 23,
+          "gap": "+0.2379",
+          "bestLap": "57.6123"
+        },
+        {
+          "pos": 3,
+          "number": "19",
+          "driver": "Dennis Hauger",
+          "team": "Dale Coyne Racing",
+          "laps": 38,
+          "gap": "+0.3637",
+          "bestLap": "57.7381"
+        },
+        {
+          "pos": 4,
+          "number": "12",
+          "driver": "David Malukas",
+          "team": "Team Penske",
+          "laps": 24,
+          "gap": "+0.3713",
+          "bestLap": "57.7457"
+        },
+        {
+          "pos": 5,
+          "number": "28",
+          "driver": "Marcus Ericsson",
+          "team": "Andretti Global",
+          "laps": 25,
+          "gap": "+0.4265",
+          "bestLap": "57.8009"
+        },
+        {
+          "pos": 6,
+          "number": "2",
+          "driver": "Josef Newgarden",
+          "team": "Team Penske",
+          "laps": 27,
+          "gap": "+0.6081",
+          "bestLap": "57.9825"
+        },
+        {
+          "pos": 7,
+          "number": "8",
+          "driver": "Kyffin Simpson",
+          "team": "Chip Ganassi Racing",
+          "laps": 24,
+          "gap": "+0.6879",
+          "bestLap": "58.0623"
+        },
+        {
+          "pos": 8,
+          "number": "20",
+          "driver": "Alexander Rossi",
+          "team": "ECR",
+          "laps": 23,
+          "gap": "+0.7562",
+          "bestLap": "58.1306"
+        },
+        {
+          "pos": 9,
+          "number": "76",
+          "driver": "Rinus VeeKay",
+          "team": "Juncos Hollinger Racing",
+          "laps": 34,
+          "gap": "+0.7920",
+          "bestLap": "58.1664"
+        },
+        {
+          "pos": 10,
+          "number": "21",
+          "driver": "Christian Rasmussen",
+          "team": "ECR",
+          "laps": 32,
+          "gap": "+0.8253",
+          "bestLap": "58.1997"
+        },
+        {
+          "pos": 11,
+          "number": "7",
+          "driver": "Christian Lundgaard",
+          "team": "Arrow McLaren",
+          "laps": 30,
+          "gap": "+0.8513",
+          "bestLap": "58.2257"
+        },
+        {
+          "pos": 12,
+          "number": "9",
+          "driver": "Scott Dixon",
+          "team": "Chip Ganassi Racing",
+          "laps": 20,
+          "gap": "+0.8570",
+          "bestLap": "58.2314"
+        },
+        {
+          "pos": 13,
+          "number": "5",
+          "driver": "Pato O'Ward",
+          "team": "Arrow McLaren",
+          "laps": 27,
+          "gap": "+0.8590",
+          "bestLap": "58.2334"
+        },
+        {
+          "pos": 14,
+          "number": "4",
+          "driver": "Caio Collet",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 30,
+          "gap": "+0.9729",
+          "bestLap": "58.3473"
+        },
+        {
+          "pos": 15,
+          "number": "66",
+          "driver": "Marcus Armstrong",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 26,
+          "gap": "+0.9864",
+          "bestLap": "58.3608"
+        },
+        {
+          "pos": 16,
+          "number": "6",
+          "driver": "Nolan Siegel",
+          "team": "Arrow McLaren",
+          "laps": 29,
+          "gap": "+0.9866",
+          "bestLap": "58.3610"
+        },
+        {
+          "pos": 17,
+          "number": "14",
+          "driver": "Santino Ferrucci",
+          "team": "A.J. Foyt Enterprises",
+          "laps": 23,
+          "gap": "+1.1299",
+          "bestLap": "58.5043"
+        },
+        {
+          "pos": 18,
+          "number": "3",
+          "driver": "Scott McLaughlin",
+          "team": "Team Penske",
+          "laps": 23,
+          "gap": "+1.2325",
+          "bestLap": "58.6069"
+        },
+        {
+          "pos": 19,
+          "number": "77",
+          "driver": "Sting Ray Robb",
+          "team": "Juncos Hollinger Racing",
+          "laps": 27,
+          "gap": "+1.2330",
+          "bestLap": "58.6074"
+        },
+        {
+          "pos": 20,
+          "number": "60",
+          "driver": "Felix Rosenqvist",
+          "team": "Meyer Shank w/ Curb-Agajanian",
+          "laps": 22,
+          "gap": "+1.2347",
+          "bestLap": "58.6091"
+        },
+        {
+          "pos": 21,
+          "number": "47",
+          "driver": "Mick Schumacher",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 31,
+          "gap": "+1.2520",
+          "bestLap": "58.6264"
+        },
+        {
+          "pos": 22,
+          "number": "26",
+          "driver": "Will Power",
+          "team": "Andretti Global",
+          "laps": 19,
+          "gap": "+1.5648",
+          "bestLap": "58.9392"
+        },
+        {
+          "pos": 23,
+          "number": "15",
+          "driver": "Graham Rahal",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 26,
+          "gap": "+1.7748",
+          "bestLap": "59.1492"
+        },
+        {
+          "pos": 24,
+          "number": "18",
+          "driver": "Romain Grosjean",
+          "team": "Dale Coyne Racing",
+          "laps": 22,
+          "gap": "+1.8171",
+          "bestLap": "59.1915"
+        },
+        {
+          "pos": 25,
+          "number": "45",
+          "driver": "Louis Foster",
+          "team": "Rahal Letterman Lanigan Racing",
+          "laps": 20,
+          "gap": "+1.9531",
+          "bestLap": "59.3275"
+        }
+      ],
+      "source": {
+        "url": "https://www.indycar.com/results/ntt-indycar-series/2026/freedom-250-grand-prix-of-washington-dc/practice-1",
+        "title": "Resultados — Freedom 250 Grand Prix of Washington DC — Practice 1",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    }
+  ]
+}

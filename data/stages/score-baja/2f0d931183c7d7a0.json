@@ -1,0 +1,46 @@
+{
+  "seriesId": "score-baja",
+  "eventId": "2f0d931183c7d7a0",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "surface": "arena",
+  "competitiveKm": 452.43,
+  "totalKm": 453.59,
+  "routeMapUrl": "https://score-raceinfo.com/wp-content/uploads/2026/03/2026-SF250-map-final-16x20-compressed.pdf",
+  "routeMapCredit": "© SCORE International",
+  "stages": [
+    {
+      "code": "Sector 1",
+      "name": "Malecon > Morelia Jct",
+      "kind": "especial",
+      "date": "2026-03-28",
+      "startUtc": "2026-03-28T17:00:00Z",
+      "localStartText": "10:00",
+      "distanceKm": 300.42,
+      "note": "Hasta el puesto de control 1 (Morelia Jct), en la milla 186,67 de carrera. Paso estimado del primero: 13:03 (sáb); cierre: 21:06 (sáb) (hora local). Tiempo límite de la carrera: 14 horas.",
+      "sessionId": "89b1c9e7888e94f1"
+    },
+    {
+      "code": "Sector 2",
+      "name": "Morelia Jct > Cronometraje",
+      "kind": "especial",
+      "date": "2026-03-28",
+      "distanceKm": 152.01,
+      "note": "Hasta el control de cronometraje, en la milla 281,13 de carrera. Paso estimado del primero: 14:39 (sáb); cierre: 01:47 (dom) (hora local)."
+    },
+    {
+      "code": "Sector 3",
+      "name": "Cronometraje > Malecon",
+      "kind": "enlace",
+      "date": "2026-03-28",
+      "liaisonKm": 1.16,
+      "note": "Hasta la llegada, en la milla 281,85 de carrera. Paso estimado del primero: 14:40 (sáb); cierre: 01:50 (dom) (hora local). Sin cronometrar: la llegada cronometrada es en el control de cronometraje."
+    }
+  ],
+  "source": {
+    "url": "https://score-raceinfo.com/race-information-2026-san-felipe-250/",
+    "title": "SCORE International – Race Info 2026 San Felipe 250",
+    "kind": "pdf",
+    "method": "directo",
+    "fetchedAt": "2026-11-14T10:06:10Z"
+  }
+}

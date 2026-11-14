@@ -1,0 +1,61 @@
+{
+  "seriesId": "score-baja",
+  "eventId": "5811c92fdb5c2630",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "surface": "arena",
+  "competitiveKm": 1564.36,
+  "routeMapUrl": "https://score-international.com/race-teams/images/race-maps/2026-B1000-map-small.jpg",
+  "routeMapCredit": "© SCORE International",
+  "stages": [
+    {
+      "code": "Sector 1",
+      "name": "San José del Cabo > Centenario - La Paz",
+      "kind": "especial",
+      "date": "2026-11-13",
+      "startUtc": "2026-11-13T16:00:00Z",
+      "localStartText": "09:00",
+      "distanceKm": 355.17,
+      "note": "Hasta el puesto de control 1 (Centenario - La Paz), en la milla 220,69 de carrera. Paso estimado del primero: 12:32 (vie); cierre: 20:28 (vie) (hora local). Tiempo límite de la carrera: 40 horas.",
+      "sessionId": "022d137395b6187e"
+    },
+    {
+      "code": "Sector 2",
+      "name": "Centenario - La Paz > Cd. Insurgentes",
+      "kind": "especial",
+      "date": "2026-11-13",
+      "distanceKm": 308.67,
+      "note": "Hasta el puesto de control 2 (Cd. Insurgentes), en la milla 412,49 de carrera. Paso estimado del primero: 15:26 (vie); cierre: 04:21 (sáb) (hora local)."
+    },
+    {
+      "code": "Sector 3",
+      "name": "Cd. Insurgentes > Francisco Villa",
+      "kind": "especial",
+      "date": "2026-11-13",
+      "distanceKm": 319.72,
+      "note": "Hasta el puesto de control 3 (Francisco Villa), en la milla 611,16 de carrera. Paso estimado del primero: 19:02 (vie); cierre: 12:32 (sáb) (hora local)."
+    },
+    {
+      "code": "Sector 4",
+      "name": "Francisco Villa > Santa Fe",
+      "kind": "especial",
+      "date": "2026-11-13",
+      "distanceKm": 285.55,
+      "note": "Hasta el puesto de control 4 (Santa Fe), en la milla 788,59 de carrera. Paso estimado del primero: 21:42 (vie); cierre: 19:50 (sáb) (hora local)."
+    },
+    {
+      "code": "Sector 5",
+      "name": "Santa Fe > San José del Cabo",
+      "kind": "especial",
+      "date": "2026-11-13",
+      "distanceKm": 295.25,
+      "note": "Hasta la llegada, en la milla 978,60 de carrera. Paso estimado del primero: 00:33 (sáb); cierre: 03:23 (dom) (hora local)."
+    }
+  ],
+  "source": {
+    "url": "https://score-raceinfo.com/race-info-2026-baja-1000/",
+    "title": "SCORE International – Race Info 2026 Baja 1000",
+    "kind": "pdf",
+    "method": "directo",
+    "fetchedAt": "2026-11-14T10:06:10Z"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "seriesId": "score-baja",
+  "eventId": "37fe2ea2a112a657",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "surface": "arena",
+  "competitiveKm": 681.01,
+  "totalKm": 706.24,
+  "routeMapUrl": "https://score-raceinfo.com/wp-content/uploads/2026/08/2026-Baja-400-Map-Web-Optimized.pdf",
+  "routeMapCredit": "© SCORE International",
+  "stages": [
+    {
+      "code": "Sector 1",
+      "name": "Riviera Ensenada > Peña Colorado",
+      "kind": "especial",
+      "date": "2026-09-12",
+      "startUtc": "2026-09-12T17:00:00Z",
+      "localStartText": "10:00",
+      "distanceKm": 348.63,
+      "note": "Hasta el puesto de control 1 (Peña Colorado), en la milla 216,63 de carrera. Paso estimado del primero: 13:51 (sáb); cierre: 19:50 (sáb) (hora local). Tiempo límite de la carrera: 16 horas.",
+      "sessionId": "17f0fe062d1f1ceb"
+    },
+    {
+      "code": "Sector 2",
+      "name": "Peña Colorado > Rancho Nelson",
+      "kind": "especial",
+      "date": "2026-09-12",
+      "distanceKm": 332.38,
+      "note": "Hasta el control de cronometraje de Rancho Nelson, en la milla 423,16 de carrera. Paso estimado del primero: 17:28 (sáb); cierre: 03:39 (dom) (hora local)."
+    },
+    {
+      "code": "Sector 3",
+      "name": "Rancho Nelson > Riviera Ensenada",
+      "kind": "enlace",
+      "date": "2026-09-12",
+      "liaisonKm": 25.23,
+      "note": "Hasta la llegada, en la milla 438,84 de carrera. Paso estimado del primero: 17:53 (sáb); cierre: 04:14 (dom) (hora local). Sin cronometrar: la llegada cronometrada es en el control de cronometraje de Rancho Nelson."
+    }
+  ],
+  "source": {
+    "url": "https://score-raceinfo.com/race-info-2026-baja-400/",
+    "title": "SCORE International – Race Info 2026 Baja 400",
+    "kind": "pdf",
+    "method": "directo",
+    "fetchedAt": "2026-11-14T10:06:10Z"
+  }
+}

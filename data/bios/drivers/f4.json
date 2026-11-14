@@ -42,6 +42,8 @@
           "seriesId": "24h-series",
           "pos": 21,
           "points": 32,
+          "races": 5,
+          "wins": 0,
           "source": "app"
         },
         {
@@ -962,6 +964,10 @@
           "seriesId": "tc",
           "pos": 10,
           "points": 296.5,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
           "source": "app"
         },
         {
@@ -971,6 +977,10 @@
           "team": "MG-C Pergamino",
           "pos": 3,
           "points": 249,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
           "source": "app"
         },
         {

@@ -27,6 +27,10 @@
           "seriesId": "tc",
           "pos": 1,
           "points": 347,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
           "source": "app"
         },
         {
@@ -35,6 +39,10 @@
           "seriesId": "tc-pickup",
           "pos": 1,
           "points": 378.5,
+          "races": 6,
+          "wins": 3,
+          "podiums": 3,
+          "poles": 1,
           "source": "app"
         },
         {
@@ -44,6 +52,10 @@
           "team": "Salvita Racing",
           "pos": 1,
           "points": 320,
+          "races": 6,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 2,
           "source": "app"
         },
         {
@@ -1503,7 +1515,7 @@
           "seriesId": "wrc",
           "pos": 31,
           "points": 1,
-          "races": 3,
+          "races": 4,
           "wins": 0,
           "podiums": 0,
           "source": "app"

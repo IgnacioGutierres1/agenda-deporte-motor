@@ -193,6 +193,8 @@
           "seriesId": "24h-series",
           "pos": 5,
           "points": 40,
+          "races": 2,
+          "wins": 0,
           "source": "app"
         },
         {
@@ -594,7 +596,10 @@
           "team": "Brad Jones Racing",
           "pos": 22,
           "points": 648,
+          "races": 12,
           "wins": 0,
+          "podiums": 0,
+          "poles": 0,
           "source": "app"
         },
         {
@@ -935,7 +940,7 @@
           "seriesId": "wrc",
           "pos": 14,
           "points": 18,
-          "races": 2,
+          "races": 4,
           "wins": 0,
           "podiums": 0,
           "source": "app"

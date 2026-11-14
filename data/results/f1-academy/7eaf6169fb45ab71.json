@@ -1,0 +1,994 @@
+{
+  "seriesId": "f1-academy",
+  "eventId": "7eaf6169fb45ab71",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "sessions": [
+    {
+      "sessionId": "a9c81e660a445654",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "21",
+          "driver": "Alisha Palmowski",
+          "team": "Campos Racing",
+          "laps": 17,
+          "time": "1:39.371"
+        },
+        {
+          "pos": 2,
+          "number": "5",
+          "driver": "Emma Felbermayr",
+          "team": "Rodin Motorsport",
+          "laps": 20,
+          "time": "1:39.602"
+        },
+        {
+          "pos": 3,
+          "number": "4",
+          "driver": "Megan Bruce",
+          "team": "Campos Racing",
+          "laps": 21,
+          "time": "1:39.858"
+        },
+        {
+          "pos": 4,
+          "number": "14",
+          "driver": "Lisa Billard",
+          "team": "ART Grand Prix",
+          "laps": 19,
+          "time": "1:39.859"
+        },
+        {
+          "pos": 5,
+          "number": "9",
+          "driver": "Payton Westcott",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "time": "1:39.948"
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "Alba Larsen",
+          "team": "MP Motorsport",
+          "laps": 21,
+          "time": "1:40.078"
+        },
+        {
+          "pos": 7,
+          "number": "20",
+          "driver": "Ella Lloyd",
+          "team": "Rodin Motorsport",
+          "laps": 18,
+          "time": "1:40.156"
+        },
+        {
+          "pos": 8,
+          "number": "18",
+          "driver": "Rafaela Ferreira",
+          "team": "Campos Racing",
+          "laps": 20,
+          "time": "1:40.254"
+        },
+        {
+          "pos": 9,
+          "number": "56",
+          "driver": "Rachel Robertson",
+          "team": "Hitech",
+          "laps": 19,
+          "time": "1:40.297"
+        },
+        {
+          "pos": 10,
+          "number": "3",
+          "driver": "Nina Gademan",
+          "team": "MP Motorsport",
+          "laps": 19,
+          "time": "1:40.370"
+        },
+        {
+          "pos": 11,
+          "number": "91",
+          "driver": "Kaylee Countryman",
+          "team": "ART Grand Prix",
+          "laps": 19,
+          "time": "1:40.471"
+        },
+        {
+          "pos": 12,
+          "number": "19",
+          "driver": "Natalia Granada",
+          "team": "PREMA Racing",
+          "laps": 15,
+          "time": "1:40.559"
+        },
+        {
+          "pos": 13,
+          "number": "28",
+          "driver": "Ella Stevens",
+          "team": "Rodin Motorsport",
+          "laps": 20,
+          "time": "1:41.010"
+        },
+        {
+          "pos": 14,
+          "number": "8",
+          "driver": "Mathilda Paatz",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "time": "1:41.021"
+        },
+        {
+          "pos": 15,
+          "number": "55",
+          "driver": "Ava Dobson",
+          "team": "Hitech",
+          "laps": 19,
+          "time": "1:41.081"
+        },
+        {
+          "pos": 16,
+          "number": "95",
+          "driver": "Jade Jacquet",
+          "team": "ART Grand Prix",
+          "laps": 18,
+          "time": "1:41.086"
+        },
+        {
+          "pos": 17,
+          "number": "77",
+          "driver": "Autumn Fisher",
+          "team": "Hitech",
+          "laps": 18,
+          "time": "1:41.627"
+        },
+        {
+          "pos": 18,
+          "number": "32",
+          "driver": "Esmee Kosterman",
+          "team": "MP Motorsport",
+          "laps": 19,
+          "time": "1:41.852"
+        }
+      ],
+      "source": {
+        "url": "https://www.f1academy.com/Racing-Series/Results?raceid=24",
+        "title": "Resultados F1 Academy — Montreal",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "d848a9bca712c09e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "21",
+          "driver": "Alisha Palmowski",
+          "team": "Campos Racing",
+          "laps": 18,
+          "time": "1:38.466"
+        },
+        {
+          "pos": 2,
+          "number": "9",
+          "driver": "Payton Westcott",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "time": "1:38.856"
+        },
+        {
+          "pos": 3,
+          "number": "4",
+          "driver": "Megan Bruce",
+          "team": "Campos Racing",
+          "laps": 18,
+          "time": "1:38.944"
+        },
+        {
+          "pos": 4,
+          "number": "5",
+          "driver": "Emma Felbermayr",
+          "team": "Rodin Motorsport",
+          "laps": 18,
+          "time": "1:38.999"
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Mathilda Paatz",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "time": "1:39.134"
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "Alba Larsen",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "time": "1:39.152"
+        },
+        {
+          "pos": 7,
+          "number": "18",
+          "driver": "Rafaela Ferreira",
+          "team": "Campos Racing",
+          "laps": 17,
+          "time": "1:39.216"
+        },
+        {
+          "pos": 8,
+          "number": "91",
+          "driver": "Kaylee Countryman",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "time": "1:39.218"
+        },
+        {
+          "pos": 9,
+          "number": "3",
+          "driver": "Nina Gademan",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "time": "1:39.304"
+        },
+        {
+          "pos": 10,
+          "number": "14",
+          "driver": "Lisa Billard",
+          "team": "ART Grand Prix",
+          "laps": 15,
+          "time": "1:39.312"
+        },
+        {
+          "pos": 11,
+          "number": "19",
+          "driver": "Natalia Granada",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "time": "1:39.572"
+        },
+        {
+          "pos": 12,
+          "number": "55",
+          "driver": "Ava Dobson",
+          "team": "Hitech",
+          "laps": 17,
+          "time": "1:39.581"
+        },
+        {
+          "pos": 13,
+          "number": "95",
+          "driver": "Jade Jacquet",
+          "team": "ART Grand Prix",
+          "laps": 15,
+          "time": "1:39.590"
+        },
+        {
+          "pos": 14,
+          "number": "28",
+          "driver": "Ella Stevens",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "time": "1:39.758"
+        },
+        {
+          "pos": 15,
+          "number": "56",
+          "driver": "Rachel Robertson",
+          "team": "Hitech",
+          "laps": 17,
+          "time": "1:39.829"
+        },
+        {
+          "pos": 16,
+          "number": "20",
+          "driver": "Ella Lloyd",
+          "team": "Rodin Motorsport",
+          "laps": 13,
+          "time": "1:40.316"
+        },
+        {
+          "pos": 17,
+          "number": "77",
+          "driver": "Autumn Fisher",
+          "team": "Hitech",
+          "laps": 16,
+          "time": "1:40.354"
+        },
+        {
+          "pos": 18,
+          "number": "32",
+          "driver": "Esmee Kosterman",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "time": "1:40.431"
+        }
+      ],
+      "source": {
+        "url": "https://www.f1academy.com/Racing-Series/Results?raceid=24",
+        "title": "Resultados F1 Academy — Montreal",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "d844abbca70edb2d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "21",
+          "driver": "Alisha Palmowski",
+          "team": "Campos Racing",
+          "laps": 18,
+          "time": "1:38.526"
+        },
+        {
+          "pos": 2,
+          "number": "4",
+          "driver": "Megan Bruce",
+          "team": "Campos Racing",
+          "laps": 18,
+          "time": "1:38.947"
+        },
+        {
+          "pos": 3,
+          "number": "9",
+          "driver": "Payton Westcott",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "time": "1:39.037"
+        },
+        {
+          "pos": 4,
+          "number": "5",
+          "driver": "Emma Felbermayr",
+          "team": "Rodin Motorsport",
+          "laps": 18,
+          "time": "1:39.038"
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Mathilda Paatz",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "time": "1:39.200"
+        },
+        {
+          "pos": 6,
+          "number": "18",
+          "driver": "Rafaela Ferreira",
+          "team": "Campos Racing",
+          "laps": 17,
+          "time": "1:39.284"
+        },
+        {
+          "pos": 7,
+          "number": "12",
+          "driver": "Alba Larsen",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "time": "1:39.345"
+        },
+        {
+          "pos": 8,
+          "number": "14",
+          "driver": "Lisa Billard",
+          "team": "ART Grand Prix",
+          "laps": 15,
+          "time": "1:39.375"
+        },
+        {
+          "pos": 9,
+          "number": "91",
+          "driver": "Kaylee Countryman",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "time": "1:39.502"
+        },
+        {
+          "pos": 10,
+          "number": "3",
+          "driver": "Nina Gademan",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "time": "1:39.613"
+        },
+        {
+          "pos": 11,
+          "number": "55",
+          "driver": "Ava Dobson",
+          "team": "Hitech",
+          "laps": 17,
+          "time": "1:39.734"
+        },
+        {
+          "pos": 12,
+          "number": "28",
+          "driver": "Ella Stevens",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "time": "1:39.772"
+        },
+        {
+          "pos": 13,
+          "number": "56",
+          "driver": "Rachel Robertson",
+          "team": "Hitech",
+          "laps": 17,
+          "time": "1:39.841"
+        },
+        {
+          "pos": 14,
+          "number": "19",
+          "driver": "Natalia Granada",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "time": "1:39.915"
+        },
+        {
+          "pos": 15,
+          "number": "95",
+          "driver": "Jade Jacquet",
+          "team": "ART Grand Prix",
+          "laps": 15,
+          "time": "1:39.944"
+        },
+        {
+          "pos": 16,
+          "number": "77",
+          "driver": "Autumn Fisher",
+          "team": "Hitech",
+          "laps": 16,
+          "time": "1:40.448"
+        },
+        {
+          "pos": 17,
+          "number": "32",
+          "driver": "Esmee Kosterman",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "time": "1:40.631"
+        },
+        {
+          "pos": 18,
+          "number": "20",
+          "driver": "Ella Lloyd",
+          "team": "Rodin Motorsport",
+          "laps": 13,
+          "time": "1:40.730"
+        }
+      ],
+      "source": {
+        "url": "https://www.f1academy.com/Racing-Series/Results?raceid=24",
+        "title": "Resultados F1 Academy — Montreal",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "4507f9b7806fd407",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "21",
+          "driver": "Alisha Palmowski",
+          "team": "Campos Racing",
+          "laps": 17,
+          "time": "28:18.995",
+          "bestLap": "1:39.156"
+        },
+        {
+          "pos": 2,
+          "number": "4",
+          "driver": "Megan Bruce",
+          "team": "Campos Racing",
+          "laps": 17,
+          "gap": "+10.119s",
+          "bestLap": "1:39.357"
+        },
+        {
+          "pos": 3,
+          "number": "8",
+          "driver": "Mathilda Paatz",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "gap": "+10.827s",
+          "bestLap": "1:39.487"
+        },
+        {
+          "pos": 4,
+          "number": "18",
+          "driver": "Rafaela Ferreira",
+          "team": "Campos Racing",
+          "laps": 17,
+          "gap": "+12.089s",
+          "bestLap": "1:39.567"
+        },
+        {
+          "pos": 5,
+          "number": "12",
+          "driver": "Alba Larsen",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "gap": "+12.521s",
+          "bestLap": "1:39.430"
+        },
+        {
+          "pos": 6,
+          "number": "20",
+          "driver": "Ella Lloyd",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "gap": "+20.391s",
+          "bestLap": "1:39.638"
+        },
+        {
+          "pos": 7,
+          "number": "91",
+          "driver": "Kaylee Countryman",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "gap": "+21.235s",
+          "bestLap": "1:39.404"
+        },
+        {
+          "pos": 8,
+          "number": "28",
+          "driver": "Ella Stevens",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "gap": "+22.128s",
+          "bestLap": "1:39.600"
+        },
+        {
+          "pos": 9,
+          "number": "3",
+          "driver": "Nina Gademan",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "gap": "+22.318s",
+          "bestLap": "1:39.611"
+        },
+        {
+          "pos": 10,
+          "number": "5",
+          "driver": "Emma Felbermayr",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "gap": "+22.572s",
+          "bestLap": "1:39.289"
+        },
+        {
+          "pos": 11,
+          "number": "77",
+          "driver": "Autumn Fisher",
+          "team": "Hitech",
+          "laps": 17,
+          "gap": "+30.269s",
+          "bestLap": "1:39.940"
+        },
+        {
+          "pos": 12,
+          "number": "95",
+          "driver": "Jade Jacquet",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "gap": "+30.652s",
+          "bestLap": "1:39.578"
+        },
+        {
+          "pos": 13,
+          "number": "56",
+          "driver": "Rachel Robertson",
+          "team": "Hitech",
+          "laps": 17,
+          "gap": "+31.288s",
+          "bestLap": "1:39.797"
+        },
+        {
+          "pos": 14,
+          "number": "19",
+          "driver": "Natalia Granada",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "gap": "+39.302s",
+          "bestLap": "1:39.585"
+        },
+        {
+          "pos": 15,
+          "number": "14",
+          "driver": "Lisa Billard",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "gap": "+57.619s",
+          "bestLap": "1:39.155"
+        },
+        {
+          "pos": 16,
+          "number": "9",
+          "driver": "Payton Westcott",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "gap": "+73.398s",
+          "bestLap": "1:39.129"
+        },
+        {
+          "pos": 17,
+          "number": "55",
+          "driver": "Ava Dobson",
+          "team": "Hitech",
+          "laps": 17,
+          "gap": "+94.407s",
+          "bestLap": "1:39.565"
+        },
+        {
+          "pos": 18,
+          "number": "32",
+          "driver": "Esmee Kosterman",
+          "team": "MP Motorsport",
+          "laps": 16,
+          "gap": "+1 vuelta",
+          "bestLap": "1:40.349"
+        }
+      ],
+      "source": {
+        "url": "https://www.f1academy.com/Racing-Series/Results?raceid=24",
+        "title": "Resultados F1 Academy — Montreal",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "d2c4f4e303f50bb9",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "8",
+          "driver": "Mathilda Paatz",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "time": "32:33.104",
+          "bestLap": "1:40.030"
+        },
+        {
+          "pos": 2,
+          "number": "91",
+          "driver": "Kaylee Countryman",
+          "team": "ART Grand Prix",
+          "laps": 16,
+          "gap": "+1.583s",
+          "bestLap": "1:40.103"
+        },
+        {
+          "pos": 3,
+          "number": "9",
+          "driver": "Payton Westcott",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "gap": "+1.650s",
+          "bestLap": "1:39.916"
+        },
+        {
+          "pos": 4,
+          "number": "19",
+          "driver": "Natalia Granada",
+          "team": "PREMA Racing",
+          "laps": 16,
+          "gap": "+1.731s",
+          "bestLap": "1:39.784"
+        },
+        {
+          "pos": 5,
+          "number": "14",
+          "driver": "Lisa Billard",
+          "team": "ART Grand Prix",
+          "laps": 16,
+          "gap": "+2.616s",
+          "bestLap": "1:39.622"
+        },
+        {
+          "pos": 6,
+          "number": "5",
+          "driver": "Emma Felbermayr",
+          "team": "Rodin Motorsport",
+          "laps": 16,
+          "gap": "+3.889s",
+          "bestLap": "1:39.649"
+        },
+        {
+          "pos": 7,
+          "number": "4",
+          "driver": "Megan Bruce",
+          "team": "Campos Racing",
+          "laps": 16,
+          "gap": "+4.436s",
+          "bestLap": "1:39.869"
+        },
+        {
+          "pos": 8,
+          "number": "18",
+          "driver": "Rafaela Ferreira",
+          "team": "Campos Racing",
+          "laps": 16,
+          "gap": "+4.688s",
+          "bestLap": "1:39.942"
+        },
+        {
+          "pos": 9,
+          "number": "32",
+          "driver": "Esmee Kosterman",
+          "team": "MP Motorsport",
+          "laps": 16,
+          "gap": "+4.980s",
+          "bestLap": "1:40.206"
+        },
+        {
+          "pos": 10,
+          "number": "21",
+          "driver": "Alisha Palmowski",
+          "team": "Campos Racing",
+          "laps": 16,
+          "gap": "+5.339s",
+          "bestLap": "1:39.795"
+        },
+        {
+          "pos": 11,
+          "number": "12",
+          "driver": "Alba Larsen",
+          "team": "MP Motorsport",
+          "laps": 16,
+          "gap": "+5.976s",
+          "bestLap": "1:40.068"
+        },
+        {
+          "pos": 12,
+          "number": "95",
+          "driver": "Jade Jacquet",
+          "team": "ART Grand Prix",
+          "laps": 16,
+          "gap": "+7.774s",
+          "bestLap": "1:39.969"
+        },
+        {
+          "pos": 13,
+          "number": "20",
+          "driver": "Ella Lloyd",
+          "team": "Rodin Motorsport",
+          "laps": 16,
+          "gap": "+8.306s",
+          "bestLap": "1:39.587"
+        },
+        {
+          "pos": 14,
+          "number": "77",
+          "driver": "Autumn Fisher",
+          "team": "Hitech",
+          "laps": 16,
+          "bestLap": "1:40.261"
+        },
+        {
+          "pos": 15,
+          "number": "28",
+          "driver": "Ella Stevens",
+          "team": "Rodin Motorsport",
+          "laps": 16,
+          "gap": "+11.770s",
+          "bestLap": "1:40.032"
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "3",
+          "driver": "Nina Gademan",
+          "team": "MP Motorsport",
+          "laps": 12,
+          "bestLap": "1:39.867"
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "56",
+          "driver": "Rachel Robertson",
+          "team": "Hitech",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "55",
+          "driver": "Ava Dobson",
+          "team": "Hitech",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://www.f1academy.com/Racing-Series/Results?raceid=24",
+        "title": "Resultados F1 Academy — Montreal",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    },
+    {
+      "sessionId": "53cf6563caf99b4d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "21",
+          "driver": "Alisha Palmowski",
+          "team": "Campos Racing",
+          "laps": 17,
+          "time": "31:13.288",
+          "bestLap": "1:48.888"
+        },
+        {
+          "pos": 2,
+          "number": "5",
+          "driver": "Emma Felbermayr",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "gap": "+10.955s",
+          "bestLap": "1:48.801"
+        },
+        {
+          "pos": 3,
+          "number": "4",
+          "driver": "Megan Bruce",
+          "team": "Campos Racing",
+          "laps": 17,
+          "gap": "+12.912s",
+          "bestLap": "1:49.196"
+        },
+        {
+          "pos": 4,
+          "number": "9",
+          "driver": "Payton Westcott",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "gap": "+13.215s",
+          "bestLap": "1:49.188"
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Mathilda Paatz",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "gap": "+13.752s",
+          "bestLap": "1:49.358"
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "Alba Larsen",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "gap": "+14.148s",
+          "bestLap": "1:48.724"
+        },
+        {
+          "pos": 7,
+          "number": "3",
+          "driver": "Nina Gademan",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "gap": "+17.940s",
+          "bestLap": "1:49.392"
+        },
+        {
+          "pos": 8,
+          "number": "19",
+          "driver": "Natalia Granada",
+          "team": "PREMA Racing",
+          "laps": 17,
+          "gap": "+18.752s",
+          "bestLap": "1:49.235"
+        },
+        {
+          "pos": 9,
+          "number": "20",
+          "driver": "Ella Lloyd",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "gap": "+18.877s",
+          "bestLap": "1:48.906"
+        },
+        {
+          "pos": 10,
+          "number": "18",
+          "driver": "Rafaela Ferreira",
+          "team": "Campos Racing",
+          "laps": 17,
+          "gap": "+22.662s",
+          "bestLap": "1:49.069"
+        },
+        {
+          "pos": 11,
+          "number": "28",
+          "driver": "Ella Stevens",
+          "team": "Rodin Motorsport",
+          "laps": 17,
+          "gap": "+31.262s",
+          "bestLap": "1:49.690"
+        },
+        {
+          "pos": 12,
+          "number": "32",
+          "driver": "Esmee Kosterman",
+          "team": "MP Motorsport",
+          "laps": 17,
+          "gap": "+32.182s",
+          "bestLap": "1:49.074"
+        },
+        {
+          "pos": 13,
+          "number": "95",
+          "driver": "Jade Jacquet",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "gap": "+36.238s",
+          "bestLap": "1:50.023"
+        },
+        {
+          "pos": 14,
+          "number": "56",
+          "driver": "Rachel Robertson",
+          "team": "Hitech",
+          "laps": 17,
+          "gap": "+37.089s",
+          "bestLap": "1:50.533"
+        },
+        {
+          "pos": 15,
+          "number": "14",
+          "driver": "Lisa Billard",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "gap": "+38.637s",
+          "bestLap": "1:49.102"
+        },
+        {
+          "pos": 16,
+          "number": "91",
+          "driver": "Kaylee Countryman",
+          "team": "ART Grand Prix",
+          "laps": 17,
+          "gap": "+41.516s",
+          "bestLap": "1:50.418"
+        },
+        {
+          "pos": 17,
+          "number": "55",
+          "driver": "Ava Dobson",
+          "team": "Hitech",
+          "laps": 17,
+          "gap": "+64.931s",
+          "bestLap": "1:52.114"
+        },
+        {
+          "pos": 18,
+          "number": "77",
+          "driver": "Autumn Fisher",
+          "team": "Hitech",
+          "laps": 17,
+          "gap": "+73.670s",
+          "bestLap": "1:52.021"
+        }
+      ],
+      "source": {
+        "url": "https://www.f1academy.com/Racing-Series/Results?raceid=24",
+        "title": "Resultados F1 Academy — Montreal",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T10:06:10Z"
+      }
+    }
+  ]
+}

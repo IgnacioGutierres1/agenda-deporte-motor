@@ -378,6 +378,8 @@
           "seriesId": "igtc",
           "pos": 30,
           "points": 1,
+          "races": 1,
+          "wins": 0,
           "source": "app"
         },
         {
@@ -661,6 +663,10 @@
           "seriesId": "tc",
           "pos": 9,
           "points": 299.5,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
           "source": "app"
         },
         {
@@ -669,6 +675,10 @@
           "seriesId": "tc-pickup",
           "pos": 8,
           "points": 305.5,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
           "source": "app"
         },
         {

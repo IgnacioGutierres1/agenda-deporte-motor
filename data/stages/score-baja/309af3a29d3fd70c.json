@@ -1,0 +1,46 @@
+{
+  "seriesId": "score-baja",
+  "eventId": "309af3a29d3fd70c",
+  "updatedAt": "2026-11-14T10:06:10Z",
+  "surface": "arena",
+  "competitiveKm": 729.03,
+  "totalKm": 754.3,
+  "routeMapUrl": "https://score-raceinfo.com/wp-content/uploads/2026/05/2026-B500-map-final-16x20-compressed.pdf",
+  "routeMapCredit": "© SCORE International",
+  "stages": [
+    {
+      "code": "Sector 1",
+      "name": "Riviera Ensenada > Ej. Jamau Access",
+      "kind": "especial",
+      "date": "2026-06-06",
+      "startUtc": "2026-06-06T15:00:00Z",
+      "localStartText": "08:00",
+      "distanceKm": 419.47,
+      "note": "Hasta el puesto de control 1 (Ej. Jamau Access), en la milla 260,65 de carrera. Paso estimado del primero: 12:32 (sáb); cierre: 20:48 (sáb) (hora local). Tiempo límite de la carrera: 18 horas.",
+      "sessionId": "5ec9f30943cc9aa1"
+    },
+    {
+      "code": "Sector 2",
+      "name": "Ej. Jamau Access > R. Nelson",
+      "kind": "especial",
+      "date": "2026-06-06",
+      "distanceKm": 309.56,
+      "note": "Hasta el control de cronometraje de R. Nelson, en la milla 453,00 de carrera. Paso estimado del primero: 15:48 (sáb); cierre: 04:26 (dom) (hora local)."
+    },
+    {
+      "code": "Sector 3",
+      "name": "R. Nelson > Riviera Ensenada",
+      "kind": "enlace",
+      "date": "2026-06-06",
+      "liaisonKm": 25.27,
+      "note": "Hasta la llegada, en la milla 468,70 de carrera. Paso estimado del primero: 16:04 (sáb); cierre: 05:04 (dom) (hora local). Sin cronometrar: la llegada cronometrada es en el control de cronometraje de R. Nelson."
+    }
+  ],
+  "source": {
+    "url": "https://score-raceinfo.com/race-information-2026-baja-500/",
+    "title": "SCORE International – Race Info 2026 Baja 500",
+    "kind": "pdf",
+    "method": "directo",
+    "fetchedAt": "2026-11-14T10:06:10Z"
+  }
+}
