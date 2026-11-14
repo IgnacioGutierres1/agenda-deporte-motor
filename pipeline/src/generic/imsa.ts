@@ -282,7 +282,9 @@ export const imsa: SiteRecipe = {
     // Sin calendario del año: si la API de resultados tiene la temporada, sigue siendo la vigente. Si la API no
     // responde (403 pasajero) también se queda: leer el calendario falla y la serie conserva los datos anteriores,
     // en vez de pasar a la temporada siguiente en una corrida y volver en la otra.
-    if (current === false && (await hasResults(ctx, ctx.season, series).catch(() => true))) {
+    // También si la página del año dio error (null): el sitio pone sus páginas detrás de un desafío de Cloudflare
+    // (403) para algunos clientes, pero la API de resultados responde.
+    if (!current && (await hasResults(ctx, ctx.season, series).catch(() => current === false))) {
       fromResults.add(`${series}:${ctx.season}`);
       return ctx.season;
     }
