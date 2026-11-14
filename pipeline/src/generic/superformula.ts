@@ -7,6 +7,7 @@
 import { localToUtc, type RosterRow, type StandingsRow, type StandingsTable } from '@dm/shared';
 import { absoluteUrl, attr, blocksByClass, textOf } from '../extract/html.ts';
 import { isoDate } from './places.ts';
+import { superformulaResults } from './results-superformula.ts';
 import { checkStandingsTable, column, host, isoNow, pageOrNull, parseHtmlTable, parseNumber, standingsSource, stripComments } from './kit.ts';
 import type { CalendarEntry, ExtractedSession, SiteRecipe } from './types.ts';
 
@@ -190,6 +191,9 @@ export const superformula: SiteRecipe = {
       source: { url: entry.url, title: `レーススケジュール SUPER FORMULA — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
     };
   },
+  /** Fechas ya corridas: la página de la fecha conserva el cronograma junto a los resultados. */
+  pastSessions: (entry, ctx) => superformula.sessions!(entry, ctx),
+  results: (entry, sessions, ctx) => superformulaResults(entry, sessions, ctx),
   /**
    * Posiciones de pilotos (/driver_taxonomy/AAAA/?standings) y de equipos (/team_taxonomy/AAAA/?standings).
    * La tabla de pilotos no trae el equipo: sale de la página de equipos, por número de auto.

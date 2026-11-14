@@ -188,6 +188,12 @@ export const supertaikyu: SiteRecipe = {
       source: { url: entry.url, title: `Race schedule — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
     };
   },
+  /**
+   * Fechas ya corridas: la página de la fecha conserva el cronograma hasta que se recicla para la temporada
+   * siguiente (supertaikyuSessions descarta los días de otro año). Los resultados oficiales son PDF escaneados (sin
+   * texto o con un OCR ilegible), así que no hay results(): quedan para la IA.
+   */
+  pastSessions: (entry, ctx) => supertaikyu.sessions!(entry, ctx),
   async standings(url, ctx) {
     const html = await pageOrNull(ctx, url);
     if (!html) return null;
