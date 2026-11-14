@@ -63,6 +63,11 @@ import { actcPastSessions, actcResults } from './results-actc.ts';
 import { apatPastSessions, apatResults } from './results-apat.ts';
 import { aptpPastSessions, aptpResults } from './results-aptp.ts';
 import { tc2000PastSessions, tc2000Results } from './results-tc2000.ts';
+import { dtmPastSessions, dtmResults } from './results-dtm.ts';
+import { f1AcademyPastSessions, f1AcademyResults } from './results-f1academy.ts';
+import { gtOpenPastSessions, gtOpenResults } from './results-gtopen.ts';
+import { nlsPastSessions, nlsResults } from './results-nls.ts';
+import { porsche } from './results-porsche.ts';
 
 export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
@@ -453,6 +458,8 @@ const aco: SiteRecipe = {
 const nls: SiteRecipe = {
   name: 'nls',
   match: (url) => host(url) === 'nuerburgring-langstrecken-serie.de',
+  pastSessions: (entry, ctx) => nlsPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => nlsResults(entry, sessions, ctx),
   calendar(doc, ctx) {
     const out: CalendarEntry[] = [];
     for (const row of stripComments(doc.raw).matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)) {
@@ -913,6 +920,8 @@ const dtm: SiteRecipe = {
   },
   /** Inscriptos de la temporada: https://api.dtm.com/data?query=drivers (número, equipo y auto por temporada). */
   roster: (url, ctx) => dtmRoster(url, ctx),
+  pastSessions: (entry, ctx) => dtmPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => dtmResults(entry, sessions, ctx),
 };
 
 /** "PREINING Thomas" -> "Thomas PREINING": la API escribe primero el apellido (en mayúsculas). */
@@ -1006,6 +1015,8 @@ const f1academy: SiteRecipe = {
   },
   // Mientras f1academy.com marca las sesiones "Unconfirmed": cronograma oficial del fin de semana (formula1.com).
   sessions: (entry, ctx) => f1AcademyWeekendSessions(entry, ctx),
+  pastSessions: (entry, ctx) => f1AcademyPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => f1AcademyResults(entry, sessions, ctx),
 };
 
 // ─── International GT Open (gtopen.gtsport.es) ────────────────────────────────────────────────
@@ -1014,6 +1025,8 @@ const gtopen: SiteRecipe = {
   name: 'gtopen',
   match: (url) => /^(gtopen\.gtsport\.es|gtopen\.net)$/.test(host(url)),
   calendarUrl: () => 'https://gtopen.gtsport.es/calendario',
+  pastSessions: (entry, ctx) => gtOpenPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => gtOpenResults(entry, sessions, ctx),
   calendar(doc, ctx) {
     const out: CalendarEntry[] = [];
     for (const value of extractEmbeddedJson(doc.raw)) {
@@ -1165,6 +1178,8 @@ function humanize(slug: string): string {
 export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca, imsa];
 // Asia y Oceanía: recetas en su propio archivo (importan sus utilidades de kit.ts, no de este).
 RECIPES.push(supergt, superformula, supertaikyu, macau, supercars);
+// Porsche Mobil 1 Supercup: calendario, sesiones ya corridas y resultados en results-porsche.ts.
+RECIPES.push(porsche);
 
 export function findRecipe(url: string): SiteRecipe | undefined {
   return RECIPES.find((r) => r.match(url));

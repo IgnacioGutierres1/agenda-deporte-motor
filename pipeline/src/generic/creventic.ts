@@ -14,6 +14,7 @@ import { countryName, isoDate, monthNumber } from './places.ts';
 import { checkStandingsTable, dedupe, host, isoNow, pageOrNull, parseNumber, standingsSource, stripComments, tzFor } from './kit.ts';
 import { className, countryFromCode } from './rosters.ts';
 import type { CalendarEntry, RecipeContext, SiteRecipe } from './types.ts';
+import { creventicPastSessions, creventicResults } from './results-creventic.ts';
 
 // ─── Calendario ───────────────────────────────────────────────────────────────────────────────
 
@@ -260,4 +261,6 @@ export const creventic: SiteRecipe = {
   calendar: (doc, ctx) => creventicCalendar(doc.raw, doc.url, ctx.season),
   standings: (url, ctx) => creventicStandings(url, ctx),
   roster: (url, ctx) => creventicRoster(url, ctx),
+  pastSessions: (entry, ctx) => creventicPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => creventicResults(entry, sessions, ctx),
 };
