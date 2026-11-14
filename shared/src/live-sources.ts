@@ -92,6 +92,10 @@ export const LIVE_SOURCES: Record<string, LiveSource> = {
   'gt-open': { officialUrl: 'https://gtopen.gtsport.es/resultados', officialNote: 'Sin tiempos en vivo públicos: resultados.' },
   wrc: { officialUrl: 'https://www.wrc.com/live-timing', officialNote: 'Live Centre oficial: lleva a los tiempos del rally en curso o del último corrido.' },
   dakar: { officialUrl: 'https://www.dakar.com/es/clasificaciones', officialNote: 'Clasificación de cada etapa y general en el sitio oficial.' },
+  'score-baja': {
+    officialUrl: 'https://results.score-international.com/live/scoring/',
+    officialNote: 'Tiempos de LiveTime (cronometraje oficial). Seguimiento GPS en vivo: score-international.com/liveTracking.php.',
+  },
   tc: {
     officialUrl: 'https://tiempos.actc.org.ar/live/tc',
     officialNote: ACTC_NOTE,
