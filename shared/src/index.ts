@@ -15,3 +15,4 @@ export * from './live-motogp.ts';
 export * from './live-speedhive.ts';
 export * from './names.ts';
 export * from './circuits.ts';
+export * from './profiles.ts';

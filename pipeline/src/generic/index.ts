@@ -67,6 +67,16 @@ export interface GenericDeps {
 
 /** Tope de documentos de resultados/campeonato por serie y corrida (cuida el cupo de Gemini). */
 const MAX_RESULT_DOCS = 3;
+/**
+ * Eventos cuyos resultados se leen por receta (sin IA) por serie y corrida: alcanza para ponerse al día con una
+ * temporada entera en pocas corridas sin cargar de golpe al sitio. Los que quedan afuera no cuentan como intento.
+ */
+const MAX_DIRECT_RESULT_EVENTS = 8;
+/**
+ * Último cambio de los lectores de resultados por receta (SiteRecipe.results). Las sesiones que se habían dado por
+ * perdidas antes de esta fecha (porque solo había IA) se vuelven a intentar (ver Adapter.resultsReaderSince).
+ */
+export const GENERIC_RESULTS_READER_SINCE = '2026-11-14T00:00:00Z';
 /** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
 const MAX_CALENDAR_IMAGES = 16;
 const MAX_TIMETABLE_IMAGES = 3;
@@ -259,6 +269,7 @@ export function eventKeys(entries: CalendarEntry[]): string[] {
 export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
   return {
     name: 'generic',
+    resultsReaderSince: GENERIC_RESULTS_READER_SINCE,
 
     prefersDirectStandings(series) {
       const url = series.officialUrls.slice(1).find((u) => STANDINGS_RE.test(u));
@@ -553,7 +564,10 @@ async function genericResults(
         byEventId.set(ev.id, e);
       });
       const eventOrder = [...new Set(req.pendingSessions.map((s) => s.eventId))];
+      // 1) Lectura directa con la receta del sitio (sin IA). Los eventos que resuelve no pasan a la IA.
+      const direct = await directResults(series, ctx, req, eventOrder, byEventId, out);
       for (const eventId of eventOrder) {
+        if (direct.has(eventId)) continue;
         if (docs >= MAX_RESULT_DOCS) break;
         const entry = byEventId.get(eventId);
         const event = req.events.find((e) => e.id === eventId);
@@ -626,6 +640,55 @@ async function genericResults(
     throw err;
   }
   return out;
+}
+
+/**
+ * Resultados por receta (SiteRecipe.results), del evento más reciente al más viejo. Devuelve los ids de los eventos
+ * que la receta resolvió (con o sin resultado publicado todavía): esos no se le pasan a la IA. Si la receta falla,
+ * el evento queda para la IA.
+ */
+async function directResults(
+  series: Series,
+  ctx: AdapterContext,
+  req: ResultsRequest,
+  eventOrder: string[],
+  byEventId: Map<string, CalendarEntry>,
+  out: ResultsChunk,
+): Promise<Set<string>> {
+  const handled = new Set<string>();
+  const recipe = findRecipe(series.officialUrls[0] ?? '');
+  if (!recipe?.results) return handled;
+  const nowIso = isoNow(ctx.now);
+  let read = 0;
+  for (const eventId of eventOrder) {
+    const entry = byEventId.get(eventId);
+    if (!entry) continue;
+    const pending = req.pendingSessions.filter((s) => s.eventId === eventId);
+    if (read >= MAX_DIRECT_RESULT_EVENTS) {
+      // Tope de la corrida: quedan para la próxima sin contar como intento.
+      (out.deferred ??= []).push(...pending.map((s) => s.id));
+      handled.add(eventId);
+      continue;
+    }
+    read++;
+    try {
+      const found = await recipe.results(entry, pending, recipeCtx(series, ctx));
+      handled.add(eventId);
+      if (!found) continue;
+      if (found.deferred?.length) (out.deferred ??= []).push(...found.deferred);
+      const ids = new Set(pending.map((s) => s.id));
+      const sessions: SessionResult[] = found.sessions
+        .filter((s) => ids.has(s.sessionId) && s.rows.length > 0)
+        .map((s) => ({ sessionId: s.sessionId, rows: s.rows, ...(s.conditions ? { conditions: s.conditions } : {}), source: s.source ?? found.source }));
+      if (sessions.length > 0) {
+        out.results.push({ seriesId: series.id, eventId, updatedAt: nowIso, sessions });
+        ctx.log.info(`Resultados ${entry.name}: ${sessions.length} sesión(es) (lectura directa)`);
+      }
+    } catch (err) {
+      ctx.log.warn(`Resultados ${entry.name}: lectura directa fallida (${err instanceof Error ? err.message : String(err)}); se intenta con IA`);
+    }
+  }
+  return handled;
 }
 
 /**

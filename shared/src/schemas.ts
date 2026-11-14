@@ -108,6 +108,8 @@ export const resultRowSchema = z.object({
   gap: z.string().optional(),
   bestLap: z.string().optional(),
   points: z.number().optional(),
+  class: z.string().min(1).optional(),
+  classPos: z.number().int().positive().optional(),
 });
 
 export const eventResultsFileSchema = z.object({
@@ -446,4 +448,96 @@ export const circuitTrackFileSchema = z.object({
   credit: z.string(),
   license: z.string(),
   source: sourceSchema,
+});
+
+// --- Historial y perfiles (tanda 5, ver profiles.ts) ---
+
+const bioSourceSchema = z.enum(['wikidata', 'wikipedia', 'oficial', 'app']);
+const bioSummarySchema = z.object({ text: z.string().min(1), lang: z.enum(['es', 'en']), url: z.string().url() });
+const bioTitleSchema = z.object({ season: z.number().int(), series: z.string().min(1), seriesId: z.string().optional() });
+
+const careerSeasonSchema = z.object({
+  season: z.number().int(),
+  series: z.string().min(1),
+  seriesId: z.string().optional(),
+  team: z.string().optional(),
+  pos: z.number().int().positive().optional(),
+  points: z.number().optional(),
+  races: z.number().int().nonnegative().optional(),
+  wins: z.number().int().nonnegative().optional(),
+  podiums: z.number().int().nonnegative().optional(),
+  poles: z.number().int().nonnegative().optional(),
+  champion: z.literal(true).optional(),
+  source: bioSourceSchema,
+});
+
+const driverBioSchema = z.object({
+  id: slugId,
+  wikidata: z.string().regex(/^Q\d+$/).optional(),
+  summary: bioSummarySchema.optional(),
+  birthDate: isoDate.optional(),
+  birthPlace: z.string().optional(),
+  nationality: z.string().optional(),
+  photo: circuitImageSchema.optional(),
+  career: z.array(careerSeasonSchema).optional(),
+  titles: z.array(bioTitleSchema).optional(),
+  links: z.array(z.object({ label: z.string().min(1), url: z.string().url() })).optional(),
+  updatedAt: isoUtc,
+});
+
+/** data/bios/drivers/{shard}.json */
+export const driverBiosShardFileSchema = z.object({ version: z.literal(1), bios: z.array(driverBioSchema) });
+
+/** data/bios/teams.json */
+export const teamBiosFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  teams: z.array(
+    z.object({
+      id: slugId,
+      wikidata: z.string().regex(/^Q\d+$/).optional(),
+      summary: bioSummarySchema.optional(),
+      logo: circuitImageSchema.optional(),
+      founded: z.number().int().optional(),
+      base: z.string().optional(),
+      country: z.string().optional(),
+      principal: z.string().optional(),
+      titles: z.array(bioTitleSchema).optional(),
+      history: z
+        .array(z.object({ series: z.string().min(1), seriesId: z.string().optional(), from: z.number().int(), to: z.number().int().optional() }))
+        .optional(),
+      website: z.string().url().optional(),
+      updatedAt: isoUtc,
+    }),
+  ),
+});
+
+/** data/bios/series.json */
+export const seriesHistoryFileSchema = z.object({
+  version: z.literal(1),
+  generatedAt: isoUtc,
+  series: z.array(
+    z.object({
+      seriesId: z.string().min(1),
+      wikidata: z.string().regex(/^Q\d+$/).optional(),
+      summary: bioSummarySchema.optional(),
+      logo: circuitImageSchema.optional(),
+      founded: z.number().int().optional(),
+      organizer: z.string().optional(),
+      champions: z.array(
+        z.object({
+          season: z.number().int(),
+          driver: z.string().optional(),
+          driverId: z.string().optional(),
+          team: z.string().optional(),
+          teamId: z.string().optional(),
+          vehicle: z.string().optional(),
+          note: z.string().optional(),
+        }),
+      ),
+      records: z.array(z.object({ label: z.string().min(1), value: z.string().min(1) })).optional(),
+      championsSource: z.object({ url: z.string().url(), title: z.string() }).optional(),
+      updatedAt: isoUtc,
+    }),
+  ),
 });
