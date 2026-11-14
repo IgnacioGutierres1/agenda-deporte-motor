@@ -1,0 +1,123 @@
+{
+ "classification": [
+  {
+   "class": "GT3",
+   "position": 1,
+   "number": "9",
+   "ecm_participant_id": null,
+   "ecm_category_id": null,
+   "team": "Getspeed",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "JANS",
+     "firstname": "Steve"
+    },
+    {
+     "surname": "BARTONE",
+     "firstname": "Anthony"
+    },
+    {
+     "surname": "SCHILLER",
+     "firstname": "Fabian"
+    }
+   ],
+   "vehicle": "Mercedes-AMG GT3 Evo",
+   "laps": 7,
+   "gap_first": "-",
+   "gap_previous": "-",
+   "pit_stops": 1,
+   "fastest_lap_time": "2:02.879",
+   "kph": "170.5"
+  },
+  {
+   "class": "GT3",
+   "position": 2,
+   "number": "58",
+   "ecm_participant_id": null,
+   "ecm_category_id": null,
+   "team": "Garage 59",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "BLATTNER",
+     "firstname": "Dustin"
+    },
+    {
+     "surname": "FLEMING",
+     "firstname": "Thomas"
+    },
+    {
+     "surname": "MARSCHALL",
+     "firstname": "Dennis"
+    }
+   ],
+   "vehicle": "McLaren 720S GT3 Evo",
+   "laps": 6,
+   "gap_first": "+0.066",
+   "gap_previous": "+0.066",
+   "pit_stops": 1,
+   "fastest_lap_time": "2:02.945",
+   "kph": "170.4"
+  },
+  {
+   "class": "GT3",
+   "position": 3,
+   "number": "65",
+   "ecm_participant_id": null,
+   "ecm_category_id": null,
+   "team": "Haupt Racing Team",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "HAUPT",
+     "firstname": "Hubert"
+    },
+    {
+     "surname": "SCHUMACHER",
+     "firstname": "David"
+    },
+    {
+     "surname": "SCHERER",
+     "firstname": "Fabio"
+    }
+   ],
+   "vehicle": "Ford Mustang GT3 Evo",
+   "laps": 5,
+   "gap_first": "+0.138",
+   "gap_previous": "+0.072",
+   "pit_stops": 2,
+   "fastest_lap_time": "2:03.017",
+   "kph": "170.3"
+  },
+  {
+   "class": "GT3",
+   "position": 28,
+   "number": "88",
+   "ecm_participant_id": null,
+   "ecm_category_id": null,
+   "team": "Craft-Bamboo Iron Lynx",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "NARAN",
+     "firstname": "Ameerh"
+    },
+    {
+     "surname": "PEDERSEN",
+     "firstname": "Mikkel Gaarde"
+    },
+    {
+     "surname": "STOLZ",
+     "firstname": "Luca"
+    }
+   ],
+   "vehicle": "Mercedes-AMG GT3 Evo",
+   "laps": 0,
+   "gap_first": "",
+   "gap_previous": "",
+   "pit_stops": 0,
+   "fastest_lap_time": ""
+  }
+ ]
+}

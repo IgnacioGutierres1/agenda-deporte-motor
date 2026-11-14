@@ -44,6 +44,7 @@ import {
   tzFor,
 } from './kit.ts';
 import { acoStandings } from './aco-standings.ts';
+import { acoPastSessions, acoResults } from './results-aco.ts';
 import { acoRoster, countryFromCode, dtmRoster, sroRoster } from './rosters.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
 import { apatSessions } from './apat.ts';
@@ -483,6 +484,9 @@ const aco: SiteRecipe = {
   standings: (url, ctx) => acoStandings(url, ctx),
   /** Inscriptos: grilla de autos del WEC (/en/page/grid) o página de pilotos de ELMS y Asian LMS (/en/page/drivers). */
   roster: (url, ctx) => acoRoster(url, ctx),
+  /** Resultados y sesiones de fechas ya corridas: cronograma de la página de la carrera + cronometraje del ACO (results-aco.ts). */
+  results: (entry, sessions, ctx) => acoResults(entry, sessions, ctx),
+  pastSessions: (entry, ctx) => acoPastSessions(entry, ctx),
 };
 
 // ─── Nürburgring Langstrecken-Serie ───────────────────────────────────────────────────────────

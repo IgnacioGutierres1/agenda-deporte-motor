@@ -11,9 +11,11 @@
  *   por tipo (pilotos, equipos, marcas) con un grupo por clase (GTP, LMP2, GTD Pro, GTD).
  */
 import type { StandingsRow, StandingsTable } from '@dm/shared';
+import { HttpError } from '../core/http.ts';
 import { decodeEntities, textOf } from '../extract/html.ts';
 import { isoDate, monthNumber } from './places.ts';
 import { checkStandingsTable, host, isoNow, obj, pageOrNull, standingsSource, str, stripComments, tzFor } from './kit.ts';
+import { IMSA_RESULTS_SERIES, imsaPastSessions, imsaResults, imsaResultsApi, imsaResultsCalendar, imsaApiEvents, imsaApiJson } from './results-imsa.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
 
 const ORIGIN = 'https://www.imsa.com';
@@ -237,6 +239,24 @@ async function imsaStandings(url: string, ctx: RecipeContext): Promise<Standings
   return null;
 }
 
+/**
+ * Temporadas terminadas cuyo calendario se arma desde la API de resultados (el sitio ya no publica la página
+ * /{año}/schedule). Lo decide season() y lo usa calendarUrl(), que no recibe el contexto. Clave "{campeonato}:{año}".
+ */
+const fromResults = new Set<string>();
+
+/** La API de resultados tiene eventos de esta temporada (temporada terminada pero publicada). */
+async function hasResults(ctx: RecipeContext, season: number, series: string): Promise<boolean> {
+  const seriesId = IMSA_RESULTS_SERIES[series];
+  if (!seriesId) return false;
+  try {
+    return imsaApiEvents(await imsaApiJson(ctx, imsaResultsApi(seriesId, season))).length > 0;
+  } catch (err) {
+    if (err instanceof HttpError && err.status === 404) return false;
+    throw err;
+  }
+}
+
 /** El sitio todavía publica el calendario de esta temporada (con eventos del campeonato). */
 async function publishes(ctx: RecipeContext, season: number, series: string): Promise<boolean> {
   const html = await pageOrNull(ctx, scheduleUrl(season, series));
@@ -248,19 +268,39 @@ export const imsa: SiteRecipe = {
   match: (url) => host(url) === 'imsa.com',
   /**
    * Al terminar la temporada el sitio deja de publicar su calendario (/2026/schedule da 404 en noviembre de 2026)
-   * y solo muestra el del año siguiente: entonces la temporada vigente es la siguiente.
+   * y solo muestra el del año siguiente. Mientras la API de resultados tenga la temporada del año en curso, esa
+   * sigue siendo la vigente (su calendario sale de los resultados y la del año siguiente entra como "temporada
+   * siguiente", ver core/season.ts); si no, la vigente es la siguiente.
    */
   async season(ctx) {
     const series = imsaSeriesKey(ctx.series.officialUrls[0] ?? '');
     // Un error suelto en la página del año (el sitio a veces responde 403 tras muchos pedidos seguidos) no decide
     // nada: se prueba igual el año siguiente, y si tampoco responde se queda la temporada del calendario.
+    fromResults.delete(`${series}:${ctx.season}`);
     const current = await publishes(ctx, ctx.season, series).catch(() => null);
     if (current) return ctx.season;
+    // Sin calendario del año: si la API de resultados tiene la temporada, sigue siendo la vigente. Si la API no
+    // responde (403 pasajero) también se queda: leer el calendario falla y la serie conserva los datos anteriores,
+    // en vez de pasar a la temporada siguiente en una corrida y volver en la otra.
+    if (current === false && (await hasResults(ctx, ctx.season, series).catch(() => true))) {
+      fromResults.add(`${series}:${ctx.season}`);
+      return ctx.season;
+    }
     const next = await publishes(ctx, ctx.season + 1, series).catch(() => false);
     return next ? ctx.season + 1 : ctx.season;
   },
-  calendarUrl: (url, season) => scheduleUrl(season, imsaSeriesKey(url)),
-  calendar: (doc, ctx) => imsaCalendar(doc.raw, doc.url, imsaSeriesKey(ctx.series.officialUrls[0] ?? doc.url), ctx.season),
+  calendarUrl: (url, season) => {
+    const series = imsaSeriesKey(url);
+    const seriesId = IMSA_RESULTS_SERIES[series];
+    return fromResults.has(`${series}:${season}`) && seriesId ? imsaResultsApi(seriesId, season) : scheduleUrl(season, series);
+  },
+  calendar(doc, ctx) {
+    const series = imsaSeriesKey(ctx.series.officialUrls[0] ?? doc.url);
+    const seriesId = IMSA_RESULTS_SERIES[series];
+    // Temporada terminada: calendario desde la API de resultados.
+    if (doc.kind === 'api' && seriesId) return imsaResultsCalendar(JSON.parse(doc.raw), seriesId, ctx.season, ctx);
+    return imsaCalendar(doc.raw, doc.url, series, ctx.season);
+  },
   async sessions(entry, ctx) {
     if (!entry.url) return null;
     const html = await pageOrNull(ctx, entry.url);
@@ -275,4 +315,7 @@ export const imsa: SiteRecipe = {
   // La pestaña del evento es el único lugar donde IMSA publica el cronograma: si no está, todavía no salió.
   timetableFallback: 'none',
   standings: imsaStandings,
+  /** Resultados y sesiones de fechas ya corridas: API de resultados del sitio (results-imsa.ts). */
+  results: (entry, sessions, ctx) => imsaResults(imsaSeriesKey(ctx.series.officialUrls[0] ?? ''), entry, sessions, ctx),
+  pastSessions: (entry, ctx) => imsaPastSessions(imsaSeriesKey(ctx.series.officialUrls[0] ?? ''), entry, ctx),
 };

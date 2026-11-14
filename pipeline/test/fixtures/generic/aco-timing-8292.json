@@ -1,0 +1,180 @@
+{
+ "classification": [
+  {
+   "class": "HYPERCAR",
+   "position": 1,
+   "number": "38",
+   "ecm_participant_id": 109685,
+   "ecm_category_id": 4167,
+   "team": "Cadillac Hertz Team Jota",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "BAMBER",
+     "firstname": "Earl"
+    },
+    {
+     "surname": "BOURDAIS",
+     "firstname": "Sébastien"
+    },
+    {
+     "surname": "AITKEN",
+     "firstname": "Jack"
+    }
+   ],
+   "vehicle": "Cadillac V-Series.R",
+   "laps": 191,
+   "gap_first": "",
+   "gap_previous": "",
+   "pit_stops": 7,
+   "fastest_lap_time": "1:34.874",
+   "kph": "219.8"
+  },
+  {
+   "class": "HYPERCAR",
+   "position": 2,
+   "number": "36",
+   "ecm_participant_id": 109684,
+   "ecm_category_id": 4167,
+   "team": "Alpine Endurance Team",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "GOUNON",
+     "firstname": "Jules"
+    },
+    {
+     "surname": "MARTINS",
+     "firstname": "Victor"
+    }
+   ],
+   "vehicle": "Alpine A424",
+   "laps": 191,
+   "gap_first": "5.607",
+   "gap_previous": "5.607",
+   "pit_stops": 7,
+   "fastest_lap_time": "1:34.699",
+   "kph": "220.2"
+  },
+  {
+   "class": "HYPERCAR",
+   "position": 3,
+   "number": "51",
+   "ecm_participant_id": 109687,
+   "ecm_category_id": 4167,
+   "team": "Ferrari AF Corse",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "PIER GUIDI",
+     "firstname": "Alessandro"
+    },
+    {
+     "surname": "CALADO",
+     "firstname": "James"
+    },
+    {
+     "surname": "GIOVINAZZI",
+     "firstname": "Antonio"
+    }
+   ],
+   "vehicle": "Ferrari 499P",
+   "laps": 191,
+   "gap_first": "35.767",
+   "gap_previous": "30.160",
+   "pit_stops": 7,
+   "fastest_lap_time": "1:34.627",
+   "kph": "220.4"
+  },
+  {
+   "class": "LMGT3",
+   "position": 15,
+   "number": "92",
+   "ecm_participant_id": 109699,
+   "ecm_category_id": 4183,
+   "team": "The Bend Manthey",
+   "tires": "G",
+   "drivers": [
+    {
+     "surname": "SHAHIN",
+     "firstname": "Yasser"
+    },
+    {
+     "surname": "PERA",
+     "firstname": "Riccardo"
+    },
+    {
+     "surname": "LIETZ",
+     "firstname": "Richard"
+    }
+   ],
+   "vehicle": "Porsche 911 GT3 R LMGT3",
+   "laps": 173,
+   "gap_first": "18 Laps",
+   "gap_previous": "16 Laps",
+   "pit_stops": 7,
+   "fastest_lap_time": "1:47.506",
+   "kph": "194"
+  },
+  {
+   "class": "LMGT3",
+   "position": 16,
+   "number": "23",
+   "ecm_participant_id": 109678,
+   "ecm_category_id": 4183,
+   "team": "Heart of Racing Team",
+   "tires": "G",
+   "drivers": [
+    {
+     "surname": "NEWELL",
+     "firstname": "Gray"
+    },
+    {
+     "surname": "BARRICHELLO",
+     "firstname": "Eduardo"
+    },
+    {
+     "surname": "ADAM",
+     "firstname": "Jonny"
+    }
+   ],
+   "vehicle": "Aston Martin Vantage AMR LMGT3",
+   "laps": 173,
+   "gap_first": "18 Laps",
+   "gap_previous": "0.270",
+   "pit_stops": 6,
+   "fastest_lap_time": "1:47.083",
+   "kph": "194.8"
+  },
+  {
+   "class": "HYPERCAR",
+   "position": 28,
+   "number": "12",
+   "ecm_participant_id": 109672,
+   "ecm_category_id": 4167,
+   "team": "Cadillac Hertz Team Jota",
+   "tires": "M",
+   "drivers": [
+    {
+     "surname": "STEVENS",
+     "firstname": "Will"
+    },
+    {
+     "surname": "NATO",
+     "firstname": "Norman"
+    },
+    {
+     "surname": "LYNN",
+     "firstname": "Alex"
+    }
+   ],
+   "vehicle": "Cadillac V-Series.R",
+   "laps": 188,
+   "gap_first": "3 Laps",
+   "gap_previous": "-17 Laps",
+   "pit_stops": 7,
+   "fastest_lap_time": "1:34.603",
+   "kph": "220.4"
+  }
+ ]
+}

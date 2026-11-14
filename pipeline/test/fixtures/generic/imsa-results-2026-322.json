@@ -1,0 +1,614 @@
+{
+ "seasons": [],
+ "series": [],
+ "events": [],
+ "sessions": [
+  {
+   "id": 2926,
+   "event_id": 322,
+   "name": "Practice 1",
+   "start_time": "Thursday January 22, 2026",
+   "type": "P",
+   "series_id": 111,
+   "victory_margin": "+0.105",
+   "order": 1
+  },
+  {
+   "id": 2927,
+   "event_id": 322,
+   "name": "Qualifying",
+   "start_time": "Thursday January 22, 2026",
+   "type": "Q",
+   "series_id": 111,
+   "victory_margin": "+0.102",
+   "order": 2
+  },
+  {
+   "id": 2928,
+   "event_id": 322,
+   "name": "Practice 2",
+   "start_time": "Thursday January 22, 2026",
+   "type": "P",
+   "series_id": 111,
+   "victory_margin": "+0.056",
+   "order": 3
+  },
+  {
+   "id": 2929,
+   "event_id": 322,
+   "name": "Practice 3",
+   "start_time": "Friday January 23, 2026",
+   "type": "P",
+   "series_id": 111,
+   "victory_margin": "+0.066",
+   "order": 4
+  },
+  {
+   "id": 2947,
+   "event_id": 322,
+   "name": "Race",
+   "start_time": "Saturday January 24, 2026",
+   "type": "R",
+   "series_id": 111,
+   "victory_margin": "+1.569",
+   "time_of_race": "24:01:20.108",
+   "order": 5
+  }
+ ],
+ "classes": [
+  {
+   "id": 194,
+   "name": "Grand Touring Prototype",
+   "shortcode": "GTP",
+   "results": [
+    {
+     "car": {
+      "car_id": 3980,
+      "car_number": "7",
+      "car_name": "Porsche 963"
+     },
+     "id": 109824,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 1,
+     "fastest_lap": "1:36.414",
+     "position": 1,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 705,
+     "team": {
+      "id": 1789,
+      "name": "Porsche Penske Motorsport"
+     },
+     "class": {
+      "id": 194,
+      "name": "Grand Touring Prototype",
+      "shortcode": "GTP"
+     },
+     "drivers": [
+      {
+       "id": 32656,
+       "name": "Felipe Nasr"
+      },
+      {
+       "id": 91737,
+       "name": "Laurin Heinrich"
+      },
+      {
+       "id": 86920,
+       "name": "Julien Andlauer"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3932,
+      "car_number": "31",
+      "car_name": "Cadillac V-Series.R"
+     },
+     "id": 109815,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 2,
+     "sponsor": "Cadillac / Whelen",
+     "fastest_lap": "1:36.236",
+     "position": 2,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 705,
+     "team": {
+      "id": 1758,
+      "name": "Cadillac Whelen "
+     },
+     "class": {
+      "id": 194,
+      "name": "Grand Touring Prototype",
+      "shortcode": "GTP"
+     },
+     "drivers": [
+      {
+       "id": 85908,
+       "name": "Connor Zilisch"
+      },
+      {
+       "id": 105668,
+       "name": "Frederik Vesti"
+      },
+      {
+       "id": 38407,
+       "name": "Earl Bamber"
+      },
+      {
+       "id": 92440,
+       "name": "Jack Aitken"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3947,
+      "car_number": "10",
+      "car_name": "Cadillac V-Series.R"
+     },
+     "id": 109806,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 11,
+     "sponsor": "DEX",
+     "fastest_lap": "1:36.400",
+     "position": 50,
+     "start_position": 0,
+     "status": "Not Running",
+     "number_laps": 629,
+     "team": {
+      "id": 1768,
+      "name": "Cadillac Wayne Taylor Racing"
+     },
+     "class": {
+      "id": 194,
+      "name": "Grand Touring Prototype",
+      "shortcode": "GTP"
+     },
+     "drivers": [
+      {
+       "id": 86755,
+       "name": "Will Stevens"
+      },
+      {
+       "id": 35499,
+       "name": "Filipe Albuquerque"
+      },
+      {
+       "id": 14425,
+       "name": "Ricky Taylor"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 196,
+   "name": "Le Mans Prototype 2",
+   "shortcode": "LMP2",
+   "results": [
+    {
+     "car": {
+      "car_id": 3948,
+      "car_number": "04",
+      "car_name": "ORECA LMP2 07"
+     },
+     "id": 109817,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 1,
+     "fastest_lap": "1:39.387",
+     "position": 10,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 686,
+     "team": {
+      "id": 1769,
+      "name": "Crowdstrike Racing by APR"
+     },
+     "class": {
+      "id": 196,
+      "name": "Le Mans Prototype 2",
+      "shortcode": "LMP2"
+     },
+     "drivers": [
+      {
+       "id": 99717,
+       "name": "Toby Sowery"
+      },
+      {
+       "id": 92439,
+       "name": "Alex Quinn"
+      },
+      {
+       "id": 85928,
+       "name": "Malthe Jakobsen"
+      },
+      {
+       "id": 81704,
+       "name": "George Kurtz"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3941,
+      "car_number": "43",
+      "car_name": "ORECA LMP2 07"
+     },
+     "id": 109821,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 2,
+     "fastest_lap": "1:40.150",
+     "position": 11,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 686,
+     "team": {
+      "id": 1766,
+      "name": "Inter Europol Competition"
+     },
+     "class": {
+      "id": 196,
+      "name": "Le Mans Prototype 2",
+      "shortcode": "LMP2"
+     },
+     "drivers": [
+      {
+       "id": 92834,
+       "name": "Bijoy Garg"
+      },
+      {
+       "id": 106497,
+       "name": "Antonio Felix da Costa"
+      },
+      {
+       "id": 99718,
+       "name": "Tom Dillmann"
+      },
+      {
+       "id": 82146,
+       "name": "Jeremy Clarke"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3909,
+      "car_number": "73",
+      "car_name": "ORECA LMP2 07"
+     },
+     "id": 109838,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 11,
+     "sponsor": "Evident / Santogal",
+     "fastest_lap": "1:40.165",
+     "position": 51,
+     "start_position": 0,
+     "status": "Not Running",
+     "number_laps": 612,
+     "team": {
+      "id": 1743,
+      "name": "Pratt Miller Motorsports"
+     },
+     "class": {
+      "id": 196,
+      "name": "Le Mans Prototype 2",
+      "shortcode": "LMP2"
+     },
+     "drivers": [
+      {
+       "id": 109982,
+       "name": "Manuel Espirito Santo"
+      },
+      {
+       "id": 92831,
+       "name": "Pietro Fittipaldi"
+      },
+      {
+       "id": 107729,
+       "name": "Enzo Fittipaldi"
+      },
+      {
+       "id": 106621,
+       "name": "Chris Cumming"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 192,
+   "name": "GT Daytona Pro",
+   "shortcode": "GTD Pro",
+   "results": [
+    {
+     "car": {
+      "car_id": 3971,
+      "car_number": "1",
+      "car_name": "BMW M4 GT3 EVO"
+     },
+     "id": 109855,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 1,
+     "sponsor": "I Heart Radio / UIS / Paul Miller Auto Group",
+     "fastest_lap": "1:46.459",
+     "position": 19,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 662,
+     "team": {
+      "id": 1780,
+      "name": "Paul Miller Racing"
+     },
+     "class": {
+      "id": 192,
+      "name": "GT Daytona Pro",
+      "shortcode": "GTD Pro"
+     },
+     "drivers": [
+      {
+       "id": 80207,
+       "name": "Max Hesse"
+      },
+      {
+       "id": 37502,
+       "name": "Connor De Phillippi"
+      },
+      {
+       "id": 80192,
+       "name": "Neil Verhagen"
+      },
+      {
+       "id": 80203,
+       "name": "Dan Harper"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3974,
+      "car_number": "75",
+      "car_name": "Mercedes-AMG GT3"
+     },
+     "id": 109864,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 2,
+     "fastest_lap": "1:46.495",
+     "position": 20,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 662,
+     "team": {
+      "id": 1785,
+      "name": "75 Express "
+     },
+     "class": {
+      "id": 192,
+      "name": "GT Daytona Pro",
+      "shortcode": "GTD Pro"
+     },
+     "drivers": [
+      {
+       "id": 44139,
+       "name": "Kenny Habul"
+      },
+      {
+       "id": 82070,
+       "name": "Maro Engel"
+      },
+      {
+       "id": 112984,
+       "name": "Will Power"
+      },
+      {
+       "id": 49884,
+       "name": "Chaz Mostert"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3910,
+      "car_number": "64",
+      "car_name": "Ford Mustang GT3"
+     },
+     "id": 109822,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 14,
+     "fastest_lap": "1:47.071",
+     "position": 53,
+     "start_position": 0,
+     "status": "Not Running",
+     "number_laps": 580,
+     "team": {
+      "id": 1744,
+      "name": "Ford Racing"
+     },
+     "class": {
+      "id": 192,
+      "name": "GT Daytona Pro",
+      "shortcode": "GTD Pro"
+     },
+     "drivers": [
+      {
+       "id": 8385,
+       "name": "Mike Rockenfeller"
+      },
+      {
+       "id": 49837,
+       "name": "Dennis Olsen"
+      },
+      {
+       "id": 100019,
+       "name": "Ben Barker"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "id": 191,
+   "name": "GT Daytona",
+   "shortcode": "GTD",
+   "results": [
+    {
+     "car": {
+      "car_id": 3907,
+      "car_number": "57",
+      "car_name": "Mercedes-AMG GT3"
+     },
+     "id": 109858,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 1,
+     "sponsor": "TECHEMET / FIRST HORIZON / RAVENOL / CRAIN GROUP",
+     "fastest_lap": "1:47.081",
+     "position": 27,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 661,
+     "team": {
+      "id": 1741,
+      "name": "Winward Racing"
+     },
+     "class": {
+      "id": 191,
+      "name": "GT Daytona",
+      "shortcode": "GTD"
+     },
+     "drivers": [
+      {
+       "id": 45988,
+       "name": "Russell Ward"
+      },
+      {
+       "id": 49360,
+       "name": "Indy Dontje"
+      },
+      {
+       "id": 50130,
+       "name": "Philip Ellis"
+      },
+      {
+       "id": 86906,
+       "name": "Lucas Auer"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3937,
+      "car_number": "44",
+      "car_name": "Aston Martin Vantage GT3 Evo"
+     },
+     "id": 109852,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 2,
+     "sponsor": "Virtual Energy",
+     "fastest_lap": "1:46.631",
+     "position": 28,
+     "start_position": 0,
+     "status": "Running",
+     "number_laps": 661,
+     "team": {
+      "id": 1762,
+      "name": "Magnus Racing"
+     },
+     "class": {
+      "id": 191,
+      "name": "GT Daytona",
+      "shortcode": "GTD"
+     },
+     "drivers": [
+      {
+       "id": 561,
+       "name": "Spencer Pumpelly"
+      },
+      {
+       "id": 32831,
+       "name": "Madison Snow"
+      },
+      {
+       "id": 38481,
+       "name": "Nicki Thiim"
+      },
+      {
+       "id": 19814,
+       "name": "John Potter"
+      }
+     ]
+    },
+    {
+     "car": {
+      "car_id": 3964,
+      "car_number": "36",
+      "car_name": "Chevrolet Corvette Z06 GT3.R"
+     },
+     "id": 109831,
+     "session": {
+      "id": 2947
+     },
+     "class_position": 17,
+     "fastest_lap": "1:46.964",
+     "position": 54,
+     "start_position": 0,
+     "status": "Not Running",
+     "number_laps": 568,
+     "team": {
+      "id": 1775,
+      "name": "DXDT Racing"
+     },
+     "class": {
+      "id": 191,
+      "name": "GT Daytona",
+      "shortcode": "GTD"
+     },
+     "drivers": [
+      {
+       "id": 82144,
+       "name": "Salih Yoluc"
+      },
+      {
+       "id": 81856,
+       "name": "Charlie Eastwood"
+      },
+      {
+       "id": 50005,
+       "name": "Mason Filippi"
+      },
+      {
+       "id": 92566,
+       "name": "Scott McLaughlin"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "default_season_id": 2026,
+ "default_series_id": 1,
+ "default_event_id": 322,
+ "default_session_id": 2947
+}
