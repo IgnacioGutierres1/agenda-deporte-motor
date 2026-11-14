@@ -12,6 +12,7 @@
 import { localToUtc, type RosterRow, type StandingsRow } from '@dm/shared';
 import { attr, extractEmbeddedJson, textOf } from '../extract/html.ts';
 import { checkStandingsTable, column, host, isoNow, obj, pageOrNull, parseHtmlTable, parseNumber, standingsSource, str } from './kit.ts';
+import { supercarsResults } from './results-supercars.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SessionsFound, SiteRecipe } from './types.ts';
 
 const BASE = 'https://www.supercars.com';
@@ -102,16 +103,24 @@ export function supercarsCalendar(html: string, season: number): CalendarEntry[]
   });
 }
 
-/** Nombre de la sesión sin el patrocinador ("Boost Mobile TTSO (Race 36)" -> "Top 10 Shootout (Race 36)"). */
+/**
+ * Nombre de la sesión sin el patrocinador ("Boost Mobile TTSO (Race 36)" o "Boost Mobile Top Ten Shootout (Race 33)"
+ * -> "Top 10 Shootout (Race …)").
+ */
 export function supercarsSessionName(name: string): string {
-  const n = name.replace(/\bTTSO\b/g, 'Top 10 Shootout').replace(/\s+/g, ' ').trim();
+  const n = name.replace(/\bTTSO\b|\bTop\s+Ten\s+Shootout\b/gi, 'Top 10 Shootout').replace(/\s+/g, ' ').trim();
   const at = n.search(/co-?driver\b|practice|qualifying|top\s*10\s*shootout|shootout|warm[\s-]?up|\brace\b/i);
   return at > 0 ? n.slice(at) : n;
 }
 
 export function supercarsSessions(html: string, tz: string): ExtractedSession[] {
+  return supercarsScheduleItems(html, tz).map(({ code: _code, ...s }) => s);
+}
+
+/** Sesiones del campeonato con su código de resultados de Natsoft ("P7", "Q5", "R7"): /results/AAAA/<slug>/<código>. */
+export function supercarsScheduleItems(html: string, tz: string): (ExtractedSession & { code: string })[] {
   const seen = new Set<string>();
-  const out: ExtractedSession[] = [];
+  const out: (ExtractedSession & { code: string })[] = [];
   const names = new Map<string, number>();
   const items: Record<string, unknown>[] = [];
   for (const v of extractEmbeddedJson(html)) {
@@ -133,6 +142,7 @@ export function supercarsSessions(html: string, tz: string): ExtractedSession[] 
     const end = wallClock(str(s.endDate));
     out.push({
       name: n > 1 ? `${base} (${n})` : base,
+      code: str(s.natsoftEventCode),
       startUtc: localToUtc(start.date, start.time, tz),
       ...(end && `${end.date}T${end.time}` > `${start.date}T${start.time}` ? { endUtc: localToUtc(end.date, end.time, tz) } : {}),
       localStartText: start.time,
@@ -244,6 +254,9 @@ export const supercars: SiteRecipe = {
     if (sessions.length === 0) return null;
     return { sessions, source: { url, title: `Schedule — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) } };
   },
+  /** Fechas ya corridas: el cronograma del evento sigue publicado (con los códigos de resultados de cada sesión). */
+  pastSessions: (entry, ctx) => supercars.sessions!(entry, ctx),
+  results: (entry, sessions, ctx) => supercarsResults(entry, sessions, ctx),
   async standings(_url, ctx) {
     // La URL configurada es /standings (redirige en el navegador a la temporada vigente): se pide la del año.
     const url = standingsUrl(ctx.season);
