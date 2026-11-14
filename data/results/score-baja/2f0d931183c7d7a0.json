@@ -1,7 +1,7 @@
 {
   "seriesId": "score-baja",
   "eventId": "2f0d931183c7d7a0",
-  "updatedAt": "2026-11-14T10:17:05Z",
+  "updatedAt": "2026-11-14T13:09:05Z",
   "sessions": [
     {
       "sessionId": "89b1c9e7888e94f1",
@@ -1983,6 +1983,656 @@
         "kind": "html",
         "method": "directo",
         "fetchedAt": "2026-11-14T10:17:05Z"
+      }
+    },
+    {
+      "sessionId": "a20dd1d4edb66cc5",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "83",
+          "driver": "Luke McMillin",
+          "time": "3:42.000",
+          "class": "SCORE Trophy Truck",
+          "classPos": 1
+        },
+        {
+          "pos": 2,
+          "number": "1",
+          "driver": "Alan Ampudia",
+          "time": "3:42.716",
+          "gap": "+0.717",
+          "class": "SCORE Trophy Truck",
+          "classPos": 2
+        },
+        {
+          "pos": 3,
+          "number": "21",
+          "driver": "Tavo Vildosola",
+          "time": "3:44.363",
+          "gap": "+2.364",
+          "class": "SCORE Trophy Truck",
+          "classPos": 3
+        },
+        {
+          "pos": 4,
+          "number": "41",
+          "driver": "Justin Lofton",
+          "time": "3:46.042",
+          "gap": "+4.043",
+          "class": "SCORE Trophy Truck",
+          "classPos": 4
+        },
+        {
+          "pos": 5,
+          "number": "5",
+          "driver": "Max Gordon",
+          "time": "3:47.361",
+          "gap": "+5.362",
+          "class": "SCORE Trophy Truck",
+          "classPos": 5
+        },
+        {
+          "pos": 6,
+          "number": "7",
+          "driver": "Bryce Menzies",
+          "time": "3:48.428",
+          "gap": "+6.429",
+          "class": "SCORE Trophy Truck",
+          "classPos": 6
+        },
+        {
+          "pos": 7,
+          "number": "24",
+          "driver": "Adam Householder",
+          "time": "3:51.851",
+          "gap": "+9.852",
+          "class": "SCORE Trophy Truck",
+          "classPos": 7
+        },
+        {
+          "pos": 8,
+          "number": "70",
+          "driver": "Kevin Thompson",
+          "time": "3:56.176",
+          "gap": "+14.177",
+          "class": "SCORE Trophy Truck",
+          "classPos": 8
+        },
+        {
+          "pos": 9,
+          "number": "46",
+          "driver": "Toby Price",
+          "time": "4:06.354",
+          "gap": "+24.355",
+          "class": "SCORE Trophy Truck",
+          "classPos": 9
+        },
+        {
+          "pos": 10,
+          "number": "69",
+          "driver": "Andrew Myers",
+          "time": "4:12.398",
+          "gap": "+30.399",
+          "class": "SCORE Trophy Truck",
+          "classPos": 10
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "94",
+          "driver": "Christopher Polvoorde",
+          "class": "SCORE Trophy Truck"
+        },
+        {
+          "pos": null,
+          "number": "1L",
+          "driver": "Gustavo Vildosola",
+          "time": "3:39.177",
+          "class": "SCORE Trophy Truck Legends",
+          "classPos": 1
+        },
+        {
+          "pos": null,
+          "number": "38L",
+          "driver": "Eric Hustead",
+          "time": "3:45.943",
+          "class": "SCORE Trophy Truck Legends",
+          "classPos": 2
+        },
+        {
+          "pos": null,
+          "number": "61L",
+          "driver": "David Payne",
+          "time": "3:51.754",
+          "class": "SCORE Trophy Truck Legends",
+          "classPos": 3
+        },
+        {
+          "pos": null,
+          "number": "234",
+          "driver": "Jason McNeil",
+          "time": "3:58.095",
+          "class": "Trophy Truck Spec",
+          "classPos": 1
+        },
+        {
+          "pos": null,
+          "number": "127",
+          "driver": "Cody Parkhouse",
+          "time": "3:58.736",
+          "class": "Class 1",
+          "classPos": 1
+        },
+        {
+          "pos": null,
+          "number": "168",
+          "driver": "Cody Reid",
+          "time": "3:58.980",
+          "class": "Class 1",
+          "classPos": 2
+        },
+        {
+          "pos": null,
+          "number": "285",
+          "driver": "Justin Davis",
+          "time": "3:59.324",
+          "class": "Trophy Truck Spec",
+          "classPos": 2
+        },
+        {
+          "pos": null,
+          "number": "253",
+          "driver": "Ray Griffith",
+          "time": "4:00.055",
+          "class": "Trophy Truck Spec",
+          "classPos": 3
+        },
+        {
+          "pos": null,
+          "number": "273",
+          "driver": "Apdaly Lopez",
+          "time": "4:00.684",
+          "class": "Trophy Truck Spec",
+          "classPos": 4
+        },
+        {
+          "pos": null,
+          "number": "212",
+          "driver": "Travis Pecoy",
+          "time": "4:02.114",
+          "class": "Trophy Truck Spec",
+          "classPos": 5
+        },
+        {
+          "pos": null,
+          "number": "219",
+          "driver": "Pierce Herbst",
+          "time": "4:02.624",
+          "class": "Trophy Truck Spec",
+          "classPos": 6
+        },
+        {
+          "pos": null,
+          "number": "297",
+          "driver": "Jorge Sampietro",
+          "time": "4:02.881",
+          "class": "Trophy Truck Spec",
+          "classPos": 7
+        },
+        {
+          "pos": null,
+          "number": "108",
+          "driver": "Brian Wilson",
+          "time": "4:03.257",
+          "class": "Class 1",
+          "classPos": 3
+        },
+        {
+          "pos": null,
+          "number": "233",
+          "driver": "Eliott Watson",
+          "time": "4:03.662",
+          "class": "Trophy Truck Spec",
+          "classPos": 8
+        },
+        {
+          "pos": null,
+          "number": "210",
+          "driver": "Colton Hustead",
+          "time": "4:03.767",
+          "class": "Trophy Truck Spec",
+          "classPos": 9
+        },
+        {
+          "pos": null,
+          "number": "227",
+          "driver": "Jack Olliges",
+          "time": "4:03.811",
+          "class": "Trophy Truck Spec",
+          "classPos": 10
+        },
+        {
+          "pos": null,
+          "number": "246",
+          "driver": "Ben Hagle",
+          "time": "4:03.935",
+          "class": "Trophy Truck Spec",
+          "classPos": 11
+        },
+        {
+          "pos": null,
+          "number": "242",
+          "driver": "Bryce Swaim",
+          "time": "4:04.069",
+          "class": "Trophy Truck Spec",
+          "classPos": 12
+        },
+        {
+          "pos": null,
+          "number": "11T",
+          "driver": "Rob Maccachren",
+          "time": "4:05.291",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 1
+        },
+        {
+          "pos": null,
+          "number": "26T",
+          "driver": "Dave Taylor",
+          "time": "4:05.557",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 2
+        },
+        {
+          "pos": null,
+          "number": "228",
+          "driver": "Ryan Hancock",
+          "time": "4:05.813",
+          "class": "Trophy Truck Spec",
+          "classPos": 13
+        },
+        {
+          "pos": null,
+          "number": "215",
+          "driver": "Trey Gibbs",
+          "time": "4:05.924",
+          "class": "Trophy Truck Spec",
+          "classPos": 14
+        },
+        {
+          "pos": null,
+          "number": "282",
+          "driver": "Brent Fox",
+          "time": "4:06.538",
+          "class": "Trophy Truck Spec",
+          "classPos": 15
+        },
+        {
+          "pos": null,
+          "number": "42T",
+          "driver": "Maverick Gaunt",
+          "time": "4:07.910",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 3
+        },
+        {
+          "pos": null,
+          "number": "2T",
+          "driver": "Chad Broughton",
+          "time": "4:08.518",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 4
+        },
+        {
+          "pos": null,
+          "number": "236",
+          "driver": "Michael Marsal",
+          "time": "4:09.112",
+          "class": "Trophy Truck Spec",
+          "classPos": 16
+        },
+        {
+          "pos": null,
+          "number": "1T",
+          "driver": "Sam Baldi",
+          "time": "4:09.113",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 5
+        },
+        {
+          "pos": null,
+          "number": "294",
+          "driver": "Vincent Munoz",
+          "time": "4:09.627",
+          "class": "Trophy Truck Spec",
+          "classPos": 17
+        },
+        {
+          "pos": null,
+          "number": "277",
+          "driver": "Travis Williams",
+          "time": "4:10.341",
+          "class": "Trophy Truck Spec",
+          "classPos": 18
+        },
+        {
+          "pos": null,
+          "number": "33T",
+          "driver": "Roberto Romo Jr.",
+          "time": "4:10.402",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 6
+        },
+        {
+          "pos": null,
+          "number": "16T",
+          "driver": "Cameron Steele",
+          "time": "4:11.093",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 7
+        },
+        {
+          "pos": null,
+          "number": "162",
+          "driver": "Brendan Gaughan",
+          "time": "4:12.094",
+          "class": "Class 1",
+          "classPos": 4
+        },
+        {
+          "pos": null,
+          "number": "205",
+          "driver": "Joe Delucie",
+          "time": "4:12.279",
+          "class": "Trophy Truck Spec",
+          "classPos": 19
+        },
+        {
+          "pos": null,
+          "number": "245",
+          "driver": "Ethan Hagle",
+          "time": "4:12.306",
+          "class": "Trophy Truck Spec",
+          "classPos": 20
+        },
+        {
+          "pos": null,
+          "number": "19T",
+          "driver": "Tim Herbst",
+          "time": "4:12.519",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 8
+        },
+        {
+          "pos": null,
+          "number": "263",
+          "driver": "EJ Herbst",
+          "time": "4:13.126",
+          "class": "Trophy Truck Spec",
+          "classPos": 21
+        },
+        {
+          "pos": null,
+          "number": "32T",
+          "driver": "Ryan Arciero",
+          "time": "4:13.190",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 9
+        },
+        {
+          "pos": null,
+          "number": "280",
+          "driver": "Justin Montesalvo",
+          "time": "4:13.316",
+          "class": "Trophy Truck Spec",
+          "classPos": 22
+        },
+        {
+          "pos": null,
+          "number": "241",
+          "driver": "Stephen Beal",
+          "time": "4:13.815",
+          "class": "Trophy Truck Spec",
+          "classPos": 23
+        },
+        {
+          "pos": null,
+          "number": "150",
+          "driver": "Morgan Langley",
+          "time": "4:14.011",
+          "class": "Class 1",
+          "classPos": 5
+        },
+        {
+          "pos": null,
+          "number": "74T",
+          "driver": "Shane Lewis",
+          "time": "4:14.449",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 10
+        },
+        {
+          "pos": null,
+          "number": "275",
+          "driver": "Luis Angel Huerta",
+          "time": "4:15.869",
+          "class": "Trophy Truck Spec",
+          "classPos": 24
+        },
+        {
+          "pos": null,
+          "number": "15T",
+          "driver": "David Ziegler",
+          "time": "4:16.216",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 11
+        },
+        {
+          "pos": null,
+          "number": "99L",
+          "driver": "Shawn Runyon",
+          "time": "4:16.297",
+          "class": "SCORE Trophy Truck Legends",
+          "classPos": 4
+        },
+        {
+          "pos": null,
+          "number": "40T",
+          "driver": "Chris Miller",
+          "time": "4:17.358",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 12
+        },
+        {
+          "pos": null,
+          "number": "78T",
+          "driver": "Tracy Poole",
+          "time": "4:17.456",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 13
+        },
+        {
+          "pos": null,
+          "number": "299",
+          "driver": "Charles Dorrance",
+          "time": "4:19.041",
+          "class": "Trophy Truck Spec",
+          "classPos": 25
+        },
+        {
+          "pos": null,
+          "number": "51T",
+          "driver": "Steve Olliges",
+          "time": "4:20.225",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 14
+        },
+        {
+          "pos": null,
+          "number": "138",
+          "driver": "Brad Wilson",
+          "time": "4:20.296",
+          "class": "Class 1",
+          "classPos": 6
+        },
+        {
+          "pos": null,
+          "number": "209",
+          "driver": "Jose David Ruvalcaba Adame",
+          "time": "4:21.636",
+          "class": "Trophy Truck Spec",
+          "classPos": 26
+        },
+        {
+          "pos": null,
+          "number": "17T",
+          "driver": "Josh de Jong",
+          "time": "4:22.198",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 15
+        },
+        {
+          "pos": null,
+          "number": "53L",
+          "driver": "Wade Porter",
+          "time": "4:23.552",
+          "class": "SCORE Trophy Truck Legends",
+          "classPos": 5
+        },
+        {
+          "pos": null,
+          "number": "87T",
+          "driver": "Dallas Luttrell",
+          "time": "4:24.899",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 16
+        },
+        {
+          "pos": null,
+          "number": "247",
+          "driver": "Dan Bonnor",
+          "time": "4:28.294",
+          "class": "Trophy Truck Spec",
+          "classPos": 27
+        },
+        {
+          "pos": null,
+          "number": "248",
+          "driver": "Miles Wyatt",
+          "time": "4:28.516",
+          "class": "Trophy Truck Spec",
+          "classPos": 28
+        },
+        {
+          "pos": null,
+          "number": "101",
+          "driver": "AL Torres",
+          "time": "4:29.371",
+          "class": "Class 1",
+          "classPos": 7
+        },
+        {
+          "pos": null,
+          "number": "284",
+          "driver": "Jose Antonio Contreras",
+          "time": "4:30.528",
+          "class": "Trophy Truck Spec",
+          "classPos": 29
+        },
+        {
+          "pos": null,
+          "number": "166",
+          "driver": "Armando Bravo",
+          "time": "4:34.126",
+          "class": "Class 1",
+          "classPos": 8
+        },
+        {
+          "pos": null,
+          "number": "95T",
+          "driver": "Mike Perez",
+          "time": "4:36.779",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 17
+        },
+        {
+          "pos": null,
+          "number": "54T",
+          "driver": "Rodrigo Zendejas Velardo",
+          "time": "4:37.995",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 18
+        },
+        {
+          "pos": null,
+          "number": "85L",
+          "driver": "Clay Lawrence",
+          "time": "4:38.814",
+          "class": "SCORE Trophy Truck Legends",
+          "classPos": 6
+        },
+        {
+          "pos": null,
+          "number": "270",
+          "driver": "Jimmy Diaz",
+          "time": "4:41.009",
+          "class": "Trophy Truck Spec",
+          "classPos": 30
+        },
+        {
+          "pos": null,
+          "number": "213",
+          "driver": "Victor Calderon",
+          "time": "4:44.428",
+          "class": "Trophy Truck Spec",
+          "classPos": 31
+        },
+        {
+          "pos": null,
+          "number": "96T",
+          "driver": "Enrique Murillo",
+          "time": "4:45.093",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 19
+        },
+        {
+          "pos": null,
+          "number": "237",
+          "driver": "Patrick Wieland",
+          "time": "4:46.720",
+          "class": "Trophy Truck Spec",
+          "classPos": 32
+        },
+        {
+          "pos": null,
+          "number": "39T",
+          "driver": "Andrew Herdman",
+          "time": "5:12.087",
+          "class": "SCORE Trophy Truck 2WD",
+          "classPos": 20
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "230",
+          "driver": "Neal Drickey",
+          "class": "Trophy Truck Spec"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "290",
+          "driver": "Isidro Ochoa",
+          "class": "Trophy Truck Spec"
+        }
+      ],
+      "source": {
+        "url": "https://results.score-international.com/results/?p=view_race_result&id=6639164",
+        "title": "SCORE International (LiveTime) – San Felipe 250 2026: Clasificación",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T13:09:05Z"
       }
     }
   ]

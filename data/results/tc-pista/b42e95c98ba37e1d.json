@@ -1,0 +1,515 @@
+{
+  "seriesId": "tc-pista",
+  "eventId": "b42e95c98ba37e1d",
+  "updatedAt": "2026-11-14T13:09:05Z",
+  "sessions": [
+    {
+      "sessionId": "7832442746348484",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "bestLap": "1:22.906"
+        },
+        {
+          "pos": 2,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "gap": "+0.094",
+          "bestLap": "1:23.000"
+        },
+        {
+          "pos": 3,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "gap": "+0.134",
+          "bestLap": "1:23.040"
+        },
+        {
+          "pos": 4,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "gap": "+0.236",
+          "bestLap": "1:23.142"
+        },
+        {
+          "pos": 5,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "gap": "+0.443",
+          "bestLap": "1:23.349"
+        },
+        {
+          "pos": 6,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "gap": "+0.617",
+          "bestLap": "1:23.523"
+        },
+        {
+          "pos": 7,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "gap": "+1.217",
+          "bestLap": "1:24.123"
+        },
+        {
+          "pos": 8,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "gap": "+1.224",
+          "bestLap": "1:24.130"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "gap": "+1.318",
+          "bestLap": "1:24.224"
+        },
+        {
+          "pos": 10,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "gap": "+1.939",
+          "bestLap": "1:24.845"
+        },
+        {
+          "pos": 11,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "gap": "+2.088",
+          "bestLap": "1:24.994"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "gap": "+2.530",
+          "bestLap": "1:25.436"
+        },
+        {
+          "pos": 13,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "gap": "+2.728",
+          "bestLap": "1:25.634"
+        },
+        {
+          "pos": 14,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "gap": "+3.133",
+          "bestLap": "1:26.039"
+        },
+        {
+          "pos": 15,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "gap": "+14.860",
+          "bestLap": "1:37.766"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "43",
+          "driver": "Benjamín ANTÓN"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260214_090710_1ER_ENTRENAMIENTO_TC_PISTA.pdf",
+        "title": "1ER ENTRENAMIENTO TC PISTA — Fecha 1 — CALAFATE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T13:09:05Z"
+      }
+    },
+    {
+      "sessionId": "ecac590cfb4cae17",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "bestLap": "1:20.415"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "gap": "+0.158",
+          "bestLap": "1:20.573"
+        },
+        {
+          "pos": 3,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "gap": "+0.405",
+          "bestLap": "1:20.820"
+        },
+        {
+          "pos": 4,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "gap": "+0.604",
+          "bestLap": "1:21.019"
+        },
+        {
+          "pos": 5,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "gap": "+0.761",
+          "bestLap": "1:21.176"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "gap": "+0.860",
+          "bestLap": "1:21.275"
+        },
+        {
+          "pos": 7,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "gap": "+1.200",
+          "bestLap": "1:21.615"
+        },
+        {
+          "pos": 8,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "gap": "+1.220",
+          "bestLap": "1:21.635"
+        },
+        {
+          "pos": 9,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "gap": "+1.253",
+          "bestLap": "1:21.668"
+        },
+        {
+          "pos": 10,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "gap": "+1.258",
+          "bestLap": "1:21.673"
+        },
+        {
+          "pos": 11,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "gap": "+1.368",
+          "bestLap": "1:21.783"
+        },
+        {
+          "pos": 12,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "gap": "+1.486",
+          "bestLap": "1:21.901"
+        },
+        {
+          "pos": 13,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "gap": "+1.504",
+          "bestLap": "1:21.919"
+        },
+        {
+          "pos": 14,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "gap": "+1.610",
+          "bestLap": "1:22.025"
+        },
+        {
+          "pos": 15,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "gap": "+1.984",
+          "bestLap": "1:22.399"
+        },
+        {
+          "pos": 16,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "gap": "+2.686",
+          "bestLap": "1:23.101"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260214_105757_2do_ENTRENAMIENTO_TC_PISTA.pdf",
+        "title": "2do ENTRENAMIENTO TC PISTA — Fecha 1 — CALAFATE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T13:09:05Z"
+      }
+    },
+    {
+      "sessionId": "7cfc76888bfb3f9e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "bestLap": "1:20.267"
+        },
+        {
+          "pos": 2,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "gap": "+0.193",
+          "bestLap": "1:20.460"
+        },
+        {
+          "pos": 3,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "gap": "+0.250",
+          "bestLap": "1:20.517"
+        },
+        {
+          "pos": 4,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "gap": "+0.414",
+          "bestLap": "1:20.681"
+        },
+        {
+          "pos": 5,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "gap": "+0.749",
+          "bestLap": "1:21.016"
+        },
+        {
+          "pos": 6,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "gap": "+0.819",
+          "bestLap": "1:21.086"
+        },
+        {
+          "pos": 7,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "gap": "+0.927",
+          "bestLap": "1:21.194"
+        },
+        {
+          "pos": 8,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "gap": "+1.146",
+          "bestLap": "1:21.413"
+        },
+        {
+          "pos": 9,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "gap": "+1.194",
+          "bestLap": "1:21.461"
+        },
+        {
+          "pos": 10,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "gap": "+1.441",
+          "bestLap": "1:21.708"
+        },
+        {
+          "pos": 11,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "gap": "+1.591",
+          "bestLap": "1:21.858"
+        },
+        {
+          "pos": 12,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "gap": "+1.607",
+          "bestLap": "1:21.874"
+        },
+        {
+          "pos": 13,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "gap": "+1.884",
+          "bestLap": "1:22.151"
+        },
+        {
+          "pos": 14,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "gap": "+2.455",
+          "bestLap": "1:22.722"
+        },
+        {
+          "pos": 15,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "gap": "+2.688",
+          "bestLap": "1:22.955"
+        },
+        {
+          "pos": 16,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "gap": "+3.385",
+          "bestLap": "1:23.652"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260214_133015_3ER_ENTRENAMIENTO_TC_PISTA.pdf",
+        "title": "3ER ENTRENAMIENTO TC PISTA — Fecha 1 — CALAFATE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T13:09:05Z"
+      }
+    },
+    {
+      "sessionId": "53fc3a4ca4e7b987",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "99",
+          "driver": "Bautista DAMIANI",
+          "vehicle": "CHEV.CAMARO",
+          "laps": 20,
+          "time": "27:56.454"
+        },
+        {
+          "pos": 2,
+          "number": "105",
+          "driver": "Manuel BORGERT",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+2.331"
+        },
+        {
+          "pos": 3,
+          "number": "53",
+          "driver": "Eugenio PROVENS",
+          "vehicle": "DODGE CHALLENGER",
+          "laps": 20,
+          "gap": "+2.436"
+        },
+        {
+          "pos": 4,
+          "number": "67",
+          "driver": "Santiago BIAGI",
+          "vehicle": "DODGE CHALLENGER",
+          "laps": 20,
+          "gap": "+3.492"
+        },
+        {
+          "pos": 5,
+          "number": "19",
+          "driver": "Luciano COTIGNOLA",
+          "vehicle": "TOYOTA",
+          "laps": 20,
+          "gap": "+4.324"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "Thomas POZNER",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+6.944"
+        },
+        {
+          "pos": 7,
+          "number": "123",
+          "driver": "Nicanor SANTILLI PAZOS",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+10.633"
+        },
+        {
+          "pos": 8,
+          "number": "59",
+          "driver": "Juan Ignacio MACEIRA",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+11.798"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Gabriel GANDULIA",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+20.194"
+        },
+        {
+          "pos": 10,
+          "number": "144",
+          "driver": "Faustino CIFRE",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+20.369"
+        },
+        {
+          "pos": 11,
+          "number": "43",
+          "driver": "Benjamín ANTÓN",
+          "vehicle": "FORD MUSTANG",
+          "laps": 20,
+          "gap": "+31.604"
+        },
+        {
+          "pos": 12,
+          "number": "169",
+          "driver": "Braian QUEVEDO",
+          "vehicle": "TOYOTA",
+          "laps": 17,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "111",
+          "driver": "Benjamin OCHOA",
+          "vehicle": "DODGE",
+          "laps": 11,
+          "gap": "+9 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "133",
+          "driver": "Felipe BERNASCONI",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+9 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "31",
+          "driver": "Lucas GUERRA",
+          "vehicle": "TORINO ACTC",
+          "laps": 8,
+          "gap": "+12 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "66",
+          "driver": "Gustavo (H) TADEI",
+          "vehicle": "CHEV.CAMARO",
+          "laps": 6,
+          "gap": "+14 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/resultados/86/ver",
+        "title": "FINAL TC PISTA — Fecha 1 — CALAFATE",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-14T13:09:05Z"
+      }
+    }
+  ]
+}
