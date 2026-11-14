@@ -159,4 +159,14 @@ export interface SiteRecipe {
    * Sin esta función, los resultados se buscan con IA (Gemini, con cupo diario muy chico).
    */
   results?(entry: CalendarEntry, sessions: Session[], ctx: RecipeContext): Promise<ResultsFound | null>;
+  /**
+   * Sesiones de una fecha YA CORRIDA que no tiene sesiones guardadas (tanda 5): el cronograma solo se lee dentro del
+   * horizonte, así que las fechas anteriores a la primera corrida del pipeline (o cuyo cronograma nunca se pudo leer)
+   * no tienen sesiones y sus resultados no tendrían dónde ir. La receta las arma desde la fuente de resultados
+   * oficial (lista de sesiones con su hora; si la fuente no da la hora, una estimación razonable del día, sin
+   * localStartText). Lo llama el schedule del flujo genérico con tope por corrida (MAX_PAST_SESSION_EVENTS), sin IA;
+   * en la misma corrida, la fase de resultados las encuentra terminadas y llama a results(). null si no hay nada.
+   * Los nombres deben ser los mismos que results() reconoce (se guardan como originalName si se traducen).
+   */
+  pastSessions?(entry: CalendarEntry, ctx: RecipeContext): Promise<SessionsFound | null>;
 }

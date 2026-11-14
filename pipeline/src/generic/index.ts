@@ -76,6 +76,11 @@ const MAX_DIRECT_RESULT_EVENTS = 8;
  * Último cambio de los lectores de resultados por receta (SiteRecipe.results). Las sesiones que se habían dado por
  * perdidas antes de esta fecha (porque solo había IA) se vuelven a intentar (ver Adapter.resultsReaderSince).
  */
+/**
+ * Fechas ya corridas sin sesiones guardadas cuyas sesiones se reconstruyen por corrida y serie desde los resultados
+ * oficiales (SiteRecipe.pastSessions), de la más reciente a la más vieja.
+ */
+const MAX_PAST_SESSION_EVENTS = 6;
 export const GENERIC_RESULTS_READER_SINCE = '2026-11-14T00:00:00Z';
 /** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
 const MAX_CALENDAR_IMAGES = 16;
@@ -299,6 +304,17 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
       const missing: MissingTimetable[] = [];
       let needsKey = 0;
       let unavailable = MISSING_KEY_MESSAGE;
+      // Fechas ya terminadas sin sesiones guardadas (el cronograma solo se lee dentro del horizonte): la receta puede
+      // reconstruirlas desde los resultados oficiales para que la fase de resultados tenga a qué asignarlos.
+      const recipe = findRecipe(url);
+      const pastBudget = { left: recipe?.pastSessions ? MAX_PAST_SESSION_EVENTS : 0 };
+      const pastOrder = new Map(
+        cal.entries
+          .map((e, i) => ({ e, i }))
+          .filter(({ e }) => e.dateEnd < from)
+          .sort((a, b) => b.e.dateEnd.localeCompare(a.e.dateEnd))
+          .map(({ i }, rank) => [i, rank]),
+      );
 
       for (const [i, entry] of cal.entries.entries()) {
         const draft = ctx.build.event({
@@ -319,6 +335,22 @@ export function createGenericAdapter(deps: GenericDeps = {}): Adapter {
         // Un error al buscar o leer el cronograma (o la falta de IA) no es lo mismo que "todavía no publicado".
         let unreadable = false;
         const inHorizon = entry.dateEnd >= from && entry.dateStart <= to;
+        const pastRank = pastOrder.get(i);
+        if (
+          pastRank !== undefined &&
+          recipe?.pastSessions &&
+          pastBudget.left > 0 &&
+          !isNonRaceEvent(entry.name) &&
+          !prevSessions.some((s) => s.eventId === draft.id)
+        ) {
+          pastBudget.left--;
+          try {
+            found = await recipe.pastSessions(entry, recipeCtx(series, ctx));
+            if (found?.sessions.length) ctx.log.info(`${entry.name}: ${found.sessions.length} sesión(es) reconstruidas desde los resultados oficiales`);
+          } catch (err) {
+            ctx.log.warn(`${entry.name}: sesiones de la fecha ya corrida ilegibles (${err instanceof Error ? err.message : String(err)})`);
+          }
+        }
         if (inHorizon) {
           try {
             found = await findSessions(series, entry, cal, ctx, deps);
