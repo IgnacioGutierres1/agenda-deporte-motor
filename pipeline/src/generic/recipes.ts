@@ -56,6 +56,10 @@ import { superformula } from './superformula.ts';
 import { supergt } from './supergt.ts';
 import { supertaikyu } from './supertaikyu.ts';
 import { tc2000TimetableImages } from './tc2000.ts';
+import { actcPastSessions, actcResults } from './results-actc.ts';
+import { apatPastSessions, apatResults } from './results-apat.ts';
+import { aptpPastSessions, aptpResults } from './results-aptp.ts';
+import { tc2000PastSessions, tc2000Results } from './results-tc2000.ts';
 
 export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
@@ -549,6 +553,8 @@ const apat: SiteRecipe = {
   },
   /** Cronograma: página de la fecha o nota de prensa con el PDF (apat.ts). Si no está en ninguna, no se publicó todavía. */
   sessions: apatSessions,
+  results: apatResults,
+  pastSessions: apatPastSessions,
   timetableFallback: 'none',
   /**
    * Campeonato de cada clase (https://apat.org.ar/campeonato/ranking/c2, …/c3): tabla HTML con
@@ -631,6 +637,8 @@ const tc2000: SiteRecipe = {
   },
   /** Cronograma: imagen de la página de cronograma de cada fecha, transcripta por la IA (tc2000.ts). */
   timetableImages: tc2000TimetableImages,
+  results: tc2000Results,
+  pastSessions: tc2000PastSessions,
   timetableFallback: 'none',
   /**
    * Posiciones (https://tc2000.com.ar/estadisticas.php?accion=posiciones): pestañas PILOTOS / EQUIPOS / MARCAS;
@@ -767,7 +775,9 @@ const actc: SiteRecipe = {
       const days = Array.isArray(s.days) ? (s.days as unknown[]).map((d) => str(obj(d).date).slice(0, 10)) : [];
       return days.includes(raceDate);
     });
-    if (!schedule) return null;
+    // Sin cronograma en la API (en noviembre de 2026 solo lista el de San Luis), las tandas ya corridas de la fecha
+    // en curso salen de los resultados oficiales (results-actc.ts), para que esos resultados tengan dónde mostrarse.
+    if (!schedule) return isoNow(ctx.now).slice(0, 10) >= entry.dateStart ? actcPastSessions(entry, code, ctx) : null;
     let days = schedule.days as Record<string, unknown>[] | undefined;
     if (!Array.isArray(days)) {
       const detail = await ctx.http.json<{ data?: Record<string, unknown> }>(`${listUrl}/${str(schedule.id)}`);
@@ -808,6 +818,8 @@ const actc: SiteRecipe = {
     };
     return { sessions, source };
   },
+  results: (entry, sessions, ctx) => actcResults(entry, sessions, entry.meta?.code ?? actcCategory(ctx.series.officialUrls[0] ?? ''), ctx),
+  pastSessions: (entry, ctx) => actcPastSessions(entry, entry.meta?.code ?? actcCategory(ctx.series.officialUrls[0] ?? ''), ctx),
 };
 
 // ─── APTP (Turismo Pista) ─────────────────────────────────────────────────────────────────────
@@ -822,6 +834,8 @@ const aptp: SiteRecipe = {
   name: 'aptp',
   match: (url) => host(url) === 'aptpweb.com.ar',
   sessions: aptpSessions,
+  results: aptpResults,
+  pastSessions: aptpPastSessions,
   timetableImages: aptpTimetableImages,
   timetableFallback: 'generic',
   async standings(url, ctx) {
