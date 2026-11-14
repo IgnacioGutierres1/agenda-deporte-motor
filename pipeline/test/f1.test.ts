@@ -169,3 +169,22 @@ describe('lector F1 (formula1.com)', () => {
     expect(teams!.rows[0]).toEqual({ pos: 1, name: 'Mercedes', points: 652 });
   });
 });
+
+describe('lector F1: ensayos de pretemporada', () => {
+  it('lee la tabla de cada día de ensayos (formula1.com la publica como práctica 1, 2 y 3)', async () => {
+    const res = `${BASE}/en/results/2026/races/1304/pre-season-testing-1`;
+    const http = fakeHttp(routes({ [`${res}/practice/1`]: fixture('f1/results-testing-1-day-1.html') }));
+    const ctx = ctxWith(http);
+    const { events, sessions } = await f1Adapter.schedule(series, ctx);
+    const testing = events.find((e) => e.source.url.endsWith('/pre-season-testing-1'))!;
+    const days = sessions.filter((s) => s.eventId === testing.id).reverse();
+    const out = await f1Adapter.results!(series, ctx, { events, sessions, pendingSessions: days, standingsStale: false });
+
+    expect(out.results).toHaveLength(1);
+    const [day1] = out.results[0]!.sessions;
+    expect(day1!.sessionId).toBe(days.at(-1)!.id);
+    expect(day1!.source.url).toBe(`${res}/practice/1`);
+    expect(day1!.rows[0]).toEqual({ pos: 1, driver: 'Lando Norris', number: '1', team: 'McLaren', laps: 58, time: '1:34.669' });
+    expect(day1!.rows[1]).toMatchObject({ pos: 2, driver: 'Max Verstappen', gap: '+0.129s', laps: 136 });
+  });
+});

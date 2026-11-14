@@ -125,6 +125,10 @@ export function parseF1Standings(html: string, title: string): StandingsTable {
 export const f1Adapter: Adapter = {
   name: 'f1',
 
+  // Desde este arreglo se leen también los días de los ensayos de pretemporada: los que se habían dado por perdidos
+  // se vuelven a buscar.
+  resultsReaderSince: '2026-11-14T00:00:00Z',
+
   // Hasta este arreglo, el que no largó y el que abandonó en la primera vuelta se publicaban igual ("NC", 0 vueltas):
   // esas carreras y sprints se releen una vez para saber cuál es cuál (lo usan las estadísticas de la temporada).
   resultsReread: {
@@ -175,7 +179,8 @@ export const f1Adapter: Adapter = {
       if (!round || !fom) continue;
       const path = f1ResultsPath(fom);
       const base = f1ResultsBase(round.html, ctx.season, round.meeting, slug);
-      if (!path || !base || isTesting(round.meeting, slug)) continue;
+      // Los ensayos de pretemporada también tienen resultados por día (…/practice/1, /2, /3).
+      if (!path || !base) continue;
 
       const url = `${base}/${path}`;
       budget--;
