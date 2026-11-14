@@ -62,6 +62,9 @@ const ENTRIES: BroadcastEntry[] = [
   { names: ['Carburando'], url: 'https://www.carburando.com/' },
   // "Campeones.com.ar" (og:site_name Campeones).
   { names: ['Campeones'], url: 'https://campeones.com.ar/' },
+  // Transmisión propia de SCORE International en su sitio: "All 2026 SCORE races will be streaming LIVE on
+  // score-international.com" (calendario oficial 2026 y 2027). Verificado el 14/11/2026.
+  { names: ['SCORE Live', 'SCORE Live Stream', 'SCORE International Live'], url: 'https://score-international.com/' },
 
   // ── Canales oficiales de YouTube (nombre del canal en la página; * = además enlazado desde el sitio oficial) ──
   // "F1 Academy" (verificado por YouTube) * f1academy.com
@@ -106,6 +109,8 @@ const ENTRIES: BroadcastEntry[] = [
   { names: ['YouTube IndyCar'], url: 'https://www.youtube.com/@indycar' },
   // "Supercars" (verificado por YouTube) * supercars.com
   { names: ['YouTube Supercars'], url: 'https://www.youtube.com/@supercars' },
+  // "SCORE International Off-Road Racing" * score-international.com (portada y sitio de resultados). Verificado el 14/11/2026.
+  { names: ['YouTube SCORE International', 'YouTube SCORE'], url: 'https://www.youtube.com/@scoreinternational' },
 ];
 
 /**
