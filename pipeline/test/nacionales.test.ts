@@ -119,7 +119,9 @@ describe('Turismo Nacional (APAT): cronograma sin IA', () => {
     expect(event.sessionsStatus).toBe('pending');
     expect(chunk.sessions).toHaveLength(0);
     expect(gemini.requests).toHaveLength(0);
-    expect(http.requested).toEqual([
+    // (Las fechas ya corridas se reconstruyen desde sus resultados: páginas de la fecha y de resultados, sin IA.)
+    const pastReads = (u: string) => u.includes('/resultados/') || (u.includes('/carreras/info/') && !u.endsWith('2026-11-29'));
+    expect(http.requested.filter((u) => !pastReads(u))).toEqual([
       'https://apat.org.ar/carreras',
       'https://apat.org.ar/carreras/info/2026-11-29',
       'https://apat.org.ar/noticias',
@@ -180,7 +182,8 @@ describe('TC2000: cronograma publicado como imagen', () => {
     const chunk = await createGenericAdapter({ gemini: () => gemini }).schedule(tc2000, testContext(http, '2026-11-12T12:00:00Z'));
     expect(chunk.events.find((e) => e.round === 11)!.sessionsStatus).toBe('pending');
     expect(gemini.requests).toHaveLength(0);
-    expect(http.requested).toEqual([
+    // (Las fechas ya corridas se reconstruyen desde su página de tiempos, sin IA.)
+    expect(http.requested.filter((u) => !u.includes('accion=tiempos'))).toEqual([
       'https://tc2000.com.ar/carreras.php?evento=calendario',
       'https://tc2000.com.ar/carreras.php?accion=cronograma&id=422',
     ]);
