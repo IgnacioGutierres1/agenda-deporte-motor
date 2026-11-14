@@ -225,7 +225,8 @@ const indycar: SiteRecipe = {
       const title = textByClass(b, 'event-card-title');
       const track = textByClass(b, 'event-card-track-name') || title;
       const location = textByClass(b, 'event-card-track-location');
-      const url = absoluteUrl(href, doc.url) ?? undefined;
+      // indynxt.com enlaza sus fechas con http:// y a esa variante le responde 403 (con https:// anda).
+      const url = absoluteUrl(href, doc.url)?.replace(/^http:\/\//, 'https://') ?? undefined;
       // Fechas dobles (Indy NXT): una tarjeta por carrera; se agrupan en un solo evento.
       const prev = out.find((e) => e.circuit === track && Math.abs(Date.parse(e.dateEnd) - Date.parse(day.start)) <= 2 * 86_400_000);
       if (prev) {
