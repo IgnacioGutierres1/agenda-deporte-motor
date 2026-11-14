@@ -8,10 +8,12 @@
  * Si el programa de la temporada todavía no está publicado, las fechas salen de /api/setting (la cuenta regresiva
  * de la app oficial: "19-22/11/2026").
  * Las listas de inscriptos son PDF por categoría (/api/game/entry_list), así que no hay roster determinista.
+ * Los resultados son PDF de cronometraje por categoría y sesión (/api/game/result_list): ver results-macau.ts.
  */
 import { localToUtc } from '@dm/shared';
 import { dateInZone, isoDate } from './places.ts';
 import { host, isoNow, obj, str } from './kit.ts';
+import { macauResults } from './results-macau.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SessionsFound, SiteRecipe } from './types.ts';
 
 const BASE = 'https://www.macau.grandprix.gov.mo';
@@ -65,6 +67,9 @@ const CATEGORIES: [RegExp, string][] = [
   [/Greater Bay Area/i, 'Greater Bay Area GT Cup'],
   [/Roadsport/i, 'Roadsport Challenge'],
 ];
+
+/** Nombre corto de la categoría a partir de un título oficial ("Macau GT Cup - FIA GT World Cup" -> "FIA GT World Cup"). */
+export const macauCategory = (title: string): string | undefined => CATEGORIES.find(([re]) => re.test(title))?.[1];
 
 /** Parte final del título que nombra la sesión ("Free Practice 1", "Qualification Race (8 laps)", "warm up"). */
 const SESSION_PART = /^(?:free practice|practice|qualif\w*|warm[\s-]*up|(?:main|qualification|qualifying|feature|sprint)\s+race|race|heat|final)\b/i;
@@ -163,6 +168,7 @@ export const macau: SiteRecipe = {
     }
     return edition ? [entry(edition.start, edition.end, edition.title, [])] : [];
   },
+  results: (entry, sessions, ctx) => macauResults(entry, sessions, ctx),
   async sessions(_entry, ctx): Promise<SessionsFound | null> {
     const url = macauProgrammeUrl(ctx.season);
     const res = await ctx.http.text(url);

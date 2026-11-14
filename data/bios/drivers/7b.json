@@ -1,0 +1,629 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "dapra-roberto",
+      "wikidata": "Q134470510",
+      "summary": {
+        "text": "Roberto Daprà (born 25 April 2001) is an Italian rally driver.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Roberto_Dapr%C3%A0"
+      },
+      "birthPlace": "Trento, Italia",
+      "nationality": "Italia",
+      "career": [
+        {
+          "season": 2026,
+          "series": "Campeonato Mundial de Rally (WRC)",
+          "seriesId": "wrc",
+          "pos": 23,
+          "points": 6,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "source": "app"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "patrick-staropoli",
+      "wikidata": "Q81570234",
+      "summary": {
+        "text": "Patrick Charles Staropoli (born November 10, 1989) is an American retina surgeon and professional stock car racing driver. He last competed full-time in the NASCAR O'Reilly Auto Parts Series, driving the No. 48 Chevrolet Camaro SS for Big Machine Racing, part-time in the ARCA Menards Series, driving the No. 51 Chevrolet SS for Rick Ware Racing, and part-time in the ARCA Menards Series West, driving the No. 20 Chevrolet SS for Bill McAnally Racing. He also previously competed in the NASCAR Craftsman Truck Series.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Patrick_Staropoli"
+      },
+      "birthDate": "1989-11-10",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/33/Patrick_Staropoli_2024_2_%28cropped%29.jpg/500px-Patrick_Staropoli_2024_2_%28cropped%29.jpg",
+        "width": 480,
+        "height": 672,
+        "credit": "Nascar9919",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Patrick_Staropoli_2024_2_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "ARCA Menards Series West",
+          "team": "Bill McAnally Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "ARCA Menards Series",
+          "team": "Rick Ware Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "NASCAR O'Reilly Auto Parts Series (ex Xfinity)",
+          "seriesId": "nascar-xfinity",
+          "pos": 23,
+          "points": 444,
+          "races": 33,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "ARCA Menards Series West",
+          "team": "Venturini Motorsports",
+          "pos": 48,
+          "points": 36,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "ARCA Menards Series East",
+          "team": "Venturini Motorsports",
+          "pos": 33,
+          "points": 74,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "ARCA Menards Series",
+          "team": "Venturini Motorsports",
+          "pos": 20,
+          "points": 194,
+          "races": 4,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "ARCA Menards Series",
+          "team": "Cook Racing Technologies",
+          "pos": 20,
+          "points": 194,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Cook Racing Technologies",
+          "points": 0,
+          "races": 4,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Sam Hunt Racing",
+          "pos": 43,
+          "points": 58,
+          "races": 4,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "SMART Modified Tour",
+          "team": "Coulter Motorsports",
+          "pos": 33,
+          "points": 66,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Young's Motorsports",
+          "pos": 77,
+          "points": 2,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "NASCAR K&N Pro Series East",
+          "team": "Bill McAnally Racing",
+          "pos": 52,
+          "points": 29,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "ARCA Racing Series",
+          "team": "Empire Racing",
+          "pos": 114,
+          "points": 125,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "NASCAR K&N Pro Series West",
+          "team": "Bill McAnally Racing",
+          "pos": 29,
+          "points": 88,
+          "races": 2,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "NASCAR K&N Pro Series East",
+          "team": "Bill McAnally Racing",
+          "pos": 28,
+          "points": 107,
+          "races": 3,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "NASCAR K&N Pro Series West",
+          "team": "Bill McAnally Racing",
+          "pos": 35,
+          "points": 77,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "shinohara-takuro",
+      "wikidata": "Q64782983",
+      "summary": {
+        "text": "Takuro Shinohara (篠原 拓朗, Shinohara Takurō) (born November 20, 1994) is a Japanese racing driver from Yokohama. He won the TCR Japan Saturday and Sunday Series in 2020, racing for Audi Team Hitotsuyama.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Takuro_Shinohara"
+      },
+      "nationality": "Japón",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/3/35/Shinohara_Sepang_25.png",
+        "width": 480,
+        "height": 565,
+        "credit": "Thfeeder",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Shinohara_Sepang_25.png"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Ponos Racing",
+          "pos": 11,
+          "points": 49,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Asia",
+          "seriesId": "gtwc-asia",
+          "team": "Harmony Racing",
+          "pos": 19,
+          "points": 37,
+          "races": 2,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series – GT",
+          "seriesId": "alms",
+          "team": "Ponos Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "pos": 26,
+          "points": 8,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "PONOS Racing",
+          "pos": 17,
+          "points": 34,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Porsche Centre Okazaki",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Team Takuty",
+          "pos": 20,
+          "points": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 2,
+          "points": 92,
+          "races": 8,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "pos": 6,
+          "points": 75,
+          "races": 7,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 4,
+          "points": 44,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "pos": 4,
+          "points": 77.5,
+          "races": 5,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "K2 R&D LEON Racing",
+          "pos": 9,
+          "points": 33,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "MP Racing",
+          "pos": 8,
+          "points": 35,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 15,
+          "points": 20,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "TCR Japan - Sunday Series",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 5,
+          "points": 41,
+          "races": 2,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "TCR Japan - Saturday Series",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 15,
+          "points": 16,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "D'station Racing",
+          "pos": 2,
+          "points": 98,
+          "races": 6,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "TCR Japan - Saturday Series",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 1,
+          "points": 119,
+          "races": 5,
+          "wins": 4,
+          "podiums": 4,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "TCR Japan - Sunday Series",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 1,
+          "points": 120,
+          "races": 5,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "D'station Racing",
+          "pos": 2,
+          "points": 108.5,
+          "races": 5,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula Regional Japanese Championship",
+          "team": "Sutekina Racing Team",
+          "pos": 9,
+          "points": 43,
+          "races": 3,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "X Works",
+          "pos": 24,
+          "points": 6,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Pacific – D'station Racing AMR",
+          "pos": 24,
+          "points": 6,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "TCR Japan - Saturday Series",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 2,
+          "points": 82,
+          "races": 4,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "TCR Japan - Sunday Series",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 7,
+          "points": 46,
+          "races": 4,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "F4 Japanese Championship",
+          "team": "Media Do Kageyama Racing",
+          "pos": 16,
+          "points": 8,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Audi Sport Team Hitotsuyama",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "F4 Japanese Championship",
+          "team": "Media Do Kageyama Racing",
+          "pos": 9,
+          "points": 72,
+          "races": 14,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "F4 Japanese Championship",
+          "team": "Media Do Kageyama Racing",
+          "pos": 8,
+          "points": 80,
+          "races": 13,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "F4 Japanese Championship",
+          "team": "VSR Lamborghini S.C.Formula Jr",
+          "pos": 11,
+          "points": 35,
+          "races": 14,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2020,
+          "series": "TCR Japan - Saturday Series"
+        },
+        {
+          "season": 2020,
+          "series": "TCR Japan - Sunday Series"
+        }
+      ],
+      "links": [
+        {
+          "label": "X",
+          "url": "https://x.com/takuroshinohara"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/100003839096578"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

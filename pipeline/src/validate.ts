@@ -1,8 +1,11 @@
 import { DateTime } from 'luxon';
 import type { MotorEvent, Session } from '@dm/shared';
 
-/** Duración máxima admitida (24 h de carrera + margen). */
-const MAX_MINUTES = 26 * 60;
+/**
+ * Duración máxima admitida: el tiempo límite de la Baja 1000 (40 h desde la largada, que es el cierre oficial de la
+ * carrera) + margen. Las de 24 h quedan holgadas.
+ */
+const MAX_MINUTES = 42 * 60;
 const MIN_MINUTES = 5;
 
 export interface ValidationIssue {

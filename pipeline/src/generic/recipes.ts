@@ -15,6 +15,7 @@ import {
   textOf,
 } from '../extract/html.ts';
 import { jsonLdSessions } from './locate.ts';
+import { indycarResults, indycarSessions } from './results-indycar.ts';
 import { f1AcademyUtc, f1AcademyWeekendSessions, PLANNED_SESSIONS } from './f1academy.ts';
 import {
   countryName,
@@ -44,6 +45,7 @@ import {
   tzFor,
 } from './kit.ts';
 import { acoStandings } from './aco-standings.ts';
+import { acoPastSessions, acoResults } from './results-aco.ts';
 import { acoRoster, countryFromCode, dtmRoster, sroRoster } from './rosters.ts';
 import type { CalendarEntry, ExtractedSession, RecipeContext, SiteRecipe, StandingsFound } from './types.ts';
 import { apatSessions } from './apat.ts';
@@ -56,6 +58,16 @@ import { superformula } from './superformula.ts';
 import { supergt } from './supergt.ts';
 import { supertaikyu } from './supertaikyu.ts';
 import { tc2000TimetableImages } from './tc2000.ts';
+import { sroCalendarPage, sroResults, sroSessions } from './results-sro.ts';
+import { actcPastSessions, actcResults } from './results-actc.ts';
+import { apatPastSessions, apatResults } from './results-apat.ts';
+import { aptpPastSessions, aptpResults } from './results-aptp.ts';
+import { tc2000PastSessions, tc2000Results } from './results-tc2000.ts';
+import { dtmPastSessions, dtmResults } from './results-dtm.ts';
+import { f1AcademyPastSessions, f1AcademyResults } from './results-f1academy.ts';
+import { gtOpenPastSessions, gtOpenResults } from './results-gtopen.ts';
+import { nlsPastSessions, nlsResults } from './results-nls.ts';
+import { porsche } from './results-porsche.ts';
 
 export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber } from './kit.ts';
 
@@ -64,68 +76,13 @@ export { checkStandingsTable, findArray, findObject, parseHtmlTable, parseNumber
 const sro: SiteRecipe = {
   name: 'sro',
   match: (url) => /(gt-world-challenge-[a-z]+\.com|intercontinentalgtchallenge\.com|sro-motorsports\.com)$/.test(host(url)),
-  calendar(doc, ctx) {
-    const html = stripComments(doc.raw);
-    const out: CalendarEntry[] = [];
-    for (const b of blocksByClass(html, 'calendar__list-item')) {
-      const part = (cls: string) => {
-        const block = b.match(new RegExp(`class="${cls}"[\\s\\S]*?</div>`))?.[0] ?? '';
-        return {
-          d: textByClass(block, 'calendar__date-number'),
-          m: textByClass(block, 'calendar__date-month'),
-          y: textByClass(block, 'calendar__date-year'),
-        };
-      };
-      const s = part('calendar__date-start');
-      const e = part('calendar__date-end');
-      const name = textByClass(b, 'calendar__race-header');
-      if (!s.d || !name) continue;
-      const start = isoDate(Number(s.y) || ctx.season, monthNumber(s.m) ?? 0, Number(s.d));
-      const end = e.d ? isoDate(Number(e.y) || Number(s.y) || ctx.season, monthNumber(e.m) ?? 0, Number(e.d)) : start;
-      if (!start || !end) continue;
-      const country = textByClass(b, 'calendar__race-subheading-text');
-      const texts = [...b.matchAll(/class="calendar__race-text"[^>]*>([\s\S]*?)<\/span>/g)].map((m) => textOf(m[1] ?? '')).filter(Boolean);
-      const roundText = texts.find((t) => /round/i.test(t)) ?? '';
-      const championship = texts.find((t) => !/round/i.test(t));
-      const href = [...b.matchAll(/href="([^"]*\/event\/\d+[^"]*)"/g)][0]?.[1];
-      const url = href ? (absoluteUrl(href, doc.url) ?? undefined) : undefined;
-      out.push({
-        name,
-        circuit: name,
-        country: countryName(country),
-        tz: tzFor(country, name),
-        dateStart: start,
-        dateEnd: end < start ? start : end,
-        round: roundOf(roundText),
-        url,
-        ...(championship ? { championship, ...(url ? { championshipUrl: `${new URL(url).origin}/calendar` } : {}) } : {}),
-      });
-    }
-    // Eventos pasados (sin año en el texto): nunca son de una temporada futura (lectura de la temporada siguiente).
-    const pastBlocks = ctx.season > ctx.now.getUTCFullYear() ? [] : blocksByClass(html, 'past-events__list-item');
-    for (const b of pastBlocks) {
-      const spans = [...b.matchAll(/class="past-events__piped-list-span"[^>]*>([\s\S]*?)<\/span>\s*<\/li>/g)].map((m) => m[1] ?? '');
-      if (spans.length < 2) continue;
-      const dates = parseDateRangeText(textOf(spans[0]!), ctx.season);
-      const venue = textOf(spans[1]!.match(/<strong>([\s\S]*?)<\/strong>/)?.[1] ?? '');
-      const country = textOf(spans[1]!.replace(/<strong>[\s\S]*?<\/strong>/, ''));
-      const href = b.match(/href="([^"]*\/event\/\d+[^"]*)"/)?.[1];
-      if (!dates || !venue) continue;
-      out.push({
-        name: venue,
-        circuit: venue,
-        country: countryName(country),
-        tz: tzFor(country, venue),
-        dateStart: dates.start,
-        dateEnd: dates.end,
-        round: roundOf(textOf(spans[2] ?? '')),
-        url: href ? (absoluteUrl(href, doc.url) ?? undefined) : undefined,
-      });
-    }
-    return dedupe(out).sort((a, b) => a.dateStart.localeCompare(b.dateStart));
-  },
+  // Calendario, cronograma y resultados: results-sro.ts.
+  calendar: (doc, ctx) => sroCalendarPage(doc.raw, doc.url, ctx),
   standings: (url, ctx) => sroStandings(url, ctx),
   roster: (url, ctx) => sroRoster(url, ctx),
+  sessions: (entry, ctx) => sroSessions(entry, ctx),
+  pastSessions: (entry, ctx) => sroSessions(entry, ctx),
+  results: (entry, sessions, ctx) => sroResults(entry, sessions, ctx),
 };
 
 interface SelectOption {
@@ -273,6 +230,8 @@ const indycar: SiteRecipe = {
       const prev = out.find((e) => e.circuit === track && Math.abs(Date.parse(e.dateEnd) - Date.parse(day.start)) <= 2 * 86_400_000);
       if (prev) {
         if (day.start > prev.dateEnd) prev.dateEnd = day.start;
+        // Cada carrera tiene su página (con su parte del cronograma y sus links de resultados).
+        if (url && prev.meta && !prev.meta.pages!.split(' ').includes(url)) prev.meta.pages += ` ${url}`;
         continue;
       }
       // Las fechas en Canadá (Toronto, desde 2026 Markham) figuran en el mismo calendario.
@@ -282,9 +241,12 @@ const indycar: SiteRecipe = {
         circuit: track,
         country,
         tz: tzFor(country, `${location} ${track}`),
-        dateStart: shiftDate(day.start, -2),
+        // El Indy 500 tiene dos semanas de actividad (prácticas desde el martes de la semana anterior y la
+        // clasificación del fin de semana previo); el resto de las fechas, viernes a domingo.
+        dateStart: shiftDate(day.start, /indianapolis\s+500|indy\s*500/i.test(title) ? -12 : -2),
         dateEnd: day.start,
         url,
+        ...(url ? { meta: { pages: url } } : {}),
         // Desde 2027 la clave es el slug de la URL (/Schedule/2027/St-Petersburg): las fechas futuras figuran primero
         // con el nombre del circuito y después con el nombre comercial, y el id no tiene que cambiar por eso. (2026
         // sigue con el nombre para no cambiar los ids ya publicados, con sus resultados.)
@@ -293,6 +255,9 @@ const indycar: SiteRecipe = {
     }
     return dedupe(out);
   },
+  sessions: (entry, ctx) => indycarSessions(entry, ctx),
+  pastSessions: (entry, ctx) => indycarSessions(entry, ctx),
+  results: (entry, sessions, ctx) => indycarResults(entry, sessions, ctx),
 };
 
 // ─── FIA WEC / ELMS / Asian Le Mans Series (misma plataforma del ACO) ─────────────────────────
@@ -483,6 +448,9 @@ const aco: SiteRecipe = {
   standings: (url, ctx) => acoStandings(url, ctx),
   /** Inscriptos: grilla de autos del WEC (/en/page/grid) o página de pilotos de ELMS y Asian LMS (/en/page/drivers). */
   roster: (url, ctx) => acoRoster(url, ctx),
+  /** Resultados y sesiones de fechas ya corridas: cronograma de la página de la carrera + cronometraje del ACO (results-aco.ts). */
+  results: (entry, sessions, ctx) => acoResults(entry, sessions, ctx),
+  pastSessions: (entry, ctx) => acoPastSessions(entry, ctx),
 };
 
 // ─── Nürburgring Langstrecken-Serie ───────────────────────────────────────────────────────────
@@ -490,6 +458,8 @@ const aco: SiteRecipe = {
 const nls: SiteRecipe = {
   name: 'nls',
   match: (url) => host(url) === 'nuerburgring-langstrecken-serie.de',
+  pastSessions: (entry, ctx) => nlsPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => nlsResults(entry, sessions, ctx),
   calendar(doc, ctx) {
     const out: CalendarEntry[] = [];
     for (const row of stripComments(doc.raw).matchAll(/<tr\b[^>]*>([\s\S]*?)<\/tr>/g)) {
@@ -549,6 +519,8 @@ const apat: SiteRecipe = {
   },
   /** Cronograma: página de la fecha o nota de prensa con el PDF (apat.ts). Si no está en ninguna, no se publicó todavía. */
   sessions: apatSessions,
+  results: apatResults,
+  pastSessions: apatPastSessions,
   timetableFallback: 'none',
   /**
    * Campeonato de cada clase (https://apat.org.ar/campeonato/ranking/c2, …/c3): tabla HTML con
@@ -631,6 +603,8 @@ const tc2000: SiteRecipe = {
   },
   /** Cronograma: imagen de la página de cronograma de cada fecha, transcripta por la IA (tc2000.ts). */
   timetableImages: tc2000TimetableImages,
+  results: tc2000Results,
+  pastSessions: tc2000PastSessions,
   timetableFallback: 'none',
   /**
    * Posiciones (https://tc2000.com.ar/estadisticas.php?accion=posiciones): pestañas PILOTOS / EQUIPOS / MARCAS;
@@ -767,7 +741,9 @@ const actc: SiteRecipe = {
       const days = Array.isArray(s.days) ? (s.days as unknown[]).map((d) => str(obj(d).date).slice(0, 10)) : [];
       return days.includes(raceDate);
     });
-    if (!schedule) return null;
+    // Sin cronograma en la API (en noviembre de 2026 solo lista el de San Luis), las tandas ya corridas de la fecha
+    // en curso salen de los resultados oficiales (results-actc.ts), para que esos resultados tengan dónde mostrarse.
+    if (!schedule) return isoNow(ctx.now).slice(0, 10) >= entry.dateStart ? actcPastSessions(entry, code, ctx) : null;
     let days = schedule.days as Record<string, unknown>[] | undefined;
     if (!Array.isArray(days)) {
       const detail = await ctx.http.json<{ data?: Record<string, unknown> }>(`${listUrl}/${str(schedule.id)}`);
@@ -808,6 +784,8 @@ const actc: SiteRecipe = {
     };
     return { sessions, source };
   },
+  results: (entry, sessions, ctx) => actcResults(entry, sessions, entry.meta?.code ?? actcCategory(ctx.series.officialUrls[0] ?? ''), ctx),
+  pastSessions: (entry, ctx) => actcPastSessions(entry, entry.meta?.code ?? actcCategory(ctx.series.officialUrls[0] ?? ''), ctx),
 };
 
 // ─── APTP (Turismo Pista) ─────────────────────────────────────────────────────────────────────
@@ -822,6 +800,8 @@ const aptp: SiteRecipe = {
   name: 'aptp',
   match: (url) => host(url) === 'aptpweb.com.ar',
   sessions: aptpSessions,
+  results: aptpResults,
+  pastSessions: aptpPastSessions,
   timetableImages: aptpTimetableImages,
   timetableFallback: 'generic',
   async standings(url, ctx) {
@@ -940,6 +920,8 @@ const dtm: SiteRecipe = {
   },
   /** Inscriptos de la temporada: https://api.dtm.com/data?query=drivers (número, equipo y auto por temporada). */
   roster: (url, ctx) => dtmRoster(url, ctx),
+  pastSessions: (entry, ctx) => dtmPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => dtmResults(entry, sessions, ctx),
 };
 
 /** "PREINING Thomas" -> "Thomas PREINING": la API escribe primero el apellido (en mayúsculas). */
@@ -1033,6 +1015,8 @@ const f1academy: SiteRecipe = {
   },
   // Mientras f1academy.com marca las sesiones "Unconfirmed": cronograma oficial del fin de semana (formula1.com).
   sessions: (entry, ctx) => f1AcademyWeekendSessions(entry, ctx),
+  pastSessions: (entry, ctx) => f1AcademyPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => f1AcademyResults(entry, sessions, ctx),
 };
 
 // ─── International GT Open (gtopen.gtsport.es) ────────────────────────────────────────────────
@@ -1041,6 +1025,8 @@ const gtopen: SiteRecipe = {
   name: 'gtopen',
   match: (url) => /^(gtopen\.gtsport\.es|gtopen\.net)$/.test(host(url)),
   calendarUrl: () => 'https://gtopen.gtsport.es/calendario',
+  pastSessions: (entry, ctx) => gtOpenPastSessions(entry, ctx),
+  results: (entry, sessions, ctx) => gtOpenResults(entry, sessions, ctx),
   calendar(doc, ctx) {
     const out: CalendarEntry[] = [];
     for (const value of extractEmbeddedJson(doc.raw)) {
@@ -1192,6 +1178,8 @@ function humanize(slug: string): string {
 export const RECIPES: SiteRecipe[] = [sro, indycar, aco, nls, creventic, apat, tc2000, actc, aptp, dtm, f1academy, gtopen, fia, cdaaca, imsa];
 // Asia y Oceanía: recetas en su propio archivo (importan sus utilidades de kit.ts, no de este).
 RECIPES.push(supergt, superformula, supertaikyu, macau, supercars);
+// Porsche Mobil 1 Supercup: calendario, sesiones ya corridas y resultados en results-porsche.ts.
+RECIPES.push(porsche);
 
 export function findRecipe(url: string): SiteRecipe | undefined {
   return RECIPES.find((r) => r.match(url));

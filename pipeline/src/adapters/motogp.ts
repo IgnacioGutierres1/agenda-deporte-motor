@@ -41,6 +41,7 @@ import type {
   ResultsRequest,
   ScheduleChunk,
 } from '../core/types.ts';
+import { pdfToText } from '../extract/document.ts';
 import { canonicalZone, countryName, directSource, lapsLabel, trimLapTime } from './util.ts';
 
 export const MOTOGP_API = 'https://api.motogp.pulselive.com/motogp/v1';
@@ -362,8 +363,88 @@ function rowFromClassification(r: ApiClassificationRow, isRace: boolean): Result
   return row;
 }
 
+/**
+ * Clasificación de práctica, warm up o clasificación leída del PDF oficial (`file` de la respuesta), para las sesiones
+ * que la API da por terminadas con la tabla vacía (p. ej. el Warm Up de MotoGP en Indonesia 2026). El texto del PDF
+ * pega la velocidad máxima (siempre con un decimal) con el puesto y el total de vueltas con el equipo:
+ *   "APRILIA72 Marco BEZZECCHI ITA 316.71 1'29.617 7 7Aprilia Racing"
+ *   "APRILIA25 Raul FERNANDEZ SPA 310.32 1'29.660 6 6 0.043 0.043SuperFile Trackhouse MotoGP Team"
+ * `riders` (número → nombre y marca como los escribe la API, de otra sesión del evento) evita reconstruirlos desde las
+ * mayúsculas del PDF.
+ */
+export function pdfClassification(
+  text: string,
+  riders: Map<string, KnownRider> = new Map(),
+): { rows: ApiClassificationRow[]; condition: ApiCondition } {
+  const rows: ApiClassificationRow[] = [];
+  const re =
+    /^([A-Z][A-Z-]*?)(\d{1,3}) (.+?) ([A-Z]{3}) (\d{2,3}\.\d)(\d{1,2}) (\d+'\d{2}\.\d{3}) (\d+) (\d+)(?: (\d+\.\d{3}) (\d+\.\d{3}))?(.*)$/;
+  for (const line of text.split(/\r?\n/)) {
+    const m = line.trim().match(re);
+    if (!m) continue;
+    const number = m[2]!;
+    const known = riders.get(number);
+    const maker = known?.maker ?? (m[1]!.length <= 3 ? m[1]! : m[1]!.charAt(0) + m[1]!.slice(1).toLowerCase());
+    rows.push({
+      position: Number(m[6]),
+      rider: { full_name: known?.name ?? titleCaseSurname(m[3]!), number: Number(number) },
+      ...(m[12]?.trim() ? { team: { name: m[12].trim() } } : {}),
+      ...({ constructor: { name: maker } } as Pick<ApiClassificationRow, 'constructor'>),
+      total_laps: Number(m[9]),
+      best_lap: { time: m[7]!.replace("'", ':') },
+      gap: { first: m[10] ?? '0.000' },
+    });
+  }
+  rows.sort((a, b) => (a.position ?? 99) - (b.position ?? 99));
+  const value = (re: RegExp) => text.match(re)?.[1] ?? '';
+  const condition: ApiCondition = {
+    air: value(/Air:\s*(-?\d+)\s*°/) ? `${value(/Air:\s*(-?\d+)\s*°/)}º` : '',
+    ground: value(/Ground:\s*(-?\d+)\s*°/) ? `${value(/Ground:\s*(-?\d+)\s*°/)}º` : '',
+    humidity: value(/Humidity:\s*(\d+)\s*%/) ? `${value(/Humidity:\s*(\d+)\s*%/)}%` : '',
+    track: value(/(?:Practice|Qualifying|Race|Track) condition:\s*([A-Za-z-]+)/i),
+    weather: '',
+  };
+  return { rows, condition };
+}
+
+/** "Fabio DI GIANNANTONIO" → "Fabio Di Giannantonio" (el PDF escribe el apellido en mayúsculas). */
+function titleCaseSurname(name: string): string {
+  return name
+    .split(/\s+/)
+    .map((w) => (w.length > 1 && w === w.toUpperCase() ? w.charAt(0) + w.slice(1).toLowerCase() : w))
+    .join(' ');
+}
+
+const isRaceCode = (code: string) => /^(RAC\d*|SPR)$/.test(code);
+
+interface KnownRider {
+  name: string;
+  maker?: string;
+}
+
+/** Número → nombre y marca de los pilotos, de otra sesión del mismo evento y categoría que sí tiene tabla. */
+async function knownRiders(ctx: AdapterContext, sessions: ApiResultsSession[], except: string): Promise<Map<string, KnownRider>> {
+  for (const x of sessions) {
+    if (x.id === except) continue;
+    const { body } = await ctx.http.json<{ classification?: ApiClassificationRow[] }>(
+      `${MOTOGP_API}/results/session/${x.id}/classification?test=false`,
+    );
+    const rows = body.classification ?? [];
+    if (rows.length === 0) continue;
+    return new Map(
+      rows
+        .filter((r) => r.rider?.number != null && r.rider.full_name)
+        .map((r) => {
+          const maker = Object.hasOwn(r, 'constructor') ? r.constructor?.name : undefined;
+          return [String(r.rider.number), { name: r.rider.full_name.trim(), ...(maker ? { maker } : {}) }];
+        }),
+    );
+  }
+  return new Map();
+}
+
 export function mapClassification(rows: ApiClassificationRow[], code: string): ResultRow[] {
-  const isRace = /^(RAC\d*|SPR)$/.test(code);
+  const isRace = isRaceCode(code);
   return rows.map((r) => rowFromClassification(r, isRace)).filter((r): r is ResultRow => r !== null);
 }
 
@@ -585,14 +666,22 @@ async function results(series: Series, ctx: AdapterContext, req: ResultsRequest)
       if (!catUuid) continue;
       const rs = (await resultsSessions(ctx, rEvent.id, catUuid)).find((x) => sessionCode(x) === meta.code);
       if (!rs) continue;
-      const { body } = await ctx.http.json<{ classification?: ApiClassificationRow[] }>(
+      const { body } = await ctx.http.json<{ classification?: ApiClassificationRow[]; file?: string | null }>(
         `${MOTOGP_API}/results/session/${rs.id}/classification?test=false`,
       );
-      const rows = mapClassification(body.classification ?? [], meta.code);
+      let rows = mapClassification(body.classification ?? [], meta.code);
+      // Las condiciones vienen en el mismo listado de sesiones que ya se pidió: no cuestan otro pedido.
+      let conditions = mapConditions(rs.condition);
+      if (rows.length === 0 && body.file && !isRaceCode(meta.code)) {
+        // Sesión terminada con la tabla vacía en la API: el PDF oficial sí la tiene.
+        const sessions = await resultsSessions(ctx, rEvent.id, catUuid);
+        const read = pdfClassification(await pdfToText((await ctx.http.bytes(body.file)).body), await knownRiders(ctx, sessions, rs.id));
+        rows = mapClassification(read.rows, meta.code);
+        conditions ??= mapConditions(read.condition);
+        if (rows.length > 0) ctx.log.info(`${meta.eventShort} ${meta.code}: clasificación leída del PDF oficial (la API la publica vacía)`);
+      }
       if (rows.length === 0) continue;
       const short = rEvent.short_name || meta.eventShort;
-      // Las condiciones vienen en el mismo listado de sesiones que ya se pidió: no cuestan otro pedido.
-      const conditions = mapConditions(rs.condition);
       const file =
         files.get(s.eventId) ??
         ({ seriesId: series.id, eventId: s.eventId, updatedAt, sessions: [] } satisfies EventResultsFile);
@@ -663,6 +752,8 @@ async function conditions(series: Series, ctx: AdapterContext, req: ConditionsRe
 
 export const motogpAdapter: Adapter = {
   name: 'motogp',
+  // Desde este arreglo, las sesiones que la API publica vacías se leen del PDF oficial.
+  resultsReaderSince: '2026-11-14T00:00:00Z',
   async schedule(series, ctx) {
     const { events, sessions } = await buildSchedule(series, ctx);
     return { events, sessions };

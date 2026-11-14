@@ -155,6 +155,14 @@ export interface ResultRow {
   gap?: string;
   bestLap?: string;
   points?: number;
+  /**
+   * Categorías con clases (WEC, ELMS, Asian LMS, IMSA, GT World Challenge, 24H Series, Super GT…): clase del auto tal
+   * como la publica la fuente ("Hypercar", "LMP2", "GT3 Pro-Am"). `pos` sigue siendo el puesto en la general.
+   * En tripulaciones, `driver` lleva todos los pilotos separados por " / " (ver splitDriverNames).
+   */
+  class?: string;
+  /** Puesto dentro de la clase, si la fuente lo publica (o se calcula ordenando la general por clase). */
+  classPos?: number;
 }
 
 export interface SessionResult {

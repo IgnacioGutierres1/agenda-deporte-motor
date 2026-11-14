@@ -1,4 +1,4 @@
-import type { RosterRow, Series, Source, StandingsTable } from '@dm/shared';
+import type { ResultRow, RosterRow, Series, Session, SessionConditions, Source, StandingsTable } from '@dm/shared';
 import type { Http } from '../core/http.ts';
 import type { FetchedDocument } from '../extract/document.ts';
 
@@ -65,6 +65,28 @@ export interface StandingsFound {
   season?: number;
 }
 
+/** Resultado de una sesión leído sin IA (tanda 5). */
+export interface SessionResultFound {
+  /** Id de una de las sesiones pedidas (ver SiteRecipe.results). */
+  sessionId: string;
+  rows: ResultRow[];
+  conditions?: SessionConditions;
+  /** Documento de esta sesión, si no es el general del evento (p. ej. un PDF o JSON por sesión). */
+  source?: Source;
+}
+
+/** Resultados de un evento leídos sin IA. */
+export interface ResultsFound {
+  sessions: SessionResultFound[];
+  /** Documento general del evento (página de resultados). */
+  source: Source;
+  /**
+   * Sesiones pedidas que no se pudieron probar de verdad (la fuente pidió esperar con 429/5xx o no respondió):
+   * no cuentan como intento fallido. Las que no figuran ni acá ni en `sessions` cuentan como intento.
+   */
+  deferred?: string[];
+}
+
 /** Lista oficial de inscriptos leída sin IA. */
 export interface RosterFound {
   rows: RosterRow[];
@@ -129,4 +151,22 @@ export interface SiteRecipe {
    * todavía no está publicada; lanza un error si la página no tiene el formato esperado.
    */
   roster?(url: string, ctx: RecipeContext): Promise<RosterFound | null>;
+  /**
+   * Resultados por lectura directa (tanda 5): práctica, clasificación y carrera de un evento del calendario.
+   * `sessions` son las sesiones del evento que faltan (con originalName = nombre en la fuente); se devuelve el
+   * resultado de las que se encontraron, con su sessionId. null si el sitio todavía no publica nada del evento.
+   * Lanza un error si la página no tiene el formato esperado (entonces se intenta con IA, si hay cupo).
+   * Sin esta función, los resultados se buscan con IA (Gemini, con cupo diario muy chico).
+   */
+  results?(entry: CalendarEntry, sessions: Session[], ctx: RecipeContext): Promise<ResultsFound | null>;
+  /**
+   * Sesiones de una fecha YA CORRIDA que no tiene sesiones guardadas (tanda 5): el cronograma solo se lee dentro del
+   * horizonte, así que las fechas anteriores a la primera corrida del pipeline (o cuyo cronograma nunca se pudo leer)
+   * no tienen sesiones y sus resultados no tendrían dónde ir. La receta las arma desde la fuente de resultados
+   * oficial (lista de sesiones con su hora; si la fuente no da la hora, una estimación razonable del día, sin
+   * localStartText). Lo llama el schedule del flujo genérico con tope por corrida (MAX_PAST_SESSION_EVENTS), sin IA;
+   * en la misma corrida, la fase de resultados las encuentra terminadas y llama a results(). null si no hay nada.
+   * Los nombres deben ser los mismos que results() reconoce (se guardan como originalName si se traducen).
+   */
+  pastSessions?(entry: CalendarEntry, ctx: RecipeContext): Promise<SessionsFound | null>;
 }

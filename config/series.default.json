@@ -37,6 +37,7 @@
 
   { "id": "wrc", "name": "Campeonato Mundial de Rally (WRC)", "shortName": "WRC", "group": "rally", "officialUrls": ["https://www.wrc.com/en/calendar", "https://www.fia.com/events/world-rally-championship/season-{season}/events-calendar"], "strategy": "adapter", "adapter": "wrc", "origin": "default", "enabled": true, "color": "#001e3c" },
   { "id": "dakar", "name": "Rally Dakar", "shortName": "Dakar", "group": "rally", "officialUrls": ["https://www.dakar.com/es/recorrido-general", "https://www.dakar.com/es/clasificaciones"], "strategy": "adapter", "adapter": "dakar", "origin": "default", "enabled": true, "color": "#c4390e" },
+  { "id": "score-baja", "name": "SCORE Baja 1000 (Campeonato del Desierto)", "shortName": "SCORE Baja", "group": "rally", "officialUrls": ["https://score-international.com/", "https://score-raceinfo.com/", "https://results.score-international.com/events/"], "strategy": "adapter", "adapter": "score", "origin": "default", "enabled": true, "color": "#a30000" },
 
   { "id": "tc", "name": "Turismo Carretera", "shortName": "TC", "group": "argentina", "checklistItem": 18, "officialUrls": ["https://actc.org.ar/tc/calendario", "https://actc.org.ar/tc/campeonato"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#0033a0" },
   { "id": "tc-pista", "name": "TC Pista", "shortName": "TC Pista", "group": "argentina", "checklistItem": 18, "officialUrls": ["https://actc.org.ar/tcp/calendario", "https://actc.org.ar/tcp/campeonato"], "strategy": "generic", "origin": "default", "enabled": true, "color": "#3366cc" },

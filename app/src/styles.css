@@ -1100,3 +1100,155 @@ a.team-link {
     grid-row: 1 / -1;
   }
 }
+
+/* Clases de las categorías con clases (WEC, IMSA, GT…): chip en resultados y en la ficha del piloto. */
+.class-chip {
+  display: inline-flex;
+  align-items: center;
+  max-width: 100%;
+  padding: 0 0.4rem;
+  border: 1px solid var(--class-color, var(--border));
+  border-radius: 6px;
+  background: color-mix(in srgb, var(--class-color, var(--border)) 16%, transparent);
+  color: var(--text);
+  font-size: 0.7rem;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.class-dot {
+  display: inline-block;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-right: 0.35rem;
+  border-radius: 50%;
+  background: var(--class-color, var(--text-dim));
+}
+
+.tone-0 {
+  --class-color: #e5484d;
+}
+
+.tone-1 {
+  --class-color: #3b82f6;
+}
+
+.tone-2 {
+  --class-color: #22a35a;
+}
+
+.tone-3 {
+  --class-color: #f59e0b;
+}
+
+.tone-4 {
+  --class-color: #a855f7;
+}
+
+.tone-5 {
+  --class-color: #14b8a6;
+}
+
+/* Historial (data/bios): perfil de piloto, equipo y categoría. */
+.bio-card h3 {
+  margin-bottom: 0.7rem;
+}
+
+.bio-profile {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
+  min-width: 0;
+}
+
+.bio-facts {
+  display: grid;
+  gap: 0.55rem;
+  min-width: 0;
+  margin: 0;
+}
+
+.bio-fact dt {
+  font-size: 0.75rem;
+  color: var(--text-dim);
+}
+
+.bio-fact dd {
+  margin: 0;
+  font-weight: 600;
+  overflow-wrap: anywhere;
+}
+
+.bio-fact dd .small {
+  font-weight: 400;
+}
+
+.bio-subtitle {
+  margin: 0 0 0.35rem;
+}
+
+.bio-titles {
+  margin-top: 0.9rem;
+}
+
+.bio-title-list {
+  display: grid;
+  gap: 0.45rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+@media (min-width: 600px) {
+  .bio-title-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.bio-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  min-width: 0;
+}
+
+.bio-title .app-icon,
+.bio-title svg {
+  flex: none;
+  margin-top: 0.15rem;
+}
+
+.bio-title-name {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.bio-title-count {
+  margin-left: 0.3rem;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.bio-summary-block {
+  margin-top: 0.9rem;
+  padding-top: 0.8rem;
+  border-top: 1px solid var(--border);
+}
+
+.bio-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.8rem;
+}
+
+.bio-links .pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+}

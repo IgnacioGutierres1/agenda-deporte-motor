@@ -1,0 +1,22 @@
+{
+  "seriesId": "alms",
+  "eventId": "ev-alms-castellet",
+  "updatedAt": "2026-11-14T17:00:00Z",
+  "sessions": [
+    {
+      "sessionId": "alms0000000race1",
+      "rows": [
+        { "pos": 1, "number": "1", "driver": "Kevin Estre / Laurens Vanthoor / Matt Campbell", "team": "Proton Competition", "class": "Hypercar", "laps": 128, "time": "4:00:31.204", "bestLap": "1:41.902" },
+        { "pos": 2, "number": "22", "driver": "Oliver Jarvis / Bijoy Garg / Nolan Siegel", "team": "United Autosports", "class": "LMP2", "laps": 127, "gap": "1 vuelta", "bestLap": "1:43.511" },
+        { "pos": 3, "number": "7", "driver": "Kamui Kobayashi / Nyck de Vries / Mike Conway", "team": "Toyota Gazoo Racing", "class": "Hypercar", "laps": 127, "gap": "1 vuelta", "bestLap": "1:41.770" },
+        { "pos": 4, "number": "25", "driver": "Ahmad Al Harthy / Josh Caygill / Esteban Masson", "team": "Algarve Pro Racing", "class": "LMP2", "laps": 126, "gap": "2 vueltas" },
+        { "pos": 5, "number": "30", "driver": "Matías Pérez Companc / Ricardo Juncos / Agustín Canapino", "team": "Juncos Racing", "class": "LMP2", "laps": 126, "gap": "2 vueltas" },
+        { "pos": 6, "number": "91", "driver": "Richard Lietz / Morris Schuring / Yasser Shahin", "team": "Manthey EMA", "class": "GT3", "laps": 118, "gap": "10 vueltas" },
+        { "pos": 7, "number": "92", "driver": "Klaus Bachler / Joel Sturm / Aliaksandr Malykhin", "team": "Manthey PureRxcing", "class": "GT3", "classPos": 2, "laps": 118, "gap": "10 vueltas" },
+        { "pos": 8, "number": "59", "driver": "Grégoire Saucy / James Cottingham / Nicolas Costa", "team": "United Autosports", "class": "GT3", "laps": 117, "gap": "11 vueltas" },
+        { "pos": null, "status": "DNF", "number": "50", "driver": "Antonio Fuoco / Miguel Molina / Nicklas Nielsen", "team": "Ferrari AF Corse", "class": "Hypercar", "laps": 60 }
+      ],
+      "source": { "url": "https://www.asianlemansseries.com/en/results", "title": "Asian Le Mans Series – Resultados", "kind": "api", "method": "directo", "fetchedAt": "2026-11-14T17:00:00Z" }
+    }
+  ]
+}

@@ -1,0 +1,2390 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "agustin-canapino",
+      "wikidata": "Q5686507",
+      "summary": {
+        "text": "Agustín Hugo Canapino (Arrecifes, Provincia de Buenos Aires; 19 de enero de 1990) es un piloto de automovilismo argentino. Es reconocido como uno de los mejores pilotos del automovilismo argentino por su gran palmarés en turismos. En su carrera deportiva, ha obtenido cinco (5) títulos en Turismo Carretera, siete en Top Race V6 y dos en Súper TC 2000. En 2023 debutó como piloto de IndyCar Series con el equipo Juncos Hollinger Racing, donde se mantuvo hasta agosto de 2024.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Agust%C3%ADn_Canapino"
+      },
+      "birthDate": "1990-01-19",
+      "birthPlace": "Arrecifes, Argentina",
+      "nationality": "Argentina",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/05/Agust%C3%ADn_Canapino_2017_%28cropped%29.jpg/500px-Agust%C3%ADn_Canapino_2017_%28cropped%29.jpg",
+        "width": 480,
+        "height": 589,
+        "credit": "Diego HC",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Agust%C3%ADn_Canapino_2017_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "pos": 1,
+          "points": 347,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "TC Pick Up",
+          "seriesId": "tc-pickup",
+          "pos": 1,
+          "points": 378.5,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Turismo Nacional (Clase 3)",
+          "seriesId": "tn",
+          "team": "Salvita Racing",
+          "pos": 1,
+          "points": 320,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Canning Motorsports",
+          "pos": 1,
+          "points": 702,
+          "races": 15,
+          "wins": 6,
+          "podiums": 7,
+          "poles": 7,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Turismo Carretera 2000",
+          "seriesId": "tc2000",
+          "team": "Axion Energy Sport",
+          "pos": 1,
+          "points": 775,
+          "races": 23,
+          "wins": 4,
+          "podiums": 10,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "TC Pick Up",
+          "seriesId": "tc-pickup",
+          "team": "Canning Motorsports",
+          "pos": 1,
+          "points": 555,
+          "races": 10,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Turismo Nacional",
+          "seriesId": "tn",
+          "team": "Ale Bucci Racing",
+          "pos": 22,
+          "points": 82,
+          "races": 3,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Juncos Hollinger Racing",
+          "pos": 27,
+          "points": 109,
+          "races": 12,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Canning Motorsports",
+          "pos": 32,
+          "points": 171,
+          "races": 6,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Juncos Hollinger Racing",
+          "pos": 21,
+          "points": 180,
+          "races": 17,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera by Juncos Hollinger",
+          "pos": 32,
+          "points": 172.75,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JP Carrera",
+          "pos": 3,
+          "points": 451.25,
+          "races": 15,
+          "wins": 3,
+          "podiums": 6,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "TC2000",
+          "team": "Chevrolet YPF",
+          "pos": 3,
+          "points": 243,
+          "races": 20,
+          "wins": 3,
+          "podiums": 9,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Turismo Nacional - Clase 3",
+          "seriesId": "tn",
+          "team": "MM Team",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Squadra Canapino",
+          "pos": 3,
+          "points": 461.5,
+          "races": 15,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 1,
+          "points": 221,
+          "races": 22,
+          "wins": 4,
+          "podiums": 12,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Canapino Sport",
+          "pos": 9,
+          "points": 301,
+          "races": 11,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 2,
+          "points": 150,
+          "races": 19,
+          "wins": 3,
+          "podiums": 9,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Canapino Sport",
+          "pos": 1,
+          "points": 634.75,
+          "races": 15,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 5,
+          "points": 111,
+          "races": 12,
+          "wins": 3,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Top Race V6",
+          "team": "MS Sportteam",
+          "pos": 3,
+          "points": 246,
+          "races": 16,
+          "wins": 2,
+          "podiums": 8,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Stock Car Brasil",
+          "team": "YPF Elaion",
+          "pos": 30,
+          "points": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "WeatherTech SportsCar Championship - DPi",
+          "seriesId": "imsa",
+          "team": "Juncos Racing",
+          "pos": 25,
+          "points": 44,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "SpeedAgro Racing",
+          "pos": 1,
+          "points": 710,
+          "races": 15,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Top Race V6",
+          "team": "MS Sportteam",
+          "pos": 2,
+          "points": 168,
+          "races": 12,
+          "wins": 1,
+          "podiums": 7,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 2,
+          "points": 230,
+          "races": 19,
+          "wins": 2,
+          "podiums": 10,
+          "poles": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Torneo de invitados del TC Mouras",
+          "team": "Edimax Racing",
+          "pos": 61,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Stock Car Brasil",
+          "team": "Cimed Chevrolet Team",
+          "pos": 32,
+          "points": 5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Jet Racing",
+          "pos": 1,
+          "points": 682.75,
+          "races": 15,
+          "wins": 1,
+          "podiums": 7,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Top Race V6",
+          "team": "MS Sportteam",
+          "pos": 1,
+          "points": 202,
+          "races": 15,
+          "wins": 5,
+          "podiums": 9,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 2,
+          "points": 191,
+          "races": 13,
+          "wins": 3,
+          "podiums": 7,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Jet Racing",
+          "pos": 6,
+          "points": 544.75,
+          "races": 16,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Top Race V6",
+          "team": "MS Sportteam",
+          "pos": 1,
+          "points": 185,
+          "races": 17,
+          "wins": 4,
+          "podiums": 7,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 1,
+          "points": 248,
+          "races": 8,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Chevrolet YPF",
+          "pos": 1,
+          "points": 248,
+          "races": 6,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Torneo de invitados del TC Mouras",
+          "team": "Benavídez Racing Team",
+          "pos": 30,
+          "points": 12.5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Jet Racing",
+          "pos": 5,
+          "points": 460.5,
+          "races": 16,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Top Race V6",
+          "team": "Midas Racing Team",
+          "pos": 2,
+          "points": 302,
+          "races": 18,
+          "wins": 7,
+          "podiums": 12,
+          "poles": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Team Peugeot Total Argentina",
+          "pos": 3,
+          "points": 167,
+          "races": 13,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Top Race NOA",
+          "team": "SDE Competición",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Torneo de invitados del TC Mouras",
+          "team": "JP Racing",
+          "pos": 14,
+          "points": 26,
+          "races": 2,
+          "wins": 1,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Jet Racing",
+          "pos": 16,
+          "points": 311,
+          "races": 16,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Peugeot Lo Jack Team",
+          "pos": 5,
+          "points": 159,
+          "races": 13,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Top Race V6",
+          "team": "Sportteam",
+          "pos": 1,
+          "points": 288,
+          "races": 12,
+          "wins": 6,
+          "podiums": 9,
+          "poles": 9,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Top Race Series",
+          "team": "Sportteam",
+          "points": 0,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JL Kun 16 Carrera",
+          "pos": 24,
+          "points": 235.25,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "SpeedAgro Racing",
+          "pos": 24,
+          "points": 235.25,
+          "races": 11,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Equipo Chevrolet YPF",
+          "pos": 4,
+          "points": 149,
+          "races": 12,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Top Race V6",
+          "team": "Sportteam",
+          "pos": 1,
+          "points": 78,
+          "races": 12,
+          "wins": 3,
+          "podiums": 6,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Canapino Sport",
+          "pos": 8,
+          "points": 137.75,
+          "races": 7,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "JL Kun 16 Carrera",
+          "pos": 8,
+          "points": 137.75,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000",
+          "team": "Equipo Chevrolet YPF",
+          "pos": 12,
+          "points": 82.5,
+          "races": 13,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Top Race V6",
+          "team": "Sportteam",
+          "pos": 1,
+          "points": 70,
+          "races": 12,
+          "wins": 4,
+          "podiums": 9,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "3M Racing",
+          "pos": 24,
+          "points": 96.5,
+          "races": 11,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Turismo Competición 2000",
+          "seriesId": "tc2000",
+          "team": "Equipo Oficial Chevrolet",
+          "pos": 4,
+          "points": 151,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Turismo Competición 2000",
+          "seriesId": "tc2000",
+          "team": "Equipo Oficial Chevrolet",
+          "pos": 4,
+          "points": 151,
+          "races": 8,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Top Race V6",
+          "team": "Sportteam",
+          "pos": 1,
+          "points": 90,
+          "races": 13,
+          "wins": 4,
+          "podiums": 6,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Fórmula 3 Sudamericana",
+          "team": "Hitech Racing Brazil",
+          "pos": 11,
+          "points": 10,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Torneo de invitados del TC Mouras",
+          "team": "JP Racing",
+          "pos": 34,
+          "points": 1.5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "3M JP Racing",
+          "pos": 1,
+          "points": 315.5,
+          "races": 11,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "3M Canapino Sports",
+          "pos": 1,
+          "points": 315.5,
+          "races": 5,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Copa Endurance Series de TC 2000",
+          "team": "Toyota Team Argentina",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Top Race V6 Copa América",
+          "team": "Sportteam",
+          "pos": 3,
+          "points": 95,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Top Race V6 Torneo Clausura",
+          "team": "Sportteam",
+          "pos": 1,
+          "points": 138,
+          "races": 6,
+          "wins": 5,
+          "podiums": 5,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Turismo Carretera",
+          "seriesId": "tc",
+          "team": "Dole Racing",
+          "pos": 11,
+          "points": 138,
+          "races": 16,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Turismo Competición 2000",
+          "seriesId": "tc2000",
+          "team": "Equipo Petrobras",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Copa Endurance Series de TC 2000",
+          "team": "Equipo Petrobras",
+          "pos": 4,
+          "points": 32,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Top Race V6",
+          "team": "Sportteam",
+          "pos": 9,
+          "points": 23,
+          "races": 13,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "TC Pista",
+          "seriesId": "tc-pista",
+          "team": "HAZ Racing Team",
+          "pos": 1,
+          "points": 203.5,
+          "races": 16,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Turismo Competición 2000",
+          "seriesId": "tc2000",
+          "team": "DTA Power Tools",
+          "pos": 17,
+          "points": 10,
+          "races": 14,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Top Race V6",
+          "team": "Diablos Rojos Motorsport",
+          "pos": 11,
+          "points": 112,
+          "races": 7,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Top Race V6",
+          "team": "Sportteam",
+          "pos": 11,
+          "points": 112,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Copa Mégane Argentina",
+          "team": "Pfening Competición",
+          "pos": 1,
+          "points": 190,
+          "races": 12,
+          "wins": 6,
+          "podiums": 9,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Turismo Competición 2000",
+          "seriesId": "tc2000",
+          "team": "DTA Power Tools",
+          "pos": 47,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Copa Mégane Argentina",
+          "team": "Pfening Competición",
+          "pos": 3,
+          "points": 108,
+          "races": 14,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "Copa Mégane Argentina",
+          "team": "Pfening Competición",
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "Turismo Carretera",
+          "seriesId": "tc"
+        },
+        {
+          "season": 2025,
+          "series": "Turismo Carretera 2000",
+          "seriesId": "tc2000"
+        },
+        {
+          "season": 2025,
+          "series": "TC Pick Up",
+          "seriesId": "tc-pickup"
+        },
+        {
+          "season": 2021,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000"
+        },
+        {
+          "season": 2019,
+          "series": "Turismo Carretera",
+          "seriesId": "tc"
+        },
+        {
+          "season": 2018,
+          "series": "Turismo Carretera",
+          "seriesId": "tc"
+        },
+        {
+          "season": 2017,
+          "series": "Turismo Carretera",
+          "seriesId": "tc"
+        },
+        {
+          "season": 2017,
+          "series": "Top Race V6"
+        },
+        {
+          "season": 2016,
+          "series": "Top Race V6"
+        },
+        {
+          "season": 2016,
+          "series": "Súper TC 2000",
+          "seriesId": "tc2000"
+        },
+        {
+          "season": 2014,
+          "series": "Top Race V6"
+        },
+        {
+          "season": 2013,
+          "series": "Top Race V6"
+        },
+        {
+          "season": 2012,
+          "series": "Top Race V6"
+        },
+        {
+          "season": 2011,
+          "series": "Top Race V6"
+        },
+        {
+          "season": 2010,
+          "series": "Turismo Carretera",
+          "seriesId": "tc"
+        },
+        {
+          "season": 2010,
+          "series": "Top Race V6 Torneo Clausura"
+        },
+        {
+          "season": 2008,
+          "series": "TC Pista",
+          "seriesId": "tc-pista"
+        },
+        {
+          "season": 2007,
+          "series": "Copa Mégane Argentina"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.agustincanapino.com/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/AgustinCanapino"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/AgustinCanapinoSitioOficial"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:47:06Z"
+    },
+    {
+      "id": "antoine-leclerc",
+      "wikidata": "Q123373931",
+      "summary": {
+        "text": "Antoine Leclerc (born 10 December 1981) is a French racing driver who last competed for Code Racing Development in the GT4 European Series.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Antoine_Leclerc"
+      },
+      "nationality": "Francia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fa/Antoine_LECLERC_-Alpine.jpg/500px-Antoine_LECLERC_-Alpine.jpg",
+        "width": 480,
+        "height": 320,
+        "credit": "Aur&va Sport",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Antoine_LECLERC_-Alpine.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "24H Series – 992",
+          "seriesId": "24h-series",
+          "team": "Orchid Racing Team",
+          "pos": 21,
+          "points": 32,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT4 European Series – Silver",
+          "team": "Code Racing Development",
+          "pos": 9,
+          "points": 56,
+          "races": 12,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT4 European Series – Pro-Am",
+          "team": "Code Racing Development",
+          "pos": 2,
+          "points": 145,
+          "races": 12,
+          "wins": 1,
+          "podiums": 8,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24H GT Series – GT4",
+          "seriesId": "24h-series",
+          "team": "Orchid Racing Team",
+          "points": 15,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT4 European Series – Pro-Am",
+          "team": "Code Racing Development",
+          "pos": 7,
+          "points": 85,
+          "races": 11,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Boutsen Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup – Gold",
+          "seriesId": "gtwc-europe",
+          "team": "Boutsen Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT4 European Series – Pro-Am",
+          "team": "Arkadia Racing",
+          "pos": 6,
+          "points": 76,
+          "races": 12,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Alpine Elf Europa Cup",
+          "team": "Racing Technology",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "French GT4 Cup – Pro-Am",
+          "team": "Riviera Motorsport",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "GT4 International Cup – Pro-Am",
+          "team": "Classic and Modern Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "VLN Series – SP10",
+          "team": "STADAvita Racing Team",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Blancpain Endurance Series – Pro",
+          "seriesId": "gtwc-europe",
+          "team": "M-Sport Bentley",
+          "pos": 17,
+          "points": 15,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Blancpain Endurance Series – Pro",
+          "seriesId": "gtwc-europe",
+          "team": "ART Grand Prix",
+          "pos": 5,
+          "points": 41,
+          "races": 5,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "French GT Championship – GT3",
+          "team": "ART Grand Prix",
+          "pos": 10,
+          "points": 81,
+          "races": 13,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Blancpain Endurance Series – Pro-Am",
+          "seriesId": "gtwc-europe",
+          "team": "Pro GT by Alméras",
+          "points": 0,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Speed EuroSeries",
+          "team": "JMP Racing",
+          "pos": 44,
+          "points": 7,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "FIA GT1 World Championship",
+          "team": "Belgian Racing",
+          "pos": 24,
+          "points": 13,
+          "races": 18,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Blancpain Endurance Series – Pro",
+          "seriesId": "gtwc-europe",
+          "team": "Marc VDS Racing Team",
+          "pos": 26,
+          "points": 11,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "FIA GT3 European Championship",
+          "team": "Mühlner Motorsport",
+          "pos": 21,
+          "points": 21,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "ADAC GT Masters",
+          "team": "Mühlner Motorsport",
+          "pos": 31,
+          "points": 2,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "French GT Championship – GT3",
+          "team": "First Racing",
+          "pos": 5,
+          "points": 160,
+          "races": 14,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "French GT Championship – GT3",
+          "team": "First Racing",
+          "pos": 1,
+          "points": 220,
+          "races": 14,
+          "wins": 2,
+          "podiums": 8,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "FIA GT3 European Championship",
+          "team": "S-Berg Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "French GT Championship – GT3",
+          "team": "First Racing",
+          "pos": 9,
+          "points": 115,
+          "races": 12,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Spa 24 Hours",
+          "team": "S-Berg Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Peugeot RC Cup",
+          "pos": 14,
+          "points": 27,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "French GT Championship",
+          "team": "Force One",
+          "pos": 17,
+          "points": 65,
+          "races": 11,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "Formule Renault 2.0 Cup France",
+          "team": "Tech 1 Racing",
+          "pos": 19,
+          "points": 18,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2002,
+          "series": "Formule Renault 2.0 Cup France",
+          "team": "TCS Racing",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2002,
+          "series": "Formula Renault 2.0 Fran-Am",
+          "team": "TCS Racing",
+          "pos": 16,
+          "points": 16,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2001,
+          "series": "Championnat de France de Formule Renault Elf Campus",
+          "pos": 14,
+          "points": 55,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2008,
+          "series": "French GT Championship – GT3"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "emil-lindholm",
+      "wikidata": "Q42901468",
+      "summary": {
+        "text": "Emil Lindholm (Helsinki, Finlandia, 19 de julio de 1996) es un piloto de rally finlandés que actualmente compite en el WRC 2 a bordo de un Škoda Fabia RS Rally2.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Emil_Lindholm"
+      },
+      "birthDate": "1996-07-19",
+      "birthPlace": "Helsinki, Finlandia",
+      "nationality": "Finlandia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/23/Emil_Lindholm_Rally_Finland_2017_Saalahrti.JPG/500px-Emil_Lindholm_Rally_Finland_2017_Saalahrti.JPG",
+        "width": 480,
+        "height": 320,
+        "credit": "Antti Leppänen",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Emil_Lindholm_Rally_Finland_2017_Saalahrti.JPG"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Campeonato Mundial de Rally (WRC)",
+          "seriesId": "wrc",
+          "pos": 31,
+          "points": 1,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "source": "app"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://emillindholm.fi"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "friesen-stewart",
+      "wikidata": "Q28203491",
+      "summary": {
+        "text": "Stewart J. Friesen (born July 25, 1983) is a Canadian-American professional dirt track and stock car racing driver. He competes full-time in the NASCAR Truck Series, driving the No. 52 Toyota Tundra TRD Pro for Halmar Friesen Racing, and part-time at local dirt tracks across New York, Pennsylvania, New Jersey, and elsewhere in the United States, driving the No. 44 car for HFR.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Stewart_Friesen"
+      },
+      "birthDate": "1983-07-25",
+      "birthPlace": "Niagara-on-the-Lake, Canadá",
+      "nationality": "Canadá",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/67/Stewart_Friesen_at_Bridgeport_Speedway_March_2018_%28cropped%29.jpg/500px-Stewart_Friesen_at_Bridgeport_Speedway_March_2018_%28cropped%29.jpg",
+        "width": 480,
+        "height": 635,
+        "credit": "Dough4872",
+        "license": "CC BY-SA 3.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Stewart_Friesen_at_Bridgeport_Speedway_March_2018_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "ARCA Menards Series",
+          "team": "Cook Racing Technologies",
+          "pos": 101,
+          "points": 31,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 12,
+          "points": 465,
+          "races": 20,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 20,
+          "points": 397,
+          "races": 16,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 12,
+          "points": 557,
+          "races": 23,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Pinty's Series",
+          "team": "Wight Motorsports",
+          "pos": 40,
+          "points": 60,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 12,
+          "points": 537,
+          "races": 23,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Pinty's Series",
+          "team": "22 Racing",
+          "pos": 39,
+          "points": 42,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 6,
+          "points": 2276,
+          "races": 23,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 6,
+          "points": 2275,
+          "races": 22,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Spire Motorsports",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "NASCAR Gander Outdoors Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 15,
+          "points": 504,
+          "races": 22,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR Gander Outdoors Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 4,
+          "points": 4026,
+          "races": 23,
+          "wins": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "CARS Super Late Model Tour",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 7,
+          "points": 2265,
+          "races": 23,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Friesen Racing",
+          "pos": 14,
+          "points": 422,
+          "races": 19,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Halmar Racing",
+          "pos": 33,
+          "points": 69,
+          "races": 6,
+          "wins": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "matsui-takamitsu",
+      "wikidata": "Q48751813",
+      "summary": {
+        "text": "Takamitsu Matsui (松井孝允, Matsui Takamitsu; born 15 December 1987) is a Japanese racing driver affiliated with Toyota Gazoo Racing who currently competes in Super GT for Hoppy Team Tsuchiya. A longtime competitor in the series, he is best known for winning the 2016 championship in the GT300 class, driving alongside Takeshi Tsuchiya. He is also a four-time class champion in the Super Taikyū endurance racing series, winning the title in 2009, 2017, 2018, and 2022, as well as a two-time class winner at the Nürburgring 24 Hours.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Takamitsu_Matsui"
+      },
+      "nationality": "Japón",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/1/13/Matsui_Takamitsu_2026_FSW.jpg",
+        "width": 480,
+        "height": 713,
+        "credit": "Banhada",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Matsui_Takamitsu_2026_FSW.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team ORC Field",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hoppy Team Tsuchiya",
+          "pos": 41,
+          "points": 3,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Toyama Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team Spirit",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hoppy Team Tsuchiya",
+          "pos": 31,
+          "points": 2,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Nürburgring Langstrecken-Serie - SP8T",
+          "seriesId": "nls",
+          "team": "TOYOTA GAZOO ROOKIE Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Toyama Racing",
+          "pos": 18,
+          "points": 6,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hoppy Team Tsuchiya",
+          "points": 0,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team Spirit",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Toyama Racing",
+          "pos": 6,
+          "points": 51,
+          "races": 6,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Team Mach",
+          "points": 0,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 3,
+          "points": 100.5,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Nürburgring Endurance Series - SP8",
+          "team": "Team HAL",
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "Netz Toyama Racing",
+          "pos": 12,
+          "points": 20,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hoppy Team Tsuchiya",
+          "pos": 34,
+          "points": 1,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 1,
+          "points": 177.5,
+          "races": 6,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Nürburgring Endurance Series - SP-Pro",
+          "team": "Toyota Gazoo Racing",
+          "races": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Nürburgring Endurance Series - SP4",
+          "team": "Toyota Gazoo Racing",
+          "races": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hoppy Team Tsuchiya",
+          "pos": 14,
+          "points": 21,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyū - ST-2",
+          "seriesId": "super-taikyu",
+          "team": "ROOKIE Racing",
+          "pos": 8,
+          "points": 23,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyū - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "ROOKIE Racing",
+          "races": 3,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Hoppy Team Tsuchiya",
+          "pos": 20,
+          "points": 10,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 4,
+          "points": 74,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Tsuchiya Engineering",
+          "pos": 19,
+          "points": 17,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 2,
+          "points": 123.5,
+          "races": 6,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "24 Hours of Nürburgring - SP-Pro",
+          "team": "Toyota Gazoo Racing",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Tsuchiya Engineering",
+          "pos": 7,
+          "points": 39,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 1,
+          "points": 159,
+          "races": 6,
+          "wins": 4,
+          "podiums": 5,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "24 Hours of Nürburgring - SP-Pro",
+          "team": "Toyota Gazoo Racing",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "VivaC Team Tsuchiya",
+          "pos": 5,
+          "points": 48,
+          "races": 8,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 1,
+          "points": 135,
+          "races": 6,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "24 Hours of Nürburgring - SP3T",
+          "team": "Toyota Gazoo Racing",
+          "pos": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "VivaC Team Tsuchiya",
+          "pos": 1,
+          "points": 78,
+          "races": 8,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Japanese Formula 3 Championship - National",
+          "team": "Team Samurai",
+          "pos": 6,
+          "points": 24,
+          "races": 2,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 2,
+          "points": 96,
+          "races": 6,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "24 Hours of Nürburgring - SP3T",
+          "team": "Toyota Gazoo Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "VivaC Team Tsuchiya",
+          "pos": 10,
+          "points": 35,
+          "races": 6,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Gazoo Racing TOM'S Spirit",
+          "pos": 6,
+          "points": 55.5,
+          "races": 6,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "24 Hours of Nürburgring - SP3T",
+          "team": "Team Toyota Gazoo Racing",
+          "pos": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Asian Le Mans Series - LMP3",
+          "seriesId": "alms",
+          "team": "Team AAI",
+          "pos": 6,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "AAI-RStrada",
+          "pos": 6,
+          "points": 48,
+          "races": 4,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Japan Formula 4 - East",
+          "team": "Samurai Supporters",
+          "pos": 2,
+          "points": 81,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Japan Formula 4 - West",
+          "team": "Samurai Supporters",
+          "pos": 6,
+          "points": 33,
+          "races": 3,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Porsche Carrera Cup Japan",
+          "team": "Racing X-Road Service",
+          "pos": 8,
+          "points": 47,
+          "races": 3,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Super Taikyū - ST-1",
+          "seriesId": "super-taikyu",
+          "team": "Team Samurai",
+          "pos": 3,
+          "points": 50,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula Challenge Japan",
+          "team": "NDDP FCJ",
+          "pos": 2,
+          "points": 56,
+          "races": 12,
+          "wins": 1,
+          "podiums": 8,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "BOLD Motor Sports",
+          "pos": 1,
+          "points": 100,
+          "races": 7,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Formula Challenge Japan",
+          "team": "TDP Scholarship",
+          "pos": 4,
+          "points": 129,
+          "races": 16,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Formula Challenge Japan",
+          "team": "FTRS Scholarship",
+          "pos": 12,
+          "points": 50,
+          "races": 18,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Formula Toyota",
+          "team": "TOM'S Spirit",
+          "pos": 9,
+          "points": 21,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Formula Toyota",
+          "team": "Wako's Scholarship",
+          "points": 1,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2022,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2016,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt"
+        },
+        {
+          "season": 2009,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        }
+      ],
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/taka3tsumatsui/"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/takamitsu.matsui"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "matt-wilson",
+      "wikidata": "Q112072643",
+      "summary": {
+        "text": "Matthew Allen Wilson (born May 8, 1985) is an American professional stock car racing driver. He last competed part-time in the NASCAR O'Reilly Auto Parts Series, driving the No. 35 Chevrolet SS for Joey Gase Motorsports with Scott Osteen. He has previously competed in the ARCA Menards Series and ARCA Menards Series East.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Matt_Wilson_(racing_driver)"
+      },
+      "nationality": "Estados Unidos",
+      "career": [
+        {
+          "season": 2026,
+          "series": "NASCAR O'Reilly Auto Parts Series (ex Xfinity)",
+          "seriesId": "nascar-xfinity",
+          "pos": 67,
+          "points": 1,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "app"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

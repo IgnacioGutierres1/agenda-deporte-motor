@@ -1,10 +1,10 @@
 /**
  * Cliente HTTP del pipeline: timeout, reintentos con espera y memoización por URL
  * dentro de una misma corrida (varias series pueden compartir la misma fuente).
- * Si una página responde 403 (sitios que bloquean a los servidores de GitHub), se reintenta
- * a través del proxy de Google (ver proxy.ts) y se devuelve con su URL oficial.
+ * Un 403 (sitio que bloquea al cliente, p. ej. a los servidores de GitHub) se informa tal cual: no se insiste por
+ * otro camino (proxies, traductores, cachés de terceros). El lector sigue con otra fuente o la serie queda con el
+ * último dato bueno.
  */
-import { googleProxyUrl, unproxyHtml } from './proxy.ts';
 
 export interface HttpResponse<T> {
   url: string;
@@ -14,8 +14,8 @@ export interface HttpResponse<T> {
 }
 
 /**
- * Opciones de un pedido. `noProxy`: si el sitio responde 403, no reintentar por el proxy de Google (para sitios que
- * se leen solo de forma directa: si rechazan al cliente, el lector sigue con otra fuente).
+ * Opciones de un pedido. `noProxy` ya no tiene efecto (el cliente nunca reintenta por un proxy); se conserva para no
+ * romper a los lectores que lo pasan.
  */
 export type HttpInit = RequestInit & { noProxy?: boolean };
 
@@ -103,35 +103,12 @@ export function createHttp(opts: HttpOptions = {}): Http {
     return p;
   }
 
-  async function withFallback<T>(
-    kind: string,
-    url: string,
-    init: HttpInit | undefined,
-    read: (res: Response) => Promise<T>,
-    unproxy: (body: T) => T,
-  ): Promise<HttpResponse<T>> {
-    try {
-      return await memoized(kind, url, init, read);
-    } catch (err) {
-      const isGet = !init?.method || init.method.toUpperCase() === 'GET';
-      const proxied =
-        err instanceof HttpError && err.status === 403 && isGet && !init?.body && !init?.noProxy ? googleProxyUrl(url) : null;
-      if (!proxied) throw err;
-      try {
-        const res = await memoized(kind, proxied, init, read);
-        return { ...res, url, body: unproxy(res.body) };
-      } catch {
-        throw err; // se informa el 403 original, que es el que explica el problema
-      }
-    }
-  }
-
   return {
-    text: (url, init) => withFallback('text', url, init, (r) => r.text(), unproxyHtml),
+    text: (url, init) => memoized('text', url, init, (r) => r.text()),
     json: <T>(url: string, init?: HttpInit) =>
       memoized('json', url, init, async (r) => (await r.json()) as T),
-    // Imágenes y PDF (p. ej. el cronograma de TC2000, publicado como imagen): el proxy los devuelve tal cual.
-    bytes: (url, init) => withFallback('bytes', url, init, async (r) => new Uint8Array(await r.arrayBuffer()), (b) => b),
+    // Imágenes y PDF (p. ej. el cronograma de TC2000, publicado como imagen).
+    bytes: (url, init) => memoized('bytes', url, init, async (r) => new Uint8Array(await r.arrayBuffer())),
   };
 }
 

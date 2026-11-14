@@ -1,7 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { buildIcs } from '@dm/shared';
 import { createHttp } from '../src/core/http.ts';
-import { googleProxyUrl, unproxyHtml } from '../src/core/proxy.ts';
 import { createGemini, type GeminiSchema } from '../src/extract/gemini.ts';
 import { contentImages } from '../src/extract/html.ts';
 import { createGenericAdapter } from '../src/generic/index.ts';
@@ -11,70 +10,21 @@ const NOW = '2026-11-10T12:00:00Z';
 const PNG = { body: new Uint8Array([137, 80, 78, 71, 1]), contentType: 'image/png' };
 const JPG = { body: new Uint8Array([255, 216, 255, 2]), contentType: 'image/jpeg' };
 
-describe('plan B para sitios que bloquean a GitHub (proxy de Google)', () => {
-  it('arma la URL del proxy y deshace la reescritura de links', () => {
-    expect(googleProxyUrl('https://tc2000.com.ar/carreras.php?evento=calendario')).toBe(
-      'https://tc2000-com-ar.translate.goog/carreras.php?evento=calendario&_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es',
-    );
-    expect(googleProxyUrl('https://www.my-site.com/a/')).toBe(
-      'https://www-my--site-com.translate.goog/a/?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es',
-    );
-    expect(googleProxyUrl('mailto:x@y.z')).toBeNull();
-    const html =
-      '<a href="https://tc2000-com-ar.translate.goog/carreras.php?accion=historial&amp;id=411&amp;temp&amp;_x_tr_sl=auto&amp;_x_tr_tl=es">x</a>' +
-      '<a href="https://www-my--site-com.translate.goog/b?_x_tr_sl=auto&_x_tr_tl=es">y</a>' +
-      '<img src="https://www.tc2000.com.ar/images/crono.jpg">' +
-      '<a href="https://translate.google.com/website?sl=auto&amp;tl=es&amp;hl=es&amp;u=https://tc2000.com.ar/series.php%3Fid%3D2">z</a>';
-    expect(unproxyHtml(html)).toBe(
-      '<a href="https://tc2000.com.ar/carreras.php?accion=historial&amp;id=411&amp;temp">x</a>' +
-        '<a href="https://www.my-site.com/b">y</a>' +
-        '<img src="https://www.tc2000.com.ar/images/crono.jpg">' +
-        '<a href="https://tc2000.com.ar/series.php?id=2">z</a>',
-    );
-  });
-
-  it('ante un 403 pide la página por el proxy y la devuelve con su URL oficial', async () => {
+describe('sitios que bloquean al cliente', () => {
+  it('un 403 se informa tal cual, sin reintentar por otro camino; otros errores tampoco', async () => {
     const asked: string[] = [];
     const http = createHttp({
       retries: 0,
       fetchImpl: async (url) => {
         asked.push(String(url));
-        if (String(url).includes('translate.goog')) {
-          return new Response('<a href="https://tc2000-com-ar.translate.goog/x?_x_tr_sl=auto&_x_tr_tl=es">Fecha</a>', {
-            status: 200,
-            headers: { 'Content-Type': 'text/html' },
-          });
-        }
-        return new Response('Forbidden', { status: 403 });
+        return new Response('no', { status: 403 });
       },
     });
-    const res = await http.text('https://tc2000.com.ar/carreras.php?evento=calendario');
-    expect(res.url).toBe('https://tc2000.com.ar/carreras.php?evento=calendario');
-    expect(res.body).toBe('<a href="https://tc2000.com.ar/x">Fecha</a>');
-    expect(asked).toHaveLength(2);
-  });
-
-  it('también pide por el proxy las imágenes bloqueadas (cronograma de TC2000) y las devuelve tal cual', async () => {
-    const asked: string[] = [];
-    const http = createHttp({
-      retries: 0,
-      fetchImpl: async (url) => {
-        asked.push(String(url));
-        if (String(url).includes('translate.goog')) return new Response(JPG.body, { status: 200, headers: { 'Content-Type': 'image/jpeg' } });
-        return new Response('Forbidden', { status: 403 });
-      },
-    });
-    const res = await http.bytes('https://www.tc2000.com.ar/images/noticias/2009/noticias-56564-2-2026-10-22.jpg');
-    expect(res.url).toBe('https://www.tc2000.com.ar/images/noticias/2009/noticias-56564-2-2026-10-22.jpg');
-    expect([...res.body]).toEqual([...JPG.body]);
-    expect(asked[1]).toBe(
-      'https://www-tc2000-com-ar.translate.goog/images/noticias/2009/noticias-56564-2-2026-10-22.jpg?_x_tr_sl=auto&_x_tr_tl=es&_x_tr_hl=es',
+    await expect(http.text('https://tc2000.com.ar/carreras.php?evento=calendario')).rejects.toThrow(
+      'HTTP 403 en https://tc2000.com.ar/carreras.php?evento=calendario',
     );
-  });
-
-  it('si el proxy tampoco responde, informa el 403 original; otros errores no usan el proxy', async () => {
-    const http = createHttp({ retries: 0, fetchImpl: async () => new Response('no', { status: 403 }) });
-    await expect(http.text('https://imsa.example.com/schedule')).rejects.toThrow('HTTP 403 en https://imsa.example.com/schedule');
+    await expect(http.bytes('https://www.tc2000.com.ar/images/crono.jpg')).rejects.toThrow('HTTP 403');
+    expect(asked).toEqual(['https://tc2000.com.ar/carreras.php?evento=calendario', 'https://www.tc2000.com.ar/images/crono.jpg']);
     let calls = 0;
     const http404 = createHttp({
       retries: 0,

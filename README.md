@@ -18,17 +18,18 @@ App web instalable (PWA) en Android e iOS, con costo $0.
 | Menú ☰ | Actualizar datos, Exportar, Auditoría de fuentes y Ajustes (tema oscuro/claro, zona horaria, cuentas). |
 
 Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `standings/*.json`, `results/**`,
-`rosters/*.json` (listas oficiales de inscriptos), `drivers.json` (índice de pilotos armado desde tablas, resultados e inscriptos), `teams.json` (índice de equipos), `circuits.json` (ficha de cada circuito: coordenadas, datos del trazado, foto y plano, de Wikidata, Wikipedia y Wikimedia Commons), `news.json` y `feeds/deporte-motor.ics`.
+`rosters/*.json` (listas oficiales de inscriptos), `drivers.json` (índice de pilotos armado desde tablas, resultados e inscriptos), `teams.json` (índice de equipos), `circuits.json` (ficha de cada circuito: coordenadas, datos del trazado, foto y plano, de Wikidata, Wikipedia y Wikimedia Commons), `bios/teams.json` y `bios/series.json` (historial de equipos y de cada categoría con su lista de campeones, de Wikidata, Wikipedia y Commons), `news.json` y `feeds/deporte-motor.ics`.
 
 ## Estructura
 
 | Carpeta | Contenido |
 |---|---|
 | `shared/` | Tipos, esquemas zod, horas/períodos y generador `.ics` (lo usan app y pipeline). |
-| `config/` | Categorías (`series.default.json` = las 22 del gem; `series.user.json` = altas/bajas desde la app), duraciones estimadas, transmisión habitual, fuentes de descubrimiento, feeds de noticias (`news.json`), pilotos con variantes del nombre u homónimos (`driver-aliases.json`) y correcciones manuales de las fichas de circuitos (`circuits.json`: qué elemento de Wikidata es cada circuito, o `null` para no buscarlo). |
+| `config/` | Categorías (`series.default.json` = las 22 del gem; `series.user.json` = altas/bajas desde la app), duraciones estimadas, transmisión habitual, fuentes de descubrimiento, feeds de noticias (`news.json`), pilotos con variantes del nombre u homónimos (`driver-aliases.json`) correcciones manuales de las fichas de circuitos (`circuits.json`: qué elemento de Wikidata es cada circuito, o `null` para no buscarlo), de dónde sale la historia y la lista de campeones de cada categoría (`series-history.json`: página y tabla de Wikipedia) y qué elemento de Wikidata es cada equipo cuando corre con el nombre del patrocinador (`team-bios.json`). |
 | `pipeline/` | Recolector Node + TypeScript: lectores directos (`src/adapters`), flujo genérico con IA (`src/generic`), resultados, descubrimiento. |
 | `app/` | PWA en Vue 3 (Options API) + Vite. |
 | `data/` | Archivos generados por el pipeline. **No editar a mano.** |
+| `docs/` | Notas técnicas (`en-vivo.md`) y el plan de migración a app Android + web propia (`migracion/`, solo planificación). |
 
 ## Comandos
 
@@ -36,11 +37,13 @@ Datos que publica el pipeline en `data/`: `schedule.json`, `status.json`, `stand
 npm install
 npm test              # Vitest en shared, pipeline y app
 npm run typecheck
-npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --skip-news --skip-circuits --dry-run)
+npm run pipeline      # corre el recolector y escribe data/  (opciones: --only=f1,tc --skip-results --skip-news --skip-circuits --skip-bios --dry-run)
 npm run discovery     # descubrimiento de competencias nuevas
 npm run news          # solo noticias: lee los feeds RSS/Atom y escribe data/news.json (--dry-run)
 npm run circuits      # fichas de circuitos: completa data/circuits.json sin tope por corrida (--force, --only=monza, --table)
 npm run circuits:tracks  # trazados de los circuitos desde OpenStreetMap: data/tracks/{id}.json (--limit=30 --only=id --force --dry-run)
+npx tsx pipeline/src/bios/teams-run.ts  # historial de equipos y categorías sin tope por corrida (--force, --only=f1,ferrari, --series-only, --teams-only, --dry-run)
+npm run bios:drivers  # historial de pilotos (Wikidata, Wikipedia, Commons y fotos oficiales): data/bios/drivers/*.json (--limit=200 --only=id --force --dry-run); el pipeline hace 40 por corrida (--skip-bios para saltearlo)
 npm run drivers:candidates  # posibles pilotos duplicados por variantes del nombre (para config/driver-aliases.json)
 npm run dev           # app en modo desarrollo (sirve data/ en /data/)
 npm run build         # build de producción en app/dist (incluye data/)

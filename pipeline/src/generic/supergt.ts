@@ -8,6 +8,7 @@
 import { localToUtc, type RosterRow, type StandingsRow, type StandingsTable } from '@dm/shared';
 import { absoluteUrl, attr, textOf } from '../extract/html.ts';
 import { countryName, isoDate } from './places.ts';
+import { supergtResults } from './results-supergt.ts';
 import { checkStandingsTable, column, host, isoNow, pageOrNull, parseHtmlTable, parseNumber, standingsSource, stripComments, tzFor } from './kit.ts';
 import type { CalendarEntry, ExtractedSession, SiteRecipe } from './types.ts';
 
@@ -184,6 +185,9 @@ export const supergt: SiteRecipe = {
       source: { url, title: `Race & Event Schedule SUPER GT — ${entry.name}`, kind: 'html', method: 'directo', fetchedAt: isoNow(ctx.now) },
     };
   },
+  /** Fechas ya corridas: la página japonesa de la carrera sigue publicando el cronograma después de la fecha. */
+  pastSessions: (entry, ctx) => supergt.sessions!(entry, ctx),
+  results: (entry, sessions, ctx) => supergtResults(entry, sessions, ctx),
   /**
    * Rankings de pilotos y de equipos de GT500 y GT300 (/en/driver_ranking y /en/team_ranking con
    * ?series=AAAA&gt_class=…). Si la temporada pedida todavía no tiene datos el sitio muestra la actual:

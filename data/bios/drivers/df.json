@@ -1,0 +1,1298 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "doriane-pin",
+      "wikidata": "Q113244682",
+      "summary": {
+        "text": "Doriane Pin (Ivry-sur-Seine; 6 de enero de 2004) es una piloto francesa de automovilismo. Fue vencedora del Ferrari Challenge y tercera de la Finali Mondiali (Pro-Am) en 2021. Ha logrado la victoria en la European Le Mans Series (GTE), en el campeonato de los Emiratos Árabes Unidos y del Sudeste Asiático de Fórmula 4, resultando subcampeona en esta última. En 2023 logró un podio en el Campeonato Mundial de Resistencia de la FIA en la categoría LMP2. Fue campeona de la F1 Academy en 2025 y subcampeona en 2024 con Prema Racing.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Doriane_Pin"
+      },
+      "birthDate": "2004-01-06",
+      "birthPlace": "Ivry-sur-Seine, Francia",
+      "nationality": "Francia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/ee/Doriane_Pin_Spa_2025.png/500px-Doriane_Pin_Spa_2025.png",
+        "width": 480,
+        "height": 480,
+        "credit": "Maceekim",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Doriane_Pin_Spa_2025.png"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "European Le Mans Series - LMP2 Pro-Am",
+          "seriesId": "elms",
+          "team": "Duqueine Team",
+          "pos": 4,
+          "points": 67,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24 Hours of Le Mans - LMP2",
+          "team": "Duqueine Team",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Mercedes-AMG Petronas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Peugeot TotalEnergies",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Formula E",
+          "team": "Citroën Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Formula Regional Middle East Championship",
+          "team": "Mumbai Falcons Racing Limited",
+          "pos": 29,
+          "points": 0,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "F1 Academy",
+          "seriesId": "f1-academy",
+          "team": "Prema Racing",
+          "pos": 1,
+          "points": 172,
+          "races": 14,
+          "wins": 4,
+          "podiums": 8,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Formula Regional European Championship",
+          "team": "Prema Racing",
+          "pos": 30,
+          "points": 0,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Formula 4 UAE Championship",
+          "team": "Prema Racing",
+          "pos": 10,
+          "points": 66,
+          "races": 12,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "F1 Academy",
+          "seriesId": "f1-academy",
+          "team": "Prema Racing",
+          "pos": 2,
+          "points": 217,
+          "races": 14,
+          "wins": 3,
+          "podiums": 8,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Iron Dames",
+          "pos": 53,
+          "points": 268,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA World Endurance Championship - GT3",
+          "seriesId": "wec",
+          "team": "Iron Dames",
+          "pos": 29,
+          "points": 6,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Formula Regional European Championship",
+          "team": "Iron Dames",
+          "pos": 27,
+          "points": 0,
+          "races": 15,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Iron Dames",
+          "pos": 42,
+          "points": 550,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Iron Dames",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "FIA World Endurance Championship - LMP2",
+          "seriesId": "wec",
+          "team": "Prema Racing",
+          "pos": 9,
+          "points": 63,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula 4 South East Asia Championship",
+          "team": "Prema Racing",
+          "pos": 2,
+          "points": 82,
+          "races": 6,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Le Mans - LMP2",
+          "team": "Prema Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Ferrari Challenge Europe - Trofeo Pirelli (Pro)",
+          "team": "Scuderia Niki Hasler - Iron Lynx",
+          "pos": 1,
+          "points": 213,
+          "races": 14,
+          "wins": 9,
+          "podiums": 13,
+          "poles": 10,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Ferrari Challenge Finali Mondiali - Trofeo Pirelli (Pro)",
+          "team": "Scuderia Niki Hasler - Iron Lynx",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "FIA World Endurance Championship - GTE Am",
+          "seriesId": "wec",
+          "team": "Iron Dames",
+          "pos": 27,
+          "points": 1,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Iron Dames",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Iron Dames",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Lamborghini Super Trofeo Europe",
+          "team": "Iron Dames",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Lamborghini Super Trofeo - Grand Finals",
+          "team": "Iron Dames",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "European Le Mans Series - GTE",
+          "seriesId": "elms",
+          "team": "Iron Lynx",
+          "pos": 9,
+          "points": 44,
+          "races": 3,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Le Mans Cup - GT3",
+          "team": "Iron Lynx",
+          "pos": 5,
+          "points": 67,
+          "races": 7,
+          "wins": 0,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Endurance Cup - Pro-Am",
+          "seriesId": "gtwc-europe",
+          "team": "Iron Lynx",
+          "pos": 23,
+          "points": 17,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Ferrari Challenge Europe - Trofeo Pirelli (Pro)",
+          "team": "Scuderia Niki Hasler - Iron Lynx",
+          "pos": 9,
+          "points": 9,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Renault Clio Cup France",
+          "team": "GPA Racing",
+          "pos": 14,
+          "points": 198,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "F1 Academy",
+          "seriesId": "f1-academy"
+        },
+        {
+          "season": 2022,
+          "series": "Ferrari Challenge Europe - Trofeo Pirelli (Pro)"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://dorianepin.com/"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/dorianepin/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/DorianePin"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/dorianepinpilote"
+        },
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/channel/UCFg8F8rehbW0A3e2-gdEdNg"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "fittipaldi-pietro",
+      "wikidata": "Q10349696",
+      "summary": {
+        "text": "Pietro Fittipaldi da Cruz (Miami, Florida; 25 de junio de 1996) es un piloto de automovilismo brasileño nacido en Estados Unidos. Actualmente es miembro de la Escudería Telmex. Es piloto reserva de la escudería Haas en Fórmula 1 desde 2020, disputando dos Grandes Premios en dicha temporada. En 2024 es piloto titular del equipo Rahal Letterman Lanigan Racing en la IndyCar Series.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Pietro_Fittipaldi"
+      },
+      "birthDate": "1996-06-25",
+      "birthPlace": "Miami, Estados Unidos",
+      "nationality": "Brasil",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Pietro_and_Enzo_Fittipaldi_%28cropped%29_%281%29.jpg/500px-Pietro_and_Enzo_Fittipaldi_%28cropped%29_%281%29.jpg",
+        "width": 480,
+        "height": 792,
+        "credit": "Zach Catanzareti Photo",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Pietro_and_Enzo_Fittipaldi_(cropped)_(1).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - LMP2",
+          "seriesId": "imsa",
+          "team": "Pratt Miller Motorsports",
+          "pos": 9,
+          "points": 1782,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms",
+          "team": "Vector Sport",
+          "pos": 8,
+          "points": 44,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24 Hours of Le Mans - LMP2",
+          "team": "Vector Sport",
+          "pos": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Cadillac F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - LMP2",
+          "seriesId": "imsa",
+          "team": "Pratt Miller Motorsports",
+          "pos": 14,
+          "points": 1756,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms",
+          "team": "Vector Sport",
+          "pos": 4,
+          "points": 54,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24 Hours of Le Mans - LMP2",
+          "team": "United Autosports",
+          "pos": 7,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Rahal Letterman Lanigan Racing",
+          "pos": 19,
+          "points": 186,
+          "races": 18,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IMSA SportsCar Championship - LMP2",
+          "seriesId": "imsa",
+          "team": "Inter Europol by PR1/Mathiasen Motorsports",
+          "pos": 40,
+          "points": 312,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "FIA World Endurance Championship - LMP2",
+          "seriesId": "wec",
+          "team": "Jota",
+          "pos": 6,
+          "points": 84,
+          "races": 7,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Le Mans - LMP2",
+          "team": "Jota",
+          "pos": 13,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IMSA SportsCar Championship - LMP2",
+          "seriesId": "imsa",
+          "team": "Rick Ware Racing",
+          "pos": 22,
+          "points": 484,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "MoneyGram Haas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms",
+          "team": "Inter Europol Competition",
+          "pos": 10,
+          "points": 32,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24 Hours of Le Mans - LMP2",
+          "team": "Inter Europol Competition",
+          "pos": 14,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Stock Car Brasil",
+          "team": "Full Time Bassani",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Dale Coyne Racing with Rick Ware Racing",
+          "pos": 32,
+          "points": 34,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms",
+          "team": "G-Drive Racing",
+          "pos": 26,
+          "points": 6,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Stock Car Brasil",
+          "team": "Full Time Bassani",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Uralkali Haas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "pos": 23,
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Deutsche Tourenwagen Masters",
+          "seriesId": "dtm",
+          "team": "Audi Sport Team WRT",
+          "pos": 15,
+          "points": 22,
+          "races": 15,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Deutsche Tourenwagen Masters",
+          "seriesId": "dtm",
+          "team": "Audi Sport Team Rosberg",
+          "pos": 15,
+          "points": 22,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Haas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "F3 Asian Championship",
+          "team": "Pinnacle Motorsport",
+          "pos": 5,
+          "points": 119,
+          "races": 15,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Dale Coyne Racing",
+          "pos": 26,
+          "points": 91,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super Formula",
+          "seriesId": "super-formula",
+          "team": "UOMO Sunoco Team LeMans",
+          "pos": 22,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "FIA World Endurance Championship",
+          "seriesId": "wec",
+          "team": "DragonSpeed",
+          "points": 0,
+          "races": 0,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula E",
+          "team": "Panasonic Jaguar Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "World Series Formula V8 3.5",
+          "team": "Lotus",
+          "pos": 1,
+          "points": 259,
+          "races": 18,
+          "wins": 6,
+          "podiums": 10,
+          "poles": 10,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Formula E",
+          "team": "Panasonic Jaguar Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Formula V8 3.5 Series",
+          "team": "Fortec Motorsports",
+          "pos": 10,
+          "points": 60,
+          "races": 18,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "FIA Formula 3 European Championship",
+          "team": "Fortec Motorsports",
+          "pos": 17,
+          "points": 32,
+          "races": 33,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Masters of Formula 3",
+          "team": "Fortec Motorsports",
+          "pos": 13,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "MRF Challenge Formula 2000",
+          "team": "MRF Racing",
+          "pos": 1,
+          "points": 244,
+          "races": 14,
+          "wins": 4,
+          "podiums": 9,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Protyre Formula Renault Championship",
+          "team": "MGR Motorsport",
+          "pos": 1,
+          "points": 431,
+          "races": 15,
+          "wins": 10,
+          "podiums": 12,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Formula Renault 2.0 Alps",
+          "team": "MGR Motorsport",
+          "pos": 9,
+          "points": 43,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Eurocup Formula Renault 2.0",
+          "team": "Koiranen GP",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Protyre Formula Renault Championship",
+          "team": "Jamun Racing Services",
+          "pos": 8,
+          "points": 163,
+          "races": 16,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Protyre Formula Renault Autumn Cup",
+          "team": "Jamun Racing Services",
+          "pos": 6,
+          "points": 45,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "BRDC Formula 4 Championship",
+          "team": "MGR Motorsport",
+          "pos": 15,
+          "points": 165,
+          "races": 18,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "BRDC Formula 4 Winter Championship",
+          "team": "MGR Motorsport",
+          "pos": 6,
+          "points": 127,
+          "races": 8,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "NASCAR Whelen All-American Series",
+          "team": "Lee Faulk Racing",
+          "pos": 5,
+          "points": 355,
+          "races": 23,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "NASCAR Whelen All-American Series",
+          "team": "Lee Faulk Racing",
+          "pos": 1,
+          "points": 400,
+          "races": 20,
+          "wins": 4,
+          "podiums": 13,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2017,
+          "series": "World Series Formula V8 3.5"
+        },
+        {
+          "season": 2015,
+          "series": "MRF Challenge Formula 2000"
+        },
+        {
+          "season": 2014,
+          "series": "Protyre Formula Renault Championship"
+        },
+        {
+          "season": 2011,
+          "series": "NASCAR Whelen All-American Series"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.pietrofittipaldi.com.br"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/pifitti/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/PiFitti"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "gattuso-stefano",
+      "wikidata": "Q7606440",
+      "summary": {
+        "text": "Stefano Gattuso (born 3 May 1984) is an Italian racing driver.\n\nBorn in Sarnico near Bergamo, Gattuso started off in single-seaters, culminating in an Italian Formula 3000 Light Class title and a GP2 Series test in 2005. He later embarked on a sports car racing career largely spent in the International GT Open. A long-term Ferrari stalwart, Gattuso notably won for Kessel Racing in the 2009 FIA GT3 European Championship. He was also part of the team's 2012 Blancpain Endurance Series trio that took two overall pole positions, together with Davide Rigon and Daniel Zampieri.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Stefano_Gattuso"
+      },
+      "birthDate": "1984-05-03",
+      "birthPlace": "Sarnico, Italia",
+      "nationality": "Italia",
+      "career": [
+        {
+          "season": 2026,
+          "series": "FIA World Endurance Championship (LMGT3)",
+          "seriesId": "wec",
+          "team": "Proton Competition",
+          "pos": 21,
+          "points": 16,
+          "source": "app"
+        },
+        {
+          "season": 2019,
+          "series": "Silver",
+          "team": "Ombra Racing",
+          "pos": 18,
+          "points": 20,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Silver",
+          "team": "Daiko Lazarus Racing",
+          "pos": 14,
+          "points": 27,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Pro",
+          "team": "Ombra Racing",
+          "points": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Pro-Am",
+          "team": "Kessel Racing",
+          "points": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Pro-Am",
+          "team": "DKR Engineering",
+          "points": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Pro",
+          "team": "Kessel Racing",
+          "pos": 10,
+          "points": 45,
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.stefanogattuso.com/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/stefano_gattuso"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "joseph-loake",
+      "wikidata": "Q124260527",
+      "summary": {
+        "text": "Joseph Thomas Eric Loake (born 17 April 2005) is a British racing driver who competes in the GT World Challenge Europe Endurance Cup for Garage 59 as a McLaren factory driver. He previously competed in FIA Formula 3 for Rodin Motorsport, and won in GB3 and British F4. He is also the 2023 winner of the Aston Martin Autosport BRDC Award.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Joseph_Loake"
+      },
+      "birthDate": "2005-04-17",
+      "birthPlace": "Macclesfield, Reino Unido",
+      "nationality": "Reino Unido",
+      "career": [
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Garage 59",
+          "pos": 12,
+          "points": 21,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Garage 59",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "International GT Open",
+          "seriesId": "gt-open",
+          "team": "Greystone GT",
+          "pos": 38,
+          "points": 5,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Garage 59",
+          "pos": 7,
+          "points": 39,
+          "races": 5,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "USF Pro 2000 Championship",
+          "team": "Turn 3 Motorsport",
+          "pos": 23,
+          "points": 33,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA Formula 3 Championship",
+          "seriesId": "f3",
+          "team": "Rodin Motorsport",
+          "pos": 26,
+          "points": 8,
+          "races": 20,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GB3 Championship",
+          "team": "JHR Developments",
+          "pos": 3,
+          "points": 417,
+          "races": 23,
+          "wins": 4,
+          "podiums": 8,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula 4 UAE Championship",
+          "team": "JHR Developments",
+          "pos": 27,
+          "points": 0,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "F4 British Championship",
+          "team": "JHR Developments",
+          "pos": 5,
+          "points": 271,
+          "races": 30,
+          "wins": 4,
+          "podiums": 9,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "F4 British Championship",
+          "team": "JHR Developments",
+          "pos": 6,
+          "points": 199,
+          "races": 30,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "BRSCC Fiesta Junior Championship",
+          "pos": 1,
+          "points": 412,
+          "races": 8,
+          "wins": 8,
+          "podiums": 8,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "BRSCC Fiesta Junior Championship",
+          "pos": 2,
+          "points": 446,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2020,
+          "series": "BRSCC Fiesta Junior Championship"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://josephloake.com"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/Joseph_Loake"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/JosephLoakeRacing"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "oliver-solberg",
+      "wikidata": "Q30325770",
+      "summary": {
+        "text": "Oliver Solberg, (Fredrikstad, Noruega; 23 de septiembre de 2001) es un piloto de rally sueco, hijo del también piloto y campeón del mundo Petter Solberg.\n\nSolberg con tan solo 17 años debutó en una prueba del Campeonato de Europa de Rally, el Rally Liepāja logrando la victoria absoluta, convirtiéndose así en el piloto más joven en lograr una victoria en la historia del certamen continental.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Oliver_Solberg"
+      },
+      "birthDate": "2001-09-23",
+      "birthPlace": "Fredrikstad, Noruega",
+      "nationality": "Suecia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/e7/Oliver_Solberg_at_Rallye_Monte_Carlo_2023_%28cropped%29.jpg/500px-Oliver_Solberg_at_Rallye_Monte_Carlo_2023_%28cropped%29.jpg",
+        "width": 480,
+        "height": 640,
+        "credit": "Ianreynolds5",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Oliver_Solberg_at_Rallye_Monte_Carlo_2023_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Campeonato Mundial de Rally (WRC)",
+          "seriesId": "wrc",
+          "pos": 2,
+          "points": 238,
+          "races": 8,
+          "wins": 3,
+          "podiums": 5,
+          "source": "app"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://www.oliversolberg.com"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/oliversolberg01"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/OliverSolberg01"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

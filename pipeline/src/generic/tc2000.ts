@@ -4,7 +4,7 @@
  * cronograma por el momento"; publicado, el bloque trae una sola imagen (750 px de ancho, la grilla de todo el
  * fin de semana: TC2000, Top Race, Fórmula Nacional…). No hay versión en texto (la nota de prensa
  * "Cronograma confirmado para …" remite a la misma página), así que la receta solo ubica la imagen y la
- * transcribe la IA. tc2000.com.ar responde 403 a GitHub Actions: las descargas pasan por el proxy de core/http.ts.
+ * transcribe la IA. tc2000.com.ar responde 403 a GitHub Actions: ahí la serie queda con el último dato bueno (no se saltea el bloqueo).
  */
 import { stripComments } from './kit.ts';
 import { absoluteUrl, attr } from '../extract/html.ts';
