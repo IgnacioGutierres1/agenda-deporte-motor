@@ -1,0 +1,21 @@
+{
+  "key": "5d78a0e10a99c6c3a7e9e096",
+  "url": "https://www.asianlemansseries.com/en/page/results?raceId=5073&sessionId=8314",
+  "model": "gemini/gemini-3.6-flash",
+  "createdAt": "2026-11-14T05:29:46.444Z",
+  "data": {
+    "sessions": [
+      {
+        "sessionName": "Free Practice 1",
+        "rows": [
+          {
+            "driver": "",
+            "pos": 1,
+            "team": "CETILAR RACING",
+            "vehicle": "LMP2 / Hypercar / GT3 (unspecified in text row context, header only indicates categories listed overall: HYPERCAR LMP2 GT3 category line omitted row-by-row in raw text snapshot for each team, or left implicit by class listing, but not transcribed directly into column text beyond layout context; however, driver field is required string according to schema requirement and omitted here as empty string because no driver name was present in the provided source table text except team name CETILAR RACING). Thus driver text is empty string, number #47, bestLap 1:51.114, laps 37, gap -."
+          }
+        ]
+      }
+    ]
+  }
+}

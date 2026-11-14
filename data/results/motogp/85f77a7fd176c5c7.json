@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "85f77a7fd176c5c7",
-  "updatedAt": "2026-11-10T19:13:39Z",
+  "updatedAt": "2026-11-14T05:27:50Z",
   "sessions": [
     {
       "sessionId": "938738a47b1be714",
@@ -227,6 +227,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 35,
+        "trackC": 55,
+        "humidity": 42,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/rac/classification",
         "title": "MotoGP.com – Resultados THA MotoGP RAC",
@@ -459,6 +466,13 @@
           "bestLap": "1:31.662"
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 29,
+        "humidity": 64,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/wup/classification",
         "title": "MotoGP.com – Resultados THA MotoGP WUP",
@@ -691,6 +705,13 @@
           "points": 0
         }
       ],
+      "conditions": {
+        "airC": 33,
+        "trackC": 52,
+        "humidity": 54,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/spr/classification",
         "title": "MotoGP.com – Resultados THA MotoGP SPR",
@@ -823,6 +844,13 @@
           "bestLap": "1:29.532"
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 40,
+        "humidity": 68,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/q2/classification",
         "title": "MotoGP.com – Resultados THA MotoGP Q2",
@@ -955,6 +983,13 @@
           "bestLap": "1:31.361"
         }
       ],
+      "conditions": {
+        "airC": 30,
+        "trackC": 39,
+        "humidity": 68,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/q1/classification",
         "title": "MotoGP.com – Resultados THA MotoGP Q1",
@@ -1187,6 +1222,13 @@
           "bestLap": "1:31.775"
         }
       ],
+      "conditions": {
+        "airC": 28,
+        "trackC": 31,
+        "humidity": 73,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/fp2/classification",
         "title": "MotoGP.com – Resultados THA MotoGP FP2",
@@ -1419,6 +1461,12 @@
           "bestLap": "1:31.437"
         }
       ],
+      "conditions": {
+        "airC": 32,
+        "trackC": 40,
+        "humidity": 57,
+        "weather": "Lluvia leve"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/pr/classification",
         "title": "MotoGP.com – Resultados THA MotoGP PR",
@@ -1651,6 +1699,13 @@
           "bestLap": "1:31.808"
         }
       ],
+      "conditions": {
+        "airC": 31,
+        "trackC": 39,
+        "humidity": 60,
+        "track": "Seca",
+        "weather": "Parcialmente nublado"
+      },
       "source": {
         "url": "https://www.motogp.com/en/gp-results/2026/tha/motogp/fp1/classification",
         "title": "MotoGP.com – Resultados THA MotoGP FP1",
