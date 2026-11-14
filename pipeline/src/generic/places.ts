@@ -86,7 +86,7 @@ const AU_STATES: Record<string, string> = {
   victoria: 'Australia/Melbourne', 'phillip island': 'Australia/Melbourne', melbourne: 'Australia/Melbourne', sandown: 'Australia/Melbourne',
   queensland: 'Australia/Brisbane', 'queensland raceway': 'Australia/Brisbane', 'gold coast': 'Australia/Brisbane',
   'western australia': 'Australia/Perth', wanneroo: 'Australia/Perth', perth: 'Australia/Perth',
-  tasmania: 'Australia/Hobart', symmons: 'Australia/Hobart', 'northern territory': 'Australia/Darwin', hidden: 'Australia/Darwin',
+  tasmania: 'Australia/Hobart', symmons: 'Australia/Hobart', 'northern territory': 'Australia/Darwin', hidden: 'Australia/Darwin', darwin: 'Australia/Darwin',
   bathurst: 'Australia/Sydney', sydney: 'Australia/Sydney', 'mount panorama': 'Australia/Sydney',
 };
 
