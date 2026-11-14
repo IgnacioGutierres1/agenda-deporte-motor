@@ -2,6 +2,7 @@
  * "Actualizar": vuelve a pedir todos los datos que la app tiene abiertos (sin caché) y busca una
  * versión nueva de la app. Lo usan el menú y Ajustes.
  */
+import { useBiosStore } from '../stores/bios.ts';
 import { useCircuitInfoStore } from '../stores/circuitInfo.ts';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useNewsStore } from '../stores/news.ts';
@@ -41,6 +42,8 @@ export async function refreshEverything(): Promise<RefreshResult> {
     teams.status !== 'idle' ? teams.load(true) : Promise.resolve(),
     // Fichas de circuitos y trazados ya abiertos.
     useCircuitInfoStore().reloadLoaded(),
+    // Historial de pilotos, equipos y categorías ya abierto (data/bios/**).
+    useBiosStore().reloadLoaded(),
   ]);
   return { app, error: schedule.error };
 }

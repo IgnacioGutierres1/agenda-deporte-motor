@@ -140,6 +140,13 @@
           :empty-text="`No hay noticias recientes de ${series.name}.`"
         />
 
+        <!-- Historia (data/bios/series.json): solo si hay datos de esta categoría -->
+        <template v-else-if="tab === 'historia'">
+          <SeriesHistoryPanel v-if="history" :series="series" :history="history" />
+          <p v-else-if="historyStatus === 'loading' || historyStatus === 'idle'" class="dim">Cargando historia…</p>
+          <p v-else class="card empty dim">Todavía no hay datos de la historia de {{ series.name }}.</p>
+        </template>
+
         <!-- Resultados -->
         <template v-else>
           <p v-if="!withResults.length" class="card empty dim">Todavía no hay resultados de {{ series.name }}.</p>
@@ -163,9 +170,9 @@
 
 <script lang="ts">
 import { defineComponent } from 'vue';
-import { mapState } from 'pinia';
+import { mapActions, mapState } from 'pinia';
 import { DateTime } from 'luxon';
-import { GROUP_LABELS, type MotorEvent, type Series, type SeriesStatus } from '@dm/shared';
+import { GROUP_LABELS, type MotorEvent, type Series, type SeriesHistory, type SeriesStatus } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import CalendarSubscribe from '../components/CalendarSubscribe.vue';
 import CountdownBadge from '../components/CountdownBadge.vue';
@@ -178,6 +185,8 @@ import RosterPanel from '../components/RosterPanel.vue';
 import NewsList from '../components/NewsList.vue';
 import PodiumLine from '../components/PodiumLine.vue';
 import SurfaceBadge from '../components/SurfaceBadge.vue';
+import SeriesHistoryPanel from '../components/SeriesHistoryPanel.vue';
+import { useBiosStore } from '../stores/bios.ts';
 import { hasStages, stagesEventStatus } from '../lib/stages.ts';
 import { newsForSeries, useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
@@ -187,17 +196,22 @@ import { tabStrip } from '../lib/tabStrip.ts';
 import { seriesColor } from '../lib/grid.ts';
 import { nextEventOf, pastEventsOf, todayIn, type NextEvent } from '../lib/agenda.ts';
 
-type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'noticias';
+type Tab = 'resumen' | 'calendario' | 'tabla' | 'plantel' | 'resultados' | 'historia' | 'noticias';
 
 /** Página de una categoría (como la de un equipo en FotMob). */
 export default defineComponent({
   name: 'CategoryView',
-  components: { AppIcon, CalendarSubscribe, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SourceProblem, StandingsPanel, SurfaceBadge },
+  components: { AppIcon, CalendarSubscribe, CountdownBadge, DataState, FollowButton, NewsList, PodiumLine, RosterPanel, SeriesCrest, SeriesHistoryPanel, SourceProblem, StandingsPanel, SurfaceBadge },
   directives: { tabStrip },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'status', 'hasData', 'now', 'seriesById']),
     ...mapState(useSettingsStore, ['timeZone']),
     ...mapState(useNewsStore, { newsItems: 'items' }),
+    ...mapState(useBiosStore, { histories: 'seriesById', historyStatus: 'seriesStatus' }),
+    /** Historia de la categoría (campeones, récords): llega aparte y puede no estar. */
+    history(): SeriesHistory | undefined {
+      return this.series ? this.histories.get(this.series.id) : undefined;
+    },
     seriesNews() {
       return this.series ? newsForSeries(this.newsItems, [this.series.id]) : [];
     },
@@ -220,12 +234,14 @@ export default defineComponent({
         { id: 'tabla', label: 'Tabla' },
         { id: 'plantel', label: 'Plantel' },
         { id: 'resultados', label: 'Resultados' },
+        // La pestaña aparece cuando hay historia (o si se entró directo con ?tab=historia).
+        ...(this.history || this.$route.query.tab === 'historia' ? [{ id: 'historia' as Tab, label: 'Historia' }] : []),
         { id: 'noticias', label: 'Noticias' },
       ];
     },
     tab(): Tab {
       const q = this.$route.query.tab;
-      return q === 'calendario' || q === 'tabla' || q === 'plantel' || q === 'resultados' || q === 'noticias' ? q : 'resumen';
+      return q === 'calendario' || q === 'tabla' || q === 'plantel' || q === 'resultados' || q === 'historia' || q === 'noticias' ? q : 'resumen';
     },
     events(): MotorEvent[] {
       return (this.schedule?.events ?? [])
@@ -278,7 +294,12 @@ export default defineComponent({
       }
     },
   },
+  created() {
+    // Un solo archivo para todas las categorías: se pide una vez.
+    void this.loadHistory();
+  },
   methods: {
+    ...mapActions(useBiosStore, { loadHistory: 'loadSeries' }),
     setTab(tab: Tab) {
       void this.$router.replace({ query: { ...this.$route.query, tab } });
     },
