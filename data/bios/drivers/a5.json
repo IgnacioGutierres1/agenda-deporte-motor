@@ -1,0 +1,964 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "aron-bryce",
+      "wikidata": "Q108875692",
+      "summary": {
+        "text": "Bryce Aron (born September 30, 2003) is an American racing driver who will compete in the 2027 Indy NXT Championship for Cape Motorsports powered by Ed Carpenter Racing. A multiple-time race winner in European open-wheel competition, Aron has also competed in the premier GTP class of the IMSA SportsCar Championship, finishing sixth overall on his debut at the 2025 24 Hours of Daytona. Aron tested for Jaguar TCS Racing in Formula E at the Madrid test.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Bryce_Aron"
+      },
+      "birthDate": "2003-09-30",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/Aron_Wins_at_Hungaroring.jpg/500px-Aron_Wins_at_Hungaroring.jpg",
+        "width": 480,
+        "height": 253,
+        "credit": "Martin Glintze",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Aron_Wins_at_Hungaroring.jpg"
+      },
+      "career": [
+        {
+          "season": 2027,
+          "series": "Indy NXT",
+          "seriesId": "indy-nxt",
+          "team": "Cape Motorsports Powered by ECR",
+          "points": 0,
+          "races": 0,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Indy NXT",
+          "seriesId": "indy-nxt",
+          "team": "Chip Ganassi Racing",
+          "pos": 14,
+          "points": 298,
+          "races": 17,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "JDC-Miller MotorSports",
+          "pos": 35,
+          "points": 276,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Indy NXT",
+          "seriesId": "indy-nxt",
+          "team": "HMD Motorsports",
+          "pos": 11,
+          "points": 260,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Indy NXT",
+          "seriesId": "indy-nxt",
+          "team": "Chip Ganassi Racing",
+          "pos": 11,
+          "points": 260,
+          "races": 13,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Formula Regional Oceania Championship",
+          "team": "M2 Competition",
+          "pos": 15,
+          "points": 102,
+          "races": 6,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Indy NXT",
+          "seriesId": "indy-nxt",
+          "team": "Andretti Global",
+          "pos": 9,
+          "points": 302,
+          "races": 14,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Euroformula Open Championship",
+          "team": "Team Motopark",
+          "pos": 4,
+          "points": 238,
+          "races": 20,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GB3 Championship",
+          "team": "Hitech Grand Prix",
+          "pos": 12,
+          "points": 215,
+          "races": 24,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GB3 Championship",
+          "team": "Carlin",
+          "pos": 12,
+          "points": 237,
+          "races": 24,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "National FF1600 Championship",
+          "team": "Low Dempsey Racing",
+          "pos": 5,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula Ford Festival - Semi",
+          "team": "Low Dempsey Racing",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula Ford Festival",
+          "team": "Low Dempsey Racing",
+          "pos": 5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Walter Hayes Trophy",
+          "team": "Low Dempsey Racing",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula Ford 1600 Castle Combe Championship",
+          "team": "Low Dempsey Racing",
+          "races": 6,
+          "wins": 0,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Champion of Cadwell",
+          "team": "Low Dempsey Racing",
+          "pos": 1,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Champion of Brands",
+          "team": "Low Dempsey Racing",
+          "races": 3,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "SCCA Majors Championship Nationwide - Formula F",
+          "pos": 10,
+          "points": 87,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "SCCA Hoosier Super Tour - Formula Ford",
+          "team": "K-Hill Motorsports",
+          "races": 2,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "F1600 Championship Series",
+          "team": "K-Hill Motorsports",
+          "pos": 3,
+          "points": 639,
+          "races": 20,
+          "wins": 0,
+          "podiums": 8,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Formula Ford Festival - Pro class - Heats/Semi",
+          "team": "Oldfield Motorsport",
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2020,
+          "series": "Champion of Cadwell"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "cory-roper",
+      "wikidata": "Q55608452",
+      "summary": {
+        "text": "Micah Cory Roper (born July 31, 1977) is an American professional stock car racing driver and team owner. He last competed part-time in the NASCAR Craftsman Truck Series, driving the No. 62 Toyota Tundra TRD for Halmar Friesen Racing and part-time in the ARCA Menards Series East, driving the No. 17 Chevrolet for Cook Racing Technologies.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Cory_Roper"
+      },
+      "birthDate": "1977-07-31",
+      "birthPlace": "Baytown, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/53/CoryRoper2020_%28cropped%29.jpg/500px-CoryRoper2020_%28cropped%29.jpg",
+        "width": 480,
+        "height": 458,
+        "credit": "Zach Catanzareti",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:CoryRoper2020_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "pos": 66,
+          "points": 22,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "app"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "kohno-shunsuke",
+      "wikidata": "Q106994790",
+      "summary": {
+        "text": "Shunsuke Kohno (河野駿佑, Kōno Shunsuke; born 12 September 1995) is a Japanese racing driver who currently competes in Super GT for LM Corsa alongside Hiroki Yoshimoto.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Shunsuke_Kohno"
+      },
+      "birthDate": "1995-09-12",
+      "nationality": "Japón",
+      "photo": {
+        "url": "https://upload.wikimedia.org/wikipedia/commons/b/ba/Kohno_Sepang_25.png",
+        "width": 480,
+        "height": 760,
+        "credit": "Thfeeder",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Kohno_Sepang_25.png"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team Spirit",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 16,
+          "points": 41,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 19,
+          "points": 29,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team Spirit",
+          "points": 0,
+          "races": 6,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 19,
+          "points": 29,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team Spirit",
+          "points": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 18,
+          "points": 4,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "GR Team Spirit",
+          "points": 0,
+          "races": 5,
+          "wins": 5,
+          "podiums": 5,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo Asia - Pro",
+          "team": "Promotion Racing",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 22,
+          "points": 8,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM's Spirit",
+          "pos": 3,
+          "points": 100.5,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Lamborghini Super Trofeo Asia - Pro-Am",
+          "team": "Promotion Racing",
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 23,
+          "points": 11,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "TOM'S Spirit",
+          "pos": 1,
+          "points": 177.5,
+          "races": 5,
+          "wins": 5,
+          "podiums": 5,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 3,
+          "points": 49,
+          "races": 8,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Formula Lights",
+          "team": "RS Fine",
+          "pos": 6,
+          "points": 29.5,
+          "races": 16,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyū - ST-Q",
+          "seriesId": "super-taikyu",
+          "team": "ROOKIE Racing",
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "LM corsa",
+          "pos": 27,
+          "points": 0,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Formula Lights",
+          "team": "RS Fine",
+          "pos": 5,
+          "points": 38,
+          "races": 17,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-1",
+          "seriesId": "super-taikyu",
+          "team": "ROOKIE Racing",
+          "pos": 1,
+          "points": 121,
+          "races": 4,
+          "wins": 4,
+          "podiums": 4,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-1",
+          "seriesId": "super-taikyu",
+          "team": "ADVICS muta Racing",
+          "pos": 2,
+          "points": 50,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Japanese Formula 3 Championship",
+          "team": "RS Fine",
+          "pos": 10,
+          "points": 10,
+          "races": 20,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "T's Concept",
+          "pos": 8,
+          "points": 46.5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Japanese Formula 3 Championship",
+          "team": "RS Fine",
+          "pos": 8,
+          "points": 13,
+          "races": 19,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "F4 Japanese Championship",
+          "team": "HubAuto Racing",
+          "pos": 7,
+          "points": 87,
+          "races": 14,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "F4 Japanese Championship",
+          "team": "Field Motorsport",
+          "pos": 10,
+          "points": 64,
+          "races": 13,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "F4 Japanese Championship",
+          "team": "RS Fine",
+          "pos": 8,
+          "points": 42,
+          "races": 14,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "Team AAI",
+          "pos": 25,
+          "points": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2022,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-1",
+          "seriesId": "super-taikyu"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "mini-tyrrell",
+      "wikidata": "Q135450224",
+      "summary": {
+        "text": "Timothy \"Mini\" Tyrrell Jr. (born September 8, 2004) is an American professional stock car racing driver. He competes full-time in the NASCAR Craftsman Truck Series, driving the No. 14 Ram 1500 for Kaulig Racing and part-time in the ARCA Menards Series, driving the No. 17 Chevrolet SS for Cook Racing Technologies. He has previously competed in the zMAX CARS Tour.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Mini_Tyrrell"
+      },
+      "birthDate": "2004-09-08",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b1/Mini_Tyrrell_Texas_2026.jpg/500px-Mini_Tyrrell_Texas_2026.jpg",
+        "width": 480,
+        "height": 602,
+        "credit": "Talladega87",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Mini_Tyrrell_Texas_2026.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 18,
+          "points": 189,
+          "races": 6,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "CARS Pro Late Model Tour",
+          "team": "Cook Racing Technologies",
+          "pos": 66,
+          "points": 23,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "ARCA Menards Series",
+          "team": "Cook Racing Technologies",
+          "pos": 136,
+          "points": 6,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Kaulig Racing",
+          "pos": 22,
+          "points": 359,
+          "races": 25,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 5,
+          "points": 467,
+          "races": 15,
+          "wins": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 3,
+          "points": 428,
+          "races": 17,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 13,
+          "points": 272,
+          "races": 16,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 27,
+          "points": 72,
+          "races": 5,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 9,
+          "points": 285,
+          "races": 13,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 12,
+          "points": 181,
+          "races": 10,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 6,
+          "points": 238,
+          "races": 11,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "CARS Late Model Stock Car Tour",
+          "team": "Timmy Tyrrell Racing",
+          "pos": 66,
+          "points": 14,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "pastrana-travis",
+      "wikidata": "Q379510",
+      "summary": {
+        "text": "Travis Alan Pastrana (Annapolis, Maryland; 8 de octubre de 1983) es un piloto de automovilismo y motociclismo estadounidense. Ganó once medallas de oro de los X Games en las disciplinas de motocross estilo libre y rally.\n\nTravis ganó el Campeonato de la AMA de Motocross 125cc en el año 2000. En 2002 ascendió a la clase principal, 250cc, donde nunca logró ganar ninguna carrera final. Simultáneamente, Travis compitió en motocross estilo libre, donde intentó realizar varios trucos inéditos como el doble backflip, el 360 y el rodeo 720. Desde 1999 hasta 2006, compitió regularmente en las distintas pruebas de dicha modalidad en los X Games, donde cosechó siete medallas de oro en freestyle y un total de 12 medallas. También venció en cuatro eventos de Red Bull X-Fighters entre 2004 y 2007. Se le recuerda por ser el segundo en la historia (siendo Carey Hart el primero en realizarlo en el año 2000) en realizar un backflip o giro 360 sobre su motocross desde una rampa, y por ser el primero en la historia del deporte extremo en realizar un doble backflip saltando de la misma manera.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Travis_Pastrana"
+      },
+      "birthDate": "1983-10-08",
+      "birthPlace": "Annapolis, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Travis_Pastrana_10.03.15_%28cropped%29.JPG/500px-Travis_Pastrana_10.03.15_%28cropped%29.JPG",
+        "width": 480,
+        "height": 677,
+        "credit": "Rob Street",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Travis_Pastrana_10.03.15_(cropped).JPG"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "NASCAR Craftsman Truck Series",
+          "seriesId": "nascar-truck",
+          "pos": 52,
+          "points": 38,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "app"
+        },
+        {
+          "season": 2010,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Speed & Style",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Rally",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Rally",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Rally",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Best Trick",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Rally",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "Best Trick",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2004,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2004,
+          "series": "Best Trick",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2001,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2001,
+          "series": "Step Up",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2000,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        },
+        {
+          "season": 1999,
+          "series": "Freestyle",
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.travispastrana.com/"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/travispastrana/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/TravisPastrana"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/TravisPastrana"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

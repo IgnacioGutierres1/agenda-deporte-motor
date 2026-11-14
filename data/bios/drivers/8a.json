@@ -1,0 +1,4808 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "antonio-fuoco",
+      "wikidata": "Q15550466",
+      "summary": {
+        "text": "Antonio Fuoco (Cariati, Italia; 20 de mayo de 1996) es un piloto de automovilismo italiano. Fue campeón de la Fórmula Renault 2.0 Alpes en 2011, tercero de la GP3 Series en 2016, y obtuvo tres victorias y once podios en el Campeonato de Fórmula 2 de la FIA. Desde 2020 compite en carreras de turismos y en el Campeonato Mundial de Resistencia de la FIA, resultando tercero en 2022 (LMGTE Pro), 2023 y 2025 (Hypercar), y subcampeón en 2024 (Hypercar). También ha sido vencedor de la Copa Mundial de GT de la FIA, subcampeón del GT World Challenge Europe, y tercero del Intercontinental GT Challenge y de las 24 Horas de Le Mans en 2022 (en su clase). Desde 2023 es piloto de Ferrari AF Corse en el Ferrari 499P #50, resultando ganador de las 24 Horas de Le Mans 2024.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Antonio_Fuoco"
+      },
+      "birthDate": "1996-05-20",
+      "birthPlace": "Cariati, Italia",
+      "nationality": "Italia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/65/Antonio_Fuoco_2024_WEC_Fuji.jpg/500px-Antonio_Fuoco_2024_WEC_Fuji.jpg",
+        "width": 480,
+        "height": 720,
+        "credit": "Morio",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Antonio_Fuoco_2024_WEC_Fuji.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Ferrari AF Corse",
+          "pos": 9,
+          "points": 72,
+          "races": 8,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "European Le Mans Series - LMP2 Pro-Am",
+          "seriesId": "elms",
+          "team": "AF Corse",
+          "pos": 3,
+          "points": 67,
+          "races": 6,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "AF Corse USA",
+          "pos": 22,
+          "points": 1318,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari HP",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series - Hypercar",
+          "seriesId": "alms",
+          "team": "Cetilar Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Ferrari AF Corse",
+          "pos": 3,
+          "points": 98,
+          "races": 8,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Cetilar Racing",
+          "pos": 36,
+          "points": 748,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AF Corse - Francorchamps Motors",
+          "pos": 9,
+          "points": 34,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA GT World Cup",
+          "team": "AF Corse SRL",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari HP",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Asian Le Mans Series - LMP2",
+          "seriesId": "alms",
+          "team": "Cetilar Racing",
+          "pos": 2,
+          "points": 81,
+          "races": 6,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Ferrari AF Corse",
+          "pos": 2,
+          "points": 115,
+          "races": 8,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "24 Hours of Le Mans - Hypercar",
+          "team": "Ferrari AF Corse",
+          "pos": 1,
+          "points": 50,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Cetilar Racing",
+          "pos": 29,
+          "points": 1183,
+          "races": 5,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA GT World Cup",
+          "team": "AF Corse",
+          "pos": 9,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Ferrari AF Corse",
+          "pos": 3,
+          "points": 120,
+          "races": 7,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Le Mans - Hypercar",
+          "team": "Ferrari AF Corse",
+          "pos": 5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AF Corse",
+          "pos": 10,
+          "points": 33,
+          "races": 5,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Cetilar Racing",
+          "pos": 38,
+          "points": 637,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "FIA World Endurance Championship - LMGTE Pro",
+          "seriesId": "wec",
+          "team": "AF Corse",
+          "pos": 3,
+          "points": 131,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24 Hours of Le Mans - LMGTE Pro",
+          "team": "AF Corse",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Cetilar Racing",
+          "pos": 28,
+          "points": 870,
+          "races": 3,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Iron Lynx",
+          "pos": 2,
+          "points": 87,
+          "races": 5,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Iron Lynx",
+          "pos": 3,
+          "points": 58,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "AF Corse - Francorchamps",
+          "pos": 3,
+          "points": 58,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "FIA World Endurance Championship - LMGTE Am",
+          "seriesId": "wec",
+          "team": "Cetilar Racing",
+          "pos": 5,
+          "points": 75,
+          "races": 6,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "IMSA SportsCar Championship - LMP2",
+          "seriesId": "imsa",
+          "team": "Cetilar Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "24 Hours of Le Mans - LMGTE Am",
+          "team": "Cetilar Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Iron Lynx",
+          "pos": 11,
+          "points": 27,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Iron Lynx Motorsport Lab",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "AF Corse - Francorchamps Motors",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "SMP Racing",
+          "pos": 20,
+          "points": 7,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Italian GT Sprint Championship",
+          "team": "AF Corse",
+          "pos": 4,
+          "points": 62,
+          "races": 8,
+          "wins": 0,
+          "podiums": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "Car Guy Racing",
+          "pos": 16,
+          "points": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Charouz Racing System",
+          "pos": 7,
+          "points": 141,
+          "races": 23,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula E",
+          "team": "GEOX Dragon",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Prema Racing",
+          "pos": 8,
+          "points": 98,
+          "races": 22,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "GP3 Series",
+          "team": "Trident",
+          "pos": 3,
+          "points": 157,
+          "races": 18,
+          "wins": 2,
+          "podiums": 8,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GP3 Series",
+          "team": "Carlin",
+          "pos": 6,
+          "points": 88,
+          "races": 18,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Scuderia Ferrari",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "FIA Formula 3 European Championship",
+          "team": "Prema Powerteam",
+          "pos": 5,
+          "points": 255,
+          "races": 32,
+          "wins": 2,
+          "podiums": 10,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Florida Winter Series",
+          "races": 12,
+          "wins": 4,
+          "podiums": 7,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Formula Renault 2.0 Alps",
+          "team": "Prema Junior",
+          "pos": 1,
+          "points": 245,
+          "races": 14,
+          "wins": 6,
+          "podiums": 11,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Eurocup Formula Renault 2.0",
+          "team": "Prema Powerteam",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "FIA GT World Cup"
+        },
+        {
+          "season": 2013,
+          "series": "Formula Renault 2.0 Alps"
+        }
+      ],
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/antonio_fuoco1/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/Anto_Fuoco"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "campbell-matt",
+      "wikidata": "Q24678643",
+      "summary": {
+        "text": "Matt Campbell (Warwick, Queensland; 17 de febrero de 1995) es un piloto de automovilismo australiano. Fue campeón del IMSA SportsCar Championship en 2022, subcampeón del Campeonato Mundial de Resistencia en 2018-19 y tercero en 2021. Además, fue ganador absoluto de las 24 Horas de Daytona de 2018, y segundo en las 24 Horas de Le Mans 2025.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Matt_Campbell"
+      },
+      "birthDate": "1995-02-17",
+      "birthPlace": "Warwick, Australia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/3/34/Dempsey-Proton_Racing_Porsche_911_RSR_Campbell_Silverstone_2018.jpg/500px-Dempsey-Proton_Racing_Porsche_911_RSR_Campbell_Silverstone_2018.jpg",
+        "width": 480,
+        "height": 270,
+        "credit": "John Chapman",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Dempsey-Proton_Racing_Porsche_911_RSR_Campbell_Silverstone_2018.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Porsche Penske Motorsport",
+          "pos": 17,
+          "points": 1030,
+          "races": 3,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Manthey Racing EMA",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Schumacher CLRT",
+          "pos": 21,
+          "points": 12,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "pos": 18,
+          "points": 22,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Porsche Penske Motorsport",
+          "pos": 1,
+          "points": 2907,
+          "races": 9,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Porsche Penske Motorsport",
+          "pos": 8,
+          "points": 65,
+          "races": 5,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Dinamic GT",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Porsche Penske Motorsport",
+          "pos": 5,
+          "points": 104,
+          "races": 8,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Porsche Penske Motorsport",
+          "pos": 15,
+          "points": 1038,
+          "races": 3,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Manthey EMA",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Herberth Motorsport",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "SSR Herberth",
+          "pos": 28,
+          "points": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Herberth Motorsport",
+          "pos": 16,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Porsche Penske Motorsport",
+          "pos": 5,
+          "points": 2691,
+          "races": 9,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Le Mans - Hypercar",
+          "team": "Porsche Penske Motorsport",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Manthey EMA",
+          "pos": 19,
+          "points": 18,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Australia - Pro-Am",
+          "seriesId": "gtwc-australia",
+          "team": "EMA Motorsport",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Lionspeed by Car Collection Motorsport",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "IMSA SportsCar Championship - GTD Pro",
+          "seriesId": "imsa",
+          "team": "Pfaff Motorsports",
+          "pos": 1,
+          "points": 3497,
+          "races": 10,
+          "wins": 5,
+          "podiums": 8,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "EMA Motorsport",
+          "pos": 33,
+          "points": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Grove Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24 Hours of Le Mans - LMGTE Am",
+          "team": "Proton Competition",
+          "pos": 16,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "FIA Motorsport Games GT Sprint",
+          "team": "Team Australia",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Toksport WRT",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "FIA World Endurance Championship - LMGTE Am",
+          "seriesId": "wec",
+          "team": "Dempsey-Proton Racing",
+          "pos": 3,
+          "points": 79,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "24 Hours of Le Mans - LMGTE Am",
+          "team": "Dempsey-Proton Racing",
+          "pos": 5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Pfaff Motorsports",
+          "pos": 61,
+          "points": 222,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "IMSA SportsCar Championship - GTLM",
+          "seriesId": "imsa",
+          "team": "WeatherTech Racing",
+          "pos": 4,
+          "points": 2084,
+          "races": 6,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "European Le Mans Series - LMGTE",
+          "seriesId": "elms",
+          "team": "WeatherTech Racing",
+          "pos": 20,
+          "points": 14,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "GPX Martini Racing",
+          "pos": 10,
+          "points": 35,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "GPX Martini Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Kelly Grove Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Historic Grand Prix of Monaco - Series F",
+          "team": "Shadow Racing Cars",
+          "pos": 13,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Frikadelli Racing Team",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "GPX Racing",
+          "pos": 2,
+          "points": 65,
+          "races": 4,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "IMSA SportsCar Championship - GTLM",
+          "seriesId": "imsa",
+          "team": "Porsche GT Team",
+          "pos": 11,
+          "points": 65,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Absolute Racing",
+          "pos": 2,
+          "points": 45,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "GPX Racing",
+          "pos": 2,
+          "points": 45,
+          "races": 2,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Blancpain GT Series Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Rowe Racing",
+          "pos": 12,
+          "points": 22,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Blancpain GT World Challenge America",
+          "team": "Wright Motorsports",
+          "pos": 14,
+          "points": 46,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Blancpain GT World Challenge America - Pro-Am",
+          "team": "Wright Motorsports",
+          "pos": 7,
+          "points": 111,
+          "races": 8,
+          "wins": 0,
+          "podiums": 7,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Wright Motorsports",
+          "pos": 30,
+          "points": 85,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Park Place Motorsports",
+          "pos": 30,
+          "points": 85,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Pfaff Motorsports",
+          "pos": 30,
+          "points": 85,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "ADAC GT Masters",
+          "team": "Frikadelli Racing Team",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "ADAC GT Masters",
+          "team": "SSR Performance",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "EBM",
+          "pos": 7,
+          "points": 52,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Wright Motorsports",
+          "pos": 7,
+          "points": 52,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Rowe Racing",
+          "pos": 7,
+          "points": 52,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Absolute Racing",
+          "pos": 7,
+          "points": 52,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Dinamic Motorsport",
+          "pos": 7,
+          "points": 52,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Queensland Historic Touring Car Championship",
+          "pos": 11,
+          "points": 76,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "24 Hours of Le Mans - LMGTE Am",
+          "team": "Dempsey-Proton Racing",
+          "pos": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Frikadelli Racing Team",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "FIA World Endurance Championship - LMGTE Am",
+          "seriesId": "wec",
+          "team": "Dempsey-Proton Racing",
+          "pos": 8,
+          "points": 98.5,
+          "races": 7,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Competition Motorsports",
+          "pos": 18,
+          "points": 12,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "24H GT Series - A6",
+          "seriesId": "24h-series",
+          "team": "Herberth Motorsport",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "24H GT Series - 911",
+          "seriesId": "24h-series",
+          "team": "Fach Auto Tech",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "24 Hours of Le Mans - LMGTE Am",
+          "team": "Dempsey-Proton Racing",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Frikadelli Racing Team",
+          "pos": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "FIA World Endurance Championship - LMGTE Am",
+          "seriesId": "wec",
+          "team": "Dempsey-Proton Racing",
+          "pos": 2,
+          "points": 110,
+          "races": 8,
+          "wins": 5,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Porsche Supercup",
+          "seriesId": "porsche-supercup",
+          "team": "Fach Auto Tech",
+          "pos": 3,
+          "points": 151,
+          "races": 11,
+          "wins": 4,
+          "podiums": 5,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Porsche Carrera Cup Germany",
+          "team": "Fach Auto Tech",
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Triple Eight Race Engineering",
+          "pos": 30,
+          "points": 591,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Pirtek Enduro Cup",
+          "team": "Triple Eight Race Engineering",
+          "pos": 4,
+          "points": 591,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Australian Carrera Cup Championship",
+          "team": "McElrea Racing",
+          "pos": 1,
+          "points": 1204.5,
+          "races": 24,
+          "wins": 14,
+          "podiums": 18,
+          "poles": 7,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport Australia",
+          "pos": 43,
+          "points": 324,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Queensland Historic Touring Car Championship",
+          "pos": 20,
+          "points": 23,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Australian Carrera Cup Championship",
+          "team": "McElrea Racing",
+          "pos": 3,
+          "points": 860,
+          "races": 22,
+          "wins": 6,
+          "podiums": 10,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Australian GT Championship - GT Trophy",
+          "team": "HHH Racing",
+          "pos": 51,
+          "points": 3,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Queensland Historic Touring Car Championship",
+          "pos": 13,
+          "points": 60,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Porsche GT3 Cup Challenge Australia",
+          "team": "McElrea Racing",
+          "pos": 4,
+          "points": 325,
+          "races": 18,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Australian GT Championship - GT Trophy",
+          "team": "HHH Racing",
+          "pos": 8,
+          "points": 236,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Queensland Historic Touring Car Championship",
+          "pos": 10,
+          "points": 103,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Australian Formula Ford Championship",
+          "team": "Synergy Motorsport",
+          "pos": 11,
+          "points": 67,
+          "races": 22,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Queensland Sports Sedan and Invited Championship",
+          "pos": 20,
+          "points": 18,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Queensland Historic Touring Car Championship",
+          "pos": 19,
+          "points": 47,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Queensland Formula Ford Championship",
+          "team": "Greg Fahey Motorsport",
+          "pos": 1,
+          "points": 241,
+          "races": 12,
+          "wins": 9,
+          "podiums": 12,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "New South Wales Formula Ford Championship",
+          "team": "Greg Fahey Motorsport",
+          "pos": 15,
+          "points": 77,
+          "races": 3,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Australian Formula Ford Championship",
+          "team": "Synergy Motorsport",
+          "pos": 12,
+          "points": 41,
+          "races": 9,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Queensland Formula Ford Championship",
+          "team": "Greg Fahey Motorsport",
+          "pos": 2,
+          "points": 147,
+          "races": 12,
+          "wins": 0,
+          "podiums": 6,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Queensland Race Car Series",
+          "team": "Greg Fahey Motorsport",
+          "pos": 3,
+          "points": 94,
+          "races": 7,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa"
+        },
+        {
+          "season": 2022,
+          "series": "IMSA SportsCar Championship - GTD Pro",
+          "seriesId": "imsa"
+        },
+        {
+          "season": 2022,
+          "series": "FIA Motorsport Games GT Sprint"
+        },
+        {
+          "season": 2016,
+          "series": "Australian Carrera Cup Championship"
+        },
+        {
+          "season": 2012,
+          "series": "Queensland Formula Ford Championship"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.mattcampbellracing.com.au"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "daniel-gaunt",
+      "wikidata": "Q5217254",
+      "summary": {
+        "text": "Daniel Thomas Gaunt (born 27 February 1985 in Auckland) is a New Zealand racing driver and owner of Game Over Auckland.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Daniel_Gaunt"
+      },
+      "birthPlace": "Auckland, Nueva Zelanda",
+      "nationality": "Nueva Zelanda",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/03/Porsche_%288464520176%29.jpg/500px-Porsche_%288464520176%29.jpg",
+        "width": 480,
+        "height": 320,
+        "credit": "jason goulding from Muswellbrook, Australia",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Porsche_(8464520176).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "24H Series (Creventic)",
+          "seriesId": "24h-series",
+          "team": "Tsunami RT",
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Tsunami RT",
+          "source": "app"
+        },
+        {
+          "season": 2018,
+          "series": "Australian GT Championship",
+          "team": "Audi Sport Customer Racing",
+          "pos": 8,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Porsche Carrera Cup Australia",
+          "team": "Bulk Motorworks",
+          "pos": 22,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Australian GT Championship",
+          "team": "Melbourne Performance Centre",
+          "pos": 24,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Australian Production Car Series",
+          "team": "Melbourne Performance Centre",
+          "pos": 32,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Australian GT Championship",
+          "team": "Keltic Racing",
+          "pos": 17,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Tony Bates Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Australian GT Championship - GT Trophy Class",
+          "pos": 11,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Australian Carrera Cup Championship",
+          "team": "McElrea Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Australian GT Championship - GT Trophy Class",
+          "team": "Team JJ Racing",
+          "pos": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "V8SuperTourers",
+          "team": "PSR Racing",
+          "pos": 29,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "South Island Endurance Series",
+          "team": "Paul Kelly Motor Company",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "V8SuperTourer",
+          "team": "Tasman Motorsports Group / PS Racing",
+          "pos": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Dunlop V8 Supercar Series",
+          "team": "Eggleston Motorsport / Evans Motorsport Group",
+          "pos": 11,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Nissan Motorsport",
+          "pos": 50,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "South Island Endurance Series",
+          "team": "Paul Kelly Motor Company",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "V8SuperTourer Championship",
+          "team": "Tasman Motorsports Group",
+          "pos": 14,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Rusty French Racing",
+          "pos": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Kelly Racing",
+          "pos": 50,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Australian GT Championship",
+          "team": "Vodka O Racing",
+          "pos": 13,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Australian Carrera Cup Championship",
+          "team": "Triple X Motorsport / Melbourne Performance Centre",
+          "pos": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "International V8 Supercars Championship",
+          "seriesId": "supercars",
+          "team": "James Rosenberg Racing",
+          "pos": 48,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "V8 Supercar Championship Series",
+          "seriesId": "supercars",
+          "team": "Lucas Dumbrell Motorsport",
+          "pos": 34,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Fujitsu V8 Supercar Series",
+          "team": "McElrea Racing",
+          "pos": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "V8 Supercar Championship Series",
+          "seriesId": "supercars",
+          "team": "Stone Brothers Racing",
+          "pos": 41,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "V8 Supercar Championship Series",
+          "seriesId": "supercars",
+          "team": "Team Kiwi Racing",
+          "pos": 54,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Toyota Racing Series",
+          "pos": 15,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Champ Car Atlantic Championship",
+          "team": "Newman/Wachs Racing",
+          "pos": 24,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Indy Pro Series",
+          "team": "Brian Stewart Racing",
+          "pos": 31,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Toyota Racing Series",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "Toyota Racing Series",
+          "pos": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "Toyota Racing Series",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2004,
+          "series": "Lady Wigram Trophy",
+          "team": "Team BRM",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "Australian Drivers' Championship",
+          "team": "Pure Power Racing / Ralt Australia",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2001,
+          "series": "New Zealand South Island Formula Ford",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2013,
+          "series": "South Island Endurance Series"
+        },
+        {
+          "season": 2012,
+          "series": "South Island Endurance Series"
+        },
+        {
+          "season": 2006,
+          "series": "Toyota Racing Series"
+        },
+        {
+          "season": 2005,
+          "series": "Toyota Racing Series"
+        },
+        {
+          "season": 2004,
+          "series": "Lady Wigram Trophy"
+        },
+        {
+          "season": 2003,
+          "series": "Australian Drivers' Championship"
+        },
+        {
+          "season": 2001,
+          "series": "New Zealand South Island Formula Ford"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "durksen-joshua",
+      "wikidata": "Q99693702",
+      "summary": {
+        "text": "Joshua Iván Dürksen Dyck (Asunción, 27 de octubre de 2003) es un piloto de automovilismo paraguayo. Fue subcampeón del Campeonato de EAU de Fórmula 4 en 2019, su primer año en monoplazas. Desde 2024, compite en el Campeonato de Fórmula 2 de la FIA.\n\nEn 2026, Dürksen se convirtió en piloto de desarrollo del equipo Mercedes-Benz en Fórmula 1.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Joshua_D%C3%BCrksen"
+      },
+      "birthDate": "2003-10-27",
+      "birthPlace": "Asunción, Paraguay",
+      "nationality": "Paraguay",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7a/Joshua_D%C3%BCrksen%2C_ADAC_Berlin-Brandenburg%2C_F4%2C_N%C3%BCrburgring_2020.jpg/500px-Joshua_D%C3%BCrksen%2C_ADAC_Berlin-Brandenburg%2C_F4%2C_N%C3%BCrburgring_2020.jpg",
+        "width": 480,
+        "height": 320,
+        "credit": "F1Marv",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Joshua_D%C3%BCrksen,_ADAC_Berlin-Brandenburg,_F4,_N%C3%BCrburgring_2020.jpg"
+      },
+      "career": [
+        {
+          "season": 2027,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Hitech",
+          "points": 0,
+          "races": 0,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Invicta Racing",
+          "pos": 8,
+          "points": 78,
+          "races": 21,
+          "wins": 4,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Mercedes-AMG Petronas F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "AIX Racing",
+          "pos": 9,
+          "points": 107,
+          "races": 27,
+          "wins": 2,
+          "podiums": 8,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "PHM AIX Racing / AIX Racing",
+          "pos": 10,
+          "points": 87,
+          "races": 28,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula Regional Middle East Championship",
+          "team": "Hyderabad Blackbirds by MP Motorsport",
+          "pos": 16,
+          "points": 29,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula Regional European Championship",
+          "team": "Arden Motorsport",
+          "pos": 19,
+          "points": 26,
+          "races": 20,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula Regional European Championship",
+          "team": "Arden Motorsport",
+          "pos": 14,
+          "points": 40,
+          "races": 20,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Italian F4 Championship",
+          "team": "BWT Mücke Motorsport",
+          "pos": 6,
+          "points": 171,
+          "races": 21,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Euroformula Open Championship",
+          "team": "Drivex School",
+          "pos": 17,
+          "points": 29,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "ADAC Formula 4 Championship",
+          "team": "ADAC Berlin-Brandenburg",
+          "pos": 6,
+          "points": 191,
+          "races": 21,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Italian F4 Championship",
+          "team": "BWT Mücke Motorsport",
+          "pos": 13,
+          "points": 60,
+          "races": 8,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Formula 4 UAE Championship",
+          "team": "Mücke Motorsport",
+          "pos": 2,
+          "points": 295,
+          "races": 20,
+          "wins": 5,
+          "podiums": 10,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Italian F4 Championship",
+          "team": "BWT Mücke Motorsport",
+          "pos": 8,
+          "points": 122,
+          "races": 21,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "ADAC Formula 4 Championship",
+          "team": "ADAC Berlin-Brandenburg",
+          "pos": 11,
+          "points": 80,
+          "races": 20,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://www.jd.com.py"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "jon-lancaster",
+      "wikidata": "Q1702799",
+      "summary": {
+        "text": "Jon Lancaster (Leeds, Inglaterra, 10 de diciembre de 1988) es un piloto de automovilismo británico.\n\nHa participado en diversas categorías de automovilismo incluyendo la Fórmula 3 Euroseries, la Fórmula Renault 3.5, la Auto GP y la GP2 Series. El 30 de junio de 2013 logró su primera victoria en la GP2 Series en la ronda de Silverstone.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Jon_Lancaster"
+      },
+      "birthDate": "1988-12-10",
+      "birthPlace": "Leeds, Reino Unido",
+      "nationality": "Reino Unido",
+      "career": [
+        {
+          "season": 2026,
+          "series": "McLaren Trophy America",
+          "team": "Greystone GT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "McLaren Trophy Europe",
+          "team": "Greystone GT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24H Series (Creventic)",
+          "seriesId": "24h-series",
+          "team": "HRT Performance",
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Indian Racing League",
+          "team": "Hyderabad Blackbirds",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "McLaren Trophy Europe",
+          "team": "Greystone GT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "McLaren Trophy America",
+          "team": "RAFA Racing Club",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24H Series Middle East - 992",
+          "team": "HRT Performance",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT4 European Series - Pro-Am",
+          "team": "RAFA Racing Club",
+          "pos": 12,
+          "points": 29,
+          "races": 9,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Indian Racing League",
+          "team": "Chennai Turbo Riders",
+          "pos": 2,
+          "points": 147,
+          "races": 5,
+          "wins": 3,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "European Le Mans Series - LMGTE",
+          "seriesId": "elms",
+          "team": "JMW Motorsport",
+          "pos": 6,
+          "points": 47,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT Cup Championship - Group GTH",
+          "team": "Greystone GT",
+          "points": 0,
+          "races": 4,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "McLaren Trophy Europe - Artura Trophy",
+          "team": "Greystone GT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "McLaren Trophy Europe - 570S Trophy",
+          "team": "Greystone GT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Indian Racing League",
+          "team": "Chennai Turbo Riders",
+          "pos": 2,
+          "points": 83,
+          "races": 3,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT Cup Championship - Group GTH",
+          "team": "Greystone GT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Indian Racing League",
+          "team": "Chennai Turbo Riders",
+          "pos": 9,
+          "points": 70,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT Cup Championship - Group GTH",
+          "team": "Greystone GT",
+          "pos": 9,
+          "points": 14,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms",
+          "team": "Algarve Pro Racing",
+          "pos": 17,
+          "points": 13,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms",
+          "team": "Greaves Motorsport",
+          "pos": 1,
+          "points": 93,
+          "races": 5,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GP2 Series",
+          "team": "Hilmer Motorsport",
+          "pos": 32,
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GP2 Series",
+          "team": "MP Motorsport",
+          "pos": 23,
+          "points": 6,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GP2 Series",
+          "team": "Hilmer Motorsport",
+          "pos": 23,
+          "points": 6,
+          "races": 14,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "GP2 Series",
+          "team": "Hilmer Motorsport",
+          "pos": 11,
+          "points": 73,
+          "races": 16,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "GP2 Series",
+          "team": "Ocean Racing Technology",
+          "pos": 34,
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "MRF Challenge Formula 2000 Championship",
+          "team": "MRF Racing",
+          "pos": 4,
+          "points": 91,
+          "races": 10,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "FIA Formula Two Championship",
+          "team": "MotorSport Vision",
+          "pos": 10,
+          "points": 14,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Auto GP",
+          "team": "Super Nova Racing",
+          "pos": 11,
+          "points": 51,
+          "races": 4,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula Renault 3.5 Series",
+          "team": "Fortec Motorsport",
+          "pos": 13,
+          "points": 39,
+          "races": 17,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "Formula Renault 3.5 Series",
+          "team": "Comtec Racing",
+          "pos": 13,
+          "points": 39,
+          "races": 12,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Formula 3 Euro Series",
+          "team": "ART Grand Prix",
+          "pos": 12,
+          "points": 19,
+          "races": 19,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Masters of Formula 3",
+          "team": "ART Grand Prix",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "Macau Grand Prix",
+          "seriesId": "macau-gp",
+          "team": "Manor Motorsport",
+          "pos": 11,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Eurocup Formula Renault 2.0",
+          "team": "SG Drivers Project",
+          "pos": 2,
+          "points": 102,
+          "races": 14,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "French Formula Renault 2.0",
+          "team": "SG Formula",
+          "pos": 6,
+          "points": 64,
+          "races": 10,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "Formula Renault 2.0 UK Winter Series",
+          "team": "Hitech Junior Team",
+          "pos": 14,
+          "points": 33,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Star of Silverstone",
+          "team": "Silverstone Motorsport Academy",
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "Formula Renault 2.0 UK Winter Series",
+          "team": "AKA Lemac",
+          "pos": 16,
+          "points": 30,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2015,
+          "series": "European Le Mans Series - LMP2",
+          "seriesId": "elms"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://www.jonlancasterracing.com/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/Lancaster4F1"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/JonLracing"
+        },
+        {
+          "label": "YouTube",
+          "url": "https://www.youtube.com/channel/UCRxPcYiLWYu_A_A1m7k1lzg"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "marciello-raffaele",
+      "wikidata": "Q128423",
+      "summary": {
+        "text": "Raffaele Marciello (Zúrich, Suiza, 17 de diciembre de 1994) es un piloto de automovilismo ítalo-suizo.\n\nCorrió en karting desde 2005 hasta 2009, ganando varios campeonatos. Debutó en monoplazas en 2010 con una tercera posición final en el campeonato de Fórmula Abarth. Al año siguiente tuvo el mismo resultado en Fórmula 3 Italiana. Debutó en Fórmula 3 Europea en 2012; fue subcampeón en su temporada debut y campeón en la siguiente, con Prema Powerteam.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Raffaele_Marciello"
+      },
+      "birthDate": "1994-12-17",
+      "birthPlace": "Zúrich, Suiza",
+      "nationality": "Italia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/b/b7/Raffaele_Marciello_2017.jpg/500px-Raffaele_Marciello_2017.jpg",
+        "width": 480,
+        "height": 720,
+        "credit": "Pietro.br",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Raffaele_Marciello_2017.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "BMW M Team WRT",
+          "pos": 3,
+          "points": 85,
+          "races": 8,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "BMW M Team WRT",
+          "pos": 30,
+          "points": 252,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Rowe Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Rowe Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Rowe Racing",
+          "pos": 8,
+          "points": 26,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Rowe Racing",
+          "pos": 19,
+          "points": 19,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Team WRT",
+          "pos": 19,
+          "points": 19,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Italian GT Championship Sprint Cup - GT3",
+          "team": "BMW Italia Ceccato Racing",
+          "points": 35,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "FIA GT World Cup",
+          "team": "Team WRT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "BMW M Team WRT",
+          "pos": 20,
+          "points": 27,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "BMW M Team RLL",
+          "pos": 34,
+          "points": 315,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Team WRT",
+          "pos": 13,
+          "points": 16.5,
+          "races": 2,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Team WRT",
+          "pos": 2,
+          "points": 95,
+          "races": 4,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Rowe Racing",
+          "pos": 2,
+          "points": 95,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Rowe Racing",
+          "pos": 4,
+          "points": 60,
+          "races": 5,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Rowe Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Rowe Racing",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA GT World Cup",
+          "team": "Rowe Racing",
+          "pos": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "BMW M Team WRT",
+          "pos": 14,
+          "points": 39,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Team WRT",
+          "pos": 9,
+          "points": 34,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Team WRT",
+          "pos": 10,
+          "points": 24,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Rowe Racing",
+          "pos": 10,
+          "points": 24,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Rowe Racing",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Rowe Racing",
+          "pos": 7,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "British GT Championship - GT3",
+          "team": "RAM Racing",
+          "pos": 14,
+          "points": 16.5,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Italian GT Sprint Championship - GT3",
+          "team": "BMW Italia Ceccato Racing",
+          "points": 44,
+          "races": 2,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA GT World Cup",
+          "team": "TORO Racing powered by MCG",
+          "pos": 18,
+          "races": 2,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "GetSpeed Performance",
+          "pos": 3,
+          "points": 52,
+          "races": 4,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "British GT Championship - GT3",
+          "team": "RAM Racing",
+          "pos": 7,
+          "points": 108,
+          "races": 9,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKodis ASP Team",
+          "pos": 2,
+          "points": 90.5,
+          "races": 10,
+          "wins": 4,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKodis ASP Team",
+          "pos": 1,
+          "points": 104,
+          "races": 5,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IMSA SportsCar Championship - LMP2",
+          "seriesId": "imsa",
+          "team": "High Class Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Winward Racing",
+          "pos": 67,
+          "points": 131,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team GruppeM Racing",
+          "pos": 7,
+          "points": 57,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "AKKodis ASP Team",
+          "pos": 7,
+          "points": 57,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Craft-Bamboo Racing",
+          "pos": 7,
+          "points": 57,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Nürburgring Endurance Series - SP9",
+          "team": "Mercedes-AMG Team Bilstein",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Mercedes-AMG Team Bilstein by HRT",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "FIA GT World Cup",
+          "team": "Mercedes-AMG Team Mann-Filter",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKodis ASP Team",
+          "pos": 2,
+          "points": 111.5,
+          "races": 10,
+          "wins": 3,
+          "podiums": 8,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKodis ASP Team",
+          "pos": 1,
+          "points": 89,
+          "races": 5,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "IMSA SportsCar Championship - GTD Pro",
+          "seriesId": "imsa",
+          "team": "WeatherTech Racing",
+          "pos": 26,
+          "points": 306,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "SunEnergy1 Racing",
+          "pos": 70,
+          "points": 128,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "ADAC GT Masters",
+          "team": "MANN-FILTER Team Landgraf",
+          "pos": 1,
+          "points": 193,
+          "races": 14,
+          "wins": 1,
+          "podiums": 8,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team AKKodis ASP",
+          "pos": 5,
+          "points": 50,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG GruppeM Racing",
+          "pos": 5,
+          "points": 50,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team Craft-Bamboo Racing",
+          "pos": 5,
+          "points": 50,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Nürburgring Endurance Series - SP9",
+          "team": "Mercedes-AMG Team Bilstein",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24H GT Series - GT3",
+          "seriesId": "24h-series",
+          "team": "Abu Dhabi Racing by HRT Bilstein",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Mercedes-AMG Team Bilstein by HRT",
+          "pos": 7,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Macau GT Cup",
+          "team": "TORO Racing",
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "ADAC GT Masters",
+          "team": "Mann-Filter Team Landgraf-HTP WWR",
+          "pos": 4,
+          "points": 150,
+          "races": 14,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP Team",
+          "pos": 3,
+          "points": 61.5,
+          "races": 10,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP Team",
+          "pos": 2,
+          "points": 79,
+          "races": 5,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "HubAuto Racing",
+          "pos": 7,
+          "points": 28,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "SunEnergy1 Racing",
+          "pos": 44,
+          "points": 341,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team AKKA ASP",
+          "pos": 4,
+          "points": 43,
+          "races": 3,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Nürburgring Endurance Series - SP9",
+          "team": "Mercedes-AMG Team GetSpeed",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Mercedes-AMG Team GetSpeed",
+          "pos": 3,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "ADAC GT Masters",
+          "team": "Knaus - Team HTP-Winward",
+          "pos": 6,
+          "points": 112,
+          "races": 14,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP Team",
+          "pos": 3,
+          "points": 75.5,
+          "races": 8,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP Team",
+          "pos": 5,
+          "points": 52,
+          "races": 4,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team GruppeM Racing",
+          "pos": 16,
+          "points": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team AKKA ASP",
+          "pos": 16,
+          "points": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Nürburgring Endurance Series - SP9",
+          "team": "Mercedes-AMG Team GetSpeed",
+          "pos": 10,
+          "points": 24.43,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Mercedes-AMG Team GetSpeed",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Blancpain GT World Challenge Europe",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP Team",
+          "pos": 3,
+          "points": 78.5,
+          "races": 10,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Blancpain GT Series Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Mercedes-AMG Team AKKA ASP",
+          "pos": 25,
+          "points": 9,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "FIA GT World Cup",
+          "team": "Mercedes-AMG Team GruppeM Racing",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team GruppeM Racing",
+          "pos": 4,
+          "points": 55,
+          "races": 4,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team AKKA ASP",
+          "pos": 4,
+          "points": 55,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "VLN Series - SP9",
+          "team": "HTP Motorsport",
+          "pos": 19,
+          "points": 16.34,
+          "races": 2,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Mercedes-AMG Team Mann Filter",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Blancpain GT Series Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP Team",
+          "pos": 1,
+          "points": 98,
+          "races": 10,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Blancpain GT Series Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Mercedes-AMG Team AKKA ASP",
+          "pos": 2,
+          "points": 66,
+          "races": 5,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Blancpain GT Series Asia",
+          "seriesId": "gtwc-asia",
+          "team": "GruppeM Racing Team",
+          "pos": 7,
+          "points": 85,
+          "races": 10,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Blancpain GT Series Asia - Pro-Am",
+          "seriesId": "gtwc-asia",
+          "team": "GruppeM Racing Team",
+          "pos": 3,
+          "points": 155,
+          "races": 10,
+          "wins": 3,
+          "podiums": 6,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Pirelli World Challenge",
+          "team": "CRP Racing",
+          "pos": 32,
+          "points": 25,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "SprintX GT Championship Series",
+          "team": "CRP Racing",
+          "pos": 18,
+          "points": 25,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "ADAC GT Masters",
+          "team": "AutoArenA Motorsport",
+          "pos": 26,
+          "points": 18,
+          "races": 4,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "AutoArenA Motorsport",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "VLN Series - SP9",
+          "team": "Mercedes-AMG Team HTP Motorsport",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "FIA GT World Cup",
+          "team": "Mercedes-AMG Team GruppeM Racing",
+          "pos": 9,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team SunEnergy1 Racing",
+          "pos": 3,
+          "points": 64,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team AKKA ASP",
+          "pos": 3,
+          "points": 64,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team GruppeM Racing",
+          "pos": 3,
+          "points": 64,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Mercedes-AMG Team Strakka Racing",
+          "pos": 3,
+          "points": 64,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula E",
+          "team": "GEOX Dragon",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Blancpain GT Series Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP",
+          "pos": 16,
+          "points": 16,
+          "races": 10,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Blancpain GT Series Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AKKA ASP",
+          "pos": 5,
+          "points": 43,
+          "races": 5,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "AKKA ASP",
+          "pos": 9,
+          "points": 15,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Blancpain GT Series Asia",
+          "seriesId": "gtwc-asia",
+          "team": "GruppeM Racing Team",
+          "pos": 18,
+          "points": 30,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Blancpain GT Series Asia - Pro-Am",
+          "seriesId": "gtwc-asia",
+          "team": "GruppeM Racing Team",
+          "pos": 11,
+          "points": 43,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Trident",
+          "pos": 29,
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "FIST-Team AAI",
+          "pos": 9,
+          "points": 19,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "GP2 Series",
+          "team": "Russian Time",
+          "pos": 4,
+          "points": 159,
+          "races": 22,
+          "wins": 0,
+          "podiums": 6,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GP2 Series",
+          "team": "Trident",
+          "pos": 7,
+          "points": 110,
+          "races": 22,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Sauber Motorsport",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GP2 Series",
+          "team": "Racing Engineering",
+          "pos": 8,
+          "points": 74,
+          "races": 22,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "FIA Formula 3 European Championship",
+          "team": "Prema Powerteam",
+          "pos": 1,
+          "points": 489.5,
+          "races": 30,
+          "wins": 13,
+          "podiums": 19,
+          "poles": 12,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Macau Grand Prix",
+          "seriesId": "macau-gp",
+          "team": "Prema Powerteam",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "FIA Formula 3 European Championship",
+          "team": "Prema Powerteam",
+          "pos": 2,
+          "points": 228.5,
+          "races": 20,
+          "wins": 7,
+          "podiums": 9,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Formula 3 Euro Series",
+          "team": "Prema Powerteam",
+          "pos": 3,
+          "points": 219.5,
+          "races": 24,
+          "wins": 6,
+          "podiums": 4,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Masters of Formula 3",
+          "team": "Prema Powerteam",
+          "pos": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Macau Grand Prix",
+          "seriesId": "macau-gp",
+          "team": "Prema Powerteam",
+          "pos": 8,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Toyota Racing Series",
+          "team": "M2 Competition",
+          "pos": 9,
+          "points": 535,
+          "races": 15,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Italian Formula 3 Championship",
+          "team": "Prema Powerteam",
+          "pos": 3,
+          "points": 123,
+          "races": 14,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "FIA International Formula 3 Trophy",
+          "team": "Prema Powerteam",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula Abarth",
+          "team": "JD Motorsport",
+          "pos": 3,
+          "points": 91,
+          "races": 13,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe"
+        },
+        {
+          "season": 2023,
+          "series": "FIA GT World Cup"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe"
+        },
+        {
+          "season": 2019,
+          "series": "FIA GT World Cup"
+        },
+        {
+          "season": 2018,
+          "series": "Blancpain GT Series Sprint Cup",
+          "seriesId": "gtwc-europe"
+        },
+        {
+          "season": 2013,
+          "series": "FIA Formula 3 European Championship"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.raffaelemarciello.com/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/R_Marciello"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/Team.RaffaeleMarciello"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "ryan-sieg",
+      "wikidata": "Q7384518",
+      "summary": {
+        "text": "Ryan Scott Sieg (born June 20, 1987) is an American professional stock car racing driver and team owner. He competes full-time in the NASCAR O'Reilly Auto Parts Series, driving the No. 39 Chevrolet SS for RSS Racing. He is the younger brother of the late former driver Shane Sieg and the older brother of current teammate Kyle Sieg.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Ryan_Sieg"
+      },
+      "birthDate": "1987-06-20",
+      "birthPlace": "Tucker, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/0/07/Ryan_Sieg_Richmond_2018.jpg/500px-Ryan_Sieg_Richmond_2018.jpg",
+        "width": 480,
+        "height": 663,
+        "credit": "Zach Catanzareti",
+        "license": "CC BY-SA 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ryan_Sieg_Richmond_2018.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "NASCAR O'Reilly Auto Parts Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 15,
+          "points": 612,
+          "races": 26,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 15,
+          "points": 691,
+          "races": 32,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Haas Factory Team",
+          "pos": 15,
+          "points": 691,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 13,
+          "points": 856,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 18,
+          "points": 606,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 11,
+          "points": 2126,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 14,
+          "points": 643,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 10,
+          "points": 2187,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR Gander Outdoors Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "Reaume Brothers Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 11,
+          "points": 2171,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Monster Energy NASCAR Cup Series",
+          "team": "Premium Motorsports",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 16,
+          "points": 589,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 15,
+          "points": 551,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Monster Energy NASCAR Cup Series",
+          "team": "BK Racing",
+          "points": 0,
+          "races": 5,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 9,
+          "points": 2171,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 11,
+          "points": 827,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "NASCAR Nationwide Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "pos": 16,
+          "points": 682,
+          "races": 33,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "pos": 17,
+          "points": 500,
+          "races": 20,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "NASCAR Nationwide Series",
+          "seriesId": "nascar-xfinity",
+          "team": "RSS Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "NASCAR Nationwide Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Jeremy Clements Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "pos": 15,
+          "points": 531,
+          "races": 22,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "pos": 19,
+          "points": 563,
+          "races": 25,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "pos": 15,
+          "points": 2635,
+          "races": 25,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "GunBroker Racing",
+          "pos": 29,
+          "points": 1065,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "NASCAR Camping World Truck Series",
+          "seriesId": "nascar-truck",
+          "team": "RSS Racing",
+          "pos": 29,
+          "points": 1065,
+          "races": 9,
+          "wins": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://ryansiegracing.blogspot.com/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/ryansieg"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "ryuichiro-tomita",
+      "wikidata": "Q55542152",
+      "summary": {
+        "text": "Ryuichiro Tomita (富田 竜一郎, Tomita Ryūichirō; born 28 October 1988 in Tokyo) is a Japanese racing driver set to compete for GAINER in Super GT and Team ZeroOne in Super Taikyu.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Ryuichiro_Tomita"
+      },
+      "nationality": "Japón",
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 14,
+          "points": 46,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 21,
+          "points": 26,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "pos": 2,
+          "points": 96,
+          "races": 7,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 17,
+          "points": 8,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "pos": 5,
+          "points": 75,
+          "races": 7,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 12,
+          "points": 28,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "pos": 4,
+          "points": 77.5,
+          "races": 6,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 6,
+          "points": 45,
+          "races": 7,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Team WRT",
+          "points": 0,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge Europe Endurance Cup – Gold",
+          "seriesId": "gtwc-europe",
+          "team": "Team WRT",
+          "pos": 4,
+          "points": 61,
+          "races": 5,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyu - ST-3",
+          "seriesId": "super-taikyu",
+          "team": "Team ZeroOne",
+          "pos": 5,
+          "points": 49,
+          "races": 4,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Belgian Audi Club Team WRT",
+          "pos": 28,
+          "points": 4,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Endurance Cup – Silver",
+          "seriesId": "gtwc-europe",
+          "team": "Belgian Audi Club Team WRT",
+          "pos": 11,
+          "points": 51,
+          "races": 5,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Belgian Audi Club Team WRT",
+          "pos": 8,
+          "points": 33.5,
+          "races": 10,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT World Challenge Europe Sprint Cup – Silver",
+          "seriesId": "gtwc-europe",
+          "team": "Belgian Audi Club Team WRT",
+          "pos": 2,
+          "points": 85.5,
+          "races": 10,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Team WRT",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "NILZZ Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "MP Racing",
+          "pos": 6,
+          "points": 41,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT World Challenge Europe Sprint Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Belgian Audi Club Team WRT",
+          "pos": 4,
+          "points": 66,
+          "races": 11,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "NILZZ Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "MP Racing",
+          "pos": 2,
+          "points": 87.5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "Endless Racing",
+          "pos": 1,
+          "points": 129.5,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyu - ST-TCR",
+          "seriesId": "super-taikyu",
+          "team": "Audi Driving Experience Japan",
+          "pos": 5,
+          "points": 18,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 24,
+          "points": 10,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Audi Sport Team Hitotsuyama",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "FIA World Touring Car Cup",
+          "team": "Audi Sport Team Hitotsuyama",
+          "points": 0,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "MP Racing",
+          "pos": 3,
+          "points": 101,
+          "races": 2,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Taikyu - ST-TCR",
+          "seriesId": "super-taikyu",
+          "team": "Audi Driving Experience Japan",
+          "pos": 10,
+          "points": 19,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 22,
+          "points": 1,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Audi Sport Team Hitotsuyama",
+          "pos": 23,
+          "points": 4,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyu - ST-1",
+          "seriesId": "super-taikyu",
+          "team": "apr",
+          "pos": 2,
+          "points": 76,
+          "races": 3,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyu - ST-TCR",
+          "seriesId": "super-taikyu",
+          "team": "Audi Driving Experience Japan",
+          "pos": 8,
+          "points": 7,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 18,
+          "points": 13,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyu - ST-1",
+          "seriesId": "super-taikyu",
+          "team": "apr",
+          "pos": 1,
+          "points": 137,
+          "races": 6,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 8,
+          "points": 38,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "GAINER",
+          "pos": 8,
+          "points": 45,
+          "races": 3,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Super FJ – Fuji Series",
+          "team": "Dijon Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Super FJ – Suzuka Series",
+          "team": "Dijon Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Dijon Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GT-R Prestige Cup",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "GT-R Prestige Cup",
+          "pos": 1,
+          "champion": true,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2020,
+          "series": "Super Taikyu - ST-Z",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyu - ST-1",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2014,
+          "series": "GT-R Prestige Cup"
+        },
+        {
+          "season": 2013,
+          "series": "GT-R Prestige Cup"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

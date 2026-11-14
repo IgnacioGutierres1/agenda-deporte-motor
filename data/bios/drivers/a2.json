@@ -1,0 +1,241 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "oscar-piastri",
+      "wikidata": "Q28741262",
+      "summary": {
+        "text": "Oscar Jack Piastri (Melbourne, Victoria, 6 de abril de 2001) es un piloto de automovilismo australiano. Entre los años 2019 y 2021 logró tres títulos seguidos: Eurocopa de Fórmula Renault, Fórmula 3 y Fórmula 2 (estos dos últimos como debutante), y resultó subcampeón de la F4 Británica en 2017. En 2021 fue miembro de la Academia Alpine y piloto reserva de Alpine en 2022. Desde 2023 es piloto de McLaren en Fórmula 1, resultando tercero en 2025.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Oscar_Piastri"
+      },
+      "birthDate": "2001-04-06",
+      "birthPlace": "Melbourne, Australia",
+      "nationality": "Australia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/97/Oscar_Piastri_2025_%28cropped%29.jpg/500px-Oscar_Piastri_2025_%28cropped%29.jpg",
+        "width": 480,
+        "height": 493,
+        "credit": "Wikimedia Commons",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Oscar_Piastri_2025_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Fórmula 1",
+          "seriesId": "f1",
+          "team": "McLaren",
+          "pos": 7,
+          "points": 152,
+          "races": 18,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "McLaren F1 Team",
+          "pos": 3,
+          "points": 410,
+          "races": 24,
+          "wins": 7,
+          "podiums": 16,
+          "poles": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "McLaren F1 Team",
+          "pos": 4,
+          "points": 292,
+          "races": 24,
+          "wins": 2,
+          "podiums": 8,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "McLaren F1 Team",
+          "pos": 9,
+          "points": 97,
+          "races": 22,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "BWT Alpine F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "McLaren F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Prema Racing",
+          "pos": 1,
+          "points": 252.5,
+          "races": 23,
+          "wins": 6,
+          "podiums": 11,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Alpine F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "FIA Formula 3 Championship",
+          "seriesId": "f3",
+          "team": "Prema Racing",
+          "pos": 1,
+          "points": 164,
+          "races": 18,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 0,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "Renault DP World F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Formula Renault Eurocup",
+          "team": "R-ace GP",
+          "pos": 1,
+          "points": 320,
+          "races": 19,
+          "wins": 7,
+          "podiums": 11,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula Renault Eurocup",
+          "team": "Arden Motorsport",
+          "pos": 8,
+          "points": 110,
+          "races": 20,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula Renault Northern European Cup",
+          "team": "Arden Motorsport",
+          "races": 8,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "F4 British Championship",
+          "team": "TRS Arden Junior Team",
+          "pos": 2,
+          "points": 376.5,
+          "races": 30,
+          "wins": 6,
+          "podiums": 15,
+          "poles": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Formula Renault Northern European Cup",
+          "team": "Arden Motorsport",
+          "pos": 21,
+          "points": 26,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Formula 4 UAE Championship",
+          "team": "Dragon F4",
+          "pos": 6,
+          "points": 94,
+          "races": 11,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2021,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2"
+        },
+        {
+          "season": 2020,
+          "series": "FIA Formula 3 Championship",
+          "seriesId": "f3"
+        },
+        {
+          "season": 2019,
+          "series": "Formula Renault Eurocup"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://oscarpiastri.com/"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/oscarpiastri/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/OscarPiastri"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/OscarPiastriRacing"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

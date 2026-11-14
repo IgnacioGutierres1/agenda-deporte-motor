@@ -1,0 +1,569 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "alessandro-ghiretti",
+      "wikidata": "Q111116014",
+      "summary": {
+        "text": "Alessandro Ghiretti (Montauban, Francia; 8 de enero de 2002) es un piloto de automovilismo francés. Actualmente compite en la Ultimate Cup Series con Martinet by Alméras. En el pasado fue miembro de la Academia Sauber.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Alessandro_Ghiretti"
+      },
+      "birthDate": "2002-01-18",
+      "birthPlace": "Montauban, Francia",
+      "nationality": "Francia",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/28/2024-08-25_Motorsport%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024%2C_Porsche_Mobil_1_Supercup_STP_3705_by_Stepro.jpg/500px-2024-08-25_Motorsport%2C_Gro%C3%9Fer_Preis_der_Niederlande_2024%2C_Porsche_Mobil_1_Supercup_STP_3705_by_Stepro.jpg",
+        "width": 480,
+        "height": 270,
+        "credit": "Steffen Prößdorf",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:2024-08-25_Motorsport,_Gro%C3%9Fer_Preis_der_Niederlande_2024,_Porsche_Mobil_1_Supercup_STP_3705_by_Stepro.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "GT World Challenge Asia",
+          "seriesId": "gtwc-asia",
+          "team": "Absolute Racing",
+          "pos": 2,
+          "points": 143,
+          "races": 12,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Boutsen VDS",
+          "points": 0,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge Europe Endurance Cup - Gold",
+          "seriesId": "gtwc-europe",
+          "team": "Boutsen VDS",
+          "pos": 12,
+          "points": 30,
+          "races": 4,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Nürburgring Langstrecken-Serie - SP9",
+          "seriesId": "nls",
+          "team": "Dinamic GT",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24 Hours of Nürburgring - SP9",
+          "team": "Dinamic GT",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "TSS The Super Series - GT3",
+          "team": "B-Quik Absolute Racing",
+          "pos": 5,
+          "points": 80,
+          "races": 6,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Porsche Carrera Cup Asia",
+          "team": "Team Carrera Cup Asia by Tempo",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Dinamic GT / Boutsen VDS / Absolute Racing",
+          "pos": 22,
+          "points": 15,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24H Series (GT3 (Middle East Trophy))",
+          "seriesId": "24h-series",
+          "pos": 17,
+          "points": 20,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Porsche Carrera Cup Australia - Pro",
+          "team": "EMA Motorsport",
+          "pos": 18,
+          "points": 121,
+          "races": 3,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Porsche Carrera Cup Germany",
+          "team": "Schumacher CLRT",
+          "pos": 2,
+          "points": 262,
+          "races": 16,
+          "wins": 4,
+          "podiums": 9,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Porsche Supercup",
+          "seriesId": "porsche-supercup",
+          "team": "Schumacher CLRT",
+          "pos": 1,
+          "points": 130.5,
+          "races": 8,
+          "wins": 3,
+          "podiums": 6,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Schumacher CLRT",
+          "pos": 26,
+          "points": 2,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Nürburgring Langstrecken-Serie - AT3",
+          "seriesId": "nls",
+          "team": "Four Motors Bionconcept-Car",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24H Series Middle East - GT3",
+          "team": "B-Quik Absolute Racing",
+          "pos": 20,
+          "points": 17,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24H Series Middle East - GT3",
+          "team": "EBM",
+          "pos": 20,
+          "points": 17,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24H Series Middle East - 992",
+          "team": "EBM",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Supercup",
+          "seriesId": "porsche-supercup",
+          "team": "Schumacher CLRT",
+          "pos": 6,
+          "points": 85,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup France",
+          "team": "Schumacher CLRT",
+          "pos": 1,
+          "points": 303,
+          "races": 12,
+          "wins": 9,
+          "podiums": 12,
+          "poles": 10,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup Asia",
+          "team": "Team Jebsen",
+          "pos": 1,
+          "points": 308,
+          "races": 14,
+          "wins": 8,
+          "podiums": 12,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Ultimate Cup Series Endurance GT-Touring Challenge - Porsche Cup",
+          "team": "Martinet by Alméras",
+          "pos": 11,
+          "points": 37,
+          "races": 3,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Porsche Supercup",
+          "seriesId": "porsche-supercup",
+          "team": "Martinet by Alméras",
+          "pos": 7,
+          "points": 64,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Porsche Sprint Challenge Southern Europe - Sport Division - Pro",
+          "team": "Martinet by Alméras",
+          "pos": 8,
+          "points": 37,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Porsche Carrera Cup France",
+          "team": "Martinet by Alméras",
+          "pos": 2,
+          "points": 215,
+          "races": 11,
+          "wins": 2,
+          "podiums": 10,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Porsche Carrera Cup France",
+          "team": "Martinet by Alméras",
+          "pos": 3,
+          "points": 139,
+          "races": 12,
+          "wins": 0,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Ultimate Cup Series Endurance GT-Touring Challenge - Porsche Cup",
+          "team": "Martinet by Alméras",
+          "pos": 9,
+          "points": 28,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Porsche Carrera Cup France",
+          "team": "Martinet by Alméras",
+          "pos": 4,
+          "points": 181,
+          "races": 12,
+          "wins": 0,
+          "podiums": 6,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Porsche Supercup",
+          "seriesId": "porsche-supercup",
+          "team": "Martinet by Alméras",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Le Mans Cup - LMP3",
+          "team": "Team Virage",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Ultimate Cup Series - Proto P3",
+          "team": "Team Virage",
+          "pos": 2,
+          "points": 68,
+          "races": 3,
+          "wins": 2,
+          "podiums": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "ADAC Formula 4 Championship",
+          "team": "US Racing-CHRS",
+          "pos": 6,
+          "points": 136,
+          "races": 20,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "F3 Asian Winter Series",
+          "team": "Dragon Hitech GP",
+          "pos": 3,
+          "points": 106,
+          "races": 9,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula 4 South East Asia Championship",
+          "team": "Meritus.GP",
+          "pos": 1,
+          "points": 446,
+          "races": 24,
+          "wins": 14,
+          "podiums": 21,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "French F4 Championship",
+          "team": "FFSA Academy",
+          "points": 0,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Italian F4 Championship",
+          "team": "BDL Motorsport",
+          "points": 0,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Formula 4 South East Asia Championship",
+          "team": "Meritus.GP",
+          "pos": 11,
+          "points": 92,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "Porsche Supercup",
+          "seriesId": "porsche-supercup"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup France"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup Asia"
+        },
+        {
+          "season": 2018,
+          "series": "Formula 4 South East Asia Championship"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "gerhard-tweraser",
+      "wikidata": "Q87259",
+      "summary": {
+        "text": "Gerhard Tweraser (born 29 September 1989 in Bad Ischl) is an Austrian racing driver. He has competed in such series as ADAC Formel Masters and the German Formula Three Championship. He won the 2006 Formula Lista Junior championship season.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Gerhard_Tweraser"
+      },
+      "birthDate": "1988-09-29",
+      "nationality": "Austria",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/fd/P9_Challenge_2022_Spielberg_Nr._623.jpg/500px-P9_Challenge_2022_Spielberg_Nr._623.jpg",
+        "width": 480,
+        "height": 270,
+        "credit": "Lukas Raich",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:P9_Challenge_2022_Spielberg_Nr._623.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Bronze",
+          "team": "Razoon - more than racing",
+          "pos": 32,
+          "points": 8,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Bronze",
+          "team": "Tresor Attempto Racing",
+          "pos": 32,
+          "points": 8,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24H Series (GT3 (Europa))",
+          "seriesId": "24h-series",
+          "pos": 30,
+          "points": 32,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Fanatec GT World Challenge Europe",
+          "seriesId": "gtwc-europe",
+          "team": "Razoon - more than racing",
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "Silver",
+          "team": "GRT Grasser Racing Team",
+          "points": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Silver",
+          "team": "GRT Grasser Racing Team",
+          "pos": 9,
+          "points": 37,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Silver",
+          "team": "GRT Grasser Racing Team",
+          "pos": 5,
+          "points": 56,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "Pro-Am",
+          "team": "GRT Grasser Racing Team",
+          "pos": 17,
+          "points": 27,
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "http://www.tweraser.net/"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

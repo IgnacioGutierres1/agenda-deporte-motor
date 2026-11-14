@@ -1,0 +1,979 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "anthony-mcintosh",
+      "wikidata": "Q120061735",
+      "summary": {
+        "text": "Anthony McIntosh (born April 6, 1975) is an American racing driver and businessman.\n\nMcIntosh was the 2023 and 2024 champion of the Lamborghini Super Trofeo North America's Am class alongside Glenn McGee. McIntosh and McGee were also GT3 Am champions in the Sprint division of the 2024 Italian GT Championship. McIntosh additionally is CEO of Wisconsin-based corporation Global Power Components.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Anthony_McIntosh"
+      },
+      "birthDate": "1975-04-06",
+      "birthPlace": "Milwaukee, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/1d/Car_69%2C_Mazda_Miata%2C_HPDE4_%2852040779023%29.jpg/500px-Car_69%2C_Mazda_Miata%2C_HPDE4_%2852040779023%29.jpg",
+        "width": 480,
+        "height": 320,
+        "credit": "Robert Yorde from Ohio, USA",
+        "license": "CC BY 2.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Car_69,_Mazda_Miata,_HPDE4_(52040779023).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "FIA World Endurance Championship - LMGT3",
+          "seriesId": "wec",
+          "team": "Team WRT",
+          "pos": 6,
+          "points": 66,
+          "races": 7,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Italian GT Championship Sprint Cup - GT3",
+          "team": "BMW Italia Ceccato Racing",
+          "pos": 11,
+          "points": 30,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "European Le Mans Series - LMGT3",
+          "seriesId": "elms",
+          "team": "Racing Spirit of Léman",
+          "pos": 34,
+          "points": 1,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Nürburgring Langstrecken-Serie - Cup3",
+          "seriesId": "nls",
+          "team": "Schmickler Performance powered by Ravenol",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series – GT",
+          "seriesId": "alms",
+          "team": "Team WRT",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "24H Series (GT3 (Middle East Trophy))",
+          "seriesId": "24h-series",
+          "pos": 1,
+          "points": 96,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "pos": 27,
+          "points": 6,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "GT America Series - GT4",
+          "team": "JTR Motorsports Engineering",
+          "pos": 1,
+          "points": 136,
+          "races": 6,
+          "wins": 4,
+          "podiums": 6,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT4 America Series - Pro/Am",
+          "team": "JTR Motorsports Engineering",
+          "pos": 5,
+          "points": 62,
+          "races": 6,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Lamborghini Super Trofeo North America – Pro-Am",
+          "team": "Wayne Taylor Racing",
+          "pos": 7,
+          "points": 35,
+          "races": 6,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "van der Steur Racing",
+          "pos": 30,
+          "points": 991,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Beechdean Motorsport",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Le Mans Cup - LMGT3",
+          "team": "Racing Spirit of Léman",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "FIA World Endurance Championship - LMGT3",
+          "seriesId": "wec",
+          "team": "Racing Spirit of Léman",
+          "pos": 19,
+          "points": 17,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Italian GT Championship Endurance Cup - GT3",
+          "team": "BMW Italia Ceccato Racing",
+          "points": 23,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "Team WRT",
+          "pos": 2,
+          "points": 70,
+          "races": 6,
+          "wins": 2,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "24H Series Middle East - GT3",
+          "team": "Paradine Competition",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo North America - Am",
+          "team": "Wayne Taylor Racing with Andretti",
+          "pos": 1,
+          "points": 139,
+          "races": 12,
+          "wins": 6,
+          "podiums": 10,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo World Final - Am",
+          "team": "Wayne Taylor Racing with Andretti",
+          "pos": 2,
+          "points": 27,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo Europe - Pro-Am",
+          "team": "Leipert Motorsport",
+          "pos": 11,
+          "points": 49,
+          "races": 4,
+          "wins": 2,
+          "podiums": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo Europe - Am",
+          "team": "Leipert Motorsport",
+          "pos": 12,
+          "points": 29,
+          "races": 4,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo World Final - Pro-Am",
+          "team": "Leipert Motorsport",
+          "pos": 1,
+          "points": 30,
+          "races": 2,
+          "wins": 2,
+          "podiums": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Italian GT Championship - Sprint - GT3 Am",
+          "team": "AKM Motorsport",
+          "pos": 1,
+          "points": 122,
+          "races": 8,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Endurance Challenge North America - GT3 Cup",
+          "team": "JTR Motorsports Engineering",
+          "pos": 1,
+          "points": 254,
+          "races": 4,
+          "wins": 1,
+          "podiums": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Mazda MX-5 Cup",
+          "team": "JTR Motorsports Engineering",
+          "pos": 38,
+          "points": 320,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Le Mans Cup - LMP3",
+          "team": "Nielsen Racing",
+          "points": 0,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "992 Endurance Cup",
+          "team": "Mühlner Motorsport",
+          "pos": 21,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "2 Seas Motorsport",
+          "pos": 6,
+          "points": 43,
+          "races": 6,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Lamborghini Super Trofeo North America - Am",
+          "team": "Precision Performance Motorsports",
+          "pos": 1,
+          "points": 144,
+          "races": 12,
+          "wins": 5,
+          "podiums": 10,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Lamborghini Super Trofeo World Final - Am",
+          "team": "Precision Performance Motorsports",
+          "pos": 1,
+          "points": 26,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Mazda MX-5 Cup",
+          "team": "JTR Motorsports Engineering",
+          "pos": 15,
+          "points": 1960,
+          "races": 14,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Michelin Pilot Challenge - GS",
+          "team": "JTR Motorsports Engineering",
+          "pos": 33,
+          "points": 450,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Porsche Sprint Challenge North America - 992 Pro/Am",
+          "team": "Forward Motorsports",
+          "pos": 7,
+          "points": 182,
+          "races": 4,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Lamborghini Super Trofeo Europe - Am",
+          "team": "Imperiale Racing",
+          "pos": 17,
+          "points": 16,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Mazda MX-5 Cup",
+          "team": "JTR Motorsports Engineering",
+          "pos": 25,
+          "points": 985,
+          "races": 12,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Lamborghini Super Trofeo North America - LB Cup",
+          "team": "Precision Performance Motorsports",
+          "pos": 8,
+          "points": 28,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Mazda MX-5 Cup",
+          "team": "JTR Motorsports Engineering",
+          "pos": 34,
+          "points": 310,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "GT America Series - GT4"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo North America - Am"
+        },
+        {
+          "season": 2024,
+          "series": "Italian GT Championship - Sprint - GT3 Am"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Endurance Challenge North America - GT3 Cup"
+        },
+        {
+          "season": 2023,
+          "series": "Lamborghini Super Trofeo North America - Am"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "franco-manny",
+      "wikidata": "Q135396041",
+      "summary": {
+        "text": "Manuel \"Manny\" Franco (born 1995) is an American auto racing driver who currently competes in the IMSA SportsCar Championship for Conquest Racing.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Manny_Franco_(racing_driver)"
+      },
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/7d/Manny_Franco_2025_SportsCar_Grand_Prix_%28cropped%29.jpg/500px-Manny_Franco_2025_SportsCar_Grand_Prix_%28cropped%29.jpg",
+        "width": 480,
+        "height": 596,
+        "credit": "63142286@N04 MIDWST.BLUR",
+        "license": "CC BY 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Manny_Franco_2025_SportsCar_Grand_Prix_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Conquest Racing",
+          "pos": 43,
+          "points": 769,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Conquest Racing",
+          "pos": 7,
+          "points": 2534,
+          "races": 10,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Ferrari Challenge North America - Trofeo Pirelli",
+          "team": "Ferrari Lake Forest",
+          "pos": 11,
+          "points": 92,
+          "races": 4,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IMSA SportsCar Championship - GTD",
+          "seriesId": "imsa",
+          "team": "Conquest Racing",
+          "pos": 4,
+          "points": 2577,
+          "races": 10,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "AF Corse",
+          "pos": 10,
+          "points": 32,
+          "races": 6,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge America - Pro",
+          "seriesId": "gtwc-america",
+          "team": "Conquest Racing",
+          "pos": 5,
+          "points": 170,
+          "races": 12,
+          "wins": 2,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Conquest Racing",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "AF Corse",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT World Challenge Europe Endurance Cup - Silver",
+          "seriesId": "gtwc-europe",
+          "team": "AF Corse",
+          "pos": 17,
+          "points": 15,
+          "races": 1,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Ferrari Challenge North America - Trofeo Pirelli",
+          "team": "Ferrari Lake Forest",
+          "pos": 5,
+          "points": 80,
+          "races": 8,
+          "wins": 3,
+          "podiums": 3,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Michelin Pilot Challenge",
+          "team": "NTE/MC2 Autosport",
+          "pos": 43,
+          "points": 520,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT4 America Series - Silver",
+          "team": "Conquest Racing",
+          "pos": 7,
+          "points": 20,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT World Challenge America - Pro",
+          "seriesId": "gtwc-america",
+          "team": "Conquest Racing",
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Ferrari Challenge North America - Trofeo Pirelli",
+          "team": "Ferrari Lake Forest",
+          "pos": 2,
+          "points": 113,
+          "races": 10,
+          "wins": 5,
+          "podiums": 6,
+          "poles": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Ferrari Challenge North America - Coppa Shell",
+          "team": "Ferrari Lake Forest",
+          "pos": 8,
+          "points": 47,
+          "races": 4,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 2,
+          "source": "wikipedia"
+        }
+      ],
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/manuelscofranco/"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "ryan-yardley",
+      "wikidata": "Q137546063",
+      "summary": {
+        "text": "Ryan Yardley (born 7 July 1998) is a New Zealand racing driver who last competed in GT World Challenge America for Wright Motorsports and GT4 America Series for ACI Motorsports.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Ryan_Yardley"
+      },
+      "nationality": "Nueva Zelanda",
+      "career": [
+        {
+          "season": 2027,
+          "series": "GT World Challenge Europe Endurance Cup",
+          "seriesId": "gtwc-europe",
+          "team": "Team Motopark",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2027,
+          "series": "GT World Challenge Europe Endurance Cup – Silver",
+          "seriesId": "gtwc-europe",
+          "team": "Team Motopark",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship – GTD",
+          "seriesId": "imsa",
+          "team": "Mühlner Motorsport",
+          "pos": 50,
+          "points": 618,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship – GTD",
+          "seriesId": "imsa",
+          "team": "RS1",
+          "pos": 50,
+          "points": 618,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge America – Pro-Am",
+          "seriesId": "gtwc-america",
+          "team": "Wright Motorsports",
+          "pos": 2,
+          "points": 116,
+          "races": 7,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "Wright Motorsports",
+          "pos": 25,
+          "points": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT4 America Series – Pro-Am",
+          "team": "ACI Motorsports",
+          "pos": 5,
+          "points": 105,
+          "races": 13,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Porsche Endurance Challenge North America – GT3 Cup Pro-Am",
+          "pos": 17,
+          "points": 26,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Porsche Carrera Cup North America",
+          "team": "Topp Racing",
+          "pos": 1,
+          "points": 313,
+          "races": 16,
+          "wins": 3,
+          "podiums": 14,
+          "poles": 5,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "GT4 America Series – Pro-Am",
+          "team": "ACI Motorsports",
+          "pos": 13,
+          "points": 10,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Porsche Carrera Cup North America",
+          "team": "Topp Racing Performance",
+          "pos": 2,
+          "points": 254,
+          "races": 16,
+          "wins": 3,
+          "podiums": 10,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "992 Endurance Cup – Am",
+          "team": "Mühlner Motorsport",
+          "pos": 10,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Porsche Carrera Cup North America",
+          "team": "Topp Racing",
+          "pos": 7,
+          "points": 134,
+          "races": 16,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Michelin Pilot Challenge – GS",
+          "team": "Murillo Racing",
+          "pos": 50,
+          "points": 200,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Formula Regional Americas Championship",
+          "team": "Crosslink Kiwi Motorsport",
+          "pos": 4,
+          "points": 204,
+          "races": 18,
+          "wins": 0,
+          "podiums": 6,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Formula Pro USA Winter Series",
+          "team": "Kiwi Motorsport",
+          "pos": 2,
+          "points": 52,
+          "races": 2,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Formula Regional Americas Championship",
+          "team": "Crosslink/Kiwi Motorsport",
+          "pos": 10,
+          "points": 67,
+          "races": 6,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Australian Formula 4 Championship",
+          "team": "MTEC Motorsport",
+          "pos": 11,
+          "points": 27,
+          "races": 3,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Toyota Racing Series",
+          "team": "MTEC Motorsport",
+          "pos": 9,
+          "points": 525,
+          "races": 15,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Toyota Finance 86 Championship",
+          "team": "CareVets New Zealand",
+          "pos": 1,
+          "points": 1112,
+          "races": 18,
+          "wins": 2,
+          "podiums": 14,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Toyota Finance 86 Championship",
+          "team": "CareVets New Zealand",
+          "pos": 5,
+          "points": 832,
+          "races": 18,
+          "wins": 2,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "New Zealand Formula Ford Championship",
+          "pos": 5,
+          "points": 838,
+          "races": 18,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "New Zealand Formula Ford Championship",
+          "pos": 4,
+          "points": 963,
+          "races": 18,
+          "wins": 0,
+          "podiums": 7,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2025,
+          "series": "Porsche Carrera Cup North America"
+        },
+        {
+          "season": 2016,
+          "series": "Toyota Finance 86 Championship"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

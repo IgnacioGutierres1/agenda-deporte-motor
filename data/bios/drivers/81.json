@@ -1,0 +1,807 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "alex-palou",
+      "wikidata": "Q19244567",
+      "summary": {
+        "text": "Álex Palou Montalbo (San Antonio Vilamajor, Barcelona; 1 de abril de 1997) es un piloto de automovilismo español. Fue campeón del WSK Euro Series, subcampeón en la F3 Española, y tercero en Eurofórmula Open, F3 Japonesa y Super Fórmula Japonesa. Es piloto de IndyCar Series desde 2020, debutando con el equipo Dale Coyne Racing. Ha sido campeón en 2021, 2023, 2024, 2025 y 2026 con Chip Ganassi Racing, y quinto en 2022, siendo el primer español en lograrlo. Además, fue vencedor del Desafío del Millón de Dólares de Thermal Club, y ganador de las 500 Millas de Indianápolis de 2025, segundo en 2021, cuarto en 2023, y quinto en 2024.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/%C3%81lex_Palou"
+      },
+      "birthDate": "1997-04-01",
+      "birthPlace": "San Antonio Vilamajor, España",
+      "nationality": "España",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8d/Alex_Palou_at_2023_Indianapolis_500_%28cropped%29.jpg/500px-Alex_Palou_at_2023_Indianapolis_500_%28cropped%29.jpg",
+        "width": 480,
+        "height": 640,
+        "credit": "Governor Eric Holcomb",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Alex_Palou_at_2023_Indianapolis_500_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Chip Ganassi Racing",
+          "pos": 1,
+          "points": 631,
+          "races": 18,
+          "wins": 6,
+          "podiums": 7,
+          "poles": 8,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Acura Meyer Shank Racing w/ Curb-Agajanian",
+          "pos": 21,
+          "points": 809,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "GT World Challenge America - Pro",
+          "seriesId": "gtwc-america",
+          "team": "Mercedes-AMG Team Lone Star Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Chip Ganassi Racing",
+          "pos": 1,
+          "points": 711,
+          "races": 17,
+          "wins": 8,
+          "podiums": 14,
+          "poles": 6,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Acura Meyer Shank Racing w/ Curb-Agajanian",
+          "pos": 28,
+          "points": 587,
+          "races": 2,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Chip Ganassi Racing",
+          "pos": 1,
+          "points": 544,
+          "races": 17,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 3,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "IMSA SportsCar Championship - GTP",
+          "seriesId": "imsa",
+          "team": "Cadillac Racing",
+          "pos": 34,
+          "points": 242,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "FIA World Endurance Championship - Hypercar",
+          "seriesId": "wec",
+          "team": "Cadillac Racing",
+          "pos": 26,
+          "points": 12,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT World Challenge America - Pro",
+          "seriesId": "gtwc-america",
+          "team": "Mercedes-AMG Team Lone Star Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Chip Ganassi Racing",
+          "pos": 1,
+          "points": 656,
+          "races": 17,
+          "wins": 5,
+          "podiums": 10,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Formula One",
+          "seriesId": "f1",
+          "team": "McLaren F1 Team",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Chip Ganassi Racing",
+          "pos": 5,
+          "points": 510,
+          "races": 17,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "IMSA SportsCar Championship - DPi",
+          "seriesId": "imsa",
+          "team": "Cadillac Racing",
+          "pos": 24,
+          "points": 266,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Chip Ganassi Racing",
+          "pos": 1,
+          "points": 549,
+          "races": 16,
+          "wins": 3,
+          "podiums": 8,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "IndyCar Series",
+          "seriesId": "indycar",
+          "team": "Dale Coyne Racing with Team Goh",
+          "pos": 16,
+          "points": 238,
+          "races": 14,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "McLaren Customer Racing Japan",
+          "pos": 15,
+          "points": 20,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Formula",
+          "seriesId": "super-formula",
+          "team": "TCS Nakajima Racing",
+          "pos": 3,
+          "points": 26,
+          "races": 7,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "FIA Formula 3 European Championship",
+          "team": "Hitech Bullfrog GP",
+          "pos": 7,
+          "points": 204,
+          "races": 30,
+          "wins": 0,
+          "podiums": 7,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Macau Grand Prix",
+          "seriesId": "macau-gp",
+          "team": "B-Max Racing Team",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Japanese Formula 3 Championship",
+          "team": "Threebond with Drago Corse",
+          "pos": 3,
+          "points": 102,
+          "races": 20,
+          "wins": 3,
+          "podiums": 10,
+          "poles": 5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Macau Grand Prix",
+          "seriesId": "macau-gp",
+          "team": "Threebond with Drago Corse",
+          "pos": 11,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "World Series Formula V8 3.5",
+          "team": "Teo Martín Motorsport",
+          "pos": 10,
+          "points": 68,
+          "races": 6,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "FIA Formula 2 Championship",
+          "seriesId": "f2",
+          "team": "Campos Racing",
+          "pos": 21,
+          "points": 5,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "GP3 Series",
+          "team": "Campos Racing",
+          "pos": 15,
+          "points": 22,
+          "races": 18,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Ferrari Challenge Europe - Trofeo Pirelli (Pro)",
+          "team": "StileF Squadra Corse",
+          "pos": 7,
+          "points": 39,
+          "races": 2,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GP3 Series",
+          "team": "Campos Racing",
+          "pos": 10,
+          "points": 51,
+          "races": 18,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Formula Renault 2.0 Northern European Cup",
+          "team": "Inter Europol",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Euroformula Open Championship",
+          "team": "Campos Racing",
+          "pos": 3,
+          "points": 242,
+          "races": 16,
+          "wins": 3,
+          "podiums": 11,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Spanish Formula 3 Championship",
+          "team": "Campos Racing",
+          "pos": 2,
+          "points": 105,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Macau Grand Prix",
+          "seriesId": "macau-gp",
+          "team": "Fortec Motorsports",
+          "pos": 16,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "BRDC Formula 4 Championship",
+          "team": "Sean Walkinshaw Racing – Caterham F1",
+          "pos": 23,
+          "points": 48,
+          "races": 3,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2026,
+          "series": "IndyCar Series",
+          "seriesId": "indycar"
+        },
+        {
+          "season": 2025,
+          "series": "IndyCar Series",
+          "seriesId": "indycar"
+        },
+        {
+          "season": 2024,
+          "series": "IndyCar Series",
+          "seriesId": "indycar"
+        },
+        {
+          "season": 2023,
+          "series": "IndyCar Series",
+          "seriesId": "indycar"
+        },
+        {
+          "season": 2021,
+          "series": "IndyCar Series",
+          "seriesId": "indycar"
+        }
+      ],
+      "links": [
+        {
+          "label": "Sitio oficial",
+          "url": "https://alexpalou.com/"
+        },
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/alexpalou/"
+        },
+        {
+          "label": "X",
+          "url": "https://x.com/alexpalou"
+        },
+        {
+          "label": "Facebook",
+          "url": "https://www.facebook.com/AlexPalouOfficial"
+        },
+        {
+          "label": "TikTok",
+          "url": "https://www.tiktok.com/@alexpalou10"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "joe-roberts",
+      "wikidata": "Q52063320",
+      "summary": {
+        "text": "Joe Roberts (Malibú, California, Estados Unidos; 16 de junio de 1997), es un piloto de motociclismo estadounidense que compite en Moto2 con el equipo OnlyFans American Racing.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Joe_Roberts_(motociclista)"
+      },
+      "birthDate": "1997-06-16",
+      "birthPlace": "Malibú, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/8c/Joe_Roberts_at_the_2026_German_motorcycle_Grand_Prix_%28cropped%29.jpg/500px-Joe_Roberts_at_the_2026_German_motorcycle_Grand_Prix_%28cropped%29.jpg",
+        "width": 480,
+        "height": 577,
+        "credit": "TeamEG00",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Joe_Roberts_at_the_2026_German_motorcycle_Grand_Prix_(cropped).jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "OnlyFans American Racing Team",
+          "pos": 18,
+          "points": 47,
+          "races": 18,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "OnlyFans American Racing Team",
+          "pos": 14,
+          "points": 97,
+          "races": 20,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "OnlyFans American Racing Team",
+          "pos": 9,
+          "points": 153,
+          "races": 15,
+          "wins": 1,
+          "podiums": 4,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "Italtrans Racing Team",
+          "pos": 13,
+          "points": 93.5,
+          "races": 20,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "Italtrans Racing Team",
+          "pos": 9,
+          "points": 131,
+          "races": 20,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "Italtrans Racing Team",
+          "pos": 13,
+          "points": 59,
+          "races": 16,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "American Racing",
+          "pos": 7,
+          "points": 94,
+          "races": 15,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "American Racing",
+          "pos": 28,
+          "points": 4,
+          "races": 18,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "NTS RW Racing GP",
+          "pos": 27,
+          "points": 5,
+          "races": 18,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Moto2",
+          "seriesId": "moto2",
+          "team": "AGR Team",
+          "pos": 30,
+          "points": 6,
+          "races": 5,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "kataoka-tatsuya",
+      "wikidata": "Q11569795",
+      "summary": {
+        "text": "Tatsuya Kataoka (片岡龍也, Kataoka Tatsuya; born May 1, 1979 in Aichi) is a Japanese racing driver. He currently competes in the Super GT series for Goodsmile Racing with Team UKYO, where he is a three-time champion in the GT300 class.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Tatsuya_Kataoka"
+      },
+      "birthDate": "1979-05-01",
+      "birthPlace": "Moriyama-ku, Japón",
+      "nationality": "Japón",
+      "career": [
+        {
+          "season": 2026,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 38,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "SUPER GT (GT300)",
+          "seriesId": "super-gt",
+          "team": "GOODSMILE RACING & TeamUKYO",
+          "pos": 19,
+          "points": 38,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 74.5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 30,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 20,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 33,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 33,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 36,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 47.5,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 56,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 77,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 47,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 35,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GT300",
+          "team": "Good Smile Racing & TeamUKYO",
+          "points": 78,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "GT300",
+          "team": "GSR&Studie with TeamUKYO",
+          "points": 70,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "GT300",
+          "team": "GSR&Studie with TeamUKYO",
+          "points": 52,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "GT500",
+          "team": "Lexus Team WedsSport Bandoh",
+          "points": 18,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "GT300",
+          "team": "Racing Project Bandoh",
+          "points": 33,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2009,
+          "series": "GT300",
+          "team": "Racing Project Bandoh",
+          "points": 85,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2008,
+          "series": "GT500",
+          "team": "Toyota Team Kraft",
+          "points": 45,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2007,
+          "series": "GT500",
+          "team": "Forum Eng Toyota Team LeMans",
+          "points": 38,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2006,
+          "series": "GT500",
+          "team": "Mobil 1 Toyota Team LeMans",
+          "points": 41,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2005,
+          "series": "GT500",
+          "team": "Toyota Team TOM'S",
+          "points": 43,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2004,
+          "series": "GT500",
+          "team": "Toyota Team TOM'S",
+          "points": 44,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2003,
+          "series": "GT300",
+          "team": "Sigmatech Racing",
+          "points": 44,
+          "source": "wikipedia"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}

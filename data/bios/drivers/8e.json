@@ -1,0 +1,945 @@
+{
+  "version": 1,
+  "bios": [
+    {
+      "id": "aaron-seton",
+      "wikidata": "Q110111663",
+      "summary": {
+        "text": "Aaron Seton (born 2 July 1998) is an Australian racing driver. He is the son of former Australian Touring Car Championship winner Glenn Seton, and grandson of former Bathurst 1000 winner Barry Seton.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Aaron_Seton"
+      },
+      "birthDate": "1998-07-02",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/7/70/Camilleri_Haber_Seton_2016_Bathurst_12_Hour_I_winner.JPG/500px-Camilleri_Haber_Seton_2016_Bathurst_12_Hour_I_winner.JPG",
+        "width": 480,
+        "height": 320,
+        "credit": "Kytabu",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Camilleri_Haber_Seton_2016_Bathurst_12_Hour_I_winner.JPG"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Repco Supercars Championship",
+          "seriesId": "supercars",
+          "team": "Bendix Racing",
+          "pos": 25,
+          "points": 98,
+          "wins": 0,
+          "source": "app"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "gibbs-ty",
+      "wikidata": "Q65030449",
+      "summary": {
+        "text": "Tyler Randal Gibbs (Charlotte, Carolina del Norte, 4 de octubre de 2002) es un piloto automovilismo estadounidense. Fue el campeón de la ARCA Menards Series 2021 y de la NASCAR Xfinity Series 2022. Es nieto del exentrenador de NFL y actual dueño del equipo de NASCAR, Joe Gibbs.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Ty_Gibbs"
+      },
+      "birthDate": "2002-10-05",
+      "birthPlace": "Charlotte, Estados Unidos",
+      "nationality": "Estados Unidos",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f4/Ty_Gibbs_Clash_2023.jpg/500px-Ty_Gibbs_Clash_2023.jpg",
+        "width": 480,
+        "height": 592,
+        "credit": "TaurusEmerald",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Ty_Gibbs_Clash_2023.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "pos": 9,
+          "points": 2335,
+          "races": 36,
+          "wins": 2,
+          "podiums": 6,
+          "poles": 1,
+          "source": "app"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Joe Gibbs Racing",
+          "pos": 19,
+          "points": 783,
+          "races": 36,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Joe Gibbs Racing",
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Joe Gibbs Racing",
+          "pos": 15,
+          "points": 2169,
+          "races": 36,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Joe Gibbs Racing",
+          "points": 0,
+          "races": 6,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "Joe Gibbs Racing",
+          "pos": 18,
+          "points": 771,
+          "races": 36,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Joe Gibbs Racing",
+          "points": 0,
+          "races": 8,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Cup Series",
+          "seriesId": "nascar-cup",
+          "team": "23XI Racing",
+          "points": 0,
+          "races": 15,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Joe Gibbs Racing",
+          "pos": 1,
+          "points": 4040,
+          "races": 33,
+          "wins": 7,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity",
+          "team": "Joe Gibbs Racing",
+          "pos": 13,
+          "points": 663,
+          "races": 18,
+          "wins": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "ARCA Menards Series",
+          "team": "Joe Gibbs Racing",
+          "pos": 1,
+          "points": 997,
+          "races": 20,
+          "wins": 10,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "ARCA Menards Series East",
+          "team": "Joe Gibbs Racing",
+          "pos": 9,
+          "points": 196,
+          "races": 4,
+          "wins": 4,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "ARCA Menards Series West",
+          "team": "Joe Gibbs Racing",
+          "pos": 19,
+          "points": 98,
+          "races": 2,
+          "wins": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "ARCA Menards Series",
+          "team": "Joe Gibbs Racing",
+          "pos": 5,
+          "points": 674,
+          "races": 16,
+          "wins": 6,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "ARCA Menards Series East",
+          "team": "Joe Gibbs Racing",
+          "pos": 2,
+          "points": 300,
+          "races": 6,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "ARCA Menards Series West",
+          "team": "Joe Gibbs Racing",
+          "pos": 19,
+          "points": 94,
+          "races": 1,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "ARCA Menards Series",
+          "team": "Joe Gibbs Racing",
+          "pos": 13,
+          "points": 2315,
+          "races": 11,
+          "wins": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR K&N Pro Series East",
+          "team": "DGR-Crosley",
+          "pos": 13,
+          "points": 172,
+          "races": 6,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "NASCAR K&N Pro Series West",
+          "team": "Levin Racing with Joe Gibbs Racing",
+          "pos": 34,
+          "points": 47,
+          "races": 1,
+          "wins": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "CARS Late Model Stock Tour",
+          "pos": 56,
+          "points": 13,
+          "races": 2,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "CARS Late Model Stock Tour",
+          "pos": 8,
+          "points": 258,
+          "races": 12,
+          "wins": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "CARS Late Model Stock Tour",
+          "pos": 14,
+          "points": 170,
+          "races": 8,
+          "wins": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2022,
+          "series": "NASCAR Xfinity Series",
+          "seriesId": "nascar-xfinity"
+        },
+        {
+          "season": 2021,
+          "series": "ARCA Menards Series"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    },
+    {
+      "id": "motojima-yuya",
+      "wikidata": "Q11387852",
+      "summary": {
+        "text": "Yūya Motojima (元嶋佑弥, Motojima Yūya; born 10 April 1991) is a Japanese racing driver who currently competes in Super GT for JLOC and in the Super Taikyū Series for TKRI. He is the reigning champion of Super GT's GT300 class alongside longtime teammate Takashi Kogure, as well as a two-time class champion in Super Taikyū and the 2015 Porsche Carrera Cup Japan champion.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Yuya_Motojima"
+      },
+      "birthDate": "1991-04-10",
+      "birthPlace": "prefectura de Fukuoka, Japón",
+      "nationality": "Japón",
+      "career": [
+        {
+          "season": 2026,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 26,
+          "points": 25,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "SRO Japan Cup - GT3",
+          "team": "Max Racing",
+          "pos": 2,
+          "points": 135,
+          "races": 8,
+          "wins": 1,
+          "podiums": 6,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "SRO Japan Cup - GT3",
+          "team": "Max Racing",
+          "pos": 7,
+          "points": 77,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 13,
+          "points": 50.5,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "Super Taikyu - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "source": "wikipedia"
+        },
+        {
+          "season": 2025,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "DTEC Team MASTER ONE",
+          "pos": 13,
+          "points": 18,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 1,
+          "points": 96,
+          "races": 8,
+          "wins": 4,
+          "podiums": 4,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "pos": 3,
+          "points": 125,
+          "races": 7,
+          "wins": 0,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "DTEC Team MASTER ONE",
+          "pos": 18,
+          "points": 2,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2024,
+          "series": "Lamborghini Super Trofeo Asia - Pro",
+          "team": "Promotion Racing",
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 7,
+          "points": 40,
+          "races": 8,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "pos": 4,
+          "points": 113,
+          "races": 6,
+          "wins": 1,
+          "podiums": 5,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2023,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "DTEC Team MASTER ONE",
+          "pos": 8,
+          "points": 29,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 13,
+          "points": 25,
+          "races": 8,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "pos": 5,
+          "points": 86.5,
+          "races": 6,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2022,
+          "series": "TGR GR86/BRZ Cup",
+          "team": "DTEC Team MASTER ONE",
+          "pos": 14,
+          "points": 16,
+          "races": 6,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 8,
+          "points": 34,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyū - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "pos": 9,
+          "points": 41,
+          "races": 5,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2021,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "MP Racing",
+          "pos": 6,
+          "points": 41,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 13,
+          "points": 20,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-Z",
+          "seriesId": "super-taikyu",
+          "team": "TKRI",
+          "pos": 7,
+          "points": 26,
+          "races": 4,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "D'station Racing",
+          "pos": 1,
+          "points": 81,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 7,
+          "points": 36.5,
+          "races": 8,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "SATO-SS Sports",
+          "pos": 5,
+          "points": 65,
+          "races": 3,
+          "wins": 0,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2019,
+          "series": "Asian Le Mans Series - GT",
+          "seriesId": "alms",
+          "team": "JLOC",
+          "pos": 3,
+          "points": 61,
+          "races": 4,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "JLOC",
+          "pos": 11,
+          "points": 29,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Intercontinental GT Challenge",
+          "seriesId": "igtc",
+          "team": "JLOC",
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "D'station Racing",
+          "pos": 7,
+          "points": 46.5,
+          "races": 1,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2018,
+          "series": "TGR 86/BRZ Race",
+          "team": "BRIDE",
+          "pos": 22,
+          "points": 4,
+          "races": 2,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 4,
+          "points": 71,
+          "races": 6,
+          "wins": 0,
+          "podiums": 4,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "D'station Racing",
+          "pos": 12,
+          "points": 24,
+          "races": 4,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "TGR 86/BRZ Race",
+          "team": "GY Racing",
+          "pos": 16,
+          "points": 12,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2017,
+          "series": "Japanese Formula 3 Championship - National",
+          "team": "Hanashima Racing",
+          "pos": 8,
+          "points": 24,
+          "races": 2,
+          "wins": 2,
+          "podiums": 2,
+          "poles": 2,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt",
+          "team": "Team Taisan SARD",
+          "pos": 17,
+          "points": 12,
+          "races": 7,
+          "wins": 0,
+          "podiums": 0,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "TGR 86/BRZ Race",
+          "team": "GY Racing",
+          "pos": 6,
+          "points": 42,
+          "races": 8,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2016,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 1,
+          "points": 132,
+          "races": 5,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 2,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu",
+          "team": "Endless Sports",
+          "pos": 1,
+          "points": 108,
+          "races": 6,
+          "wins": 3,
+          "podiums": 5,
+          "poles": 1,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "Porsche Carrera Cup Japan",
+          "team": "GARMIN PORSCHE",
+          "pos": 1,
+          "points": 180,
+          "races": 9,
+          "wins": 9,
+          "podiums": 9,
+          "poles": 7,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2015,
+          "series": "GAZOO Racing 86/BRZ Race",
+          "team": "GY Racing",
+          "pos": 12,
+          "points": 24,
+          "races": 7,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Porsche Carrera Cup Japan",
+          "team": "GARMIN PORSCHE",
+          "pos": 4,
+          "wins": 3,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "GAZOO Racing 86/BRZ Race",
+          "team": "KOTA-R Rn-sports",
+          "pos": 10,
+          "points": 40,
+          "races": 10,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2014,
+          "series": "Formula Masters China",
+          "team": "Super License",
+          "pos": 12,
+          "points": 37,
+          "races": 5,
+          "wins": 0,
+          "podiums": 3,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "GAZOO Racing 86/BRZ Race",
+          "team": "KOTA-R Rn-sports",
+          "pos": 9,
+          "points": 26.5,
+          "races": 7,
+          "wins": 0,
+          "podiums": 1,
+          "poles": 0,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2013,
+          "series": "JAF Formula 4 - East Series",
+          "team": "Satou Seisakusho EKC",
+          "pos": 8,
+          "points": 20,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Super FJ Kyushu Series",
+          "pos": 1,
+          "points": 75,
+          "races": 4,
+          "wins": 3,
+          "podiums": 4,
+          "poles": 4,
+          "champion": true,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2012,
+          "series": "Super FJ - All-Japan Masters Race",
+          "pos": 1,
+          "races": 1,
+          "wins": 1,
+          "podiums": 1,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2011,
+          "series": "Formula Challenge Japan",
+          "team": "HFDP/SRS Scholarship/Kotira R",
+          "pos": 6,
+          "points": 35,
+          "races": 13,
+          "wins": 1,
+          "podiums": 3,
+          "poles": 1,
+          "source": "wikipedia"
+        },
+        {
+          "season": 2010,
+          "series": "Formula Challenge Japan",
+          "team": "HFDP/SRS Scholarship/Kotira R",
+          "pos": 4,
+          "points": 32,
+          "races": 12,
+          "wins": 1,
+          "podiums": 2,
+          "poles": 0,
+          "source": "wikipedia"
+        }
+      ],
+      "titles": [
+        {
+          "season": 2024,
+          "series": "Super GT - GT300",
+          "seriesId": "super-gt"
+        },
+        {
+          "season": 2020,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2016,
+          "series": "Super Taikyū - ST-4",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2015,
+          "series": "Super Taikyū - ST-X",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2015,
+          "series": "Porsche Carrera Cup Japan"
+        },
+        {
+          "season": 2012,
+          "series": "Super FJ Kyushu Series"
+        }
+      ],
+      "links": [
+        {
+          "label": "Instagram",
+          "url": "https://www.instagram.com/yuya_motojima/"
+        }
+      ],
+      "updatedAt": "2026-11-14T08:48:15Z"
+    }
+  ]
+}
