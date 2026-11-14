@@ -1,0 +1,34 @@
+{
+  "version": 1,
+  "generatedAt": "2026-11-14T06:00:00Z",
+  "teams": [
+    {
+      "id": "team-wrt",
+      "wikidata": "Q2484548",
+      "summary": {
+        "text": "W Racing Team (WRT) is a Belgian auto racing team founded in 2009 by Vincent Vosse. It has competed in sports car racing and touring cars.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/W_Racing_Team"
+      },
+      "logo": {
+        "url": "https://example.org/logos/wrt.svg",
+        "credit": "Team WRT",
+        "license": "© Team WRT",
+        "page": "https://www.w-racingteam.com/"
+      },
+      "founded": 2009,
+      "base": "Baudour, Bélgica",
+      "country": "Bélgica",
+      "principal": "Vincent Vosse",
+      "titles": [{ "season": 2021, "series": "European Le Mans Series" }],
+      "history": [
+        { "series": "GT World Challenge Europe", "seriesId": "gtwc-europe", "from": 2011 },
+        { "series": "WEC", "seriesId": "wec", "from": 2021 },
+        { "series": "DTM", "from": 2019, "to": 2021 }
+      ],
+      "website": "https://www.w-racingteam.com/",
+      "updatedAt": "2026-11-14T06:00:00Z"
+    },
+    { "id": "roto", "updatedAt": "no-es-una-fecha" }
+  ]
+}

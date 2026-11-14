@@ -21,6 +21,7 @@ import {
   type StandingsTable,
   type Surface,
 } from '@dm/shared';
+import { classWinners, hasClasses } from './classes.ts';
 import { groupRoster, rosterClasses } from './roster.ts';
 import { eventDays, hasStages, itineraryKind } from './stages.ts';
 
@@ -480,6 +481,8 @@ export interface SessionHighlight {
   /** Link a la ficha ('' si es una tripulación). */
   driverId: string;
   startUtc: string;
+  /** Categorías con clases: la clase de este ganador (en las carreras va uno por clase). */
+  class?: string;
 }
 
 /**
@@ -493,6 +496,24 @@ export function highlights(file: EventResultsFile | undefined, eventSessions: Se
   for (const sr of file.sessions) {
     const session = sorted.find((s) => s.id === sr.sessionId);
     if (!session || (onlyRaces && !isRace(session))) continue;
+    // Carrera con clases: el ganador de cada clase (el de la primera es el de la general).
+    if (isRace(session) && hasClasses(sr.rows)) {
+      for (const w of classWinners(sr.rows)) {
+        const ids = driverIdsOf(w.row.driver);
+        out.push({
+          sessionId: session.id,
+          sessionName: session.name,
+          type: session.type,
+          label: 'Ganador',
+          driver: w.row.driver,
+          ...(w.row.team ? { team: w.row.team } : {}),
+          driverId: ids.length === 1 ? ids[0]! : '',
+          startUtc: session.startUtc,
+          class: w.class,
+        });
+      }
+      continue;
+    }
     const first = sr.rows.find((r) => r.pos === 1);
     if (!first) continue;
     let label = 'Más rápido';
@@ -636,13 +657,22 @@ export function whoToWatch(input: WatchInput): WatchItem[] {
     }
   }
   const here = input.winnersHere ?? [];
+  const hereSessions = new Set(here.map((w) => w.sessionId)).size;
   for (const w of here) {
-    add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: here.length > 1 ? `Ganó ${w.sessionName}` : input.rally ? 'Ganó este rally' : 'Ganó esta carrera', ...(w.team ? { detail: w.team } : {}), followed: false });
+    const reason = w.class
+      ? `Ganó en ${w.class}${hereSessions > 1 ? ` · ${w.sessionName}` : ''}`
+      : hereSessions > 1
+        ? `Ganó ${w.sessionName}`
+        : input.rally
+          ? 'Ganó este rally'
+          : 'Ganó esta carrera';
+    add({ kind: 'piloto', id: w.driverId, name: w.driver, reason, ...(w.team ? { detail: w.team } : {}), followed: false });
   }
   const before = input.winnersBefore ?? [];
+  const beforeSessions = new Set(before.map((w) => w.sessionId)).size;
   for (const w of before) {
-    const where = input.previousName ? ` en ${input.previousName}` : before.length > 1 ? ' en la fecha anterior' : ' la fecha anterior';
-    const what = before.length > 1 ? ` ${w.sessionName}` : '';
+    const where = input.previousName ? ` en ${input.previousName}` : beforeSessions > 1 ? ' en la fecha anterior' : ' la fecha anterior';
+    const what = w.class ? ` en ${w.class}` : beforeSessions > 1 ? ` ${w.sessionName}` : '';
     add({ kind: 'piloto', id: w.driverId, name: w.driver, reason: `Ganó${what}${where}`, ...(w.team ? { detail: w.team } : {}), followed: false });
   }
   return out.slice(0, input.limit ?? 10);

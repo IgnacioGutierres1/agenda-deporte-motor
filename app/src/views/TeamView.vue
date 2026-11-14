@@ -14,10 +14,14 @@
       <section class="hero" :style="{ '--series-color': color }">
         <div class="hero-top">
           <div class="hero-series big">
-            <DriverAvatar :name="team.name" :color="color" :size="58" />
+            <span v-if="logoUrl" class="hero-logo">
+              <img :src="logoUrl" :alt="`Logo de ${team.name}`" width="58" height="58" decoding="async" @error="logoFailed = true" />
+            </span>
+            <DriverAvatar v-else :name="team.name" :color="color" :size="58" />
             <div>
               <h1 class="hero-title tight">{{ team.name }}</h1>
               <p class="hero-sub">{{ subtitle }}</p>
+              <p v-if="heroFacts" class="hero-sub">{{ heroFacts }}</p>
             </div>
           </div>
         </div>
@@ -47,6 +51,9 @@
         </section>
 
         <SeasonStatsCard v-if="team.stats?.length" :stats="team.stats" kind="equipo" />
+
+        <!-- Historial (data/bios/teams.json): opcional; sin archivo o sin ficha, la sección no aparece. -->
+        <TeamProfile v-if="bio && hasProfile" :bio="bio" :name="team.name" />
 
         <UpcomingList :series-ids="seriesIds" />
 
@@ -90,6 +97,7 @@
         <p class="small dim center">
           <template v-if="derived">Armado con las tablas de pilotos publicadas (todavía no hay índice de equipos).</template>
           <template v-else>Datos de las tablas de equipos y listas de inscriptos oficiales de cada categoría.</template>
+          <template v-if="bio"> Historia: Wikidata, Wikipedia y sitios oficiales.</template>
         </p>
       </div>
     </template>
@@ -99,7 +107,7 @@
 <script lang="ts">
 import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
-import type { NewsItem, Series, Team, TeamEntry } from '@dm/shared';
+import type { NewsItem, Series, Team, TeamBio, TeamEntry } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
 import DataState from '../components/DataState.vue';
 import DriverAvatar from '../components/DriverAvatar.vue';
@@ -108,7 +116,9 @@ import NewsList from '../components/NewsList.vue';
 import NotFoundCard from '../components/NotFoundCard.vue';
 import SeasonStatsCard from '../components/SeasonStatsCard.vue';
 import SeriesCrest from '../components/SeriesCrest.vue';
+import TeamProfile from '../components/TeamProfile.vue';
 import UpcomingList from '../components/UpcomingList.vue';
+import { useBiosStore } from '../stores/bios.ts';
 import { useDriversStore } from '../stores/drivers.ts';
 import { useNewsStore } from '../stores/news.ts';
 import { useScheduleStore } from '../stores/schedule.ts';
@@ -134,11 +144,13 @@ interface RosterGroupView {
 /** Ficha de un equipo: categorías en las que corre, pilotos, próximas carreras y noticias. */
 export default defineComponent({
   name: 'TeamView',
-  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeasonStatsCard, SeriesCrest, UpcomingList },
+  components: { AppIcon, DataState, DriverAvatar, FollowButton, NewsList, NotFoundCard, SeasonStatsCard, SeriesCrest, TeamProfile, UpcomingList },
   data() {
     return {
       /** Categorías del plantel abiertas a mano; null = la predeterminada (solo la primera). */
       openRoster: null as string[] | null,
+      /** El logo del historial no cargó: vuelve el avatar con iniciales. */
+      logoFailed: false,
     };
   },
   computed: {
@@ -146,8 +158,26 @@ export default defineComponent({
     ...mapState(useDriversStore, { driversStatus: 'status' }),
     ...mapState(useScheduleStore, ['seriesById']),
     ...mapState(useNewsStore, { newsItems: 'items' }),
+    ...mapState(useBiosStore, { teamBios: 'teamsById' }),
     team(): Team | undefined {
       return this.teamsById.get(String(this.$route.params.teamId));
+    },
+    /** Historial (logo, fundación, títulos…): llega aparte y puede no estar. */
+    bio(): TeamBio | undefined {
+      return this.team ? this.teamBios.get(this.team.id) : undefined;
+    },
+    hasProfile(): boolean {
+      const b = this.bio;
+      return !!b && !!(b.logo || b.summary || b.founded || b.base || b.country || b.principal || b.website || b.titles?.length || b.history?.length);
+    },
+    logoUrl(): string {
+      return !this.logoFailed ? (this.bio?.logo?.url ?? '') : '';
+    },
+    /** "Fundado en 1999 · Brackley, Reino Unido" bajo el nombre. */
+    heroFacts(): string {
+      const b = this.bio;
+      if (!b) return '';
+      return [b.founded ? `Fundado en ${b.founded}` : '', b.base ?? b.country ?? ''].filter(Boolean).join(' · ');
     },
     seriesIds(): string[] {
       return this.team ? teamSeriesIds(this.team) : [];
@@ -188,13 +218,16 @@ export default defineComponent({
       immediate: true,
       handler() {
         this.openRoster = null;
+        this.logoFailed = false;
         void this.loadTeams();
+        void this.loadTeamBios();
         void this.loadNews();
       },
     },
   },
   methods: {
     ...mapActions(useTeamsStore, { loadTeams: 'load' }),
+    ...mapActions(useBiosStore, { loadTeamBios: 'loadTeams' }),
     isOpen(seriesId: string): boolean {
       return this.openRoster ? this.openRoster.includes(seriesId) : this.rosterGroups[0]?.seriesId === seriesId;
     },
@@ -208,6 +241,26 @@ export default defineComponent({
 </script>
 
 <style>
+/* Logo del equipo en la cabecera: entero, sobre fondo claro en los dos temas. */
+.hero-logo {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  padding: 5px;
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 0 0 2px var(--series-color, var(--border));
+}
+
+.hero-logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
 .roster-group + .roster-group {
   border-top: 1px solid var(--border);
 }

@@ -7,6 +7,7 @@ import {
   type SessionResult,
   type SessionType,
 } from '@dm/shared';
+import { classWinners, hasClasses } from './classes.ts';
 
 /**
  * Resultados de un vistazo: podio de la sesión principal de un evento ("1. Norris · 2. Verstappen ·
@@ -73,7 +74,7 @@ export function podium(rows: ResultRow[]): ResultRow[] {
 }
 
 const SUFFIX = /^(jr\.?|sr\.?|ii|iii|iv)$/i;
-const PARTICLES = new Set(['de', 'del', 'la', 'da', 'das', 'do', 'dos', 'di', 'van', 'von', 'der', 'den', 'le', 'mc']);
+const PARTICLES = new Set(['al', 'de', 'del', 'la', 'da', 'das', 'do', 'dos', 'di', 'van', 'von', 'der', 'den', 'le', 'mc']);
 
 /** Apellido de un piloto: "Kimi Antonelli" -> "Antonelli", "Laurens van Hoepen" -> "van Hoepen", "Ricky Stenhouse Jr" -> "Stenhouse Jr". */
 function surnameOf(name: string): string {
@@ -96,8 +97,17 @@ export function shortDriverName(raw: string): string {
   return names.length ? names.map(surnameOf).join('/') : raw.trim();
 }
 
-/** "1. Antonelli · 2. Russell · 3. Verstappen" (vacío si no hay podio). */
+/**
+ * "1. Antonelli · 2. Russell · 3. Verstappen" (vacío si no hay podio). En una carrera con clases, el ganador de cada
+ * clase: "Hypercar: Estre/Vanthoor · LMP2: Kubica/Ye" (hasta cuatro clases).
+ */
 export function podiumLine(rows: ResultRow[]): string {
+  if (hasClasses(rows)) {
+    return classWinners(rows)
+      .slice(0, 4)
+      .map((w) => `${w.class}: ${shortDriverName(w.row.driver)}`)
+      .join(' · ');
+  }
   return podium(rows)
     .map((r) => `${r.pos}. ${shortDriverName(r.driver)}`)
     .join(' · ');
