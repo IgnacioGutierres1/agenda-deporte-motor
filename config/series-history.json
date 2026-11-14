@@ -1,0 +1,277 @@
+{
+  "$comment": "Historia de cada categoría (data/bios/series.json, ver pipeline/src/bios/series.ts). Clave: id de la serie. wikidata: elemento de la categoría (resumen, logo, fundación); article: artículos de Wikipedia para el resumen si no son los del elemento; organizer: organizador o fiscalizador; founded: año de la primera temporada si Wikidata no lo da bien; kind 'winners' para carreras sueltas (ganadores, no campeones). champions: tablas de Wikipedia con los campeones (la primera es la principal). Cada fuente: lang y page; section (expresión regular sobre el título de sección o el epígrafe) y table (índice entre las que cumplen); columnas por texto del encabezado (expresión regular) o índice: season, driver (o lista, [] = ninguna), team, vehicle (o lista, con vehicleJoin), class (con classAs 'raw' para dejar el texto tal cual); classes (true o lista) para tablas con una columna por clase, con teams (sección/tabla de equipos de la misma forma); note, where {col, match}, from, to; teamParen (el equipo va entre paréntesis después del dueño); vehicleIsMake (la columna vehicle es la marca); secondary (clase o vehículo secundario); records 'teams' (campeonato de equipos/constructores aparte) o 'none'.",
+  "f1": {
+    "wikidata": "Q1968",
+    "organizer": "FIA",
+    "champions": [
+      { "lang": "en", "page": "List of Formula One World Drivers' Champions", "section": "By season", "driver": "^Driver", "team": "Chassis", "vehicle": ["Chassis", "Engine"], "vehicleJoin": "-" },
+      { "lang": "en", "page": "List of Formula One World Constructors' Champions", "section": "By season", "driver": [], "team": "Chassis", "vehicle": ["Chassis", "Engine"], "vehicleJoin": "-", "note": "Campeonato de constructores", "secondary": true, "records": "teams" }
+    ]
+  },
+  "f2": {
+    "wikidata": "Q29383721",
+    "organizer": "FIA",
+    "champions": [{ "lang": "en", "page": "FIA Formula 2 Championship", "section": "Drivers' Championship", "driver": "^Driver", "team": "^Team" }]
+  },
+  "f3": {
+    "wikidata": "Q50612772",
+    "organizer": "FIA",
+    "champions": [{ "lang": "en", "page": "FIA Formula 3 Championship", "section": "^Drivers$", "driver": "^Driver", "team": "^Team" }]
+  },
+  "porsche-supercup": {
+    "wikidata": "Q1277220",
+    "organizer": "Porsche Motorsport",
+    "champions": [{ "lang": "en", "page": "Porsche Supercup", "section": "Champions", "driver": "^Champion", "vehicle": "Car" }]
+  },
+  "f1-academy": {
+    "wikidata": "Q115763387",
+    "organizer": "Formula One Group",
+    "champions": [{ "lang": "en", "page": "F1 Academy", "section": "^Drivers$", "driver": "^Driver", "team": "^Team" }]
+  },
+  "motogp": {
+    "wikidata": "Q10858737",
+    "organizer": "FIM / Dorna Sports",
+    "founded": 1949,
+    "champions": [
+      { "lang": "en", "page": "List of 500cc/MotoGP World Riders' Champions", "section": "By season", "driver": "^Rider", "vehicle": "Constructor", "vehicleIsMake": true, "from": 2002 },
+      { "lang": "en", "page": "List of 500cc/MotoGP World Riders' Champions", "section": "By season", "driver": "^Rider", "vehicle": "Constructor", "vehicleIsMake": true, "to": 2001, "note": "Categoría 500 cc" }
+    ]
+  },
+  "moto2": {
+    "wikidata": "Q2300257",
+    "organizer": "FIM / Dorna Sports",
+    "founded": 1949,
+    "champions": [
+      { "lang": "en", "page": "List of 250cc/Moto2 World Riders' Champions", "section": "By season", "driver": "^Rider", "vehicle": "Constructor", "vehicleIsMake": true, "from": 2010 },
+      { "lang": "en", "page": "List of 250cc/Moto2 World Riders' Champions", "section": "By season", "driver": "^Rider", "vehicle": "Constructor", "vehicleIsMake": true, "to": 2009, "note": "Categoría 250 cc" }
+    ]
+  },
+  "moto3": {
+    "wikidata": "Q524610",
+    "organizer": "FIM / Dorna Sports",
+    "founded": 1949,
+    "champions": [
+      { "lang": "en", "page": "List of 125cc/Moto3 World Riders' Champions", "section": "By season", "driver": "^Rider", "vehicle": "Constructor", "vehicleIsMake": true, "from": 2012 },
+      { "lang": "en", "page": "List of 125cc/Moto3 World Riders' Champions", "section": "By season", "driver": "^Rider", "vehicle": "Constructor", "vehicleIsMake": true, "to": 2011, "note": "Categoría 125 cc" }
+    ]
+  },
+  "indycar": {
+    "wikidata": "Q832052",
+    "organizer": "IndyCar",
+    "champions": [
+      { "lang": "en", "page": "List of American open-wheel racing national champions", "section": "By season", "driver": "^Driver", "team": "^Team", "vehicle": ["Chassis", "Engine"], "vehicleJoin": " / ", "where": { "col": "^Series", "match": "^(?:IRL|IndyCar|ICS|INDYCAR)" }, "from": 1996 }
+    ]
+  },
+  "indy-nxt": {
+    "wikidata": "Q1062688",
+    "organizer": "IndyCar",
+    "founded": 1986,
+    "champions": [{ "lang": "en", "page": "Indy NXT", "section": "Indy Lights", "driver": "^Driver", "team": "^Team", "vehicle": "Chassis" }]
+  },
+  "nascar-cup": {
+    "wikidata": "Q2707177",
+    "organizer": "NASCAR",
+    "champions": [{ "lang": "en", "page": "List of NASCAR Cup Series champions", "section": "By season", "driver": "^Driver", "team": "^Owner", "teamParen": true, "vehicle": "^Man", "vehicleIsMake": true }]
+  },
+  "nascar-xfinity": {
+    "wikidata": "Q645499",
+    "organizer": "NASCAR",
+    "champions": [{ "lang": "en", "page": "List of NASCAR Xfinity Series champions", "section": "By season", "driver": "^Driver", "team": "^Team", "vehicle": "^Make", "vehicleIsMake": true }]
+  },
+  "nascar-truck": {
+    "wikidata": "Q255911",
+    "organizer": "NASCAR",
+    "champions": [{ "lang": "en", "page": "List of NASCAR Truck Series champions", "section": "By season", "driver": "^Driver", "vehicle": "^Manufacturer", "vehicleIsMake": true }]
+  },
+  "gtwc-europe": {
+    "wikidata": "Q20806997",
+    "organizer": "SRO Motorsports Group",
+    "champions": [
+      { "lang": "en", "page": "GT World Challenge Europe", "section": "By season", "driver": "^Driver", "team": "^Team", "vehicle": "Chassis" },
+      { "lang": "en", "page": "GT World Challenge Europe", "section": "^Drivers$", "classes": ["Gold", "Silver", "Bronze", "Pro-Am", "^Am"], "teams": { "section": "^Teams$" }, "secondary": true }
+    ]
+  },
+  "gtwc-asia": {
+    "wikidata": "Q55639331",
+    "organizer": "SRO Motorsports Group",
+    "champions": [{ "lang": "en", "page": "GT World Challenge Asia", "section": "^Drivers$", "classes": ["GT3 Overall", "GT3 Silver", "GT3 Pro-Am", "GT3 Silver-Am", "GT3 Am", "GT4"], "teams": { "section": "^Teams$" } }]
+  },
+  "gtwc-america": {
+    "wikidata": "Q2517189",
+    "organizer": "SRO Motorsports Group",
+    "champions": [{ "lang": "en", "page": "GT World Challenge America", "section": "^Drivers'", "classes": true, "classesExclude": "^Car", "teams": { "section": "^Teams'" }, "from": 2019 }]
+  },
+  "gtwc-australia": {
+    "wikidata": "Q3630012",
+    "organizer": "SRO Motorsports Group / Australian Racing Group",
+    "founded": 1960,
+    "champions": [
+      { "lang": "en", "page": "GT World Challenge Australia", "section": "^Champions$", "table": 1, "classes": true, "from": 2021 },
+      { "lang": "en", "page": "GT World Challenge Australia", "section": "^Champions$", "driver": "^Champion", "vehicle": "Vehicle", "to": 2020 }
+    ]
+  },
+  "dtm": {
+    "wikidata": "Q217000",
+    "organizer": "ADAC",
+    "champions": [{ "lang": "en", "page": "Deutsche Tourenwagen Masters", "section": "^Champions$", "driver": "^Champion$", "team": "^Team", "vehicle": "Car" }]
+  },
+  "nls": {
+    "wikidata": "Q320469",
+    "organizer": "VLN e.V.",
+    "champions": [{ "lang": "de", "page": "Nürburgring-Langstrecken-Serie", "section": "^Meister$", "driver": "Fahrer", "team": "^Team", "vehicle": "Fahrzeug" }]
+  },
+  "imsa": {
+    "wikidata": "Q7889178",
+    "organizer": "IMSA",
+    "champions": [{ "lang": "en", "page": "IMSA SportsCar Championship", "section": "^Drivers$", "classes": true, "teams": { "section": "^Teams$" } }]
+  },
+  "wec": {
+    "wikidata": "Q945048",
+    "organizer": "FIA / ACO",
+    "champions": [
+      { "lang": "en", "page": "List of FIA World Endurance champions", "section": "World Endurance Drivers' Championship", "driver": "^Drivers", "team": "^Team", "vehicle": "Manufacturer", "vehicleIsMake": true },
+      { "lang": "en", "page": "List of FIA World Endurance champions", "section": "World Endurance GT Drivers' Championship", "driver": "^Drivers", "team": "^Team", "vehicle": "Manufacturer", "note": "Pilotos de GT", "secondary": true },
+      { "lang": "en", "page": "List of FIA World Endurance champions", "section": "Endurance Trophy for LMGT3 Drivers", "driver": "^Drivers", "team": "^Team", "note": "Clase LMGT3", "secondary": true },
+      { "lang": "en", "page": "List of FIA World Endurance champions", "section": "Endurance Trophy for LMP2 Drivers", "driver": "^Drivers", "team": "^Team", "note": "Clase LMP2", "secondary": true },
+      { "lang": "en", "page": "List of FIA World Endurance champions", "section": "Endurance Trophy for LMGTE Am Drivers", "driver": "^Drivers", "team": "^Team", "note": "Clase LMGTE Am", "secondary": true }
+    ]
+  },
+  "elms": {
+    "wikidata": "Q1376760",
+    "organizer": "ACO",
+    "champions": [
+      { "lang": "en", "page": "List of European Le Mans Series champions", "section": "^LMP2$", "driver": "^Drivers", "team": "^Team", "note": "Clase LMP2" },
+      { "lang": "en", "page": "List of European Le Mans Series champions", "section": "^LMP2 Pro-Am$", "driver": "^Drivers", "team": "^Team", "note": "Clase LMP2 Pro-Am", "secondary": true },
+      { "lang": "en", "page": "List of European Le Mans Series champions", "section": "^LMP3$", "driver": "^Drivers", "team": "^Team", "note": "Clase LMP3", "secondary": true },
+      { "lang": "en", "page": "List of European Le Mans Series champions", "section": "^(?:LMGT3|LMGTE)$", "driver": "^Drivers", "team": "^Team", "note": "Clase GT", "secondary": true }
+    ]
+  },
+  "24h-series": {
+    "wikidata": "Q2815226",
+    "organizer": "Creventic",
+    "champions": [{ "lang": "en", "page": "24H Series", "section": "^Drivers$", "classes": true }]
+  },
+  "gt-open": {
+    "wikidata": "Q1573132",
+    "organizer": "GT Sport Organización",
+    "champions": [
+      { "lang": "en", "page": "International GT Open", "section": "^Overall$", "driver": "^Drivers", "team": "^Team" },
+      { "lang": "en", "page": "International GT Open", "section": "GT3 PRO-AM", "driver": "^Drivers", "team": "^Team", "note": "Clase Pro-Am", "secondary": true },
+      { "lang": "en", "page": "International GT Open", "section": "GT3 AM", "driver": "^Drivers", "team": "^Team", "note": "Clase Am", "secondary": true }
+    ]
+  },
+  "igtc": {
+    "wikidata": "Q27990696",
+    "organizer": "SRO Motorsports Group",
+    "champions": [{ "lang": "en", "page": "Intercontinental GT Challenge", "section": "Drivers' championship", "classes": true }]
+  },
+  "alms": {
+    "wikidata": "Q2603957",
+    "organizer": "ACO",
+    "champions": [{ "lang": "en", "page": "Asian Le Mans Series", "section": "^Drivers$", "classes": true, "teams": { "section": "^Teams$" } }]
+  },
+  "super-gt": {
+    "wikidata": "Q1379527",
+    "organizer": "GT Association (GTA)",
+    "champions": [
+      { "lang": "en", "page": "Super GT", "section": "^Champions$", "driver": "Driver", "team": "Drivers' Championship Team", "vehicle": "Drivers' Championship Car", "where": { "col": "Category", "match": "GT500" }, "note": "Clase GT500" },
+      { "lang": "en", "page": "Super GT", "section": "^Champions$", "driver": "Driver", "team": "Drivers' Championship Team", "vehicle": "Drivers' Championship Car", "where": { "col": "Category", "match": "GT300" }, "note": "Clase GT300", "secondary": true }
+    ]
+  },
+  "super-formula": {
+    "wikidata": "Q11313836",
+    "organizer": "Japan Race Promotion (JRP)",
+    "champions": [{ "lang": "en", "page": "Super Formula Championship", "section": "^Champions$", "driver": "Champion Driver", "team": "Champion Team", "vehicle": ["Chassis", "Engine"] }]
+  },
+  "super-taikyu": {
+    "wikidata": "Q16141123",
+    "organizer": "Super Taikyu Organization (STO)",
+    "champions": [
+      { "lang": "en", "page": "Super Taikyu Series", "section": "ST-X", "driver": "Drivers", "team": "^Team", "vehicle": "Vehicle", "note": "Clase ST-X" },
+      { "lang": "en", "page": "Super Taikyu Series", "section": "ST-Z", "driver": "Drivers", "team": "^Team", "vehicle": "Vehicle", "note": "Clase ST-Z", "secondary": true },
+      { "lang": "en", "page": "Super Taikyu Series", "section": "ST-TCR", "driver": "Drivers", "team": "^Team", "vehicle": "Vehicle", "note": "Clase ST-TCR", "secondary": true },
+      { "lang": "en", "page": "Super Taikyu Series", "section": "ST-1 ", "driver": "Drivers", "team": "^Team", "vehicle": "Vehicle", "note": "Clase ST-1", "secondary": true }
+    ]
+  },
+  "macau-gp": {
+    "wikidata": "Q1346003",
+    "organizer": "Comité Organizador del Gran Premio de Macao",
+    "kind": "winners",
+    "champions": [{ "lang": "en", "page": "List of Macau Grand Prix winners", "section": "Winners", "driver": "^Winner", "team": "Entrant", "vehicle": "Chassis" }]
+  },
+  "supercars": {
+    "wikidata": "Q647527",
+    "organizer": "Supercars Australia",
+    "founded": 1960,
+    "champions": [{ "lang": "en", "page": "List of Australian Touring Car and V8 Supercar champions", "section": "By season", "driver": "^Driver", "team": "^Team", "vehicle": "^Car" }]
+  },
+  "wrc": {
+    "wikidata": "Q7852",
+    "organizer": "FIA",
+    "champions": [{ "lang": "en", "page": "List of World Rally Championship Drivers' champions", "section": "By season", "driver": "^Driver", "vehicle": "^Car" }]
+  },
+  "dakar": {
+    "wikidata": "Q181336",
+    "organizer": "Amaury Sport Organisation (ASO)",
+    "kind": "winners",
+    "champions": [
+      { "lang": "en", "page": "Dakar Rally", "section": "Cars, bikes and trucks", "driver": "Cars Driver", "vehicle": "Cars Make", "note": "Autos" },
+      { "lang": "en", "page": "Dakar Rally", "section": "Cars, bikes and trucks", "driver": "Bikes Rider", "vehicle": "Bikes Make", "note": "Motos", "secondary": true },
+      { "lang": "en", "page": "Dakar Rally", "section": "Cars, bikes and trucks", "driver": "Trucks Driver", "vehicle": "Trucks Make", "note": "Camiones", "secondary": true },
+      { "lang": "en", "page": "Dakar Rally", "section": "^Quads$", "driver": "Quads Rider", "vehicle": "Quads Make", "note": "Cuatriciclos", "secondary": true },
+      { "lang": "en", "page": "Dakar Rally", "section": "SSVs, Light Prototypes", "driver": "SSVs.*Rider", "vehicle": "SSVs.*Make", "note": "SSV", "secondary": true },
+      { "lang": "en", "page": "Dakar Rally", "section": "SSVs, Light Prototypes", "driver": "Light Prototypes.*Driver", "vehicle": "Light Prototypes.*Make", "note": "Prototipos ligeros (T3)", "secondary": true },
+      { "lang": "en", "page": "Dakar Rally", "section": "SSVs, Light Prototypes", "driver": "^Stock.*Driver", "vehicle": "^Stock.*Make", "note": "Stock", "secondary": true }
+    ]
+  },
+  "tc": {
+    "wikidata": "Q858732",
+    "organizer": "ACTC",
+    "champions": [{ "lang": "es", "page": "Turismo Carretera", "section": "^Campeones$", "season": "^Año", "driver": "^Piloto", "vehicle": "^Marca", "vehicleIsMake": true, "makeWord": true }]
+  },
+  "tc-pista": {
+    "wikidata": "Q6137472",
+    "organizer": "ACTC",
+    "champions": [{ "lang": "es", "page": "TC Pista", "section": "^Campeones$", "season": "^Año", "driver": "^Piloto", "vehicle": "^Marca", "vehicleIsMake": true, "makeWord": true }]
+  },
+  "tc-pickup": {
+    "wikidata": "Q56703842",
+    "organizer": "ACTC",
+    "champions": [{ "lang": "es", "page": "TC Pick Up", "section": "^Campeones$", "season": "^Año", "driver": "^Piloto", "vehicle": "Camioneta", "team": "^Equipo" }]
+  },
+  "tc-mouras": {
+    "wikidata": "Q6137470",
+    "organizer": "ACTC",
+    "champions": [{ "lang": "es", "page": "TC Mouras", "section": "^Campeones$", "season": "^Año", "driver": "^Piloto$", "vehicle": "Automóvil" }]
+  },
+  "tn": {
+    "wikidata": "Q57603965",
+    "organizer": "APAT",
+    "champions": [
+      { "lang": "es", "page": "Turismo Nacional", "section": "^Campeones$", "season": "^Año", "driver": "^Campeones", "vehicle": "Automóvil", "class": "^Clase", "where": { "col": "^Clase", "match": "^Clase 3$" } },
+      { "lang": "es", "page": "Turismo Nacional", "section": "^Campeones$", "season": "^Año", "driver": "^Campeones", "vehicle": "Automóvil", "class": "^Clase", "where": { "col": "^Clase", "match": "^Clase 2$" }, "secondary": true }
+    ]
+  },
+  "tc2000": {
+    "wikidata": "Q3272469",
+    "champions": [{ "lang": "es", "page": "Turismo Competición 2000", "section": "^Campeones$", "season": "^Año", "driver": "^Campeón", "team": "^Equipo", "vehicle": "Automóvil" }]
+  },
+  "turismo-pista": {
+    "wikidata": "Q28663339",
+    "organizer": "APTP",
+    "champions": [
+      { "lang": "es", "page": "Turismo Pista", "section": "^Clase 3$", "season": "^Año", "driver": "^Piloto", "vehicle": "^(?:Carreras|Auto)", "note": "Clase 3" },
+      { "lang": "es", "page": "Turismo Pista", "section": "^Clase 2$", "season": "^Año", "driver": "^Piloto", "vehicle": "^(?:Carreras|Auto)", "note": "Clase 2", "secondary": true },
+      { "lang": "es", "page": "Turismo Pista", "section": "^Clase 1$", "season": "^Año", "driver": "^Piloto", "vehicle": "^(?:Carreras|Auto)", "note": "Clase 1", "secondary": true }
+    ]
+  },
+  "score-baja": {
+    "wikidata": "Q1137061",
+    "organizer": "SCORE International",
+    "kind": "winners",
+    "champions": [
+      { "lang": "en", "page": "Baja 1000", "section": "Overall winners", "driver": "Four-Wheelers Drivers", "vehicle": "Four-Wheelers Vehicle", "note": "Baja 1000 · general de autos" },
+      { "lang": "en", "page": "Baja 1000", "section": "Overall winners", "driver": "Motos & Quads Riders", "vehicle": "Motos & Quads Vehicle", "note": "Baja 1000 · general de motos y cuatriciclos", "secondary": true }
+    ]
+  }
+}
