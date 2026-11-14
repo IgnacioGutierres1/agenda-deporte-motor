@@ -73,10 +73,6 @@ const MAX_RESULT_DOCS = 3;
  */
 const MAX_DIRECT_RESULT_EVENTS = 8;
 /**
- * Último cambio de los lectores de resultados por receta (SiteRecipe.results). Las sesiones que se habían dado por
- * perdidas antes de esta fecha (porque solo había IA) se vuelven a intentar (ver Adapter.resultsReaderSince).
- */
-/**
  * Fechas ya corridas sin sesiones guardadas cuyas sesiones se reconstruyen por corrida y serie desde los resultados
  * oficiales (SiteRecipe.pastSessions), de la más reciente a la más vieja.
  */
@@ -88,6 +84,10 @@ const MAX_PAST_SESSION_EVENTS = 6;
  */
 const PAST_SESSIONS_RETRY_MS = 24 * 3600_000;
 type PastSessionsLog = Record<string, string>;
+/**
+ * Último cambio de los lectores de resultados por receta (SiteRecipe.results). Las sesiones que se habían dado por
+ * perdidas antes de esta fecha (porque solo había IA) se vuelven a intentar (ver Adapter.resultsReaderSince).
+ */
 export const GENERIC_RESULTS_READER_SINCE = '2026-11-14T00:00:00Z';
 /** Imágenes que se leen como máximo de una página de calendario y de una página/nota de cronograma. */
 const MAX_CALENDAR_IMAGES = 16;
