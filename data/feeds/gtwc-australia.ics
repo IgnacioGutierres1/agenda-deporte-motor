@@ -5,18 +5,68 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Fanatec GT World Challenge Australia
 BEGIN:VEVENT
-UID:6c29adb6f985003b@agendadeportemotor.local
-DTSTAMP:20261113T052741Z
-DTSTART;VALUE=DATE:20261126
-DTEND;VALUE=DATE:20261130
-SUMMARY:Fanatec GT World Challenge Australia (Adelaide Grand Final) - Adela
- ide Grand Final (horarios a confirmar)
-DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
-  cronograma.\nTransmisión habitual: YouTube GT World\nFuente: https://www
- .gt-world-challenge-australia.com/calendar\nDónde verlo:\nYouTube GT Worl
- d: https://www.youtube.com/@GTWorld
+UID:46dca6e930db3458@agendadeportemotor.local
+DTSTAMP:20261115T102945Z
+DTSTART:20261125T215000Z
+DTEND:20261125T225000Z
+SUMMARY:Fanatec GT World Challenge Australia (Adelaide Grand Final) - Prác
+ tica 1
+DESCRIPTION:Transmisión habitual: YouTube GT World\nFuente: https://www.gt
+ -world-challenge-australia.com/event/28/adelaide-grand-final\nDónde verlo
+ :\nYouTube GT World: https://www.youtube.com/@GTWorld
 LOCATION:Adelaide Grand Final\, Australia
 STATUS:CONFIRMED
-TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:46e6a8e930e38c43@agendadeportemotor.local
+DTSTAMP:20261115T102945Z
+DTSTART:20261126T015500Z
+DTEND:20261126T025500Z
+SUMMARY:Fanatec GT World Challenge Australia (Adelaide Grand Final) - Prác
+ tica 2
+DESCRIPTION:Transmisión habitual: YouTube GT World\nFuente: https://www.gt
+ -world-challenge-australia.com/event/28/adelaide-grand-final\nDónde verlo
+ :\nYouTube GT World: https://www.youtube.com/@GTWorld
+LOCATION:Adelaide Grand Final\, Australia
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:2005fcc34ac70f55@agendadeportemotor.local
+DTSTAMP:20261115T102945Z
+DTSTART:20261127T004500Z
+DTEND:20261127T014500Z
+SUMMARY:Fanatec GT World Challenge Australia (Adelaide Grand Final) - Clasi
+ ficación 1
+DESCRIPTION:Transmisión habitual: YouTube GT World\nFuente: https://www.gt
+ -world-challenge-australia.com/event/28/adelaide-grand-final\nDónde verlo
+ :\nYouTube GT World: https://www.youtube.com/@GTWorld
+LOCATION:Adelaide Grand Final\, Australia
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:40685ecdb7af45a9@agendadeportemotor.local
+DTSTAMP:20261115T102945Z
+DTSTART:20261127T224000Z
+DTEND:20261128T004000Z
+SUMMARY:Fanatec GT World Challenge Australia (Adelaide Grand Final) - Carre
+ ra 1
+DESCRIPTION:Transmisión habitual: YouTube GT World\nFuente: https://www.gt
+ -world-challenge-australia.com/event/28/adelaide-grand-final\nDónde verlo
+ :\nYouTube GT World: https://www.youtube.com/@GTWorld
+LOCATION:Adelaide Grand Final\, Australia
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:406c5ccdb7b32b1a@agendadeportemotor.local
+DTSTAMP:20261115T102945Z
+DTSTART:20261128T231000Z
+DTEND:20261129T011000Z
+SUMMARY:Fanatec GT World Challenge Australia (Adelaide Grand Final) - Carre
+ ra 2
+DESCRIPTION:Transmisión habitual: YouTube GT World\nFuente: https://www.gt
+ -world-challenge-australia.com/event/28/adelaide-grand-final\nDónde verlo
+ :\nYouTube GT World: https://www.youtube.com/@GTWorld
+LOCATION:Adelaide Grand Final\, Australia
+STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
