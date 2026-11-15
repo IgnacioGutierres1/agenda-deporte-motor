@@ -590,18 +590,22 @@
         },
         {
           "season": 2026,
-          "series": "Asian Le Mans Series – GT",
-          "seriesId": "alms",
-          "team": "Herberth Motorsport",
-          "source": "wikipedia"
-        },
-        {
-          "season": 2026,
           "series": "FIA World Endurance Championship (Hypercar)",
           "seriesId": "wec",
           "pos": 28,
           "points": 0,
           "races": 8,
+          "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series (GT3)",
+          "seriesId": "alms",
+          "team": "Herberth Motorsport",
+          "pos": 19,
+          "points": 0,
+          "races": 1,
           "wins": 0,
           "source": "app"
         },

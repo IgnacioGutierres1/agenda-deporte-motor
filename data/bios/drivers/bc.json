@@ -187,6 +187,40 @@
       "updatedAt": "2026-11-14T08:48:15Z"
     },
     {
+      "id": "haupt-hubert",
+      "wikidata": "Q18761083",
+      "summary": {
+        "text": "Hubert Horst Hans Haupt (born 30 April 1969) is a German racing driver, team owner, real estate entrepreneur and investor.\n\nHe competed in the Deutsche Tourenwagen Meisterschaft in 1991 and 1992 for Audi, and the Deutsche Tourenwagen Masters in 2001 for Opel and in 2021 for Mercedes-AMG. In 1999, he achieved the GT2 class victory at the 24 Hours of Daytona. In 2015, 2018 and 2020, he won the 24 Hours of Dubai. In 2020, he founded Haupt Racing Team.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Hubert_Haupt"
+      },
+      "birthDate": "1969-04-30",
+      "birthPlace": "Múnich, Alemania",
+      "nationality": "Alemania",
+      "photo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/8/89/Hubert_Haupt.jpg/500px-Hubert_Haupt.jpg",
+        "width": 480,
+        "height": 439,
+        "credit": "Jochen van Cauwenberge/Frozenspeed Motorsport Photgraphy",
+        "license": "CC BY-SA 3.0 de",
+        "page": "https://commons.wikimedia.org/wiki/File:Hubert_Haupt.jpg"
+      },
+      "career": [
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series (GT3)",
+          "seriesId": "alms",
+          "team": "Haupt Racing Team",
+          "pos": 17,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "app"
+        }
+      ],
+      "updatedAt": "2026-11-15T00:51:32Z"
+    },
+    {
       "id": "mann-simon",
       "wikidata": "Q112921121",
       "summary": {
@@ -228,6 +262,13 @@
           "points": 68,
           "races": 8,
           "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series",
+          "seriesId": "alms",
+          "team": "AF Corse",
           "source": "app"
         },
         {

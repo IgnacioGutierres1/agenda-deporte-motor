@@ -711,17 +711,21 @@
         },
         {
           "season": 2026,
-          "series": "Asian Le Mans Series – GT",
-          "seriesId": "alms",
-          "team": "Leipert Motorsport",
-          "source": "wikipedia"
-        },
-        {
-          "season": 2026,
           "series": "Fanatec GT World Challenge Australia (Pro-Am)",
           "seriesId": "gtwc-australia",
           "pos": 3,
           "points": 119,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series (GT3)",
+          "seriesId": "alms",
+          "team": "Leipert Motorsport",
+          "pos": 26,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
           "source": "app"
         },
         {
@@ -2492,6 +2496,13 @@
           "points": 70,
           "races": 8,
           "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series",
+          "seriesId": "alms",
+          "team": "Racing Team Turkey",
           "source": "app"
         },
         {

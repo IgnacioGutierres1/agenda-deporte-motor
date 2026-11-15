@@ -834,13 +834,6 @@
         },
         {
           "season": 2026,
-          "series": "Asian Le Mans Series - Hypercar",
-          "seriesId": "alms",
-          "team": "AF Corse",
-          "source": "wikipedia"
-        },
-        {
-          "season": 2026,
           "series": "FIA World Endurance Championship (Hypercar)",
           "seriesId": "wec",
           "pos": 9,
@@ -857,6 +850,17 @@
           "points": 30,
           "races": 2,
           "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series (Hypercar)",
+          "seriesId": "alms",
+          "team": "AF Corse",
+          "pos": 1,
+          "points": 25,
+          "races": 1,
+          "wins": 1,
           "source": "app"
         },
         {

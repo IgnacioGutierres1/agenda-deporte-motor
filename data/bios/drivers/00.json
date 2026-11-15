@@ -999,6 +999,13 @@
           "source": "wikipedia"
         },
         {
+          "season": 2026,
+          "series": "Asian Le Mans Series",
+          "seriesId": "alms",
+          "team": "AMERASIAN FRAGRANCE by AFRACING",
+          "source": "app"
+        },
+        {
           "season": 2025,
           "series": "International GT Open",
           "seriesId": "gt-open",
@@ -1500,10 +1507,14 @@
         },
         {
           "season": 2026,
-          "series": "Asian Le Mans Series - Hypercar",
+          "series": "Asian Le Mans Series (Hypercar)",
           "seriesId": "alms",
           "team": "Cetilar Racing",
-          "source": "wikipedia"
+          "pos": 2,
+          "points": 19,
+          "races": 1,
+          "wins": 0,
+          "source": "app"
         },
         {
           "season": 2025,

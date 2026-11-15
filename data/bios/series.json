@@ -1,9 +1,25 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-14T09:03:30Z",
+  "generatedAt": "2026-11-15T00:51:32Z",
   "series": [
     {
       "seriesId": "24h-series",
+      "wikidata": "Q2815226",
+      "summary": {
+        "text": "The 24H Series is a sports car racing and touring car racing series developed by Creventic and with approval from the Fédération Internationale de l'Automobile (FIA). It features GT3-spec cars, GT4-spec cars, sports cars, touring cars and 24H-Specials, like silhouette cars. The calendar consists only of 24-hour and 12-hour races. 2015 was the first season with drivers battling for championship points and titles. It also marked the first season with official FIA International Series’ status.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/24H_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/24_H_SERIES_logo.jpg/330px-24_H_SERIES_logo.jpg",
+        "width": 320,
+        "height": 320,
+        "credit": "24h series",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:24_H_SERIES_logo.jpg"
+      },
+      "founded": 2008,
+      "organizer": "Creventic",
       "champions": [
         {
           "season": 2025,
@@ -417,23 +433,6 @@
           "note": "Clase D1"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q2815226",
-      "summary": {
-        "text": "The 24H Series is a sports car racing and touring car racing series developed by Creventic and with approval from the Fédération Internationale de l'Automobile (FIA). It features GT3-spec cars, GT4-spec cars, sports cars, touring cars and 24H-Specials, like silhouette cars. The calendar consists only of 24-hour and 12-hour races. 2015 was the first season with drivers battling for championship points and titles. It also marked the first season with official FIA International Series’ status.",
-        "lang": "en",
-        "url": "https://en.wikipedia.org/wiki/24H_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/1/11/24_H_SERIES_logo.jpg/330px-24_H_SERIES_logo.jpg",
-        "width": 320,
-        "height": 320,
-        "credit": "24h series",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:24_H_SERIES_logo.jpg"
-      },
-      "founded": 2008,
-      "organizer": "Creventic",
       "records": [
         {
           "label": "Primer campeón",
@@ -451,10 +450,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/24H_Series",
         "title": "24H Series"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "alms",
+      "wikidata": "Q2603957",
+      "summary": {
+        "text": "La Asian Le Mans Series (AsLMS) es un campeonato asiático de carreras de resistencia para sport prototipos y gran turismos organizado por el Automobile Club de l'Ouest (ACO). Disputado desde 2009, forma parte de la familia de competiciones inspiradas en las 24 Horas de Le Mans, junto con el European Le Mans Series y el IMSA SportsCar Championship, heredero del antiguo American Le Mans Series.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Asian_Le_Mans_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Asian_Le_Mans_Series_Earlier_Logo.jpg/330px-Asian_Le_Mans_Series_Earlier_Logo.jpg",
+        "width": 320,
+        "height": 112,
+        "credit": "Kobokem2021",
+        "license": "CC BY-SA 4.0",
+        "page": "https://commons.wikimedia.org/wiki/File:Asian_Le_Mans_Series_Earlier_Logo.jpg"
+      },
+      "founded": 2009,
+      "organizer": "ACO",
       "champions": [
         {
           "season": 2025,
@@ -663,7 +679,8 @@
           "season": 2018,
           "driver": "James Calado / Kei Cozzolino / Takeshi Kimura",
           "team": "Car Guy Racing",
-          "note": "Clase GT · Temporada 2018-19"
+          "note": "Clase GT · Temporada 2018-19",
+          "teamId": "car-guy-racing"
         },
         {
           "season": 2018,
@@ -838,23 +855,6 @@
           "note": "Clase GT2"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q2603957",
-      "summary": {
-        "text": "La Asian Le Mans Series (AsLMS) es un campeonato asiático de carreras de resistencia para sport prototipos y gran turismos organizado por el Automobile Club de l'Ouest (ACO). Disputado desde 2009, forma parte de la familia de competiciones inspiradas en las 24 Horas de Le Mans, junto con el European Le Mans Series y el IMSA SportsCar Championship, heredero del antiguo American Le Mans Series.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Asian_Le_Mans_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6a/Asian_Le_Mans_Series_Earlier_Logo.jpg/330px-Asian_Le_Mans_Series_Earlier_Logo.jpg",
-        "width": 320,
-        "height": 112,
-        "credit": "Kobokem2021",
-        "license": "CC BY-SA 4.0",
-        "page": "https://commons.wikimedia.org/wiki/File:Asian_Le_Mans_Series_Earlier_Logo.jpg"
-      },
-      "founded": 2009,
-      "organizer": "ACO",
       "records": [
         {
           "label": "Más títulos",
@@ -880,10 +880,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Asian_Le_Mans_Series",
         "title": "Asian Le Mans Series"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "dakar",
+      "wikidata": "Q181336",
+      "summary": {
+        "text": "El Rally Dakar, anteriormente Rally París-Dakar, es una competición anual de rally raid organizada por ASO a partir del 26 de diciembre de 1978 y disputada durante las primeras semanas de enero o, en algunas ediciones, comenzada la última semana de diciembre para terminar al siguiente año. Es considerado uno de los rallies más duros y el más famoso del mundo.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Rally_Dakar"
+      },
+      "founded": 1979,
+      "organizer": "Amaury Sport Organisation (ASO)",
       "champions": [
         {
           "season": 2026,
@@ -1918,15 +1927,6 @@
           "note": "Motos"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q181336",
-      "summary": {
-        "text": "El Rally Dakar, anteriormente Rally París-Dakar, es una competición anual de rally raid organizada por ASO a partir del 26 de diciembre de 1978 y disputada durante las primeras semanas de enero o, en algunas ediciones, comenzada la última semana de diciembre para terminar al siguiente año. Es considerado uno de los rallies más duros y el más famoso del mundo.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Rally_Dakar"
-      },
-      "founded": 1979,
-      "organizer": "Amaury Sport Organisation (ASO)",
       "records": [
         {
           "label": "Más victorias",
@@ -1948,10 +1948,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Dakar_Rally",
         "title": "Dakar Rally"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "dtm",
+      "wikidata": "Q217000",
+      "summary": {
+        "text": "El Deutsche Tourenwagen Masters, conocido habitualmente por sus siglas DTM, es un campeonato de automovilismo originario de Alemania que se disputa desde el año 2000. Constituye la continuación moderna del antiguo Deutsche Tourenwagen Meisterschaft, celebrado entre 1984 y 1996.\n\nA lo largo de su historia, el campeonato ha utilizado diferentes reglamentos técnicos. Durante sus primeras décadas, participaron principalmente vehículos de competición con carrocerías inspiradas en automóviles de producción. Desde la temporada 2021, utiliza automóviles homologados bajo el reglamento GT3, lo que permitió la incorporación de un mayor número de fabricantes.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Deutsche_Tourenwagen_Masters_-_Logo_2025.png/330px-Deutsche_Tourenwagen_Masters_-_Logo_2025.png",
+        "width": 320,
+        "height": 130,
+        "credit": "UnitedSenses GmbH / German Touring Car Motorracing Event GmbH / Allgemeiner Deutscher Automobil-Club e.V.",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Deutsche_Tourenwagen_Masters_-_Logo_2025.png"
+      },
+      "founded": 2000,
+      "organizer": "ADAC",
       "champions": [
         {
           "season": 2026,
@@ -2136,23 +2153,6 @@
           "vehicle": "Mercedes-Benz"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q217000",
-      "summary": {
-        "text": "El Deutsche Tourenwagen Masters, conocido habitualmente por sus siglas DTM, es un campeonato de automovilismo originario de Alemania que se disputa desde el año 2000. Constituye la continuación moderna del antiguo Deutsche Tourenwagen Meisterschaft, celebrado entre 1984 y 1996.\n\nA lo largo de su historia, el campeonato ha utilizado diferentes reglamentos técnicos. Durante sus primeras décadas, participaron principalmente vehículos de competición con carrocerías inspiradas en automóviles de producción. Desde la temporada 2021, utiliza automóviles homologados bajo el reglamento GT3, lo que permitió la incorporación de un mayor número de fabricantes.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/55/Deutsche_Tourenwagen_Masters_-_Logo_2025.png/330px-Deutsche_Tourenwagen_Masters_-_Logo_2025.png",
-        "width": 320,
-        "height": 130,
-        "credit": "UnitedSenses GmbH / German Touring Car Motorracing Event GmbH / Allgemeiner Deutscher Automobil-Club e.V.",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:Deutsche_Tourenwagen_Masters_-_Logo_2025.png"
-      },
-      "founded": 2000,
-      "organizer": "ADAC",
       "records": [
         {
           "label": "Más títulos",
@@ -2178,10 +2178,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Deutsche_Tourenwagen_Masters",
         "title": "Deutsche Tourenwagen Masters"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "elms",
+      "wikidata": "Q1376760",
+      "summary": {
+        "text": "La European Le Mans Series (en 2004 y 2005: Le Mans Endurance Series; entre 2006 y 2010: Le Mans Series) es un campeonato de automovilismo que se ha disputado con sport prototipos y gran turismos en el año 2001 (bajo la denominación European Le Mans Series), y luego desde 2004. Fue creada por el empresario estadounidense Don Panoz con el apoyo del Automobile Club de l'Ouest, para continuar con el proyecto iniciado en América del Norte, la American Le Mans Series, y se puede decir que esta última categoría es hermana. El campeón y subcampeón de la categoría recibe como premio la invitación de correr las 24 Horas de Le Mans.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/European_Le_Mans_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/European_Le_Mans_Series_Logo_2018.png/330px-European_Le_Mans_Series_Logo_2018.png",
+        "width": 320,
+        "height": 128,
+        "credit": "Autor desconocido",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:European_Le_Mans_Series_Logo_2018.png"
+      },
+      "founded": 2004,
+      "organizer": "ACO",
       "champions": [
         {
           "season": 2026,
@@ -2474,23 +2491,6 @@
           "note": "Clase LMP2"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1376760",
-      "summary": {
-        "text": "La European Le Mans Series (en 2004 y 2005: Le Mans Endurance Series; entre 2006 y 2010: Le Mans Series) es un campeonato de automovilismo que se ha disputado con sport prototipos y gran turismos en el año 2001 (bajo la denominación European Le Mans Series), y luego desde 2004. Fue creada por el empresario estadounidense Don Panoz con el apoyo del Automobile Club de l'Ouest, para continuar con el proyecto iniciado en América del Norte, la American Le Mans Series, y se puede decir que esta última categoría es hermana. El campeón y subcampeón de la categoría recibe como premio la invitación de correr las 24 Horas de Le Mans.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/European_Le_Mans_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/6c/European_Le_Mans_Series_Logo_2018.png/330px-European_Le_Mans_Series_Logo_2018.png",
-        "width": 320,
-        "height": 128,
-        "credit": "Autor desconocido",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:European_Le_Mans_Series_Logo_2018.png"
-      },
-      "founded": 2004,
-      "organizer": "ACO",
       "records": [
         {
           "label": "Más títulos",
@@ -2516,10 +2516,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_European_Le_Mans_Series_champions",
         "title": "List of European Le Mans Series champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "f1",
+      "wikidata": "Q1968",
+      "summary": {
+        "text": "El Campeonato Mundial de Fórmula 1 de la FIA, más conocido como Fórmula 1, F1 o Fórmula Uno, es la principal competición de automovilismo internacional y el campeonato de deportes de motor más popular y prestigioso del mundo. La entidad que la dirige es la Federación Internacional del Automóvil (FIA). Desde septiembre de 2016, tras la adquisición de Formula One Group, la empresa estadounidense Liberty Media es la responsable de gestionar y operar el campeonato.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/F%C3%B3rmula_1"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Formula_One_logo.svg/330px-Formula_One_logo.svg.png",
+        "width": 320,
+        "height": 80,
+        "credit": "Liberty Media",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Formula_One_logo.svg"
+      },
+      "founded": 1950,
+      "organizer": "FIA",
       "champions": [
         {
           "season": 2026,
@@ -3517,23 +3534,6 @@
           "vehicle": "Alfa Romeo"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1968",
-      "summary": {
-        "text": "El Campeonato Mundial de Fórmula 1 de la FIA, más conocido como Fórmula 1, F1 o Fórmula Uno, es la principal competición de automovilismo internacional y el campeonato de deportes de motor más popular y prestigioso del mundo. La entidad que la dirige es la Federación Internacional del Automóvil (FIA). Desde septiembre de 2016, tras la adquisición de Formula One Group, la empresa estadounidense Liberty Media es la responsable de gestionar y operar el campeonato.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/F%C3%B3rmula_1"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/2d/Formula_One_logo.svg/330px-Formula_One_logo.svg.png",
-        "width": 320,
-        "height": 80,
-        "credit": "Liberty Media",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:Formula_One_logo.svg"
-      },
-      "founded": 1950,
-      "organizer": "FIA",
       "records": [
         {
           "label": "Más títulos",
@@ -3559,10 +3559,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_Formula_One_World_Drivers'_Champions",
         "title": "List of Formula One World Drivers' Champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "f1-academy",
+      "wikidata": "Q115763387",
+      "summary": {
+        "text": "La F1 Academy es una competición de automovilismo de velocidad femenino de monoplazas, fundada por la Federación Internacional del Automóvil y la Fórmula 1.\n\nLa categoría otorga a las cinco primeras clasificadas de la clasificación puntos para la superlicencia de la FIA, 10, 7, 5, 3 y 1 puntos respectivamente.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/F1_Academy"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/F1_Academy_horizontal_logo_%282026%29.svg/330px-F1_Academy_horizontal_logo_%282026%29.svg.png",
+        "width": 320,
+        "height": 27,
+        "credit": "F1 Academy",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:F1_Academy_horizontal_logo_(2026).svg"
+      },
+      "founded": 2022,
+      "organizer": "Formula One Group",
       "champions": [
         {
           "season": 2026,
@@ -3590,23 +3607,6 @@
           "teamId": "prema-racing"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q115763387",
-      "summary": {
-        "text": "La F1 Academy es una competición de automovilismo de velocidad femenino de monoplazas, fundada por la Federación Internacional del Automóvil y la Fórmula 1.\n\nLa categoría otorga a las cinco primeras clasificadas de la clasificación puntos para la superlicencia de la FIA, 10, 7, 5, 3 y 1 puntos respectivamente.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/F1_Academy"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/e/eb/F1_Academy_horizontal_logo_%282026%29.svg/330px-F1_Academy_horizontal_logo_%282026%29.svg.png",
-        "width": 320,
-        "height": 27,
-        "credit": "F1 Academy",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:F1_Academy_horizontal_logo_(2026).svg"
-      },
-      "founded": 2022,
-      "organizer": "Formula One Group",
       "records": [
         {
           "label": "Más títulos de equipos",
@@ -3628,10 +3628,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/F1_Academy",
         "title": "F1 Academy"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "f2",
+      "wikidata": "Q29383721",
+      "summary": {
+        "text": "El Campeonato de Fórmula 2 de la FIA es una competición de automovilismo de velocidad creada en el año 2017 tras renombrar a la competición que hasta entonces ocupaba su lugar, la GP2 Series. Es el campeonato que más puntos otorga para la Superlicencia de la FIA, incluidos los requeridos para correr en Fórmula 1 para los tres primeros clasificados: 40.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_de_F%C3%B3rmula_2_de_la_FIA"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/FIA_Formula_2_Championship_logo_%282026%29.svg/330px-FIA_Formula_2_Championship_logo_%282026%29.svg.png",
+        "width": 320,
+        "height": 183,
+        "credit": "Formula Motorsport Limited",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:FIA_Formula_2_Championship_logo_(2026).svg"
+      },
+      "founded": 2017,
+      "organizer": "FIA",
       "champions": [
         {
           "season": 2025,
@@ -3695,23 +3712,6 @@
           "teamId": "prema-racing"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q29383721",
-      "summary": {
-        "text": "El Campeonato de Fórmula 2 de la FIA es una competición de automovilismo de velocidad creada en el año 2017 tras renombrar a la competición que hasta entonces ocupaba su lugar, la GP2 Series. Es el campeonato que más puntos otorga para la Superlicencia de la FIA, incluidos los requeridos para correr en Fórmula 1 para los tres primeros clasificados: 40.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_de_F%C3%B3rmula_2_de_la_FIA"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/6/64/FIA_Formula_2_Championship_logo_%282026%29.svg/330px-FIA_Formula_2_Championship_logo_%282026%29.svg.png",
-        "width": 320,
-        "height": 183,
-        "credit": "Formula Motorsport Limited",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:FIA_Formula_2_Championship_logo_(2026).svg"
-      },
-      "founded": 2017,
-      "organizer": "FIA",
       "records": [
         {
           "label": "Más títulos de equipos",
@@ -3733,10 +3733,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/FIA_Formula_2_Championship",
         "title": "FIA Formula 2 Championship"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "f3",
+      "wikidata": "Q50612772",
+      "summary": {
+        "text": "El Campeonato de Fórmula 3 de la FIA es un campeonato de automovilismo disputado por monoplazas, organizado bajo el reglamento de Fórmula 3 de la Federación Internacional del Automóvil (FIA). Fue creado a partir de la fusión de la GP3 Series y el Campeonato Europeo de Fórmula 3 de la FIA. Tuvo su primera temporada en 2019, y está colocado por debajo del Campeonato de Fórmula 2 de la FIA y de Fórmula 1. Las carreras son disputadas con monoplazas Dallara, en apoyo de los Grandes Premios de F1. Es uno de los campeonatos que más puntos otorga para la Superlicencia de la FIA: incluyendo 30, 25 y 20 a los tres primeros clasificados, respectivamente.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_de_F%C3%B3rmula_3_de_la_FIA"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/FIA_Formula_3_Championship_logo_%282026%29.svg/330px-FIA_Formula_3_Championship_logo_%282026%29.svg.png",
+        "width": 320,
+        "height": 183,
+        "credit": "Formula Motorsport Limited",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:FIA_Formula_3_Championship_logo_(2026).svg"
+      },
+      "founded": 2019,
+      "organizer": "FIA",
       "champions": [
         {
           "season": 2026,
@@ -3793,23 +3810,6 @@
           "teamId": "prema-racing"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q50612772",
-      "summary": {
-        "text": "El Campeonato de Fórmula 3 de la FIA es un campeonato de automovilismo disputado por monoplazas, organizado bajo el reglamento de Fórmula 3 de la Federación Internacional del Automóvil (FIA). Fue creado a partir de la fusión de la GP3 Series y el Campeonato Europeo de Fórmula 3 de la FIA. Tuvo su primera temporada en 2019, y está colocado por debajo del Campeonato de Fórmula 2 de la FIA y de Fórmula 1. Las carreras son disputadas con monoplazas Dallara, en apoyo de los Grandes Premios de F1. Es uno de los campeonatos que más puntos otorga para la Superlicencia de la FIA: incluyendo 30, 25 y 20 a los tres primeros clasificados, respectivamente.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_de_F%C3%B3rmula_3_de_la_FIA"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d9/FIA_Formula_3_Championship_logo_%282026%29.svg/330px-FIA_Formula_3_Championship_logo_%282026%29.svg.png",
-        "width": 320,
-        "height": 183,
-        "credit": "Formula Motorsport Limited",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:FIA_Formula_3_Championship_logo_(2026).svg"
-      },
-      "founded": 2019,
-      "organizer": "FIA",
       "records": [
         {
           "label": "Más títulos de equipos",
@@ -3831,10 +3831,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/FIA_Formula_3_Championship",
         "title": "FIA Formula 3 Championship"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "gt-open",
+      "wikidata": "Q1573132",
+      "summary": {
+        "text": "International GT Open es un campeonato de gran turismos que se disputa en Europa desde el año 2006, organizado por la organización española de GT Sport. Surgió como una ampliación del Campeonato de España de GT, con quien ha compartido algunas fechas. El Campeonato de España de Fórmula 3, actual Eurofórmula Open, que es organizado por la misma empresa, ha servido en varias ocasiones como telonero y apoyo del GT Open.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/International_GT_Open"
+      },
+      "founded": 2006,
+      "organizer": "GT Sport Organización",
       "champions": [
         {
           "season": 2026,
@@ -4102,15 +4111,6 @@
           "team": "Playteam SaraFree"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1573132",
-      "summary": {
-        "text": "International GT Open es un campeonato de gran turismos que se disputa en Europa desde el año 2006, organizado por la organización española de GT Sport. Surgió como una ampliación del Campeonato de España de GT, con quien ha compartido algunas fechas. El Campeonato de España de Fórmula 3, actual Eurofórmula Open, que es organizado por la misma empresa, ha servido en varias ocasiones como telonero y apoyo del GT Open.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/International_GT_Open"
-      },
-      "founded": 2006,
-      "organizer": "GT Sport Organización",
       "records": [
         {
           "label": "Más títulos",
@@ -4136,10 +4136,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/International_GT_Open",
         "title": "International GT Open"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "gtwc-america",
+      "wikidata": "Q2517189",
+      "summary": {
+        "text": "GT World Challenge America is a North American auto racing series launched in 1990 by the Sports Car Club of America. It has been managed by the SRO Motorsports Group since 2018, and has been sanctioned by the United States Auto Club since 2017.\n\nThe GT World Challenge America is currently exclusive for GT3 class racecars since 2019. Each weekend features a single three-hour race beginning in 2026.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_America"
+      },
+      "founded": 2019,
+      "organizer": "SRO Motorsports Group",
       "champions": [
         {
           "season": 2026,
@@ -4303,15 +4312,6 @@
           "note": "Clase Am"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q2517189",
-      "summary": {
-        "text": "GT World Challenge America is a North American auto racing series launched in 1990 by the Sports Car Club of America. It has been managed by the SRO Motorsports Group since 2018, and has been sanctioned by the United States Auto Club since 2017.\n\nThe GT World Challenge America is currently exclusive for GT3 class racecars since 2019. Each weekend features a single three-hour race beginning in 2026.",
-        "lang": "en",
-        "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_America"
-      },
-      "founded": 2019,
-      "organizer": "SRO Motorsports Group",
       "records": [
         {
           "label": "Más títulos",
@@ -4337,10 +4337,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_America",
         "title": "GT World Challenge America"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "gtwc-asia",
+      "wikidata": "Q55639331",
+      "summary": {
+        "text": "The GT World Challenge Asia (formerly Blancpain GT Series Asia and Blancpain GT World Challenge Asia) is a GT series motor racing competition promoted by the Stéphane Ratel Organisation and organized by Team Asia One GT Management.\n\nFrom its inception in 2017 to 2023, GT World Challenge Asia was a multi-class championship featuring GT3 and GT4 cars. In 2024, the series adopted the same GT3-only format as the other GT World Challenge series on other continents.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Asia"
+      },
+      "founded": 2017,
+      "organizer": "SRO Motorsports Group",
       "champions": [
         {
           "season": 2026,
@@ -4552,15 +4561,6 @@
           "note": "GT4 general"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q55639331",
-      "summary": {
-        "text": "The GT World Challenge Asia (formerly Blancpain GT Series Asia and Blancpain GT World Challenge Asia) is a GT series motor racing competition promoted by the Stéphane Ratel Organisation and organized by Team Asia One GT Management.\n\nFrom its inception in 2017 to 2023, GT World Challenge Asia was a multi-class championship featuring GT3 and GT4 cars. In 2024, the series adopted the same GT3-only format as the other GT World Challenge series on other continents.",
-        "lang": "en",
-        "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Asia"
-      },
-      "founded": 2017,
-      "organizer": "SRO Motorsports Group",
       "records": [
         {
           "label": "Más títulos",
@@ -4582,10 +4582,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Asia",
         "title": "GT World Challenge Asia"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "gtwc-australia",
+      "wikidata": "Q3630012",
+      "summary": {
+        "text": "The GT World Challenge Australia, formerly known as the Australian GT Championship, is a Motorsport Australia-sanctioned national title for drivers of GT cars, held annually from 1960 to 1963, from 1982 to 1985 and from 2005. Each championship up to and including the 1963 title was contested over a single race and those after that year over a series of races. The categories which have contested the championship have not always been well defined and often have become a home for cars orphaned by category collapse or a sudden change in regulation. As of 2026, the series uses the international GT3 rules.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Australia"
+      },
+      "founded": 1960,
+      "organizer": "SRO Motorsports Group / Australian Racing Group",
       "champions": [
         {
           "season": 2025,
@@ -4817,15 +4826,6 @@
           "vehicle": "Lotus Elite"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q3630012",
-      "summary": {
-        "text": "The GT World Challenge Australia, formerly known as the Australian GT Championship, is a Motorsport Australia-sanctioned national title for drivers of GT cars, held annually from 1960 to 1963, from 1982 to 1985 and from 2005. Each championship up to and including the 1963 title was contested over a single race and those after that year over a series of races. The categories which have contested the championship have not always been well defined and often have become a home for cars orphaned by category collapse or a sudden change in regulation. As of 2026, the series uses the international GT3 rules.",
-        "lang": "en",
-        "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Australia"
-      },
-      "founded": 1960,
-      "organizer": "SRO Motorsports Group / Australian Racing Group",
       "records": [
         {
           "label": "Más títulos",
@@ -4847,10 +4847,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Australia",
         "title": "GT World Challenge Australia"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "gtwc-europe",
+      "wikidata": "Q20806997",
+      "summary": {
+        "text": "El GT World Challenge Europe, antes Blancpain GT Series, es una serie de campeonatos de automovilismo de velocidad que se disputan en Europa desde el año 2011. Participan gran turismos de los reglamentos GT3. Lo organizan la Stéphane Ratel Organisation y el Real Automóvil Club de Bélgica, y tiene patrocinio titular de la marca de relojes Blancpain.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/GT_World_Challenge_Europe"
+      },
+      "founded": 2014,
+      "organizer": "SRO Motorsports Group",
       "champions": [
         {
           "season": 2026,
@@ -5137,15 +5146,6 @@
           "vehicle": "Audi R8 LMS Ultra"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q20806997",
-      "summary": {
-        "text": "El GT World Challenge Europe, antes Blancpain GT Series, es una serie de campeonatos de automovilismo de velocidad que se disputan en Europa desde el año 2011. Participan gran turismos de los reglamentos GT3. Lo organizan la Stéphane Ratel Organisation y el Real Automóvil Club de Bélgica, y tiene patrocinio titular de la marca de relojes Blancpain.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/GT_World_Challenge_Europe"
-      },
-      "founded": 2014,
-      "organizer": "SRO Motorsports Group",
       "records": [
         {
           "label": "Más títulos",
@@ -5171,10 +5171,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/GT_World_Challenge_Europe",
         "title": "GT World Challenge Europe"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "igtc",
+      "wikidata": "Q27990696",
+      "summary": {
+        "text": "La Intercontinental GT Challenge (IGTC) es un campeonato internacional de automovilismo de resistencia organizado por la Stéphane Ratel Organisation (SRO) desde 2016. El campeonato está reservado a vehículos Gran Turismo que cumplen las especificaciones técnicas de la categoría FIA GT3 y se disputa en diferentes circuitos de varios continentes.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Intercontinental_GT_Challenge"
+      },
+      "founded": 2016,
+      "organizer": "SRO Motorsports Group",
       "champions": [
         {
           "season": 2026,
@@ -5291,15 +5300,6 @@
           "note": "Independent Cup"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q27990696",
-      "summary": {
-        "text": "La Intercontinental GT Challenge (IGTC) es un campeonato internacional de automovilismo de resistencia organizado por la Stéphane Ratel Organisation (SRO) desde 2016. El campeonato está reservado a vehículos Gran Turismo que cumplen las especificaciones técnicas de la categoría FIA GT3 y se disputa en diferentes circuitos de varios continentes.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Intercontinental_GT_Challenge"
-      },
-      "founded": 2016,
-      "organizer": "SRO Motorsports Group",
       "records": [
         {
           "label": "Primer campeón",
@@ -5317,10 +5317,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Intercontinental_GT_Challenge",
         "title": "Intercontinental GT Challenge"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "imsa",
+      "wikidata": "Q7889178",
+      "summary": {
+        "text": "El IMSA SportsCar Championship, actualmente conocido como IMSA WeatherTech SportsCar Championship bajo patrocinio, es un campeonato de automovilismo para sport prototipos y gran turismos que se disputa en América del Norte desde el año 2014. Organizado por la International Motor Sports Association (IMSA), surgió de la fusión de la American Le Mans Series y la Grand-Am Rolex Sports Car Series, dos campeonatos que habían coexistido desde 1999, luego de que el Campeonato IMSA GT dejara de disputarse tras 1998. Por ello, se denominó inicialmente United SportsCar Championship, aunque la palabra «United» se quitó para la temporada 2016.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/IMSA_SportsCar_Championship"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/IMSA_SportsCar_Championship_logo.svg/330px-IMSA_SportsCar_Championship_logo.svg.png",
+        "width": 320,
+        "height": 178,
+        "credit": "™/® International Motor Sports Association",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:IMSA_SportsCar_Championship_logo.svg"
+      },
+      "founded": 2014,
+      "organizer": "IMSA",
       "champions": [
         {
           "season": 2026,
@@ -5692,23 +5709,6 @@
           "note": "Clase GTD"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q7889178",
-      "summary": {
-        "text": "El IMSA SportsCar Championship, actualmente conocido como IMSA WeatherTech SportsCar Championship bajo patrocinio, es un campeonato de automovilismo para sport prototipos y gran turismos que se disputa en América del Norte desde el año 2014. Organizado por la International Motor Sports Association (IMSA), surgió de la fusión de la American Le Mans Series y la Grand-Am Rolex Sports Car Series, dos campeonatos que habían coexistido desde 1999, luego de que el Campeonato IMSA GT dejara de disputarse tras 1998. Por ello, se denominó inicialmente United SportsCar Championship, aunque la palabra «United» se quitó para la temporada 2016.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/IMSA_SportsCar_Championship"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/9/94/IMSA_SportsCar_Championship_logo.svg/330px-IMSA_SportsCar_Championship_logo.svg.png",
-        "width": 320,
-        "height": 178,
-        "credit": "™/® International Motor Sports Association",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:IMSA_SportsCar_Championship_logo.svg"
-      },
-      "founded": 2014,
-      "organizer": "IMSA",
       "records": [
         {
           "label": "Más títulos",
@@ -5734,10 +5734,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/IMSA_SportsCar_Championship",
         "title": "IMSA SportsCar Championship"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "indy-nxt",
+      "wikidata": "Q1062688",
+      "summary": {
+        "text": "La Indy NXT (anteriormente conocida como Indy Lights) es un campeonato de automovilismo disputada en América del Norte desde el año 1986. Es una categoría rival de la Fórmula Atlantic en la formación de pilotos de monoplazas.\n\nLlamada originalmente American Racing Series, la competencia era organizada por la CART para promover pilotos jóvenes. Los chasis eran provistos por March Engineering hasta 1992, y Lola Racing Cars desde entonces. A su vez, los motores eran V6 de origen Buick. Como consecuencia de los problemas financieros de la CART, la categoría se disolvió luego de finalizada la temporada 2001.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Indy_NXT"
+      },
+      "founded": 1986,
+      "organizer": "IndyCar",
       "champions": [
         {
           "season": 2026,
@@ -5995,15 +6004,6 @@
           "vehicle": "March 86A"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1062688",
-      "summary": {
-        "text": "La Indy NXT (anteriormente conocida como Indy Lights) es un campeonato de automovilismo disputada en América del Norte desde el año 1986. Es una categoría rival de la Fórmula Atlantic en la formación de pilotos de monoplazas.\n\nLlamada originalmente American Racing Series, la competencia era organizada por la CART para promover pilotos jóvenes. Los chasis eran provistos por March Engineering hasta 1992, y Lola Racing Cars desde entonces. A su vez, los motores eran V6 de origen Buick. Como consecuencia de los problemas financieros de la CART, la categoría se disolvió luego de finalizada la temporada 2001.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Indy_NXT"
-      },
-      "founded": 1986,
-      "organizer": "IndyCar",
       "records": [
         {
           "label": "Más títulos de equipos",
@@ -6025,10 +6025,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Indy_NXT",
         "title": "Indy NXT"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "indycar",
+      "wikidata": "Q832052",
+      "summary": {
+        "text": "La IndyCar Series es la categoría de carreras de monoplazas más importante de los Estados Unidos. Se desarrolló inicialmente en el año 1996 bajo el nombre de Indy Racing League. Surgió por las discrepancias políticas y el pleito con la organización CART. A partir de 1996 se convirtió en una competición alternativa e independiente que podía competir frente a la categoría hermana para disputar carreras en circuitos de tipo óvalo, al menos en sus inicios. En 2008, cuando la Champ Car (anteriormente CART) quedó en bancarrota y se fusionó con la IndyCar, el campeonato se enriqueció con la inclusión de nuevas competiciones tanto en circuitos permanentes como callejeros.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/IndyCar_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/IndyCar_Series_textlogo.svg/330px-IndyCar_Series_textlogo.svg.png",
+        "width": 320,
+        "height": 82,
+        "credit": "™/®INDYCAR LLC",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:IndyCar_Series_textlogo.svg"
+      },
+      "founded": 1996,
+      "organizer": "IndyCar",
       "champions": [
         {
           "season": 2026,
@@ -6251,23 +6268,6 @@
           "note": "Temporada 1996-97"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q832052",
-      "summary": {
-        "text": "La IndyCar Series es la categoría de carreras de monoplazas más importante de los Estados Unidos. Se desarrolló inicialmente en el año 1996 bajo el nombre de Indy Racing League. Surgió por las discrepancias políticas y el pleito con la organización CART. A partir de 1996 se convirtió en una competición alternativa e independiente que podía competir frente a la categoría hermana para disputar carreras en circuitos de tipo óvalo, al menos en sus inicios. En 2008, cuando la Champ Car (anteriormente CART) quedó en bancarrota y se fusionó con la IndyCar, el campeonato se enriqueció con la inclusión de nuevas competiciones tanto en circuitos permanentes como callejeros.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/IndyCar_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/ff/IndyCar_Series_textlogo.svg/330px-IndyCar_Series_textlogo.svg.png",
-        "width": 320,
-        "height": 82,
-        "credit": "™/®INDYCAR LLC",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:IndyCar_Series_textlogo.svg"
-      },
-      "founded": 1996,
-      "organizer": "IndyCar",
       "records": [
         {
           "label": "Más títulos",
@@ -6293,10 +6293,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_American_open-wheel_racing_national_champions",
         "title": "List of American open-wheel racing national champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "macau-gp",
+      "wikidata": "Q1346003",
+      "summary": {
+        "text": "El Gran Premio de Macao es una carrera de automovilismo que se corre en el Circuito da Guia, cerca de la Colina da Guia, Macao (China). La carrera se celebra desde el año 1954, inicialmente con automóvil deportivos. Actualmente se corre con monoplazas de Fórmula 3, junto con numerosas carreras de soporte, como turismos, GT y motociclismo.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Gran_Premio_de_Macao"
+      },
+      "founded": 1954,
+      "organizer": "Comité Organizador del Gran Premio de Macao",
       "champions": [
         {
           "season": 2025,
@@ -6733,15 +6742,6 @@
           "vehicle": "Triumph TR2"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1346003",
-      "summary": {
-        "text": "El Gran Premio de Macao es una carrera de automovilismo que se corre en el Circuito da Guia, cerca de la Colina da Guia, Macao (China). La carrera se celebra desde el año 1954, inicialmente con automóvil deportivos. Actualmente se corre con monoplazas de Fórmula 3, junto con numerosas carreras de soporte, como turismos, GT y motociclismo.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Gran_Premio_de_Macao"
-      },
-      "founded": 1954,
-      "organizer": "Comité Organizador del Gran Premio de Macao",
       "records": [
         {
           "label": "Más victorias",
@@ -6767,10 +6767,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_Macau_Grand_Prix_winners",
         "title": "List of Macau Grand Prix winners"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "moto2",
+      "wikidata": "Q2300257",
+      "summary": {
+        "text": "Moto2 es la categoría intermedia del Campeonato Mundial de Motociclismo, considerado el certamen internacional más importante en el ámbito de la velocidad. Esta categoría de motor tricilíndrico de 765cc, derivado de la Triumph Street Triple, sustituyó a la de 250cc de dos tiempos en el año 2010 y su organización viene determinada por la Federación Internacional de Motociclismo, al igual que ocurre con las otras categorías del campeonato: MotoGP y Moto3. A partir de 2019 el motor Honda de 600cc es sustituido por el tricilíndrico de la marca Triumph de 765cc.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Moto2"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Moto2_logo_%282024%29.svg/330px-Moto2_logo_%282024%29.svg.png",
+        "width": 320,
+        "height": 59,
+        "credit": "™/®MotoGP Sports Entertainment Group/Fédération Internationale de Motocyclisme, designed by Pentagram",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Moto2_logo_(2024).svg"
+      },
+      "founded": 1949,
+      "organizer": "FIM / Dorna Sports",
       "champions": [
         {
           "season": 2025,
@@ -7232,23 +7249,6 @@
           "note": "Categoría 250 cc"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q2300257",
-      "summary": {
-        "text": "Moto2 es la categoría intermedia del Campeonato Mundial de Motociclismo, considerado el certamen internacional más importante en el ámbito de la velocidad. Esta categoría de motor tricilíndrico de 765cc, derivado de la Triumph Street Triple, sustituyó a la de 250cc de dos tiempos en el año 2010 y su organización viene determinada por la Federación Internacional de Motociclismo, al igual que ocurre con las otras categorías del campeonato: MotoGP y Moto3. A partir de 2019 el motor Honda de 600cc es sustituido por el tricilíndrico de la marca Triumph de 765cc.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Moto2"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/46/Moto2_logo_%282024%29.svg/330px-Moto2_logo_%282024%29.svg.png",
-        "width": 320,
-        "height": 59,
-        "credit": "™/®MotoGP Sports Entertainment Group/Fédération Internationale de Motocyclisme, designed by Pentagram",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:Moto2_logo_(2024).svg"
-      },
-      "founded": 1949,
-      "organizer": "FIM / Dorna Sports",
       "records": [
         {
           "label": "Más títulos",
@@ -7274,10 +7274,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_250cc%2FMoto2_World_Riders'_Champions",
         "title": "List of 250cc/Moto2 World Riders' Champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "moto3",
+      "wikidata": "Q524610",
+      "summary": {
+        "text": "Moto3 es la categoría de menor cilindrada del Campeonato Mundial de Motociclismo, considerado como el certamen internacional más importante en el ámbito de la velocidad sobre dos ruedas. Esta categoría sustituye en el año 2012 a la de 125cc y su organización viene determinada por la Federación Internacional de Motociclismo (FIM), al igual que ocurre con el resto de categorías del campeonato: MotoGP y Moto2.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Moto3"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Moto3_logo_%282024%29.svg/330px-Moto3_logo_%282024%29.svg.png",
+        "width": 320,
+        "height": 59,
+        "credit": "™/®MotoGP Sports Entertainment Group/Fédération Internationale de Motocyclisme, designed by Pentagram",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Moto3_logo_(2024).svg"
+      },
+      "founded": 1949,
+      "organizer": "FIM / Dorna Sports",
       "champions": [
         {
           "season": 2026,
@@ -7745,23 +7762,6 @@
           "note": "Categoría 125 cc"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q524610",
-      "summary": {
-        "text": "Moto3 es la categoría de menor cilindrada del Campeonato Mundial de Motociclismo, considerado como el certamen internacional más importante en el ámbito de la velocidad sobre dos ruedas. Esta categoría sustituye en el año 2012 a la de 125cc y su organización viene determinada por la Federación Internacional de Motociclismo (FIM), al igual que ocurre con el resto de categorías del campeonato: MotoGP y Moto2.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Moto3"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/d/d7/Moto3_logo_%282024%29.svg/330px-Moto3_logo_%282024%29.svg.png",
-        "width": 320,
-        "height": 59,
-        "credit": "™/®MotoGP Sports Entertainment Group/Fédération Internationale de Motocyclisme, designed by Pentagram",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:Moto3_logo_(2024).svg"
-      },
-      "founded": 1949,
-      "organizer": "FIM / Dorna Sports",
       "records": [
         {
           "label": "Más títulos",
@@ -7787,10 +7787,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_125cc%2FMoto3_World_Riders'_Champions",
         "title": "List of 125cc/Moto3 World Riders' Champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "motogp",
+      "wikidata": "Q10858737",
+      "summary": {
+        "text": "MotoGP es la máxima categoría del Campeonato Mundial de Motociclismo, considerado el certamen internacional más importante en el ámbito del motociclismo de velocidad. Su organización viene determinada por la Federación Internacional de Motociclismo (FIM), al igual que ocurre con las otras categorías del campeonato: Moto2 y Moto3.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/MotoGP"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/MotoGP_logo_%282024%29.svg/330px-MotoGP_logo_%282024%29.svg.png",
+        "width": 320,
+        "height": 51,
+        "credit": "™/®MotoGP Sports Entertainment Group/Fédération Internationale de Motocyclisme, designed by Pentagram",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:MotoGP_logo_(2024).svg"
+      },
+      "founded": 1949,
+      "organizer": "FIM / Dorna Sports",
       "champions": [
         {
           "season": 2025,
@@ -8250,23 +8267,6 @@
           "note": "Categoría 500 cc"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q10858737",
-      "summary": {
-        "text": "MotoGP es la máxima categoría del Campeonato Mundial de Motociclismo, considerado el certamen internacional más importante en el ámbito del motociclismo de velocidad. Su organización viene determinada por la Federación Internacional de Motociclismo (FIM), al igual que ocurre con las otras categorías del campeonato: Moto2 y Moto3.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/MotoGP"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/f/f9/MotoGP_logo_%282024%29.svg/330px-MotoGP_logo_%282024%29.svg.png",
-        "width": 320,
-        "height": 51,
-        "credit": "™/®MotoGP Sports Entertainment Group/Fédération Internationale de Motocyclisme, designed by Pentagram",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:MotoGP_logo_(2024).svg"
-      },
-      "founded": 1949,
-      "organizer": "FIM / Dorna Sports",
       "records": [
         {
           "label": "Más títulos",
@@ -8292,10 +8292,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_500cc%2FMotoGP_World_Riders'_Champions",
         "title": "List of 500cc/MotoGP World Riders' Champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "nascar-cup",
+      "wikidata": "Q2707177",
+      "summary": {
+        "text": "La NASCAR Cup Series es un campeonato de automovilismo regulado por NASCAR (National Association for Stock Car Auto Racing), que se disputa en Estados Unidos desde el año 1949. Se trata del campeonato de stock cars más popular del mundo y del campeonato más popular de Estados Unidos junto a la IndyCar Series.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/NASCAR_Cup_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/NASCAR_Cup_Series_logo.svg/330px-NASCAR_Cup_Series_logo.svg.png",
+        "width": 320,
+        "height": 160,
+        "credit": "NASCAR Cup Series",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:NASCAR_Cup_Series_logo.svg"
+      },
+      "founded": 1949,
+      "organizer": "NASCAR",
       "champions": [
         {
           "season": 2026,
@@ -8819,23 +8836,6 @@
           "vehicle": "Oldsmobile"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q2707177",
-      "summary": {
-        "text": "La NASCAR Cup Series es un campeonato de automovilismo regulado por NASCAR (National Association for Stock Car Auto Racing), que se disputa en Estados Unidos desde el año 1949. Se trata del campeonato de stock cars más popular del mundo y del campeonato más popular de Estados Unidos junto a la IndyCar Series.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/NASCAR_Cup_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/cb/NASCAR_Cup_Series_logo.svg/330px-NASCAR_Cup_Series_logo.svg.png",
-        "width": 320,
-        "height": 160,
-        "credit": "NASCAR Cup Series",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:NASCAR_Cup_Series_logo.svg"
-      },
-      "founded": 1949,
-      "organizer": "NASCAR",
       "records": [
         {
           "label": "Más títulos",
@@ -8865,10 +8865,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_NASCAR_Cup_Series_champions",
         "title": "List of NASCAR Cup Series champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "nascar-truck",
+      "wikidata": "Q255911",
+      "summary": {
+        "text": "La NASCAR Craftsman Truck Series es una categoría de automovilismo de velocidad organizada por la NASCAR desde el año 1995, que se corre con pickups de calle modificadas. Es una de las tres divisiones nacionales de la NASCAR, junto con la NASCAR Xfinity Series y la NASCAR Cup Series.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/NASCAR_Craftsman_Truck_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/NASCAR_Craftsman_Truck_Series_logo.svg/330px-NASCAR_Craftsman_Truck_Series_logo.svg.png",
+        "width": 320,
+        "height": 154,
+        "credit": "https://www.nascar.com/",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:NASCAR_Craftsman_Truck_Series_logo.svg"
+      },
+      "founded": 1995,
+      "organizer": "NASCAR",
       "champions": [
         {
           "season": 2026,
@@ -9044,23 +9061,6 @@
           "vehicle": "Chevrolet"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q255911",
-      "summary": {
-        "text": "La NASCAR Craftsman Truck Series es una categoría de automovilismo de velocidad organizada por la NASCAR desde el año 1995, que se corre con pickups de calle modificadas. Es una de las tres divisiones nacionales de la NASCAR, junto con la NASCAR Xfinity Series y la NASCAR Cup Series.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/NASCAR_Craftsman_Truck_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/2/22/NASCAR_Craftsman_Truck_Series_logo.svg/330px-NASCAR_Craftsman_Truck_Series_logo.svg.png",
-        "width": 320,
-        "height": 154,
-        "credit": "https://www.nascar.com/",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:NASCAR_Craftsman_Truck_Series_logo.svg"
-      },
-      "founded": 1995,
-      "organizer": "NASCAR",
       "records": [
         {
           "label": "Más títulos",
@@ -9086,10 +9086,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_NASCAR_Truck_Series_champions",
         "title": "List of NASCAR Truck Series champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "nascar-xfinity",
+      "wikidata": "Q645499",
+      "summary": {
+        "text": "La NASCAR O'Reilly Auto Parts Series (NOAPS) es un campeonato de stock cars sancionado por NASCAR, que se disputa principalmente en óvalos de Estados Unidos desde 1950. Es la segunda división más importante de NASCAR, por debajo de la NASCAR Cup Series y por encima de la NASCAR Truck Series.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/NASCAR_O'Reilly_Auto_Parts_Series"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/NASCAR_OAP_SERIES_Logo.svg/330px-NASCAR_OAP_SERIES_Logo.svg.png",
+        "width": 320,
+        "height": 154,
+        "credit": "National Association for Stock Car Auto Racing, LLC (NASCAR)",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:NASCAR_OAP_SERIES_Logo.svg"
+      },
+      "founded": 1982,
+      "organizer": "NASCAR",
       "champions": [
         {
           "season": 2026,
@@ -9391,23 +9408,6 @@
           "vehicle": "Pontiac"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q645499",
-      "summary": {
-        "text": "La NASCAR O'Reilly Auto Parts Series (NOAPS) es un campeonato de stock cars sancionado por NASCAR, que se disputa principalmente en óvalos de Estados Unidos desde 1950. Es la segunda división más importante de NASCAR, por debajo de la NASCAR Cup Series y por encima de la NASCAR Truck Series.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/NASCAR_O'Reilly_Auto_Parts_Series"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/4f/NASCAR_OAP_SERIES_Logo.svg/330px-NASCAR_OAP_SERIES_Logo.svg.png",
-        "width": 320,
-        "height": 154,
-        "credit": "National Association for Stock Car Auto Racing, LLC (NASCAR)",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:NASCAR_OAP_SERIES_Logo.svg"
-      },
-      "founded": 1982,
-      "organizer": "NASCAR",
       "records": [
         {
           "label": "Más títulos",
@@ -9437,10 +9437,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_NASCAR_O'Reilly_Auto_Parts_Series_champions",
         "title": "List of NASCAR O'Reilly Auto Parts Series champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "nls",
+      "wikidata": "Q320469",
+      "summary": {
+        "text": "El Campeonato de Resistencia de Nürburgring (en alemán: Nürburgring Langstrecken-Serie o NLS, anteriormente VLN Langstreckenmeisterschaft Nürburgring) es una competición de automovilismo que se disputa en Nürburgring, Alemania desde el año 1977. El Campeonato de Nürburgring de Resistencia es organizado por la Veranstaltergemeinschaft Langstreckenpokal Nürburgring (\"Comunidad de Organizadores de Copas de Nürburgring de Resistencia\", abreviada VLN). Participan desde turismos de serie hasta gran turismos preparados para competición, divididos en numerosas clases semejantes a las usadas en las 24 Horas de Nürburgring.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_de_Resistencia_de_N%C3%BCrburgring"
+      },
+      "founded": 1977,
+      "organizer": "VLN e.V.",
       "champions": [
         {
           "season": 2024,
@@ -9734,15 +9743,6 @@
           "vehicle": "Simca Rallye"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q320469",
-      "summary": {
-        "text": "El Campeonato de Resistencia de Nürburgring (en alemán: Nürburgring Langstrecken-Serie o NLS, anteriormente VLN Langstreckenmeisterschaft Nürburgring) es una competición de automovilismo que se disputa en Nürburgring, Alemania desde el año 1977. El Campeonato de Nürburgring de Resistencia es organizado por la Veranstaltergemeinschaft Langstreckenpokal Nürburgring (\"Comunidad de Organizadores de Copas de Nürburgring de Resistencia\", abreviada VLN). Participan desde turismos de serie hasta gran turismos preparados para competición, divididos en numerosas clases semejantes a las usadas en las 24 Horas de Nürburgring.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_de_Resistencia_de_N%C3%BCrburgring"
-      },
-      "founded": 1977,
-      "organizer": "VLN e.V.",
       "records": [
         {
           "label": "Más títulos",
@@ -9768,10 +9768,27 @@
       "championsSource": {
         "url": "https://de.wikipedia.org/wiki/N%C3%BCrburgring_Langstrecken-Serie",
         "title": "Nürburgring Langstrecken-Serie"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "porsche-supercup",
+      "wikidata": "Q1277220",
+      "summary": {
+        "text": "La Porsche Supercup (por motivos publicitarios Porsche Mobil 1 Supercup, y conocida como Porsche Michelin Supercup antes de 2007) es una serie internacional organizada por Porsche AG, habitual soporte del Campeonato Mundial de Fórmula 1.\n\nLos pilotos de la Porsche Supercup compiten en idénticos coches Porsche 911 GT3 Cup basados en el Porsche 911 Carrera. En promedio, 24 coches toman parte de cada carrera. Los circuitos más visitados por la serie son europeos, aunque también han sido incluidos en el calendario circuitos en Baréin, Emiratos Árabes Unidos y Estados Unidos.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Porsche_Supercup"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Porsche_Mobil_1_Supercup_logo.svg/330px-Porsche_Mobil_1_Supercup_logo.svg.png",
+        "width": 320,
+        "height": 89,
+        "credit": "Porsche Mobil 1 Supercup",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Porsche_Mobil_1_Supercup_logo.svg"
+      },
+      "founded": 1993,
+      "organizer": "Porsche Motorsport",
       "champions": [
         {
           "season": 2026,
@@ -9960,23 +9977,6 @@
           "vehicle": "Porsche 911 (964) Cup"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1277220",
-      "summary": {
-        "text": "La Porsche Supercup (por motivos publicitarios Porsche Mobil 1 Supercup, y conocida como Porsche Michelin Supercup antes de 2007) es una serie internacional organizada por Porsche AG, habitual soporte del Campeonato Mundial de Fórmula 1.\n\nLos pilotos de la Porsche Supercup compiten en idénticos coches Porsche 911 GT3 Cup basados en el Porsche 911 Carrera. En promedio, 24 coches toman parte de cada carrera. Los circuitos más visitados por la serie son europeos, aunque también han sido incluidos en el calendario circuitos en Baréin, Emiratos Árabes Unidos y Estados Unidos.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Porsche_Supercup"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/5/58/Porsche_Mobil_1_Supercup_logo.svg/330px-Porsche_Mobil_1_Supercup_logo.svg.png",
-        "width": 320,
-        "height": 89,
-        "credit": "Porsche Mobil 1 Supercup",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:Porsche_Mobil_1_Supercup_logo.svg"
-      },
-      "founded": 1993,
-      "organizer": "Porsche Motorsport",
       "records": [
         {
           "label": "Más títulos",
@@ -9998,10 +9998,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Porsche_Supercup",
         "title": "Porsche Supercup"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "score-baja",
+      "wikidata": "Q1137061",
+      "summary": {
+        "text": "SCORE International (Southern California Off Road Enthusiasts) es un organismo sancionador de carreras todoterreno en el deporte de las carreras desérticas y es famoso por las Baja 500, San Felipe 250 y el evento insignia del Comité; la Baja 1000. Para la temporada 2016, la temporada SCORE consistirá en cuatro carreras; todas celebradas en México por primera vez. Fundada por Mickey Thompson en 1973, SCORE International fue comprada a Sal Fish a finales de 2012 y está dirigida por su actual presidente y director de carreras José A. Grijalva, y el gerente general Juan Tintos.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/SCORE_International"
+      },
+      "founded": 1967,
+      "organizer": "SCORE International",
       "champions": [
         {
           "season": 2025,
@@ -10700,15 +10709,6 @@
           "note": "Baja 1000 · general de motos y cuatriciclos"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1137061",
-      "summary": {
-        "text": "SCORE International (Southern California Off Road Enthusiasts) es un organismo sancionador de carreras todoterreno en el deporte de las carreras desérticas y es famoso por las Baja 500, San Felipe 250 y el evento insignia del Comité; la Baja 1000. Para la temporada 2016, la temporada SCORE consistirá en cuatro carreras; todas celebradas en México por primera vez. Fundada por Mickey Thompson en 1973, SCORE International fue comprada a Sal Fish a finales de 2012 y está dirigida por su actual presidente y director de carreras José A. Grijalva, y el gerente general Juan Tintos.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/SCORE_International"
-      },
-      "founded": 1967,
-      "organizer": "SCORE International",
       "records": [
         {
           "label": "Más victorias",
@@ -10730,10 +10730,27 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Baja_1000",
         "title": "Baja 1000"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "super-formula",
+      "wikidata": "Q11313836",
+      "summary": {
+        "text": "El Campeonato de Super Fórmula Japonesa es la máxima competición de automovilismo de monoplazas que se disputa en Japón. Actualmente se utilizan chasis Dallara, y cada equipo puede optar entre los motores Honda y Toyota.\n\nEl certamen fue variando de denominación a lo largo de las décadas: Fórmula 2000 Japonesa en su debut en 1973, Fórmula 2 Japonesa en 1978, Fórmula 3000 Japonesa en 1987, Fórmula Nippon en 1996, y finalmente Campeonato de Super Fórmula Japonesa en 2013.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_de_Super_F%C3%B3rmula_Japonesa"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Super_Formula_logo.svg/330px-Super_Formula_logo.svg.png",
+        "width": 320,
+        "height": 100,
+        "credit": "Super Formula",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:Super_Formula_logo.svg"
+      },
+      "founded": 1973,
+      "organizer": "Japan Race Promotion (JRP)",
       "champions": [
         {
           "season": 2025,
@@ -11107,23 +11124,6 @@
           "vehicle": "March 722 BMW M12/6"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q11313836",
-      "summary": {
-        "text": "El Campeonato de Super Fórmula Japonesa es la máxima competición de automovilismo de monoplazas que se disputa en Japón. Actualmente se utilizan chasis Dallara, y cada equipo puede optar entre los motores Honda y Toyota.\n\nEl certamen fue variando de denominación a lo largo de las décadas: Fórmula 2000 Japonesa en su debut en 1973, Fórmula 2 Japonesa en 1978, Fórmula 3000 Japonesa en 1987, Fórmula Nippon en 1996, y finalmente Campeonato de Super Fórmula Japonesa en 2013.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_de_Super_F%C3%B3rmula_Japonesa"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/c/c5/Super_Formula_logo.svg/330px-Super_Formula_logo.svg.png",
-        "width": 320,
-        "height": 100,
-        "credit": "Super Formula",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:Super_Formula_logo.svg"
-      },
-      "founded": 1973,
-      "organizer": "Japan Race Promotion (JRP)",
       "records": [
         {
           "label": "Más títulos",
@@ -11149,10 +11149,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Super_Formula_Championship",
         "title": "Super Formula Championship"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "super-gt",
+      "wikidata": "Q1379527",
+      "summary": {
+        "text": "El Super GT (estilizado como SUPER GT) es un campeonato de automóviles Gran Turismo que se disputa principalmente en Japón desde 1993. Originalmente denominado Campeonato Japonés de Gran Turismo (全日本GT選手権, Zen Nihon GT Senshuken) y conocido comúnmente como JGTC o All Japan Grand Touring Car Championship, la competición fue renombrada como Super GT en 2005 tras su expansión internacional.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Super_GT_Japon%C3%A9s"
+      },
+      "founded": 2005,
+      "organizer": "GT Association (GTA)",
       "champions": [
         {
           "season": 2026,
@@ -11486,15 +11495,6 @@
           "note": "Clase GT300"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q1379527",
-      "summary": {
-        "text": "El Super GT (estilizado como SUPER GT) es un campeonato de automóviles Gran Turismo que se disputa principalmente en Japón desde 1993. Originalmente denominado Campeonato Japonés de Gran Turismo (全日本GT選手権, Zen Nihon GT Senshuken) y conocido comúnmente como JGTC o All Japan Grand Touring Car Championship, la competición fue renombrada como Super GT en 2005 tras su expansión internacional.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Super_GT_Japon%C3%A9s"
-      },
-      "founded": 2005,
-      "organizer": "GT Association (GTA)",
       "records": [
         {
           "label": "Más títulos",
@@ -11520,10 +11520,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Super_GT",
         "title": "Super GT"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "super-taikyu",
+      "wikidata": "Q16141123",
+      "summary": {
+        "text": "Super Taikyu (スーパー耐久, Super Endurance), formerly known as the Super N1 Taikyu Series prior to 2005 and N1 Endurance Series prior to 1995, and currently named the Eneos Super Taikyu Series Empowered by Bridgestone for sponsorship reasons, is a Japanese endurance racing series that began in 1991. In contrast to the Super GT series, Super Taikyu is a pro-am racing series for commercially available racing vehicles such as GT3, GT4, and TCR cars, and minimally modified production vehicles mainly from the Japanese domestic market.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Super_Taikyu_Series"
+      },
+      "founded": 2008,
+      "organizer": "Super Taikyu Organization (STO)",
       "champions": [
         {
           "season": 2024,
@@ -11869,15 +11878,6 @@
           "note": "Clase ST-1"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q16141123",
-      "summary": {
-        "text": "Super Taikyu (スーパー耐久, Super Endurance), formerly known as the Super N1 Taikyu Series prior to 2005 and N1 Endurance Series prior to 1995, and currently named the Eneos Super Taikyu Series Empowered by Bridgestone for sponsorship reasons, is a Japanese endurance racing series that began in 1991. In contrast to the Super GT series, Super Taikyu is a pro-am racing series for commercially available racing vehicles such as GT3, GT4, and TCR cars, and minimally modified production vehicles mainly from the Japanese domestic market.",
-        "lang": "en",
-        "url": "https://en.wikipedia.org/wiki/Super_Taikyu_Series"
-      },
-      "founded": 2008,
-      "organizer": "Super Taikyu Organization (STO)",
       "records": [
         {
           "label": "Más títulos",
@@ -11903,10 +11903,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Super_Taikyu_Series",
         "title": "Super Taikyu Series"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "supercars",
+      "wikidata": "Q647527",
+      "summary": {
+        "text": "El Supercars Championship (hasta 1998: Campeonato Australiano de Turismos; desde 1999 hasta 2016: V8 Supercars) es un certamen de automovilismo de velocidad disputado principalmente en Australia y Nueva Zelanda con automóviles de turismo desde el año 1960. Ha dado lugar durante décadas a la batalla entre las marcas Ford y Holden, ambas con alto nivel de ventas y una tradicional rivalidad en Australia.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Supercars_Championship"
+      },
+      "founded": 1960,
+      "organizer": "Supercars Australia",
       "champions": [
         {
           "season": 2025,
@@ -12337,15 +12346,6 @@
           "vehicle": "Jaguar Mark 1 3.4"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q647527",
-      "summary": {
-        "text": "El Supercars Championship (hasta 1998: Campeonato Australiano de Turismos; desde 1999 hasta 2016: V8 Supercars) es un certamen de automovilismo de velocidad disputado principalmente en Australia y Nueva Zelanda con automóviles de turismo desde el año 1960. Ha dado lugar durante décadas a la batalla entre las marcas Ford y Holden, ambas con alto nivel de ventas y una tradicional rivalidad en Australia.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Supercars_Championship"
-      },
-      "founded": 1960,
-      "organizer": "Supercars Australia",
       "records": [
         {
           "label": "Más títulos",
@@ -12371,10 +12371,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_Australian_Touring_Car_and_V8_Supercar_champions",
         "title": "List of Australian Touring Car and V8 Supercar champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "tc",
+      "wikidata": "Q858732",
+      "summary": {
+        "text": "El Turismo Carretera (también conocido por su sigla TC) es un campeonato argentino de automovilismo para automóviles de turismo. Es considerado la categoría más antigua y tradicional del automovilismo en el país, y una de las de mayor convocatoria popular.\n\nFue creado en 1937 bajo la denominación de Campeonato Argentino de Velocidad, organizado por el Automóvil Club Argentino, y adoptó oficialmente el nombre de Turismo Carretera en 1939.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Turismo_Carretera"
+      },
+      "founded": 1937,
+      "organizer": "ACTC",
       "champions": [
         {
           "season": 2025,
@@ -12822,15 +12831,6 @@
           "vehicle": "Ford V8"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q858732",
-      "summary": {
-        "text": "El Turismo Carretera (también conocido por su sigla TC) es un campeonato argentino de automovilismo para automóviles de turismo. Es considerado la categoría más antigua y tradicional del automovilismo en el país, y una de las de mayor convocatoria popular.\n\nFue creado en 1937 bajo la denominación de Campeonato Argentino de Velocidad, organizado por el Automóvil Club Argentino, y adoptó oficialmente el nombre de Turismo Carretera en 1939.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Turismo_Carretera"
-      },
-      "founded": 1937,
-      "organizer": "ACTC",
       "records": [
         {
           "label": "Más títulos",
@@ -12856,10 +12856,19 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/Turismo_Carretera",
         "title": "Turismo Carretera"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "tc-mouras",
+      "wikidata": "Q6137470",
+      "summary": {
+        "text": "El TC Mouras es un campeonato argentino de automovilismo regenteada por la Asociación Corredores de Turismo Carretera. Esta categoría fue fundada en 2004 como consecuencia de una división en el TC Pista, siendo bautizada como TC Pista División Top Race en su año de inauguración y ubicada como categoría telonera del Top Race. Tras el campeonato inicial, ganado por Luis Esteban Hernández, la ACTC recategorizó al TC Pista B como una categoría escuela para aquellos pilotos que deseen competir a nivel nacional en el TC Pista, siendo organizadas sus competencias mayoritariamente en el Autódromo Roberto Mouras de la Ciudad de La Plata.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/TC_Mouras"
+      },
+      "founded": 2004,
+      "organizer": "ACTC",
       "champions": [
         {
           "season": 2025,
@@ -12981,15 +12990,6 @@
           "vehicle": "Ford Falcon"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q6137470",
-      "summary": {
-        "text": "El TC Mouras es un campeonato argentino de automovilismo regenteada por la Asociación Corredores de Turismo Carretera. Esta categoría fue fundada en 2004 como consecuencia de una división en el TC Pista, siendo bautizada como TC Pista División Top Race en su año de inauguración y ubicada como categoría telonera del Top Race. Tras el campeonato inicial, ganado por Luis Esteban Hernández, la ACTC recategorizó al TC Pista B como una categoría escuela para aquellos pilotos que deseen competir a nivel nacional en el TC Pista, siendo organizadas sus competencias mayoritariamente en el Autódromo Roberto Mouras de la Ciudad de La Plata.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/TC_Mouras"
-      },
-      "founded": 2004,
-      "organizer": "ACTC",
       "records": [
         {
           "label": "Más títulos",
@@ -13011,10 +13011,19 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/TC_Mouras",
         "title": "TC Mouras"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "tc-pickup",
+      "wikidata": "Q56703842",
+      "summary": {
+        "text": "TC Pick Up (código ACTC: TCPK) es un campeonato argentino de automovilismo. Fue creada por iniciativa del entonces presidente de la Asociación Corredores de Turismo Carretera, Hugo Mazzacane, quien en octubre de 2017 manifestó la intención de crear una nueva categoría de automovilismo, pero especializada en camionetas Pick Up.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/TC_Pick_Up"
+      },
+      "founded": 2018,
+      "organizer": "ACTC",
       "champions": [
         {
           "season": 2025,
@@ -13073,15 +13082,6 @@
           "vehicle": "Volkswagen Amarok"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q56703842",
-      "summary": {
-        "text": "TC Pick Up (código ACTC: TCPK) es un campeonato argentino de automovilismo. Fue creada por iniciativa del entonces presidente de la Asociación Corredores de Turismo Carretera, Hugo Mazzacane, quien en octubre de 2017 manifestó la intención de crear una nueva categoría de automovilismo, pero especializada en camionetas Pick Up.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/TC_Pick_Up"
-      },
-      "founded": 2018,
-      "organizer": "ACTC",
       "records": [
         {
           "label": "Más títulos",
@@ -13107,10 +13107,19 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/TC_Pick_Up",
         "title": "TC Pick Up"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "tc-pista",
+      "wikidata": "Q6137472",
+      "summary": {
+        "text": "El TC Pista (siglas de ACTC: TCP) es un campeonato argentino de automovilismo de velocidad creada por la Asociación Corredores de Turismo Carretera en el año 1995. Su fin era preparar pilotos provenientes de categorías zonales que deseen competir en el Turismo Carretera. Además permitió absorber aquellos pilotos que no cabían en la parrilla del TC cuando pasaron de utilizarse circuitos ruteros a autódromos permanentes. Esta divisional, posee el mismo reglamento que la divisional mayor, pero difiere en la preparación de sus autos, siendo estos de menor potencia. A Rubén Muñiz le cupo el honor de ser su primer campeón a bordo de un Ford Falcon.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/TC_Pista"
+      },
+      "founded": 1995,
+      "organizer": "ACTC",
       "champions": [
         {
           "season": 2025,
@@ -13280,15 +13289,6 @@
           "vehicle": "Ford Falcon"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q6137472",
-      "summary": {
-        "text": "El TC Pista (siglas de ACTC: TCP) es un campeonato argentino de automovilismo de velocidad creada por la Asociación Corredores de Turismo Carretera en el año 1995. Su fin era preparar pilotos provenientes de categorías zonales que deseen competir en el Turismo Carretera. Además permitió absorber aquellos pilotos que no cabían en la parrilla del TC cuando pasaron de utilizarse circuitos ruteros a autódromos permanentes. Esta divisional, posee el mismo reglamento que la divisional mayor, pero difiere en la preparación de sus autos, siendo estos de menor potencia. A Rubén Muñiz le cupo el honor de ser su primer campeón a bordo de un Ford Falcon.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/TC_Pista"
-      },
-      "founded": 1995,
-      "organizer": "ACTC",
       "records": [
         {
           "label": "Más títulos de marcas",
@@ -13310,10 +13310,26 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/TC_Pista",
         "title": "TC Pista"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "tc2000",
+      "wikidata": "Q3272469",
+      "summary": {
+        "text": "El Turismo Competición 2000, comúnmente llamado TC2000, es un campeonato de automovilismo de velocidad que se disputa con automóviles de turismo en Argentina desde el año 1979, reformulada en 2012 a Súper TC2000 y volviendo a llamarse «TC2000» en 2022.\n\nEra reconocido como una de los principales campeonatos de automóviles de turismo en América Latina. Contaba con equipos oficiales de las filiales nacionales de Renault, Chevrolet, Honda, Ford y Toyota, entre otros, con sus respectivos modelos de calle modificados adecuadamente para la competición automovilística, y con pilotos de primer nivel a nivel nacional y algunos extranjeros.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Turismo_Competici%C3%B3n_2000"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/TC2000_logo_2022.webp/330px-TC2000_logo_2022.webp",
+        "width": 320,
+        "height": 160,
+        "credit": "Tango Sports Team",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:TC2000_logo_2022.webp"
+      },
+      "founded": 1979,
       "champions": [
         {
           "season": 2025,
@@ -13554,22 +13570,6 @@
           "vehicle": "Peugeot 504"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q3272469",
-      "summary": {
-        "text": "El Turismo Competición 2000, comúnmente llamado TC2000, es un campeonato de automovilismo de velocidad que se disputa con automóviles de turismo en Argentina desde el año 1979, reformulada en 2012 a Súper TC2000 y volviendo a llamarse «TC2000» en 2022.\n\nEra reconocido como una de los principales campeonatos de automóviles de turismo en América Latina. Contaba con equipos oficiales de las filiales nacionales de Renault, Chevrolet, Honda, Ford y Toyota, entre otros, con sus respectivos modelos de calle modificados adecuadamente para la competición automovilística, y con pilotos de primer nivel a nivel nacional y algunos extranjeros.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Turismo_Competici%C3%B3n_2000"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/49/TC2000_logo_2022.webp/330px-TC2000_logo_2022.webp",
-        "width": 320,
-        "height": 160,
-        "credit": "Tango Sports Team",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:TC2000_logo_2022.webp"
-      },
-      "founded": 1979,
       "records": [
         {
           "label": "Más títulos",
@@ -13595,10 +13595,19 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/Turismo_Competici%C3%B3n_2000",
         "title": "Turismo Competición 2000"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "tn",
+      "wikidata": "Q57603965",
+      "summary": {
+        "text": "El Turismo Nacional (desde 2025 y por motivos legales, TN APAT), es un campeonato argentino de automovilismo de velocidad que se desarrolla desde el año 1961, con antecedentes sin puntaje desde el año 1956, hasta la instauración oficial del campeonato. Originalmente la categoría estaba regida por la Comisión Deportiva Automovilística (CDA) del Automóvil Club Argentino, pero desde 2024 la misma está regida y fiscalizada por la Asociación Corredores de Turismo Carretera (ACTC), mientras que la administración legal y deportiva de la categoría, y la organización de los eventos y campeonatos corre por cuenta de su propia Asociación, conocida como la Asociación de Pilotos de Automóviles de…",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Turismo_Nacional"
+      },
+      "founded": 1983,
+      "organizer": "APAT",
       "champions": [
         {
           "season": 2025,
@@ -14142,15 +14151,6 @@
           "note": "Clase 2"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q57603965",
-      "summary": {
-        "text": "El Turismo Nacional (desde 2025 y por motivos legales, TN APAT), es un campeonato argentino de automovilismo de velocidad que se desarrolla desde el año 1961, con antecedentes sin puntaje desde el año 1956, hasta la instauración oficial del campeonato. Originalmente la categoría estaba regida por la Comisión Deportiva Automovilística (CDA) del Automóvil Club Argentino, pero desde 2024 la misma está regida y fiscalizada por la Asociación Corredores de Turismo Carretera (ACTC), mientras que la administración legal y deportiva de la categoría, y la organización de los eventos y campeonatos corre por cuenta de su propia Asociación, conocida como la Asociación de Pilotos de Automóviles de…",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Turismo_Nacional"
-      },
-      "founded": 1983,
-      "organizer": "APAT",
       "records": [
         {
           "label": "Más títulos",
@@ -14172,10 +14172,19 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/Turismo_Nacional",
         "title": "Turismo Nacional"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "turismo-pista",
+      "wikidata": "Q28663339",
+      "summary": {
+        "text": "El Turismo Pista es una categoría argentina de automovilismo de velocidad. Originalmente creada en 1987 como escisión de la categoría zonal Fórmula 07, pasó por múltiples cambios institucionales hasta su reformulación como categoría nacional a partir de 2001, gracias al reconocimiento adquirido por parte del Automóvil Club Argentino. Originalmente la categoría estaba regida por la Comisión Deportiva Automovilística (CDA) del ACA, pero desde 2024 la misma está regida y fiscalizada por la Asociación Corredores de Turismo Carretera (ACTC), mientras que su administración legal y deportiva corre por cuenta de su propia Asociación, conocida como la Asociación de Pilotos del Turismo Pista (APTP).",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Turismo_Pista"
+      },
+      "founded": 1992,
+      "organizer": "APTP",
       "champions": [
         {
           "season": 2025,
@@ -14721,15 +14730,6 @@
           "note": "Clase 1"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q28663339",
-      "summary": {
-        "text": "El Turismo Pista es una categoría argentina de automovilismo de velocidad. Originalmente creada en 1987 como escisión de la categoría zonal Fórmula 07, pasó por múltiples cambios institucionales hasta su reformulación como categoría nacional a partir de 2001, gracias al reconocimiento adquirido por parte del Automóvil Club Argentino. Originalmente la categoría estaba regida por la Comisión Deportiva Automovilística (CDA) del ACA, pero desde 2024 la misma está regida y fiscalizada por la Asociación Corredores de Turismo Carretera (ACTC), mientras que su administración legal y deportiva corre por cuenta de su propia Asociación, conocida como la Asociación de Pilotos del Turismo Pista (APTP).",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Turismo_Pista"
-      },
-      "founded": 1992,
-      "organizer": "APTP",
       "records": [
         {
           "label": "Más títulos",
@@ -14751,10 +14751,27 @@
       "championsSource": {
         "url": "https://es.wikipedia.org/wiki/Turismo_Pista",
         "title": "Turismo Pista"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "wec",
+      "wikidata": "Q945048",
+      "summary": {
+        "text": "El Campeonato Mundial de Resistencia de la FIA (oficialmente FIA World Endurance Championship, abreviado WEC) es la principal competición internacional de carreras de resistencia y uno de los campeonatos de deportes de motor más prestigiosos del mundo. La entidad que lo sanciona es la Federación Internacional del Automóvil (FIA), mientras que su organización está a cargo del Automobile Club de l'Ouest (ACO). El campeonato fue establecido en 2012 como sucesor de la Copa Intercontinental Le Mans y representa la recuperación del estatus de campeonato mundial para las carreras de resistencia, ausente desde la desaparición del Campeonato Mundial de Sport Prototipos en 1992.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_Mundial_de_Resistencia_de_la_FIA"
+      },
+      "logo": {
+        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/WEC_Logo.svg/330px-WEC_Logo.svg.png",
+        "width": 320,
+        "height": 132,
+        "credit": "Fringio",
+        "license": "Dominio público",
+        "page": "https://commons.wikimedia.org/wiki/File:WEC_Logo.svg"
+      },
+      "founded": 2012,
+      "organizer": "FIA / ACO",
       "champions": [
         {
           "season": 2026,
@@ -15075,23 +15092,6 @@
           "vehicle": "Audi"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q945048",
-      "summary": {
-        "text": "El Campeonato Mundial de Resistencia de la FIA (oficialmente FIA World Endurance Championship, abreviado WEC) es la principal competición internacional de carreras de resistencia y uno de los campeonatos de deportes de motor más prestigiosos del mundo. La entidad que lo sanciona es la Federación Internacional del Automóvil (FIA), mientras que su organización está a cargo del Automobile Club de l'Ouest (ACO). El campeonato fue establecido en 2012 como sucesor de la Copa Intercontinental Le Mans y representa la recuperación del estatus de campeonato mundial para las carreras de resistencia, ausente desde la desaparición del Campeonato Mundial de Sport Prototipos en 1992.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_Mundial_de_Resistencia_de_la_FIA"
-      },
-      "logo": {
-        "url": "https://thumb.wikimedia.org/wikipedia/commons/thumb/4/44/WEC_Logo.svg/330px-WEC_Logo.svg.png",
-        "width": 320,
-        "height": 132,
-        "credit": "Fringio",
-        "license": "Dominio público",
-        "page": "https://commons.wikimedia.org/wiki/File:WEC_Logo.svg"
-      },
-      "founded": 2012,
-      "organizer": "FIA / ACO",
       "records": [
         {
           "label": "Más títulos",
@@ -15121,10 +15121,19 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_FIA_World_Endurance_champions",
         "title": "List of FIA World Endurance champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     },
     {
       "seriesId": "wrc",
+      "wikidata": "Q7852",
+      "summary": {
+        "text": "El Campeonato Mundial de Rally (FIA World Rally Championship en inglés, abreviado WRC) es una competición internacional de rally, organizada por la Federación Internacional del Automóvil, y que se disputa anualmente desde 1973.\n\nEl campeonato se compone actualmente de 14 eventos (rallyes) que se disputan en carreteras cerradas al tráfico sobre diversas superficies, que van desde la grava y asfalto al barro, la nieve y el hielo. Cada rally suele tener tres días de duración y se divide de 15 a 25 tramos, que se compiten contrarreloj con largada individual. El ganador de la carrera es quien finaliza la carrera con el menor tiempo acumulado en los tramos cronometrados.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_Mundial_de_Rally"
+      },
+      "founded": 1973,
+      "organizer": "FIA",
       "champions": [
         {
           "season": 2026,
@@ -15390,15 +15399,6 @@
           "vehicle": "Lancia Stratos HF"
         }
       ],
-      "updatedAt": "2026-11-14T09:03:30Z",
-      "wikidata": "Q7852",
-      "summary": {
-        "text": "El Campeonato Mundial de Rally (FIA World Rally Championship en inglés, abreviado WRC) es una competición internacional de rally, organizada por la Federación Internacional del Automóvil, y que se disputa anualmente desde 1973.\n\nEl campeonato se compone actualmente de 14 eventos (rallyes) que se disputan en carreteras cerradas al tráfico sobre diversas superficies, que van desde la grava y asfalto al barro, la nieve y el hielo. Cada rally suele tener tres días de duración y se divide de 15 a 25 tramos, que se compiten contrarreloj con largada individual. El ganador de la carrera es quien finaliza la carrera con el menor tiempo acumulado en los tramos cronometrados.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_Mundial_de_Rally"
-      },
-      "founded": 1973,
-      "organizer": "FIA",
       "records": [
         {
           "label": "Más títulos",
@@ -15420,7 +15420,8 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/List_of_World_Rally_Championship_Drivers'_champions",
         "title": "List of World Rally Championship Drivers' champions"
-      }
+      },
+      "updatedAt": "2026-11-14T09:03:30Z"
     }
   ]
 }

@@ -442,17 +442,21 @@
         },
         {
           "season": 2026,
-          "series": "Asian Le Mans Series - GT",
-          "seriesId": "alms",
-          "team": "Garage 59",
-          "source": "wikipedia"
-        },
-        {
-          "season": 2026,
           "series": "Intercontinental GT Challenge",
           "seriesId": "igtc",
           "pos": 29,
           "points": 2,
+          "races": 1,
+          "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series (GT3)",
+          "seriesId": "alms",
+          "team": "Garage 59",
+          "pos": 18,
+          "points": 0,
           "races": 1,
           "wins": 0,
           "source": "app"
@@ -3610,6 +3614,17 @@
           "podiums": 0,
           "poles": 0,
           "source": "wikipedia"
+        },
+        {
+          "season": 2026,
+          "series": "Asian Le Mans Series (LMP2)",
+          "seriesId": "alms",
+          "team": "United Autosports",
+          "pos": 16,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "app"
         },
         {
           "season": 2025,

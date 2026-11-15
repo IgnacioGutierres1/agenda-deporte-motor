@@ -147,10 +147,14 @@
         },
         {
           "season": 2026,
-          "series": "Asian Le Mans Series - GT",
+          "series": "Asian Le Mans Series (GT3)",
           "seriesId": "alms",
-          "team": "Manthey Racing",
-          "source": "wikipedia"
+          "team": "Manthey",
+          "pos": 12,
+          "points": 0,
+          "races": 1,
+          "wins": 0,
+          "source": "app"
         },
         {
           "season": 2025,
@@ -3923,6 +3927,13 @@
           "source": "wikipedia"
         },
         {
+          "season": 2026,
+          "series": "Asian Le Mans Series",
+          "seriesId": "alms",
+          "team": "EBM",
+          "source": "app"
+        },
+        {
           "season": 2025,
           "series": "FIA World Endurance Championship - Hypercar",
           "seriesId": "wec",
@@ -3973,13 +3984,6 @@
           "podiums": 1,
           "poles": 0,
           "source": "wikipedia"
-        },
-        {
-          "season": 2025,
-          "series": "Asian Le Mans Series",
-          "seriesId": "alms",
-          "team": "EBM",
-          "source": "app"
         },
         {
           "season": 2024,
