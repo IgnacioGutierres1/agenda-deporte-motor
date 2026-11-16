@@ -1,0 +1,255 @@
+{
+  "seriesId": "tc-pista-mouras",
+  "eventId": "c268097ea306ed04",
+  "updatedAt": "2026-11-16T19:24:43Z",
+  "sessions": [
+    {
+      "sessionId": "5384e1565d73af76",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "7:34.768"
+        },
+        {
+          "pos": 2,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+2.910"
+        },
+        {
+          "pos": 3,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+10.254"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+14.918"
+        },
+        {
+          "pos": 5,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+15.696"
+        },
+        {
+          "pos": 6,
+          "number": "76",
+          "driver": "JUAN JOSÉ SUAREZ",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+15.943"
+        },
+        {
+          "pos": 7,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+16.108"
+        },
+        {
+          "pos": 8,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+17.348"
+        },
+        {
+          "pos": 9,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+21.078"
+        },
+        {
+          "pos": 10,
+          "number": "148",
+          "driver": "DANIEL FAGGIANO",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+24.625"
+        },
+        {
+          "pos": 11,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+43.723"
+        },
+        {
+          "pos": 12,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 5,
+          "gap": "+46.122"
+        },
+        {
+          "pos": 13,
+          "number": "74",
+          "driver": "FACUNDO LUDUEÑA",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+46.529"
+        },
+        {
+          "pos": 14,
+          "number": "75",
+          "driver": "COSTANZO MAXIMO",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+58.609"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260301_110537_SERIE_UNICA_TC_PISTA_MOURAS.pdf",
+        "title": "SERIE UNICA TC PISTA MOURAS — Fecha 2 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "a68291ce2583a288",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 14,
+          "time": "23:16.870"
+        },
+        {
+          "pos": 2,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+2.118"
+        },
+        {
+          "pos": 3,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+7.499"
+        },
+        {
+          "pos": 4,
+          "number": "76",
+          "driver": "JUAN JOSÉ SUAREZ",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+10.350"
+        },
+        {
+          "pos": 5,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+15.388"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "gap": "+15.389"
+        },
+        {
+          "pos": 7,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 14,
+          "gap": "+17.902"
+        },
+        {
+          "pos": 8,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+19.771"
+        },
+        {
+          "pos": 9,
+          "number": "148",
+          "driver": "DANIEL FAGGIANO",
+          "vehicle": "DODGE",
+          "laps": 14,
+          "gap": "+20.175"
+        },
+        {
+          "pos": 10,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 14,
+          "gap": "+41.611"
+        },
+        {
+          "pos": 11,
+          "number": "75",
+          "driver": "COSTANZO MAXIMO",
+          "vehicle": "CHEVROLET",
+          "laps": 14,
+          "gap": "+47.162"
+        },
+        {
+          "pos": 12,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+9 vueltas"
+        },
+        {
+          "pos": 13,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+10 vueltas"
+        },
+        {
+          "pos": 14,
+          "number": "74",
+          "driver": "FACUNDO LUDUEÑA",
+          "vehicle": "CHEVROLET",
+          "laps": 2,
+          "gap": "+12 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260301_131832_FINAL_TC_PISTA_MOURAS.pdf",
+        "title": "FINAL TC PISTA MOURAS — Fecha 2 — CONCEPCIÓN DEL URUGUAY",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    }
+  ]
+}

@@ -1,0 +1,340 @@
+{
+  "seriesId": "tc-pista-mouras",
+  "eventId": "c268057ea306e638",
+  "updatedAt": "2026-11-16T19:24:43Z",
+  "sessions": [
+    {
+      "sessionId": "afbc6f9c12fca433",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 9,
+          "bestLap": "1:27.772"
+        },
+        {
+          "pos": 2,
+          "number": "47",
+          "driver": "BAUSTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+0.441",
+          "bestLap": "1:28.213"
+        },
+        {
+          "pos": 3,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 9,
+          "gap": "+0.459",
+          "bestLap": "1:28.231"
+        },
+        {
+          "pos": 4,
+          "number": "44",
+          "driver": "JUAN JOSE CONDE",
+          "vehicle": "CHEVROLET",
+          "laps": 10,
+          "gap": "+0.627",
+          "bestLap": "1:28.399"
+        },
+        {
+          "pos": 5,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+0.900",
+          "bestLap": "1:28.672"
+        },
+        {
+          "pos": 6,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+1.096",
+          "bestLap": "1:28.868"
+        },
+        {
+          "pos": 7,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+1.129",
+          "bestLap": "1:28.901"
+        },
+        {
+          "pos": 8,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.219",
+          "bestLap": "1:28.991"
+        },
+        {
+          "pos": 9,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+2.211",
+          "bestLap": "1:29.983"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260606_175656_2DO_ENTRENAMIENTO.html",
+        "title": "2DO ENTRENAMIENTO — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "dfe0c62ee40b85da",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "47",
+          "driver": "BAUSTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 3,
+          "bestLap": "1:27.124"
+        },
+        {
+          "pos": 2,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 4,
+          "gap": "+0.195",
+          "bestLap": "1:27.319"
+        },
+        {
+          "pos": 3,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.625",
+          "bestLap": "1:27.749"
+        },
+        {
+          "pos": 4,
+          "number": "44",
+          "driver": "JUAN JOSE CONDE",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+0.677",
+          "bestLap": "1:27.801"
+        },
+        {
+          "pos": 5,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.764",
+          "bestLap": "1:27.888"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.838",
+          "bestLap": "1:27.962"
+        },
+        {
+          "pos": 7,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.996",
+          "bestLap": "1:28.120"
+        },
+        {
+          "pos": 8,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.149",
+          "bestLap": "1:28.273"
+        },
+        {
+          "pos": 9,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+2.710",
+          "bestLap": "1:29.834"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260606_182227_CLASIFICACION.html",
+        "title": "CLASIFICACION — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "e2b3b1179c176547",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "laps": 5,
+          "time": "7:24.818"
+        },
+        {
+          "pos": 2,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "laps": 5,
+          "gap": "+0.220"
+        },
+        {
+          "pos": 3,
+          "number": "44",
+          "driver": "JUAN JOSE CONDE",
+          "laps": 5,
+          "gap": "+4.041"
+        },
+        {
+          "pos": 4,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "laps": 5,
+          "gap": "+4.452"
+        },
+        {
+          "pos": 5,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "laps": 5,
+          "gap": "+4.996"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "laps": 5,
+          "gap": "+8.500"
+        },
+        {
+          "pos": 7,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "laps": 5,
+          "gap": "+10.961"
+        },
+        {
+          "pos": 8,
+          "number": "47",
+          "driver": "BAUSTISTA ROQUETA",
+          "laps": 5,
+          "gap": "+11.246"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "100",
+          "driver": "LEONARDO FORTE"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260607_151813_SERIE_UNICA.html",
+        "title": "SERIE UNICA — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "b8d1dddfe3698093",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "laps": 14,
+          "time": "22:41.816"
+        },
+        {
+          "pos": 2,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "laps": 14,
+          "gap": "+3.414"
+        },
+        {
+          "pos": 3,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "laps": 14,
+          "gap": "+7.663"
+        },
+        {
+          "pos": 4,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "laps": 14,
+          "gap": "+9.977"
+        },
+        {
+          "pos": 5,
+          "number": "47",
+          "driver": "BAUSTISTA ROQUETA",
+          "laps": 14,
+          "gap": "+11.508"
+        },
+        {
+          "pos": 6,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "laps": 14,
+          "gap": "+12.089"
+        },
+        {
+          "pos": 7,
+          "number": "44",
+          "driver": "JUAN JOSE CONDE",
+          "laps": 12,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 8,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "laps": 9,
+          "gap": "+5 vueltas"
+        },
+        {
+          "pos": 9,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "laps": 4,
+          "gap": "+10 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260607_163426_FINAL.html",
+        "title": "FINAL — Fecha 6 — LA PLATA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    }
+  ]
+}

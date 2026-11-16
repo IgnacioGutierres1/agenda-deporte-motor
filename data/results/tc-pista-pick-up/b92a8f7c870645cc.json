@@ -1,0 +1,990 @@
+{
+  "seriesId": "tc-pista-pick-up",
+  "eventId": "b92a8f7c870645cc",
+  "updatedAt": "2026-11-16T19:24:43Z",
+  "sessions": [
+    {
+      "sessionId": "a9d1d54ed84ee25c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "105",
+          "driver": "Manuel Borgert",
+          "vehicle": "FORD",
+          "laps": 4,
+          "bestLap": "1:47.008"
+        },
+        {
+          "pos": 2,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.070",
+          "bestLap": "1:48.078"
+        },
+        {
+          "pos": 3,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 3,
+          "gap": "+1.551",
+          "bestLap": "1:48.559"
+        },
+        {
+          "pos": 4,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+2.009",
+          "bestLap": "1:49.017"
+        },
+        {
+          "pos": 5,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+2.101",
+          "bestLap": "1:49.109"
+        },
+        {
+          "pos": 6,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+3.205",
+          "bestLap": "1:50.213"
+        },
+        {
+          "pos": 7,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+3.949",
+          "bestLap": "1:50.957"
+        },
+        {
+          "pos": 8,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+5.485",
+          "bestLap": "1:52.493"
+        },
+        {
+          "pos": 9,
+          "number": "188",
+          "driver": "Tomas Di Salvia",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+5.660",
+          "bestLap": "1:52.668"
+        },
+        {
+          "pos": 10,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+7.100",
+          "bestLap": "1:54.108"
+        },
+        {
+          "pos": 11,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+7.906",
+          "bestLap": "1:54.914"
+        },
+        {
+          "pos": 12,
+          "number": "122",
+          "driver": "Marcelo Vergagni",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+15.458",
+          "bestLap": "2:02.466"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "71",
+          "driver": "Juan Pablo Guiffrey",
+          "vehicle": "FORD"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260321_102059_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 2 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "5f21c73af0ba3cef",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 4,
+          "bestLap": "1:32.451"
+        },
+        {
+          "pos": 2,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 10,
+          "gap": "+0.329",
+          "bestLap": "1:32.780"
+        },
+        {
+          "pos": 3,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.560",
+          "bestLap": "1:33.011"
+        },
+        {
+          "pos": 4,
+          "number": "8",
+          "driver": "Juan Antonio Sandin",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.637",
+          "bestLap": "1:33.088"
+        },
+        {
+          "pos": 5,
+          "number": "71",
+          "driver": "Juan Pablo Guiffrey",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.134",
+          "bestLap": "1:33.585"
+        },
+        {
+          "pos": 6,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1.156",
+          "bestLap": "1:33.607"
+        },
+        {
+          "pos": 7,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+1.268",
+          "bestLap": "1:33.719"
+        },
+        {
+          "pos": 8,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 4,
+          "gap": "+1.442",
+          "bestLap": "1:33.893"
+        },
+        {
+          "pos": 9,
+          "number": "23",
+          "driver": "Hernán Sala",
+          "vehicle": "RAM",
+          "laps": 5,
+          "gap": "+1.446",
+          "bestLap": "1:33.897"
+        },
+        {
+          "pos": 10,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.687",
+          "bestLap": "1:34.138"
+        },
+        {
+          "pos": 11,
+          "number": "188",
+          "driver": "Tomas Di Salvia",
+          "vehicle": "TOYOTA",
+          "laps": 8,
+          "gap": "+2.059",
+          "bestLap": "1:34.510"
+        },
+        {
+          "pos": 12,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+2.395",
+          "bestLap": "1:34.846"
+        },
+        {
+          "pos": 13,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+2.661",
+          "bestLap": "1:35.112"
+        },
+        {
+          "pos": 14,
+          "number": "22",
+          "driver": "José Carlos Montanari",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+4.187",
+          "bestLap": "1:36.638"
+        },
+        {
+          "pos": 15,
+          "number": "122",
+          "driver": "Marcelo Vergagni",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+4.893",
+          "bestLap": "1:37.344"
+        },
+        {
+          "pos": 16,
+          "number": "44",
+          "driver": "ROSSOTTI JOAQUIN",
+          "vehicle": "NISSAN",
+          "laps": 11,
+          "gap": "+6.019",
+          "bestLap": "1:38.470"
+        },
+        {
+          "pos": 17,
+          "number": "65",
+          "driver": "Emiliano Simonetti",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+32.995",
+          "bestLap": "2:05.446"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "105",
+          "driver": "Manuel Borgert",
+          "vehicle": "FORD"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260321_135215_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 2 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "82eb73b5180368c6",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "bestLap": "1:31.027"
+        },
+        {
+          "pos": 2,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "gap": "+0.555",
+          "bestLap": "1:31.582"
+        },
+        {
+          "pos": 3,
+          "number": "71",
+          "driver": "Juan Pablo Guiffrey",
+          "vehicle": "FORD",
+          "gap": "+0.898",
+          "bestLap": "1:31.925"
+        },
+        {
+          "pos": 4,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "gap": "+0.942",
+          "bestLap": "1:31.969"
+        },
+        {
+          "pos": 5,
+          "number": "8",
+          "driver": "Juan Antonio Sandin",
+          "vehicle": "FORD",
+          "gap": "+1.143",
+          "bestLap": "1:32.170"
+        },
+        {
+          "pos": 6,
+          "number": "23",
+          "driver": "Hernán Sala",
+          "vehicle": "RAM",
+          "gap": "+1.286",
+          "bestLap": "1:32.313"
+        },
+        {
+          "pos": 7,
+          "number": "65",
+          "driver": "Emiliano Simonetti",
+          "vehicle": "FORD",
+          "gap": "+1.328",
+          "bestLap": "1:32.355"
+        },
+        {
+          "pos": 8,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "gap": "+1.036",
+          "bestLap": "1:32.063"
+        },
+        {
+          "pos": 9,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "gap": "+1.410",
+          "bestLap": "1:32.437"
+        },
+        {
+          "pos": 11,
+          "number": "188",
+          "driver": "Tomas Di Salvia",
+          "vehicle": "TOYOTA",
+          "gap": "+2.270",
+          "bestLap": "1:33.297"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "gap": "+3.224",
+          "bestLap": "1:34.251"
+        },
+        {
+          "pos": 13,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "gap": "+3.302",
+          "bestLap": "1:34.329"
+        },
+        {
+          "pos": 14,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "gap": "+3.395",
+          "bestLap": "1:34.422"
+        },
+        {
+          "pos": 15,
+          "number": "105",
+          "driver": "Manuel Borgert",
+          "vehicle": "FORD",
+          "gap": "+5.068",
+          "bestLap": "1:36.095"
+        },
+        {
+          "pos": 16,
+          "number": "44",
+          "driver": "ROSSOTTI JOAQUIN",
+          "vehicle": "NISSAN",
+          "gap": "+6.057",
+          "bestLap": "1:37.084"
+        },
+        {
+          "pos": 17,
+          "number": "122",
+          "driver": "Marcelo Vergagni",
+          "vehicle": "FORD",
+          "gap": "+6.486",
+          "bestLap": "1:37.513"
+        },
+        {
+          "pos": 18,
+          "number": "22",
+          "driver": "José Carlos Montanari",
+          "vehicle": "FORD",
+          "gap": "+8.347",
+          "bestLap": "1:39.374"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260321_174010_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 2 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "aa952acbb64fcdf6",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "ARRIAS IÑAKI",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "8:00.813"
+        },
+        {
+          "pos": 2,
+          "number": "111",
+          "driver": "QUINTANA IGNACIO",
+          "vehicle": "TORINO",
+          "laps": 5,
+          "gap": "+4.248"
+        },
+        {
+          "pos": 3,
+          "number": "199",
+          "driver": "PEREZ DAMIAN",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+7.939"
+        },
+        {
+          "pos": 4,
+          "number": "77",
+          "driver": "VILAS IGNACIO",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+9.063"
+        },
+        {
+          "pos": 5,
+          "number": "122",
+          "driver": "RUBIERA HANZE DANTE",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+9.323"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+11.182"
+        },
+        {
+          "pos": 7,
+          "number": "63",
+          "driver": "LOVICH IGNACIO",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+11.780"
+        },
+        {
+          "pos": 8,
+          "number": "47",
+          "driver": "ROQUETA BAUTISTA",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+13.625"
+        },
+        {
+          "pos": 9,
+          "number": "76",
+          "driver": "Juan Jose Suarez",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+15.656"
+        },
+        {
+          "pos": 10,
+          "number": "100",
+          "driver": "Leonardo FORTE",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+16.718"
+        },
+        {
+          "pos": 11,
+          "number": "74",
+          "driver": "LUDUEÑA FACUNDO",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+22.807"
+        },
+        {
+          "pos": 12,
+          "number": "144",
+          "driver": "TAHA MARTIN",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+26.265"
+        },
+        {
+          "pos": 13,
+          "number": "99",
+          "driver": "DI PALMA DINO",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+30.096"
+        },
+        {
+          "pos": 14,
+          "number": "148",
+          "driver": "FAGGIANO DANIEL",
+          "vehicle": "DODGE",
+          "laps": 1,
+          "gap": "+4 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260322_103518_SERIE_UNICA.pdf",
+        "title": "SERIE UNICA — Fecha 2 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "297810aa7c5b0ad1",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "time": "7:43.363"
+        },
+        {
+          "pos": 2,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+2.875"
+        },
+        {
+          "pos": 3,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+7.648"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+7.826"
+        },
+        {
+          "pos": 5,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+8.173"
+        },
+        {
+          "pos": 6,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+24.422"
+        },
+        {
+          "pos": 7,
+          "number": "22",
+          "driver": "José Carlos Montanari",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+31.502"
+        },
+        {
+          "pos": 8,
+          "number": "23",
+          "driver": "Hernán Sala",
+          "vehicle": "RAM",
+          "laps": 5,
+          "gap": "+48.056"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+1:01.361"
+        },
+        {
+          "pos": 10,
+          "number": "44",
+          "driver": "ROSSOTTI JOAQUIN",
+          "vehicle": "NISSAN",
+          "laps": 1,
+          "gap": "+4 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260322_105816_2DA_SERIE.pdf",
+        "title": "2DA SERIE — Fecha 2 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "154ec220ff3649cf",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 18,
+          "time": "27:58.376"
+        },
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 18,
+          "time": "27:58.376"
+        },
+        {
+          "pos": 2,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+10.756"
+        },
+        {
+          "pos": 2,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+10.756"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+11.109"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+11.109"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+18.149"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+18.149"
+        },
+        {
+          "pos": 5,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 18,
+          "gap": "+21.695"
+        },
+        {
+          "pos": 5,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 18,
+          "gap": "+21.695"
+        },
+        {
+          "pos": 6,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+31.463"
+        },
+        {
+          "pos": 6,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+31.463"
+        },
+        {
+          "pos": 7,
+          "number": "23",
+          "driver": "Hernán Sala",
+          "vehicle": "RAM",
+          "laps": 18,
+          "gap": "+31.727"
+        },
+        {
+          "pos": 7,
+          "number": "23",
+          "driver": "Hernán Sala",
+          "vehicle": "RAM",
+          "laps": 18,
+          "gap": "+31.727"
+        },
+        {
+          "pos": 8,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+32.094"
+        },
+        {
+          "pos": 8,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+32.094"
+        },
+        {
+          "pos": 9,
+          "number": "71",
+          "driver": "Juan Pablo Guiffrey",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+33.123"
+        },
+        {
+          "pos": 9,
+          "number": "71",
+          "driver": "Juan Pablo Guiffrey",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+33.123"
+        },
+        {
+          "pos": 10,
+          "number": "105",
+          "driver": "Manuel Borgert",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+39.413"
+        },
+        {
+          "pos": 10,
+          "number": "105",
+          "driver": "Manuel Borgert",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+39.413"
+        },
+        {
+          "pos": 11,
+          "number": "8",
+          "driver": "Juan Antonio Sandin",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+1:07.562"
+        },
+        {
+          "pos": 11,
+          "number": "8",
+          "driver": "Juan Antonio Sandin",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+1:07.562"
+        },
+        {
+          "pos": 12,
+          "number": "188",
+          "driver": "Tomas Di Salvia",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+1:10.578"
+        },
+        {
+          "pos": 12,
+          "number": "188",
+          "driver": "Tomas Di Salvia",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+1:10.578"
+        },
+        {
+          "pos": 13,
+          "number": "22",
+          "driver": "José Carlos Montanari",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+1:21.315"
+        },
+        {
+          "pos": 13,
+          "number": "22",
+          "driver": "José Carlos Montanari",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+1:21.315"
+        },
+        {
+          "pos": 14,
+          "number": "65",
+          "driver": "Emiliano Simonetti",
+          "vehicle": "FORD",
+          "laps": 17,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 14,
+          "number": "65",
+          "driver": "Emiliano Simonetti",
+          "vehicle": "FORD",
+          "laps": 17,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 15,
+          "number": "122",
+          "driver": "Marcelo Vergagni",
+          "vehicle": "FORD",
+          "laps": 16,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 15,
+          "number": "122",
+          "driver": "Marcelo Vergagni",
+          "vehicle": "FORD",
+          "laps": 16,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+6 vueltas"
+        },
+        {
+          "pos": 16,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+6 vueltas"
+        },
+        {
+          "pos": 17,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+8 vueltas"
+        },
+        {
+          "pos": 17,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+8 vueltas"
+        },
+        {
+          "pos": 18,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+16 vueltas"
+        },
+        {
+          "pos": 18,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+16 vueltas"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 18
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 18
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260322_142511_FINAL_RECTIFICADA.pdf",
+        "title": "FINAL RECTIFICADA — Fecha 2 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    }
+  ]
+}

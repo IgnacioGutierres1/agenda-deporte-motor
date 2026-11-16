@@ -1,0 +1,461 @@
+{
+  "seriesId": "tc-pista-mouras",
+  "eventId": "c268087ea306eb51",
+  "updatedAt": "2026-11-16T19:24:43Z",
+  "sessions": [
+    {
+      "sessionId": "7cd088759ca9ce4a",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 8,
+          "bestLap": "1:35.182"
+        },
+        {
+          "pos": 2,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 7,
+          "gap": "+0.541",
+          "bestLap": "1:35.723"
+        },
+        {
+          "pos": 3,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+0.613",
+          "bestLap": "1:35.795"
+        },
+        {
+          "pos": 4,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+0.651",
+          "bestLap": "1:35.833"
+        },
+        {
+          "pos": 5,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+0.738",
+          "bestLap": "1:35.920"
+        },
+        {
+          "pos": 6,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+1.184",
+          "bestLap": "1:36.366"
+        },
+        {
+          "pos": 7,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+1.242",
+          "bestLap": "1:36.424"
+        },
+        {
+          "pos": 8,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+2.167",
+          "bestLap": "1:37.349"
+        },
+        {
+          "pos": 9,
+          "number": "22",
+          "driver": "Lautaro DOMINGUEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 6,
+          "gap": "+2.392",
+          "bestLap": "1:37.574"
+        },
+        {
+          "pos": 10,
+          "number": "30",
+          "driver": "GABRIEL VILLALBA",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+3.224",
+          "bestLap": "1:38.406"
+        },
+        {
+          "pos": 11,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+18.623",
+          "bestLap": "1:53.805"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260516_115738_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 5 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "4bf62005dcc120d9",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "bestLap": "1:52.475"
+        },
+        {
+          "pos": 2,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+4.095",
+          "bestLap": "1:56.570"
+        },
+        {
+          "pos": 3,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+8.375",
+          "bestLap": "2:00.850"
+        },
+        {
+          "pos": 4,
+          "number": "22",
+          "driver": "Lautaro DOMINGUEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 1,
+          "gap": "+14.589",
+          "bestLap": "2:07.064"
+        },
+        {
+          "pos": 5,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 1,
+          "gap": "+40.086",
+          "bestLap": "2:32.561"
+        },
+        {
+          "pos": 6,
+          "number": "30",
+          "driver": "GABRIEL VILLALBA",
+          "vehicle": "FORD",
+          "laps": 1,
+          "gap": "+52.167",
+          "bestLap": "2:44.642"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260516_132135_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 5 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "0cbcec8d7d4a5854",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "bestLap": "1:34.695"
+        },
+        {
+          "pos": 2,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "bestLap": "0.194"
+        },
+        {
+          "pos": 3,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "bestLap": "0.534"
+        },
+        {
+          "pos": 4,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "bestLap": "0.587"
+        },
+        {
+          "pos": 5,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "bestLap": "1.086"
+        },
+        {
+          "pos": 6,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "bestLap": "1.532"
+        },
+        {
+          "pos": 7,
+          "number": "22",
+          "driver": "Lautaro DOMINGUEZ",
+          "vehicle": "CHEVROLET",
+          "bestLap": "1.836"
+        },
+        {
+          "pos": 8,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "bestLap": "2.388"
+        },
+        {
+          "pos": 9,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "bestLap": "2.579"
+        },
+        {
+          "pos": 10,
+          "number": "30",
+          "driver": "GABRIEL VILLALBA",
+          "vehicle": "FORD",
+          "bestLap": "3.744"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260516_161806_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 5 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "7d2df37b3526cd8d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "7:58.476"
+        },
+        {
+          "pos": 2,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+3.020"
+        },
+        {
+          "pos": 3,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 5,
+          "gap": "+3.971"
+        },
+        {
+          "pos": 4,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+8.441"
+        },
+        {
+          "pos": 5,
+          "number": "22",
+          "driver": "Lautaro DOMINGUEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+13.826"
+        },
+        {
+          "pos": 6,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+14.345"
+        },
+        {
+          "pos": 7,
+          "number": "30",
+          "driver": "GABRIEL VILLALBA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+23.871"
+        },
+        {
+          "pos": 8,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+47.083"
+        },
+        {
+          "pos": 9,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+54.365"
+        },
+        {
+          "pos": 10,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+54.366"
+        },
+        {
+          "pos": 11,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1 vuelta"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260517_103113_SERIE_UNICA_TCMP.pdf",
+        "title": "SERIE UNICA TCMP — Fecha 5 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    },
+    {
+      "sessionId": "2afbc370899f0925",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 12,
+          "time": "19:13.652"
+        },
+        {
+          "pos": 2,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 12,
+          "gap": "+7.582"
+        },
+        {
+          "pos": 3,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 12,
+          "gap": "+10.530"
+        },
+        {
+          "pos": 4,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 12,
+          "gap": "+10.913"
+        },
+        {
+          "pos": 5,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 12,
+          "gap": "+24.885"
+        },
+        {
+          "pos": 6,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+26.440"
+        },
+        {
+          "pos": 7,
+          "number": "22",
+          "driver": "Lautaro DOMINGUEZ",
+          "vehicle": "CHEVROLET",
+          "laps": 12,
+          "gap": "+28.864"
+        },
+        {
+          "pos": 8,
+          "number": "30",
+          "driver": "GABRIEL VILLALBA",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260517_151554_FINAL_TC_PISTA_MOURAS.pdf",
+        "title": "FINAL TC PISTA MOURAS — Fecha 5 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T19:24:43Z"
+      }
+    }
+  ]
+}
