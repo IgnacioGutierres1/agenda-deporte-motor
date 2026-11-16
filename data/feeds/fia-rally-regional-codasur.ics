@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:FIA Rally Regional CODASUR
+BEGIN:VEVENT
+UID:f10e4176040d1812@agendadeportemotor.local
+DTSTAMP:20261116T184254Z
+DTSTART;VALUE=DATE:20261126
+DTEND;VALUE=DATE:20261130
+SUMMARY:FIA Rally Regional CODASUR (Rally del Atlántico) - Rally del Atlá
+ ntico (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión: A confirmar\nFuente: https://www.fia.com/calen
+ dar
+LOCATION:Rally del Atlántico\, Uruguay
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

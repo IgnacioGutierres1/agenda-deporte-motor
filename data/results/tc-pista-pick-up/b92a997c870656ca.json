@@ -1,0 +1,581 @@
+{
+  "seriesId": "tc-pista-pick-up",
+  "eventId": "b92a997c870656ca",
+  "updatedAt": "2026-11-16T18:42:54Z",
+  "sessions": [
+    {
+      "sessionId": "12f8b21f0561171e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 8,
+          "bestLap": "1:44.394"
+        },
+        {
+          "pos": 2,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+0.776",
+          "bestLap": "1:45.170"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "gap": "+0.816",
+          "bestLap": "1:45.210"
+        },
+        {
+          "pos": 4,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+1.210",
+          "bestLap": "1:45.604"
+        },
+        {
+          "pos": 5,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+2.592",
+          "bestLap": "1:46.986"
+        },
+        {
+          "pos": 6,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "laps": 5,
+          "gap": "+2.916",
+          "bestLap": "1:47.310"
+        },
+        {
+          "pos": 7,
+          "number": "76",
+          "driver": "Juan Jose Suarez",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+3.595",
+          "bestLap": "1:47.989"
+        },
+        {
+          "pos": 8,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+3.725",
+          "bestLap": "1:48.119"
+        },
+        {
+          "pos": 9,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+4.247",
+          "bestLap": "1:48.641"
+        },
+        {
+          "pos": 10,
+          "number": "129",
+          "driver": "BRUNO BOCCANERA",
+          "vehicle": "FORD",
+          "laps": 3,
+          "gap": "+5.326",
+          "bestLap": "1:49.720"
+        },
+        {
+          "pos": 11,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 6,
+          "gap": "+5.670",
+          "bestLap": "1:50.064"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+9.153",
+          "bestLap": "1:53.547"
+        },
+        {
+          "pos": 13,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 4,
+          "gap": "+2:27.036",
+          "bestLap": "4:11.430"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260926_095526_1ER_ENTRENAMIENTO_TC_PISTA_PICK_UP.pdf",
+        "title": "1ER ENTRENAMIENTO TC PISTA PICK UP — Fecha 8 — BALCARCE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "aa0ab835f3f8d93d",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 9,
+          "bestLap": "1:42.841"
+        },
+        {
+          "pos": 2,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+0.504",
+          "bestLap": "1:43.345"
+        },
+        {
+          "pos": 3,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+0.842",
+          "bestLap": "1:43.683"
+        },
+        {
+          "pos": 4,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "laps": 8,
+          "gap": "+0.988",
+          "bestLap": "1:43.829"
+        },
+        {
+          "pos": 5,
+          "number": "129",
+          "driver": "BRUNO BOCCANERA",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+1.288",
+          "bestLap": "1:44.129"
+        },
+        {
+          "pos": 6,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "gap": "+1.854",
+          "bestLap": "1:44.695"
+        },
+        {
+          "pos": 7,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 10,
+          "gap": "+2.113",
+          "bestLap": "1:44.954"
+        },
+        {
+          "pos": 8,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 3,
+          "gap": "+2.261",
+          "bestLap": "1:45.102"
+        },
+        {
+          "pos": 9,
+          "number": "76",
+          "driver": "Juan Jose Suarez",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+2.508",
+          "bestLap": "1:45.349"
+        },
+        {
+          "pos": 10,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 8,
+          "gap": "+3.388",
+          "bestLap": "1:46.229"
+        },
+        {
+          "pos": 11,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+3.767",
+          "bestLap": "1:46.608"
+        },
+        {
+          "pos": 12,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "gap": "+5.289",
+          "bestLap": "1:48.130"
+        },
+        {
+          "pos": 13,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+5.453",
+          "bestLap": "1:48.294"
+        },
+        {
+          "pos": 14,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+7.834",
+          "bestLap": "1:50.675"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260926_123551_2DO_ENTRENAMIENTO_TC_PSITA_PUCK_UP.pdf",
+        "title": "2DO ENTRENAMIENTO TC PSITA PUCK UP — Fecha 8 — BALCARCE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "67d286d0b0f7ca98",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "bestLap": "1:42.612"
+        },
+        {
+          "pos": 2,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "gap": "+0.581",
+          "bestLap": "1:43.193"
+        },
+        {
+          "pos": 3,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "gap": "+0.668",
+          "bestLap": "1:43.280"
+        },
+        {
+          "pos": 4,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "gap": "+0.703",
+          "bestLap": "1:43.315"
+        },
+        {
+          "pos": 5,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "gap": "+0.738",
+          "bestLap": "1:43.350"
+        },
+        {
+          "pos": 6,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "gap": "+1.614",
+          "bestLap": "1:44.226"
+        },
+        {
+          "pos": 7,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "gap": "+1.763",
+          "bestLap": "1:44.375"
+        },
+        {
+          "pos": 8,
+          "number": "76",
+          "driver": "Juan Jose Suarez",
+          "vehicle": "FORD",
+          "gap": "+2.697",
+          "bestLap": "1:45.309"
+        },
+        {
+          "pos": 9,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "gap": "+3.293",
+          "bestLap": "1:45.905"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "gap": "+5.140",
+          "bestLap": "1:47.752"
+        },
+        {
+          "pos": 11,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "gap": "+6.674",
+          "bestLap": "1:49.286"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260926_165715_CLASIFICACION_TC_PISTA_PICK_UP.pdf",
+        "title": "CLASIFICACION TC PISTA PICK UP — Fecha 8 — BALCARCE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "a6c5efb413ef1cf4",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "10:40.354"
+        },
+        {
+          "pos": 2,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+1.555"
+        },
+        {
+          "pos": 3,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+2.068"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+4.323"
+        },
+        {
+          "pos": 5,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 6,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 2,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 7,
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA",
+          "laps": 1,
+          "gap": "+4 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260927_120516_1ERA_SERIE_TC_PISTA_PICK_UP.pdf",
+        "title": "1ERA SERIE TC PISTA PICK UP — Fecha 8 — BALCARCE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "378948ac47296e9b",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "8:45.462"
+        },
+        {
+          "pos": 2,
+          "number": "76",
+          "driver": "Juan Jose Suarez",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+8.471"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+9.455"
+        },
+        {
+          "pos": 4,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+22.084"
+        },
+        {
+          "pos": 5,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "gap": "+5 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260927_120546_2DA_SERIE_TC_PISTA_PICK_UP.pdf",
+        "title": "2DA SERIE TC PISTA PICK UP — Fecha 8 — BALCARCE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "953614f124d2e239",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 19,
+          "time": "35:01.255"
+        },
+        {
+          "pos": 2,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 19,
+          "gap": "+0.205"
+        },
+        {
+          "pos": 3,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 19,
+          "gap": "+6.367"
+        },
+        {
+          "pos": 4,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 19,
+          "gap": "+49.363"
+        },
+        {
+          "pos": 5,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+1 vuelta"
+        },
+        {
+          "pos": 6,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 16,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 7,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 15,
+          "gap": "+4 vueltas"
+        },
+        {
+          "pos": 8,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+8 vueltas"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 1,
+          "gap": "+18 vueltas"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260927_155837_FINAL_TC_PISTA_PICK_UP.pdf",
+        "title": "FINAL TC PISTA PICK UP — Fecha 8 — BALCARCE",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    }
+  ]
+}

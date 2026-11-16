@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:CAMPEONATO REGIONAL DE RALLY
+BEGIN:VEVENT
+UID:ff2311473a393af1@agendadeportemotor.local
+DTSTAMP:20261116T184254Z
+DTSTART;VALUE=DATE:20261120
+DTEND;VALUE=DATE:20261121
+SUMMARY:CAMPEONATO REGIONAL DE RALLY (Ciudad de Ameghino) - Campeonato Regi
+ onal de Rally — Fecha 9 (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión: A confirmar\nFuente: https://www.cdaaca.org.ar
+ /eventos
+LOCATION:Ciudad de Ameghino\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

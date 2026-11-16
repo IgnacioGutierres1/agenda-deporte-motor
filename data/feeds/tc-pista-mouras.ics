@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TC Pista Mouras
+BEGIN:VEVENT
+UID:5dbf6a2f04cd85dd@agendadeportemotor.local
+DTSTAMP:20261116T184254Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261214
+SUMMARY:TC Pista Mouras (Roberto José Mouras) - Fecha 12 — La Plata (hor
+ arios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión: A confirmar\nFuente: https://actc.org.ar/tcpm/
+ calendario
+LOCATION:Roberto José Mouras\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

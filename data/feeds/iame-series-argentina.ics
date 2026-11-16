@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:IAME SERIES ARGENTINA
+BEGIN:VEVENT
+UID:0a1fe61ff7ddd94b@agendadeportemotor.local
+DTSTAMP:20261116T184254Z
+DTSTART;VALUE=DATE:20261219
+DTEND;VALUE=DATE:20261220
+SUMMARY:IAME SERIES ARGENTINA (Kartodromo de Ciudad Evita) - Iame Series Ar
+ gentina — Fecha 10 (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión: A confirmar\nFuente: https://www.cdaaca.org.ar
+ /eventos
+LOCATION:Kartodromo de Ciudad Evita\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR

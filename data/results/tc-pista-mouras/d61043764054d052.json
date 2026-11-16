@@ -1,0 +1,461 @@
+{
+  "seriesId": "tc-pista-mouras",
+  "eventId": "d61043764054d052",
+  "updatedAt": "2026-11-16T18:42:54Z",
+  "sessions": [
+    {
+      "sessionId": "19cf065c36f6937c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "bestLap": "1:35.203"
+        },
+        {
+          "pos": 2,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+0.213",
+          "bestLap": "1:35.416"
+        },
+        {
+          "pos": 3,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 7,
+          "gap": "+0.349",
+          "bestLap": "1:35.552"
+        },
+        {
+          "pos": 4,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+0.548",
+          "bestLap": "1:35.751"
+        },
+        {
+          "pos": 5,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 8,
+          "gap": "+0.684",
+          "bestLap": "1:35.887"
+        },
+        {
+          "pos": 6,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 7,
+          "gap": "+0.685",
+          "bestLap": "1:35.888"
+        },
+        {
+          "pos": 7,
+          "number": "115",
+          "driver": "LUCA DE CARLO",
+          "vehicle": "CHEVROLET",
+          "laps": 8,
+          "gap": "+1.053",
+          "bestLap": "1:36.256"
+        },
+        {
+          "pos": 8,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 8,
+          "gap": "+1.191",
+          "bestLap": "1:36.394"
+        },
+        {
+          "pos": 9,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 7,
+          "gap": "+1.458",
+          "bestLap": "1:36.661"
+        },
+        {
+          "pos": 10,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+2.167",
+          "bestLap": "1:37.370"
+        },
+        {
+          "pos": 11,
+          "number": "74",
+          "driver": "FACUNDO LUDUEÑA",
+          "vehicle": "CHEVROLET",
+          "laps": 8,
+          "gap": "+2.247",
+          "bestLap": "1:37.450"
+        },
+        {
+          "pos": 12,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+2.911",
+          "bestLap": "1:38.114"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260725_143423_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 7 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "48e7b5d25bbc7d31",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 4,
+          "bestLap": "1:34.177"
+        },
+        {
+          "pos": 2,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+0.077",
+          "bestLap": "1:34.254"
+        },
+        {
+          "pos": 3,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.439",
+          "bestLap": "1:34.616"
+        },
+        {
+          "pos": 4,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 4,
+          "gap": "+0.526",
+          "bestLap": "1:34.703"
+        },
+        {
+          "pos": 5,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.551",
+          "bestLap": "1:34.728"
+        },
+        {
+          "pos": 6,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+0.611",
+          "bestLap": "1:34.788"
+        },
+        {
+          "pos": 7,
+          "number": "115",
+          "driver": "LUCA DE CARLO",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+0.649",
+          "bestLap": "1:34.826"
+        },
+        {
+          "pos": 8,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+1.138",
+          "bestLap": "1:35.315"
+        },
+        {
+          "pos": 9,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 4,
+          "gap": "+1.247",
+          "bestLap": "1:35.424"
+        },
+        {
+          "pos": 10,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+2.074",
+          "bestLap": "1:36.251"
+        },
+        {
+          "pos": 11,
+          "number": "74",
+          "driver": "FACUNDO LUDUEÑA",
+          "vehicle": "CHEVROLET",
+          "laps": 4,
+          "gap": "+3.106",
+          "bestLap": "1:37.283"
+        },
+        {
+          "pos": 12,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 3,
+          "gap": "+3.343",
+          "bestLap": "1:37.520"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260725_175629_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 7 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "aa92cf63c60fad08",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "7:56.649"
+        },
+        {
+          "pos": 2,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+3.354"
+        },
+        {
+          "pos": 3,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+5.824"
+        },
+        {
+          "pos": 4,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+10.089"
+        },
+        {
+          "pos": 5,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+11.455"
+        },
+        {
+          "pos": 6,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+12.400"
+        },
+        {
+          "pos": 7,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 5,
+          "gap": "+12.401"
+        },
+        {
+          "pos": 8,
+          "number": "115",
+          "driver": "LUCA DE CARLO",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+13.047"
+        },
+        {
+          "pos": 9,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 5,
+          "gap": "+14.148"
+        },
+        {
+          "pos": 10,
+          "number": "74",
+          "driver": "FACUNDO LUDUEÑA",
+          "vehicle": "CHEVROLET",
+          "laps": 5,
+          "gap": "+21.288"
+        },
+        {
+          "pos": 11,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+39.078"
+        },
+        {
+          "pos": 12,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+1 vuelta"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260726_103017_SERIE_UNICA.pdf",
+        "title": "SERIE UNICA — Fecha 7 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "0b0aae75d7bd9d5e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "63",
+          "driver": "IGNACIO LOVICH",
+          "vehicle": "DODGE",
+          "laps": 12,
+          "time": "19:24.716"
+        },
+        {
+          "pos": 2,
+          "number": "47",
+          "driver": "BAUTISTA ROQUETA",
+          "vehicle": "DODGE",
+          "laps": 12,
+          "gap": "+3.368"
+        },
+        {
+          "pos": 3,
+          "number": "115",
+          "driver": "LUCA DE CARLO",
+          "vehicle": "CHEVROLET",
+          "laps": 12,
+          "gap": "+3.602"
+        },
+        {
+          "pos": 4,
+          "number": "122",
+          "driver": "HAINZE DANTE RUBIERA",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+3.603"
+        },
+        {
+          "pos": 5,
+          "number": "44",
+          "driver": "CONDE JUAN JOSE",
+          "vehicle": "CHEVROLET",
+          "laps": 12,
+          "gap": "+12.182"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "IGNACIO VILAS",
+          "vehicle": "DODGE",
+          "laps": 12,
+          "gap": "+17.749"
+        },
+        {
+          "pos": 7,
+          "number": "145",
+          "driver": "IÑAKI ARRIAS",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+21.780"
+        },
+        {
+          "pos": 8,
+          "number": "144",
+          "driver": "MARTÍN TAHA",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+42.253"
+        },
+        {
+          "pos": 9,
+          "number": "111",
+          "driver": "IGNACIO QUINTANA",
+          "vehicle": "TORINO",
+          "laps": 12,
+          "gap": "+47.238"
+        },
+        {
+          "pos": 10,
+          "number": "74",
+          "driver": "FACUNDO LUDUEÑA",
+          "vehicle": "CHEVROLET",
+          "laps": 12,
+          "gap": "+49.076"
+        },
+        {
+          "pos": 11,
+          "number": "100",
+          "driver": "LEONARDO FORTE",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+49.077"
+        },
+        {
+          "pos": 12,
+          "number": "199",
+          "driver": "DAMIAN PÉREZ",
+          "vehicle": "DODGE",
+          "laps": 6,
+          "gap": "+6 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260726_161049_FINAL.pdf",
+        "title": "FINAL — Fecha 7 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    }
+  ]
+}

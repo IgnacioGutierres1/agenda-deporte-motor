@@ -1,0 +1,578 @@
+{
+  "seriesId": "tc-pista-pick-up",
+  "eventId": "b92a8c7c870640b3",
+  "updatedAt": "2026-11-16T18:42:54Z",
+  "sessions": [
+    {
+      "sessionId": "4e3408a548afd071",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 11,
+          "bestLap": "1:56.291"
+        },
+        {
+          "pos": 2,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+1.365",
+          "bestLap": "1:57.656"
+        },
+        {
+          "pos": 3,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 7,
+          "gap": "+1.489",
+          "bestLap": "1:57.780"
+        },
+        {
+          "pos": 4,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 8,
+          "gap": "+1.615",
+          "bestLap": "1:57.906"
+        },
+        {
+          "pos": 5,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "laps": 9,
+          "gap": "+2.017",
+          "bestLap": "1:58.308"
+        },
+        {
+          "pos": 6,
+          "number": "181",
+          "driver": "SALSE SEBASTIAN",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+3.929",
+          "bestLap": "2:00.220"
+        },
+        {
+          "pos": 7,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "gap": "+4.269",
+          "bestLap": "2:00.560"
+        },
+        {
+          "pos": 8,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+4.994",
+          "bestLap": "2:01.285"
+        },
+        {
+          "pos": 9,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+5.984",
+          "bestLap": "2:02.275"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+6.369",
+          "bestLap": "2:02.660"
+        },
+        {
+          "pos": 11,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+7.385",
+          "bestLap": "2:03.676"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+10.313",
+          "bestLap": "2:06.604"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "66",
+          "driver": "Gonzalo Aramburu",
+          "vehicle": "TOYOTA"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260815_110141_1ER_ENTRENAMIENTO.pdf",
+        "title": "1ER ENTRENAMIENTO — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "401baccac6357c62",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 9,
+          "bestLap": "1:54.543"
+        },
+        {
+          "pos": 2,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+0.186",
+          "bestLap": "1:54.729"
+        },
+        {
+          "pos": 3,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 10,
+          "gap": "+1.766",
+          "bestLap": "1:56.309"
+        },
+        {
+          "pos": 4,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+2.193",
+          "bestLap": "1:56.736"
+        },
+        {
+          "pos": 5,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+2.345",
+          "bestLap": "1:56.888"
+        },
+        {
+          "pos": 6,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "laps": 10,
+          "gap": "+2.808",
+          "bestLap": "1:57.351"
+        },
+        {
+          "pos": 7,
+          "number": "181",
+          "driver": "SALSE SEBASTIAN",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+3.034",
+          "bestLap": "1:57.577"
+        },
+        {
+          "pos": 8,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+3.715",
+          "bestLap": "1:58.258"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+4.040",
+          "bestLap": "1:58.583"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+5.551",
+          "bestLap": "2:00.094"
+        },
+        {
+          "pos": 11,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+8.249",
+          "bestLap": "2:02.792"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 12,
+          "gap": "+8.349",
+          "bestLap": "2:02.892"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260815_130438_2DO_ENTRENAMIENTO.pdf",
+        "title": "2DO ENTRENAMIENTO — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "e1e8ae793af1a6cb",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "bestLap": "1:54.551"
+        },
+        {
+          "pos": 2,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "gap": "+0.119",
+          "bestLap": "1:54.670"
+        },
+        {
+          "pos": 3,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "gap": "+0.327",
+          "bestLap": "1:54.878"
+        },
+        {
+          "pos": 4,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "gap": "+0.505",
+          "bestLap": "1:55.056"
+        },
+        {
+          "pos": 5,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "gap": "+0.811",
+          "bestLap": "1:55.362"
+        },
+        {
+          "pos": 6,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "gap": "+1.388",
+          "bestLap": "1:55.939"
+        },
+        {
+          "pos": 7,
+          "number": "181",
+          "driver": "SALSE SEBASTIAN",
+          "vehicle": "FORD",
+          "gap": "+1.755",
+          "bestLap": "1:56.306"
+        },
+        {
+          "pos": 8,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "gap": "+2.347",
+          "bestLap": "1:56.898"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "gap": "+3.602",
+          "bestLap": "1:58.153"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "gap": "+6.174",
+          "bestLap": "2:00.725"
+        },
+        {
+          "pos": 11,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "gap": "+9.906",
+          "bestLap": "2:04.457"
+        },
+        {
+          "pos": 12,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "gap": "+11.413",
+          "bestLap": "2:05.964"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260815_165402_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "203dbb35c7fdf435",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "8:46.257"
+        },
+        {
+          "pos": 2,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+0.208"
+        },
+        {
+          "pos": 3,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+26.609"
+        },
+        {
+          "pos": 4,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+46.166"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "181",
+          "driver": "SALSE SEBASTIAN",
+          "vehicle": "FORD"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260816_110954_1ERA_SERIE.pdf",
+        "title": "1ERA SERIE — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "026cf6696a8ef2fa",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "time": "8:43.528"
+        },
+        {
+          "pos": 2,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+2.817"
+        },
+        {
+          "pos": 3,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+3.754"
+        },
+        {
+          "pos": 4,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+4.704"
+        },
+        {
+          "pos": 5,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+58.440"
+        },
+        {
+          "pos": 6,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+58.441"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260816_111030_2DA_SERIE.pdf",
+        "title": "2DA SERIE — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "34fd25e6cf14d660",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 18,
+          "time": "31:28.855"
+        },
+        {
+          "pos": 2,
+          "number": "144",
+          "driver": "Faustino Cifre",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+8.076"
+        },
+        {
+          "pos": 3,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+22.249"
+        },
+        {
+          "pos": 4,
+          "number": "181",
+          "driver": "SALSE SEBASTIAN",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+27.139"
+        },
+        {
+          "pos": 5,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+31.446"
+        },
+        {
+          "pos": 6,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 18,
+          "gap": "+31.447"
+        },
+        {
+          "pos": 7,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+33.066"
+        },
+        {
+          "pos": 8,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+38.110"
+        },
+        {
+          "pos": 9,
+          "number": "133",
+          "driver": "Juan Pablo Alberti",
+          "vehicle": "VW",
+          "laps": 18,
+          "gap": "+40.855"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+1:33.394"
+        },
+        {
+          "pos": 11,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 15,
+          "gap": "+3 vueltas"
+        },
+        {
+          "pos": 12,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 6,
+          "gap": "+12 vueltas"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20260816_140208_FINAL.pdf",
+        "title": "FINAL — Fecha 7 — ROSARIO",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    }
+  ]
+}

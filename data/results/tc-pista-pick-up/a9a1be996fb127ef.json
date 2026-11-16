@@ -1,0 +1,415 @@
+{
+  "seriesId": "tc-pista-pick-up",
+  "eventId": "a9a1be996fb127ef",
+  "updatedAt": "2026-11-16T18:42:54Z",
+  "sessions": [
+    {
+      "sessionId": "ed865ae87f43fa63",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 9,
+          "bestLap": "1:30.382"
+        },
+        {
+          "pos": 2,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+0.082",
+          "bestLap": "1:30.464"
+        },
+        {
+          "pos": 3,
+          "number": "129",
+          "driver": "BRUNO BOCCANERA",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+0.287",
+          "bestLap": "1:30.669"
+        },
+        {
+          "pos": 4,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 9,
+          "gap": "+0.389",
+          "bestLap": "1:30.771"
+        },
+        {
+          "pos": 5,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 8,
+          "gap": "+0.817",
+          "bestLap": "1:31.199"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "ALESSANDRO SALERNO",
+          "vehicle": "RAM",
+          "laps": 10,
+          "gap": "+1.147",
+          "bestLap": "1:31.529"
+        },
+        {
+          "pos": 7,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 10,
+          "gap": "+1.186",
+          "bestLap": "1:31.568"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 11,
+          "gap": "+1.793",
+          "bestLap": "1:32.175"
+        },
+        {
+          "pos": 9,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 11,
+          "gap": "+1.795",
+          "bestLap": "1:32.177"
+        },
+        {
+          "pos": 10,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 8,
+          "gap": "+3.238",
+          "bestLap": "1:33.620"
+        },
+        {
+          "pos": 11,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 4,
+          "gap": "+4.062",
+          "bestLap": "1:34.444"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261107_132749_2DO_ENTRENAMIENTOS.pdf",
+        "title": "2DO ENTRENAMIENTOS — Fecha 10 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "28f3303c0920a0aa",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "bestLap": "1:29.892"
+        },
+        {
+          "pos": 2,
+          "number": "129",
+          "driver": "BRUNO BOCCANERA",
+          "vehicle": "FORD",
+          "gap": "+0.360",
+          "bestLap": "1:30.252"
+        },
+        {
+          "pos": 3,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "gap": "+0.495",
+          "bestLap": "1:30.387"
+        },
+        {
+          "pos": 4,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "gap": "+0.894",
+          "bestLap": "1:30.786"
+        },
+        {
+          "pos": 5,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "gap": "+1.031",
+          "bestLap": "1:30.923"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "ALESSANDRO SALERNO",
+          "vehicle": "RAM",
+          "gap": "+1.286",
+          "bestLap": "1:31.178"
+        },
+        {
+          "pos": 7,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "gap": "+0.588",
+          "bestLap": "1:30.480"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "gap": "+1.393",
+          "bestLap": "1:31.285"
+        },
+        {
+          "pos": 9,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "gap": "+2.441",
+          "bestLap": "1:32.333"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "gap": "+2.631",
+          "bestLap": "1:32.523"
+        },
+        {
+          "pos": 11,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "gap": "+4.283",
+          "bestLap": "1:34.175"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261107_165730_CLASIFICACION.pdf",
+        "title": "CLASIFICACION — Fecha 10 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "edcecb99b16f6457",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 5,
+          "time": "7:37.313"
+        },
+        {
+          "pos": 2,
+          "number": "129",
+          "driver": "BRUNO BOCCANERA",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+3.024"
+        },
+        {
+          "pos": 3,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 5,
+          "gap": "+3.414"
+        },
+        {
+          "pos": 4,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+3.898"
+        },
+        {
+          "pos": 5,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+7.463"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "ALESSANDRO SALERNO",
+          "vehicle": "RAM",
+          "laps": 5,
+          "gap": "+8.753"
+        },
+        {
+          "pos": 7,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+11.879"
+        },
+        {
+          "pos": 8,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+12.341"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 5,
+          "gap": "+14.511"
+        },
+        {
+          "pos": 10,
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+16.577"
+        },
+        {
+          "pos": 11,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 5,
+          "gap": "+43.964"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261108_104532_SERIE_UNICA.pdf",
+        "title": "SERIE UNICA — Fecha 10 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    },
+    {
+      "sessionId": "8453cb56b0d3dd43",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "132",
+          "driver": "Tomás Pellandino",
+          "vehicle": "FORD",
+          "laps": 18,
+          "time": "27:51.471"
+        },
+        {
+          "pos": 2,
+          "number": "67",
+          "driver": "Santiago Biagi",
+          "vehicle": "TOYOTA",
+          "laps": 18,
+          "gap": "+2.435"
+        },
+        {
+          "pos": 3,
+          "number": "127",
+          "driver": "Nahuel Cordone",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+7.748"
+        },
+        {
+          "pos": 4,
+          "number": "123",
+          "driver": "Nicanor Santilli Pazos",
+          "vehicle": "FOTON",
+          "laps": 18,
+          "gap": "+11.080"
+        },
+        {
+          "pos": 5,
+          "number": "107",
+          "driver": "Antonino Sganga",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+28.775"
+        },
+        {
+          "pos": 6,
+          "number": "99",
+          "driver": "ALESSANDRO SALERNO",
+          "vehicle": "RAM",
+          "laps": 18,
+          "gap": "+29.307"
+        },
+        {
+          "pos": 7,
+          "number": "129",
+          "driver": "BRUNO BOCCANERA",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+29.550"
+        },
+        {
+          "pos": 8,
+          "number": "14",
+          "driver": "Néstor Omar Goya",
+          "vehicle": "FORD",
+          "laps": 18,
+          "gap": "+37.145"
+        },
+        {
+          "pos": 9,
+          "number": "10",
+          "driver": "Luis Catelli",
+          "vehicle": "TOYOTA",
+          "laps": 4,
+          "gap": "+14 vueltas"
+        },
+        {
+          "pos": 10,
+          "number": "88",
+          "driver": "Alvaro Oroza",
+          "vehicle": "FORD",
+          "laps": 3,
+          "gap": "+15 vueltas"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "15",
+          "driver": "José Alberto Goya",
+          "vehicle": "FORD"
+        }
+      ],
+      "source": {
+        "url": "https://tiempos.actc.org.ar/descargar/20261108_134919_FINAL.pdf",
+        "title": "FINAL — Fecha 10 — LA PLATA",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-16T18:42:54Z"
+      }
+    }
+  ]
+}

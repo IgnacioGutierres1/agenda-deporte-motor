@@ -1,0 +1,21 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Agenda Deporte Motor//ES
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:TOP RACE
+BEGIN:VEVENT
+UID:014b582c01b9033f@agendadeportemotor.local
+DTSTAMP:20261116T184254Z
+DTSTART;VALUE=DATE:20261211
+DTEND;VALUE=DATE:20261212
+SUMMARY:TOP RACE (A confirmar) - TOP Race — Fecha 10 (horarios a confirma
+ r)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión: A confirmar\nFuente: https://www.cdaaca.org.ar
+ /eventos
+LOCATION:A confirmar\, Argentina
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+END:VCALENDAR
