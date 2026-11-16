@@ -1,419 +1,513 @@
 {
   "seriesId": "super-taikyu",
   "season": 2026,
-  "updatedAt": "2026-11-16T00:50:06Z",
+  "updatedAt": "2026-11-16T10:45:50Z",
   "tables": [
     {
-      "title": "Equipos Clase ST-X",
+      "title": "ST-X",
       "rows": [
         {
           "pos": 1,
           "name": "TKRI",
+          "team": "TKRI",
           "number": "23",
-          "points": 144.5
+          "points": 150.5
         },
         {
           "pos": 2,
+          "name": "apr",
+          "team": "apr",
+          "number": "31",
+          "points": 117.5
+        },
+        {
+          "pos": 3,
           "name": "Craft-Bamboo Racing",
+          "team": "Craft-Bamboo Racing",
           "number": "33",
           "points": 113
         },
         {
-          "pos": 3,
-          "name": "apr",
-          "number": "31",
-          "points": 110
-        },
-        {
           "pos": 4,
           "name": "D'station Racing",
+          "team": "D'station Racing",
           "number": "777",
-          "points": 99
+          "points": 108
         },
         {
           "pos": 5,
           "name": "GTNET MotorSports",
+          "team": "GTNET MotorSports",
           "number": "81",
-          "points": 70
+          "points": 81.25
         },
         {
           "pos": 6,
           "name": "R ZERO Racing",
+          "team": "R ZERO Racing",
           "number": "182",
-          "points": 51.5
+          "points": 68.5
+        },
+        {
+          "pos": 7,
+          "name": "TEAM POP RACE",
+          "team": "TEAM POP RACE",
+          "number": "44",
+          "points": 4.5
+        },
+        {
+          "pos": 8,
+          "name": "bankcy x racing",
+          "team": "bankcy x racing",
+          "number": "666",
+          "points": 3
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-Z",
+      "title": "ST-Z",
       "rows": [
         {
           "pos": 1,
           "name": "TEAM ZEROONE",
+          "team": "TEAM ZEROONE",
           "number": "25",
-          "points": 135.5
+          "points": 144.5
         },
         {
           "pos": 2,
           "name": "埼玉Green Brave",
+          "team": "埼玉Green Brave",
           "number": "52",
-          "points": 115.5
+          "points": 126.75
         },
         {
           "pos": 3,
           "name": "TECHNO FIRST",
+          "team": "TECHNO FIRST",
           "number": "34",
-          "points": 96
+          "points": 100.5
         },
         {
           "pos": 4,
           "name": "KOKUSAI GROUP SPORTS TEAM",
+          "team": "KOKUSAI GROUP SPORTS TEAM",
           "number": "22",
-          "points": 69
+          "points": 86
         },
         {
           "pos": 5,
           "name": "チームインパル",
+          "team": "チームインパル",
           "number": "20",
-          "points": 66
+          "points": 73.5
         },
         {
           "pos": 6,
           "name": "SHADE RACING",
+          "team": "SHADE RACING",
           "number": "885",
-          "points": 65
+          "points": 71
         },
         {
           "pos": 7,
           "name": "WING HIN MOTORSPORTS JAPAN",
+          "team": "WING HIN MOTORSPORTS JAPAN",
           "number": "338",
-          "points": 54
+          "points": 56.25
         },
         {
           "pos": 8,
           "name": "青山学院大学自動車部S耐チーム",
+          "team": "青山学院大学自動車部S耐チーム",
           "number": "8",
-          "points": 33.5
+          "points": 36.5
         },
         {
           "pos": 9,
           "name": "チームノア",
+          "team": "チームノア",
           "number": "5",
-          "points": 17.5
+          "points": 19
         },
         {
           "pos": 10,
           "name": "Team YUK HIRATA-G",
+          "team": "Team YUK HIRATA-G",
           "number": "77",
           "points": 14
         },
         {
           "pos": 11,
           "name": "TRACY SPORTS",
+          "team": "TRACY SPORTS",
           "number": "38",
           "points": 11
         },
         {
           "pos": 12,
           "name": "OKABEJIDOSHA motorsport",
+          "team": "OKABEJIDOSHA motorsport",
           "number": "15",
-          "points": 8
+          "points": 8.75
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-TCR",
+      "title": "ST-TCR",
       "rows": [
         {
           "pos": 1,
           "name": "バースレーシングプロジェクト【BRP】",
+          "team": "バースレーシングプロジェクト【BRP】",
           "number": "19",
-          "points": 95
+          "points": 104
         },
         {
           "pos": 2,
           "name": "M&K Racing",
+          "team": "M&K Racing",
           "number": "97",
-          "points": 80.5
+          "points": 97.5
         },
         {
           "pos": 3,
           "name": "HITONOWA THE TEAM STANDARD",
+          "team": "HITONOWA THE TEAM STANDARD",
           "number": "100",
-          "points": 60
+          "points": 66
         },
         {
           "pos": 4,
           "name": "Audi Team SHOW APEX",
+          "team": "Audi Team SHOW APEX",
           "number": "430",
-          "points": 39.5
+          "points": 47
+        },
+        {
+          "pos": 5,
+          "name": "WAIMARAMA Racing",
+          "team": "WAIMARAMA Racing",
+          "number": "98",
+          "points": 11.25
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-1",
+      "title": "ST-USA",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "バースレーシングプロジェクト【BRP】",
+          "team": "バースレーシングプロジェクト【BRP】",
+          "number": "250",
+          "points": 172
+        }
+      ]
+    },
+    {
+      "title": "ST-1",
       "rows": [
         {
           "pos": 1,
           "name": "D'station Racing",
+          "team": "D'station Racing",
           "number": "47",
-          "points": 137.5
+          "points": 160
         },
         {
           "pos": 2,
           "name": "Ksフロンティア KTMカーズ",
+          "team": "Ksフロンティア KTMカーズ",
           "number": "2",
-          "points": 117.5
+          "points": 149.5
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-2",
+      "title": "ST-2",
       "rows": [
         {
           "pos": 1,
           "name": "ENDLESS SPORTS",
+          "team": "ENDLESS SPORTS",
           "number": "13",
-          "points": 112.5
+          "points": 117
         },
         {
           "pos": 2,
           "name": "TEAM SPOON",
+          "team": "TEAM SPOON",
           "number": "95",
-          "points": 90
+          "points": 96
         },
         {
           "pos": 3,
-          "name": "KTMS",
-          "number": "225",
-          "points": 80
+          "name": "日本自動車大学校",
+          "team": "日本自動車大学校",
+          "number": "72",
+          "points": 96
         },
         {
           "pos": 4,
-          "name": "日本自動車大学校",
-          "number": "72",
-          "points": 79
+          "name": "KTMS",
+          "team": "KTMS",
+          "number": "225",
+          "points": 82.25
         },
         {
           "pos": 5,
           "name": "Honda R&D Challenge",
+          "team": "Honda R&D Challenge",
           "number": "743",
-          "points": 42
+          "points": 53.25
         },
         {
           "pos": 6,
-          "name": "HCM UCHINO RACING",
-          "number": "36",
-          "points": 36
+          "name": "シンリョウレーシングチーム",
+          "team": "シンリョウレーシングチーム",
+          "number": "6",
+          "points": 37.5
         },
         {
           "pos": 7,
-          "name": "シンリョウレーシングチーム",
-          "number": "6",
-          "points": 30
+          "name": "HCM UCHINO RACING",
+          "team": "HCM UCHINO RACING",
+          "number": "36",
+          "points": 37.5
         },
         {
           "pos": 8,
           "name": "シンリョウレーシングチーム",
+          "team": "シンリョウレーシングチーム",
           "number": "7",
-          "points": 26
+          "points": 35
         },
         {
           "pos": 9,
           "name": "TEAM YAMATO",
+          "team": "TEAM YAMATO",
           "number": "67",
-          "points": 12
+          "points": 15
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-3",
+      "title": "ST-3",
       "rows": [
         {
           "pos": 1,
           "name": "TRACY SPORTS with RCIT",
+          "team": "TRACY SPORTS with RCIT",
           "number": "39",
-          "points": 155
+          "points": 172
         },
         {
           "pos": 2,
           "name": "Hitotsuyama Racing",
+          "team": "Hitotsuyama Racing",
           "number": "21",
-          "points": 110
+          "points": 121.25
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-4",
+      "title": "ST-4",
       "rows": [
         {
           "pos": 1,
           "name": "TRACY SPORTS",
+          "team": "TRACY SPORTS",
           "number": "41",
-          "points": 105
+          "points": 116.25
         },
         {
           "pos": 2,
           "name": "ENDLESS SPORTS",
+          "team": "ENDLESS SPORTS",
           "number": "3",
-          "points": 101.5
+          "points": 103.75
         },
         {
           "pos": 3,
           "name": "SHADE RACING",
+          "team": "SHADE RACING",
           "number": "884",
-          "points": 84
+          "points": 101
         },
         {
           "pos": 4,
           "name": "OVER DRIVE",
+          "team": "OVER DRIVE",
           "number": "66",
-          "points": 74
+          "points": 80
         },
         {
           "pos": 5,
           "name": "TEAM NOPRO",
+          "team": "TEAM NOPRO",
           "number": "37",
-          "points": 61
+          "points": 65.5
         },
         {
           "pos": 6,
           "name": "HMR Racing",
+          "team": "HMR Racing",
           "number": "216",
-          "points": 56
+          "points": 59
         },
         {
           "pos": 7,
           "name": "木附製作所モータースポーツ事業部",
+          "team": "木附製作所モータースポーツ事業部",
           "number": "86",
-          "points": 33
+          "points": 42
         },
         {
           "pos": 8,
-          "name": "チーム ジーモーション",
-          "number": "60",
-          "points": 16
+          "name": "AutoLabo",
+          "team": "AutoLabo",
+          "number": "290",
+          "points": 18.5
         },
         {
           "pos": 9,
-          "name": "AutoLabo",
-          "number": "290",
-          "points": 11
+          "name": "チーム ジーモーション",
+          "team": "チーム ジーモーション",
+          "number": "60",
+          "points": 17.5
         },
         {
           "pos": 10,
           "name": "浅野レーシングサービス",
+          "team": "浅野レーシングサービス",
           "number": "18",
-          "points": 10.5
+          "points": 11.25
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-5F",
+      "title": "ST-5F",
       "rows": [
         {
           "pos": 1,
           "name": "チームBRIDE",
+          "team": "チームBRIDE",
           "number": "4",
-          "points": 114
+          "points": 123
         },
         {
           "pos": 2,
           "name": "SAKAE MOTORSPORTS",
+          "team": "SAKAE MOTORSPORTS",
           "number": "11",
-          "points": 91.5
+          "points": 102.75
         },
         {
           "pos": 3,
           "name": "AndLegal Racing",
+          "team": "AndLegal Racing",
           "number": "821",
-          "points": 85
+          "points": 92.5
         },
         {
           "pos": 4,
-          "name": "TEAM NOPRO",
-          "number": "17",
-          "points": 57
+          "name": "AndLegal Racing",
+          "team": "AndLegal Racing",
+          "number": "822",
+          "points": 70
         },
         {
           "pos": 5,
-          "name": "AndLegal Racing",
-          "number": "822",
-          "points": 53
+          "name": "TEAM NOPRO",
+          "team": "TEAM NOPRO",
+          "number": "17",
+          "points": 63
         },
         {
           "pos": 6,
           "name": "AutoLabo",
+          "team": "AutoLabo",
           "number": "291",
-          "points": 36
+          "points": 40.5
         },
         {
           "pos": 7,
           "name": "TEAM YAMATO",
+          "team": "TEAM YAMATO",
           "number": "67",
           "points": 2
         }
       ]
     },
     {
-      "title": "Equipos Clase ST-5R",
+      "title": "ST-5R",
       "rows": [
         {
           "pos": 1,
           "name": "村上モータース",
+          "team": "村上モータース",
           "number": "88",
-          "points": 125.5
+          "points": 142.5
         },
         {
           "pos": 2,
           "name": "メイプル広島レーシングチーム",
+          "team": "メイプル広島レーシングチーム",
           "number": "27",
-          "points": 93
+          "points": 100.5
         },
         {
           "pos": 3,
           "name": "KOSHIDO RACING",
+          "team": "KOSHIDO RACING",
           "number": "610",
-          "points": 71
+          "points": 82.25
         },
         {
           "pos": 4,
           "name": "倶楽部 MAZDA SPIRIT RACING",
+          "team": "倶楽部 MAZDA SPIRIT RACING",
           "number": "120",
-          "points": 69
+          "points": 75
         },
         {
           "pos": 5,
           "name": "OVER DRIVE",
+          "team": "OVER DRIVE",
           "number": "65",
-          "points": 63
+          "points": 72
         },
         {
           "pos": 6,
           "name": "村上モータース",
+          "team": "村上モータース",
           "number": "89",
-          "points": 45
+          "points": 49.5
         },
         {
           "pos": 7,
           "name": "FETSレーシング",
+          "team": "FETSレーシング",
           "number": "888",
-          "points": 29.5
+          "points": 32.5
         },
         {
           "pos": 8,
           "name": "LOVEDRIVE RACING",
+          "team": "LOVEDRIVE RACING",
           "number": "50",
-          "points": 19
+          "points": 21.25
         }
       ]
     }
   ],
   "source": {
     "url": "https://supertaikyu.com/race/standing.html",
-    "title": "Super Taikyu 2026 — Standing",
+    "title": "年間ランキングボード",
     "kind": "html",
-    "method": "directo",
-    "fetchedAt": "2026-11-16T00:50:06Z"
+    "method": "ia",
+    "fetchedAt": "2026-11-16T10:45:50Z",
+    "model": "gemini/gemini-3.6-flash"
   }
 }
