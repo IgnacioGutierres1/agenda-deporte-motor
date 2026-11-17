@@ -1,10 +1,10 @@
 {
   "seriesId": "indy-nxt",
   "season": 2026,
-  "updatedAt": "2026-11-10T06:21:47Z",
+  "updatedAt": "2026-11-17T18:18:36Z",
   "tables": [
     {
-      "title": "INDY NXT by Firestone Championship",
+      "title": "2026 Standings",
       "rows": [
         {
           "pos": 1,
@@ -182,6 +182,7 @@
     "title": "2026 INDY NXT by Firestone Standings",
     "kind": "html",
     "method": "ia",
-    "fetchedAt": "2026-11-10T06:21:47Z"
+    "fetchedAt": "2026-11-17T18:18:36Z",
+    "model": "gemini/gemini-3.5-flash-lite"
   }
 }
