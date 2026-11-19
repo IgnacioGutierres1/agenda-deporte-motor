@@ -1,7 +1,7 @@
 {
   "seriesId": "elms",
   "season": 2026,
-  "updatedAt": "2026-11-12T06:55:37Z",
+  "updatedAt": "2026-11-19T18:01:50Z",
   "tables": [
     {
       "title": "Pilotos LMP2",
@@ -138,6 +138,144 @@
           "team": "NIELSEN RACING",
           "number": "24",
           "points": 2
+        }
+      ]
+    },
+    {
+      "title": "Pilotos LMP2 Pro/Am",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "ENZO TRULLI / MALTHE JAKOBSEN / MICHAEL JENSEN",
+          "team": "ALGARVE PRO RACING",
+          "number": "20",
+          "points": 86
+        },
+        {
+          "pos": 2,
+          "name": "SAMI MEGUETOUNIF / SCOTT HUFFAKER II / STEVEN THOMAS",
+          "team": "TDS RACING",
+          "number": "14",
+          "points": 77
+        },
+        {
+          "pos": 3,
+          "name": "ANTONIO FUOCO / MATTHIEU VAXIVIERE",
+          "team": "AF CORSE",
+          "number": "83",
+          "points": 67
+        },
+        {
+          "pos": 4,
+          "name": "DORIANE PIN / GIORGIO RODA / RICHARD VERSCHOOR",
+          "team": "DUQUEINE TEAM",
+          "number": "30",
+          "points": 67
+        },
+        {
+          "pos": 5,
+          "name": "CEM BÖLÜKBASI / JENS RENO MØLLER / LORENZO FLUXA",
+          "team": "VECTOR SPORT",
+          "number": "7",
+          "points": 65
+        },
+        {
+          "pos": 6,
+          "name": "JOHN FALB / MANUEL ESPIRITO SANTO / RIK KOEN",
+          "team": "ROSSA RACING BY VIRAGE",
+          "number": "19",
+          "points": 59
+        },
+        {
+          "pos": 7,
+          "name": "DANIEL SCHNEIDER / MARINO SATO / OLIVER JARVIS",
+          "team": "UNITED AUTOSPORTS",
+          "number": "21",
+          "points": 46
+        },
+        {
+          "pos": 8,
+          "name": "DANE CAMERON / PJ HYETT",
+          "team": "AO BY TF",
+          "number": "99",
+          "points": 45
+        },
+        {
+          "pos": 9,
+          "name": "CHARLES MILESI / FERDINAND HABSBURG / GEORGIOS KOLOVOS",
+          "team": "CLX MOTORSPORT",
+          "number": "47",
+          "points": 38
+        },
+        {
+          "pos": 10,
+          "name": "ALEX QUINN / JAMES ALLEN / KRITON LENTOUDIS",
+          "team": "NIELSEN RACING",
+          "number": "27",
+          "points": 34
+        },
+        {
+          "pos": 11,
+          "name": "LOUIS DELÉTRAZ",
+          "team": "AO BY TF",
+          "number": "99",
+          "points": 26
+        },
+        {
+          "pos": 12,
+          "name": "JEAN GLORIEUX / MARLON HERNANDEZ",
+          "team": "DKR ENGINEERING",
+          "number": "3",
+          "points": 22
+        },
+        {
+          "pos": 13,
+          "name": "JONNY EDGAR",
+          "team": "AO BY TF",
+          "number": "99",
+          "points": 19
+        },
+        {
+          "pos": 14,
+          "name": "TRISTAN VAUTIER",
+          "team": "DKR ENGINEERING",
+          "number": "3",
+          "points": 11
+        },
+        {
+          "pos": 15,
+          "name": "MACEO CAPIETTO",
+          "team": "DKR ENGINEERING",
+          "number": "3",
+          "points": 6
+        },
+        {
+          "pos": 16,
+          "name": "HORST FELBERMAYR / HORST FELIX FELBERMAYR / RENE BINDER",
+          "team": "PROTON COMPETITION",
+          "number": "88",
+          "points": 6
+        },
+        {
+          "pos": 17,
+          "name": "SEBASTIAN ALVAREZ",
+          "team": "DKR ENGINEERING",
+          "number": "3",
+          "points": 5
+        },
+        {
+          "pos": 18,
+          "name": "JULIEN ANDLAUER",
+          "team": "DKR ENGINEERING",
+          "number": "3",
+          "points": 0
+        },
+        {
+          "pos": 19,
+          "name": "FELIPE FRAGA",
+          "team": "CLX MOTORSPORT",
+          "number": "47",
+          "points": 0
         }
       ]
     },
@@ -297,144 +435,6 @@
           "team": "RACING SPIRIT OF LEMAN",
           "number": "31",
           "points": 8
-        }
-      ]
-    },
-    {
-      "title": "Pilotos LMP2 Pro/Am",
-      "rows": [
-        {
-          "pos": 1,
-          "name": "ENZO TRULLI / MALTHE JAKOBSEN / MICHAEL JENSEN",
-          "team": "ALGARVE PRO RACING",
-          "number": "20",
-          "points": 86
-        },
-        {
-          "pos": 2,
-          "name": "SAMI MEGUETOUNIF / SCOTT HUFFAKER II / STEVEN THOMAS",
-          "team": "TDS RACING",
-          "number": "14",
-          "points": 77
-        },
-        {
-          "pos": 3,
-          "name": "ANTONIO FUOCO / MATTHIEU VAXIVIERE",
-          "team": "AF CORSE",
-          "number": "83",
-          "points": 67
-        },
-        {
-          "pos": 4,
-          "name": "DORIANE PIN / GIORGIO RODA / RICHARD VERSCHOOR",
-          "team": "DUQUEINE TEAM",
-          "number": "30",
-          "points": 67
-        },
-        {
-          "pos": 5,
-          "name": "CEM BÖLÜKBASI / JENS RENO MØLLER / LORENZO FLUXA",
-          "team": "VECTOR SPORT",
-          "number": "7",
-          "points": 65
-        },
-        {
-          "pos": 6,
-          "name": "JOHN FALB / MANUEL ESPIRITO SANTO / RIK KOEN",
-          "team": "ROSSA RACING BY VIRAGE",
-          "number": "19",
-          "points": 59
-        },
-        {
-          "pos": 7,
-          "name": "DANIEL SCHNEIDER / MARINO SATO / OLIVER JARVIS",
-          "team": "UNITED AUTOSPORTS",
-          "number": "21",
-          "points": 46
-        },
-        {
-          "pos": 8,
-          "name": "DANE CAMERON / PJ HYETT",
-          "team": "AO BY TF",
-          "number": "99",
-          "points": 45
-        },
-        {
-          "pos": 9,
-          "name": "CHARLES MILESI / FERDINAND HABSBURG / GEORGIOS KOLOVOS",
-          "team": "CLX MOTORSPORT",
-          "number": "47",
-          "points": 38
-        },
-        {
-          "pos": 10,
-          "name": "ALEX QUINN / JAMES ALLEN / KRITON LENTOUDIS",
-          "team": "NIELSEN RACING",
-          "number": "27",
-          "points": 34
-        },
-        {
-          "pos": 11,
-          "name": "LOUIS DELÉTRAZ",
-          "team": "AO BY TF",
-          "number": "99",
-          "points": 26
-        },
-        {
-          "pos": 12,
-          "name": "JEAN GLORIEUX / MARLON HERNANDEZ",
-          "team": "DKR ENGINEERING",
-          "number": "3",
-          "points": 22
-        },
-        {
-          "pos": 13,
-          "name": "JONNY EDGAR",
-          "team": "AO BY TF",
-          "number": "99",
-          "points": 19
-        },
-        {
-          "pos": 14,
-          "name": "TRISTAN VAUTIER",
-          "team": "DKR ENGINEERING",
-          "number": "3",
-          "points": 11
-        },
-        {
-          "pos": 15,
-          "name": "MACEO CAPIETTO",
-          "team": "DKR ENGINEERING",
-          "number": "3",
-          "points": 6
-        },
-        {
-          "pos": 16,
-          "name": "HORST FELBERMAYR / HORST FELIX FELBERMAYR / RENE BINDER",
-          "team": "PROTON COMPETITION",
-          "number": "88",
-          "points": 6
-        },
-        {
-          "pos": 17,
-          "name": "SEBASTIAN ALVAREZ",
-          "team": "DKR ENGINEERING",
-          "number": "3",
-          "points": 5
-        },
-        {
-          "pos": 18,
-          "name": "JULIEN ANDLAUER",
-          "team": "DKR ENGINEERING",
-          "number": "3",
-          "points": 0
-        },
-        {
-          "pos": 19,
-          "name": "FELIPE FRAGA",
-          "team": "CLX MOTORSPORT",
-          "number": "47",
-          "points": 0
         }
       ]
     },
@@ -659,6 +659,13 @@
           "points": 1
         },
         {
+          "pos": 33,
+          "name": "FRANÇOIS HÉRIAU",
+          "team": "RACING SPIRIT OF LEMAN",
+          "number": "59",
+          "points": 1
+        },
+        {
           "pos": 34,
           "name": "ANTHONY MCINTOSH / PARKER THOMPSON",
           "team": "RACING SPIRIT OF LEMAN",
@@ -746,71 +753,6 @@
       ]
     },
     {
-      "title": "Equipos LMP3",
-      "rows": [
-        {
-          "pos": 1,
-          "name": "CLX MOTORSPORT",
-          "number": "17",
-          "points": 110
-        },
-        {
-          "pos": 2,
-          "name": "RINALDI RACING",
-          "number": "5",
-          "points": 77
-        },
-        {
-          "pos": 3,
-          "name": "R-ACE GP",
-          "number": "85",
-          "points": 76
-        },
-        {
-          "pos": 4,
-          "name": "EUROINTERNATIONAL",
-          "number": "11",
-          "points": 63
-        },
-        {
-          "pos": 5,
-          "name": "INTER EUROPOL COMPETITION",
-          "number": "13",
-          "points": 58
-        },
-        {
-          "pos": 6,
-          "name": "DKR ENGINEERING",
-          "number": "4",
-          "points": 57
-        },
-        {
-          "pos": 7,
-          "name": "TEAM VIRAGE",
-          "number": "8",
-          "points": 46
-        },
-        {
-          "pos": 8,
-          "name": "ULTIMATE",
-          "number": "35",
-          "points": 42
-        },
-        {
-          "pos": 9,
-          "name": "RACING SPIRIT OF LEMAN",
-          "number": "31",
-          "points": 40
-        },
-        {
-          "pos": 10,
-          "name": "M RACING",
-          "number": "68",
-          "points": 38
-        }
-      ]
-    },
-    {
       "title": "Equipos LMP2 Pro/Am",
       "rows": [
         {
@@ -884,6 +826,71 @@
           "name": "PROTON COMPETITION",
           "number": "88",
           "points": 6
+        }
+      ]
+    },
+    {
+      "title": "Equipos LMP3",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "CLX MOTORSPORT",
+          "number": "17",
+          "points": 110
+        },
+        {
+          "pos": 2,
+          "name": "RINALDI RACING",
+          "number": "5",
+          "points": 77
+        },
+        {
+          "pos": 3,
+          "name": "R-ACE GP",
+          "number": "85",
+          "points": 76
+        },
+        {
+          "pos": 4,
+          "name": "EUROINTERNATIONAL",
+          "number": "11",
+          "points": 63
+        },
+        {
+          "pos": 5,
+          "name": "INTER EUROPOL COMPETITION",
+          "number": "13",
+          "points": 58
+        },
+        {
+          "pos": 6,
+          "name": "DKR ENGINEERING",
+          "number": "4",
+          "points": 57
+        },
+        {
+          "pos": 7,
+          "name": "TEAM VIRAGE",
+          "number": "8",
+          "points": 46
+        },
+        {
+          "pos": 8,
+          "name": "ULTIMATE",
+          "number": "35",
+          "points": 42
+        },
+        {
+          "pos": 9,
+          "name": "RACING SPIRIT OF LEMAN",
+          "number": "31",
+          "points": 40
+        },
+        {
+          "pos": 10,
+          "name": "M RACING",
+          "number": "68",
+          "points": 38
         }
       ]
     },
@@ -982,6 +989,6 @@
     "title": "ELMS Championship classification 2026",
     "kind": "html",
     "method": "directo",
-    "fetchedAt": "2026-11-12T06:55:37Z"
+    "fetchedAt": "2026-11-19T18:01:50Z"
   }
 }
