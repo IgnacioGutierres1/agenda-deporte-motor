@@ -1,7 +1,7 @@
 {
   "seriesId": "macau-gp",
   "eventId": "8a61649e7c5ac9cd",
-  "updatedAt": "2026-11-20T11:00:46Z",
+  "updatedAt": "2026-11-20T17:38:43Z",
   "sessions": [
     {
       "sessionId": "e499c2a4c08404f9",
@@ -3222,6 +3222,502 @@
         "kind": "pdf",
         "method": "directo",
         "fetchedAt": "2026-11-20T11:00:46Z"
+      }
+    },
+    {
+      "sessionId": "f1133c9094cbbcbb",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "8",
+          "driver": "Laurin Heinrich",
+          "team": "AO BY ABSOLUTE",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 4,
+          "time": "2:31.278"
+        },
+        {
+          "pos": 2,
+          "number": "992",
+          "driver": "Thomas Preining",
+          "team": "Tempo by Absolute Racing",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 4,
+          "time": "2:31.900",
+          "gap": "+0.622"
+        },
+        {
+          "pos": 3,
+          "number": "32",
+          "driver": "Raffaele Marciello",
+          "team": "TEAM WRT",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 4,
+          "time": "2:31.900",
+          "gap": "+0.622"
+        },
+        {
+          "pos": 4,
+          "number": "66",
+          "driver": "Joel Eriksson",
+          "team": "Phantom Global Racing",
+          "vehicle": "R8 LMS (Evo 2)",
+          "laps": 4,
+          "time": "2:32.185",
+          "gap": "+0.907"
+        },
+        {
+          "pos": 5,
+          "number": "15",
+          "driver": "Earl Bamber",
+          "team": "Audi Sport Asia Team Absolute",
+          "vehicle": "R8 LMS (Evo 2)",
+          "laps": 4,
+          "time": "2:33.414",
+          "gap": "+2.136"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "Maro Engel",
+          "team": "Craft-Bamboo Racing",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 2,
+          "time": "2:33.573",
+          "gap": "+2.295"
+        },
+        {
+          "pos": 7,
+          "number": "31",
+          "driver": "Kelvin Van Der Linde",
+          "team": "TEAM WRT",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 4,
+          "time": "2:33.964",
+          "gap": "+2.686"
+        },
+        {
+          "pos": 8,
+          "number": "63",
+          "driver": "Luca Engstler",
+          "team": "Absolute Corse",
+          "vehicle": "Huracan GT3 EVO2",
+          "laps": 4,
+          "time": "2:34.099",
+          "gap": "+2.821"
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/ab3df07af9f5d5653c312f124673c09f.pdf",
+        "title": "FIA GT World Cup — Qualifying 2",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-20T17:38:43Z"
+      }
+    },
+    {
+      "sessionId": "f1093a9094c364d0",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "66",
+          "driver": "Joel Eriksson",
+          "team": "Phantom Global Racing",
+          "vehicle": "R8 LMS (Evo 2)",
+          "laps": 12,
+          "time": "2:31.570"
+        },
+        {
+          "pos": 2,
+          "number": "32",
+          "driver": "Raffaele Marciello",
+          "team": "TEAM WRT",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 12,
+          "time": "2:31.642",
+          "gap": "+0.072"
+        },
+        {
+          "pos": 3,
+          "number": "8",
+          "driver": "Laurin Heinrich",
+          "team": "AO BY ABSOLUTE",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 12,
+          "time": "2:32.140",
+          "gap": "+0.570"
+        },
+        {
+          "pos": 4,
+          "number": "992",
+          "driver": "Thomas Preining",
+          "team": "Tempo by Absolute Racing",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 12,
+          "time": "2:32.282",
+          "gap": "+0.712"
+        },
+        {
+          "pos": 5,
+          "number": "31",
+          "driver": "Kelvin Van Der Linde",
+          "team": "TEAM WRT",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 12,
+          "time": "2:32.365",
+          "gap": "+0.795"
+        },
+        {
+          "pos": 6,
+          "number": "77",
+          "driver": "Maro Engel",
+          "team": "Craft-Bamboo Racing",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 13,
+          "time": "2:32.437",
+          "gap": "+0.867"
+        },
+        {
+          "pos": 7,
+          "number": "15",
+          "driver": "Earl Bamber",
+          "team": "Audi Sport Asia Team Absolute",
+          "vehicle": "R8 LMS (Evo 2)",
+          "laps": 11,
+          "time": "2:32.663",
+          "gap": "+1.093"
+        },
+        {
+          "pos": 8,
+          "number": "63",
+          "driver": "Luca Engstler",
+          "team": "Absolute Corse",
+          "vehicle": "Huracan GT3 EVO2",
+          "laps": 11,
+          "time": "2:32.871",
+          "gap": "+1.301"
+        },
+        {
+          "pos": 9,
+          "number": "911",
+          "driver": "Alessio Picariello",
+          "team": "Tempo by Absolute Racing",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 12,
+          "time": "2:33.059",
+          "gap": "+1.489"
+        },
+        {
+          "pos": 10,
+          "number": "618",
+          "driver": "Dorian Boccolacci",
+          "team": "ABSOLUTE RACING",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 12,
+          "time": "2:33.141",
+          "gap": "+1.571"
+        },
+        {
+          "pos": 11,
+          "number": "83",
+          "driver": "Alessio Rovera",
+          "team": "33R HAR RACING",
+          "vehicle": "296 GT3 (Evo)",
+          "laps": 11,
+          "time": "2:33.496",
+          "gap": "+1.926"
+        },
+        {
+          "pos": 12,
+          "number": "7",
+          "driver": "Marco Sorensen",
+          "team": "COMTOYOU RACING",
+          "vehicle": "Vantage AMR GT3 EVO",
+          "laps": 12,
+          "time": "2:33.523",
+          "gap": "+1.953"
+        },
+        {
+          "pos": 13,
+          "number": "96",
+          "driver": "Yifei Ye",
+          "team": "Winhere Harmony Racing",
+          "vehicle": "296 GT3 (Evo)",
+          "laps": 11,
+          "time": "2:33.721",
+          "gap": "+2.151"
+        },
+        {
+          "pos": 14,
+          "number": "711",
+          "driver": "Lucas Auer",
+          "team": "TIGANI MOTORSPORT",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 11,
+          "time": "2:34.084",
+          "gap": "+2.514"
+        },
+        {
+          "pos": 15,
+          "number": "5",
+          "driver": "Benjamin Goethe",
+          "team": "Optimum Motorsport",
+          "vehicle": "720S GT3 (Evo)",
+          "laps": 11,
+          "time": "2:34.162",
+          "gap": "+2.592"
+        },
+        {
+          "pos": 16,
+          "number": "89",
+          "driver": "Augusto Farfus",
+          "team": "Team KRC",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 10,
+          "time": "2:34.504",
+          "gap": "+2.934"
+        },
+        {
+          "pos": 17,
+          "number": "76",
+          "driver": "Adderly Fong",
+          "team": "Craft-Bamboo Racing",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 12,
+          "time": "2:35.802",
+          "gap": "+4.232"
+        },
+        {
+          "pos": 18,
+          "number": "24",
+          "driver": "Jamie Day",
+          "team": "COMTOYOU RACING",
+          "vehicle": "Vantage AMR GT3 EVO",
+          "laps": 6,
+          "time": "2:38.634",
+          "gap": "+7.064"
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/2f76e78c8317e3bd3da810ebecdaa10a.pdf",
+        "title": "FIA GT World Cup — Qualifying 1",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-20T17:38:43Z"
+      }
+    },
+    {
+      "sessionId": "19acd121d9096e8c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "23",
+          "driver": "Rocco Coronel",
+          "team": "MP Motorsport",
+          "laps": 8,
+          "time": "2:47.109"
+        },
+        {
+          "pos": 2,
+          "number": "15",
+          "driver": "Dries Van Langendonck",
+          "team": "Prema Racing",
+          "laps": 9,
+          "time": "2:47.479",
+          "gap": "+0.370"
+        },
+        {
+          "pos": 3,
+          "number": "25",
+          "driver": "Vivek Kanthan",
+          "team": "Rodin Motorsport",
+          "laps": 8,
+          "time": "2:48.004",
+          "gap": "+0.895"
+        },
+        {
+          "pos": 4,
+          "number": "17",
+          "driver": "Andy Consani",
+          "team": "R-ace GP",
+          "laps": 8,
+          "time": "2:48.918",
+          "gap": "+1.809"
+        },
+        {
+          "pos": 5,
+          "number": "12",
+          "driver": "Noah Killion",
+          "team": "US Racing",
+          "laps": 7,
+          "time": "2:49.071",
+          "gap": "+1.962"
+        },
+        {
+          "pos": 6,
+          "number": "22",
+          "driver": "Jensen Burnett",
+          "team": "Rodin Motorsport",
+          "laps": 7,
+          "time": "2:49.673",
+          "gap": "+2.564"
+        },
+        {
+          "pos": 7,
+          "number": "14",
+          "driver": "Luka Sammalisto",
+          "team": "US Racing",
+          "laps": 7,
+          "time": "2:49.959",
+          "gap": "+2.850"
+        },
+        {
+          "pos": 8,
+          "number": "29",
+          "driver": "Kenzo Craigie",
+          "team": "R-ace GP",
+          "laps": 9,
+          "time": "2:49.977",
+          "gap": "+2.868"
+        },
+        {
+          "pos": 9,
+          "number": "27",
+          "driver": "Oleksandr Bondarev",
+          "team": "SJM Theodore Racing",
+          "laps": 7,
+          "time": "2:50.150",
+          "gap": "+3.041"
+        },
+        {
+          "pos": 10,
+          "number": "81",
+          "driver": "Noah Monteiro",
+          "team": "SJM Theodore Racing",
+          "laps": 8,
+          "time": "2:50.542",
+          "gap": "+3.433"
+        },
+        {
+          "pos": 11,
+          "number": "7",
+          "driver": "Theo Palmer",
+          "team": "Hitech",
+          "laps": 8,
+          "time": "2:50.635",
+          "gap": "+3.526"
+        },
+        {
+          "pos": 12,
+          "number": "8",
+          "driver": "Jarrett Clark",
+          "team": "Hitech",
+          "laps": 8,
+          "time": "2:52.757",
+          "gap": "+5.648"
+        },
+        {
+          "pos": 13,
+          "number": "10",
+          "driver": "Oscar Repetto",
+          "team": "Hydrangea Kageyama Racing",
+          "laps": 8,
+          "time": "2:52.997",
+          "gap": "+5.888"
+        },
+        {
+          "pos": 14,
+          "number": "2",
+          "driver": "David Cosma-Cristofor",
+          "team": "Evans GP",
+          "laps": 8,
+          "time": "2:55.499",
+          "gap": "+8.390"
+        },
+        {
+          "pos": 15,
+          "number": "61",
+          "driver": "Kimi Yu Tsai Chan",
+          "team": "Campos Racing",
+          "laps": 7,
+          "time": "2:56.036",
+          "gap": "+8.927"
+        },
+        {
+          "pos": 16,
+          "number": "5",
+          "driver": "Scott Kin Lindblom",
+          "team": "Campos Racing",
+          "laps": 7,
+          "time": "2:58.198",
+          "gap": "+11.089"
+        },
+        {
+          "pos": 17,
+          "number": "32",
+          "driver": "Yu Yan",
+          "team": "Asia Racing Team RFN",
+          "laps": 7,
+          "time": "2:58.651",
+          "gap": "+11.542"
+        },
+        {
+          "pos": 18,
+          "number": "9",
+          "driver": "Ludovic Busso",
+          "team": "Argenti Motorsport",
+          "laps": 7,
+          "time": "2:59.389",
+          "gap": "+12.280"
+        },
+        {
+          "pos": 19,
+          "number": "19",
+          "driver": "Felipe Reijs",
+          "team": "Argenti Motorsport",
+          "laps": 7,
+          "time": "2:59.768",
+          "gap": "+12.659"
+        },
+        {
+          "pos": 20,
+          "number": "16",
+          "driver": "Ryusho Nakazato",
+          "team": "Hydrangea Kageyama Racing",
+          "laps": 7,
+          "time": "2:59.920",
+          "gap": "+12.811"
+        },
+        {
+          "pos": 21,
+          "number": "88",
+          "driver": "Si Lun Vernice Lao",
+          "team": "Asia Racing Team RFN",
+          "laps": 7,
+          "time": "3:08.291",
+          "gap": "+21.182"
+        },
+        {
+          "pos": 22,
+          "number": "40",
+          "driver": "Kasper Schormans",
+          "team": "MP Motorsport",
+          "laps": 1
+        },
+        {
+          "pos": 23,
+          "number": "3",
+          "driver": "Hoai Nam Anh Nguyen",
+          "team": "Evans GP",
+          "laps": 3
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/01472b164ced33e6651f2dab0e9f48d5.pdf",
+        "title": "FIA F4 World Cup — Qualifing",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-20T17:38:43Z"
       }
     }
   ]
