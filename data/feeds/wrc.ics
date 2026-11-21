@@ -4,4 +4,16 @@ PRODID:-//Agenda Deporte Motor//ES
 CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Campeonato Mundial de Rally (WRC)
+BEGIN:VEVENT
+UID:6fbb46b8d597b945@agendadeportemotor.local
+DTSTAMP:20261121T163957Z
+DTSTART:20270120T130100Z
+DTEND:20270120T160100Z
+SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Shakedown
+DESCRIPTION:Transmisión habitual: Rally.TV\nFuente: https://www.wrc.com/en
+ /events/wrc-rallye-monte-carlo-2027/itinerary-wrc-rallye-monte-carlo-2027\
+ nDónde verlo:\nRally.TV: https://www.rally.tv/en
+LOCATION:Gap (Francia)\, Mónaco
+STATUS:CONFIRMED
+END:VEVENT
 END:VCALENDAR

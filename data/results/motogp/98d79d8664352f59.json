@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "eventId": "98d79d8664352f59",
-  "updatedAt": "2026-11-20T17:38:43Z",
+  "updatedAt": "2026-11-21T16:39:57Z",
   "sessions": [
     {
       "sessionId": "1c615c82976f74b9",
@@ -479,6 +479,762 @@
         "kind": "api",
         "method": "directo",
         "fetchedAt": "2026-11-20T17:38:43Z"
+      }
+    },
+    {
+      "sessionId": "a313297c56e6211e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "72",
+          "driver": "Marco Bezzecchi",
+          "team": "Aprilia Racing",
+          "vehicle": "Aprilia",
+          "laps": 12,
+          "time": "19:48.999",
+          "points": 12
+        },
+        {
+          "pos": 2,
+          "number": "25",
+          "driver": "Raul Fernandez",
+          "team": "SuperFile Trackhouse MotoGP Team",
+          "vehicle": "Aprilia",
+          "laps": 12,
+          "gap": "+8.378",
+          "points": 9
+        },
+        {
+          "pos": 3,
+          "number": "73",
+          "driver": "Alex Marquez",
+          "team": "BK8 Gresini Racing MotoGP",
+          "vehicle": "Ducati",
+          "laps": 12,
+          "gap": "+11.568",
+          "points": 7
+        },
+        {
+          "pos": 4,
+          "number": "37",
+          "driver": "Pedro Acosta",
+          "team": "Red Bull KTM Factory Racing",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+11.888",
+          "points": 6
+        },
+        {
+          "pos": 5,
+          "number": "89",
+          "driver": "Jorge Martin",
+          "team": "Aprilia Racing",
+          "vehicle": "Aprilia",
+          "laps": 12,
+          "gap": "+12.058",
+          "points": 5
+        },
+        {
+          "pos": 6,
+          "number": "79",
+          "driver": "Ai Ogura",
+          "team": "SuperFile Trackhouse MotoGP Team",
+          "vehicle": "Aprilia",
+          "laps": 12,
+          "gap": "+12.217",
+          "points": 4
+        },
+        {
+          "pos": 7,
+          "number": "49",
+          "driver": "Fabio Di Giannantonio",
+          "team": "Pertamina Enduro VR46 Racing Team",
+          "vehicle": "Ducati",
+          "laps": 12,
+          "gap": "+12.658",
+          "points": 3
+        },
+        {
+          "pos": 8,
+          "number": "20",
+          "driver": "Fabio Quartararo",
+          "team": "Monster Energy Yamaha MotoGP Team",
+          "vehicle": "Yamaha",
+          "laps": 12,
+          "gap": "+18.392",
+          "points": 2
+        },
+        {
+          "pos": 9,
+          "number": "27",
+          "driver": "Iker Lecuona",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 12,
+          "gap": "+19.077",
+          "points": 1
+        },
+        {
+          "pos": 10,
+          "number": "43",
+          "driver": "Jack Miller",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "vehicle": "Yamaha",
+          "laps": 12,
+          "gap": "+19.467",
+          "points": 0
+        },
+        {
+          "pos": 11,
+          "number": "23",
+          "driver": "Enea Bastianini",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+21.898",
+          "points": 0
+        },
+        {
+          "pos": 12,
+          "number": "96",
+          "driver": "Jake Dixon",
+          "team": "Honda HRC Castrol",
+          "vehicle": "Honda",
+          "laps": 12,
+          "gap": "+22.380",
+          "points": 0
+        },
+        {
+          "pos": 13,
+          "number": "44",
+          "driver": "Pol Espargaro",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+22.569",
+          "points": 0
+        },
+        {
+          "pos": 14,
+          "number": "42",
+          "driver": "Alex Rins",
+          "team": "Monster Energy Yamaha MotoGP Team",
+          "vehicle": "Yamaha",
+          "laps": 12,
+          "gap": "+26.136",
+          "points": 0
+        },
+        {
+          "pos": 15,
+          "number": "10",
+          "driver": "Luca Marini",
+          "team": "Honda HRC Castrol",
+          "vehicle": "Honda",
+          "laps": 12,
+          "gap": "+27.065",
+          "points": 0
+        },
+        {
+          "pos": 16,
+          "number": "21",
+          "driver": "Franco Morbidelli",
+          "team": "Pertamina Enduro VR46 Racing Team",
+          "vehicle": "Ducati",
+          "laps": 12,
+          "gap": "+99.024",
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "93",
+          "driver": "Marc Marquez",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 10,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "33",
+          "driver": "Brad Binder",
+          "team": "Red Bull KTM Factory Racing",
+          "vehicle": "KTM",
+          "laps": 8,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "54",
+          "driver": "Fermin Aldeguer",
+          "team": "BK8 Gresini Racing MotoGP",
+          "vehicle": "Ducati",
+          "laps": 6,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "5",
+          "driver": "Johann Zarco",
+          "team": "Castrol Honda LCR",
+          "vehicle": "Honda",
+          "laps": 7,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "11",
+          "driver": "Diogo Moreira",
+          "team": "Pro Honda LCR",
+          "vehicle": "Honda",
+          "laps": 3,
+          "points": 0
+        },
+        {
+          "pos": null,
+          "status": "DNF",
+          "number": "47",
+          "driver": "Augusto Fernandez",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "vehicle": "Yamaha",
+          "laps": 3,
+          "points": 0
+        }
+      ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 22,
+        "humidity": 81,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/por/motogp/spr/classification",
+        "title": "MotoGP.com – Resultados POR MotoGP SPR",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-21T16:39:57Z"
+      }
+    },
+    {
+      "sessionId": "b4c1c7d6c607392c",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "72",
+          "driver": "Marco Bezzecchi",
+          "team": "Aprilia Racing",
+          "vehicle": "Aprilia",
+          "laps": 9,
+          "time": "1:37.201",
+          "bestLap": "1:37.201"
+        },
+        {
+          "pos": 2,
+          "number": "93",
+          "driver": "Marc Marquez",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 8,
+          "gap": "+0.494",
+          "bestLap": "1:37.695"
+        },
+        {
+          "pos": 3,
+          "number": "49",
+          "driver": "Fabio Di Giannantonio",
+          "team": "Pertamina Enduro VR46 Racing Team",
+          "vehicle": "Ducati",
+          "laps": 8,
+          "gap": "+0.622",
+          "bestLap": "1:37.823"
+        },
+        {
+          "pos": 4,
+          "number": "25",
+          "driver": "Raul Fernandez",
+          "team": "SuperFile Trackhouse MotoGP Team",
+          "vehicle": "Aprilia",
+          "laps": 8,
+          "gap": "+0.916",
+          "bestLap": "1:38.117"
+        },
+        {
+          "pos": 5,
+          "number": "73",
+          "driver": "Alex Marquez",
+          "team": "BK8 Gresini Racing MotoGP",
+          "vehicle": "Ducati",
+          "laps": 8,
+          "gap": "+1.061",
+          "bestLap": "1:38.262"
+        },
+        {
+          "pos": 6,
+          "number": "37",
+          "driver": "Pedro Acosta",
+          "team": "Red Bull KTM Factory Racing",
+          "vehicle": "KTM",
+          "laps": 9,
+          "gap": "+1.103",
+          "bestLap": "1:38.304"
+        },
+        {
+          "pos": 7,
+          "number": "89",
+          "driver": "Jorge Martin",
+          "team": "Aprilia Racing",
+          "vehicle": "Aprilia",
+          "laps": 8,
+          "gap": "+1.113",
+          "bestLap": "1:38.314"
+        },
+        {
+          "pos": 8,
+          "number": "54",
+          "driver": "Fermin Aldeguer",
+          "team": "BK8 Gresini Racing MotoGP",
+          "vehicle": "Ducati",
+          "laps": 8,
+          "gap": "+1.314",
+          "bestLap": "1:38.515"
+        },
+        {
+          "pos": 9,
+          "number": "5",
+          "driver": "Johann Zarco",
+          "team": "Castrol Honda LCR",
+          "vehicle": "Honda",
+          "laps": 8,
+          "gap": "+1.429",
+          "bestLap": "1:38.630"
+        },
+        {
+          "pos": 10,
+          "number": "33",
+          "driver": "Brad Binder",
+          "team": "Red Bull KTM Factory Racing",
+          "vehicle": "KTM",
+          "laps": 9,
+          "gap": "+1.505",
+          "bestLap": "1:38.706"
+        },
+        {
+          "pos": 11,
+          "number": "11",
+          "driver": "Diogo Moreira",
+          "team": "Pro Honda LCR",
+          "vehicle": "Honda",
+          "laps": 5,
+          "gap": "+1.666",
+          "bestLap": "1:38.867"
+        },
+        {
+          "pos": 12,
+          "number": "27",
+          "driver": "Iker Lecuona",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 8,
+          "gap": "+1.893",
+          "bestLap": "1:39.094"
+        }
+      ],
+      "conditions": {
+        "airC": 19,
+        "trackC": 20,
+        "humidity": 80,
+        "track": "Seca",
+        "weather": "Nublado"
+      },
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/por/motogp/q2/classification",
+        "title": "MotoGP.com – Resultados POR MotoGP Q2",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-21T16:39:57Z"
+      }
+    },
+    {
+      "sessionId": "b4cbc9d6c60f9117",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "11",
+          "driver": "Diogo Moreira",
+          "team": "Pro Honda LCR",
+          "vehicle": "Honda",
+          "laps": 5,
+          "time": "1:40.612",
+          "bestLap": "1:40.612"
+        },
+        {
+          "pos": 2,
+          "number": "27",
+          "driver": "Iker Lecuona",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 7,
+          "gap": "+0.358",
+          "bestLap": "1:40.970"
+        },
+        {
+          "pos": 3,
+          "number": "43",
+          "driver": "Jack Miller",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "vehicle": "Yamaha",
+          "laps": 7,
+          "gap": "+1.238",
+          "bestLap": "1:41.850"
+        },
+        {
+          "pos": 4,
+          "number": "10",
+          "driver": "Luca Marini",
+          "team": "Honda HRC Castrol",
+          "vehicle": "Honda",
+          "laps": 8,
+          "gap": "+1.274",
+          "bestLap": "1:41.886"
+        },
+        {
+          "pos": 5,
+          "number": "79",
+          "driver": "Ai Ogura",
+          "team": "SuperFile Trackhouse MotoGP Team",
+          "vehicle": "Aprilia",
+          "laps": 7,
+          "gap": "+1.322",
+          "bestLap": "1:41.934"
+        },
+        {
+          "pos": 6,
+          "number": "47",
+          "driver": "Augusto Fernandez",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "vehicle": "Yamaha",
+          "laps": 7,
+          "gap": "+1.707",
+          "bestLap": "1:42.319"
+        },
+        {
+          "pos": 7,
+          "number": "96",
+          "driver": "Jake Dixon",
+          "team": "Honda HRC Castrol",
+          "vehicle": "Honda",
+          "laps": 8,
+          "gap": "+1.773",
+          "bestLap": "1:42.385"
+        },
+        {
+          "pos": 8,
+          "number": "44",
+          "driver": "Pol Espargaro",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 8,
+          "gap": "+1.987",
+          "bestLap": "1:42.599"
+        },
+        {
+          "pos": 9,
+          "number": "42",
+          "driver": "Alex Rins",
+          "team": "Monster Energy Yamaha MotoGP Team",
+          "vehicle": "Yamaha",
+          "laps": 8,
+          "gap": "+2.184",
+          "bestLap": "1:42.796"
+        },
+        {
+          "pos": 10,
+          "number": "20",
+          "driver": "Fabio Quartararo",
+          "team": "Monster Energy Yamaha MotoGP Team",
+          "vehicle": "Yamaha",
+          "laps": 7,
+          "gap": "+2.354",
+          "bestLap": "1:42.966"
+        },
+        {
+          "pos": 11,
+          "number": "21",
+          "driver": "Franco Morbidelli",
+          "team": "Pertamina Enduro VR46 Racing Team",
+          "vehicle": "Ducati",
+          "laps": 7,
+          "gap": "+8.155",
+          "bestLap": "1:48.767"
+        },
+        {
+          "pos": 12,
+          "number": "23",
+          "driver": "Enea Bastianini",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 5,
+          "gap": "+10.621",
+          "bestLap": "1:51.233"
+        }
+      ],
+      "conditions": {
+        "airC": 18,
+        "trackC": 18,
+        "humidity": 83,
+        "track": "Húmeda",
+        "weather": "Nublado"
+      },
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/por/motogp/q1/classification",
+        "title": "MotoGP.com – Resultados POR MotoGP Q1",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-21T16:39:57Z"
+      }
+    },
+    {
+      "sessionId": "e91769f06f5c9871",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "73",
+          "driver": "Alex Marquez",
+          "team": "BK8 Gresini Racing MotoGP",
+          "vehicle": "Ducati",
+          "laps": 11,
+          "time": "1:50.519",
+          "bestLap": "1:50.519"
+        },
+        {
+          "pos": 2,
+          "number": "93",
+          "driver": "Marc Marquez",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 11,
+          "gap": "+0.211",
+          "bestLap": "1:50.730"
+        },
+        {
+          "pos": 3,
+          "number": "37",
+          "driver": "Pedro Acosta",
+          "team": "Red Bull KTM Factory Racing",
+          "vehicle": "KTM",
+          "laps": 13,
+          "gap": "+0.622",
+          "bestLap": "1:51.141"
+        },
+        {
+          "pos": 4,
+          "number": "54",
+          "driver": "Fermin Aldeguer",
+          "team": "BK8 Gresini Racing MotoGP",
+          "vehicle": "Ducati",
+          "laps": 12,
+          "gap": "+0.845",
+          "bestLap": "1:51.364"
+        },
+        {
+          "pos": 5,
+          "number": "33",
+          "driver": "Brad Binder",
+          "team": "Red Bull KTM Factory Racing",
+          "vehicle": "KTM",
+          "laps": 10,
+          "gap": "+0.970",
+          "bestLap": "1:51.489"
+        },
+        {
+          "pos": 6,
+          "number": "72",
+          "driver": "Marco Bezzecchi",
+          "team": "Aprilia Racing",
+          "vehicle": "Aprilia",
+          "laps": 11,
+          "gap": "+1.275",
+          "bestLap": "1:51.794"
+        },
+        {
+          "pos": 7,
+          "number": "5",
+          "driver": "Johann Zarco",
+          "team": "Castrol Honda LCR",
+          "vehicle": "Honda",
+          "laps": 7,
+          "gap": "+1.493",
+          "bestLap": "1:52.012"
+        },
+        {
+          "pos": 8,
+          "number": "43",
+          "driver": "Jack Miller",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "vehicle": "Yamaha",
+          "laps": 11,
+          "gap": "+1.600",
+          "bestLap": "1:52.119"
+        },
+        {
+          "pos": 9,
+          "number": "96",
+          "driver": "Jake Dixon",
+          "team": "Honda HRC Castrol",
+          "vehicle": "Honda",
+          "laps": 10,
+          "gap": "+1.614",
+          "bestLap": "1:52.133"
+        },
+        {
+          "pos": 10,
+          "number": "25",
+          "driver": "Raul Fernandez",
+          "team": "SuperFile Trackhouse MotoGP Team",
+          "vehicle": "Aprilia",
+          "laps": 9,
+          "gap": "+1.629",
+          "bestLap": "1:52.148"
+        },
+        {
+          "pos": 11,
+          "number": "49",
+          "driver": "Fabio Di Giannantonio",
+          "team": "Pertamina Enduro VR46 Racing Team",
+          "vehicle": "Ducati",
+          "laps": 11,
+          "gap": "+1.717",
+          "bestLap": "1:52.236"
+        },
+        {
+          "pos": 12,
+          "number": "89",
+          "driver": "Jorge Martin",
+          "team": "Aprilia Racing",
+          "vehicle": "Aprilia",
+          "laps": 11,
+          "gap": "+1.772",
+          "bestLap": "1:52.291"
+        },
+        {
+          "pos": 13,
+          "number": "20",
+          "driver": "Fabio Quartararo",
+          "team": "Monster Energy Yamaha MotoGP Team",
+          "vehicle": "Yamaha",
+          "laps": 9,
+          "gap": "+1.844",
+          "bestLap": "1:52.363"
+        },
+        {
+          "pos": 14,
+          "number": "79",
+          "driver": "Ai Ogura",
+          "team": "SuperFile Trackhouse MotoGP Team",
+          "vehicle": "Aprilia",
+          "laps": 11,
+          "gap": "+1.994",
+          "bestLap": "1:52.513"
+        },
+        {
+          "pos": 15,
+          "number": "47",
+          "driver": "Augusto Fernandez",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "vehicle": "Yamaha",
+          "laps": 12,
+          "gap": "+2.032",
+          "bestLap": "1:52.551"
+        },
+        {
+          "pos": 16,
+          "number": "23",
+          "driver": "Enea Bastianini",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 12,
+          "gap": "+2.090",
+          "bestLap": "1:52.609"
+        },
+        {
+          "pos": 17,
+          "number": "27",
+          "driver": "Iker Lecuona",
+          "team": "Ducati Lenovo Team",
+          "vehicle": "Ducati",
+          "laps": 11,
+          "gap": "+2.380",
+          "bestLap": "1:52.899"
+        },
+        {
+          "pos": 18,
+          "number": "21",
+          "driver": "Franco Morbidelli",
+          "team": "Pertamina Enduro VR46 Racing Team",
+          "vehicle": "Ducati",
+          "laps": 11,
+          "gap": "+2.685",
+          "bestLap": "1:53.204"
+        },
+        {
+          "pos": 19,
+          "number": "44",
+          "driver": "Pol Espargaro",
+          "team": "Red Bull KTM Tech3",
+          "vehicle": "KTM",
+          "laps": 9,
+          "gap": "+2.690",
+          "bestLap": "1:53.209"
+        },
+        {
+          "pos": 20,
+          "number": "42",
+          "driver": "Alex Rins",
+          "team": "Monster Energy Yamaha MotoGP Team",
+          "vehicle": "Yamaha",
+          "laps": 11,
+          "gap": "+2.741",
+          "bestLap": "1:53.260"
+        },
+        {
+          "pos": 21,
+          "number": "11",
+          "driver": "Diogo Moreira",
+          "team": "Pro Honda LCR",
+          "vehicle": "Honda",
+          "laps": 10,
+          "gap": "+3.164",
+          "bestLap": "1:53.683"
+        },
+        {
+          "pos": 22,
+          "number": "10",
+          "driver": "Luca Marini",
+          "team": "Honda HRC Castrol",
+          "vehicle": "Honda",
+          "laps": 10,
+          "gap": "+3.366",
+          "bestLap": "1:53.885"
+        }
+      ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 17,
+        "humidity": 90,
+        "track": "Mojada",
+        "weather": "Lluvia leve"
+      },
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/por/motogp/fp2/classification",
+        "title": "MotoGP.com – Resultados POR MotoGP FP2",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-21T16:39:57Z"
       }
     }
   ]
