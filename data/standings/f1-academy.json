@@ -1,15 +1,15 @@
 {
   "seriesId": "f1-academy",
   "season": 2026,
-  "updatedAt": "2026-11-17T18:18:36Z",
+  "updatedAt": "2026-11-21T10:45:01Z",
   "tables": [
     {
-      "title": "2026 F1 Academy Standings",
+      "title": "Pilotos",
       "rows": [
         {
           "pos": 1,
           "name": "A. Palmowski PAL",
-          "points": 172
+          "points": 181
         },
         {
           "pos": 2,
@@ -24,22 +24,22 @@
         {
           "pos": 4,
           "name": "A. Larsen LAR",
-          "points": 76
+          "points": 86
         },
         {
           "pos": 5,
           "name": "P. Westcott WES",
-          "points": 76
+          "points": 78
         },
         {
           "pos": 6,
           "name": "N. Granada GRA",
-          "points": 58
+          "points": 59
         },
         {
           "pos": 7,
           "name": "M. Bruce BRU",
-          "points": 52
+          "points": 58
         },
         {
           "pos": 8,
@@ -58,13 +58,13 @@
         },
         {
           "pos": 11,
-          "name": "R. Robertson ROB",
-          "points": 28
+          "name": "R. Ferreira FER",
+          "points": 30
         },
         {
           "pos": 12,
-          "name": "R. Ferreira FER",
-          "points": 27
+          "name": "R. Robertson ROB",
+          "points": 28
         },
         {
           "pos": 13,
@@ -73,13 +73,13 @@
         },
         {
           "pos": 14,
-          "name": "K. Countryman COU",
-          "points": 14
+          "name": "J. Jacquet JAC",
+          "points": 18
         },
         {
           "pos": 15,
-          "name": "J. Jacquet JAC",
-          "points": 13
+          "name": "K. Countryman COU",
+          "points": 14
         },
         {
           "pos": 16,
@@ -88,13 +88,13 @@
         },
         {
           "pos": 17,
-          "name": "A. Dobson DOB",
-          "points": 8
+          "name": "E. Stevens STE",
+          "points": 10
         },
         {
           "pos": 18,
-          "name": "E. Stevens STE",
-          "points": 6
+          "name": "A. Dobson DOB",
+          "points": 8
         },
         {
           "pos": 19,
@@ -108,17 +108,17 @@
         },
         {
           "pos": 21,
-          "name": "A. Danielsson (WCD) DAN",
+          "name": "L. Fluxa Cross (WCD) FLU",
           "points": 0
         },
         {
           "pos": 22,
-          "name": "W. Shi (WCD) SHI",
+          "name": "A. Danielsson (WCD) DAN",
           "points": 0
         },
         {
           "pos": 23,
-          "name": "L. Fluxa Cross (WCD) FLU",
+          "name": "W. Shi (WCD) SHI",
           "points": 0
         }
       ]
@@ -129,7 +129,7 @@
     "title": "Standings - F1 Academy™ Racing Series",
     "kind": "html",
     "method": "ia",
-    "fetchedAt": "2026-11-17T18:18:36Z",
-    "model": "gemini-3.6-flash"
+    "fetchedAt": "2026-11-21T10:45:01Z",
+    "model": "gemini/gemini-3.6-flash"
   }
 }

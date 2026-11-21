@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-17T18:18:36Z",
+  "generatedAt": "2026-11-21T10:45:01Z",
   "teams": [
     {
       "id": "23xi-racing",
@@ -991,6 +991,28 @@
       },
       "founded": 2013,
       "country": "Japón",
+      "titles": [
+        {
+          "season": 2021,
+          "series": "ENEOS Super Taikyu Series · Clase ST-X",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2019,
+          "series": "ENEOS Super Taikyu Series · Clase ST-1",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2018,
+          "series": "ENEOS Super Taikyu Series · Clase ST-1",
+          "seriesId": "super-taikyu"
+        },
+        {
+          "season": 2016,
+          "series": "ENEOS Super Taikyu Series · Clase ST-1",
+          "seriesId": "super-taikyu"
+        }
+      ],
       "website": "http://dstation-racing.jp/",
       "updatedAt": "2026-11-17T18:18:36Z"
     },
@@ -1017,28 +1039,6 @@
       },
       "founded": 2013,
       "country": "Japón",
-      "titles": [
-        {
-          "season": 2021,
-          "series": "ENEOS Super Taikyu Series · Clase ST-X",
-          "seriesId": "super-taikyu"
-        },
-        {
-          "season": 2019,
-          "series": "ENEOS Super Taikyu Series · Clase ST-1",
-          "seriesId": "super-taikyu"
-        },
-        {
-          "season": 2018,
-          "series": "ENEOS Super Taikyu Series · Clase ST-1",
-          "seriesId": "super-taikyu"
-        },
-        {
-          "season": 2016,
-          "series": "ENEOS Super Taikyu Series · Clase ST-1",
-          "seriesId": "super-taikyu"
-        }
-      ],
       "website": "http://dstation-racing.jp/",
       "updatedAt": "2026-11-14T09:00:57Z"
     },
@@ -2038,6 +2038,13 @@
       },
       "founded": 1990,
       "country": "Japón",
+      "titles": [
+        {
+          "season": 2011,
+          "series": "ENEOS Super Taikyu Series · Clase ST-X",
+          "seriesId": "super-taikyu"
+        }
+      ],
       "website": "http://hitotsuyamaracing.net/",
       "updatedAt": "2026-11-17T18:18:36Z"
     },
@@ -2051,13 +2058,6 @@
       },
       "founded": 1990,
       "country": "Japón",
-      "titles": [
-        {
-          "season": 2011,
-          "series": "ENEOS Super Taikyu Series · Clase ST-X",
-          "seriesId": "super-taikyu"
-        }
-      ],
       "website": "http://hitotsuyamaracing.net/",
       "updatedAt": "2026-11-14T09:00:57Z"
     },

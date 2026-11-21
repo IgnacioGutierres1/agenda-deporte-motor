@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-15T00:51:32Z",
+  "generatedAt": "2026-11-21T10:45:01Z",
   "series": [
     {
       "seriesId": "24h-series",
@@ -679,8 +679,8 @@
           "season": 2018,
           "driver": "James Calado / Kei Cozzolino / Takeshi Kimura",
           "team": "Car Guy Racing",
-          "note": "Clase GT · Temporada 2018-19",
-          "teamId": "car-guy-racing"
+          "teamId": "car-guy-racing",
+          "note": "Clase GT · Temporada 2018-19"
         },
         {
           "season": 2018,
@@ -9442,14 +9442,6 @@
     },
     {
       "seriesId": "nls",
-      "wikidata": "Q320469",
-      "summary": {
-        "text": "El Campeonato de Resistencia de Nürburgring (en alemán: Nürburgring Langstrecken-Serie o NLS, anteriormente VLN Langstreckenmeisterschaft Nürburgring) es una competición de automovilismo que se disputa en Nürburgring, Alemania desde el año 1977. El Campeonato de Nürburgring de Resistencia es organizado por la Veranstaltergemeinschaft Langstreckenpokal Nürburgring (\"Comunidad de Organizadores de Copas de Nürburgring de Resistencia\", abreviada VLN). Participan desde turismos de serie hasta gran turismos preparados para competición, divididos en numerosas clases semejantes a las usadas en las 24 Horas de Nürburgring.",
-        "lang": "es",
-        "url": "https://es.wikipedia.org/wiki/Campeonato_de_Resistencia_de_N%C3%BCrburgring"
-      },
-      "founded": 1977,
-      "organizer": "VLN e.V.",
       "champions": [
         {
           "season": 2024,
@@ -9743,6 +9735,15 @@
           "vehicle": "Simca Rallye"
         }
       ],
+      "updatedAt": "2026-11-21T10:45:01Z",
+      "wikidata": "Q320469",
+      "summary": {
+        "text": "El Campeonato de Resistencia de Nürburgring (en alemán: Nürburgring Langstrecken-Serie o NLS, anteriormente VLN Langstreckenmeisterschaft Nürburgring) es una competición de automovilismo que se disputa en Nürburgring, Alemania desde el año 1977. El Campeonato de Nürburgring de Resistencia es organizado por la Veranstaltergemeinschaft Langstreckenpokal Nürburgring (\"Comunidad de Organizadores de Copas de Nürburgring de Resistencia\", abreviada VLN). Participan desde turismos de serie hasta gran turismos preparados para competición, divididos en numerosas clases semejantes a las usadas en las 24 Horas de Nürburgring.",
+        "lang": "es",
+        "url": "https://es.wikipedia.org/wiki/Campeonato_de_Resistencia_de_N%C3%BCrburgring"
+      },
+      "founded": 1977,
+      "organizer": "VLN e.V.",
       "records": [
         {
           "label": "Más títulos",
@@ -9768,8 +9769,7 @@
       "championsSource": {
         "url": "https://de.wikipedia.org/wiki/N%C3%BCrburgring_Langstrecken-Serie",
         "title": "Nürburgring Langstrecken-Serie"
-      },
-      "updatedAt": "2026-11-14T09:03:30Z"
+      }
     },
     {
       "seriesId": "porsche-supercup",
@@ -11525,14 +11525,6 @@
     },
     {
       "seriesId": "super-taikyu",
-      "wikidata": "Q16141123",
-      "summary": {
-        "text": "Super Taikyu (スーパー耐久, Super Endurance), formerly known as the Super N1 Taikyu Series prior to 2005 and N1 Endurance Series prior to 1995, and currently named the Eneos Super Taikyu Series Empowered by Bridgestone for sponsorship reasons, is a Japanese endurance racing series that began in 1991. In contrast to the Super GT series, Super Taikyu is a pro-am racing series for commercially available racing vehicles such as GT3, GT4, and TCR cars, and minimally modified production vehicles mainly from the Japanese domestic market.",
-        "lang": "en",
-        "url": "https://en.wikipedia.org/wiki/Super_Taikyu_Series"
-      },
-      "founded": 2008,
-      "organizer": "Super Taikyu Organization (STO)",
       "champions": [
         {
           "season": 2024,
@@ -11621,7 +11613,7 @@
           "season": 2021,
           "driver": "Satoshi Hoshino / Tomonobu Fujii / Tsubasa Kondō",
           "team": "D'station Racing",
-          "teamId": "d-station-racing",
+          "teamId": "d-station-ferrari-296-gt3",
           "vehicle": "Aston Martin AMR Vantage GT3",
           "note": "Clase ST-X"
         },
@@ -11704,7 +11696,7 @@
           "season": 2019,
           "driver": "Kenji Hama / Tatsuya Hoshino / Manabu Orido / Kenji Kobayashi / Tsubasa Kondō",
           "team": "D'station Racing",
-          "teamId": "d-station-racing",
+          "teamId": "d-station-ferrari-296-gt3",
           "vehicle": "Porsche 911 GT3 Cup",
           "note": "Clase ST-1"
         },
@@ -11733,7 +11725,7 @@
           "season": 2018,
           "driver": "Kenji Hama / Tatsuya Hoshino / Manabu Orido / Kenji Kobayashi / Ryūichirō Tomita / Lee Jung-woo",
           "team": "D'station Racing",
-          "teamId": "d-station-racing",
+          "teamId": "d-station-ferrari-296-gt3",
           "vehicle": "Porsche 911 GT3 Cup",
           "note": "Clase ST-1"
         },
@@ -11778,7 +11770,7 @@
           "season": 2016,
           "driver": "Seiji Ara / Satoshi Hoshino / Tatsuya Hoshino / Lee Jung-woo",
           "team": "D'station Racing",
-          "teamId": "d-station-racing",
+          "teamId": "d-station-ferrari-296-gt3",
           "vehicle": "Porsche 911 GT3 Cup",
           "note": "Clase ST-1"
         },
@@ -11845,7 +11837,7 @@
           "season": 2011,
           "driver": "Tomonobu Fujii / Akihiro Tsuzuki / Michael Kim",
           "team": "Audi Team Hitotsuyama",
-          "teamId": "hitotsuyama-racing",
+          "teamId": "hitotsuyama-bmw-m2-racing",
           "vehicle": "Audi R8 LMS GT3",
           "note": "Clase ST-X"
         },
@@ -11878,6 +11870,15 @@
           "note": "Clase ST-1"
         }
       ],
+      "updatedAt": "2026-11-21T10:45:01Z",
+      "wikidata": "Q16141123",
+      "summary": {
+        "text": "Super Taikyu (スーパー耐久, Super Endurance), formerly known as the Super N1 Taikyu Series prior to 2005 and N1 Endurance Series prior to 1995, and currently named the Eneos Super Taikyu Series Empowered by Bridgestone for sponsorship reasons, is a Japanese endurance racing series that began in 1991. In contrast to the Super GT series, Super Taikyu is a pro-am racing series for commercially available racing vehicles such as GT3, GT4, and TCR cars, and minimally modified production vehicles mainly from the Japanese domestic market.",
+        "lang": "en",
+        "url": "https://en.wikipedia.org/wiki/Super_Taikyu_Series"
+      },
+      "founded": 2008,
+      "organizer": "Super Taikyu Organization (STO)",
       "records": [
         {
           "label": "Más títulos",
@@ -11903,8 +11904,7 @@
       "championsSource": {
         "url": "https://en.wikipedia.org/wiki/Super_Taikyu_Series",
         "title": "Super Taikyu Series"
-      },
-      "updatedAt": "2026-11-14T09:03:30Z"
+      }
     },
     {
       "seriesId": "supercars",

@@ -1,7 +1,7 @@
 {
   "seriesId": "moto2",
   "eventId": "110601e1ddbfbb30",
-  "updatedAt": "2026-11-20T17:38:43Z",
+  "updatedAt": "2026-11-21T10:45:01Z",
   "sessions": [
     {
       "sessionId": "52ff3e5ac003727f",
@@ -599,6 +599,287 @@
         "kind": "api",
         "method": "directo",
         "fetchedAt": "2026-11-20T17:38:43Z"
+      }
+    },
+    {
+      "sessionId": "52f53c5abffb1a94",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "85",
+          "driver": "Xabi Zurutuza",
+          "team": "KLINT Racing Team",
+          "vehicle": "Forward",
+          "laps": 4,
+          "time": "2:00.030",
+          "bestLap": "2:00.030"
+        },
+        {
+          "pos": 2,
+          "number": "16",
+          "driver": "Joe Roberts",
+          "team": "OnlyFans American Racing Team",
+          "vehicle": "Kalex",
+          "laps": 6,
+          "gap": "+3.054",
+          "bestLap": "2:03.084"
+        },
+        {
+          "pos": 3,
+          "number": "72",
+          "driver": "Taiyo Furusato",
+          "team": "Idemitsu Honda Team Asia",
+          "vehicle": "Kalex",
+          "laps": 4,
+          "gap": "+4.628",
+          "bestLap": "2:04.658"
+        },
+        {
+          "pos": 4,
+          "number": "17",
+          "driver": "Daniel Muñoz",
+          "team": "Italtrans Racing Team",
+          "vehicle": "Kalex",
+          "laps": 4,
+          "gap": "+6.368",
+          "bestLap": "2:06.398"
+        },
+        {
+          "pos": 5,
+          "number": "64",
+          "driver": "Mario Aji",
+          "team": "Idemitsu Honda Team Asia",
+          "vehicle": "Kalex",
+          "laps": 3,
+          "gap": "+7.477",
+          "bestLap": "2:07.507"
+        },
+        {
+          "pos": 6,
+          "number": "32",
+          "driver": "Luca Lunetta",
+          "team": "BETA Tools SpeedRS Team",
+          "vehicle": "Boscoscuro",
+          "laps": 5,
+          "gap": "+8.208",
+          "bestLap": "2:08.238"
+        },
+        {
+          "pos": 7,
+          "number": "12",
+          "driver": "Filip Salac",
+          "team": "OnlyFans American Racing Team",
+          "vehicle": "Kalex",
+          "laps": 2,
+          "gap": "+8.675",
+          "bestLap": "2:08.705"
+        },
+        {
+          "pos": 8,
+          "number": "96",
+          "driver": "Daniel Holgado",
+          "team": "CFMOTO Power Electronics Aspar Team",
+          "vehicle": "Kalex",
+          "laps": 2,
+          "gap": "+8.886",
+          "bestLap": "2:08.916"
+        },
+        {
+          "pos": 9,
+          "number": "99",
+          "driver": "Adrian Huertas",
+          "team": "Italtrans Racing Team",
+          "vehicle": "Kalex",
+          "laps": 3,
+          "gap": "+12.059",
+          "bestLap": "2:12.089"
+        },
+        {
+          "pos": 10,
+          "number": "23",
+          "driver": "Matteo Ferrari",
+          "team": "ITALJET Gresini Moto2",
+          "vehicle": "Kalex",
+          "laps": 3,
+          "gap": "+14.082",
+          "bestLap": "2:14.112"
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "36",
+          "driver": "Angel Piqueras",
+          "team": "QJMOTOR - MSI",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "71",
+          "driver": "Ayumu Sasaki",
+          "team": "Momoven Idrofoglia RW Racing Team",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "80",
+          "driver": "David Alonso",
+          "team": "CFMOTO Power Electronics Aspar Team",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "21",
+          "driver": "Alonso Lopez",
+          "team": "ITALJET Gresini Moto2",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "98",
+          "driver": "Jose Antonio Rueda",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "44",
+          "driver": "Aron Canet",
+          "team": "ELF Marc VDS Racing Team",
+          "vehicle": "Boscoscuro",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "18",
+          "driver": "Manuel Gonzalez",
+          "team": "LIQUI MOLY Dynavolt Intact GP",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "11",
+          "driver": "Alex Escrig",
+          "team": "KLINT Racing Team",
+          "vehicle": "Forward",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "13",
+          "driver": "Celestino Vietti",
+          "team": "BETA Tools SpeedRS Team",
+          "vehicle": "Boscoscuro",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "4",
+          "driver": "Ivan Ortola",
+          "team": "QJMOTOR - MSI",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "7",
+          "driver": "Barry Baltus",
+          "team": "REDS Fantic Racing",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "81",
+          "driver": "Senna Agius",
+          "team": "LIQUI MOLY Dynavolt Intact GP",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "28",
+          "driver": "Izan Guevara",
+          "team": "BLU CRU Pramac Yamaha Moto2",
+          "vehicle": "Boscoscuro",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "95",
+          "driver": "Collin Veijer",
+          "team": "Red Bull KTM Ajo",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "84",
+          "driver": "Zonta Vd Goorbergh",
+          "team": "Momoven Idrofoglia RW Racing Team",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "14",
+          "driver": "Tony Arbolino",
+          "team": "REDS Fantic Racing",
+          "vehicle": "Kalex",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "54",
+          "driver": "Alberto Ferrandez",
+          "team": "BLU CRU Pramac Yamaha Moto2",
+          "vehicle": "Boscoscuro",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "Sin tiempo",
+          "number": "53",
+          "driver": "Deniz öncü",
+          "team": "ELF Marc VDS Racing Team",
+          "vehicle": "Boscoscuro",
+          "laps": 0
+        }
+      ],
+      "conditions": {
+        "airC": 17,
+        "trackC": 17,
+        "humidity": 89,
+        "track": "Mojada",
+        "weather": "Lluvia leve"
+      },
+      "source": {
+        "url": "https://www.motogp.com/en/gp-results/2026/por/moto2/fp2/classification",
+        "title": "MotoGP.com – Resultados POR Moto2 FP2",
+        "kind": "api",
+        "method": "directo",
+        "fetchedAt": "2026-11-21T10:45:01Z"
       }
     }
   ]
