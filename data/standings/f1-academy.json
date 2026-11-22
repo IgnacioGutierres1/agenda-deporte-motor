@@ -1,45 +1,45 @@
 {
   "seriesId": "f1-academy",
   "season": 2026,
-  "updatedAt": "2026-11-22T01:00:29Z",
+  "updatedAt": "2026-11-22T10:51:11Z",
   "tables": [
     {
-      "title": "Pilotos",
+      "title": "2026 F1 Academy Standings",
       "rows": [
         {
           "pos": 1,
           "name": "A. Palmowski PAL",
-          "points": 181
+          "points": 209
         },
         {
           "pos": 2,
           "name": "N. Gademan GAD",
-          "points": 119
+          "points": 134
         },
         {
           "pos": 3,
           "name": "E. Felbermayr FEL",
-          "points": 113
+          "points": 125
         },
         {
           "pos": 4,
           "name": "A. Larsen LAR",
-          "points": 86
+          "points": 104
         },
         {
           "pos": 5,
           "name": "P. Westcott WES",
-          "points": 78
+          "points": 82
         },
         {
           "pos": 6,
-          "name": "N. Granada GRA",
+          "name": "M. Bruce BRU",
           "points": 59
         },
         {
           "pos": 7,
-          "name": "M. Bruce BRU",
-          "points": 58
+          "name": "N. Granada GRA",
+          "points": 59
         },
         {
           "pos": 8,
@@ -54,7 +54,7 @@
         {
           "pos": 10,
           "name": "M. Paatz PAA",
-          "points": 35
+          "points": 37
         },
         {
           "pos": 11,
@@ -68,13 +68,13 @@
         },
         {
           "pos": 13,
-          "name": "C. Bättig (WCD) BAE",
-          "points": 22
+          "name": "J. Jacquet JAC",
+          "points": 26
         },
         {
           "pos": 14,
-          "name": "J. Jacquet JAC",
-          "points": 18
+          "name": "C. Bättig (WCD) BAE",
+          "points": 22
         },
         {
           "pos": 15,
@@ -83,32 +83,32 @@
         },
         {
           "pos": 16,
+          "name": "A. Dobson DOB",
+          "points": 14
+        },
+        {
+          "pos": 17,
           "name": "E. Kosterman KOS",
           "points": 12
         },
         {
-          "pos": 17,
+          "pos": 18,
+          "name": "L. Fluxa Cross (WCD) FLU",
+          "points": 10
+        },
+        {
+          "pos": 19,
           "name": "E. Stevens STE",
           "points": 10
         },
         {
-          "pos": 18,
-          "name": "A. Dobson DOB",
-          "points": 8
-        },
-        {
-          "pos": 19,
+          "pos": 20,
           "name": "A. Fisher (WCD) FIS",
           "points": 0
         },
         {
-          "pos": 20,
-          "name": "Z. Florescu (WCD) FLO",
-          "points": 0
-        },
-        {
           "pos": 21,
-          "name": "L. Fluxa Cross (WCD) FLU",
+          "name": "Z. Florescu (WCD) FLO",
           "points": 0
         },
         {
@@ -129,7 +129,7 @@
     "title": "Standings - F1 Academy™ Racing Series",
     "kind": "html",
     "method": "ia",
-    "fetchedAt": "2026-11-22T01:00:29Z",
+    "fetchedAt": "2026-11-22T10:51:11Z",
     "model": "gemini/gemini-3.6-flash"
   }
 }

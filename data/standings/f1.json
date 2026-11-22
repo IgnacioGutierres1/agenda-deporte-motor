@@ -1,7 +1,7 @@
 {
   "seriesId": "f1",
   "season": 2026,
-  "updatedAt": "2026-11-22T01:00:29Z",
+  "updatedAt": "2026-11-22T10:51:11Z",
   "tables": [
     {
       "title": "Pilotos",
@@ -10,43 +10,43 @@
           "pos": 1,
           "name": "Kimi Antonelli",
           "team": "Mercedes",
-          "points": 390
+          "points": 402
         },
         {
           "pos": 2,
           "name": "Max Verstappen",
           "team": "Red Bull Racing",
-          "points": 279
+          "points": 304
         },
         {
           "pos": 3,
-          "name": "George Russell",
-          "team": "Mercedes",
-          "points": 262
+          "name": "Lewis Hamilton",
+          "team": "Ferrari",
+          "points": 267
         },
         {
           "pos": 4,
-          "name": "Lewis Hamilton",
-          "team": "Ferrari",
-          "points": 261
+          "name": "George Russell",
+          "team": "Mercedes",
+          "points": 264
         },
         {
           "pos": 5,
-          "name": "Charles Leclerc",
-          "team": "Ferrari",
-          "points": 249
+          "name": "Lando Norris",
+          "team": "McLaren",
+          "points": 264
         },
         {
           "pos": 6,
-          "name": "Lando Norris",
-          "team": "McLaren",
-          "points": 246
+          "name": "Charles Leclerc",
+          "team": "Ferrari",
+          "points": 250
         },
         {
           "pos": 7,
           "name": "Oscar Piastri",
           "team": "McLaren",
-          "points": 152
+          "points": 167
         },
         {
           "pos": 8,
@@ -64,7 +64,7 @@
           "pos": 10,
           "name": "Pierre Gasly",
           "team": "Alpine",
-          "points": 42
+          "points": 52
         },
         {
           "pos": 11,
@@ -76,7 +76,7 @@
           "pos": 12,
           "name": "Franco Colapinto",
           "team": "Alpine",
-          "points": 27
+          "points": 35
         },
         {
           "pos": 13,
@@ -98,20 +98,20 @@
         },
         {
           "pos": 16,
+          "name": "Carlos Sainz",
+          "team": "Williams",
+          "points": 11
+        },
+        {
+          "pos": 17,
           "name": "Esteban Ocon",
           "team": "Haas F1 Team",
           "points": 7
         },
         {
-          "pos": 17,
+          "pos": 18,
           "name": "Fernando Alonso",
           "team": "Aston Martin",
-          "points": 7
-        },
-        {
-          "pos": 18,
-          "name": "Carlos Sainz",
-          "team": "Williams",
           "points": 7
         },
         {
@@ -164,22 +164,22 @@
         {
           "pos": 1,
           "name": "Mercedes",
-          "points": 652
+          "points": 666
         },
         {
           "pos": 2,
           "name": "Ferrari",
-          "points": 510
+          "points": 517
         },
         {
           "pos": 3,
           "name": "Red Bull Racing",
-          "points": 415
+          "points": 440
         },
         {
           "pos": 4,
           "name": "McLaren",
-          "points": 398
+          "points": 431
         },
         {
           "pos": 5,
@@ -189,7 +189,7 @@
         {
           "pos": 6,
           "name": "Alpine",
-          "points": 69
+          "points": 87
         },
         {
           "pos": 7,
@@ -204,7 +204,7 @@
         {
           "pos": 9,
           "name": "Williams",
-          "points": 12
+          "points": 16
         },
         {
           "pos": 10,
@@ -224,6 +224,6 @@
     "title": "Formula 1 — Campeonato 2026",
     "kind": "html",
     "method": "directo",
-    "fetchedAt": "2026-11-22T01:00:29Z"
+    "fetchedAt": "2026-11-22T10:51:11Z"
   }
 }

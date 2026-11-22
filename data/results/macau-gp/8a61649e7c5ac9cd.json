@@ -1,7 +1,7 @@
 {
   "seriesId": "macau-gp",
   "eventId": "8a61649e7c5ac9cd",
-  "updatedAt": "2026-11-21T10:45:01Z",
+  "updatedAt": "2026-11-22T10:51:11Z",
   "sessions": [
     {
       "sessionId": "e499c2a4c08404f9",
@@ -5125,6 +5125,1165 @@
         "kind": "pdf",
         "method": "directo",
         "fetchedAt": "2026-11-21T10:45:01Z"
+      }
+    },
+    {
+      "sessionId": "19e126c23fab371e",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "30",
+          "driver": "Kean Nakamura-Berta",
+          "team": "SJM Theodore Racing",
+          "laps": 15,
+          "time": "36:57.245",
+          "bestLap": "2:15.646"
+        },
+        {
+          "pos": 2,
+          "number": "21",
+          "driver": "Alex Ninovic",
+          "team": "Rodin Motorsport",
+          "laps": 15,
+          "gap": "+2.426",
+          "bestLap": "2:15.593"
+        },
+        {
+          "pos": 3,
+          "number": "3",
+          "driver": "Rashid Al Dhaheri",
+          "team": "R-ace GP",
+          "laps": 15,
+          "gap": "+3.119",
+          "bestLap": "2:16.019"
+        },
+        {
+          "pos": 4,
+          "number": "31",
+          "driver": "James Egozi",
+          "team": "SJM Theodore Racing",
+          "laps": 15,
+          "gap": "+5.596",
+          "bestLap": "2:15.595"
+        },
+        {
+          "pos": 5,
+          "number": "16",
+          "driver": "Alex Powell",
+          "team": "Prema Racing",
+          "laps": 15,
+          "gap": "+7.673",
+          "bestLap": "2:16.163"
+        },
+        {
+          "pos": 6,
+          "number": "12",
+          "driver": "Ernesto Rivera",
+          "team": "Van Amersfoort Racing",
+          "laps": 15,
+          "gap": "+8.548",
+          "bestLap": "2:16.008"
+        },
+        {
+          "pos": 7,
+          "number": "23",
+          "driver": "Maksimilian Popov",
+          "team": "RPM",
+          "laps": 15,
+          "gap": "+14.306",
+          "bestLap": "2:16.297"
+        },
+        {
+          "pos": 8,
+          "number": "15",
+          "driver": "Jules Roussel",
+          "team": "Van Amersfoort Racing",
+          "laps": 15,
+          "gap": "+15.157",
+          "bestLap": "2:16.190"
+        },
+        {
+          "pos": 9,
+          "number": "8",
+          "driver": "Tymek Kucharczyk",
+          "team": "Trident Motorsport",
+          "laps": 15,
+          "gap": "+15.302",
+          "bestLap": "2:15.829"
+        },
+        {
+          "pos": 10,
+          "number": "6",
+          "driver": "Evan Giltaire",
+          "team": "ART GRAND PRIX",
+          "laps": 15,
+          "gap": "+16.033",
+          "bestLap": "2:16.140"
+        },
+        {
+          "pos": 11,
+          "number": "19",
+          "driver": "Mattia Colnaghi",
+          "team": "MP Motorsport",
+          "laps": 15,
+          "gap": "+16.187",
+          "bestLap": "2:15.143"
+        },
+        {
+          "pos": 12,
+          "number": "26",
+          "driver": "Zhenrui Chi",
+          "team": "CL Motorsport",
+          "laps": 15,
+          "gap": "+30.892",
+          "bestLap": "2:17.464"
+        },
+        {
+          "pos": 13,
+          "number": "29",
+          "driver": "Kai Daryanani",
+          "team": "G4 Racing",
+          "laps": 15,
+          "gap": "+31.568",
+          "bestLap": "2:17.326"
+        },
+        {
+          "pos": 14,
+          "number": "9",
+          "driver": "Ary Bansal",
+          "team": "Trident Motorsport",
+          "laps": 15,
+          "gap": "+32.049",
+          "bestLap": "2:17.489"
+        },
+        {
+          "pos": 15,
+          "number": "25",
+          "driver": "Kabir Anurag",
+          "team": "RPM",
+          "laps": 15,
+          "gap": "+32.414",
+          "bestLap": "2:17.319"
+        },
+        {
+          "pos": 16,
+          "number": "28",
+          "driver": "Andrea Dupé",
+          "team": "G4 Racing",
+          "laps": 15,
+          "gap": "+33.200",
+          "bestLap": "2:17.285"
+        },
+        {
+          "pos": 17,
+          "number": "7",
+          "driver": "Taito Kato",
+          "team": "ART GRAND PRIX",
+          "laps": 14,
+          "gap": "+1 vuelta",
+          "bestLap": "2:16.056"
+        },
+        {
+          "pos": 18,
+          "number": "27",
+          "driver": "Matteo De Palo",
+          "team": "CL Motorsport",
+          "laps": 14,
+          "gap": "+1 vuelta",
+          "bestLap": "2:16.308"
+        },
+        {
+          "pos": 19,
+          "number": "10",
+          "driver": "Yuki Sano",
+          "team": "TOM'S",
+          "laps": 14,
+          "gap": "+1 vuelta",
+          "bestLap": "2:16.139"
+        },
+        {
+          "pos": 20,
+          "number": "11",
+          "driver": "Kiyoshi Umegaki",
+          "team": "TOM'S",
+          "laps": 14,
+          "gap": "+1 vuelta",
+          "bestLap": "2:17.340"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "1",
+          "driver": "Enzo Deligny",
+          "team": "KCMG By Pinnacle Motorsport",
+          "laps": 9,
+          "bestLap": "2:15.920"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "2",
+          "driver": "Hiyu Yamakoshi",
+          "team": "KCMG By Pinnacle Motorsport",
+          "laps": 9,
+          "bestLap": "2:17.886"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "20",
+          "driver": "Sebastian Wheldon",
+          "team": "MP Motorsport",
+          "laps": 7,
+          "bestLap": "2:19.352"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "18",
+          "driver": "Salim Hanna",
+          "team": "Prema Racing",
+          "laps": 6,
+          "bestLap": "2:18.472"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "5",
+          "driver": "Emanuele Olivieri",
+          "team": "R-ace GP",
+          "laps": 6,
+          "bestLap": "2:17.656"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "22",
+          "driver": "Reza Seewooruthun",
+          "team": "Rodin Motorsport",
+          "laps": 2,
+          "bestLap": "2:19.153"
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/d9bd569300537fe31799a80437998dd9.pdf",
+        "title": "FIA FR World Cup — Race Classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T10:51:11Z"
+      }
+    },
+    {
+      "sessionId": "aef6a62b09f37599",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "31",
+          "driver": "Kelvin Van Der Linde",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 16,
+          "time": "1:03:40.865",
+          "bestLap": "2:17.289"
+        },
+        {
+          "pos": 2,
+          "number": "63",
+          "driver": "Luca Engstler",
+          "vehicle": "Huracan GT3 EVO2",
+          "laps": 16,
+          "gap": "+9.789",
+          "bestLap": "2:17.627"
+        },
+        {
+          "pos": 3,
+          "number": "911",
+          "driver": "Alessio Picariello",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 16,
+          "gap": "+20.924",
+          "bestLap": "2:20.655"
+        },
+        {
+          "pos": 4,
+          "number": "992",
+          "driver": "Thomas Preining",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 16,
+          "gap": "+21.155",
+          "bestLap": "2:17.488"
+        },
+        {
+          "pos": 5,
+          "number": "5",
+          "driver": "Benjamin Goethe",
+          "vehicle": "720S GT3 (Evo)",
+          "laps": 16,
+          "gap": "+22.556",
+          "bestLap": "2:20.069"
+        },
+        {
+          "pos": 6,
+          "number": "711",
+          "driver": "Lucas Auer",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 16,
+          "gap": "+23.371",
+          "bestLap": "2:20.402"
+        },
+        {
+          "pos": 7,
+          "number": "76",
+          "driver": "Adderly Fong",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 16,
+          "gap": "+24.315",
+          "bestLap": "2:20.390"
+        },
+        {
+          "pos": 8,
+          "number": "7",
+          "driver": "Marco Sorensen",
+          "vehicle": "Vantage AMR GT3 EVO",
+          "laps": 16,
+          "gap": "+25.314",
+          "bestLap": "2:20.532"
+        },
+        {
+          "pos": 9,
+          "number": "89",
+          "driver": "Augusto Farfus",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 16,
+          "gap": "+25.465",
+          "bestLap": "2:20.611"
+        },
+        {
+          "pos": 10,
+          "number": "24",
+          "driver": "Jamie Day",
+          "vehicle": "Vantage AMR GT3 EVO",
+          "laps": 16,
+          "gap": "+25.928",
+          "bestLap": "2:20.418"
+        },
+        {
+          "pos": 11,
+          "number": "96",
+          "driver": "Yifei Ye",
+          "vehicle": "296 GT3 (Evo)",
+          "laps": 16,
+          "gap": "+26.229",
+          "bestLap": "2:20.414"
+        },
+        {
+          "pos": 12,
+          "number": "618",
+          "driver": "Dorian Boccolacci",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 16,
+          "gap": "+27.124",
+          "bestLap": "2:20.247"
+        },
+        {
+          "pos": 13,
+          "number": "32",
+          "driver": "Raffaele Marciello",
+          "vehicle": "M4 GT3 (Evo)",
+          "laps": 16,
+          "gap": "+59.310",
+          "bestLap": "2:17.577"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "83",
+          "driver": "Alessio Rovera",
+          "vehicle": "296 GT3 (Evo)",
+          "laps": 13,
+          "bestLap": "2:20.700"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "77",
+          "driver": "Maro Engel",
+          "vehicle": "AMG GT3 (Evo)",
+          "laps": 5,
+          "bestLap": "2:19.446"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "66",
+          "driver": "Joel Eriksson",
+          "vehicle": "R8 LMS (Evo 2)",
+          "laps": 1
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "8",
+          "driver": "Laurin Heinrich",
+          "vehicle": "911 GT3 R (992) (Evo)",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "15",
+          "driver": "Earl Bamber",
+          "vehicle": "R8 LMS (Evo 2)",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/968d1ee975c5f0c33197bfb21d5de2cf.pdf",
+        "title": "FIA GT World Cup — Race Classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T10:51:11Z"
+      }
+    },
+    {
+      "sessionId": "77e07d4a4fbd2d42",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "155",
+          "driver": "Qinghua Ma",
+          "vehicle": "Preface TCR",
+          "laps": 10,
+          "time": "31:43.260",
+          "bestLap": "2:29.831"
+        },
+        {
+          "pos": 2,
+          "number": "111",
+          "driver": "Thed Björk",
+          "vehicle": "Preface TCR",
+          "laps": 10,
+          "gap": "+1.125",
+          "bestLap": "2:30.523"
+        },
+        {
+          "pos": 3,
+          "number": "105",
+          "driver": "Norbert Michelisz",
+          "vehicle": "Elantra N EV TCR",
+          "laps": 10,
+          "gap": "+2.093",
+          "bestLap": "2:30.610"
+        },
+        {
+          "pos": 4,
+          "number": "412",
+          "driver": "Mikhail Simonov",
+          "vehicle": "Leon VZ TCR",
+          "laps": 10,
+          "gap": "+2.430",
+          "bestLap": "2:30.786"
+        },
+        {
+          "pos": 5,
+          "number": "429",
+          "driver": "Néstor Girolami",
+          "vehicle": "Elantra N EV TCR",
+          "laps": 10,
+          "gap": "+3.643",
+          "bestLap": "2:31.064"
+        },
+        {
+          "pos": 6,
+          "number": "169",
+          "driver": "Jean-Karl Vernay",
+          "vehicle": "Leon VZ TCR",
+          "laps": 10,
+          "gap": "+4.954",
+          "bestLap": "2:31.035"
+        },
+        {
+          "pos": 7,
+          "number": "181",
+          "driver": "Santiago Urrutia",
+          "vehicle": "Preface TCR",
+          "laps": 10,
+          "gap": "+7.725",
+          "bestLap": "2:30.532"
+        },
+        {
+          "pos": 8,
+          "number": "107",
+          "driver": "Aurélien Comte",
+          "vehicle": "Leon VZ TCR",
+          "laps": 10,
+          "gap": "+7.849",
+          "bestLap": "2:30.980"
+        },
+        {
+          "pos": 9,
+          "number": "168",
+          "driver": "Yann Ehrlacher",
+          "vehicle": "Preface TCR",
+          "laps": 10,
+          "gap": "+7.887",
+          "bestLap": "2:30.892"
+        },
+        {
+          "pos": 10,
+          "number": "196",
+          "driver": "Mikel Azcona",
+          "vehicle": "Elantra N EV TCR",
+          "laps": 10,
+          "gap": "+9.169",
+          "bestLap": "2:30.715"
+        },
+        {
+          "pos": 11,
+          "number": "422",
+          "driver": "Celso Neto",
+          "vehicle": "Leon VZ TCR",
+          "laps": 10,
+          "gap": "+10.442",
+          "bestLap": "2:33.642"
+        },
+        {
+          "pos": 12,
+          "number": "28",
+          "driver": "Sze Ho Lo",
+          "vehicle": "Elantra N TCR",
+          "laps": 10,
+          "gap": "+11.075",
+          "bestLap": "2:33.350"
+        },
+        {
+          "pos": 13,
+          "number": "121",
+          "driver": "Jimmy Clairet",
+          "vehicle": "RS 3 LMS TCR",
+          "laps": 10,
+          "gap": "+11.377",
+          "bestLap": "2:33.992"
+        },
+        {
+          "pos": 14,
+          "number": "802",
+          "driver": "Man Hei Cheong",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 10,
+          "gap": "+13.140",
+          "bestLap": "2:34.194"
+        },
+        {
+          "pos": 15,
+          "number": "29",
+          "driver": "Ho Ting Euan Chan",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 10,
+          "gap": "+14.164",
+          "bestLap": "2:34.370"
+        },
+        {
+          "pos": 16,
+          "number": "145",
+          "driver": "Raphaël Fournier",
+          "vehicle": "03+ TCR",
+          "laps": 10,
+          "gap": "+14.637",
+          "bestLap": "2:34.305"
+        },
+        {
+          "pos": 17,
+          "number": "6",
+          "driver": "Fu Kwan Frederick Lee",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 10,
+          "gap": "+16.236",
+          "bestLap": "2:33.391"
+        },
+        {
+          "pos": 18,
+          "number": "26",
+          "driver": "Chi Wai Tony Chan",
+          "vehicle": "Civic Type R FK7 TCR",
+          "laps": 10,
+          "gap": "+24.753",
+          "bestLap": "2:39.988"
+        },
+        {
+          "pos": 19,
+          "number": "68",
+          "driver": "Yat Shing Sunny Wong",
+          "vehicle": "03+ TCR",
+          "laps": 10,
+          "gap": "+27.123",
+          "bestLap": "2:33.997"
+        },
+        {
+          "pos": 20,
+          "number": "20",
+          "driver": "Jiajun Li",
+          "vehicle": "RS 3 LMS SEQ",
+          "laps": 10,
+          "gap": "+33.293",
+          "bestLap": "2:45.438"
+        },
+        {
+          "pos": 21,
+          "number": "19",
+          "driver": "Wang Chi William Cheung",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 10,
+          "gap": "+35.116",
+          "bestLap": "2:39.841"
+        },
+        {
+          "pos": 22,
+          "number": "66",
+          "driver": "Guanghua Li",
+          "vehicle": "03+ TCR",
+          "laps": 10,
+          "gap": "+1:25.570",
+          "bestLap": "2:36.092"
+        },
+        {
+          "pos": 23,
+          "number": "69",
+          "driver": "Wen-Yao Liang",
+          "vehicle": "Elantra N TCR",
+          "laps": 8,
+          "gap": "+2 vueltas",
+          "bestLap": "2:59.153"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "37",
+          "driver": "Yunjie Zhou",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 6,
+          "bestLap": "2:36.788"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "476",
+          "driver": "Julien Piguet",
+          "vehicle": "RS 3 LMS TCR",
+          "laps": 4,
+          "bestLap": "2:35.113"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "87",
+          "driver": "Siu Ming Man",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 4,
+          "bestLap": "2:43.673"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "8",
+          "driver": "Juran Sun",
+          "vehicle": "Civic Type R FL5 TCR",
+          "laps": 1
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "77",
+          "driver": "Yate Tu",
+          "vehicle": "RS 3 LMS TCR",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "99",
+          "driver": "Hongzhi Liu",
+          "vehicle": "Elantra N TCR",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/de24f21a706b9cd55efd9f587d2f2fda.pdf",
+        "title": "Guia Race TCR — Race 2 Classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T10:51:11Z"
+      }
+    },
+    {
+      "sessionId": "4a0cfd8aed7b5f03",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "29",
+          "driver": "Kenzo Craigie",
+          "team": "R-ace GP",
+          "laps": 10,
+          "time": "51:17.000",
+          "bestLap": "2:22.232"
+        },
+        {
+          "pos": 2,
+          "number": "27",
+          "driver": "Oleksandr Bondarev",
+          "team": "SJM Theodore Racing",
+          "laps": 10,
+          "gap": "+0.542",
+          "bestLap": "2:22.300"
+        },
+        {
+          "pos": 3,
+          "number": "7",
+          "driver": "Theo Palmer",
+          "team": "Hitech",
+          "laps": 10,
+          "gap": "+2.367",
+          "bestLap": "2:22.669"
+        },
+        {
+          "pos": 4,
+          "number": "5",
+          "driver": "Scott Kin Lindblom",
+          "team": "Campos Racing",
+          "laps": 10,
+          "gap": "+4.074",
+          "bestLap": "2:22.687"
+        },
+        {
+          "pos": 5,
+          "number": "12",
+          "driver": "Noah Killion",
+          "team": "US Racing",
+          "laps": 10,
+          "gap": "+7.153",
+          "bestLap": "2:23.270"
+        },
+        {
+          "pos": 6,
+          "number": "25",
+          "driver": "Vivek Kanthan",
+          "team": "Rodin Motorsport",
+          "laps": 10,
+          "gap": "+8.084",
+          "bestLap": "2:23.090"
+        },
+        {
+          "pos": 7,
+          "number": "23",
+          "driver": "Rocco Coronel",
+          "team": "MP Motorsport",
+          "laps": 10,
+          "gap": "+15.432",
+          "bestLap": "2:22.951"
+        },
+        {
+          "pos": 8,
+          "number": "14",
+          "driver": "Luka Sammalisto",
+          "team": "US Racing",
+          "laps": 10,
+          "gap": "+18.759",
+          "bestLap": "2:23.986"
+        },
+        {
+          "pos": 9,
+          "number": "22",
+          "driver": "Jensen Burnett",
+          "team": "Rodin Motorsport",
+          "laps": 10,
+          "gap": "+19.591",
+          "bestLap": "2:24.570"
+        },
+        {
+          "pos": 10,
+          "number": "81",
+          "driver": "Noah Monteiro",
+          "team": "SJM Theodore Racing",
+          "laps": 10,
+          "gap": "+32.734",
+          "bestLap": "2:22.528"
+        },
+        {
+          "pos": 11,
+          "number": "16",
+          "driver": "Ryusho Nakazato",
+          "team": "Hydrangea Kageyama Racing",
+          "laps": 10,
+          "gap": "+48.340",
+          "bestLap": "2:27.455"
+        },
+        {
+          "pos": 12,
+          "number": "15",
+          "driver": "Dries Van Langendonck",
+          "team": "Prema Racing",
+          "laps": 10,
+          "gap": "+50.245",
+          "bestLap": "2:24.568"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "61",
+          "driver": "Kimi Yu Tsai Chan",
+          "team": "Campos Racing",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "8",
+          "driver": "Jarrett Clark",
+          "team": "Hitech",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "40",
+          "driver": "Kasper Schormans",
+          "team": "MP Motorsport",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "32",
+          "driver": "Yu Yan",
+          "team": "Asia Racing Team RFN",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "9",
+          "driver": "Ludovic Busso",
+          "team": "Argenti Motorsport",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "19",
+          "driver": "Felipe Reijs",
+          "team": "Argenti Motorsport",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "3",
+          "driver": "Hoai Nam Anh Nguyen",
+          "team": "Evans GP",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "88",
+          "driver": "Si Lun Vernice Lao",
+          "team": "Asia Racing Team RFN",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "17",
+          "driver": "Andy Consani",
+          "team": "R-ace GP",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/c87d455abd657e306bae5752e71d4a99.pdf",
+        "title": "FIA F4 World Cup — Race Classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T10:51:11Z"
+      }
+    },
+    {
+      "sessionId": "805fb2083d34dff8",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "95",
+          "driver": "Jiatong Liang",
+          "team": "Craft-Bamboo Racing",
+          "vehicle": "AMG GT4 EVO",
+          "laps": 9,
+          "time": "28:14.235",
+          "bestLap": "2:30.091"
+        },
+        {
+          "pos": 2,
+          "number": "21",
+          "driver": "Lichao Han",
+          "team": "TOYOTA GAZOO Racing China",
+          "vehicle": "GR Supra GT4 EVO2",
+          "laps": 9,
+          "gap": "+0.863",
+          "bestLap": "2:29.690"
+        },
+        {
+          "pos": 3,
+          "number": "28",
+          "driver": "Kuisheng Huang",
+          "team": "TOYOTA GAZOO Racing China",
+          "vehicle": "GR Supra GT4 EVO2",
+          "laps": 9,
+          "gap": "+1.368",
+          "bestLap": "2:29.968"
+        },
+        {
+          "pos": 4,
+          "number": "65",
+          "driver": "Dylan Yip",
+          "team": "LEVEL Motorsports",
+          "vehicle": "GR Supra GT4 EVO2",
+          "laps": 9,
+          "gap": "+2.361",
+          "bestLap": "2:30.607"
+        },
+        {
+          "pos": 5,
+          "number": "89",
+          "driver": "Tzu Lung Kao",
+          "team": "LEVEL Motorsports",
+          "vehicle": "GR Supra GT4 EVO2",
+          "laps": 9,
+          "gap": "+3.584",
+          "bestLap": "2:31.191"
+        },
+        {
+          "pos": 6,
+          "number": "9",
+          "driver": "Moritz Maximilian Berrenberg",
+          "team": "W&S Motorsport",
+          "vehicle": "718 Cayman GT4 RS",
+          "laps": 9,
+          "gap": "+10.797",
+          "bestLap": "2:31.310"
+        },
+        {
+          "pos": 7,
+          "number": "19",
+          "driver": "Weng Hin Liu",
+          "team": "ELEGANT Racing",
+          "vehicle": "AMG GT4",
+          "laps": 9,
+          "gap": "+18.297",
+          "bestLap": "2:33.889"
+        },
+        {
+          "pos": 8,
+          "number": "36",
+          "driver": "Kai Fung Lo",
+          "team": "Mogan Team TDK",
+          "vehicle": "AMG GT4",
+          "laps": 9,
+          "gap": "+18.637",
+          "bestLap": "2:34.025"
+        },
+        {
+          "pos": 9,
+          "number": "18",
+          "driver": "Wing Kin Kevin Tse",
+          "team": "Team TRC",
+          "vehicle": "AMG GT4",
+          "laps": 9,
+          "gap": "+18.830",
+          "bestLap": "2:33.844"
+        },
+        {
+          "pos": 10,
+          "number": "15",
+          "driver": "Chun Hua Chen",
+          "team": "LEVEL Motorsports",
+          "vehicle": "AMG GT4",
+          "laps": 9,
+          "gap": "+19.475",
+          "bestLap": "2:34.038"
+        },
+        {
+          "pos": 11,
+          "number": "58",
+          "driver": "Ethan Ho",
+          "team": "Team KRC",
+          "vehicle": "G82 M4 GT4 EVO",
+          "laps": 9,
+          "gap": "+19.911",
+          "bestLap": "2:33.443"
+        },
+        {
+          "pos": 12,
+          "number": "44",
+          "driver": "Ka Ping Chan",
+          "team": "Mogan Team TDK",
+          "vehicle": "GR Supra GT4 EVO2",
+          "laps": 9,
+          "gap": "+30.055",
+          "bestLap": "2:34.983"
+        },
+        {
+          "pos": 13,
+          "number": "57",
+          "driver": "Rao Yu",
+          "team": "TOYOTA GAZOO Racing China",
+          "vehicle": "GR Supra GT4 EVO2",
+          "laps": 9,
+          "gap": "+36.339",
+          "bestLap": "2:37.260"
+        },
+        {
+          "pos": 14,
+          "number": "6",
+          "driver": "Ian Veng Leong",
+          "team": "SON VENG Racing Team",
+          "vehicle": "F82 M4 GT4",
+          "laps": 9,
+          "gap": "+40.999",
+          "bestLap": "2:37.227"
+        },
+        {
+          "pos": 15,
+          "number": "67",
+          "driver": "Jonathan Zihan Harris",
+          "team": "Team TRC",
+          "vehicle": "AMG GT4",
+          "laps": 9,
+          "gap": "+41.200",
+          "bestLap": "2:39.193"
+        },
+        {
+          "pos": 16,
+          "number": "14",
+          "driver": "Yiming Pan",
+          "team": "ONE MOTORSPORTS",
+          "vehicle": "G82 M4 GT4 EVO",
+          "laps": 9,
+          "gap": "+43.225",
+          "bestLap": "2:37.767"
+        },
+        {
+          "pos": 17,
+          "number": "77",
+          "driver": "Kim Hou Lao",
+          "team": "RPM Racing Team",
+          "vehicle": "R8 LMS GT4 EVO 2",
+          "laps": 9,
+          "gap": "+43.481",
+          "bestLap": "2:38.267"
+        },
+        {
+          "pos": 18,
+          "number": "16",
+          "driver": "Maximiano Manhao",
+          "team": "LW World Racing team",
+          "vehicle": "570S GT4",
+          "laps": 9,
+          "gap": "+1:29.176",
+          "bestLap": "2:48.052"
+        },
+        {
+          "pos": 19,
+          "number": "13",
+          "driver": "Yu Ching Tang",
+          "team": "Mogan Team TDK",
+          "vehicle": "AMG GT4",
+          "laps": 9,
+          "gap": "+1:29.441",
+          "bestLap": "2:48.596"
+        },
+        {
+          "pos": 20,
+          "number": "23",
+          "driver": "Cheng Tou Wong",
+          "team": "LW World Racing team",
+          "vehicle": "570S GT4",
+          "laps": 9,
+          "gap": "+1:42.611",
+          "bestLap": "2:48.823"
+        },
+        {
+          "pos": 21,
+          "number": "52",
+          "driver": "Yimin Wang",
+          "team": "REVX RACING",
+          "vehicle": "G82 M4 GT4 EVO",
+          "laps": 9,
+          "gap": "+1:43.484",
+          "bestLap": "2:48.123"
+        },
+        {
+          "pos": 22,
+          "number": "55",
+          "driver": "Wing Keung Kenny Chung",
+          "team": "K2C Motorsports",
+          "vehicle": "G55 GT4",
+          "laps": 9,
+          "gap": "+1:51.528",
+          "bestLap": "2:51.674"
+        },
+        {
+          "pos": 23,
+          "number": "66",
+          "driver": "Kaiwen Yang",
+          "team": "300+ 車隊",
+          "vehicle": "AMG GT4",
+          "laps": 8,
+          "gap": "+1 vuelta",
+          "bestLap": "2:31.445"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "91",
+          "driver": "Hao Yi Ho",
+          "team": "LEVEL Motorsports",
+          "vehicle": "G82 M4 GT4",
+          "laps": 6,
+          "bestLap": "2:36.556"
+        },
+        {
+          "pos": null,
+          "status": "NC",
+          "number": "88",
+          "driver": "Shu Hsien Derek Ho",
+          "team": "LEVEL Motorsports",
+          "vehicle": "F82 M4 GT4",
+          "laps": 6,
+          "bestLap": "2:36.790"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "3",
+          "driver": "Enzo Trulli",
+          "team": "W&S Motorsport",
+          "vehicle": "718 Cayman GT4 RS",
+          "laps": 0
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "7",
+          "driver": "Weiyuan Tian",
+          "team": "Origin7 Racing",
+          "vehicle": "718 Cayman GT4 RS",
+          "laps": 0
+        }
+      ],
+      "source": {
+        "url": "https://cdn.macau.grandprix.gov.mo/uploads/attachment/2026-11/da029946f476e810c8bc5da80d22a99c.pdf",
+        "title": "Greater Bay Area GT Cup — Race Classification",
+        "kind": "pdf",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T10:51:11Z"
       }
     }
   ]

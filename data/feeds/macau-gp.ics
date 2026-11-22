@@ -5,116 +5,8 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Gran Premio de Macao
 BEGIN:VEVENT
-UID:f3c74a94a54b811d@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T012500Z
-DTEND:20261120T020500Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA F4 World Cup - Práctica 
- libre 2
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:b24e409d20be5f9f@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T022500Z
-DTEND:20261120T030500Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA FR World Cup - Práctica 
- libre 2
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:5d4b05c64944a7d8@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T032000Z
-DTEND:20261120T035000Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - Greater Bay Area GT Cup - Cla
- sificación
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:0f593189218dbd51@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T042000Z
-DTEND:20261120T045000Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - Guia Race TCR - Clasificació
- n 1
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:0f5c2f89218fefc2@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T050500Z
-DTEND:20261120T052000Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - Guia Race TCR - Clasificació
- n 2
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:19acd121d9096e8c@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T054000Z
-DTEND:20261120T062000Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA F4 World Cup - Clasificac
- ión
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:269db561f4d69fb8@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T064000Z
-DTEND:20261120T072000Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA FR World Cup - Clasificac
- ión 2
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:f1093a9094c364d0@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T075000Z
-DTEND:20261120T082000Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA GT World Cup - Clasificac
- ión 1
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:f1133c9094cbbcbb@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
-DTSTART:20261120T084000Z
-DTEND:20261120T090500Z
-SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA GT World Cup - Clasificac
- ión 2
-DESCRIPTION:Transmisión: A confirmar\nFuente: https://www.macau.grandprix.
- gov.mo/api/game/event_day?_locale=en&year=2026
-LOCATION:Guia Circuit\, Macao
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:20ebf5b09df2f3a9@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261120T231000Z
 DTEND:20261120T233000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - Motorcycle Grand Prix - Warm 
@@ -126,7 +18,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:7e2eae812af06720@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261121T011000Z
 DTEND:20261121T020000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - Motorcycle Grand Prix - Carre
@@ -138,7 +30,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:263d3ae6b2f0472f@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261121T022500Z
 DTEND:20261121T030500Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - Roadsport Challenge - Carrera
@@ -149,7 +41,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:bbbb2810f42f8a37@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261121T034000Z
 DTEND:20261121T044500Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA F4 World Cup - Carrera cl
@@ -161,7 +53,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:77dd7f4a4fbafad1@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261121T052000Z
 DTEND:20261121T060000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - Guia Race TCR - Carrera 1
@@ -172,7 +64,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:da359408b309ae66@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261121T063500Z
 DTEND:20261121T074000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA GT World Cup - Carrera cl
@@ -184,7 +76,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:002d23a3c9c762fb@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261121T081500Z
 DTEND:20261121T092000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA FR World Cup - Carrera cl
@@ -196,7 +88,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:805fb2083d34dff8@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261122T000000Z
 DTEND:20261122T004000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - Greater Bay Area GT Cup - Car
@@ -208,7 +100,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:4a0cfd8aed7b5f03@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261122T011500Z
 DTEND:20261122T022000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA F4 World Cup - Carrera pr
@@ -220,7 +112,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:77e07d4a4fbd2d42@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261122T030000Z
 DTEND:20261122T034000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - Guia Race TCR - Carrera 2
@@ -231,7 +123,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:aef6a62b09f37599@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261122T043500Z
 DTEND:20261122T055000Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA GT World Cup - Carrera
@@ -242,7 +134,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:19e126c23fab371e@agendadeportemotor.local
-DTSTAMP:20261122T010029Z
+DTSTAMP:20261122T105111Z
 DTSTART:20261122T073000Z
 DTEND:20261122T083500Z
 SUMMARY:Gran Premio de Macao (Guia Circuit) - FIA FR World Cup - Carrera
