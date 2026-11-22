@@ -1,7 +1,7 @@
 {
   "seriesId": "motogp",
   "season": 2026,
-  "updatedAt": "2026-11-18T17:53:37Z",
+  "updatedAt": "2026-11-22T16:57:48Z",
   "tables": [
     {
       "title": "Pilotos",
@@ -11,7 +11,7 @@
           "name": "Marc Marquez",
           "team": "Ducati Lenovo Team",
           "number": "93",
-          "points": 431,
+          "points": 439,
           "wins": 7
         },
         {
@@ -19,7 +19,7 @@
           "name": "Jorge Martin",
           "team": "Aprilia Racing",
           "number": "89",
-          "points": 371,
+          "points": 396,
           "wins": 1
         },
         {
@@ -27,15 +27,15 @@
           "name": "Marco Bezzecchi",
           "team": "Aprilia Racing",
           "number": "72",
-          "points": 357,
-          "wins": 6
+          "points": 394,
+          "wins": 7
         },
         {
           "pos": 4,
           "name": "Pedro Acosta",
           "team": "Red Bull KTM Factory Racing",
           "number": "37",
-          "points": 309,
+          "points": 315,
           "wins": 1
         },
         {
@@ -43,7 +43,7 @@
           "name": "Ai Ogura",
           "team": "SuperFile Trackhouse MotoGP Team",
           "number": "79",
-          "points": 294,
+          "points": 309,
           "wins": 1
         },
         {
@@ -51,7 +51,7 @@
           "name": "Fabio Di Giannantonio",
           "team": "Pertamina Enduro VR46 Racing Team",
           "number": "49",
-          "points": 282,
+          "points": 298,
           "wins": 1
         },
         {
@@ -59,7 +59,7 @@
           "name": "Raul Fernandez",
           "team": "SuperFile Trackhouse MotoGP Team",
           "number": "25",
-          "points": 258,
+          "points": 283,
           "wins": 1
         },
         {
@@ -67,7 +67,7 @@
           "name": "Alex Marquez",
           "team": "BK8 Gresini Racing MotoGP",
           "number": "73",
-          "points": 197,
+          "points": 204,
           "wins": 1
         },
         {
@@ -83,7 +83,7 @@
           "name": "Enea Bastianini",
           "team": "Red Bull KTM Tech3",
           "number": "23",
-          "points": 147,
+          "points": 152,
           "wins": 0
         },
         {
@@ -91,7 +91,7 @@
           "name": "Fermin Aldeguer",
           "team": "BK8 Gresini Racing MotoGP",
           "number": "54",
-          "points": 129,
+          "points": 139,
           "wins": 0
         },
         {
@@ -99,7 +99,7 @@
           "name": "Brad Binder",
           "team": "Red Bull KTM Factory Racing",
           "number": "33",
-          "points": 118,
+          "points": 127,
           "wins": 0
         },
         {
@@ -107,7 +107,7 @@
           "name": "Luca Marini",
           "team": "Honda HRC Castrol",
           "number": "10",
-          "points": 117,
+          "points": 124,
           "wins": 0
         },
         {
@@ -115,7 +115,7 @@
           "name": "Fabio Quartararo",
           "team": "Monster Energy Yamaha MotoGP Team",
           "number": "20",
-          "points": 79,
+          "points": 85,
           "wins": 0
         },
         {
@@ -131,7 +131,7 @@
           "name": "Franco Morbidelli",
           "team": "Pertamina Enduro VR46 Racing Team",
           "number": "21",
-          "points": 70,
+          "points": 71,
           "wins": 0
         },
         {
@@ -144,6 +144,14 @@
         },
         {
           "pos": 18,
+          "name": "Jack Miller",
+          "team": "Prima Pramac Yamaha MotoGP",
+          "number": "43",
+          "points": 34,
+          "wins": 0
+        },
+        {
+          "pos": 19,
           "name": "Joan Mir",
           "team": "Honda HRC Castrol",
           "number": "36",
@@ -151,27 +159,19 @@
           "wins": 0
         },
         {
-          "pos": 19,
-          "name": "Jack Miller",
-          "team": "Prima Pramac Yamaha MotoGP",
-          "number": "43",
-          "points": 31,
-          "wins": 0
-        },
-        {
           "pos": 20,
           "name": "Alex Rins",
           "team": "Monster Energy Yamaha MotoGP Team",
           "number": "42",
-          "points": 29,
+          "points": 31,
           "wins": 0
         },
         {
           "pos": 21,
           "name": "Iker Lecuona",
-          "team": "BK8 Gresini Racing MotoGP",
+          "team": "Ducati Lenovo Team",
           "number": "27",
-          "points": 18,
+          "points": 25,
           "wins": 0
         },
         {
@@ -278,42 +278,42 @@
         {
           "pos": 1,
           "name": "Aprilia Racing",
-          "points": 728
+          "points": 790
         },
         {
           "pos": 2,
           "name": "Ducati Lenovo Team",
-          "points": 604
+          "points": 619
         },
         {
           "pos": 3,
           "name": "SuperFile Trackhouse MotoGP Team",
-          "points": 552
+          "points": 592
         },
         {
           "pos": 4,
           "name": "Red Bull KTM Factory Racing",
-          "points": 427
+          "points": 442
         },
         {
           "pos": 5,
           "name": "Pertamina Enduro VR46 Racing Team",
-          "points": 352
+          "points": 369
         },
         {
           "pos": 6,
           "name": "BK8 Gresini Racing MotoGP",
-          "points": 344
+          "points": 361
         },
         {
           "pos": 7,
           "name": "Red Bull KTM Tech3",
-          "points": 169
+          "points": 174
         },
         {
           "pos": 8,
           "name": "Honda HRC",
-          "points": 158
+          "points": 165
         },
         {
           "pos": 9,
@@ -323,12 +323,12 @@
         {
           "pos": 10,
           "name": "Monster Energy Yamaha MotoGP Team",
-          "points": 108
+          "points": 116
         },
         {
           "pos": 11,
           "name": "Prima Pramac Yamaha MotoGP",
-          "points": 49
+          "points": 52
         }
       ]
     },
@@ -337,28 +337,28 @@
       "rows": [
         {
           "pos": 1,
-          "name": "Ducati",
-          "points": 569
+          "name": "Aprilia",
+          "points": 598
         },
         {
           "pos": 2,
-          "name": "Aprilia",
-          "points": 561
+          "name": "Ducati",
+          "points": 589
         },
         {
           "pos": 3,
           "name": "KTM",
-          "points": 363
+          "points": 378
         },
         {
           "pos": 4,
           "name": "Honda",
-          "points": 190
+          "points": 197
         },
         {
           "pos": 5,
           "name": "Yamaha",
-          "points": 105
+          "points": 111
         }
       ]
     }
@@ -368,6 +368,6 @@
     "title": "MotoGP.com – Campeonato 2026 (MotoGP)",
     "kind": "api",
     "method": "directo",
-    "fetchedAt": "2026-11-18T17:53:37Z"
+    "fetchedAt": "2026-11-22T16:57:48Z"
   }
 }

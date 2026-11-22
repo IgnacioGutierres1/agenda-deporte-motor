@@ -1,7 +1,7 @@
 {
   "seriesId": "moto3",
   "season": 2026,
-  "updatedAt": "2026-11-22T10:51:11Z",
+  "updatedAt": "2026-11-22T16:57:48Z",
   "tables": [
     {
       "title": "Pilotos",
@@ -279,6 +279,91 @@
           "wins": 0
         }
       ]
+    },
+    {
+      "title": "Equipos",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "CFMOTO Gaviota Aspar Team",
+          "points": 558
+        },
+        {
+          "pos": 2,
+          "name": "Red Bull KTM Ajo",
+          "points": 441
+        },
+        {
+          "pos": 3,
+          "name": "Liqui Moly Dynavolt Intact GP",
+          "points": 353
+        },
+        {
+          "pos": 4,
+          "name": "Leopard Racing",
+          "points": 288
+        },
+        {
+          "pos": 5,
+          "name": "Red Bull KTM Tech3",
+          "points": 240
+        },
+        {
+          "pos": 6,
+          "name": "LEVEL UP - MTA",
+          "points": 186
+        },
+        {
+          "pos": 7,
+          "name": "AEON Credit - MT Helmets - MSI",
+          "points": 178
+        },
+        {
+          "pos": 8,
+          "name": "Honda Team Asia",
+          "points": 151
+        },
+        {
+          "pos": 9,
+          "name": "GRYD Racing",
+          "points": 151
+        },
+        {
+          "pos": 10,
+          "name": "CIP Green Power",
+          "points": 130
+        },
+        {
+          "pos": 11,
+          "name": "SIC58 Squadra Corse",
+          "points": 70
+        },
+        {
+          "pos": 12,
+          "name": "Rivacold Snipers Team",
+          "points": 49
+        },
+        {
+          "pos": 13,
+          "name": "CODE Motorsports",
+          "points": 5
+        }
+      ]
+    },
+    {
+      "title": "Constructores",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "KTM",
+          "points": 495
+        },
+        {
+          "pos": 2,
+          "name": "Honda",
+          "points": 269
+        }
+      ]
     }
   ],
   "source": {
@@ -286,6 +371,6 @@
     "title": "MotoGP.com – Campeonato 2026 (Moto3)",
     "kind": "api",
     "method": "directo",
-    "fetchedAt": "2026-11-22T10:51:11Z"
+    "fetchedAt": "2026-11-22T16:57:48Z"
   }
 }

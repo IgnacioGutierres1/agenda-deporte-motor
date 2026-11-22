@@ -1,7 +1,7 @@
 {
   "seriesId": "turismo-pista",
   "eventId": "2ad84ef8356aeb97",
-  "updatedAt": "2026-11-22T10:51:11Z",
+  "updatedAt": "2026-11-22T16:57:48Z",
   "sessions": [
     {
       "sessionId": "9e5bb64a3bac3735",
@@ -7990,6 +7990,642 @@
         "kind": "html",
         "method": "directo",
         "fetchedAt": "2026-11-22T10:51:11Z"
+      }
+    },
+    {
+      "sessionId": "da38c39781a63a67",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "3",
+          "driver": "CANAPINO, MATIAS",
+          "vehicle": "CHEVROLET ONIX",
+          "laps": 5,
+          "time": "8:35.765"
+        },
+        {
+          "pos": 2,
+          "number": "20",
+          "driver": "FONTANA, GASTON",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+1.499"
+        },
+        {
+          "pos": 3,
+          "number": "11",
+          "driver": "FAURET, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+1.681"
+        },
+        {
+          "pos": 4,
+          "number": "33",
+          "driver": "COLLAZO, PABLO (H)",
+          "vehicle": "VW GOL TREND",
+          "laps": 5,
+          "gap": "+1.990"
+        },
+        {
+          "pos": 5,
+          "number": "50",
+          "driver": "BALDINELLI, JONATHAN",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+3.592"
+        },
+        {
+          "pos": 6,
+          "number": "23",
+          "driver": "MARTINEZ, FRANCISCO",
+          "vehicle": "RENAULT CLIO",
+          "laps": 5,
+          "gap": "+3.772"
+        },
+        {
+          "pos": 7,
+          "number": "4",
+          "driver": "GONZALEZ, LUCIANO",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+3.773"
+        },
+        {
+          "pos": 8,
+          "number": "67",
+          "driver": "CALDERON, ANDRES",
+          "vehicle": "TOYOTA YARIS",
+          "laps": 5,
+          "gap": "+5.232"
+        },
+        {
+          "pos": 9,
+          "number": "55",
+          "driver": "NAZZI, FRANCO",
+          "vehicle": "KINETIC",
+          "laps": 5,
+          "gap": "+5.993"
+        },
+        {
+          "pos": 10,
+          "number": "35",
+          "driver": "CHICO, MARTÍN",
+          "vehicle": "FORD FIESTA",
+          "laps": 5,
+          "gap": "+6.176"
+        },
+        {
+          "pos": 11,
+          "number": "72",
+          "driver": "SANTORO, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+12.262"
+        },
+        {
+          "pos": 12,
+          "number": "71",
+          "driver": "MARTINEZ, JULIÁN",
+          "vehicle": "RENAULT CLIO",
+          "laps": 5,
+          "gap": "+12.382"
+        }
+      ],
+      "source": {
+        "url": "https://aptpweb.com.ar/resultados-fecha-10-c3-2026/",
+        "title": "Resultados Turismo Pista clase 3 — Serie 2",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T16:57:48Z"
+      }
+    },
+    {
+      "sessionId": "5167250b3cc02120",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "121",
+          "driver": "DE BENEDICTIS, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "time": "8:39.505"
+        },
+        {
+          "pos": 2,
+          "number": "57",
+          "driver": "BUCHHOLZ, ALAN",
+          "vehicle": "VW GOL TREND",
+          "laps": 5,
+          "gap": "+0.474"
+        },
+        {
+          "pos": 3,
+          "number": "5",
+          "driver": "HERMIDA ALONSO, FEDERICO",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+0.618"
+        },
+        {
+          "pos": 4,
+          "number": "52",
+          "driver": "CHIALVO, MARTÍN",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+3.030"
+        },
+        {
+          "pos": 5,
+          "number": "16",
+          "driver": "ALAUX, EMANUEL",
+          "vehicle": "TOYOTA ETIOS",
+          "laps": 5,
+          "gap": "+3.202"
+        },
+        {
+          "pos": 6,
+          "number": "2",
+          "driver": "MARTINI, FELIPE",
+          "vehicle": "RENAULT CLIO",
+          "laps": 5,
+          "gap": "+3.529"
+        },
+        {
+          "pos": 7,
+          "number": "19",
+          "driver": "FARRONI, LUCIANO",
+          "vehicle": "PEUGEOT 208",
+          "laps": 5,
+          "gap": "+3.530"
+        },
+        {
+          "pos": 8,
+          "number": "10",
+          "driver": "VILLABRILLE NEILA, FRANCO",
+          "vehicle": "RENAULT CLIO",
+          "laps": 5,
+          "gap": "+8.336"
+        },
+        {
+          "pos": 9,
+          "number": "18",
+          "driver": "MARCHESSE, MARCELO",
+          "vehicle": "PEUGEOT 208",
+          "laps": 5,
+          "gap": "+15.028"
+        },
+        {
+          "pos": 10,
+          "number": "42",
+          "driver": "COLLAZO, PABLO E.",
+          "vehicle": "RENAULT CLIO",
+          "laps": 5,
+          "gap": "+16.003"
+        },
+        {
+          "pos": 11,
+          "number": "17",
+          "driver": "STIEGLITZ, FEDERICO",
+          "vehicle": "RENAULT CLIO",
+          "laps": 3,
+          "gap": "+2 vueltas"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "14",
+          "driver": "PEZZUCCHI, NICOLÁS",
+          "vehicle": "FORD FIESTA"
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "32",
+          "driver": "DI PALMA, MÁXIMO",
+          "vehicle": "RENAULT CLIO",
+          "laps": 5
+        }
+      ],
+      "source": {
+        "url": "https://aptpweb.com.ar/resultados-fecha-10-c3-2026/",
+        "title": "Resultados Turismo Pista clase 3 — Serie 1",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T16:57:48Z"
+      }
+    },
+    {
+      "sessionId": "794ea5b4bd6c17fe",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "5",
+          "driver": "HERMIDA ALONSO, FEDERICO",
+          "vehicle": "TOYOTA ETIOS",
+          "bestLap": "1:42.137"
+        },
+        {
+          "pos": 2,
+          "number": "121",
+          "driver": "DE BENEDICTIS, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.368",
+          "bestLap": "1:42.505"
+        },
+        {
+          "pos": 3,
+          "number": "20",
+          "driver": "FONTANA, GASTON",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.642",
+          "bestLap": "1:42.779"
+        },
+        {
+          "pos": 4,
+          "number": "57",
+          "driver": "BUCHHOLZ, ALAN",
+          "vehicle": "VW GOL TREND",
+          "gap": "+0.682",
+          "bestLap": "1:42.819"
+        },
+        {
+          "pos": 5,
+          "number": "50",
+          "driver": "BALDINELLI, JONATHAN",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.825",
+          "bestLap": "1:42.962"
+        },
+        {
+          "pos": 6,
+          "number": "4",
+          "driver": "GONZALEZ, LUCIANO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.931",
+          "bestLap": "1:43.068"
+        },
+        {
+          "pos": 7,
+          "number": "32",
+          "driver": "DI PALMA, MÁXIMO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+0.980",
+          "bestLap": "1:43.117"
+        },
+        {
+          "pos": 8,
+          "number": "19",
+          "driver": "FARRONI, LUCIANO",
+          "vehicle": "PEUGEOT 208",
+          "gap": "+1.017",
+          "bestLap": "1:43.154"
+        },
+        {
+          "pos": 9,
+          "number": "33",
+          "driver": "COLLAZO, PABLO (H)",
+          "vehicle": "VW GOL TREND",
+          "gap": "+1.194",
+          "bestLap": "1:43.331"
+        },
+        {
+          "pos": 10,
+          "number": "17",
+          "driver": "STIEGLITZ, FEDERICO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+1.254",
+          "bestLap": "1:43.391"
+        },
+        {
+          "pos": 11,
+          "number": "67",
+          "driver": "CALDERON, ANDRES",
+          "vehicle": "TOYOTA YARIS",
+          "gap": "+1.275",
+          "bestLap": "1:43.412"
+        },
+        {
+          "pos": 12,
+          "number": "10",
+          "driver": "VILLABRILLE NEILA, FRANCO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+1.427",
+          "bestLap": "1:43.564"
+        },
+        {
+          "pos": 13,
+          "number": "55",
+          "driver": "NAZZI, FRANCO",
+          "vehicle": "KINETIC",
+          "gap": "+1.479",
+          "bestLap": "1:43.616"
+        },
+        {
+          "pos": 14,
+          "number": "35",
+          "driver": "CHICO, MARTÍN",
+          "vehicle": "FORD FIESTA",
+          "gap": "+1.506",
+          "bestLap": "1:43.643"
+        },
+        {
+          "pos": 15,
+          "number": "16",
+          "driver": "ALAUX, EMANUEL",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+1.630",
+          "bestLap": "1:43.767"
+        },
+        {
+          "pos": 16,
+          "number": "52",
+          "driver": "CHIALVO, MARTÍN",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+2.067",
+          "bestLap": "1:44.204"
+        },
+        {
+          "pos": 17,
+          "number": "72",
+          "driver": "SANTORO, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+2.389",
+          "bestLap": "1:44.526"
+        },
+        {
+          "pos": 18,
+          "number": "71",
+          "driver": "MARTINEZ, JULIÁN",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+2.550",
+          "bestLap": "1:44.687"
+        },
+        {
+          "pos": 19,
+          "number": "11",
+          "driver": "FAURET, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+3.200",
+          "bestLap": "1:45.337"
+        },
+        {
+          "pos": 20,
+          "number": "42",
+          "driver": "COLLAZO, PABLO E.",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+3.427",
+          "bestLap": "1:45.564"
+        },
+        {
+          "pos": 21,
+          "number": "23",
+          "driver": "MARTINEZ, FRANCISCO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+3.721",
+          "bestLap": "1:45.858"
+        },
+        {
+          "pos": 22,
+          "number": "2",
+          "driver": "MARTINI, FELIPE",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+3.900",
+          "bestLap": "1:46.037"
+        },
+        {
+          "pos": 23,
+          "number": "14",
+          "driver": "PEZZUCCHI, NICOLÁS",
+          "vehicle": "FORD FIESTA",
+          "gap": "+5.223",
+          "bestLap": "1:47.360"
+        },
+        {
+          "pos": 24,
+          "number": "18",
+          "driver": "MARCHESSE, MARCELO",
+          "vehicle": "PEUGEOT 208",
+          "gap": "+8.543",
+          "bestLap": "1:50.680"
+        },
+        {
+          "pos": 25,
+          "number": "3",
+          "driver": "CANAPINO, MATIAS",
+          "vehicle": "CHEVROLET ONIX",
+          "gap": "+25.248",
+          "bestLap": "2:07.385"
+        }
+      ],
+      "source": {
+        "url": "https://aptpweb.com.ar/resultados-fecha-10-c3-2026/",
+        "title": "Resultados Turismo Pista clase 3 — Clasif.2",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T16:57:48Z"
+      }
+    },
+    {
+      "sessionId": "1e54fb1faf0e50d7",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "4",
+          "driver": "GONZALEZ, LUCIANO",
+          "vehicle": "TOYOTA ETIOS",
+          "bestLap": "1:42.337"
+        },
+        {
+          "pos": 2,
+          "number": "2",
+          "driver": "MARTINI, FELIPE",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+0.059",
+          "bestLap": "1:42.396"
+        },
+        {
+          "pos": 3,
+          "number": "23",
+          "driver": "MARTINEZ, FRANCISCO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+0.081",
+          "bestLap": "1:42.418"
+        },
+        {
+          "pos": 4,
+          "number": "3",
+          "driver": "CANAPINO, MATIAS",
+          "vehicle": "CHEVROLET ONIX",
+          "gap": "+0.189",
+          "bestLap": "1:42.526"
+        },
+        {
+          "pos": 5,
+          "number": "121",
+          "driver": "DE BENEDICTIS, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.309",
+          "bestLap": "1:42.646"
+        },
+        {
+          "pos": 6,
+          "number": "14",
+          "driver": "PEZZUCCHI, NICOLÁS",
+          "vehicle": "FORD FIESTA",
+          "gap": "+0.340",
+          "bestLap": "1:42.677"
+        },
+        {
+          "pos": 7,
+          "number": "11",
+          "driver": "FAURET, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.393",
+          "bestLap": "1:42.730"
+        },
+        {
+          "pos": 8,
+          "number": "57",
+          "driver": "BUCHHOLZ, ALAN",
+          "vehicle": "VW GOL TREND",
+          "gap": "+0.411",
+          "bestLap": "1:42.748"
+        },
+        {
+          "pos": 9,
+          "number": "19",
+          "driver": "FARRONI, LUCIANO",
+          "vehicle": "PEUGEOT 208",
+          "gap": "+0.548",
+          "bestLap": "1:42.885"
+        },
+        {
+          "pos": 10,
+          "number": "5",
+          "driver": "HERMIDA ALONSO, FEDERICO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.572",
+          "bestLap": "1:42.909"
+        },
+        {
+          "pos": 11,
+          "number": "33",
+          "driver": "COLLAZO, PABLO (H)",
+          "vehicle": "VW GOL TREND",
+          "gap": "+0.786",
+          "bestLap": "1:43.123"
+        },
+        {
+          "pos": 12,
+          "number": "50",
+          "driver": "BALDINELLI, JONATHAN",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+0.941",
+          "bestLap": "1:43.278"
+        },
+        {
+          "pos": 13,
+          "number": "17",
+          "driver": "STIEGLITZ, FEDERICO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+0.998",
+          "bestLap": "1:43.335"
+        },
+        {
+          "pos": 14,
+          "number": "20",
+          "driver": "FONTANA, GASTON",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+1.149",
+          "bestLap": "1:43.486"
+        },
+        {
+          "pos": 15,
+          "number": "16",
+          "driver": "ALAUX, EMANUEL",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+1.305",
+          "bestLap": "1:43.642"
+        },
+        {
+          "pos": 16,
+          "number": "35",
+          "driver": "CHICO, MARTÍN",
+          "vehicle": "FORD FIESTA",
+          "gap": "+1.360",
+          "bestLap": "1:43.697"
+        },
+        {
+          "pos": 17,
+          "number": "52",
+          "driver": "CHIALVO, MARTÍN",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+1.387",
+          "bestLap": "1:43.724"
+        },
+        {
+          "pos": 18,
+          "number": "10",
+          "driver": "VILLABRILLE NEILA, FRANCO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+1.838",
+          "bestLap": "1:44.175"
+        },
+        {
+          "pos": 19,
+          "number": "72",
+          "driver": "SANTORO, FRANCO",
+          "vehicle": "TOYOTA ETIOS",
+          "gap": "+2.143",
+          "bestLap": "1:44.480"
+        },
+        {
+          "pos": 20,
+          "number": "18",
+          "driver": "MARCHESSE, MARCELO",
+          "vehicle": "PEUGEOT 208",
+          "gap": "+2.242",
+          "bestLap": "1:44.579"
+        },
+        {
+          "pos": 21,
+          "number": "32",
+          "driver": "DI PALMA, MÁXIMO",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+2.865",
+          "bestLap": "1:45.202"
+        },
+        {
+          "pos": 22,
+          "number": "71",
+          "driver": "MARTINEZ, JULIÁN",
+          "vehicle": "RENAULT CLIO",
+          "gap": "+3.172",
+          "bestLap": "1:45.509"
+        },
+        {
+          "pos": null,
+          "status": "DNS",
+          "number": "67",
+          "driver": "CALDERON, ANDRES",
+          "vehicle": "TOYOTA YARIS"
+        },
+        {
+          "pos": null,
+          "status": "DSQ",
+          "number": "55",
+          "driver": "NAZZI, FRANCO",
+          "vehicle": "KINETIC",
+          "bestLap": "1:43.851"
+        }
+      ],
+      "source": {
+        "url": "https://aptpweb.com.ar/resultados-fecha-10-c3-2026/",
+        "title": "Resultados Turismo Pista clase 3 — Clasif.1",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-22T16:57:48Z"
       }
     }
   ]
