@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "generatedAt": "2026-11-16T18:42:49Z",
+  "generatedAt": "2026-11-23T20:24:17Z",
   "items": [
     {
       "seriesId": "fia-gt-world-cup",
@@ -45,20 +45,6 @@
       }
     },
     {
-      "seriesId": "rotax-max-buenos-aires",
-      "name": "ROTAX MAX BUENOS AIRES",
-      "officialUrl": "https://www.cdaaca.org.ar/eventos",
-      "firstSeen": "2026-11-16",
-      "nextEventDate": "2026-11-21",
-      "source": {
-        "url": "https://www.cdaaca.org.ar/eventos",
-        "title": "CDA",
-        "kind": "html",
-        "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
-      }
-    },
-    {
       "seriesId": "fia-world-rally-raid-championship",
       "name": "FIA World Rally-Raid Championship",
       "officialUrl": "https://www.fia.com/calendar",
@@ -69,7 +55,7 @@
         "title": "Calendar | Federation Internationale de l'Automobile",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -83,7 +69,7 @@
         "title": "Calendar | Federation Internationale de l'Automobile",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -97,7 +83,7 @@
         "title": "Calendar | Federation Internationale de l'Automobile",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -111,7 +97,7 @@
         "title": "Calendar | Federation Internationale de l'Automobile",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -125,7 +111,7 @@
         "title": "CDA",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -139,7 +125,21 @@
         "title": "CDA",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
+      }
+    },
+    {
+      "seriesId": "rotax-max-buenos-aires",
+      "name": "ROTAX MAX BUENOS AIRES",
+      "officialUrl": "https://www.cdaaca.org.ar/eventos",
+      "firstSeen": "2026-11-16",
+      "nextEventDate": "2026-12-11",
+      "source": {
+        "url": "https://www.cdaaca.org.ar/eventos",
+        "title": "CDA",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -153,7 +153,7 @@
         "title": "ACTC - Asociación de Corredores de Turismo Carretera",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -167,7 +167,7 @@
         "title": "ACTC - Asociación de Corredores de Turismo Carretera",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -181,7 +181,7 @@
         "title": "CDA",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     },
     {
@@ -195,7 +195,7 @@
         "title": "CDA",
         "kind": "html",
         "method": "directo",
-        "fetchedAt": "2026-11-16T18:42:49Z"
+        "fetchedAt": "2026-11-23T20:24:17Z"
       }
     }
   ]

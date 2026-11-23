@@ -5,36 +5,8 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Moto3
 BEGIN:VEVENT
-UID:e98a06c49720b168@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
-DTSTART:20261121T121500Z
-DTEND:20261121T123000Z
-SUMMARY:Moto3 (Autódromo Internacional do Algarve) - Clasificación Q1
-DESCRIPTION:Transmisión habitual: ESPN\, Disney+\, MotoGP VideoPass\nFuent
- e: https://www.motogp.com/en/calendar/2026/event/portugal/c7f7626b-807f-4a
- 6f-813e-7ad2c68302a3\nDónde verlo:\nESPN: https://www.espn.com.ar/\nDisne
- y+: https://www.disneyplus.com/es-ar\nMotoGP VideoPass: https://www.motogp
- .com/es/videopass
-LOCATION:Autódromo Internacional do Algarve\, Portugal
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
-UID:e99408c497290953@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
-DTSTART:20261121T124000Z
-DTEND:20261121T125500Z
-SUMMARY:Moto3 (Autódromo Internacional do Algarve) - Clasificación Q2
-DESCRIPTION:Transmisión habitual: ESPN\, Disney+\, MotoGP VideoPass\nFuent
- e: https://www.motogp.com/en/calendar/2026/event/portugal/c7f7626b-807f-4a
- 6f-813e-7ad2c68302a3\nDónde verlo:\nESPN: https://www.espn.com.ar/\nDisne
- y+: https://www.disneyplus.com/es-ar\nMotoGP VideoPass: https://www.motogp
- .com/es/videopass
-LOCATION:Autódromo Internacional do Algarve\, Portugal
-STATUS:CONFIRMED
-END:VEVENT
-BEGIN:VEVENT
 UID:0c63ebda54555ea9@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261122T100500Z
 DTEND:20261122T104500Z
 SUMMARY:Moto3 (Autódromo Internacional do Algarve) - Carrera
@@ -48,7 +20,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:cab0715ed9bb3193@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261127T080000Z
 DTEND:20261127T083500Z
 SUMMARY:Moto3 (Circuit Ricardo Tormo) - Práctica libre 1
@@ -62,7 +34,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:f334af7f4dd4f0b8@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261127T121500Z
 DTEND:20261127T125000Z
 SUMMARY:Moto3 (Circuit Ricardo Tormo) - Práctica
@@ -76,7 +48,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:caa66f5ed9b2d9a8@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261128T074000Z
 DTEND:20261128T081000Z
 SUMMARY:Moto3 (Circuit Ricardo Tormo) - Práctica libre 2
@@ -90,7 +62,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:1d47c8d03151c288@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261128T114500Z
 DTEND:20261128T120000Z
 SUMMARY:Moto3 (Circuit Ricardo Tormo) - Clasificación Q1
@@ -104,7 +76,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:1d51cad0315a1a73@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261128T121000Z
 DTEND:20261128T122500Z
 SUMMARY:Moto3 (Circuit Ricardo Tormo) - Clasificación Q2
@@ -118,7 +90,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:8f87f1a034facb89@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261123T202423Z
 DTSTART:20261129T100000Z
 DTEND:20261129T104000Z
 SUMMARY:Moto3 (Circuit Ricardo Tormo) - Carrera
