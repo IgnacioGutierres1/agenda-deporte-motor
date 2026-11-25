@@ -5,8 +5,10 @@
   "main": "src/index.ts",
   "compatibility_date": "2024-12-01",
   "compatibility_flags": ["nodejs_compat"],
-  // La dirección *.workers.dev sigue activa: la usan las versiones de la app instaladas antes del dominio propio.
-  "workers_dev": true,
+  // Sin dirección *.workers.dev: este Worker se atiende solo por los dominios propios. La dirección
+  // agenda-deporte-motor.agendadeportemotor.workers.dev que usan las apps instaladas antes del dominio es del
+  // Worker anterior, publicado en otra cuenta de Cloudflare, que sigue activo sin cambios.
+  "workers_dev": false,
   // Dominios propios (wrangler crea los registros DNS y los certificados al publicar):
   //  - api.gridagenda.com  → avisos push y proxy de tiempos en vivo (/api/…)
   //  - data.gridagenda.com → datos del pipeline (ver src/data-proxy.ts)
@@ -20,8 +22,10 @@
     "crons": ["*/5 * * * *"]
   },
   "kv_namespaces": [
-    // Suscripciones de avisos (creado con: npx wrangler kv namespace create SUBS)
-    { "binding": "SUBS", "id": "f1367e809679461aa16408a434a00bec" }
+    // Suscripciones de avisos (creado con: npx wrangler kv namespace create SUBS), en la cuenta de Cloudflare
+    // que tiene el dominio gridagenda.com. El Worker anterior (otra cuenta, *.workers.dev, KV
+    // f1367e809679461aa16408a434a00bec) sigue publicado tal cual para las apps instaladas antes del dominio.
+    { "binding": "SUBS", "id": "4e4b2155118c4bc9b2003506ebd5da5a" }
   ],
   "vars": {
     // Origen de los datos publicados por el pipeline (GitHub Pages). Lo leen el cron de avisos y el proxy de

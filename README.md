@@ -155,8 +155,9 @@ oficial verificado (`shared/src/broadcast.ts`), su enlace.
 - hace de proxy, solo para una lista cerrada de fuentes oficiales, de tiempos en vivo que no se pueden leer
   directo desde el navegador (CORS).
 
-Publicado en `https://agenda-deporte-motor.agendadeportemotor.workers.dev`; su dirección definitiva es
-`https://api.gridagenda.com` (ver el estado en [docs/migracion/dominio.md](docs/migracion/dominio.md)). La app lo
+Publicado en `https://api.gridagenda.com` (en la cuenta de Cloudflare que tiene el dominio; el Worker anterior,
+`https://agenda-deporte-motor.agendadeportemotor.workers.dev`, sigue activo en otra cuenta para las versiones de la
+app instaladas antes; ver [docs/migracion/dominio.md](docs/migracion/dominio.md)). La app lo
 conoce por la variable del repo `WORKER_URL` (*Settings → Secrets and variables → Actions → Variables*).
 
 El mismo Worker sirve los datos del pipeline en `https://data.gridagenda.com/<archivo>` (lo mismo que

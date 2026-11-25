@@ -39,8 +39,8 @@ Todo en ramas `feat/…` como siempre; ningún cambio visible para el usuario.
       `com.gridagenda.app`. Detalle y paso a paso en [dominio.md](dominio.md).
 - [x] Código listo: build con base relativa (sirve en el dominio y en la dirección vieja), `VITE_DATA_BASE` con
       respaldo en `data/`, proxy de datos en el Worker, avisos que se renuevan solos y mudanza de lo guardado.
-- [ ] `api.gridagenda.com` y `data.gridagenda.com` respondiendo (falta que el dominio y el Worker estén en la misma
-      cuenta de Cloudflare) y variables del repo `WORKER_URL`, `DATA_BASE_URL` y `APP_ORIGIN` cargadas.
+- [x] `api.gridagenda.com` y `data.gridagenda.com` respondiendo (Worker publicado en la cuenta de Cloudflare del
+      dominio) y variables del repo `WORKER_URL`, `DATA_BASE_URL` y `APP_ORIGIN` cargadas.
 - [ ] Cambio de dirección: `gridagenda.com` como dominio de GitHub Pages; la dirección vieja redirige.
 
 **0.2 Spike de compatibilidad (medio día)**
