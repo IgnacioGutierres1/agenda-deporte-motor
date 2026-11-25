@@ -6,7 +6,7 @@ METHOD:PUBLISH
 X-WR-CALNAME:Campeonato Mundial de Rally (WRC)
 BEGIN:VEVENT
 UID:6fbb46b8d597b945@agendadeportemotor.local
-DTSTAMP:20261124T200136Z
+DTSTAMP:20261125T190143Z
 DTSTART:20270120T130100Z
 DTEND:20270120T160100Z
 SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Shakedown
@@ -18,7 +18,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:b35f238313a6517b@agendadeportemotor.local
-DTSTAMP:20261124T200136Z
+DTSTAMP:20261125T190143Z
 DTSTART:20270121T143500Z
 DTEND:20270121T200500Z
 SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Etapa del jueve
@@ -31,7 +31,7 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:6755e61b911359ab@agendadeportemotor.local
-DTSTAMP:20261124T200136Z
+DTSTAMP:20261125T190143Z
 DTSTART:20270122T082500Z
 DTEND:20270122T164500Z
 SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Etapa del viern
@@ -44,11 +44,37 @@ STATUS:CONFIRMED
 END:VEVENT
 BEGIN:VEVENT
 UID:52679aa1889c3228@agendadeportemotor.local
-DTSTAMP:20261124T200136Z
+DTSTAMP:20261125T190143Z
 DTSTART:20270123T070500Z
 DTEND:20270123T182500Z
 SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Etapa del sába
  do: SS10 a SS15
+DESCRIPTION:Transmisión habitual: Rally.TV\nFuente: https://www.wrc.com/en
+ /events/wrc-rallye-monte-carlo-2027/itinerary-wrc-rallye-monte-carlo-2027\
+ nDónde verlo:\nRally.TV: https://www.rally.tv/en
+LOCATION:Gap (Francia)\, Mónaco
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:038391b9245aa904@agendadeportemotor.local
+DTSTAMP:20261125T190143Z
+DTSTART:20270124T070000Z
+DTEND:20270124T094000Z
+SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Etapa del domin
+ go: SS16 a SS17
+DESCRIPTION:Transmisión habitual: Rally.TV\nFuente: https://www.wrc.com/en
+ /events/wrc-rallye-monte-carlo-2027/itinerary-wrc-rallye-monte-carlo-2027\
+ nDónde verlo:\nRally.TV: https://www.rally.tv/en
+LOCATION:Gap (Francia)\, Mónaco
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:9dc530fad9197d33@agendadeportemotor.local
+DTSTAMP:20261125T190143Z
+DTSTART:20270124T121500Z
+DTEND:20270124T133000Z
+SUMMARY:Campeonato Mundial de Rally (WRC) (Gap (Francia)) - Power Stage (SS
+ 18)
 DESCRIPTION:Transmisión habitual: Rally.TV\nFuente: https://www.wrc.com/en
  /events/wrc-rallye-monte-carlo-2027/itinerary-wrc-rallye-monte-carlo-2027\
  nDónde verlo:\nRally.TV: https://www.rally.tv/en

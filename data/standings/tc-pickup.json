@@ -1,7 +1,7 @@
 {
   "seriesId": "tc-pickup",
   "season": 2026,
-  "updatedAt": "2026-11-18T17:53:37Z",
+  "updatedAt": "2026-11-25T19:01:43Z",
   "tables": [
     {
       "title": "Pilotos",
@@ -22,7 +22,7 @@
           "pos": 3,
           "name": "Mariano Werner",
           "number": "3",
-          "points": 346
+          "points": 346.5
         },
         {
           "pos": 4,
@@ -34,37 +34,37 @@
           "pos": 5,
           "name": "Gastón Mazzacane",
           "number": "11",
-          "points": 317.5
+          "points": 319
         },
         {
           "pos": 6,
           "name": "Diego Azar",
           "number": "110",
-          "points": 314.5
+          "points": 316
         },
         {
           "pos": 7,
           "name": "Marco Dianda",
           "number": "147",
-          "points": 310.5
+          "points": 312
         },
         {
           "pos": 8,
           "name": "Ignacio Faín",
           "number": "86",
-          "points": 305.5
+          "points": 306
         },
         {
           "pos": 9,
           "name": "Diego De Carlo",
           "number": "13",
-          "points": 279.5
+          "points": 281
         },
         {
           "pos": 10,
           "name": "Tomás Abdala",
           "number": "12",
-          "points": 265
+          "points": 265.5
         },
         {
           "pos": 11,
@@ -127,21 +127,21 @@
         },
         {
           "pos": 21,
-          "name": "THOMAS RICCIARDI",
-          "number": "126",
-          "points": 31.5
-        },
-        {
-          "pos": 22,
           "name": "Gaspar Chansard",
           "number": "140",
           "points": 23.5
         },
         {
-          "pos": 23,
+          "pos": 22,
           "name": "Matías Frano",
           "number": "75",
           "points": 23
+        },
+        {
+          "pos": 23,
+          "name": "THOMAS RICCIARDI",
+          "number": "126",
+          "points": 0
         }
       ]
     }
@@ -151,6 +151,6 @@
     "title": "Campeonato TC PICK UP 2026",
     "kind": "html",
     "method": "directo",
-    "fetchedAt": "2026-11-18T17:53:37Z"
+    "fetchedAt": "2026-11-25T19:01:43Z"
   }
 }

@@ -1,8 +1,27 @@
 {
   "seriesId": "alms",
   "season": 2026,
-  "updatedAt": "2026-11-18T17:53:37Z",
+  "updatedAt": "2026-11-25T19:01:43Z",
   "tables": [
+    {
+      "title": "Pilotos Hypercar",
+      "rows": [
+        {
+          "pos": 1,
+          "name": "LUIS PEREZ COMPANC / NICKLAS NIELSEN / YIFEI YE",
+          "team": "AF CORSE",
+          "number": "90",
+          "points": 51
+        },
+        {
+          "pos": 2,
+          "name": "ANTONIO FUOCO / NICOLA LACORTE / ROBERTO LACORTE",
+          "team": "CETILAR RACING",
+          "number": "47",
+          "points": 37
+        }
+      ]
+    },
     {
       "title": "Pilotos LMP2",
       "rows": [
@@ -154,7 +173,7 @@
         {
           "pos": 4,
           "name": "AMEERH NARAN / LUCA STOLZ / MIKKEL GAARDE PEDERSEN",
-          "team": "IRON LYNX",
+          "team": "CRAFT-BAMBOO - IRON LYNX",
           "number": "88",
           "points": 18
         },
@@ -329,19 +348,17 @@
       ]
     },
     {
-      "title": "Pilotos Hypercar",
+      "title": "Equipos Hypercar",
       "rows": [
         {
           "pos": 1,
-          "name": "LUIS PEREZ COMPANC / NICKLAS NIELSEN / YIFEI YE",
-          "team": "AF CORSE",
+          "name": "AF CORSE",
           "number": "90",
           "points": 51
         },
         {
           "pos": 2,
-          "name": "ANTONIO FUOCO / NICOLA LACORTE / ROBERTO LACORTE",
-          "team": "CETILAR RACING",
+          "name": "CETILAR RACING",
           "number": "47",
           "points": 37
         }
@@ -471,7 +488,7 @@
         },
         {
           "pos": 4,
-          "name": "IRON LYNX",
+          "name": "CRAFT-BAMBOO - IRON LYNX",
           "number": "88",
           "points": 18
         },
@@ -620,23 +637,6 @@
           "points": 0
         }
       ]
-    },
-    {
-      "title": "Equipos Hypercar",
-      "rows": [
-        {
-          "pos": 1,
-          "name": "AF CORSE",
-          "number": "90",
-          "points": 51
-        },
-        {
-          "pos": 2,
-          "name": "CETILAR RACING",
-          "number": "47",
-          "points": 37
-        }
-      ]
     }
   ],
   "source": {
@@ -644,6 +644,6 @@
     "title": "ALMS Championship classification 2026",
     "kind": "html",
     "method": "directo",
-    "fetchedAt": "2026-11-18T17:53:37Z"
+    "fetchedAt": "2026-11-25T19:01:43Z"
   }
 }
