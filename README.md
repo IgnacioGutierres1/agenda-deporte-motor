@@ -1,8 +1,8 @@
 # Grid Agenda
 
-> Antes "Agenda Deporte Motor" (el repositorio conserva ese nombre). La app se está mudando de
-> `https://<usuario>.github.io/agenda-deporte-motor/` al dominio propio <https://gridagenda.com>: qué está hecho, qué
-> falta y cómo está armado, en [docs/migracion/dominio.md](docs/migracion/dominio.md).
+> Antes "Agenda Deporte Motor" (el repositorio conserva ese nombre). La app está en <https://gridagenda.com>; la
+> dirección anterior, `https://<usuario>.github.io/agenda-deporte-motor/`, redirige. Cómo está armado el dominio, en
+> [docs/migracion/dominio.md](docs/migracion/dominio.md).
 
 Grilla de horarios de deporte motor (internacional y argentino) con **la fuente oficial de cada horario**,
 resultados y campeonatos, y exportación a calendario (`.ics`, Google Calendar y suscripción).

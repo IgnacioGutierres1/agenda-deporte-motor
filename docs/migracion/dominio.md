@@ -10,9 +10,11 @@ Volver al [README](README.md) · [plan por fases](plan-por-fases.md).
 | Código (app, Worker, workflow) | Hecho, en `main` |
 | `api.gridagenda.com` y `data.gridagenda.com` | Hecho: Worker publicado en la cuenta de Cloudflare del dominio ([detalle](#dos-cuentas-de-cloudflare)) |
 | Variables del repo | Hecho: `WORKER_URL`, `DATA_BASE_URL` y `APP_ORIGIN` |
-| Cambio de dirección de la app a `gridagenda.com` | **Pendiente** ([orden](#orden-del-cambio-de-dirección)) |
+| Cambio de dirección de la app a `gridagenda.com` | Hecho: dominio de GitHub Pages con HTTPS obligatorio; `www` y la dirección vieja redirigen |
+| Origen autorizado de Google (carga directa en Calendar) | **Pendiente**: sumar `https://gridagenda.com` en Google Cloud → Credenciales |
 
-Lo que sigue describe cómo queda todo una vez terminados los pasos pendientes.
+Probado contra lo publicado, con tamaño de pantalla de celular: recorrido de la app en `gridagenda.com` (17 chequeos)
+y mudanza de ajustes desde la dirección vieja (8 chequeos).
 
 ## Qué se decidió (2026-11-25)
 
@@ -59,7 +61,8 @@ Lo que queda para después (fase 0.4 y 0.5): las rutas versionadas `data.gridage
 | Repo (Actions → Variables) | `WORKER_URL` | `https://api.gridagenda.com` |
 | Repo | `DATA_BASE_URL` | `https://data.gridagenda.com/` |
 | Repo | `APP_ORIGIN` | `https://gridagenda.com` |
-| Worker (`wrangler.jsonc`) | `DATA_BASE` | Origen de los datos: hoy Pages; después del cambio de dirección, `https://gridagenda.com/data` |
+| Worker (`wrangler.jsonc`) | `DATA_BASE` | Origen de los datos: `https://gridagenda.com/data` (GitHub Pages) |
+| Worker | `APP_URL` | `https://gridagenda.com/` |
 | Worker | `DATA_HOSTS` | `data.gridagenda.com` |
 | Worker | `ALLOWED_ORIGINS` | Incluye `https://gridagenda.com` **y** `https://ignaciogutierres1.github.io` (apps ya instaladas) |
 
@@ -77,7 +80,9 @@ El orden importa por las apps ya instaladas en la dirección vieja:
    service worker no se actualiza a través de una redirección): una instalación que no pasó por este paso sigue
    andando con su versión vieja, pero no ve el aviso de mudanza.
 4. **Cambio de dirección:** en Cloudflare, DNS de la raíz hacia GitHub Pages (abajo), y en el repo *Settings → Pages
-   → Custom domain* = `gridagenda.com`. Cuando GitHub emite el certificado, tildar *Enforce HTTPS*.
+   → Custom domain* = `gridagenda.com`. Cuando GitHub emite el certificado, tildar *Enforce HTTPS*. Si el dominio
+   se cargó antes que el DNS y el certificado no aparece en ~10 minutos, quitar el dominio y volver a ponerlo: eso
+   repite el chequeo de DNS y el certificado sale en un minuto.
 5. En el teléfono: abrir la app vieja → aviso → **Pasarme** → instalar desde `gridagenda.com` → activar los avisos
    → desinstalar la vieja.
 6. Limpieza: `DATA_BASE` y `APP_URL` del Worker a `gridagenda.com`; sumar `https://gridagenda.com` como origen

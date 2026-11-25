@@ -41,7 +41,7 @@ Todo en ramas `feat/…` como siempre; ningún cambio visible para el usuario.
       respaldo en `data/`, proxy de datos en el Worker, avisos que se renuevan solos y mudanza de lo guardado.
 - [x] `api.gridagenda.com` y `data.gridagenda.com` respondiendo (Worker publicado en la cuenta de Cloudflare del
       dominio) y variables del repo `WORKER_URL`, `DATA_BASE_URL` y `APP_ORIGIN` cargadas.
-- [ ] Cambio de dirección: `gridagenda.com` como dominio de GitHub Pages; la dirección vieja redirige.
+- [x] Cambio de dirección: `gridagenda.com` como dominio de GitHub Pages; la dirección vieja redirige.
 
 **0.2 Spike de compatibilidad (medio día)**
 - [ ] Proyecto Expo descartable que importe `@dm/shared` y muestre la agenda de hoy en un teléfono Android real
