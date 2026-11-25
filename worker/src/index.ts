@@ -1,5 +1,6 @@
 /**
- * Cloudflare Worker de Agenda Deporte Motor (plan gratuito).
+ * Cloudflare Worker de Grid Agenda (plan gratuito). Atiende dos dominios:
+ * api.gridagenda.com (avisos y tiempos en vivo) y data.gridagenda.com (datos del pipeline, ver data-proxy.ts).
  *
  * - Avisos push: la app registra la suscripción del dispositivo con sus categorías y la anticipación;
  *   cada 5 minutos el cron lee data/schedule.json publicado en GitHub Pages y avisa las sesiones que
@@ -12,12 +13,17 @@ import { buildPushHTTPRequest } from '@pushforge/builder';
 import type { ScheduleFile } from '@dm/shared';
 import { isProxyAllowed } from '@dm/shared/live-sources';
 import { dueNotifications, parseSubscribeBody, windowStart, type Notification, type SubscriberRecord } from './due.ts';
+import { handleData, isDataHost } from './data-proxy.ts';
 
 export interface Env {
   SUBS: KVNamespace;
   VAPID_PRIVATE_KEY: string;
   VAPID_PUBLIC_KEY: string;
+  /** Origen de los datos publicados por el pipeline (GitHub Pages), sin barra final. */
   DATA_BASE: string;
+  /** Hosts que sirven datos en vez de la API, separados por coma. */
+  DATA_HOSTS?: string;
+  /** Dirección de la app para los avisos de dispositivos que todavía no resuelven `path` solos. */
   APP_URL: string;
   ALLOWED_ORIGINS: string;
   ADMIN_CONTACT: string;
@@ -65,7 +71,9 @@ async function sendPush(env: Env, sub: SubscriberRecord, n: Pick<Notification, '
     privateJWK: env.VAPID_PRIVATE_KEY,
     subscription: sub.subscription,
     message: {
-      payload: { title: n.title, body: n.body, url: env.APP_URL + n.path, tag: n.sessionId },
+      // `path` es relativo a la app: cada dispositivo lo abre en la dirección donde la tiene instalada
+      // (gridagenda.com o la anterior). `url` queda para las versiones que todavía no leen `path`.
+      payload: { title: n.title, body: n.body, path: n.path, url: env.APP_URL + n.path, tag: n.sessionId },
       adminContact: env.ADMIN_CONTACT,
       // El aviso deja de tener sentido cuando la sesión ya empezó.
       options: { urgency: 'high', ttl: 30 * 60, topic: n.sessionId.slice(0, 32) },
@@ -114,7 +122,7 @@ async function handleApi(request: Request, env: Env, url: URL): Promise<Response
     const sub = (await readSubs(env))[await idFor(body.endpoint)];
     if (!sub) return json({ error: 'Este dispositivo no está suscripto' }, 404, cors);
     const status = await sendPush(env, sub, {
-      title: 'Deporte Motor: avisos activados',
+      title: 'Grid Agenda: avisos activados',
       body: `Te vamos a avisar ${sub.leadMinutes} minutos antes de cada sesión de lo que seguís.`,
       path: '#/',
       sessionId: 'prueba',
@@ -179,8 +187,9 @@ async function runNotifications(scheduledTime: number, env: Env): Promise<void> 
 export default {
   async fetch(request: Request, env: Env): Promise<Response> {
     const url = new URL(request.url);
+    if (isDataHost(url.hostname, env)) return handleData(request, env, url);
     if (url.pathname.startsWith('/api/')) return handleApi(request, env, url);
-    return new Response('Agenda Deporte Motor — API de avisos y tiempos en vivo.', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
+    return new Response('Grid Agenda — API de avisos y tiempos en vivo.', { headers: { 'Content-Type': 'text/plain; charset=utf-8' } });
   },
 
   async scheduled(controller: ScheduledController, env: Env, ctx: ExecutionContext): Promise<void> {

@@ -105,10 +105,16 @@ jobs:
       - name: Build de la app
         run: npm run build
         env:
-          VITE_BASE: /${{ github.event.repository.name }}/
+          # Sin VITE_BASE: el build usa base relativa y sirve igual en gridagenda.com y en <usuario>.github.io/<repo>/.
           VITE_GITHUB_REPO: ${{ github.repository }}
           VITE_GOOGLE_CLIENT_ID: ${{ vars.GOOGLE_CLIENT_ID }}
+          # Variables del repo (Settings → Secrets and variables → Actions → Variables). Vacías = sin dominio propio:
+          #   WORKER_URL     https://api.gridagenda.com    avisos y tiempos en vivo
+          #   DATA_BASE_URL  https://data.gridagenda.com/  datos (si falla, la app usa data/ junto a la app)
+          #   APP_ORIGIN     https://gridagenda.com        dirección principal (en otra se ofrece la mudanza)
           VITE_WORKER_URL: ${{ vars.WORKER_URL }}
+          VITE_DATA_BASE: ${{ vars.DATA_BASE_URL }}
+          VITE_APP_ORIGIN: ${{ vars.APP_ORIGIN }}
 
       - uses: actions/configure-pages@v5
 

@@ -84,10 +84,14 @@ export const routes: RouteRecordRaw[] = [
   { path: '/:pathMatch(.*)*', redirect: '/' },
 ];
 
-/** Historial con hash: funciona en GitHub Pages bajo sub-ruta y al recargar cualquier pantalla. */
+/**
+ * Historial con hash: funciona en la raíz del dominio propio, bajo una sub-ruta (GitHub Pages) y al recargar
+ * cualquier pantalla. Sin base fija: usa la ruta en la que se abrió la página, así el mismo build sirve en las dos
+ * direcciones (la app se compila con base relativa, ver vite.config.ts).
+ */
 export function createAppRouter() {
   return createRouter({
-    history: createWebHashHistory(import.meta.env.BASE_URL),
+    history: createWebHashHistory(),
     routes,
     scrollBehavior(_to, _from, saved) {
       return saved ?? { top: 0 };

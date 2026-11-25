@@ -1,10 +1,19 @@
 {
-  // Worker de Agenda Deporte Motor (plan gratuito de Cloudflare).
+  // Worker de Grid Agenda (plan gratuito de Cloudflare). El nombre del script no se cambia: renombrarlo
+  // crearía otro Worker y la dirección *.workers.dev de antes dejaría de responder.
   "name": "agenda-deporte-motor",
   "main": "src/index.ts",
   "compatibility_date": "2024-12-01",
   "compatibility_flags": ["nodejs_compat"],
+  // La dirección *.workers.dev sigue activa: la usan las versiones de la app instaladas antes del dominio propio.
   "workers_dev": true,
+  // Dominios propios (wrangler crea los registros DNS y los certificados al publicar):
+  //  - api.gridagenda.com  → avisos push y proxy de tiempos en vivo (/api/…)
+  //  - data.gridagenda.com → datos del pipeline (ver src/data-proxy.ts)
+  "routes": [
+    { "pattern": "api.gridagenda.com", "custom_domain": true, "zone_name": "gridagenda.com" },
+    { "pattern": "data.gridagenda.com", "custom_domain": true, "zone_name": "gridagenda.com" }
+  ],
   "preview_urls": false,
   "triggers": {
     // Cada 5 minutos: avisos de sesiones que empiezan pronto.
@@ -15,12 +24,16 @@
     { "binding": "SUBS", "id": "f1367e809679461aa16408a434a00bec" }
   ],
   "vars": {
-    // Datos publicados por el pipeline (GitHub Pages).
+    // Origen de los datos publicados por el pipeline (GitHub Pages). Lo leen el cron de avisos y el proxy de
+    // data.gridagenda.com. Cuando gridagenda.com sea el dominio de Pages, pasa a "https://gridagenda.com/data"
+    // (mientras tanto la dirección de github.io redirige sola y sigue funcionando).
     "DATA_BASE": "https://ignaciogutierres1.github.io/agenda-deporte-motor/data",
-    // Dirección de la app (para abrirla al tocar el aviso).
+    // Hosts de este Worker que sirven datos en vez de la API.
+    "DATA_HOSTS": "data.gridagenda.com",
+    // Dirección de la app para los avisos de versiones instaladas que no resuelven `path` solas.
     "APP_URL": "https://ignaciogutierres1.github.io/agenda-deporte-motor/",
-    // Orígenes que pueden usar la API (la app publicada y el modo desarrollo).
-    "ALLOWED_ORIGINS": "https://ignaciogutierres1.github.io,http://localhost:5173,http://localhost:4173",
+    // Orígenes que pueden usar la API: el dominio propio, la dirección anterior (apps ya instaladas) y desarrollo.
+    "ALLOWED_ORIGINS": "https://gridagenda.com,https://ignaciogutierres1.github.io,http://localhost:5173,http://localhost:4173",
     "ADMIN_CONTACT": "https://github.com/IgnacioGutierres1/agenda-deporte-motor"
   }
   // Secretos (npx wrangler secret put ...): VAPID_PRIVATE_KEY (JWK en JSON), VAPID_PUBLIC_KEY (base64url).

@@ -4,11 +4,18 @@ import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
 import { VitePWA } from 'vite-plugin-pwa';
 import { serveData } from './build/serve-data.ts';
+import { dataPattern, withTrailingSlash } from './build/data-pattern.ts';
 
 const here = path.dirname(fileURLToPath(import.meta.url));
 
-// En GitHub Pages la app vive en /<repo>/. Se define con VITE_BASE en el workflow.
-const base = process.env.VITE_BASE ?? '/';
+// Base relativa: el mismo build funciona en la raíz del dominio propio (gridagenda.com) y bajo la sub-ruta de
+// GitHub Pages (/<repo>/), así cambiar de dirección no exige volver a compilar. La app usa historial con hash,
+// por eso la página siempre se sirve desde la misma ruta. VITE_BASE permite forzar otra.
+const base = process.env.VITE_BASE || './';
+
+// Dirección propia de los datos (p. ej. "https://data.gridagenda.com/"); vacío = solo data/ junto a la app.
+// El service worker guarda también los archivos de esa dirección (ver build/data-pattern.ts).
+const dataBase = withTrailingSlash(process.env.VITE_DATA_BASE);
 
 export default defineConfig(({ command, mode }) => {
   // `npm run dev:fixtures` sirve los datos de prueba de app/test/fixtures en /data/ (solo en desarrollo).
@@ -30,9 +37,9 @@ export default defineConfig(({ command, mode }) => {
         injectRegister: false,
         includeAssets: ['icons/icon.svg', 'icons/apple-touch-icon.png'],
         manifest: {
-          name: 'Deporte Motor',
-          short_name: 'Deporte Motor',
-          description: 'Grilla de horarios de deporte motor con fuentes oficiales, resultados y campeonatos.',
+          name: 'Grid Agenda',
+          short_name: 'Grid Agenda',
+          description: 'Agenda de automovilismo: horarios con fuente oficial, resultados y campeonatos.',
           lang: 'es-AR',
           dir: 'ltr',
           start_url: '.',
@@ -60,7 +67,7 @@ export default defineConfig(({ command, mode }) => {
             {
               // Fichas de pilotos (data/drivers/{shard}.json): caché aparte, para que abrir muchas fichas
               // no desplace de la caché general a la agenda y demás datos que se usan sin conexión.
-              urlPattern: ({ url }) => /\/data\/drivers\/[^/]+\.json$/.test(url.pathname),
+              urlPattern: dataPattern('drivers/[^/?]+\\.json', dataBase),
               handler: 'NetworkFirst',
               options: {
                 cacheName: 'dm-drivers',
@@ -73,7 +80,7 @@ export default defineConfig(({ command, mode }) => {
               // Trazados de circuitos (data/tracks/{id}.json): casi no cambian, así que se muestra la copia
               // guardada y se actualiza de fondo. Caché aparte, para que recorrer la lista de circuitos
               // (un archivo por circuito) no desplace de la caché general a la agenda y los resultados.
-              urlPattern: ({ url }) => /\/data\/tracks\/[^/]+\.json$/.test(url.pathname),
+              urlPattern: dataPattern('tracks/[^/?]+\\.json', dataBase),
               handler: 'StaleWhileRevalidate',
               options: {
                 cacheName: 'dm-tracks',
@@ -83,7 +90,7 @@ export default defineConfig(({ command, mode }) => {
             },
             {
               // Datos del pipeline: siempre intenta la red y, sin conexión, usa la última copia.
-              urlPattern: ({ url }) => /\/data\/.+\.json$/.test(url.pathname),
+              urlPattern: dataPattern('[^?]+\\.json', dataBase),
               handler: 'NetworkFirst',
               options: {
                 cacheName: 'dm-data',

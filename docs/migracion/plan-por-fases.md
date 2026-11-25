@@ -35,8 +35,13 @@ Todo en ramas `feat/…` como siempre; ningún cambio visible para el usuario.
 **0.1 Decisiones**
 - [x] Contestar las preguntas del README: uso propio por ahora; cuentas con Google, email y passkeys; publicidad y
       suscripción a futuro ([decisiones](README.md#decisiones-tomadas-2026-11-14)).
-- [ ] Elegir y comprar el dominio; poner `data.<dominio>` delante de GitHub Pages y `api.<dominio>` delante del
-      Worker. La PWA actual pasa a usar esas URLs (variable `VITE_DATA_BASE` nueva y `WORKER_URL`).
+- [x] Elegir y comprar el dominio: **gridagenda.com** (2026-11-25), nombre visible **Grid Agenda**, paquete
+      `com.gridagenda.app`. Detalle y paso a paso en [dominio.md](dominio.md).
+- [x] Código listo: build con base relativa (sirve en el dominio y en la dirección vieja), `VITE_DATA_BASE` con
+      respaldo en `data/`, proxy de datos en el Worker, avisos que se renuevan solos y mudanza de lo guardado.
+- [ ] `api.gridagenda.com` y `data.gridagenda.com` respondiendo (falta que el dominio y el Worker estén en la misma
+      cuenta de Cloudflare) y variables del repo `WORKER_URL`, `DATA_BASE_URL` y `APP_ORIGIN` cargadas.
+- [ ] Cambio de dirección: `gridagenda.com` como dominio de GitHub Pages; la dirección vieja redirige.
 
 **0.2 Spike de compatibilidad (medio día)**
 - [ ] Proyecto Expo descartable que importe `@dm/shared` y muestre la agenda de hoy en un teléfono Android real

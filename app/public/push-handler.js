@@ -1,19 +1,36 @@
-/* Avisos push de Agenda Deporte Motor (lo importa el service worker generado por vite-plugin-pwa). */
+/* Avisos push de Grid Agenda (lo importa el service worker generado por vite-plugin-pwa). */
+
+/**
+ * Dirección que abre el aviso. `path` ("#/evento/…") es relativo a esta instalación: así el mismo aviso abre la
+ * app en gridagenda.com o en la dirección anterior, según dónde esté instalada. `url` es de avisos viejos.
+ */
+function targetUrl(data) {
+  const scope = self.registration.scope;
+  if (typeof data.path === 'string' && data.path) {
+    try {
+      return new URL(data.path, scope).href;
+    } catch {
+      /* sigue con url */
+    }
+  }
+  return data.url || scope;
+}
+
 self.addEventListener('push', (event) => {
   let data = {};
   try {
     data = event.data ? event.data.json() : {};
   } catch {
-    data = { title: 'Deporte Motor', body: event.data ? event.data.text() : '' };
+    data = { title: 'Grid Agenda', body: event.data ? event.data.text() : '' };
   }
-  const title = data.title || 'Deporte Motor';
+  const title = data.title || 'Grid Agenda';
   event.waitUntil(
     self.registration.showNotification(title, {
       body: data.body || '',
       icon: 'icons/icon-192.png',
       badge: 'icons/icon-192.png',
       tag: data.tag || undefined,
-      data: { url: data.url || self.registration.scope },
+      data: { url: targetUrl(data) },
     }),
   );
 });
