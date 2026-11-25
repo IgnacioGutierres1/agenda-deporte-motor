@@ -299,7 +299,12 @@
         <h3>Google Calendar</h3>
         <p class="small dim">
           Para "Cargar en Google Calendar" hace falta un Client ID OAuth (tipo "Aplicación web") de Google Cloud con la
-          Calendar API habilitada y este sitio como origen autorizado. El calendario "Deporte Motor" tiene que existir.
+          Calendar API habilitada y este sitio como origen autorizado. El calendario de destino se elige de la lista de
+          tu cuenta la primera vez que cargás, en Exportar.
+        </p>
+        <p v-if="gcalCalendar" class="small" data-test="gcal-chosen">
+          Calendario de destino: <strong>{{ gcalCalendar.name }}</strong>
+          <button type="button" class="btn btn-small btn-ghost" @click="setGcalCalendar(null)">Olvidar</button>
         </p>
         <label class="field">
           <span>Client ID de Google</span>
@@ -386,7 +391,7 @@ export default defineComponent({
   },
   computed: {
     ...mapState(useScheduleStore, ['schedule', 'generatedAt', 'fetchedAt', 'loading', 'now']),
-    ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef', 'theme', 'showWeather']),
+    ...mapState(useSettingsStore, ['hiddenSeries', 'canWriteRepo', 'repoRef', 'theme', 'showWeather', 'gcalCalendar']),
     ...mapWritableState(useSettingsStore, ['timeZone', 'googleClientId', 'githubRepo', 'githubToken']),
     zoneOptions(): Array<{ value: string; label: string }> {
       const list = [...ZONE_OPTIONS];
@@ -420,7 +425,7 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['load']),
-    ...mapActions(useSettingsStore, ['setSeriesVisible', 'setManyVisible', 'setTheme', 'setShowWeather']),
+    ...mapActions(useSettingsStore, ['setSeriesVisible', 'setManyVisible', 'setTheme', 'setShowWeather', 'setGcalCalendar']),
     ...mapActions(useWeatherStore, { clearWeather: 'clear' }),
     /** Interruptor "Mostrar clima". Al apagarlo se borran los pronósticos guardados en el dispositivo. */
     toggleWeather() {

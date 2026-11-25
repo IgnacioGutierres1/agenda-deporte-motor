@@ -10,7 +10,7 @@
  * Los eventos creados por la app (id "dm…") que ya no están en la grilla se informan como sobrantes.
  */
 import { DateTime } from 'luxon';
-import { EVENT_ID_PREFIX, GCAL_TZ, type ExpectedEvent, type GcalEventBody } from './mapping.ts';
+import { APP_MARK_KEY, APP_MARK_VALUE, EVENT_ID_PREFIX, GCAL_TZ, type ExpectedEvent, type GcalEventBody } from './mapping.ts';
 
 export type CalendarAuditStatus = 'OK' | 'ERROR' | 'DESFASADO' | 'FALTANTE';
 
@@ -29,6 +29,12 @@ export interface CalendarEvent {
   location?: string;
   start?: CalendarEventTime;
   end?: CalendarEventTime;
+  extendedProperties?: { private?: Record<string, string> };
+}
+
+/** ¿Lo creó la app? Id con el prefijo de la app y, además, la marca privada que la app pone al crear. */
+export function isAppEvent(e: CalendarEvent): boolean {
+  return e.id.startsWith(EVENT_ID_PREFIX) && e.extendedProperties?.private?.[APP_MARK_KEY] === APP_MARK_VALUE;
 }
 
 export interface CalendarAuditRow {
@@ -148,9 +154,8 @@ export function auditCalendar(
   });
 
   const expectedIds = new Set(expected.map((e) => e.body.id));
-  const extras = live.filter(
-    (e) => e.id.startsWith(EVENT_ID_PREFIX) && !used.has(e.id) && !expectedIds.has(e.id),
-  );
+  // Sobrantes: solo eventos que creó la app (con su marca). Nunca un evento ajeno, aunque su id se parezca.
+  const extras = live.filter((e) => isAppEvent(e) && !used.has(e.id) && !expectedIds.has(e.id));
 
   const counts = { OK: 0, ERROR: 0, DESFASADO: 0, FALTANTE: 0, expected: expected.length, found: 0, extras: extras.length };
   for (const r of rows) {

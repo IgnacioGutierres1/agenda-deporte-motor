@@ -40,6 +40,12 @@ function syncRefs<T extends FollowedDriver>(list: T[], lookup: (id: string) => F
   return changed ? next : null;
 }
 
+/** Calendario de Google elegido como destino de la carga directa (se guarda id y nombre para mostrarlo). */
+export interface GcalCalendarRef {
+  id: string;
+  name: string;
+}
+
 /** Campos de useSettingsStore que se guardan en localStorage (main.ts). */
 export const PERSISTED_SETTINGS = [
   'timeZone',
@@ -53,6 +59,7 @@ export const PERSISTED_SETTINGS = [
   'themeChosen',
   'showWeather',
   'googleClientId',
+  'gcalCalendar',
   'githubRepo',
   'githubToken',
 ];
@@ -99,6 +106,8 @@ export const useSettingsStore = defineStore('settings', {
     showWeather: true,
     /** Client ID OAuth de Google; vacío = el de VITE_GOOGLE_CLIENT_ID. */
     googleClientId: '',
+    /** Calendario de Google donde se cargan las sesiones; null = todavía no se eligió (se pregunta al cargar). */
+    gcalCalendar: null as GcalCalendarRef | null,
     /** "owner/repo"; vacío = VITE_GITHUB_REPO. */
     githubRepo: '',
     /** Token de GitHub de grano fino (solo para el dueño del repo). Solo vive en este dispositivo. */
@@ -143,6 +152,10 @@ export const useSettingsStore = defineStore('settings', {
     },
     setShowWeather(on: boolean) {
       this.showWeather = on;
+    },
+    /** Elige (o, con null, olvida) el calendario de Google de destino. */
+    setGcalCalendar(calendar: GcalCalendarRef | null) {
+      this.gcalCalendar = calendar ? { id: calendar.id, name: calendar.name } : null;
     },
     isFollowed(seriesId: string): boolean {
       return this.followedSeries.includes(seriesId);

@@ -8,10 +8,18 @@
  */
 import { AR_TZ, icsSummary, stableHash, toLocalWallIso, type MotorEvent, type Series, type Session } from '@dm/shared';
 
+/** Nombre del calendario sugerido al elegir destino (el que usaba el gem); se puede elegir cualquier otro. */
 export const CALENDAR_NAME = 'Deporte Motor';
 export const GCAL_TZ = AR_TZ;
 export const EVENT_ID_PREFIX = 'dm';
 export const REMINDER_MINUTES = 30;
+/**
+ * Marca privada que la app pone en cada evento que crea (extendedProperties.private). Con el destino a elección
+ * del usuario (puede ser su calendario personal), solo lo que lleva esta marca se considera "de la app" a la hora
+ * de ofrecer borrar sobrantes: el prefijo del id solo no alcanza, un evento ajeno puede empezar igual por azar.
+ */
+export const APP_MARK_KEY = 'gridAgenda';
+export const APP_MARK_VALUE = '1';
 
 export interface GcalDateTime {
   dateTime: string;
@@ -26,6 +34,8 @@ export interface GcalEventBody {
   start: GcalDateTime;
   end: GcalDateTime;
   reminders: { useDefault: boolean; overrides: Array<{ method: 'popup' | 'email'; minutes: number }> };
+  /** Marca de la app (ver APP_MARK_KEY). */
+  extendedProperties: { private: Record<string, string> };
   status?: 'confirmed';
 }
 
@@ -83,6 +93,7 @@ export function toExpectedEvent({ session, event, series }: SessionInput): Expec
       start: { dateTime: toLocalWallIso(session.startUtc, GCAL_TZ), timeZone: GCAL_TZ },
       end: { dateTime: toLocalWallIso(session.endUtc, GCAL_TZ), timeZone: GCAL_TZ },
       reminders: { useDefault: false, overrides: [{ method: 'popup', minutes: REMINDER_MINUTES }] },
+      extendedProperties: { private: { [APP_MARK_KEY]: APP_MARK_VALUE } },
       status: 'confirmed',
     },
   };

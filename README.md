@@ -128,7 +128,10 @@ Pegarlo en la app → **Ajustes**. Se guarda solo en ese dispositivo.
 3. **Credenciales → Crear ID de cliente OAuth → Aplicación web**, con origen autorizado
    `https://gridagenda.com` (y `https://<usuario>.github.io` mientras se use la dirección anterior).
 4. Copiar el Client ID en la app → **Ajustes** (o como variable `GOOGLE_CLIENT_ID` del repo).
-5. En Google Calendar tiene que existir un calendario llamado **Deporte Motor**.
+5. La primera vez que tocás **Cargar en Google Calendar** (en *Exportar*), la app muestra tus calendarios con
+   permiso de escritura y elegís en cuál cargar; queda guardado en el dispositivo y se cambia con **Cambiar**. Si
+   tenés uno llamado **Deporte Motor** aparece primero, como sugerido, pero sirve cualquiera (también el principal):
+   la app solo modifica y borra los eventos que creó ella, que llevan una marca propia.
 
 ### 6. Opcional: suscripción al calendario
 
