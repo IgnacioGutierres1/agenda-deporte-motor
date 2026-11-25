@@ -1,4 +1,8 @@
-# Agenda Deporte Motor
+# Grid Agenda
+
+> Antes "Agenda Deporte Motor" (el repositorio conserva ese nombre). La app se está mudando de
+> `https://<usuario>.github.io/agenda-deporte-motor/` al dominio propio <https://gridagenda.com>: qué está hecho, qué
+> falta y cómo está armado, en [docs/migracion/dominio.md](docs/migracion/dominio.md).
 
 Grilla de horarios de deporte motor (internacional y argentino) con **la fuente oficial de cada horario**,
 resultados y campeonatos, y exportación a calendario (`.ics`, Google Calendar y suscripción).
@@ -122,13 +126,15 @@ Pegarlo en la app → **Ajustes**. Se guarda solo en ese dispositivo.
 2. **APIs y servicios → Pantalla de consentimiento OAuth**: tipo *Externo*, en modo *Prueba*, y agregar tu
    cuenta como usuario de prueba.
 3. **Credenciales → Crear ID de cliente OAuth → Aplicación web**, con origen autorizado
-   `https://<usuario>.github.io`.
+   `https://gridagenda.com` (y `https://<usuario>.github.io` mientras se use la dirección anterior).
 4. Copiar el Client ID en la app → **Ajustes** (o como variable `GOOGLE_CLIENT_ID` del repo).
 5. En Google Calendar tiene que existir un calendario llamado **Deporte Motor**.
 
 ### 6. Opcional: suscripción al calendario
 
-En **Ajustes** está el link `webcal://…/data/feeds/deporte-motor.ics`. Agregarlo una vez en Google Calendar
+En **Ajustes** está el link `webcal://…/feeds/deporte-motor.ics` (con el dominio propio,
+`webcal://data.gridagenda.com/feeds/deporte-motor.ics`; las suscripciones hechas con la dirección anterior siguen
+funcionando). Agregarlo una vez en Google Calendar
 (*Otros calendarios → Desde URL*) o en el iPhone (*Ajustes → Calendario → Cuentas → Agregar calendario
 suscrito*). Se actualiza solo; Google refresca las suscripciones cada varias horas. Los eventos de los
 próximos 60 días que todavía no tienen cronograma aparecen como evento de día completo "(horarios a confirmar)";
@@ -149,8 +155,13 @@ oficial verificado (`shared/src/broadcast.ts`), su enlace.
 - hace de proxy, solo para una lista cerrada de fuentes oficiales, de tiempos en vivo que no se pueden leer
   directo desde el navegador (CORS).
 
-Publicado en `https://agenda-deporte-motor.agendadeportemotor.workers.dev`. La app lo conoce por la variable
-del repo `WORKER_URL` (*Settings → Secrets and variables → Actions → Variables*).
+Publicado en `https://agenda-deporte-motor.agendadeportemotor.workers.dev`; su dirección definitiva es
+`https://api.gridagenda.com` (ver el estado en [docs/migracion/dominio.md](docs/migracion/dominio.md)). La app lo
+conoce por la variable del repo `WORKER_URL` (*Settings → Secrets and variables → Actions → Variables*).
+
+El mismo Worker sirve los datos del pipeline en `https://data.gridagenda.com/<archivo>` (lo mismo que
+`data/<archivo>` del sitio, con CORS abierto y caché corta). Con la variable del repo `DATA_BASE_URL` cargada, la app
+lee de ahí y, si no responde, usa la copia de `data/` que viaja con ella; sin la variable, lee siempre de `data/`.
 
 Para volver a publicarlo después de un cambio:
 

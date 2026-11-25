@@ -50,6 +50,7 @@ en detalles importantes:
 | [publicacion-y-legal.md](publicacion-y-legal.md) | Play Store (cuenta, pruebas cerradas, privacidad, firma, EAS), dominio y web propia, riesgos legales de una app pública y qué cambia si es de uso propio. |
 | [cuentas-y-monetizacion.md](cuentas-y-monetizacion.md) | Decisiones tomadas; métodos de inicio de sesión y su configuración; modelo gratis + Pro; suscripciones (Play Billing + RevenueCat), publicidad (AdMob) y requisitos para monetizar. |
 | [plan-por-fases.md](plan-por-fases.md) | Fases 0 a 5 con checklist, criterios de "terminado", esfuerzo relativo, costos mensuales y riesgos. |
+| [dominio.md](dominio.md) | Fase 0.1 hecha: nombre (Grid Agenda), dominio (gridagenda.com), las tres direcciones, variables, orden del cambio de dirección y cómo volver atrás. |
 
 Orden de lectura sugerido: este README → `plan-por-fases.md` → el documento de la fase en la que estés.
 
@@ -68,8 +69,8 @@ Detalle completo en [cuentas-y-monetizacion.md](cuentas-y-monetizacion.md).
 | Pregunta | Recomendado | Si la respuesta es otra |
 |---|---|---|
 | ¿iPhone también? | No por ahora (Expo lo deja listo para después). | Cuenta de Apple Developer (USD 99/año) y probar avisos en iOS. |
-| ¿Dominio `.com` o `.com.ar`? | `.com` en Cloudflare Registrar (a precio de costo, renovación sin sorpresas) o `.com.ar` si querés marcar lo argentino (NIC Argentina, arancel en pesos). | Cualquiera sirve; lo importante es tenerlo antes de publicar la app (App Links y TWA lo necesitan). |
-| ¿Nombre de la app? | Uno propio sin marcas ajenas ("Agenda Deporte Motor" está bien; evitar "F1", "MotoGP", etc. en el nombre y el ícono). | Ver [publicacion-y-legal.md](publicacion-y-legal.md#marcas). |
+| ¿Dominio `.com` o `.com.ar`? | **Decidido (2026-11-25): `gridagenda.com`** en Cloudflare Registrar. Ver [dominio.md](dominio.md). | `.app` y `.com.ar` estaban libres ese día; son opcionales. |
+| ¿Nombre de la app? | **Decidido (2026-11-25): "Grid Agenda"**, paquete `com.gridagenda.app`. Sin marcas ajenas en el nombre ni en el ícono. | Ver [publicacion-y-legal.md](publicacion-y-legal.md#marcas). |
 | ¿Mantener la PWA de Vue? | Sí, hasta que la web de Expo la iguale. Después, redirigir. | Si preferís seguir con Vue para la web, Expo queda solo para Android y se comparten `shared/` y la lógica pura; se mantienen dos interfaces. |
 | ¿Repositorio público o privado? | Público (Actions gratis sin límite de minutos y Pages gratis). | Privado: unos USD 12/mes de cómputo incluido (~2.000 minutos Linux), que el pipeline actual podría agotar. |
 | ¿Quién administra las categorías? | Como hoy: `config/series.user.json` vía la API de GitHub desde Ajustes (solo el dueño). | Con cuentas, se puede pasar a un rol "admin" en la base, pero no hace falta. |
