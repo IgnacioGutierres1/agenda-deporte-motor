@@ -19,6 +19,34 @@ interface CalendarListEntry {
   summary?: string;
   summaryOverride?: string;
   accessRole?: string;
+  primary?: boolean;
+  deleted?: boolean;
+  backgroundColor?: string;
+}
+
+/** Un calendario del usuario en el que la app puede escribir. */
+export interface CalendarChoice {
+  id: string;
+  /** Nombre como lo ve el usuario en Google Calendar. */
+  name: string;
+  /** El calendario principal de la cuenta. */
+  primary: boolean;
+  /** Se llama como el calendario sugerido ("Deporte Motor"). */
+  suggested: boolean;
+  color?: string;
+}
+
+const WRITE_ROLES = ['owner', 'writer'];
+
+function toChoice(c: CalendarListEntry): CalendarChoice {
+  const name = (c.summaryOverride || c.summary || c.id).trim();
+  return { id: c.id, name, primary: c.primary === true, suggested: name === CALENDAR_NAME, ...(c.backgroundColor ? { color: c.backgroundColor } : {}) };
+}
+
+/** Orden de la lista para elegir: primero el sugerido, después el principal, el resto por nombre. */
+export function sortCalendars(list: CalendarChoice[]): CalendarChoice[] {
+  const rank = (c: CalendarChoice) => (c.suggested ? 0 : c.primary ? 1 : 2);
+  return [...list].sort((a, b) => rank(a) - rank(b) || a.name.localeCompare(b.name, 'es'));
 }
 
 export class CalendarApi {
@@ -45,8 +73,9 @@ export class CalendarApi {
     return { status: res.status, data };
   }
 
-  /** Busca el calendario "Deporte Motor" entre los del usuario. */
-  async findCalendar(name: string = CALENDAR_NAME): Promise<CalendarListEntry> {
+  /** Calendarios de la cuenta en los que se puede escribir (propios o compartidos con permiso de edición). */
+  async listWritableCalendars(): Promise<CalendarChoice[]> {
+    const out: CalendarChoice[] = [];
     let pageToken: string | undefined;
     do {
       const q = new URLSearchParams({ maxResults: '250', minAccessRole: 'writer' });
@@ -55,14 +84,23 @@ export class CalendarApi {
         'GET',
         `/users/me/calendarList?${q}`,
       );
-      const hit = (data.items ?? []).find((c) => c.summaryOverride === name || c.summary === name);
-      if (hit) return hit;
+      for (const c of data.items ?? []) if (!c.deleted) out.push(toChoice(c));
       pageToken = data.nextPageToken;
     } while (pageToken);
-    throw new GcalError(
-      `No encontré el calendario "${name}" en tu cuenta. Crealo en Google Calendar (Otros calendarios → Crear calendario) con ese nombre exacto y volvé a intentar.`,
-    );
+    return out;
   }
+
+  /** ¿El calendario sigue en la cuenta y se puede escribir en él? (pudo borrarse o perder el permiso). */
+  async canWrite(calendarId: string): Promise<boolean> {
+    try {
+      const { data } = await this.request<CalendarListEntry>('GET', `/users/me/calendarList/${encodeURIComponent(calendarId)}`);
+      return !data.deleted && WRITE_ROLES.includes(data.accessRole ?? '');
+    } catch (e) {
+      if (e instanceof GcalError && e.status === 404) return false;
+      throw e;
+    }
+  }
+
 
   async listEvents(calendarId: string, timeMin: string, timeMax: string): Promise<CalendarEvent[]> {
     const out: CalendarEvent[] = [];

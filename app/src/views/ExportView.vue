@@ -45,15 +45,44 @@
           <button type="button" class="btn btn-block btn-ghost btn-small" :disabled="!exportItems.length || busy" @click="auditOnly">
             Solo auditar el calendario
           </button>
+          <!-- Calendario de destino: se elige de la lista de la cuenta la primera vez y se puede cambiar. -->
+          <p class="small gcal-target" data-test="gcal-target">
+            <template v-if="gcalCalendar">
+              <span class="grow">Se carga en tu calendario <strong>{{ gcalCalendar.name }}</strong>.</span>
+              <button type="button" class="btn btn-small btn-ghost" :disabled="busy" data-test="gcal-change" @click="changeCalendar">Cambiar</button>
+            </template>
+            <span v-else class="dim">La primera vez elegís en cuál de tus calendarios de Google se cargan.</span>
+          </p>
         </template>
         <p v-if="icsNote" class="small dim">{{ icsNote }}</p>
         <p class="small dim">
           Horarios del .ics en UTC (tu calendario los muestra en tu hora).
           <template v-if="effectiveClientId">
-            En Google Calendar se cargan en hora argentina en el calendario "Deporte Motor", con aviso 30 minutos antes.
+            En Google Calendar se cargan en hora argentina, con aviso 30 minutos antes.
           </template>
         </p>
       </div>
+
+      <!-- Elegir el calendario de destino entre los de la cuenta en los que se puede escribir. -->
+      <BottomSheet :open="pickerOpen" title="¿En qué calendario?" @close="pick(null)">
+        <p class="small dim picker-intro">
+          Elegí dónde cargar las sesiones. La app solo modifica y borra los eventos que creó ella; lo demás de tu
+          calendario no se toca.
+        </p>
+        <ul class="list-card" data-test="gcal-picker">
+          <li v-for="c in pickerCalendars" :key="c.id">
+            <button type="button" class="list-row picker-row" @click="pick(c)">
+              <span class="chip" :style="{ background: c.color || 'var(--accent)' }" />
+              <span class="grow">
+                {{ c.name }}
+                <span v-if="c.suggested" class="badge badge-ok">sugerido</span>
+                <span v-else-if="c.primary" class="badge badge-dim">principal</span>
+              </span>
+              <AppIcon v-if="gcalCalendar && gcalCalendar.id === c.id" name="check" :size="18" />
+            </button>
+          </li>
+        </ul>
+      </BottomSheet>
 
       <!-- Sin Client ID de Google la carga directa no funciona: la suscripción hace lo mismo y se actualiza sola. -->
       <section class="card subscribe-card">
@@ -158,6 +187,7 @@ import { defineComponent } from 'vue';
 import { mapActions, mapState } from 'pinia';
 import { AR_TZ, ICS_FILENAME, buildIcs, formatTime, type IcsEventInput, type Series } from '@dm/shared';
 import AppIcon from '../components/AppIcon.vue';
+import BottomSheet from '../components/BottomSheet.vue';
 import CalendarSubscribe from '../components/CalendarSubscribe.vue';
 import DataState from '../components/DataState.vue';
 import PeriodPicker from '../components/PeriodPicker.vue';
@@ -169,13 +199,13 @@ import { webcalUrl } from '../lib/data.ts';
 import { canShareFile, downloadIcs, icsFile, shareIcs } from '../lib/download.ts';
 import { toExpectedEvent, type ExpectedEvent } from '../gcal/mapping.ts';
 import { eventInstant, planFixes, type CalendarAuditResult, type CalendarAuditRow, type CalendarAuditStatus, type CalendarEvent } from '../gcal/audit.ts';
-import { CalendarApi } from '../gcal/api.ts';
+import { CalendarApi, GcalError, sortCalendars, type CalendarChoice } from '../gcal/api.ts';
 import { getAccessToken, preloadGis } from '../gcal/gis.ts';
 import { applyFixes, auditCalendarRemote, deleteExtras, uploadEvents } from '../gcal/sync.ts';
 
 export default defineComponent({
   name: 'ExportView',
-  components: { AppIcon, CalendarSubscribe, DataState, PeriodPicker },
+  components: { AppIcon, BottomSheet, CalendarSubscribe, DataState, PeriodPicker },
   data() {
     return {
       icsNote: '',
@@ -185,12 +215,21 @@ export default defineComponent({
       gcalError: false,
       progress: '',
       audit: null as CalendarAuditResult | null,
-      calendarId: '',
+      /** Calendario cuya existencia y permiso ya se comprobaron en esta sesión (para no preguntarlo en cada toque). */
+      verifiedCalendarId: '',
+      pickerOpen: false,
+      pickerCalendars: [] as CalendarChoice[],
+      /** Resuelve la elección en curso (null = se cerró la lista sin elegir). */
+      pickerResolve: null as ((choice: CalendarChoice | null) => void) | null,
     };
   },
   computed: {
     ...mapState(useScheduleStore, ['items', 'days', 'exportItems', 'excludedIds', 'hasData', 'period', 'seriesById']),
-    ...mapState(useSettingsStore, ['timeZone', 'effectiveClientId', 'followedSeries']),
+    ...mapState(useSettingsStore, ['timeZone', 'effectiveClientId', 'followedSeries', 'gcalCalendar']),
+    /** Id del calendario de destino elegido ("" = todavía ninguno). */
+    calendarId(): string {
+      return this.gcalCalendar?.id ?? '';
+    },
     /** Categorías seguidas que tienen calendario propio (las deshabilitadas no se publican), en el orden en que se siguieron. */
     followedFeeds(): Series[] {
       return this.followedSeries
@@ -219,6 +258,7 @@ export default defineComponent({
   },
   methods: {
     ...mapActions(useScheduleStore, ['setExcluded', 'setAllExcluded']),
+    ...mapActions(useSettingsStore, ['setGcalCalendar']),
     color(item: GridItem): string {
       return seriesColor(item.series);
     },
@@ -276,24 +316,64 @@ export default defineComponent({
       this.gcalLog.push(line);
       if (isError) this.gcalError = true;
     },
-    async connect(): Promise<CalendarApi> {
+    /**
+     * Inicia sesión y deja definido el calendario de destino. Si no hay uno elegido (o `pick` pide cambiarlo, o el
+     * elegido ya no está en la cuenta), muestra la lista para elegir. Sin elección no se sigue.
+     */
+    async connect(pick = false): Promise<CalendarApi> {
       const token = await getAccessToken(this.effectiveClientId);
       const api = new CalendarApi(token);
-      if (!this.calendarId) {
-        const cal = await api.findCalendar();
-        this.calendarId = cal.id;
-        this.log('Calendario "Deporte Motor" encontrado.');
+      const current = this.gcalCalendar;
+      if (current && !pick && this.verifiedCalendarId !== current.id) {
+        this.progress = 'Comprobando el calendario…';
+        if (await api.canWrite(current.id)) {
+          this.verifiedCalendarId = current.id;
+        } else {
+          this.log(`El calendario "${current.name}" ya no está en tu cuenta o no tenés permiso para escribir en él. Elegí otro.`);
+          this.setGcalCalendar(null);
+        }
+      }
+      if (pick || !this.gcalCalendar) {
+        await this.chooseCalendar(api);
+        // Se cerró la lista sin elegir: si no hay destino no se puede seguir (al cambiar, queda el que estaba).
+        if (!this.gcalCalendar) throw new GcalError('No se eligió ningún calendario: no se cargó nada.');
       }
       return api;
     },
-    async run(task: (api: CalendarApi) => Promise<void>) {
+    /** Muestra los calendarios en los que se puede escribir y espera la elección. */
+    async chooseCalendar(api: CalendarApi): Promise<CalendarChoice | null> {
+      this.progress = 'Buscando tus calendarios…';
+      const calendars = sortCalendars(await api.listWritableCalendars());
+      this.progress = '';
+      if (!calendars.length) throw new GcalError('Tu cuenta de Google no tiene calendarios en los que se pueda escribir.');
+      const chosen = await new Promise<CalendarChoice | null>((resolve) => {
+        this.pickerCalendars = calendars;
+        this.pickerResolve = resolve;
+        this.pickerOpen = true;
+      });
+      if (chosen) {
+        this.setGcalCalendar({ id: chosen.id, name: chosen.name });
+        this.verifiedCalendarId = chosen.id;
+        this.audit = null;
+        this.log(`Calendario elegido: "${chosen.name}".`);
+      }
+      return chosen;
+    },
+    /** Toque en un calendario de la lista (o cierre de la lista, con null). */
+    pick(choice: CalendarChoice | null) {
+      this.pickerOpen = false;
+      const resolve = this.pickerResolve;
+      this.pickerResolve = null;
+      resolve?.(choice);
+    },
+    async run(task: (api: CalendarApi) => Promise<void>, pick = false) {
       if (this.busy) return;
       this.busy = true;
       this.gcalLog = [];
       this.gcalError = false;
       this.progress = '';
       try {
-        const api = await this.connect();
+        const api = await this.connect(pick);
         await task(api);
       } catch (e) {
         this.log((e as Error).message, true);
@@ -301,6 +381,10 @@ export default defineComponent({
         this.busy = false;
         this.progress = '';
       }
+    },
+    /** "Cambiar": vuelve a mostrar la lista de calendarios. */
+    changeCalendar() {
+      return this.run(async () => undefined, true);
     },
     async doAudit(api: CalendarApi) {
       this.progress = 'Auditando el calendario…';
@@ -338,7 +422,7 @@ export default defineComponent({
       const extras = this.audit?.extras ?? [];
       if (!extras.length) return;
       const ok = window.confirm(
-        `¿Borrar ${extras.length} evento(s) del calendario "Deporte Motor"? Fueron creados por la app y ya no están en la agenda. No se puede deshacer.`,
+        `¿Borrar ${extras.length} evento(s) del calendario "${this.gcalCalendar?.name ?? ''}"? Fueron creados por la app y ya no están en la agenda. No se puede deshacer.`,
       );
       if (!ok) return;
       return this.run(async (api) => {
@@ -371,6 +455,26 @@ export default defineComponent({
 
 .export-actions {
   margin-top: 1rem;
+}
+
+.gcal-target {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+}
+
+.picker-intro {
+  margin: 0 0 0.6rem;
+}
+
+.picker-row {
+  width: 100%;
+  background: transparent;
+  border: none;
+  text-align: left;
+  font: inherit;
+  cursor: pointer;
 }
 
 .subscribe-card {

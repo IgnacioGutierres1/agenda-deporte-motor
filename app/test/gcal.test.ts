@@ -112,9 +112,10 @@ describe('auditoría post-carga', () => {
     const expected = expectedFromFixture();
     const actual = expected.map(asCalendarEvent);
     actual[0]!.id = 'manual123'; // mismo título, otro id
-    actual.push({ id: 'dm0000000000000099', summary: 'TC (X) - Vieja', start: { dateTime: '2026-11-14T10:00:00-03:00' } });
+    const mark = { extendedProperties: { private: { gridAgenda: '1' } } };
+    actual.push({ id: 'dm0000000000000099', summary: 'TC (X) - Vieja', start: { dateTime: '2026-11-14T10:00:00-03:00' }, ...mark });
     actual.push({ id: 'otroevento', summary: 'Cumpleaños' });
-    actual.push({ id: 'dm0000000000000098', status: 'cancelled', summary: 'Borrado' });
+    actual.push({ id: 'dm0000000000000098', status: 'cancelled', summary: 'Borrado', ...mark });
     const r = auditCalendar(expected, actual);
     expect(r.rows[0]!.status).toBe('OK');
     expect(r.rows[0]!.actual!.id).toBe('manual123');
@@ -141,13 +142,6 @@ describe('CalendarApi', () => {
     expect(JSON.parse(init2!.body as string).start.timeZone).toBe('America/Argentina/Buenos_Aires');
   });
 
-  it('error claro si falta el calendario "Deporte Motor"', async () => {
-    const fetchFn = vi
-      .fn<typeof fetch>()
-      .mockResolvedValue(new Response(JSON.stringify({ items: [{ id: 'x', summary: 'Personal' }] }), { status: 200 }));
-    const api = new CalendarApi('tok', fetchFn);
-    await expect(api.findCalendar()).rejects.toThrow(/No encontré el calendario "Deporte Motor"/);
-  });
 
   it('propaga errores con estado', async () => {
     const fetchFn = vi.fn<typeof fetch>().mockResolvedValue(new Response('{}', { status: 401 }));
