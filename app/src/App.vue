@@ -6,7 +6,7 @@
           <AppIcon name="back" />
         </button>
         <div class="grow header-titles">
-          <div v-if="isHome" class="brand" aria-label="Deporte Motor">DEPORTE<span>MOTOR</span></div>
+          <div v-if="isHome" class="brand" aria-label="Grid Agenda">GRID<span>AGENDA</span></div>
           <div v-else class="app-title" :class="{ big: isRoot }">{{ title }}</div>
           <!-- En escritorio la marca va arriba del riel lateral: el encabezado de la portada muestra el título. -->
           <div v-if="isHome" class="app-title big home-title">{{ title }}</div>
@@ -42,15 +42,33 @@
       No se pudo actualizar: {{ error }} Se muestra la última copia guardada.
     </div>
 
+    <!-- Dirección anterior (github.io) con el dominio propio ya activo: invita a pasarse sin perder lo guardado. -->
+    <div v-if="moveNotice" class="move-banner" role="status" data-test="move-banner">
+      <span class="grow">
+        <strong>Grid Agenda tiene dirección nueva: {{ appHost }}</strong>
+        <span class="block small">Esta dirección ya no recibe versiones nuevas. Pasate con tus categorías y ajustes, e instalala desde ahí.</span>
+      </span>
+      <a :href="moveHref" class="btn btn-primary btn-small" target="_blank" rel="noopener" data-test="move-link">Pasarme</a>
+      <button type="button" class="icon-btn" aria-label="Cerrar aviso" @click="moveNotice = false">
+        <AppIcon name="close" :size="18" />
+      </button>
+    </div>
+    <div v-else-if="moveMessage" class="move-banner" role="status" data-test="move-result">
+      <span class="grow">{{ moveMessage }}</span>
+      <button type="button" class="icon-btn" aria-label="Cerrar aviso" @click="moveMessage = ''">
+        <AppIcon name="close" :size="18" />
+      </button>
+    </div>
+
     <main class="app-main">
       <RouterView />
     </main>
 
     <nav class="bottom-nav" aria-label="Secciones">
       <!-- Solo en escritorio (riel lateral): marca arriba de las secciones. -->
-      <RouterLink to="/" class="rail-only rail-brand" aria-label="Deporte Motor: agenda">
-        <span class="rail-brand-full">DEPORTE<span>MOTOR</span></span>
-        <span class="rail-brand-mono" aria-hidden="true">D<span>M</span></span>
+      <RouterLink to="/" class="rail-only rail-brand" aria-label="Grid Agenda: agenda">
+        <span class="rail-brand-full">GRID<span>AGENDA</span></span>
+        <span class="rail-brand-mono" aria-hidden="true">G<span>A</span></span>
       </RouterLink>
       <RouterLink
         v-for="item in nav"
@@ -127,9 +145,11 @@ import { timeAgo } from './lib/format.ts';
 import { refreshEverything } from './lib/refresh.ts';
 import { installState, promptInstall } from './lib/install.ts';
 import { navState } from './lib/navState.ts';
-import { syncPush } from './lib/push.ts';
+import { resyncPushIfStale, syncPush } from './lib/push.ts';
 import { startClock } from './lib/clock.ts';
 import { useSettingsStore } from './stores/settings.ts';
+import { APP_NAME } from './lib/brand.ts';
+import { APP_ORIGIN, isLegacyLocation, moveState, moveTarget, newSiteIsLive } from './lib/mudanza.ts';
 
 interface NavItem {
   to: string;
@@ -151,6 +171,15 @@ export default defineComponent({
       refreshing: false,
       refreshMessage: '',
       refreshError: false,
+      /** Aviso de dirección nueva (solo en la dirección anterior, cuando el dominio propio ya responde). */
+      moveNotice: false,
+      /** Resultado de abrir un enlace de mudanza en esta dirección. */
+      moveMessage:
+        moveState.result === 'applied'
+          ? 'Listo: trajimos tus categorías y ajustes. Los avisos se activan de nuevo acá, en Ajustes.'
+          : moveState.result === 'invalid'
+            ? 'El enlace de mudanza no traía ajustes válidos; no se cambió nada.'
+            : '',
       nav: [
         { to: '/', label: 'Agenda', icon: 'calendar', match: ['/evento', '/exportar', '/en-vivo'] },
         { to: '/noticias', label: 'Noticias', icon: 'news', match: [] },
@@ -169,7 +198,15 @@ export default defineComponent({
   computed: {
     ...mapState(useScheduleStore, ['loading', 'error', 'missing', 'generatedAt', 'hasData', 'now', 'fetchedAt']),
     title(): string {
-      return (this.$route.meta.title as string | undefined) ?? 'Deporte Motor';
+      return (this.$route.meta.title as string | undefined) ?? APP_NAME;
+    },
+    /** "gridagenda.com" */
+    appHost(): string {
+      return APP_ORIGIN.replace(/^https?:\/\//, '');
+    },
+    /** Enlace al dominio propio con lo guardado en este dispositivo (sin el token de GitHub ni los avisos). */
+    moveHref(): string {
+      return moveTarget(useSettingsStore().$state);
     },
     isRoot(): boolean {
       return this.$route.meta.root === true;
@@ -199,7 +236,7 @@ export default defineComponent({
     title: {
       immediate: true,
       handler(t: string) {
-        document.title = t === 'Agenda' ? 'Deporte Motor' : `${t} · Deporte Motor`;
+        document.title = t === 'Agenda' ? APP_NAME : `${t} · ${APP_NAME}`;
       },
     },
     $route() {
@@ -219,9 +256,14 @@ export default defineComponent({
   },
   mounted() {
     void this.load();
+    // Avisos activados: si cambió el servidor de avisos desde la última vez, se vuelve a registrar el dispositivo.
+    if (this.notifyEnabled) {
+      void resyncPushIfStale({ seriesIds: this.notifySeriesIds, leadMinutes: this.notifyLead, timeZone: this.timeZone }).catch(() => undefined);
+    }
     // Un solo reloj para toda la app: actualiza "ahora" al empezar cada minuto y se pausa con la pestaña oculta.
     this.stopClock = startClock(() => this.tick());
     document.addEventListener('visibilitychange', this.onVisibility);
+    if (isLegacyLocation(window.location)) void newSiteIsLive().then((live) => (this.moveNotice = live));
   },
   beforeUnmount() {
     this.stopClock?.();
@@ -348,6 +390,20 @@ export default defineComponent({
   text-align: center;
 }
 
+.move-banner {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  background: var(--changed-bg);
+  color: var(--text);
+  font-size: 0.9rem;
+  padding: 0.55rem calc(0.6rem + var(--safe-right)) 0.55rem calc(1rem + var(--safe-left));
+}
+
+.move-banner .btn {
+  flex: none;
+}
+
 .app-main {
   flex: 1;
   width: 100%;
@@ -455,7 +511,8 @@ export default defineComponent({
   }
 
   .app-header,
-  .offline-banner {
+  .offline-banner,
+  .move-banner {
     margin-left: var(--rail-w);
   }
 

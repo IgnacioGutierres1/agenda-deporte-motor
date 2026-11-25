@@ -2,6 +2,7 @@
  * Avisos push: suscripción del dispositivo en el Worker de Cloudflare.
  * El Worker guarda la suscripción con las categorías y la anticipación, y manda los avisos.
  */
+import { readJsonStorage, writeJsonStorage } from './storage.ts';
 
 export const WORKER_URL = (import.meta.env.VITE_WORKER_URL ?? '').replace(/\/+$/, '');
 
@@ -24,11 +25,25 @@ export function pushSupport(): PushSupport {
   return 'ok';
 }
 
-function base64UrlToBytes(b64: string): Uint8Array {
+export function base64UrlToBytes(b64: string): Uint8Array {
   const pad = '='.repeat((4 - (b64.length % 4)) % 4);
   const raw = atob((b64 + pad).replace(/-/g, '+').replace(/_/g, '/'));
   return Uint8Array.from(raw, (c) => c.charCodeAt(0));
 }
+
+/** ¿La suscripción del dispositivo se creó con esta clave del servidor? (null = el navegador no lo informa). */
+export function sameServerKey(current: ArrayBuffer | null | undefined, wanted: Uint8Array): boolean | null {
+  if (!current) return null;
+  const a = new Uint8Array(current);
+  return a.length === wanted.length && a.every((v, i) => v === wanted[i]);
+}
+
+/** Marca de la última sincronización: servidor de avisos + preferencias. Si cambia algo, hay que avisarle al Worker. */
+export function pushSyncMark(prefs: PushPrefs, workerUrl: string = WORKER_URL): string {
+  return `${workerUrl}|${prefs.seriesIds.join(',')}|${prefs.leadMinutes}|${prefs.timeZone}`;
+}
+
+const SYNC_KEY = 'push-sync';
 
 async function api<T>(path: string, body?: unknown): Promise<T> {
   const res = await fetch(`${WORKER_URL}${path}`, {
@@ -60,17 +75,25 @@ export interface PushPrefs {
   timeZone: string;
 }
 
+/**
+ * Suscripción del dispositivo válida para el servidor de avisos actual. Si no hay, se crea; si se había creado
+ * con la clave de otro servidor (el Worker cambió de cuenta o de claves), se reemplaza: los avisos firmados con la
+ * clave nueva no llegarían a la suscripción vieja. No pide permiso: eso lo hace enablePush.
+ */
+async function ensureSubscription(reg: ServiceWorkerRegistration): Promise<PushSubscription> {
+  const { publicKey } = await api<{ publicKey: string }>('/api/vapid');
+  const key = base64UrlToBytes(publicKey);
+  const current = await reg.pushManager.getSubscription();
+  if (current && sameServerKey(current.options?.applicationServerKey, key) !== false) return current;
+  if (current) await current.unsubscribe();
+  return reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: key });
+}
+
 /** Pide permiso, suscribe el dispositivo y lo registra en el Worker. */
 export async function enablePush(prefs: PushPrefs): Promise<void> {
   const permission = await Notification.requestPermission();
   if (permission !== 'granted') throw new Error('No se dio permiso para mostrar avisos.');
-  const reg = await registration();
-  let sub = await reg.pushManager.getSubscription();
-  if (!sub) {
-    const { publicKey } = await api<{ publicKey: string }>('/api/vapid');
-    sub = await reg.pushManager.subscribe({ userVisibleOnly: true, applicationServerKey: base64UrlToBytes(publicKey) });
-  }
-  await syncPush(prefs, sub);
+  await syncPush(prefs, await ensureSubscription(await registration()));
 }
 
 /** Actualiza en el Worker las categorías y la anticipación de este dispositivo. */
@@ -78,6 +101,18 @@ export async function syncPush(prefs: PushPrefs, sub?: PushSubscription | null):
   const s = sub ?? (await currentSubscription());
   if (!s) return;
   await api('/api/subscribe', { subscription: s.toJSON(), ...prefs });
+  writeJsonStorage(SYNC_KEY, pushSyncMark(prefs));
+}
+
+/**
+ * Al abrir la app con los avisos activados: si el servidor de avisos o las preferencias no son los de la última
+ * sincronización (p. ej. la app pasó a usar api.gridagenda.com), se vuelve a registrar el dispositivo, renovando
+ * la suscripción si hace falta. Si no cambió nada, no hace ningún pedido.
+ */
+export async function resyncPushIfStale(prefs: PushPrefs): Promise<void> {
+  if (pushSupport() !== 'ok' || Notification.permission !== 'granted') return;
+  if (readJsonStorage<string>(SYNC_KEY) === pushSyncMark(prefs)) return;
+  await syncPush(prefs, await ensureSubscription(await registration()));
 }
 
 export async function disablePush(): Promise<void> {

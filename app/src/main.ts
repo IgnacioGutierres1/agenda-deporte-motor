@@ -7,7 +7,20 @@ import { listenInstallPrompt } from './lib/install.ts';
 import { watchForAppUpdates } from './lib/appUpdate.ts';
 import { PERSISTED_SETTINGS, migrateSettings, useSettingsStore } from './stores/settings.ts';
 import { useScheduleStore } from './stores/schedule.ts';
+import { applyMoveFromUrl, moveState } from './lib/mudanza.ts';
 import './styles.css';
+
+// Enlace de mudanza desde la dirección anterior: se guarda lo que trae antes de restaurar los ajustes.
+try {
+  moveState.result = applyMoveFromUrl({
+    location: window.location,
+    history: window.history,
+    storage: window.localStorage,
+    confirm: (message) => window.confirm(message),
+  });
+} catch {
+  /* almacenamiento bloqueado: la app arranca igual */
+}
 
 const pinia = createPinia();
 const app = createApp(App);

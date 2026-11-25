@@ -7,8 +7,12 @@ declare module '*.vue' {
 }
 
 interface ImportMetaEnv {
-  /** Ruta base de la app (p. ej. "/agenda-deporte-motor/"). Vite la expone como BASE_URL. */
+  /** Ruta base de la app; por defecto relativa ("./"). Vite la expone como BASE_URL. */
   readonly VITE_BASE?: string;
+  /** Dirección propia de los datos (p. ej. "https://data.gridagenda.com/"); vacío = data/ junto a la app. */
+  readonly VITE_DATA_BASE?: string;
+  /** Dirección principal de la app (p. ej. "https://gridagenda.com"): en cualquier otra se ofrece la mudanza. */
+  readonly VITE_APP_ORIGIN?: string;
   /** Repositorio "owner/repo" por defecto para las acciones de GitHub. */
   readonly VITE_GITHUB_REPO?: string;
   /** Client ID OAuth de Google (tipo "Aplicación web") por defecto. */
