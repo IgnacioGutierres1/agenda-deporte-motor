@@ -5,18 +5,185 @@ CALSCALE:GREGORIAN
 METHOD:PUBLISH
 X-WR-CALNAME:Turismo Nacional (Clase 2 y 3)
 BEGIN:VEVENT
-UID:4b99a2986c90e8dd@agendadeportemotor.local
-DTSTAMP:20261113T052741Z
-DTSTART;VALUE=DATE:20261127
-DTEND;VALUE=DATE:20261130
-SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - Aut
- ódromo Ciudad de Viedma (Viedma\, Río Negro) (horarios a confirmar)
-DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
-  cronograma.\nTransmisión habitual: Canal 7 (TV Pública)\, Campeones\nFu
- ente: https://apat.org.ar/carreras\nDónde verlo:\nCanal 7 (TV Pública): 
- https://www.canal7.com.ar/\nCampeones: https://campeones.com.ar/
+UID:a5b095782a0d17d9@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T114000Z
+DTEND:20261128T124500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 1er 
+ entrenamiento (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
 LOCATION:Autódromo Ciudad de Viedma\, Argentina
 STATUS:CONFIRMED
-TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:af2cbc782fa80cda@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T125000Z
+DTEND:20261128T135500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 1er 
+ entrenamiento (Clase 3)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:c351ef04ef11f368@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T140000Z
+DTEND:20261128T145500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 2do 
+ entrenamiento (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:baaec804ea2eef27@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T150000Z
+DTEND:20261128T155500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 2do 
+ entrenamiento (Clase 3)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:cddcabdf16fc1dff@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T181000Z
+DTEND:20261128T185000Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - Clas
+ ificación - 1a tanda (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:133859b07cf2dd27@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T190000Z
+DTEND:20261128T194000Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - Clas
+ ificación (Clase 3)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:50f26f9c45f035ea@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261128T202000Z
+DTEND:20261128T210000Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - Clas
+ ificación - 2a tanda (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:2ad6a38f9d19dc0f@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261129T130500Z
+DTEND:20261129T132500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 1a s
+ erie (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:9b1cb5b3951a7186@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261129T133000Z
+DTEND:20261129T135000Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 2a s
+ erie (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:3379ca8fa1fce050@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261129T135500Z
+DTEND:20261129T141500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 1a s
+ erie (Clase 3)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:92798eb390376d45@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261129T142000Z
+DTEND:20261129T144000Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - 2a s
+ erie (Clase 3)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:4a83e5ecb69976e7@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261129T154500Z
+DTEND:20261129T162500Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - Fina
+ l (Clase 2)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
+END:VEVENT
+BEGIN:VEVENT
+UID:53260cecbb7ac828@agendadeportemotor.local
+DTSTAMP:20261125T051201Z
+DTSTART:20261129T170000Z
+DTEND:20261129T174000Z
+SUMMARY:Turismo Nacional (Clase 2 y 3) (Autódromo Ciudad de Viedma) - Fina
+ l (Clase 3)
+DESCRIPTION:Transmisión habitual: Canal 7 (TV Pública)\, Campeones\nFuent
+ e: https://apat.org.ar/carreras/info/2026-11-29\nDónde verlo:\nCanal 7 (T
+ V Pública): https://www.canal7.com.ar/\nCampeones: https://campeones.com.
+ ar/
+LOCATION:Autódromo Ciudad de Viedma\, Argentina
+STATUS:CONFIRMED
 END:VEVENT
 END:VCALENDAR
