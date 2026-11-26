@@ -794,15 +794,6 @@
       "career": [
         {
           "season": 2026,
-          "series": "FIA World Endurance Championship (LMGT3)",
-          "seriesId": "wec",
-          "team": "Iron Lynx",
-          "pos": 17,
-          "points": 31,
-          "source": "app"
-        },
-        {
-          "season": 2026,
           "series": "Asian Le Mans Series (GT3)",
           "seriesId": "alms",
           "team": "Proton Competition",
@@ -810,6 +801,13 @@
           "points": 0,
           "races": 2,
           "wins": 0,
+          "source": "app"
+        },
+        {
+          "season": 2026,
+          "series": "FIA World Endurance Championship",
+          "seriesId": "wec",
+          "team": "Iron Lynx",
           "source": "app"
         },
         {
