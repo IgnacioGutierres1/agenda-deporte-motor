@@ -1,7 +1,7 @@
 {
   "seriesId": "supercars",
   "eventId": "6303db1441c2c8f0",
-  "updatedAt": "2026-11-26T07:21:00Z",
+  "updatedAt": "2026-11-27T03:32:05Z",
   "sessions": [
     {
       "sessionId": "c6babf7a5cdfb7da",
@@ -252,6 +252,257 @@
         "kind": "html",
         "method": "directo",
         "fetchedAt": "2026-11-26T07:21:00Z"
+      }
+    },
+    {
+      "sessionId": "c6b7c17a5cdd8569",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "26",
+          "driver": "Kai Allen",
+          "team": "Penrite Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 14,
+          "time": "1:18.840"
+        },
+        {
+          "pos": 2,
+          "number": "19",
+          "driver": "Matthew Payne",
+          "team": "Penrite Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 14,
+          "time": "1:18.864",
+          "gap": "+0.024"
+        },
+        {
+          "pos": 3,
+          "number": "17",
+          "driver": "Brodie Kostecki",
+          "team": "Shell V-Power Racing Team",
+          "vehicle": "Ford Mustang GT",
+          "laps": 11,
+          "time": "1:18.939",
+          "gap": "+0.099"
+        },
+        {
+          "pos": 4,
+          "number": "6",
+          "driver": "Cameron Waters",
+          "team": "Monster Castrol Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 12,
+          "time": "1:18.950",
+          "gap": "+0.110"
+        },
+        {
+          "pos": 5,
+          "number": "888",
+          "driver": "William Brown",
+          "team": "Red Bull Ampol Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 13,
+          "time": "1:18.953",
+          "gap": "+0.113"
+        },
+        {
+          "pos": 6,
+          "number": "55",
+          "driver": "Thomas Randle",
+          "team": "Monster Castrol Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 13,
+          "time": "1:18.991",
+          "gap": "+0.151"
+        },
+        {
+          "pos": 7,
+          "number": "1",
+          "driver": "Chaz Mostert",
+          "team": "Mobil 1 Optus Racing",
+          "vehicle": "Toyota GR Supra A90",
+          "laps": 12,
+          "time": "1:19.026",
+          "gap": "+0.186"
+        },
+        {
+          "pos": 8,
+          "number": "8",
+          "driver": "Andre Heimgartner",
+          "team": "R & J Batteries Racing",
+          "vehicle": "Toyota GR Supra A90",
+          "laps": 12,
+          "time": "1:19.047",
+          "gap": "+0.207"
+        },
+        {
+          "pos": 9,
+          "number": "4",
+          "driver": "Jack Le Brocq",
+          "team": "Sherrin Rentals Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 13,
+          "time": "1:19.065",
+          "gap": "+0.225"
+        },
+        {
+          "pos": 10,
+          "number": "10",
+          "driver": "Zach Bates",
+          "team": "Bendix Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 11,
+          "time": "1:19.073",
+          "gap": "+0.234"
+        },
+        {
+          "pos": 11,
+          "number": "7",
+          "driver": "James Golding",
+          "team": "Redarc Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 11,
+          "time": "1:19.084",
+          "gap": "+0.245"
+        },
+        {
+          "pos": 12,
+          "number": "18",
+          "driver": "Anton De Pasquale",
+          "team": "Dewalt Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 12,
+          "time": "1:19.086",
+          "gap": "+0.246"
+        },
+        {
+          "pos": 13,
+          "number": "88",
+          "driver": "Broc Feeney",
+          "team": "Red Bull Ampol Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 12,
+          "time": "1:19.091",
+          "gap": "+0.252"
+        },
+        {
+          "pos": 14,
+          "number": "2",
+          "driver": "Ryan Wood",
+          "team": "Mobil 1 Truck Assist Racing",
+          "vehicle": "Toyota GR Supra A90",
+          "laps": 12,
+          "time": "1:19.092",
+          "gap": "+0.252"
+        },
+        {
+          "pos": 15,
+          "number": "20",
+          "driver": "David Reynolds",
+          "team": "Snowy River Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 13,
+          "time": "1:19.122",
+          "gap": "+0.282"
+        },
+        {
+          "pos": 16,
+          "number": "9",
+          "driver": "Jobe Stewart",
+          "team": "Greenworks Racing By Erebus",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 11,
+          "time": "1:19.205",
+          "gap": "+0.365"
+        },
+        {
+          "pos": 17,
+          "number": "36",
+          "driver": "Cooper Murray",
+          "team": "PremiAir Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 11,
+          "time": "1:19.227",
+          "gap": "+0.388"
+        },
+        {
+          "pos": 18,
+          "number": "38",
+          "driver": "Rylan Gray",
+          "team": "Shell V-Power Racing Team",
+          "vehicle": "Ford Mustang GT",
+          "laps": 13,
+          "time": "1:19.392",
+          "gap": "+0.552"
+        },
+        {
+          "pos": 19,
+          "number": "14",
+          "driver": "Cameron Hill",
+          "team": "FarmersUnion IcedCoffee Racing",
+          "vehicle": "Toyota GR Supra A90",
+          "laps": 12,
+          "time": "1:19.516",
+          "gap": "+0.676"
+        },
+        {
+          "pos": 20,
+          "number": "99",
+          "driver": "Jarrod Hughes",
+          "team": "Total Energies Quartz Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 11,
+          "time": "1:19.561",
+          "gap": "+0.722"
+        },
+        {
+          "pos": 21,
+          "number": "96",
+          "driver": "Macauley Jones",
+          "team": "TRG Transport Racing",
+          "vehicle": "Toyota GR Supra A90",
+          "laps": 12,
+          "time": "1:19.708",
+          "gap": "+0.868"
+        },
+        {
+          "pos": 22,
+          "number": "31",
+          "driver": "Jayden Ojeda",
+          "team": "PremiAir Racing",
+          "vehicle": "Chev Camaro ZL1",
+          "laps": 11,
+          "time": "1:19.872",
+          "gap": "+1.032"
+        },
+        {
+          "pos": 23,
+          "number": "11",
+          "driver": "Jackson Walls",
+          "team": "Objective Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 12,
+          "time": "1:19.915",
+          "gap": "+1.076"
+        },
+        {
+          "pos": 24,
+          "number": "3",
+          "driver": "Aaron Cameron",
+          "team": "LIQUIMOLY Blahst Racing",
+          "vehicle": "Ford Mustang GT",
+          "laps": 11,
+          "time": "1:20.078",
+          "gap": "+1.238"
+        }
+      ],
+      "source": {
+        "url": "https://www.supercars.com/results/2026/2026-adelaide/P10",
+        "title": "Results — bp Adelaide Grand Final — Practice 2",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-27T03:32:05Z"
       }
     }
   ]
