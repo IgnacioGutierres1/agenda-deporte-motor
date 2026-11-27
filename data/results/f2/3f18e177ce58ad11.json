@@ -1,7 +1,7 @@
 {
   "seriesId": "f2",
   "eventId": "3f18e177ce58ad11",
-  "updatedAt": "2026-11-27T16:19:51Z",
+  "updatedAt": "2026-11-27T18:45:11Z",
   "sessions": [
     {
       "sessionId": "726210122e3afc4f",
@@ -189,6 +189,194 @@
         "kind": "html",
         "method": "directo",
         "fetchedAt": "2026-11-27T16:19:51Z"
+      }
+    },
+    {
+      "sessionId": "c75d5f8f334043f6",
+      "rows": [
+        {
+          "pos": 1,
+          "number": "22",
+          "driver": "Ugo Ugochukwu",
+          "team": "Van Amersfoort Racing",
+          "laps": 11,
+          "time": "1:35.818"
+        },
+        {
+          "pos": 2,
+          "number": "9",
+          "driver": "Gabriele Mini",
+          "team": "MP Motorsport",
+          "laps": 12,
+          "time": "1:35.862"
+        },
+        {
+          "pos": 3,
+          "number": "15",
+          "driver": "Alexander Dunne",
+          "team": "Rodin Motorsport",
+          "laps": 11,
+          "time": "1:35.969"
+        },
+        {
+          "pos": 4,
+          "number": "10",
+          "driver": "Oliver Goethe",
+          "team": "MP Motorsport",
+          "laps": 12,
+          "time": "1:36.019"
+        },
+        {
+          "pos": 5,
+          "number": "5",
+          "driver": "Noel Leon",
+          "team": "Campos Racing",
+          "laps": 11,
+          "time": "1:36.190"
+        },
+        {
+          "pos": 6,
+          "number": "25",
+          "driver": "John Bennett",
+          "team": "TRIDENT",
+          "laps": 12,
+          "time": "1:36.278"
+        },
+        {
+          "pos": 7,
+          "number": "6",
+          "driver": "Nikola Tsolov",
+          "team": "Campos Racing",
+          "laps": 11,
+          "time": "1:36.330"
+        },
+        {
+          "pos": 8,
+          "number": "2",
+          "driver": "Joshua Dürksen",
+          "team": "Invicta Racing",
+          "laps": 12,
+          "time": "1:36.429"
+        },
+        {
+          "pos": 9,
+          "number": "1",
+          "driver": "Freddie Slater",
+          "team": "Invicta Racing",
+          "laps": 11,
+          "time": "1:36.446"
+        },
+        {
+          "pos": 10,
+          "number": "14",
+          "driver": "Martinius Stenshorne",
+          "team": "Rodin Motorsport",
+          "laps": 11,
+          "time": "1:36.467"
+        },
+        {
+          "pos": 11,
+          "number": "3",
+          "driver": "Ritomo Miyata",
+          "team": "Hitech",
+          "laps": 11,
+          "time": "1:36.584"
+        },
+        {
+          "pos": 12,
+          "number": "23",
+          "driver": "Rafael Villagomez",
+          "team": "Van Amersfoort Racing",
+          "laps": 10,
+          "time": "1:36.758"
+        },
+        {
+          "pos": 13,
+          "number": "4",
+          "driver": "Roman Bilinski",
+          "team": "Hitech",
+          "laps": 11,
+          "time": "1:36.833"
+        },
+        {
+          "pos": 14,
+          "number": "12",
+          "driver": "Mari Boya",
+          "team": "PREMA Racing",
+          "laps": 9,
+          "time": "1:36.891"
+        },
+        {
+          "pos": 15,
+          "number": "24",
+          "driver": "Laurens van Hoepen",
+          "team": "TRIDENT",
+          "laps": 12,
+          "time": "1:36.953"
+        },
+        {
+          "pos": 16,
+          "number": "7",
+          "driver": "Dino Beganovic",
+          "team": "DAMS Lucas Oil",
+          "laps": 12,
+          "time": "1:37.073"
+        },
+        {
+          "pos": 17,
+          "number": "20",
+          "driver": "Emerson Fittipaldi",
+          "team": "AIX Racing",
+          "laps": 11,
+          "time": "1:37.190"
+        },
+        {
+          "pos": 18,
+          "number": "16",
+          "driver": "Kush Maini",
+          "team": "ART Grand Prix",
+          "laps": 10,
+          "time": "1:37.425"
+        },
+        {
+          "pos": 19,
+          "number": "17",
+          "driver": "Tasanapol Inthraphuvasak",
+          "team": "ART Grand Prix",
+          "laps": 12,
+          "time": "1:37.464"
+        },
+        {
+          "pos": 20,
+          "number": "8",
+          "driver": "Sebastian Montoya",
+          "team": "DAMS Lucas Oil",
+          "laps": 8,
+          "time": "1:37.607"
+        },
+        {
+          "pos": 21,
+          "number": "11",
+          "driver": "Nicola Lacorte",
+          "team": "PREMA Racing",
+          "laps": 10,
+          "time": "1:37.805"
+        },
+        {
+          "pos": 22,
+          "number": "21",
+          "driver": "Nicolas Pino",
+          "team": "AIX Racing",
+          "laps": 10,
+          "time": "1:39.406"
+        }
+      ],
+      "source": {
+        "url": "https://www.fiaformula2.com/en/racing/2026/lusail",
+        "title": "FIA Formula 2 — Qatar Grand Prix: Clasificación (resultados)",
+        "kind": "html",
+        "method": "directo",
+        "fetchedAt": "2026-11-27T18:45:11Z"
       }
     }
   ]
