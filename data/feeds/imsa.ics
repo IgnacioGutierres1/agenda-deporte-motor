@@ -6,11 +6,26 @@ METHOD:PUBLISH
 X-WR-CALNAME:IMSA WeatherTech SportsCar Championship
 BEGIN:VEVENT
 UID:090535151d45facc@agendadeportemotor.local
-DTSTAMP:20261123T115724Z
+DTSTAMP:20261128T112722Z
 DTSTART;VALUE=DATE:20270122
 DTEND;VALUE=DATE:20270125
 SUMMARY:IMSA WeatherTech SportsCar Championship (Daytona International Spee
  dway) - Roar Before The Rolex 24 (horarios a confirmar)
+DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
+  cronograma.\nTransmisión habitual: IMSA TV\, YouTube IMSA\nFuente: https
+ ://www.imsa.com/2027/schedule?series=weathertech\nDónde verlo:\nYouTube I
+ MSA: https://www.youtube.com/@imsaofficial
+LOCATION:Daytona International Speedway\, Estados Unidos
+STATUS:CONFIRMED
+TRANSP:TRANSPARENT
+END:VEVENT
+BEGIN:VEVENT
+UID:5f5a2a83619398e9@agendadeportemotor.local
+DTSTAMP:20261128T112722Z
+DTSTART;VALUE=DATE:20270127
+DTEND;VALUE=DATE:20270201
+SUMMARY:IMSA WeatherTech SportsCar Championship (Daytona International Spee
+ dway) - Rolex 24 At Daytona (horarios a confirmar)
 DESCRIPTION:Horarios a confirmar: la fuente oficial todavía no publicó el
   cronograma.\nTransmisión habitual: IMSA TV\, YouTube IMSA\nFuente: https
  ://www.imsa.com/2027/schedule?series=weathertech\nDónde verlo:\nYouTube I
